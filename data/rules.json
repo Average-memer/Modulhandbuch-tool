@@ -1,0 +1,59 @@
+{
+  "degree": "M.Sc. Electrical Engineering and Information Technology",
+  "spo": 2025,
+  "totalCreditsTarget": 120,
+  "specializationCreditsTarget": 60,
+  "fundamentalsCredits": 24,
+  "fundamentalsCount": 4,
+  "specializationLabCount": 1,
+  "focusAreaMinCredits": 24,
+  "electivesCreditsTarget": 24,
+  "electivesMaxLabs": 1,
+  "interdisciplinaryCreditsTarget": 6,
+  "thesisCredits": 30,
+  "thesisPrerequisiteCredits": 75,
+  "knownExclusions": [
+    {
+      "pair": [
+        "M-ETIT-100524",
+        "M-ETIT-100513"
+      ],
+      "reason": "Solar Energy and Photovoltaics are mutually exclusive."
+    },
+    {
+      "pair": [
+        "M-ETIT-102264",
+        "M-ETIT-102266"
+      ],
+      "reason": "Digital Hardware Design Lab (German) and (English) are mutually exclusive."
+    },
+    {
+      "pair": [
+        "M-ETIT-107444",
+        "M-ETIT-100453"
+      ],
+      "reason": "Hardware/Software Co-Design (6 CP) replaces (4 CP)."
+    },
+    {
+      "pair": [
+        "M-MACH-100501",
+        "M-MACH-102686"
+      ],
+      "reason": "Automotive Engineering I modules are mutually exclusive."
+    },
+    {
+      "pair": [
+        "M-MACH-102388",
+        "M-MACH-101924"
+      ],
+      "reason": "Thermal Solar Energy modules are mutually exclusive."
+    },
+    {
+      "pair": [
+        "M-ETIT-100552",
+        "M-ETIT-103252"
+      ],
+      "reason": "Optical Systems in Medicine modules are mutually exclusive."
+    }
+  ]
+}

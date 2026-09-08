@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIT M.Sc. ETIT Study Planner (SPO 2025)</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="app-header">
+    <div class="brand-section">
+      <div class="kit-badge">KIT</div>
+      <div class="brand-title">
+        <h1>M.Sc. ETIT Degree Planner</h1>
+        <p>Karlsruhe Institute of Technology • SPO 2025 Handbook</p>
+      </div>
+    </div>
+
+    <div class="controls-section">
+      <div class="select-group">
+        <label for="specializationSelect">Field of Specialisation:</label>
+        <select id="specializationSelect">
+          <option value="ARSE">Automation, Robotics, and Systems Engineering</option>
+          <option value="EPSE">Electrical Power Systems and Electromobility</option>
+          <option value="ICT">Information and Communication Technology</option>
+          <option value="MPQT">Microelectronics, Photonics, and Quantum Technologies</option>
+        </select>
+      </div>
+
+      <div class="select-group">
+        <label for="startTermSelect">Start Term:</label>
+        <select id="startTermSelect">
+          <option value="WS">Winter Semester (WS)</option>
+          <option value="SS">Summer Semester (SS)</option>
+        </select>
+      </div>
+
+      <button id="btnAutoPlan" class="btn btn-primary" title="Automatically build a 100% compliant, balanced 120 CP plan">
+        <span>⚡</span> Auto-Generate Plan
+      </button>
+
+      <button id="btnExemplaryPlan" class="btn btn-outline" title="Load official exemplary study plan from page 27 of handbook">
+        <span>📋</span> Exemplary Plan
+      </button>
+
+      <button id="btnExport" class="btn btn-outline" title="Export official study plan or download JSON">
+        <span>📤</span> Export
+      </button>
+
+      <button id="btnReset" class="btn btn-danger" title="Clear all scheduled modules">
+        <span>🗑️</span> Reset
+      </button>
+    </div>
+  </header>
+
+  <!-- Degree Progress & Audit Bar -->
+  <div class="dashboard-bar">
+    <div class="progress-overall">
+      <div class="progress-labels">
+        <span>Total Degree Credits</span>
+        <span id="totalCreditsLabel">0 / 120 CP</span>
+      </div>
+      <div class="progress-track">
+        <div id="overallProgressFill" class="progress-fill"></div>
+      </div>
+    </div>
+
+    <div class="category-chips">
+      <div class="chip chip-fundamentals" id="chipFundamentals" title="Must choose 4 modules (24 CP) from specialization fundamentals">
+        <span class="status-dot"></span>
+        <span>Fundamentals: <strong id="valFundamentals">0/24 CP</strong></span>
+      </div>
+
+      <div class="chip chip-focus" id="chipFocus" title="Focus Area: at least 24 CP, bringing specialization total to 60 CP">
+        <span class="status-dot"></span>
+        <span>Focus Area: <strong id="valFocus">0/24 CP</strong></span>
+      </div>
+
+      <div class="chip chip-lab" id="chipLab" title="Exactly 1 Lab course in Specialization">
+        <span class="status-dot"></span>
+        <span>Spec. Lab: <strong id="valLab">0/1</strong></span>
+      </div>
+
+      <div class="chip chip-electives" id="chipElectives" title="Electives: at most 24 CP (max 1 additional lab)">
+        <span class="status-dot"></span>
+        <span>Electives: <strong id="valElectives">0/24 CP</strong></span>
+      </div>
+
+      <div class="chip chip-uq" id="chipUQ" title="Interdisciplinary Qualifications (ÜQ): at least 6 CP">
+        <span class="status-dot"></span>
+        <span>ÜQ: <strong id="valUQ">0/6 CP</strong></span>
+      </div>
+
+      <div class="chip chip-thesis" id="chipThesis" title="Master's Thesis: 30 CP (requires >= 75 CP prior)">
+        <span class="status-dot"></span>
+        <span>Thesis: <strong id="valThesis">0/30 CP</strong></span>
+      </div>
+    </div>
+
+    <div id="overallStatusBadge" class="status-badge status-warning" title="Click to view detailed degree audit">
+      <span id="statusIcon">⚠️</span>
+      <span id="statusText">Plan Incomplete (0/120 CP)</span>
+    </div>
+  </div>
+
+  <!-- Main Workspace -->
+  <div class="main-workspace">
+    <!-- Left: Module Catalog -->
+    <aside class="catalog-pane">
+      <div class="catalog-header">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="catalogSearch" placeholder="Search modules, codes, professors...">
+        </div>
+
+        <div class="filter-pills" id="categoryPills">
+          <button class="filter-pill active" data-cat="all">All</button>
+          <button class="filter-pill" data-cat="Fundamentals">Fundamentals</button>
+          <button class="filter-pill" data-cat="Focus Area">Focus Area</button>
+          <button class="filter-pill" data-cat="Lab Course">Labs</button>
+          <button class="filter-pill" data-cat="Electives">Electives</button>
+          <button class="filter-pill" data-cat="Interdisciplinary Qualifications">ÜQ</button>
+          <button class="filter-pill" data-cat="staged" id="pillStaged">📦 Staged (0)</button>
+        </div>
+
+        <div class="filter-dropdowns">
+          <select id="filterTerm">
+            <option value="all">Any Term (WS / SS)</option>
+            <option value="WS">Winter Term (WS)</option>
+            <option value="SS">Summer Term (SS)</option>
+          </select>
+
+          <select id="filterLang">
+            <option value="all">Any Language</option>
+            <option value="English">English only</option>
+            <option value="German">German</option>
+          </select>
+        </div>
+
+        <div class="select-group" style="width: 100%;">
+          <label for="focusProfileSelect" style="font-size: 0.72rem; color: var(--kit-muted); font-weight: 600; margin-bottom: 2px; display: block;">Field of Specialisation:</label>
+          <select id="focusProfileSelect" style="width: 100%; font-size: 0.75rem;">
+            <option value="ARSE">Automation, Robotics, and Systems Engineering</option>
+            <option value="EPSE">Electrical Power Systems and Electromobility</option>
+            <option value="ICT">Information and Communication Technology</option>
+            <option value="MPQT">Microelectronics, Photonics, and Quantum Technologies</option>
+          </select>
+        </div>
+
+        <button id="btnOpenCustomModal" class="btn btn-outline" style="width: 100%; justify-content: center; font-size: 0.8rem; border-style: dashed; border-color: var(--kit-green); color: var(--kit-green); background: var(--kit-green-light); margin-top: 2px;">
+          <span>➕</span> Add Custom Course / ÜQ
+        </button>
+      </div>
+
+      <div class="catalog-list" id="catalogList">
+        <!-- Module cards dynamically populated -->
+      </div>
+    </aside>
+
+    <!-- Right: Semester Planner Board & Visual Analytics -->
+    <main class="planner-pane">
+      <!-- View Toggle Bar -->
+      <div class="planner-view-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+        <div style="display: flex; gap: 8px;">
+          <button id="tabScheduleView" class="btn btn-primary" style="padding: 5px 14px; font-size: 0.8rem;">
+            <span>📅</span> Semester Board
+          </button>
+          <button id="tabAnalyticsView" class="btn btn-outline" style="padding: 5px 14px; font-size: 0.8rem;">
+            <span>📊</span> Visual Analytics & Breakdown
+          </button>
+        </div>
+        <div id="quickAuditAlert" style="font-size: 0.8rem; font-weight: 600; color: var(--kit-muted); display: flex; align-items: center; gap: 6px;"></div>
+      </div>
+
+      <!-- Schedule Board View -->
+      <div id="scheduleViewContainer">
+        <!-- Staging Area (Course Pool for Selective Scheduling) -->
+        <div class="staging-container" id="stagingArea">
+          <div class="staging-header">
+            <div class="staging-title-group">
+              <button class="staging-toggle-btn" id="btnToggleStaging" title="Collapse / Expand Staging Area">
+                <span id="stagingToggleIcon">▼</span>
+              </button>
+              <span class="staging-title">
+                <span>📦</span> Staging Area
+              </span>
+              <span class="badge badge-cp" id="stagedStatsBadge">0 modules • 0 CP</span>
+            </div>
+
+            <div class="staging-tools">
+              <label class="staging-checkbox-label" title="Unchecked (default): only schedules your chosen staged modules. Checked: fills missing requirements from catalog to complete 120 CP.">
+                <input type="checkbox" id="chkFillMissing">
+                <span>Fill remaining from catalog</span>
+              </label>
+              <button class="btn btn-sm btn-primary" id="btnAutoPlanStaged" title="Distribute staged modules into semesters according to term constraints and degree rules">
+                <span>⚡</span> Auto-Plan Staged
+              </button>
+              <button class="btn btn-sm btn-outline" id="btnStageFundamentals" title="Auto-stage mandatory Fundamentals for the active specialization / focus area">
+                <span>⭐</span> Stage Fundamentals
+              </button>
+              <button class="btn btn-sm btn-outline" id="btnStageCurrentPlan" title="Stage all modules currently in your semester plan">
+                <span>📥</span> Stage Current Plan
+              </button>
+              <button class="btn btn-sm btn-outline btn-clear-staging" id="btnClearStaging" title="Clear all modules from staging">
+                <span>🗑️</span> Clear Staging
+              </button>
+            </div>
+          </div>
+
+          <div class="staging-body" id="stagingBody">
+            <div class="staging-dropzone" id="stagingDropzone">
+              <div class="empty-staging-placeholder" id="stagingEmptyPlaceholder">
+                <span>📦 Drag modules here from catalog or semesters, or click <strong>'+ Stage'</strong> in the catalog.</span>
+                <span style="font-size: 0.74rem; color: var(--kit-muted);">The auto-planner will distribute these into semesters without randomly pulling unwanted modules.</span>
+              </div>
+              <div class="staging-cards-list" id="stagingCardsList"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="semesters-grid">
+          <!-- Semester 1 -->
+          <div class="semester-col" data-semester="1">
+            <div class="semester-header">
+              <div class="semester-title-row">
+                <span class="semester-title">Semester 1</span>
+                <span class="badge badge-term-ws" id="sem1TermBadge">WS</span>
+              </div>
+              <div class="semester-stats">
+                <span class="semester-cp underload" id="sem1CP">0 CP</span>
+                <span style="font-size: 0.72rem; color: var(--kit-muted);">Target: 30 CP</span>
+              </div>
+            </div>
+            <div class="semester-dropzone" id="dropzoneSem1">
+              <div class="empty-placeholder">
+                <p>Drag modules here</p>
+                <span style="font-size: 0.7rem; color: var(--kit-muted); margin-top: 4px;">or click '+' in catalog</span>
+              </div>
+            </div>
+          </div>
+
+        <!-- Semester 2 -->
+        <div class="semester-col" data-semester="2">
+          <div class="semester-header">
+            <div class="semester-title-row">
+              <span class="semester-title">Semester 2</span>
+              <span class="badge badge-term-ss" id="sem2TermBadge">SS</span>
+            </div>
+            <div class="semester-stats">
+              <span class="semester-cp underload" id="sem2CP">0 CP</span>
+              <span style="font-size: 0.72rem; color: var(--kit-muted);">Target: 30 CP</span>
+            </div>
+          </div>
+          <div class="semester-dropzone" id="dropzoneSem2">
+            <div class="empty-placeholder">
+              <p>Drag modules here</p>
+              <span style="font-size: 0.7rem; color: var(--kit-muted); margin-top: 4px;">or click '+' in catalog</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semester 3 -->
+        <div class="semester-col" data-semester="3">
+          <div class="semester-header">
+            <div class="semester-title-row">
+              <span class="semester-title">Semester 3</span>
+              <span class="badge badge-term-ws" id="sem3TermBadge">WS</span>
+            </div>
+            <div class="semester-stats">
+              <span class="semester-cp underload" id="sem3CP">0 CP</span>
+              <span style="font-size: 0.72rem; color: var(--kit-muted);">Target: 30 CP</span>
+            </div>
+          </div>
+          <div class="semester-dropzone" id="dropzoneSem3">
+            <div class="empty-placeholder">
+              <p>Drag modules here</p>
+              <span style="font-size: 0.7rem; color: var(--kit-muted); margin-top: 4px;">or click '+' in catalog</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semester 4 -->
+        <div class="semester-col" data-semester="4">
+          <div class="semester-header">
+            <div class="semester-title-row">
+              <span class="semester-title">Semester 4</span>
+              <span class="badge badge-term-ss" id="sem4TermBadge">SS</span>
+            </div>
+            <div class="semester-stats">
+              <span class="semester-cp underload" id="sem4CP">0 CP</span>
+              <span style="font-size: 0.72rem; color: var(--kit-muted);">Target: 30 CP</span>
+            </div>
+          </div>
+          <div class="semester-dropzone" id="dropzoneSem4">
+            <div class="empty-placeholder">
+              <p>Drag modules here</p>
+              <span style="font-size: 0.7rem; color: var(--kit-muted); margin-top: 4px;">Usually Master's Thesis (30 CP)</span>
+            </div>
+        </div>
+      </div>
+
+      <!-- Visual Analytics & Breakdown View -->
+      <div id="analyticsViewContainer" style="display: none; flex-direction: column; gap: 20px;">
+        <!-- Analytics Top Stats Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+          <div style="background:#fff; padding:16px; border-radius:var(--radius-md); border:1px solid var(--kit-border); box-shadow:var(--shadow-sm);">
+            <div style="font-size:0.75rem; color:var(--kit-muted); font-weight:700; text-transform:uppercase;">Planned Workload</div>
+            <div id="statTotalHours" style="font-size:1.5rem; font-weight:800; color:var(--kit-slate); margin-top:4px;">0 Hours</div>
+            <div style="font-size:0.75rem; color:var(--kit-muted); margin-top:2px;">Based on 30h / ECTS credit point</div>
+          </div>
+
+          <div style="background:#fff; padding:16px; border-radius:var(--radius-md); border:1px solid var(--kit-border); box-shadow:var(--shadow-sm);">
+            <div style="font-size:0.75rem; color:var(--kit-muted); font-weight:700; text-transform:uppercase;">Language Ratio</div>
+            <div id="statLangRatio" style="font-size:1.5rem; font-weight:800; color:var(--kit-slate); margin-top:4px;">100% EN</div>
+            <div id="statLangSub" style="font-size:0.75rem; color:var(--kit-muted); margin-top:2px;">English vs German taught</div>
+          </div>
+
+          <div style="background:#fff; padding:16px; border-radius:var(--radius-md); border:1px solid var(--kit-border); box-shadow:var(--shadow-sm);">
+            <div style="font-size:0.75rem; color:var(--kit-muted); font-weight:700; text-transform:uppercase;">Assessment Breakdown</div>
+            <div id="statExamsRatio" style="font-size:1.1rem; font-weight:700; color:var(--kit-slate); margin-top:8px;">0 Written • 0 Oral</div>
+            <div style="font-size:0.75rem; color:var(--kit-muted); margin-top:2px;">Across 4 semesters</div>
+          </div>
+
+          <div style="background:#fff; padding:16px; border-radius:var(--radius-md); border:1px solid var(--kit-border); box-shadow:var(--shadow-sm);">
+            <div style="font-size:0.75rem; color:var(--kit-muted); font-weight:700; text-transform:uppercase;">Degree Rule Status</div>
+            <div id="statCompliance" style="font-size:1.2rem; font-weight:800; color:#15803d; margin-top:6px;">Permissible</div>
+            <div id="statComplianceSub" style="font-size:0.75rem; color:var(--kit-muted); margin-top:2px;">SPO 2025 compliance</div>
+          </div>
+        </div>
+
+        <!-- Semester Workload Stacked Chart -->
+        <div style="background:#fff; padding:20px; border-radius:var(--radius-md); border:1px solid var(--kit-border); box-shadow:var(--shadow-sm);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <h3 style="font-size:1rem; font-weight:700; color:var(--kit-slate);">Semester Workload & Category Distribution</h3>
+            <span style="font-size:0.75rem; color:var(--kit-muted);">Target: 30 CP per semester</span>
+          </div>
+          <div id="semesterChartContainer" style="display:flex; flex-direction:column; gap:16px;">
+            <!-- Rendered by app.js -->
+          </div>
+        </div>
+
+        <!-- Detailed Audit List -->
+        <div style="background:#fff; padding:20px; border-radius:var(--radius-md); border:1px solid var(--kit-border); box-shadow:var(--shadow-sm);">
+          <h3 style="font-size:1rem; font-weight:700; color:var(--kit-slate); margin-bottom:12px;">Official SPO 2025 Compliance Checklist</h3>
+          <div id="analyticsAuditList" class="audit-list"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Module Details Modal / Inspector -->
+  <div class="modal-backdrop" id="moduleModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <div class="module-code" id="modalModuleCode">M-ETIT-000000</div>
+          <h2 id="modalModuleTitle">Module Title</h2>
+          <div class="badge-row" id="modalBadges"></div>
+        </div>
+        <button class="action-icon-btn" id="modalCloseBtn" style="font-size: 1.2rem;">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Credits / Workload</span>
+            <span class="meta-value" id="modalCredits">6 CP (180h)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Term / Frequency</span>
+            <span class="meta-value" id="modalTerm">Each winter term</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Language</span>
+            <span class="meta-value" id="modalLanguage">English</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Examination</span>
+            <span class="meta-value" id="modalExam">Written exam (120 min)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Coordinator(s)</span>
+            <span class="meta-value" id="modalCoordinators">Prof. Dr. ...</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Institute / Dept</span>
+            <span class="meta-value" id="modalOrganisation">ETIT</span>
+          </div>
+        </div>
+
+        <div class="modal-section" id="modalPrereqSection">
+          <h3><span>⚠️</span> Prerequisites & Exclusions</h3>
+          <p id="modalPrerequisites">None.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3><span>🎯</span> Competence Goals</h3>
+          <p id="modalCompetenceGoal">Detailed learning objectives from handbook.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3><span>📖</span> Course Syllabus & Content</h3>
+          <p id="modalContent">Detailed curriculum topics from handbook.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3><span>⏱️</span> Workload Breakdown</h3>
+          <p id="modalWorkload">Workload details.</p>
+        </div>
+
+        <div class="modal-section" id="modalLitSection">
+          <h3><span>📚</span> Literature & Recommendations</h3>
+          <p id="modalLiterature">Recommended textbooks.</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <span style="font-size: 0.85rem; color: var(--kit-muted); margin-right: auto;">Course actions:</span>
+        <button class="btn btn-outline" id="modalStageBtn" onclick="app.toggleStageFromModal()">📦 Stage</button>
+        <button class="btn btn-outline" onclick="app.addModuleToSemesterFromModal(1)">+ Sem 1</button>
+        <button class="btn btn-outline" onclick="app.addModuleToSemesterFromModal(2)">+ Sem 2</button>
+        <button class="btn btn-outline" onclick="app.addModuleToSemesterFromModal(3)">+ Sem 3</button>
+        <button class="btn btn-outline" onclick="app.addModuleToSemesterFromModal(4)">+ Sem 4</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audit & Verification Report Modal -->
+  <div class="modal-backdrop" id="auditModal">
+    <div class="modal-content" style="max-width: 650px;">
+      <div class="modal-header">
+        <div>
+          <h2>SPO 2025 Degree Audit & Rules Check</h2>
+          <p style="font-size: 0.85rem; color: var(--kit-muted);">Verification according to KIT Electrical Engineering and Information Technology regulations</p>
+        </div>
+        <button class="action-icon-btn" onclick="document.getElementById('auditModal').classList.remove('open')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="audit-list" id="auditList">
+          <!-- Audit items populated dynamically -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="document.getElementById('auditModal').classList.remove('open')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Export Plan Modal -->
+  <div class="modal-backdrop" id="exportModal">
+    <div class="modal-content" style="max-width: 700px;">
+      <div class="modal-header">
+        <div>
+          <h2>Export Study Plan</h2>
+          <p style="font-size: 0.85rem; color: var(--kit-muted);">Official submission format & data backup</p>
+        </div>
+        <button class="action-icon-btn" onclick="document.getElementById('exportModal').classList.remove('open')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>Official KIT Study Plan Summary</h3>
+          <textarea id="exportText" rows="12" style="width: 100%; font-family: ui-monospace, monospace; font-size: 0.8rem; padding: 10px; border: 1px solid var(--kit-border); border-radius: var(--radius-sm);" readonly></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="window.print()"><span>🖨️</span> Print / Save as PDF</button>
+        <button class="btn btn-outline" id="btnDownloadJson"><span>💾</span> Download JSON</button>
+        <button class="btn btn-primary" id="btnCopyExportText"><span>📋</span> Copy Text</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Module Creator Modal -->
+  <div class="modal-backdrop" id="customModuleModal">
+    <div class="modal-content" style="max-width: 650px;">
+      <div class="modal-header">
+        <div>
+          <h2>Add Custom Course / Qualification</h2>
+          <p style="font-size: 0.85rem; color: var(--kit-muted);">Add language courses (SPZ), workshops (HoC, ZAK), external credits, or custom electives.</p>
+        </div>
+        <button class="action-icon-btn" id="customModalCloseBtn">✕</button>
+      </div>
+      <form id="customModuleForm">
+        <div class="modal-body" style="gap: 14px;">
+          <div class="form-group">
+            <label class="form-label" for="customTitle">Course / Module Title *</label>
+            <input type="text" id="customTitle" class="form-input" placeholder="e.g. Spanish A2.1 (Sprachenzentrum)" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="customCode">Course / Module Code</label>
+              <input type="text" id="customCode" class="form-input" placeholder="e.g. SPZ-SPAN-A2 or leave empty for auto">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="customCredits">Credit Points (CP) *</label>
+              <input type="number" id="customCredits" class="form-input" min="1" max="30" value="2" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="customCategory">Credited Area *</label>
+              <select id="customCategory" class="form-input" required>
+                <option value="Interdisciplinary Qualifications" selected>Interdisciplinary Qualifications (ÜQ / SQ)</option>
+                <option value="Electives">Electives (Wahlpflicht)</option>
+                <option value="Focus Area">Focus Area (Vertiefungsbereich)</option>
+                <option value="Lab Course">Lab / Practical Course</option>
+                <option value="Fundamentals">Fundamentals</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="customTerm">Term Offered *</label>
+              <select id="customTerm" class="form-input" required>
+                <option value="WS+SS" selected>Each Term (Winter & Summer)</option>
+                <option value="WS">Winter Term only (WS)</option>
+                <option value="SS">Summer Term only (SS)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="customLanguage">Language</label>
+              <select id="customLanguage" class="form-input">
+                <option value="English">English</option>
+                <option value="German" selected>German</option>
+                <option value="German/English">German/English</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="customExam">Assessment Format</label>
+              <input type="text" id="customExam" class="form-input" placeholder="e.g. Coursework (pass/fail) or Written exam">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="customCoordinator">Instructor / Institute</label>
+              <input type="text" id="customCoordinator" class="form-input" placeholder="e.g. Sprachenzentrum (SPZ) / HoC">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="customInitialSem">Add to Semester</label>
+              <select id="customInitialSem" class="form-input">
+                <option value="0">Add to Catalog only</option>
+                <option value="stage">Add to Staging Area</option>
+                <option value="1">Add to Semester 1</option>
+                <option value="2">Add to Semester 2</option>
+                <option value="3" selected>Add to Semester 3</option>
+                <option value="4">Add to Semester 4</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="customDescription">Description / Notes</label>
+            <textarea id="customDescription" class="form-input" rows="3" placeholder="Enter course goals, syllabus, prerequisites, or personal notes..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="btnCancelCustom">Cancel</button>
+          <button type="submit" class="btn btn-primary"><span>💾</span> Save Module</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/mock_data.js"></script>
+  <script src="js/all_data.js"></script>
+  <script src="js/validator.js"></script>
+  <script src="js/generator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

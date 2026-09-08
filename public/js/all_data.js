@@ -1,0 +1,8022 @@
+// Complete parsed dataset from official KIT M.Sc. ETIT Module Handbook (SPO 2025)
+var rootScope = typeof window !== 'undefined' ? window : (typeof globalThis !== 'undefined' ? globalThis : this);
+rootScope.ALL_MODULES_DATA = {
+  "M-ETIT-103802": {
+    "id": "M-ETIT-103802",
+    "title": "Adaptive Optics",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Ph.D. Szymon Gladysz",
+      "Prof. Dr. Ulrich Lemmer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Type of Examination: Oral examination\nDuration of Examination: approx. 30 Minutes\nModality of Exam: The oral exam will be scheduled during the semester break.",
+    "prerequisites": "None.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students will:\n•\n•\n•\n•\n•\n•\nget familiar with Fourier description of imaging through aberrated optical systems and random media,\nunderstand the description of aberrations through Zernike modes,\nlearn how to analytically compute the effects of turbulence on various optical observables such as image/beam motion,\ntemporal power spectra, Zernike modes, scintillation, etc.,\nunderstand the effect of noise on various quantities and metrics pertinent to the design of adaptive optical systems,\nunderstand the advantages and disadvantages of various schemes for wavefront sensing and correction,\nlearn how to simulate and design simple adaptive optics systems.",
+    "content": "Adaptive optics is a technology of correcting the effect of atmospheric turbulence on images of space objects and on laser\nbeams propagating through random and highly aberrated media such as turbulence, tissue, and the inside of the human eye, to\nname just a few applications. The course will familiarize the students with theoretical basics of light propagation through random\nmedia, principles of wavefront sensing and reconstruction, as well as wavefront correction with deformable mirrors. The\nstudents will also receive solid introduction to statistical optics, the Kolmogorov theory of turbulence, practical aspects of\nturbulence simulation and modelling of adaptive optics.\n1.\nTheory of turbulence (covariances, structure functions, power spectra, inertial range, dimensional argument of\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n10.\nKolmogorov)\nFourier optics (point-spread function, modulation transfer function)\nStatistical optics (characteristic function, probability density function)\nSources and description of aberrations (Zernike polynomials, orthogonality, Marechal criterion)\nAdaptive optics systems (open- and closed-loop systems, error budgets, tip-tilt correction)\nWavefront sensing (Shack-Hartmann wavefront sensor, wavefront reconstruction, wavefront-sensorless AO)\nWavefront correction (tip-tilt mirrors, deformable mirrors, piezoelectric effect, microelectromechanical systems,\nelectrostatic actuation)\nSimulation of adaptive optical systems (analytic vs. end-to-end modelling)\nPropagation of laser beams through atmospheric turbulence (Gaussian beams, Rytov theory, scintillation index, beam\nwander)\nModelling of free-space optical communication systems (aperture averaging, mean signal-to-noise ratio, false-alarm rate\nand fade probability, bit error-rate)",
+    "workload": "total 90 h, hereof 30 h contact hours and 60 h homework and self-studies",
+    "recommendations": "Basic knowledge of statistics.\nIt is recommended that the students first complete the module Optical Engineering and Machine Vision [M-ETIT-106974 ] or\nOptical Engineering [M-ETIT-100456] or Fundamentals of Optics and Photonics [M-PHYS-101927] before they enroll for this\ncourse.",
+    "literature": "Robert K. Tyson, Principles of Adaptive Optics, CRC Press\nMichael C. Roggemann, Byron M. Welsh, Imaging through Turbulence, CRC Press"
+  },
+  "M-ETIT-106815": {
+    "id": "M-ETIT-106815",
+    "title": "Advanced Communications Engineering",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Holger Jäkel"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The assessment takes place in the form of a written examination lasting 120 min,",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students are able to analyze and assess properties of communication systems and consider aspects of implementation.\nThey can use mathematical methods in the context of communication systems for understanding involved derivations in the\nresearch literature; deriving and autonomously elaborating theoretical results, and checking their viability by simulations.",
+    "content": "The module is introducing and deriving results covering, but not being limited to, properties of linear modulation, channel\ndescription and diversity schemes, and processing of receiver signals, all based on detailed theoretical concepts. Topics already\ncovered in previous modules are deduced thoroughly and mathematical derivations and reasoning are provided.",
+    "workload": "1. 1.\nAttendance to the lecture: 20 * 1,5 h = 30 h\n2.\nPreparation and review: 20 * 3 h = 60 h\n3.\nAttendance to the tutorial: 6 * 1,5 h = 9 h\n4.\nPreparation and review: 6 * 3,5 h = 21 h\n5.\nPreparation for the exam: 60 h\nIn total: 180 h = 6 LP",
+    "recommendations": "Basics knowledge of communication systems, as, e.g., provided in KIT’s Bachelor courses “Grundlagen der Datenübertragung”\nand “Nachrichtensysteme”, is supposed. Furthermore, working knowledge in the areas of system theory and probability theory is\nassumed.",
+    "literature": ""
+  },
+  "M-ETIT-107364": {
+    "id": "M-ETIT-107364",
+    "title": "Analog Circuit Design",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Ivan Peric"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in form of an oral examination (approx. 20 minutes) and a written report with the results of the\nexercises. Details will be given during the lecture.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The course aims to provide students with a comprehensive understanding of the principles and techniques of analog circuit\ndesign, with a focus on CMOS technology. The learning objectives include:\n1.\n2.\n3.\n4.\n5.\n6.\n7.\nUnderstanding Microchip Fabrication: Students will learn the fundamentals of microchip fabrication\nAnalog Design Process: Students will be able to create schematics, perform simulations (DC, AC, transient, noise),\nand develop layout designs while considering Design Rule Check (DRC) and Layout vs. Schematic (LVS).\nKnowledge of MOSFET Functionality: Students will understand the structure, fabrication, and operation of CMOS\ntransistors (PMOS, NMOS), including potential distributions, charge carrier densities, threshold voltage, operating\nregions (strong/weak inversion, saturation) and transistor models\nAnalysis and Design of Simple Circuits: Students will learn to design and optimize basic circuits such as current\nsources, current mirrors, voltage amplifiers, and differential amplifiers, including the application of feedback and small-\nsignal models.\nUnderstanding Noise and Optimization: Students will be able to analyze thermal noise, 1/f noise, and their impact on\ncircuits, as well as optimize amplifiers for signal-to-noise ratio (SNR) and speed.\nClocked Circuits and ADCs: Students will understand the operation of track-and-hold circuits, clocked comparators,\nand analog-to-digital converters (flash, time-based, algorithmic), as well as concepts like sampling errors, charge\ninjection, and time-interleaving.\nPractical Application through Exercises: Through practical exercises (e.g., transistor optimization, simulations, layout\ndesign), students will develop hands-on skills in using design tools and analyzing circuits.\nBy the end of the course, students will be able to design basic analog circuits, analyze their performance, and address\npractical challenges in chip fabrication and optimization.",
+    "content": "This course introduces the fundamentals of chip design, starting with microchip fabrication techniques like photolithography\nand CMOS technologies, and covers the analog design flow from schematics to layout. It then dives into MOSFET physics,\nincluding structure, operating regions, and key features like threshold voltage, saturation, and channel length modulation, both\nlarge- and small-signal models. The course explores basic analog building blocks such as current mirrors, differential\namplifiers, and cascode amplifiers, emphasizing feedback analysis, gain calculation, and frequency response. Students also\nstudy charge-sensitive amplifiers, clocked circuits, and a few ADC architectures like flash, time-based, and algorithmic\nconverters. Special attention is given to noise analysis, including thermal and flicker noise, and how to optimize designs for\nsignal-to-noise ratio and speed. Practical skills are reinforced through hands-on exercises that cover design and optimization\nof a charge-sensitive amplifier, ADC simulation, and comparator design from schematics to DRC/LVS verification.",
+    "workload": "1.\n2.\n3.\n4.\nAttendance time in lectures 30 h\nAttendance time in exercises 15 h\nPreparation/follow-up of the same 25 h\nExam preparation 50 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-106956": {
+    "id": "M-ETIT-106956",
+    "title": "Antennas and Beamforming",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Marwan Younis",
+      "Prof. Dr.-Ing. Thomas Zwick"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After successfully participating in this course, students have in-depth knowledge of antennas, antenna systems and\nbeamforming methods. This includes functionality, calculation methods as well as aspects of practical implementation. They are\nable to understand how typical electromagnetic radiators work and to develop and dimension them with specified properties.\nStudents understand the principle and function of beamforming and the differences between digital, analog and hybrid\nbeamforming. They know the theory, procedures and algorithms for beamforming. They can understand how beamforming is\nused for radio communication and radar.",
+    "content": "The lecture begins with a brief review of the basic knowledge of antennas and antenna arrays from the Bachelor's course. This\nis followed by a detailed discussion of all major antenna types (functionality, specifics). Furthermore, antenna measurement\nmethods are presented. In the second part, the basic knowledge of noise, radio transmission and radar ambiguities is briefly\nrefreshed, followed by a detailed presentation of the various beamforming algorithms, each with reference to radio\ncommunication and radar systems. Aspects such as digital and hybrid beamforming, as well as MIMO and equivalent virtual\nantenna configuration are explained.\nThe lecture will be accompanied by exercises. These are discussed in a room exercise and the corresponding solutions are\npresented in detail.",
+    "workload": "The workload includes:\n•\n•\n•\nAttendance study time lecture: 30 h\nAttendance study time exercise: 15 h\nSelf-study time including exam preparation: 75 h\nA total of 120 h",
+    "recommendations": "recommended.\nKnowledge of the basics of radio frequency technology and some basic knowledge on communication and radar systems is",
+    "literature": ""
+  },
+  "M-ETIT-107333": {
+    "id": "M-ETIT-107333",
+    "title": "Applied Information Theory",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Holger Jäkel"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The success control takes place in the form of an oral examination lasting approx. 25 minutes. Before the examination, there is\na preparation phase of 15 minutes in which preparatory tasks are solved.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students master the methods and concepts of information theory and are able to apply them to analyze communication\ntechnology issues.\nStudents acquire the ability to examine the information content of sources and the flow of information in systems and to evaluate\ntheir significance for the realization of telecommunications systems.",
+    "content": "The information theory founded by Shannon represents a central starting point for almost all questions of coding and encryption.\nIn order to provide a solid foundation for later considerations, the concepts of information theory are developed at the beginning\nof the lecture. These are then applied to various areas of communications engineering and signal processing and used to\nanalyze them.",
+    "workload": "1. attendance time lecture: 15 * 3 h = 45 h\n2. preparation/follow-up lecture: 15 * 6 h = 90 h\n3. attendance time exercise: 15 * 1 h = 15 h\n4. preparation/post-exercise: 15 * 2 h = 30 h\n5. exam preparation and attendance in the exam: included in preparation/follow-up work\nTotal: 180 h = 6 LP",
+    "recommendations": "Previous attendance of the lecture \"Wahrscheinlichkeitstheorie\" is recommended.",
+    "literature": ""
+  },
+  "M-INFO-105338": {
+    "id": "M-INFO-105338",
+    "title": "Authentication and Encryption",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Jörn Müller-Quade"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See Partial Achievements (Teilleistung).",
+    "prerequisites": "See Partial Achievements (Teilleistung).",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student\n- can explain the terms confidentiality and authenticity and point out their differences,\n- understand the basic security objectives of digital signatures and their relationship to each other and can apply them,\n- knows and understands important signature procedures from theory and practice and can explain them,\n- understand definitions of actively secure encryption and can explain and apply them,\n- can explain procedures for constructing actively secure encryption,\n- can understand and apply elementary proof techniques such as reductions and hybrid arguments",
+    "content": "The guarantee of authenticity and secrecy is a security requirement that arises in many applications.\nBuilding on the lecture \"Theoretical Foundations of Cryptography\", this lecture deepens the consideration of cryptographic\nauthentication methods (especially signatures and message authentication codes) and actively secure encryption methods.\nThe focus of the lecture is on various techniques for the construction of digital signature methods as well as the proof of the\nsecurity properties achieved. For example, the following topics are covered:\n- One-time signatures, tree-based signatures and chameleon hash functions\n- RSA-based signatures\n- Signatures in bilinear groups\nIn the second part of the lecture, encryption methods that offer security against active attacks are presented. For example, the\nfollowing constructions are presented:\n- Authenticated encryption in the symmetric case\n- Methods for constructing actively secure asymmetric encryption",
+    "workload": "Attendance time in the lecture: 24 h Preparation/follow-up of the lecture: 31 h Exam preparation and attendance in the lecture:\n65 h",
+    "recommendations": "Students should be familiar with the contents of the module \"Theoretical Foundations of Cryptography\"",
+    "literature": ""
+  },
+  "M-MACH-100501": {
+    "id": "M-MACH-100501",
+    "title": "Automotive Engineering I",
+    "credits": 8,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Marcus Geimer"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "written exam; duration approximately 2 hours",
+    "prerequisites": "Only one out of the two moduls \"M-MACH-100501 - Grundlagen der Fahrzeugtechnik I\" and \"M-MACH-102686 - Automotive\nEngineering I\" is allowed.",
+    "modeledPrerequisites": "",
+    "exclusions": [
+      "M-MACH-102686"
+    ],
+    "requires": [],
+    "competenceGoal": "The students know the movements and the forces at the vehicle and are familiar with active and passive security. They have\nproper knowledge about operation of engines and alternative drives, the necessary transmission between engine and drive\nwheels and the power distribution, so that they can apply their knowledge effectively in actual practise. They have an overview\nof the components necessary for the drive and have the basic knowledge, to analyze, to judge and to develop the complex\nsystem \"vehicle\".",
+    "content": "The module provides an overview of:\n1. History and future of the automobile\n2. Driving mechanics: driving resistances and driving performances, mechanics of the longitudinal and transverse forces,\npassive safety\n3. Engines: combustion engine, alternative drives (e.g. electric motor, fuel cell)\n4. Transmission: clutches (e.g. friction clutch, visco clutch), transmission (e.g. mechanical transmission, hydraulic fluid\ntransmission)\n5. Power transmission and distribution: drive shafts, cardon joints, differentials",
+    "workload": "1. regular attendance lecture: 15 * 2 * 2 h = 60 h\n2. pre and post processing lecture: 15 * 2 * 3 h = 90 h\n3. examination preparation and presence in examination: 90 h\nIn total: 240 h = 8 LP",
+    "recommendations": "",
+    "literature": "1. Mitschke, M./ Wallentowitz, H.: Dynamik der Kraftfahrzeuge, Springer-Verlag, Berlin, 2004\n2. Braes, H.-H.; Seiffert, U.: Handbuch Kraftfahrzeugtechnik, Vieweg&Sohn Verlag, 2005\n3. Gnadler, R.: Script to the lecture 'Automotive Engineering I'"
+  },
+  "M-MACH-100502": {
+    "id": "M-MACH-100502",
+    "title": "Automotive Engineering II",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Marcus Geimer",
+      "Dr.-Ing. Martin Gießler"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Written exam; duration approximately 1,5 h",
+    "prerequisites": "Only one out of the two modul components \"T-MACH-102117 - Grundlagen der Fahrzeugtechnik II\" and \"T-MACH-114435 -\nAutomotive Engineering II\" is allowed.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students have an overview of the modules, which are necessary for the road holding of a motor vehicle and the power\ntransmission between vehicle bodywork and roadway. They have knowledge of different wheel suspensions, the tyres, the\nsteering elements and the brakes. They know different execution forms, the function and the influence on the driving or brake\nbehavior. They can apply their knowledge effectively in actual practise.They are able to develop the appropriate components\ncorrectly. They are ready to analyze, to judge and to optimize the complex relationship of the different components under\nconsideration of boundary conditions.",
+    "content": "The module provides an overview of:\n1. Chassis: Wheel suspensions (rear axles, front axles, kinematics of axles), tyres, springs, damping devices\n2. Steering elements: Manual steering, servo steering, steer by wire\n3. Brakes: Disc brake, drum brake, comparison of the designs",
+    "workload": "1. regular attendance lecture: 15 * 2 h = 30 h\n2. pre and postprocessing lecture: 15 * 3 h = 45 h\n3. examination preparation and presence in examnation: 45 h\nIn total: 120 h = 4 LP",
+    "recommendations": "",
+    "literature": "1. Heißing, B./Ersoy, M.: Fahrwerkhandbuch: Grundlagen, Fahrdynamik, Komponenten, Systeme, Mechatronik, Perspektiven,\nVieweg-Verlag, Wiesbaden, 2011\n2. Breuer, B./Bill, K.-H.: Bremsenhandbuch: Grundlagen - Komponenten - Systeme - Fahrdynamik, Vieweg-Verlag, Wiesbaden,\n2012\n3. Gnadler, R.: Script to the lecture 'Automotive Engineering II'"
+  },
+  "M-MACH-107148": {
+    "id": "M-MACH-107148",
+    "title": "Automotive Vision",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Martin Lauer",
+      "Prof. Dr.-Ing. Christoph Stiller"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Type of Examination: written exam\nDuration of Examination: 60 minutes",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After having participated in th lecture the participants have gained\nknowledge on modern techniques of signal processing and artificial\nintelligence which can be used to evaluate video sequences, to relate\nthe image content to a spatial context and to interpret the content\nsemantically. This comprises, binocular reconstruction, recognition of\nmovements in video sequences, state space modeling and Bayesian filters,\nand the recognition of road surfaces and object behavior. The\nparticipants have learned to analyze the algorithms mathematically, to\nimplement them in software, and to apply them to tasks in autonomous\ndriving and mobile robots. The participants are able to analyze problems\nin the areas mentioned before and to develop appropriate solutions.",
+    "content": "Sensory detection and interpretation of the environment form the basis for generating intelligent behavior. The ability to see\nopens up completely new perspectives for vehicles and represents a rapidly growing field of research and innovation in\nautomotive technology. The first so-called driver assistance systems have already achieved respectable improvements in terms\nof comfort, safety and efficiency. However, it will probably take several decades of intensive research before automobiles have a\nperformance comparable to the human visual system.\nThe lecture is aimed at students of mechanical engineering and related courses,\nwho wish to acquire an interdisciplinary qualification. It provides a holistic overview of the field of vehicle vision, from the basics\nof image acquisition and kinematic vehicle models to innovative metrological methods of image processing for seeing vehicles.\nThe derivation of metrological methods of image processing is deepened and illustrated using current, practice-relevant\napplication examples.",
+    "workload": "180 hours\ncomposed out of\nhours of lecture: 15*3 h = 45 h\npreparation time prior to and after lecture: 15*5 h = 75 h\nexam preparation and exam: 60 h",
+    "recommendations": "",
+    "literature": "TBA"
+  },
+  "M-ETIT-100400": {
+    "id": "M-ETIT-100400",
+    "title": "Basics of Converter Control",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Andreas Liske"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The success control takes place as part of an online examination in text form with face-to-face supervision (§5, statutes for\nconducting online examinations at KIT) lasting 60 minutes.\nThe exam takes place on KIT computers in a pool room.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "A real power converter consists of significantly more parts than the actual power electronics topology. Students gain an overview\nof all the components of a real power converter. They learn about the typical measurement methods used in power converter\ntechnology and are able to dimension measurement circuits themselves. They learn about the power semiconductors typically\nused and how they are controlled, as well as the circuits commonly used to protect them. In addition, they gain an\nunderstanding of how the sequence control and modulation of the respective topologies are implemented in practice.",
+    "content": "This module aims to bridge the gap between theoretical considerations regarding power converter topologies and their actual\nimplementation in a specific power converter device. Therefore, the content does not explicitly cover topologies, but rather deals\nwith all components necessary for the actual functioning of a power converter, such as measuring devices, implementation of\nsequence control and modulation, and teaching the specific control of power semiconductors and their protective circuits. In\naddition to the theoretical consideration of the respective functional blocks, the specific dimensioning and implementation are\nalso covered.",
+    "workload": "14x lecture (attendance) of 2 h each = 28 h\nExam preparation = 60 h\nTotal approx. 88 h (corresponds to 3 CP)",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100381": {
+    "id": "M-ETIT-100381",
+    "title": "Batteries and Fuel Cells Laboratory",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Andre Weber"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": true,
+    "examType": "Success is assessed in the form of other types of examinations.\nThe grade is made up of the grades for the colloquium before each experiment (20%), attendance and participation (30%) and\nthe experiment reports (50%).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are able to design test procedures for batteries and fuel cells, carry out appropriate tests and document the results.",
+    "content": "The practical course consists of 8 experiments. The experiments cover the design and operation of various fuel cell types and\nsystems. In the course of the practical course, knowledge of operational management, measurement procedures and\nmeasurement data evaluation is imparted. The experimental investigations are carried out on (pre-)series products from well-\nknown manufacturers (Ballard Nexa Power Module, Idatech FCS 1200) as well as on test benches specially developed for\nresearch purposes. Other experiments deal with the electrical characterization and modelling of batteries.\nThe duration of the experiments is between ½ and 1 day. Following the experiment, approximately the same amount of time is\nrequired to evaluate the data obtained. In addition, approx. 5 h of preparation and 6 - 8 h for the creation of the test protocol\nshould be planned. In order to be able to concentrate on the execution of the tests during the practical course, the participants\nreceive test documents in advance. These consist of a short basic chapter, preparatory questions and the actual description of\nthe experiment. Furthermore, information on the systems and measuring devices used is distributed in the form of data sheets\nand manuals.\nThe participants must familiarize themselves with the theory, the measuring methods and devices used and the operation of the\nfuel cell systems before carrying out the test. In addition to the introduction to the test setup, there will be a short knowledge test\non the day of the test. A protocol must be prepared for each experiment.",
+    "workload": "1. preparation time trials: 8 * 5 h = 40 h\n2. Performance of experiments: 8 experiments, in total 44 h\n3. Evaluation of experimental data: 8 * 5 h = 40 h\n4. Preparation of experimental protocols: 8 * 7 h = 56 h\nTotal: 180 h = 6 CP",
+    "recommendations": "The contents of the lectures \"Batteries and Fuel Cells\" and \"Battery and Fuel Cell Systems\" are assumed to be known. Students\nwho have not (yet) attended these lectures must familiarize themselves with the contents in advance.",
+    "literature": ""
+  },
+  "M-ETIT-107005": {
+    "id": "M-ETIT-107005",
+    "title": "Batteries, Fuel Cells, and Electrolysis",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Ulrike Krewer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in the form of:\n1.\n2.\nan ungraded written technical report (approx. 7-10 pages).\na graded written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students gain an understanding of batteries, fuel cells and electrolysis including their application, design, and behavior. They\nacquire in-depth knowledge of the transport and charge transfer processes in them, their impact on performance and design,\nand the characteristics of the most frequent types of batteries, fuel and electrolysis cells. They understand how to analyze and\ncharacterize them using measurement methods and modeling. A practical insight into current areas of application and research\ntopics of electrochemical energy storage and conversion allows them to relate the course work to demands of the society and\nfor R&D. They are able to communicate with specialists from related disciplines in the field of (application of) batteries, fuel cells\nand electrolysis and can actively contribute to the opinion-forming process in society with regard to energy technology issues.",
+    "content": "The course introduces batteries, fuel cells and electrolysis and their use for sustainable mobile and stationary energy supply and\nstorage. The course is divided into five sections. The first part covers the role of batteries, fuel cells and electrolysis for\nrenewable energy storage and electrification of the energy system and the present applications. This is followed by a\nfundamentals part, where the processes in electrochemical cells at open circuit and during operation and their relation to cell\nperformance and behavior are discussed. It contains thermodynamics, kinetics, transport and performance measures. The third\npart deals with the working principle, design and operation of fuel cells and electrolysis and the particularities of the different cell\ntypes. This is followed by a similar part for batteries. Finally, dynamic and stationary methods for characterizing the cells are\ncovered.\nGroup project\nAs part of the coursework, student groups work on the design of a battery, fuel cell or electrolyser for a given application during\nthe semester. This includes literature research on cell type, materials and material data as well as the dimensioning and\nenergetic evaluation of the cell. The results are documented in a short technical report.",
+    "workload": "1.\n2.\n3.\n4.\n5.\n6.\nLecture attendance time: 15 * 2 h = 30 h\nPreparation and follow-up time for lecture: 15 * 5 h = 75 h\nExercise attendance time: 7 * 2 h = 14 h\nPreparation and follow-up time for exercise: 7 * 4 h = 28 h\nGroup work including writing of a report: 33 h\nExam preparation and attendance: included in preparation and follow-up time.\nTotal: 180 h = 6 CP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-107551": {
+    "id": "M-ETIT-107551",
+    "title": "Battery and Fuel Cell Systems",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Andre Weber"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success controll takes place in the form of an oral examination lasting approx. 20 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\nStudents can explain the basic principles required for developing battery and fuel cell systems and apply them using\n•\n•\n•\n•\n•\n•\npractical examples.\nStudents can describe the components of fuel cell systems and plan their integration into fuel cell systems.\nStudents can compare system concepts for fuel cell systems and evaluate their advantages and limitations.\nStudents can analyze battery systems for hybrid and electric vehicles, particularly lithium-ion systems.\nStudents can design appropriate charging and balancing strategies.\nStudents can explain safety concepts at cell and battery level as well as battery management systems (BMS) and\nassess their functionality.\nStudents can describe alternative electrochemical energy storage systems such as redox-flow batteries and\nelectrolyzers and analyze their potential applications.",
+    "content": "The lecture Battery and Fuel Cell Systems covers current developments in the field of fuel cells, electrolyzers and batteries\nconsidering system-relevant aspects of the technologies. In the first part of the lecture, fuel cell systems and their components\nare discussed. The integration of the various types of low- and high-temperature fuel cells into systems and the related\nrequirements for fuel preparation are presented and different system concepts implemented to date are compared. In the\nsecond part of the lecture, battery systems for hybrid and electric vehicles are presented and the batteries and cells used in\nthese are discussed. The focus is on lithium-ion battery systems, with charging strategies and circuits for charge equalization,\nsafety concepts at cell and battery level and BMS systems being discussed. In the last part of the lecture, alternative\nelectrochemical energy storage systems such as redox-flow batteries and electrolyzers are presented.",
+    "workload": "1. Lecture attendance time: 15 * 2 h = 30 h\n2. Preparation and follow-up time for lecture: 15 * 2 h = 30 h\n3. Exam preparation and attendance in the same: 30 h\nTotal: 90 h",
+    "recommendations": "The contents of the lecture \"M-ETIT-107005 – Batteries, Fuel Cells, and Electrolysis\" are assumed to be known. Students can\nfurthermore download a script with useful information on the Ilias site of the lecture “Battery and Fuel Cell Systems”.",
+    "literature": ""
+  },
+  "M-MACH-106903": {
+    "id": "M-MACH-106903",
+    "title": "Biologically Inspired Robots",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Arne Rönnau"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achievement",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are familiar with various design principles of the \"bionics\" method in robotics and can analyze and evaluate models for\nkinematics, mechanics, control, perception and cognition.\nStudents understand the lightweight construction concepts and material properties of natural models. They are familiar with the\nconcepts and methods of lightweight robotics and can describe the resulting effects on the energy efficiency of mobile robot\nsystems.\nStudents can distinguish between different natural muscle types and how they function. They also know the corresponding\nartificial muscle systems and can derive the underlying muscle model.\nStudents know the most important human senses and the associated stimulus processing and information coding. They can\nderive technological sensors that perform the same function in robotics.\nStudents can differentiate the function of a central pattern generator (CPG) from a reflex. They can theoretically derive neuro-\noscillators and explain how they control the movement of a robot. Furthermore, they can generate walking patterns for six-\nlegged robots based on the \"Cruse rules\".\nStudents can distinguish between different types of locomotion and suitable stability criteria for walking movements. They know\nthe most important walking patterns for multi-legged walking robots and can represent these in a gait diagram.\nStudents know the most important algorithms for machine learning methods and can explain their advantages and\ndisadvantages in robotics.\nStudents know the subsumption system architecture and can evaluate the advantages of a reactive system architecture. They\ncan combine \"behaviors\" for biologically inspired robots into behavior networks.\nStudents can apply Mendel's laws and explain the differences between meitosis and mitosis. They can also explain the basic\ngenetic algorithm.\nStudents can identify the greatest challenges in the development of innovative, humanoid robot systems and are familiar with\npossible solutions and successful implementations.",
+    "content": "The lecture biologically inspired robots deals intensively with robots whose mechanical design, sensor\nconcepts or control architecture were inspired by nature. In detail, we will look at solutions from nature\n(e.g. lightweight construction concepts using honeycomb structures, human muscles) and then at robot\ntechnologies that utilize these principles to solve similar tasks (lightweight 3D printed parts or artificial\nmuscles in robotics).\nAfter discussing these biologically inspired technologies, concrete robotic systems and applications from\ncurrent research that successfully utilize these technologies will be presented. In particular, multi-legged\nwalking robots, snake-like and humanoid robots are presented and their sensor and drive concepts are\ndiscussed.\nThe lecture focuses on the concepts of control and system architectures (e.g. behavior-based systems)\nof these robotic systems, with locomotion being the main focus. The lecture ends with an outlook on\nfuture developments and the development of commercial applications for these robots.",
+    "workload": "90 working hours, of which approx:\n•\n•\n•\n30h for attendance time in lectures\n30h for preparation and follow-up time\n30h for exam preparation and participation in the oral exam",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-CIWVT-104288": {
+    "id": "M-CIWVT-104288",
+    "title": "Biomass Based Energy Carriers",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Siegfried Bajohr"
+    ],
+    "organisation": "KIT Department of Chemical and Process Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Learning control is an oral exam lasting approx. 20 minutes.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The course mediates fundamentals and process engineering aspects of biomass conversion and conditioning processes. The\nstudents learn to understand and to evaluate processes for biomass utilization by balancing mass and energy streams. Taking\ninto account regional and global feedstock potentials the students are enabled to choose the most efficient conversion\ntechnologies.",
+    "content": "Fundamentals on biomass and its production pathways to energy carriers like substitute natural gas (SNG), bio diesel or other\nfuels.\nProduction, properties, and characterization of biomass.\nPotential and sustainability; energy demand and supply, potentials today and in the future, CO2 emissions and reduction\npotential.\nUtilization and conversion of biogenic oils and fats.\nBiochemical conversion to liquid products like alcohols; fermentation to biogas and its upgrading.\nThermochemical conversion of biomass via pyrolysis and gasification; examples for synthesis processes (FT-, CH4-, CH3OH-,\nDME-synthesis).",
+    "workload": "•\n•\n•\nAttendance time (Lecture): 45 hrs\nHomework: 75 hrs\nExam Preparation: 60 hrs",
+    "recommendations": "",
+    "literature": "•\n•\nKaltschmitt, M.; Hartmann (Ed.): Energie aus Biomasse, 2. Aufl., Springer Verlag 2009.\nGraf, F.; Bajohr, S. (Hrsg.): Biogas: Erzeugung – Aufbereitung – Einspeisung, 2. Aufl., Oldenbourg Industrieverlag 2013."
+  },
+  "M-MACH-100489": {
+    "id": "M-MACH-100489",
+    "title": "BioMEMS - Microsystems Technologies for Life Sciences and Medicine I",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Andreas Guber"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Written exam (75 min)",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Professional qualification goals:\nStudents will be able to describe basic microtechnical manufacturing processes (e.g. LIGA, silicon microtechnology, laser\nmicromachining) and analyze their suitability for biomedical applications.\nThey are able to compare different microfluidic components (e.g. microchannels, micropumps, microfilters) and explain their\nfunction in the context of µTAS and lab-on-chip systems.\nStudents will be able to explain the properties and possible applications of biomaterials and sterilization processes for\nmicrosystems in medical technology.\nFurthermore, they can evaluate the interactions between microtechnical production and biomedical application and transfer\nthem to selected case studies from the life sciences.\nInterdisciplinary qualification goals:\nStudents will be able to recognize interdisciplinary connections between technology, biology and medicine and argue in a\nstructured manner in discussions. Furthermore, they will be able to critically reflect on current developments and literature in the\nfield of microsystems technology for life science applications and assess their relevance for research and industry.",
+    "content": "The lecture will first address relevant microtechnical manufacturing methods. Then,\nselected biomedical applications will be presented, as the increasing use of\nmicrostructures and microsystems in Life-Sciences und in medicine leads to improved medico-technical\nproducts, instruments, and operation and analysis systems.\nIntroduction into various microtechnical manufacturing methods: LIGA, Micro milling, Silicon Micromachining, Laser\nMicrostructuring, µEDM, Metal-Etching\nBiomaterials, Sterilisation.\nExamples of use in the life science sector: basic micro fluidic strucutures: micro channels, micro filters, micromixers,\nmicropumps, microvalves, Micro and nanotiter plates, Microanalysis systems (µTAS),\nLab-on-chip applications.",
+    "workload": "Literature: 20 h\nLessions: 21 h\nPreparation and Review: 50 h\nExam preparation: 30 h",
+    "recommendations": "",
+    "literature": "M. Madou\nFundamentals of Microfabrication\nTaylor & Francis Ltd.; Auflage: 3. Auflage. 2011\nMenz, W., Mohr, J., O. Paul: Mikrosystemtechnik für Ingenieure, VCH-Verlag, Weinheim, 2005"
+  },
+  "M-MACH-100490": {
+    "id": "M-MACH-100490",
+    "title": "BioMEMS - Microsystems Technologies for Life Sciences and Medicine II",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Andreas Guber"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Written exam (75 min)",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Professional qualification goals:\nStudents will be able to describe modern microfluidic systems (e.g. Lab-CD, microarrays, biochips) and analyze their functional\nprinciples in the context of biomedical applications. They will be able to explain and evaluate biohybrid cell-chip systems and\ntheir use in tissue engineering and drug testing.\nStudents will be able to explain the structure and function of microprocess engineering components (e.g. microreactors,\nmicrofluidic measuring cells) and assess their use in spectroscopic investigations.\nThey can examine specific microsystems technology solutions for medical applications in anesthesia, intensive care medicine\nand infusion therapy and compare their principles of action.\nThey will be able to describe micro- and nanoscale technologies (e.g. in nanosurgery or neuroprosthetics) in a differentiated\nmanner and assess their significance for future therapy concepts.\nInterdisciplinary qualification goals:\nStudents will be able to recognize and reflect on interdisciplinary connections between technology, biology and medicine and\nargue for them in scientific discussions.\nFurthermore, they are able to analyze current scientific publications on applications of microsystems technology in the life\nsciences and critically discuss their relevance.\nThey will be able to reflect on technological developments in the field of microsystems technology with regard to ethical, social\nand regulatory aspects.",
+    "content": "The lecture will first shortly address some relevant microtechnical manufacturing methods. Then,\nselected biomedical applications will be presented, as the increasing use of\nmicrostructures and microsystems in Life-Sciences und in medicine leads to improved medico-technical\nproducts, instruments, and operation and analysis systems.\nExamples of use in Life-Sciences and biomedicine: Microfluidic Systems:\nLabCD, Protein Cristallisation\nMicroarrys\nTissue Engineering\nCell Chip Systems\nDrug Delivery Systems\nMicro reaction technology\nMicrofluidic Cells for FTIR-Spectroscopy\nMicrosystem Technology for Anesthesia, Intensive Care and Infusion\nAnalysis Systems of Person´s Breath\nNeurobionics and Neuroprosthesis\nNano Surgery",
+    "workload": "Literature: 20 h\nLessions: 21 h\nPreparation and Review: 50 h\nExam preparation: 30 h",
+    "recommendations": "",
+    "literature": "Menz, W., Mohr, J., O. Paul: Mikrosystemtechnik für Ingenieure, VCH-Verlag, Weinheim, 2005\nBuess, G.: Operationslehre in der endoskopischen Chirurgie, Band I und II;\nSpringer-Verlag, 1994\nM. Madou\nFundamentals of Microfabrication"
+  },
+  "M-MACH-100491": {
+    "id": "M-MACH-100491",
+    "title": "BioMEMS - Microsystems Technologies for Life Sciences and Medicine III",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Andreas Guber"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Written exam (75 min)",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\n•\nStudents are able to describe relevant microtechnical production methods, explain their functional principle and evaluate\ntheir use for biomedical and biotechnological applications as well as for BioMEMS.\nStudents are able to analyze the use of microstructures and microsystems in life sciences and (bio)medicine using\nspecific examples and assess their influence on medical technology and biotechnology products and systems.\nStudents can explain examples of applications in the life sciences and biotechnology, such as microfluidic systems (e.g.\nlab-on-a-chip, digital microfluidics), biochips, tissue engineering, organ-on-a-chip, drug delivery systems, respiratory gas\nanalysis and neuroprosthetics (e.g. artificial retina, exoskeletons) and compare their technical requirements.\nStudents can explain examples of applications in minimally invasive surgery, neurosurgery, interventional cardiology and\nvascular therapy as well as NOTES and surgical robotics and compare their technical requirements.\nStudents will be able to describe and apply the key requirements of the Medical Devices Act and the principles of quality\nmanagement for medical technology products.",
+    "content": "Examples of use in minimally invasive therapy\nMinimally invasive surgery (MIS)\nEndoscopic neurosurgery\nInterventional cardiology\nNOTES\nOP-robots and Endosystems\nLicense of Medical Products and Quality Management",
+    "workload": "Literature: 20 h\nLessions: 21 h\nPreparation and Review: 50 h\nExam preparation: 30 h",
+    "recommendations": "",
+    "literature": "Menz, W., Mohr, J., O. Paul: Mikrosystemtechnik für Ingenieure, VCH-Verlag, Weinheim, 2005\nBuess, G.: Operationslehre in der endoskopischen Chirurgie, Band I und II;\nSpringer-Verlag, 1994\nM. Madou\nFundamentals of Microfabrication"
+  },
+  "M-ETIT-101834": {
+    "id": "M-ETIT-101834",
+    "title": "Business Innovation in Optics and Photonics",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Werner Nahm"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Type of Examination: examination of another type\nDuration of Examination: 4 group presentations à 20 minutes (approx.)\nModality of Exam: The exam consists of four group presentations. 2nd day: Technology Presentation. 3rd day: Development\nplan presentation. 4th day: Business Canvas presentation. Final presentation: Business pitch. The overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student has an understanding how innovative concepts for optical and photonics products are transferred into a successful\nbusiness development. The student knows about and makes first The student develops practical experience of how to analyse,\ndevelop, and pitch innovative business ideas based on optics & photonics technologies, specifically in the field of spectroscopy\nand hyperspectral imaging. Through a series of short lectures followed by extensive group work over the first week of the block\ncourse the student acquires hands-on experience of business development as lived in a technology start-up environment. The\nstudents are given a basic introduction to spectroscopy and are challenged to propose innovative businesses enabled by\nevolving technology and market needs. To assist in this process the students are introduced to the innovation methodology\n“Deep Tech Exploration” and primed on themes from intellectual property management to effective pitching.\nThe students organize themselves into teams, and work cooperatively within the team to develop and deliver the complete\nbusiness pitch.\nIn summary the students:\n•\n•\n•\nlearn innovation methodologies to assess and optimize the desirability, viability, and feasibility of business ideas.\nare introduced to methods to assess and generate relevant intellectual property.\nget to apply the knowledge gained with extensive group work developing their own business idea and pitch.",
+    "content": "This course is instructed by ZEISS employees, active within the ZEISS corporate innovation ecosystem.\nMonday: Introduction into spectroscopy and the deep tech exploration method\n• Technology introduction, state-of-the-art\n• Scenario Introduction: Found your own start-up\n• Overview Deep Tech Exploration methodology / Select your use case\nTuesday: Deep dive – deep tech exploration\n• Methods and ideation techniques\n• Fundamental principles in Innovation / Value Proposition\n• Define your tech product\nWednesday: Business case development\n• How to protect your business idea with IP?\n• Develop your business idea with the help of the Business Model Canvas\n• Writing a Business plan\nThursday: Storytelling and pitching\n• Entrepreneurial fincance: tech product problem sizing / ballparking\n• Storytelling\n• Preparing an elevator pitch\nFriday-Thursday of second week: Final pitch preparation\n• Self-organized by groups\nFriday of second week: Final pitch",
+    "workload": "Total 120 h, thereof 34 h contact hours and 86 h preparation, homework, and self-studies",
+    "recommendations": "Good knowledge in optics & photonics. Personal motivation and interest for getting deeper into business development aspects,\nmethods and tools. Commitment to active, regular and coninuous participation in the group work.",
+    "literature": ""
+  },
+  "M-ETIT-105616": {
+    "id": "M-ETIT-105616",
+    "title": "Channel Coding: Algebraic Methods for Communications and Storage",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Laurent Schmalen"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The exam is held as an oral exam of approx. 20 min.\nThe module grade of the module corresponds to the grade of the oral exam.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students are able to analyse and assess problems of algebraic channel coding. They can apply methods of algebraic\ncoding theory in the context of communication systems for data transmission and data storage and are able to assess their\nimplementation.Additionally, they will get knowledge to current research topics and research results.",
+    "content": "This course focuses on the formal and mathematical basics for the design of coding schemes in digital communication systems.\nThese include schemes for data transmission, data storage and networking. The course starts by introducing he necessary\nfundamentals of algebra which are then used to derive codes for different applications. Besides codes that are important for\ndata transmission appliations, e.g., BCH and Reed-Solomon-Codes, we also investigate codes for the efficient storage and\nreconstruction of data in distributed systems (locally repairable codes) and codes that increase the throughput in computer\nnetworks (network codes). Real applications are always given to discuss practical aspects and implementations of these coding\nschemes. Many of these applications are illustrated by example code in software (python/MATLAB).",
+    "workload": "1.\n2.\n3.\n4.\nAttendance to the lecture: 15 * 2 h = 30 h\nPreparation and review: 15 * 4 h = 60 h\nPreparation for the exam: included in preparation and review\nIn total: 90 h = 3 LP",
+    "recommendations": "Knowledge of basic engineering as well as basic knowledge of communications engineering.\nPrevious attendance of the lectures \"Communication Engineering I\" and \"Probability Theory\" is recommended.",
+    "literature": ""
+  },
+  "M-ETIT-105617": {
+    "id": "M-ETIT-105617",
+    "title": "Channel Coding: Graph-Based Codes",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Laurent Schmalen"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The success control takes place in the form of an oral examination lasting approx. 25 minutes. Before the examination, there is\na preparation phase of 30 minutes in which preparatory tasks are solved.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will be able to understand and apply advanced and modern methods of channel coding. They get to know various tools\nof modern coding theory for the analysis and optimization of coding schemes, conceptual design approaches of error correction\nbuilding blocks as well as applications in digital communications (for example, 5G). Additionally, they will get knowledge to\ncurrent research topics and research results.",
+    "content": "The course expands on the topics dealt with in the lecture “Verfahren der Kanalcodierung”. The focus is on modern methods\nthat have been brought into practice in the past few years and that achieve the capacity limits postulated by Shannon. For this\npurpose, known techniques have to be extended and new methods have to be learnt additionally. The lecture introduces the\ntheoretical limits very quickly and follows with a discussion on the basic concepts of channel coding, including block codes.\nBased on this, modern error correction methods like LDPC codes, spatially coupled codes, and Polar codes are treated in\ndepth. The lecture ends with a view on the application of channel coding in classical and distributed storage scenarios and in\ncomputer networks. Many of the applications are illustrated with example implementations in software (python/MATLAB).",
+    "workload": "- Lecture attendance time: 15 * 3 h = 45 h\n- Presence time Exercise: 15 * 1 h = 15 h\n- Lecture preparation / revision: 15 * 3 h = 45 h\n- Exercise: 15 * 1 h = 15 h\n- Exam preparation and attendance: 60 h\nTotal workload: approx. 180 h = 6 LP",
+    "recommendations": "Previous attendance of the lectures \"Communication Engineering I\" and \"Probability Theory\" is recommended. Knowledge from\nthe lecture \"Applied Information Theory\" can be helpful. Previous attendance of the lecture “Verfahren der Kanalcodierung” can\nbe helpful, but is not necessary.",
+    "literature": ""
+  },
+  "M-MACH-107636": {
+    "id": "M-MACH-107636",
+    "title": "Circular Factory",
+    "credits": 8,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Gisela Lanza"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "written exam, duration 120 minutes",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students …\n•\ncan name dimensions of circularity and circular economy methods (e.g., repair, refurbish, recycle) and describe them in\n•\n•\n•\n•\n•\n•\ndetail.\ncan describe challenges in planning and control circular factories, including remanufacturing networks and disassembly\nsystems.\nare able to apply guidelines for designing circular products.\ndistinguish data acquisition techniques for metrologically assessing returned products and apply uncertainty-driven\nproduct modeling in circular production systems.\nhave methodical knowledge on learning from human observation and disassembly automatization and apply this\nknowledge to new problem cases.\ncan describe reprocessing methods, including reconditioning and material characterization.\nunderstand the challenges in intralogistics for circular products.\nAfter completing this course, students are able to understand the challenges of establishing a circular economy. They are also\nable to evaluate possible solutions and assess them in relation to these challenges. In particular, students are ultimately able to\nunderstand circular production in a circular factory holistically and to relate it to existing concepts in industrial practice.",
+    "content": "The module provides a comprehensive overview of the principles, methods, and technologies of circular\nproduction and the circular economy within industrial engineering. It conveys a well-founded and\npractice-oriented understanding of how circularity can be systematically implemented across products,\nprocesses, and factories. At the beginning of the module, fundamental concepts of sustainability, circular\neconomy, and circularity dimensions are introduced, including strategies such as repair, refurbishment,\nremanufacturing, and recycling.\nBuilding on these fundamentals, the module addresses the planning and control of circular factories, with\nparticular emphasis on remanufacturing networks, disassembly systems, and reprocessing operations.\nKey challenges related to uncertainty, product variety, and quality variability of returned products are\ndiscussed. Methods for data acquisition and metrological assessment of end-of-life and returned\nproducts are presented, alongside uncertainty-driven product modeling approaches for circular\nproduction systems.\nFurther content focuses on the design of circular products, including design guidelines that enable reuse,\ndisassembly, and material recovery. In addition, the module covers learning from human observation and\napproaches to disassembly automation, enabling students to transfer methodical knowledge to new and\nunfamiliar problem cases. Reprocessing methods such as reconditioning and material characterization\nare systematically explained, and challenges in intralogistics for circular products are analyzed.\nBased on examples from current research and industrial practice, the module highlights the holistic\ninteraction between product design, production systems, logistics, and information flows in circular\nfactories. By integrating these perspectives, students develop a comprehensive understanding of circular\nproduction and are able to evaluate solution approaches in relation to technical, economic, and\norganizational challenges encountered in industrial applications.",
+    "workload": "regular attendance: 62 hours\nself-study: 178 hours\nIn total: 240 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-107440": {
+    "id": "M-ETIT-107440",
+    "title": "Coding of Audiovisual Signals",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Laurent Schmalen"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an oral examination of approx. 20 min.",
+    "prerequisites": "Knowledge of basic engineering mathematics including integral transformations (e.g. M-MATH-101731 - Höhere Mathematik I,\nM-MATH-101732 - Höhere Mathematik II, M-MATH-101738 - Höhere Mathematik III) and probability theory (e.g. M-ETIT-102104\n- Wahrscheinlichkeitstheorie) as well as basic knowledge of communications engineering (e.g. M-ETIT-106372 - Signale und\nSysteme, M-ETIT-106338 - Grundlagen der Datenübertragung).",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will be able to understand and apply the methods and tools of source coding. Students will learn a variety of tools for\nquantizing signals, transforming them into efficient storage and lossless compression methods. They continue to learn the\ntheoretical limitations of source coding and can classify various practical methods based on the theoretical limits of their\nperformance. With the help of numerical methods you can solve problems of source coding yourself.",
+    "content": "The course extends the topics covered in the lecture in Communication Technology I. The focus here is on methods that emerge\nwhen considering source coding. For this purpose, partially known techniques have to be extended, in some cases new\nmethods have to be learned. Source coding is an indispensable tool in communications engineering, on the one hand to\ncompactly represent and prepare multimedia signals for transmission and, on the other hand, to use storage capacity efficiently\nand economically. Source coding provides the direct link between the system user and the actual data transmission. The first\npart of the lecture deals with lossless source coding techniques, such as those used to reduce file size in popular zip format, but\nalso more general lossless methods for the transmission of high quality signals. The second part is devoted to source coding of\nmultimedia signals and, in particular, regards the source coding of audio and video signals. Different methods of quantization of\nmultimedia signals are discussed and then shown how the quantized signals can be encoded in order to obtain as compact a\nrepresentation as possible. In addition to predictive methods, transformation coding is also described. All of the methods are\ndescribed in terms of their use in modern methods of source coding such as MP3, JPEG, H264. Many of the applications are\nillustrated with example implementations in software (python / MATLAB).",
+    "workload": "Attendance lecture: 15 * 2 h = 30 h\nPreparation / Postprocessing Lecture: 15 * 2 h = 30 h\nExam preparation and presence: 30 h\nTotal: 90 h = 3 LP",
+    "recommendations": "Previous visit to the lecture \"Telecommunications I\", \"Probability Theory\" and \"Signals and Systems\" is recommended.\nKnowledge from the lectures \"Applied Information Theory\" is helpful, but not necessary.",
+    "literature": ""
+  },
+  "M-ETIT-100539": {
+    "id": "M-ETIT-100539",
+    "title": "Communication Systems and Protocols",
+    "credits": 5,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Jens Becker",
+      "Prof. Dr.-Ing. Jürgen Becker"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "EPSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The examination consists of a written examination of 120 min.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students are able to:\n•\n•\n•\n•\n•\n•\n•\nknow basic communication systems and to name them\ncategorize different communication systems in regards to possible constraints\nname basic mechanisms of communication systems\ncarry out these mechanisms\nchoose valid mechanisms suitable under given constraints\ndesign a communication system adhering to constraints, specifications and be able to choose suitable methods,\ncomponents, and subsystems\nknow current communication systems and know about their properties, mechanisms and application.",
+    "content": "The lecture will present the physical and technical basics for the design and construction of communication systems.\nProcedures and technical implementations for communication between electronic devices are presented. This includes, among\nother things, modulation methods, line model, arbitration, synchronization mechanisms, error correction mechanisms,\nmultiplexing, communication systems, bus systems and on-chip communication. On the basis of selected practical examples,\nthe application of the lecture contents in real systems is demonstrated.\n•\n•\n•\n•\n•\n•\n•\n•\n•\nInformation: Definition, Representation, Communication\nPhysics: Media, Signals, Mathmatical Descriptions, Line Coupling & Termination, AD Conversion & Sampling, Line\nCodes, Modulation\nData Transmission: Definition & Requirements, Transmission Channels, MultiUse of Channels, Multiplexing, Multiple\nSenders (Arbitration), Multiple Receivers (Addressing), Classification, Interfaces\nBus Systems: Definitions, Protocols, Transmission of Dataframes, Classification\nError Protection: Fundamentals, Errors, Error Detection/Correction: Error Handling\nTopologies: physical, logical, examples\nNetworks: networks vs. busses, structure, Network specific topologies, routing, OSI Model, TCP/IP, Ethernet\nClassification of Com.Systems\nReal World Systems: Automotive Busses, PC Busses, Field Busses, Networks",
+    "workload": "The workload includes:\n1. Attendance in 15 lectures an 7 exercises: 33 h\n2. Preparation / follow-up: 66 h (2 h per unit)\n3. Preparation of and attendance in examination: 24 h + 2 h\nA total of 125 h = 5 LP",
+    "recommendations": "Knowledge of the basics from the lecture \"Digitaltechnik\"is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-107136": {
+    "id": "M-ETIT-107136",
+    "title": "Communications Engineering Lab",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Holger Jäkel"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": true,
+    "examType": "impression is rated.\nThe examination consists of the participation in the experiments and an oral examination of approx. 30 min. The overall",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are able to apply methods of signal processing and communications engineering in the implementation of\ncommunication systems.\nThey are able to carry out communications engineering calculations and use the tools required for simulations methodically and\nappropriately. This enables students to classify the components involved in a communication system in terms of their\nperformance and to understand their interaction in an overall system.",
+    "content": "The practical course consists of 11 experiments and covers the following topics:\nIntroduction to Python, DFT, the sampling theorem, filter design and multirate filters, stochastic signals, digital modulation\nmethods, source coding, channel coding, GNU Radio and Software Defined Radio, OFDM, synchronization algorithms and\noptimization.",
+    "workload": "- Attendance time practical course: 11 * 4 h = 44 h\n- Lecture preparation and follow-up: 11 * 8 h = 88 h\n- Exam preparation and attendance of exame: 48 h\nTotal: 180 h",
+    "recommendations": "Previous attendance of the lectures \"Signals and Systems\" and \"Communications Engineering I\".",
+    "literature": ""
+  },
+  "M-ETIT-106689": {
+    "id": "M-ETIT-106689",
+    "title": "Components of Power Systems",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Leibfried"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of an oral examination lasting approx. 20 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students know the main components of electrical networks and how they interact. Students understand the structure of cable\nsystems in AC and DC voltage technology. The procedure for insulation coordination and overvoltage protection in the high-\nvoltage grid is introduced. They will be able to reproduce key relationships. Students are familiar with the future challenges and\ntrends for selected components and transmission technologies of electrical grids.",
+    "content": "•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nSubstations\no Types of Substations\no Basic Requirements ans Standardization\no Air Insulated Switchgears\no Gas Insulated Switchgears\nPrinciple of Inductive Equipments\no Magnetic Field in an Iron Circuit\no Basic Design of Transformers\nTransformers\no Overview\no Design and Components of Power Transformers and Reactors\nOverhead Transmission Lines\no Development of overhead lines system voltages\no Grid Development with OVH Transmission Lines\no Parts of an Overhead Line\no Comparison DC and AC OVH Transmission Lines\no Effects of OHL on Environment\nCables\no Development of Cable Lines System Voltages\no Grid Development with cable systems\no Parts of Cables Systems\no Comparison DC and AC Cables Systems\no Offshore Cables Systems\no Effects of Cables on Environment\nInsulation Arresters\no Insulation Coordination\no Surge Arresters\nCircuit Breaker and Disconnectors\no Circuit Breakers\no Disconnectors\nPower Cable Accessories and Power Line Monitoring\no Accessories\no Power Line Monitoring\nApplication of Power Electronics in Power System\no Development of Power Electronics\no Fundamental Principles of PE\no Application of PE in Power System\nEnergy Innovation and Trends",
+    "workload": "The workload includes:\n1.\n2.\nattendance in lectures: 30 h\npreparation / follow-up and preparation of and attendance in examination: 60 h\nA total of 90 h = 3 CR",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-107375": {
+    "id": "M-ETIT-107375",
+    "title": "Compressed Sensing and Approximate Message Passing: Theory and Applications",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Laurent Schmalen"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an oral examination of approx. 30 min.",
+    "prerequisites": "Knowledge of probability theory is required (e.g. \"M-ETIT-102104 – Wahrscheinlichkeitstheorie\").",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will learn how to design and analyze efficient algorithms for sparse signal reconstruction, understand performance\nlimits via phase transitions, and explore applications in imaging, communications, and machine learning. By the end of the\ncourse, students will be equipped to apply these tools to real-world problems and enter independent research in related areas.",
+    "content": "This course covers compressed sensing (CS) and approximate message passing (AMP), two powerful frameworks at the\nintersection of signal processing, statistical inference, and optimization. Starting from the fundamentals of sparse signal\nrecovery, the course introduces students to key concepts in high-dimensional statistics, signal processing and Bayesian\ninference that underlie CS and AMP. Special attention will be given to the AMP algorithm and its variants, which provide an\niterative solution to a wide set of linear inverse problems.\nTopics include: Sparsity and underdetermined linear systems, Convex and greedy recovery algorithms (e.g., Basis Pursuit,\nOrthogonal Matching Pursuit),Introduction to high-dimensional probability and random matrices, Approximate message passing\nand state evolution, Bayesian CS and inference in graphical models, Applications in imaging, communications, and machine\nlearning.",
+    "workload": "1.\n2.\n3.\nAttendance to the lecture: 20 * 1,5 h = 30 h\nPreparation and review: 20 * 3 h = 60 h\nPreparation for the exam: included in preparation and review\nIn total: 90 h = 3 LP",
+    "recommendations": "Some familiarity with statistics or machine learning is helpful but not required. Knowledge from the modules \"M-ETIT-100444 –\nAngewandte Informationstheorie\" and \"M-ETIT-102103 – Nachrichtentechnik I\" is helpful.",
+    "literature": ""
+  },
+  "M-INFO-106190": {
+    "id": "M-INFO-106190",
+    "title": "Computational Imaging",
+    "credits": 5,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Beyerer"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achievements (Teilleistung)",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Qualification goal: Students are able to model questions of machine vision optically and algorithmically and to process them\nusing holistic optimization.\nLearning objectives: Students know\n- the essential components of machine vision, their optical modelling and suitable coding methods in the sense of computational\nimaging,\n- methods for emitting, capturing and processing light fields for applications in photography and industrial image processing,\n- the concept of light transport analysis, corresponding modelling, capturing and processing methods and\n- approaches to holistic modelling and optimization of optical image capturing and processing systems.",
+    "content": "Digital image acquisition and processing have revolutionized various fields of applications, e.g., medical imaging or automated\nvisual inspection. Yet, the design of most such systems is still based on the separate and individual optimization of the employed\nillumination, image acquisition and image processing components. By following a holistic approach for system design, modelling\nand optimization, computational imaging methods yield superior performance with respect to the state of the art. After\nintroducing the students into relevant basics of optics and signal theory, the lecture will thoroughly cover various topics of\ncomputational imaging. Accompanying practical exercises will complement the theoretical part of the lecture. The course will\nenable students to adequately model artificial vision problems in the sense of computational imaging in order to obtain\nholistically optimal solutions.",
+    "workload": "Lecture with 2 SWS + 1 SWS exercise\n5 ECTS corresponds to approx. 150 hours\napprox. 30 hours lecture attendance,\napprox. 15 hours exercise attendance,\napprox. 90 hours post-processing and working on the exercises\napprox. 30 hours Exam preparation",
+    "recommendations": "",
+    "literature": "- Ayush Bhandari, Achuta Kadambi, Ramesh Raskar, Computational Imaging, MIT Press, 2022.\n- Jürgen Beyerer, Fernando Puente León, Christian Frese, Machine Vision, Springer, 2015.\n- Joseph. W. Goodman, Introduction to Fourier Optics. 4. Auflage W. H. Freeman, 2017."
+  },
+  "M-MACH-105296": {
+    "id": "M-MACH-105296",
+    "title": "Computational Intelligence",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "apl. Prof. Dr. Ralf Mikut",
+      "apl. Prof. Dr. Markus Reischl"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "see individual course",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students are able to apply the fundamental methods of computational intelligence (fuzzy logic, artificial neural networks,\nevolutionary algorithms) efficiently. They know the basic mathematical foundations and are able to transfer these methods to\npractical applications.",
+    "content": "•\n•\n•\n•\n•\nTerms and definitions Computational Intelligence, application fields and examples\nFuzzy logic: fuzzy sets; fuzzification and membership functions; inference: T-norms and -conorms, operators,\naggregation, activation, accumulation; defuzzification methods, structures for fuzzy control\nArtificial Neural Nets: biology of neurons, Multi-Layer-Perceptrons, Radial-Basis-Function nets, Kohonen maps, training\nstrategies (Backpropagation, Levenberg-Marquardt)\nEvolutionary Algorithms: Basic algorithm, Genetic Algorithms and Evolution Strategies, Evolutionary Algorithm GLEAM,\nintegration of local search strategies, memetic algorithms, application examples\nDeep Learning: History, Architectures, Training strategies, Interpretability and Explainable AI, Use Cases",
+    "workload": "The workload includes:\n1.\n2.\n3.\nattendance in lectures and exercises: 15*2 h = 30 h\npreparation / follow-up: 60 h\npreparation of and attendance in examination: 30 h\nA total of 120 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-105915": {
+    "id": "M-ETIT-105915",
+    "title": "Control of Power-Electronic Systems",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Andreas Liske"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The assessment takes place as part of an online examination in text form with face-to-face supervision (§5, statutes for\nconducting online examinations at KIT) lasting 60 minutes.\nThe exam takes place on KIT computers in a pool room.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are able to design PI controllers for cascade control in the typical applications of power electronic systems (current,\nvoltage, torque and speed control loops). They are familiar with standard design methods (absolute value optimum, symmetrical\noptimum) and the frequency characteristic method. They know about the necessity of control loop extensions such as\nfeedforward control, feedforward control and anti-windup measures. They know the common methods for modeling power\nelectronic systems, as well as DC machines and three-phase machines. Students are familiar with the space vector\nrepresentation and its application in the control of converters in three-phase networks, as well as synchronous and\nasynchronous machines. They are familiar with the control methods of rotor flux-oriented control and know the usual methods\nfor operating three-phase machines (field weakening, MTPA).",
+    "content": "Power electronic circuits are increasingly penetrating all areas of application in electrical energy technology. This ranges from\nthe necessary conversion of electrical energy from decentralized, regenerative energy sources to energy supply networks and\nenergy consumers such as electrical drive technology.\nIncreasing the quality, reliability and energy efficiency of these power electronic systems is largely achieved by controlling the\nelectrical energy quickly and precisely and adapting it to the load.\nThe lecture presents the control methods that enable the regulation of current, voltage, speed or torque. The application of the\nmethods and their effect on the system behavior are discussed using technically relevant solutions from practice. Single-phase\nDC/DC controllers, three-phase \"Active Front End\" and drive solutions with DC machines, synchronous machines and\nasynchronous machines serve as practical teaching examples.",
+    "workload": "56h = 21x V + 7x Ü à 2h\n21h = 21x post-processing of V à 1 h\n12h = 6x preparation of exercises à 2 h\n80h = preparation for the exam\nTotal = 169h = (corresponds to 6 LP)",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-MACH-105348": {
+    "id": "M-MACH-105348",
+    "title": "Control Technology",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Hon.-Prof. Dr. Christoph Gönnheimer",
+      "Dr.-Ing. Philipp Gönnheimer"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Written Exam (60 min)",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students …\n•\n•\n•\n•\nare able to name the electrical controls which occur in the industrial environment and explain their function.\ncan explain fundamental methods of signal processing. This involves in particular several coding methods, error\nprotection methods and analog to digital conversion.\nare able to choose and to dimension control components, including sensors and actors, for an industrial application,\nparticularly in the field of plant engineering and machine tools. Thereby, they can consider both, technical and\neconomical issues.\ncan describe the approach for projecting and writing software programs for a programmable logic control named Simatic\nS7 from Siemens. Thereby they can name several programming languages of the IEC 1131.",
+    "content": "The module control technology gives an integral overview of available control components within the field of industrial\nproduction systems.\nThe first part of the module deals with the fundamentals of signal processing and with control peripherals in the form of sensors\nand actors which are used in production systems for the detection and manipulation of process states.\nThe second part handles with the function of electric control systems in the production environment. The main focus in this\nchapter is laid on programmable logic controls, computerized numerical controls and robot controls. Finally the module ends\nwith the topic of cross-linking and decentralization with the help of bus systems.\nThe module is very practice-oriented and illustrated with numerous examples from different branches.\nThe following topics will be covered:\n•\n•\n•\n•\n•\n•\n•\n•\nSignal processing\nControl peripherals\nProgrammable logic controls\nNumerical controls\nControls for industrial robots\nDistributed control systems\nField bus\nTrends in the area of control technology",
+    "workload": "regular attendance: 21 hours\nself-study: 99 hours",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-CIWVT-104356": {
+    "id": "M-CIWVT-104356",
+    "title": "Cryogenic Engineering",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Steffen Grohmann"
+    ],
+    "organisation": "KIT Department of Chemical and Process Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The examination is an oral examination with a duration of about 30 minutes (section 4 subsection 2 number 2 SPO).",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Understanding the principle and modelling of regenerative cryocoolers; Understanding and applying of essential engineering\nmethods and components for the conception and design of low-temperature plants and cryostat systems; Understanding of\nlaboratory measurement principles, assessing and applying of sensors and instruments for cryogenic measurement tasks and\nanalysing of measurement uncertainties",
+    "content": "Cryogenic applications; Regenerative cooling with cryocoolers; Fundamentals of low-temperature plant and cryostat design,\nincluding fluid mechanics and heat transfer, thermal contacts and thermal insulation, cryogenic pumping of gasses, regulations,\ndesign components and safety; General principles of measurement and uncertainties as well as cryogenic temperature,\npressure and flow measurement",
+    "workload": "•\n•\n•\nAttendance time (Lecture): 45 h\nHomework: 45 h\nExam Preparation: 90 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-105631": {
+    "id": "M-INFO-105631",
+    "title": "Cryptographic Protocols",
+    "credits": 5,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Jörn Müller-Quade"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See Partial Achievements (Teilleistung).",
+    "prerequisites": "See Partial Achievements (Teilleistung).",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student\n•\nknows and understands the primitives and protocols presented in the lecture, their (game-based) security definitions and\n•\n•\nproofs\nknows the real/ideal security notion and can independently analyze the security of protocols in it\nknows and understands basic schemes for secure multi-party computation and their advantages and disadvantages can\napply the schemes for secure multi-party computation",
+    "content": "While classical cryptography is concerned with ensuring authenticity and secrecy against external adversaries, there are now\nalso a large number of interactive protocols between mutually distrusting parties.\nBuilding on the lecture \"Theoretical Foundations of Cryptography\", this lecture introduces such basic primitives, protocols and\ncorresponding security notions.\nIn the first part of the lecture, basic (interactive) building blocks such as commitment schemes, secret sharing, zero-knowledge\nproof systems and oblivious transfer are introduced. Game-based notions and the real/ideal security notion are used to prove\nsecurity.\nBuilding on this, the second part introduces more complex protocols for the secure joint evaluation of arbitrary functions on\nsecret inputs. Both protocols based on secret sharing and so-called \"garbled circuits\" are covered.\nFirst, security against so-called passive adversaries, who honestly follow the protocol and merely attempt to learn additional\ninformation, is considered. Building on this, security against active adversaries, who may deviate from the protocol at will, is\nconsidered.\nAdditional Information\nThe event takes place as an \"inverted classroom\". The material is presented in the form of videos, which are then interactively\ndeepened in the subsequent face-to-face event.",
+    "workload": "Attendance time for inverted classroom videos: 24 h\nPreparation/follow-up: 36 h\nAttendance time in the exercise: 24 h\nPreparation/follow-up of the same: 36 h\nExam preparation and attendance in the same: 30 h\n= 150 h",
+    "recommendations": "Students should be familiar with the contents of the module \"Theoretical Foundations of Cryptography\".",
+    "literature": ""
+  },
+  "M-INFO-107435": {
+    "id": "M-INFO-107435",
+    "title": "Cryptographic Protocols II: Universal Composability",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Jörn Müller-Quade"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achievements (Teilleistung)",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student\n- understands the problems that occur in protocol composition and can explain them using examples.\n- knows and understands the frameworks, security concepts and their properties presented in the lecture and can explain, relate\nand prove\nthese.\n- knows and understands the protocols and proofs presented in the lecture and can reproduce them.\n- can independently apply the techniques presented in the lecture, for example to prove or demonstrate the security or insecurity\nof simple protocols.",
+    "content": "In the lecture \"Kryptographische Protokolle\", methods and building blocks for secure multi-party computation were presented.\nThe security was shown for a single execution and under sequential composition.\nIn reality, however, protocols are executed concurrently - both multiple instances of the same protocol (concurrent composition)\nand multiple, different protocols (general composition) that were designed independently of each other.\nThis protocol composition is not adequately covered by classical security concepts: it may be that the execution of a single\nprotocol instance can be proven to be secure. However, if the same protocol is executed several times simultaneously, all\nsecurity may be lost.\nIn this lecture, we re-visit the topics of the “Kryptographische Protokolle” lecture with a focus on composability. The first part of\nthe lecture therefore introduces the concept of universally composable (UC) security, which depicts the setting of general\ncomposition in which arbitrary protocols are executed concurrently. An important insight here is that UC security can only be\nachieved with the help of trust assumptions, so-called \"setups\". In the second part of the lecture, important protocols that fulfill\nthis strong security are presented, for example for commitments or general secure multi-party computation. At the end of the\nlecture, further composing security notions and related protocols are considered, which are weaker than UC security, but without\nsetups.",
+    "workload": "90 h\nLectures: 24 h\nSelf-study during semester: 31 h\nPreparation for the exam: 35 h",
+    "recommendations": "Students should be familiar with the contents of the modules \"Theoretische Grundlagen der Kryptographie\" (Theoretical\nFoundations of Cryptography) and „Kryptographische Protokolle“ (Cryptographic Protocols I).",
+    "literature": ""
+  },
+  "M-ETIT-100507": {
+    "id": "M-ETIT-100507",
+    "title": "Current Topics of Solar Energy",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Michael Powalla"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "impression is rated.\nSuccess contraol takes placein form of a 30-minute presentation and the preparation of a short written paper. The overall",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "- The students independently develop a knowledge base on a specific topic area of solar energy with prioritization and\ncompression of knowledge.\n- The students create professional presentation slides in common Office software (e.g. MS PowerPoint). Essential components\nof a high-quality scientific slide composition (title slide, table of contents, ... summary, font size, image quality, ...) are discussed.\n- Students pay attention to the correct integration of citations and the use of presentation technology and live streaming\ntechnology.\n- Students use online presentation techniques (MS Teams, ZOOM).\n- Students pay particular attention to time management and presentation structures during presentations.\n- Students are able to give appealing and comprehensible presentations and use body language and rhetoric appropriately.\n- Students are able to manage discussions in a frontal position and master appropriate responses to \"difficult questions\".\n- Students are able to write a short summary of the presentation, taking into account important principles for writing a scientific\nor technical report (text structure, citation of sources, etc.).\n- Students can contribute constructively as an active listener and participant in discussions.\n- Students can analyze, structure and formally describe knowledge about topics in the field of solar energy.\n- Students are able to critically evaluate different presentations.",
+    "content": "The module is an in-depth seminar on solar energy/photovoltaics. In the seminar, students give presentations on various solar\nenergy topics. This involves expanding their specialist knowledge and applying presentation techniques. Students are expected\nto attend regularly, give a 30-minute presentation and prepare a short written paper on the topic.\nThe course is preferably held as a face-to-face event, but can also be held online and as a hybrid event.\nThe course is designed for students of engineering and natural sciences who have already successfully attended a basic lecture\non photovoltaics/solar energy. However, prior knowledge is not a prerequisite. The number of participants is limited. The course\nwill be held in German, but English lectures will also be accepted in exceptional cases.\nOwn suggestions for topics are expressly welcome. Current lecture topics will be provided.\nThe module covers the following topics:\nSubject area I: Solar power and integration into the energy industry\nFrom climate protection to economic efficiency\nSubject area II: Technology and application\nFrom integration in buildings to the energy yield of large-scale systems\nSubject area III: Photovoltaics - fundamentals and materials science\nFrom new solar cell materials, components and manufacturing processes",
+    "workload": "1.\n2.\n3.\n4.\nAttendance time in lectures, exercises: 15*2 h = 30 h\nPreparation/follow-up of the same: 15*0.5 h = 7.5 h\nPreparation of own presentation incl. research and preparation of slides 45 h\nShort written elaboration 7.5 h\nTotal: 90 h",
+    "recommendations": "•\n•\nKnowledge of the basics of solar energy is helpful.\nThe content of the lectures can be physical or engineering, but also economic.",
+    "literature": ""
+  },
+  "M-ETIT-106953": {
+    "id": "M-ETIT-106953",
+    "title": "Cyber-Physical Modeling",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Mike Barth",
+      "Prof. Dr.-Ing. Sören Hohmann"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in the form of a written examination lasting 90 min.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nThe students are familiar with the concepts of Cyber-Physical System.\nStudents understand the need for advanced methods and services in the field of automation.\nStudents can validate different information models and ontologies for their applicability in CPS.\nStudents will be able to model data, information and knowledge or extract them from existing systems.\nThe students know suitable modeling tools and their application.\nThe students understand the general model concept as well as the characteristics of physical and data-based modeling\nand can describe their differences.\nThey can structure complex systems and systematically analyze dependencies of subsystems.\nThey can explain the general procedure of physical and data-based modeling, apply it to technical systems, and analyze\nthe results.\nThey can apply causal and non-causal modeling approaches and distinguish between them.\nStudents have gained an understanding of generalized, cross-domain, physical relationships and can develop models\nfor electrical, mechanical, pneumatic and hydraulic systems.\nThey can describe the relationship between generalized, cross-domain, physical models and basic procedures of\nphysical-based control and explain their advantages / limitations based on basic knowledge of control engineering.\nThe students can estimate and judge the effects of disturbances and real conditions on the identification results.",
+    "content": "This course aims at engineering students that focus on a system-based engineering curriculum, including architectures,\nmodeling & simulation for Cyber Physical Systems. The module is designed to teach students the theoretical and practical\naspects of Digital Twins and their interconnection with their physical counterpart. It encompasses fundamental topics along the\ncomplete process of modeling technical systems. For this purpose, it includes the conception and construction of digital twins\nincluding their model components. In terms of modeling and simulation of physical systems, two major areas will be covered:\nOn the one hand, physical-based modeling techniques which derive formal model equations based on analyzing the physical\nfirst principles of technical systems. This includes generalized equivalent circuits and variational analysis (Euler-Lagrange of the\nfirst kind). On the other hand, data-based identification techniques will be covered which are used to identify concrete model\nparameters for a given technical system from experimental data sets. When combining the identification with an initial, non-\nphysical, structural set up of model equations, the complete process is often referred to as data-based modeling or black-box\nmodeling. Both modeling areas base on available information about the physical system which is structured in Meta- and\nInformation-Models. Examples that are covered in this lecture are Metamodels, e.g. AutomationML or the asset administration\nshell principles. Also, semantic web principles and ontologies will be part of the lecture content.",
+    "workload": "1.\n2.\n3.\nattendance in lectures an exercise: 3+1 SWS (60 h)\npre-/postprocessing of the lecture (90 h)\npreparation of and attendance in the exam: (30 h)\nA total of 180 h = 6 CR",
+    "recommendations": "Interest in Modeling and Simulation of modern Cyber-Physical Systems in combination with concepts of digital twins, system\narchitectures and Co-Simulation.\nSound understanding of engineering mechanics, electrical, mechatronic systems / physics / Software-Engineering should be\nfulfilled to successfully attend the lecture, exercise tasks / case studies, and exam.",
+    "literature": ""
+  },
+  "M-INFO-107197": {
+    "id": "M-INFO-107197",
+    "title": "Deep Learning and Neural Networks",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Jan Niehues"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achievements (Teilleistung)",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will learn about the structure and function of different types of neural networks.\nStudents should learn the methods for training the various networks and their application to problems.\nStudents should learn the areas of application of the different types of networks.\nGiven a concrete scenario, students should be able to select the appropriate type of neural network.",
+    "content": "This module introduces the use of neural networks for the solution of solving various problems in the field of machine learning,\nsuch as classification, prediction, control or inference. or inference. Different types of neural networks are covered and their\nareas of application are illustrated using examples.",
+    "workload": "Lecture with 4 SWS, 6 CP.\n6 LP corresponds to approx. 180 hours, of which\napprox. 60 hours lecture attendance\napprox. 90 hours post-processing (self-study)\napprox. 30 hours exam preparation (self-study)",
+    "recommendations": "Prior successful completion of the core module \"Cognitive Systems\" is recommended.",
+    "literature": ""
+  },
+  "M-INFO-107695": {
+    "id": "M-INFO-107695",
+    "title": "Deep Learning for Computer Vision: Advanced Topics",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Rainer Stiefelhagen"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achievements.",
+    "prerequisites": "See partial achievements.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students gain an understanding of advanced deep learning methods and tasks, especially with regard to their applications in\nimage processing (computer vision). Students are able to apply deep learning methods for special tasks, such as learning with\nlittle training data, changes in the data domain or uncertainty determination.",
+    "content": "Deep convolutional neural networks (CNNs) achieve excellent results in many areas of computer vision, but face challenges in\nreal-world applications, such as dependence on costly annotated training data, high computing power or difficult traceability of\ndecision paths. While for a long time the development of recognition algorithms was primarily driven by high recognition rates on\nlarge and cleanly annotated data sets, today application-relevant goals such as learning with little training data, explainability,\nuncertainty estimation or domain adaptation are becoming increasingly important.\nThe lecture deals with advanced network architectures, learning methods and research areas in the field of deep learning for\ncomputer vision. Among others, the following topics will be covered:\n•\n•\n•\n•\n•\n•\n•\n•\n•\nOverview of deep learning, convolutional neural networks (CNN), problems of modern architectures\nInterpretability and explainability of CNNs\nUncertainty in deep learning\nLearning with little training data\nEfficient architectures\nAdvanced architectures (transformers, graph neural networks)\nSynergies of computer vision and language models\nGenerative Adversarial Networks (GANs)\nContinuous learning",
+    "workload": "Attendance of the lectures: approx. 20 hours\nPreparation and follow-up of the lecture: approx. 30 hours\nExam preparation: approx. 40 hours\nTotal: approx. 90 hours",
+    "recommendations": "Knowledge of deep learning basics is strongly recommended.",
+    "literature": ""
+  },
+  "M-INFO-107230": {
+    "id": "M-INFO-107230",
+    "title": "Design and Architectures of Embedded Systems (ESII)",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jörg Henkel"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achievements (Teilleistung)",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student learns methods for mastering complexity and applies these methods to the design of embedded systems. He/she\nevaluates and selects specific architectures for embedded systems. Furthermore, the student receives an introduction to current\nresearch topics.",
+    "content": "Nowadays, it is possible to integrate several billion transistors on a single chip and thus realize complete SoCs (systems-on-\nchip). The trend towards being able to use more and more transistors continues unabated, meaning that the complexity of such\nsystems will also continue to increase. Computers will increasingly be ubiquitous, i.e. they will be integrated into the\nenvironment and will no longer be perceived as computers by humans. Examples include sensor networks, electronic textiles\nand many more. However, the physically possible complexity will not be readily achievable in practice, as there is currently a\nlack of powerful design processes capable of handling this high level of complexity. Powerful ESL tools (\"Electronic System\nLevel Design Tools\") and novel architectures will be required. The focus of this lecture is therefore on high-level design methods\nand architectures for embedded systems. Since the power consumption of (mostly mobile) embedded systems is of crucial\nimportance, one focus of the design methods will be on the design with regard to low power consumption.",
+    "workload": "90 hours:\n30 hours of lectures (15 weeks*2 hours)\n30 hours of self study (15 weeks*2 hours)\n15 hours of deepening (coding low level C and embedded C) to grasp the theory with practical\n15 hours exam preparation",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100515": {
+    "id": "M-ETIT-100515",
+    "title": "Design of Electrical Machines",
+    "credits": 5,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Martin Doppelbauer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in the form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are able to derive all the specifications required for the design of an electrical machine from the framework data of the\ntarget application. On this basis, they can develop the electromagnetic design of a suitable electric machine using analytical and\nnumerical methods.",
+    "content": "The lecture teaches the basics of calculating and designing electrical machines.\nParticular emphasis is placed on the generation of rotating fields and forces, the various windings and the magnetic circuit, from\nwhich the various inductances are then calculated.\nSeparate chapters deal with numerical field calculation, the system equations of rotating field machines and the calculation of\nlosses and efficiencies.\nThe lecture concludes with two chapters on the calculation of harmonic effects using harmonic field theories, including magnetic\nnoise.",
+    "workload": "14x lecture + 7x exercise 1.5 h each = 31.5 h\n14x follow-up of the lecture à 1 h = 14 h\n7x preparation of the exercise à 3 h = 21 h\nPreparation for the exam = 80 h\nTotal = 146.5 h (corresponds to 5 CP)",
+    "recommendations": "Module: Elektrische Maschinen und Stromrichter",
+    "literature": ""
+  },
+  "M-ETIT-100541": {
+    "id": "M-ETIT-100541",
+    "title": "Detectores for Applications in Space and Astronomy",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Theo Scherer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Sucess control takes place in form of an overall oral examination lasting approx. 20 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completing the module, students are able to assign radiation sources and their function to an electromagnetic spectrum of\nastrophysical objects and can explain the structure and operating modes of detectors for the detection of visible light, radio\nwaves, microwaves, IR, THz radiation, X-rays and g-radiation. At the same time, they are able to explain the technology of the\nconstruction (functionality), manufacture and operation of such detectors. The transfer of this knowledge enables students to\ntackle their own detector developments. In addition, they will learn about readout electronics, the cryogenics required to cool the\nelements and system integration in radio antennas and satellites (earthbound and in space) and will be able to transfer this\nknowledge to new detector systems to be developed in their later professional life. Classical and new detector principles are\ntaught in the same way.",
+    "content": "The lecture imparts knowledge about the function, production and system integration of modern integrated detector circuits for\nthe frequencies used and to be detected in astronomy and space travel in the range from 1 GHz to 5 THz. Fast semiconducting\ncomponents (HEMTs, Schottky diodes, etc...) as well as superconducting integrated measuring systems based on SIS-\nJosephson mixers or so-called hot electron bolometers (HEBs) are used for this purpose. The structure widths of these\ncomponents are in the micrometer or nanometer range, depending on the application. The lecture also covers system\nintegration in satellites or earthbound telescopes in detail using existing instruments worldwide. The function and design of X-ray\ndetectors for future space missions based on TES/SQUID will be explained as well as modern kinetic inductance detectors\n(KIDs), WIMP and neutrino detectors for the field of astroparticle physics and cosmology.\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nAstrophysical radiation sources in space, frequency ranges.\nSemiconductor detectors.\nSIS mixers for radio telescopes.\nHot electron bolometer (HEB).\nSystem integration and high-frequency electronics (readout circuits, amplifiers, filters, etc...).\nFilter MEMS.\nExisting instruments worldwide.\nFuture large-scale projects (SOFIA, HERSCHEL, ALMA).\nDetectors for X-rays (TES/SQUID) and astroparticle physics.\nKinetic inductance detectors (KID).\nNeutrino and WIMP detectors.",
+    "workload": "The workload in hours is broken down below:\n1. attendance time in the lecture 18 h\n2. preparation and follow-up work 24 h\n3. exam preparation and attendance 70 h",
+    "recommendations": "Basic knowledge of physics and electrical engineering",
+    "literature": ""
+  },
+  "M-ETIT-107365": {
+    "id": "M-ETIT-107365",
+    "title": "Digital Circuit Design",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Ivan Peric"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in form of an oral examination (approx. 20 minutes) and a written report with the results of the\nexercises. Details will be given during the lecture.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The course \"Design of Digital Circuits\" is intended for students of electrical engineering, computer science, and related fields\nwho wish to gain in-depth knowledge of digital circuits and their design processes.\nUpon completion of the course, students will be able to design digital circuits at both the gate- and system level, utilize CMOS\ntechnologies, perform synthesis and place and route using Cadence tools.\nThe course provides an in-depth understanding of digital circuit technology and its practical applications. Participants will learn\nthe implementation of digital logic circuits and modern design and synthesis processes. Special emphasis is placed on practical\nimplementation using CMOS technology. The course covers both combinational and sequential circuits, memory elements, and\ndigital design flows.",
+    "content": "This course covers the fundamentals of digital electronics and chip design, beginning with Boolean algebra, logic gates, and\ncircuit realization. It introduces CMOS technology, explaining the structure and behavior of NMOS and PMOS transistors, CMOS\ninverters, and the design of logic gates like NAND, NOR, and multiplexers. Students learn about combinational and\nsequential circuits, including flip-flops, latches, memory cells, and their timing constraints such as setup and hold times.\nVarious memory architectures are discussed, such as SRAM, DRAM, Flash, and emerging technologies like FeRAM/MRAM.\nThe course also explores adders, counters, and shift registers. Digital communication topics include serial/parallel\ntransmission, PLLs, and clock data recovery. The digital design flow is presented in detail, including synthesis, floorplanning,\nplacement, and routing with emphasis on reliability and performance. Throughout the course, students apply concepts using\nCadence tools and Verilog to design, simulate, and layout digital circuits in practical exercises.\nIn the exercises, digital design will be performed using Cadence software tools. The circuits will be designed and simulated\nusing the Verilog language. A netlist will be generated using the synthesis tool, and the layout of a chip will be created using the\nPlace & Route tool.",
+    "workload": "1.\n2.\n3.\n4.\nAttendance time in lectures 30 h\nAttendance time in exercises 15 h\nPreparation/follow-up of the same 25 h\nExam preparation 50 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-102266": {
+    "id": "M-ETIT-102266",
+    "title": "Digital Hardware Design Laboratory",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Becker"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": true,
+    "examType": "Success control takes place in the form of another type of examination and consists of an oral examination of approx. 15 min. as\nwell as exercises in form of laboratory reports and/or oral interrogations during the laboratory. The overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "The following conditions have to be fulfilled:\n1.\nThe module M-ETIT-102264 - Digital Hardware Design Laboratory must not have been started.",
+    "exclusions": [
+      "M-ETIT-102264"
+    ],
+    "requires": [],
+    "competenceGoal": "The students\n•\n•\n•\n•\n•\nknow the practical usage of FPGAs\nare able to efficiently use modern hardware development tools\nknow how to describe hardware in VHDL\ncan self dependently draft and implement VHDL-Components based on given specifications\nare able to practically apply common concepts and principles in hardware development (e.g. pipelining)",
+    "content": "Grouped in teams of two, the students are introduced to the design of complex hardware/software systems. The laboratory\ntakes place in weekly 4 hour laboratory sessions. During the first few sessions, the students are introduced to the\nimplementation of VHDL-components, the usage of modern synthesis and simulation tools as well as basic knowledge on\nFPGAs.\nBased on those fundamentals, students develop the different components of an image processing system in the second part of\nthe laboratory. This includes implementation and testing steps for the individual components as well as the integration to an\noverall system. Finally, the hardware system can be realized on FPGA-Hardware and tested with live camera images.",
+    "workload": "The amount of work is distributed as follows:\n•\n•\n•\ntime of presence during the laboratory sessions: 11 sessions with 4h = 44h\nPreparation and wrap-up: 6h per laboratory session = 66h\nPreparation for the examination: 40h\nIn total 150h (25h per credit point).",
+    "recommendations": "Previous knowledge in design and design automation for electronic systems (e.g. from the lectures HSO, No. 2311619 or HMS,\nNo. 2311608) is recommended.",
+    "literature": ""
+  },
+  "M-ETIT-102264": {
+    "id": "M-ETIT-102264",
+    "title": "Digital Hardware Design Laboratory",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Becker"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": true,
+    "examType": "•\nSuccess is assessed in a final oral examination (approx. 30 min) and during the laboratory sessions on the basis of test\n•\nprotocols.\nThe oral exams are taken in groups of two students. Each session takes approx. 30 minutes with approx. 15 minutes\nper student.\n•\nDuring the laboratory the students have to write seven reports with around 1 page per report.",
+    "prerequisites": "The module M-ETIT-102266 Digital Hardware Design Laboratory must not have been started or completed.",
+    "modeledPrerequisites": "The following conditions have to be fulfilled:\n1.\nThe module M-ETIT-102266 - Digital Hardware Design Laboratory must not have been started.",
+    "exclusions": [
+      "M-ETIT-102266"
+    ],
+    "requires": [],
+    "competenceGoal": "Within this course, students will:\n•\n•\n•\n•\n•\n- get familiar with the practical application of FPGAs,\n- use modern development tools,\n- learn to describe digital hardware in VHDL,\n- independently design and implement VHDL components based on specified requirements,\n- apply common concepts and principles of hardware development, such as pipelining, in practice.",
+    "content": "During the internship, students work in teams of two to learn how to design complex hardware/software systems. The framework\nconsists of weekly 4-hour lab sessions. In the first few lab sessions, students learn how to implement VHDL components, use\nmodern synthesis and simulation tools, and perform basic operations with FPGAs in introductory exercises.\nBased on these fundamentals, students in the second project-oriented part of the internship gradually build the various\ncomponents of an image processing system as a VHDL description. This includes the implementation and testing steps for the\nindividual components as well as their successive integration into an overall system. Finally, the overall system can be\nimplemented on FPGA hardware and tested using live camera data.",
+    "workload": "Distribution of the workload:\n•\n•\n•\nAttendance time in the course: 11 laboratory sessions of 4h each = 44h\nPreparation and follow-up: 6h per lab session = 66h\nExam preparation: 40h\n150h in total. This corresponds to 6LP of 25h each.",
+    "recommendations": "Previous knowledge of the design and design automation of electronic systems (e.g. courses HSO, No. 2311619 or HMS, No.\n2311608) is recommended.",
+    "literature": ""
+  },
+  "M-ETIT-106690": {
+    "id": "M-ETIT-106690",
+    "title": "Digital Real Time Simulations for Energy Technologies",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of other types of examination. It consists of an assessment from an exercise on HiL and an\noral overall examination (approx. 15 minutes) explaining the exercise results. The overall impression is evaluated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "To give bachelor’s and master’s degree students an overview of the need, concept, implementation and execution of Hardware\nin the Loop (HiL) testing. At the end of the course:\n•\n•\n•\n•\nThe students will be able to understand the setup of HiL systems (Device Under Tests, Real Time simulator, I/O, power\namps for PHiL, interfacing principles and techniques)\nThe students will be able to devise HiL test cases, creating models with an understanding of the trade-off between\nsimulation fidelity and computational resources.\nThe students can interface Device Under Tests, running Real Time simulations and executing tests.\nThe students are able to perform an independent HiL project and deliver HiL experimental results.",
+    "content": "Lesson 1: Introduction\n•\n•\n•\n•\nOverview of control system development process (V-cycle and variants).\nReal-time simulation concept – What does it mean simulating in real time?\nBasic concepts of Real Control Prototyping and Control-Hardware in the Loop.\nBasic concept of Power-HiL\nLesson 2: Introduction to real time simulation (1/2)\n•\n•\n•\n•\n•\n•\nInitial definitions for real time simulations: Wall-clock time, simulation time, hard real-time and soft real-time.\nOff-line simulation software solvers\nNumerical integration, DAE solvers, numerical stability. Complexities induced by switches.\nDistinctions between state-space based and nodal approach-based solvers for CPU\nDifference between CPU and FPGA modeling\nNumerical examples & practical implementation of solvers\nLesson 3: Modelling in real time: grid modelling\n•\n•\n•\n•\nModeling for HiL, level of model detail vs computational performance\nproblems with parallelization due to latencies in transferring data, I/O latency considerations.\nIntroducing transmission line decoupling, stublines, ITM and other techniques\nIntroducing the State-Space Nodal approach\nLesson 4: Modelling in real time: power electronics\n•\n•\n•\nModelling components for fast transients (e.g, switches), average models, full switching models\nInterface FPGA-based with CPU-based modelling\nPractical examples and applications\nLesson 5: Modelling in real time: multi-time-scale networks\n•\n•\n•\nModeling for HiL: different time-scales phasor/RMS, EMT, fast EMT on FPGA.\nStability issues associated with multi-time-scale hybrid simulation (e.g. RMS/EMT or EMT on CPU and FPGA.\nMulti-time-scale simulation with phasor/EMT/FPGA\nLesson 6: Rapid Control Prototyping (RCP)\n•\n•\n•\n•\nMain Concept and benefits from RCP, Applications\nGenerating a code from Simulink and implementation in the real time simulator\nFPGA-based RCP, Datalogging\nDemonstration in classroom\nLesson 7: Controller Hardware In the Loop\n•\n•\n•\nDefinition of HIL and testing opportunities\nAnalog and digital I/O in real time simulators\nDesigning an HiL test – identifying controller functionality to be tested, creating appropriate model and test sequences,\nidentifying potential failures and testing in failure/off-design conditions, use of test automation\nLesson 8: Power Hardware In the Loop\n•\n•\n•\n•\n•\nIntroduction to PHIL\nPHIL equipment: power amplifiers. 2Q/4Q applications, specifying power amplifiers\nInterface algorithms between Real Time Simulation and the Device Under Test\nStability vs. interface accuracy, current state of the art\nImpedance-based stability analysis",
+    "workload": "The workload includes (2 SWS):\nattendance in lectures and exercises: 15*2 h = 30 h\npreparation / follow-up: 15*4 h = 60 h\nfinal project, preparation of and attendance in examination: 30 h\nA total of 120 h = 4 CR",
+    "recommendations": "•\n•\nGood knowledge of power electronics, linear control theory, and power systems is required.\nGood knowledge of Matlab/Simulink simulation environment is required.",
+    "literature": ""
+  },
+  "M-ETIT-103450": {
+    "id": "M-ETIT-103450",
+    "title": "Digital Signal Processing in Optical Communications – with Practical Exercises",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Sebastian Randel"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The exercise sheets and the oral questionnaire are used to rate other types of examinations. The overall impression is\nassessed. Duration about 20 minutes.",
+    "prerequisites": "Basic knowledge of optical communication systems, as given, for example, in the modules \"Optical Networks and Systems\",\n\"Optoelectronic Components\", or \"Optical Transmitters and Receivers\".\nThe module \"M-ETIT-103815 - Digitale Signalverarbeitung für optische Kommunikationssysteme\" must not have been started.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\nThe students understand the functioning of modern optical communication systems, which combine electro-optical\ntechnologies with digital signal processing.\nYou are able to independently implement and test algorithms from digital signal processing as well as suitable simulation\nand test environments in a suitable scripting language (e.g. Matlab or. Python).\nFurthermore, they can estimate the influence of interfering effects occurring in the glass fiber such as chromatic\ndispersion and polarization mode dispersion.\nYou are also able to estimate the complexity and power consumption of the resulting logic circuits.",
+    "content": "•\n•\n•\n•\nThe module deals with algorithms from digital signal processing that are used in broadband optical communication\nsystems. Practical exercises in which the students implement algorithms independently form an essential part of the\nmodule.\nIn lectures there will be an introduction to the development of digital coherent transmitters and receivers. Building on\nthis, essential function blocks such as the dispersion compensation, the adaptive equalization of polarization mode\ndispersion as well as carrier and clock recovery are discussed.\nIn the exercises, these function blocks are to be implemented in software (Matlab, Octave).\nIn addition, individual examples show how digital signal processing algorithms are described in hardware (Hardware\nDescription Language - HDL) and how their complexity scales.",
+    "workload": "Approximately 180h workload of the student. The workload includes:\n30h - attendance in lectures\n30h - exercises\n80h - preparation / follow-up\n40h - written exercises and exam",
+    "recommendations": "Knowledge digital signal processing is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-106040": {
+    "id": "M-ETIT-106040",
+    "title": "Digital Twin Engineering",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Mike Barth"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of other types of examination. It consists of a model library developed in the course of a\nsemester-long project in the modeling language Modelica and a presentation of the library lasting 25 minutes. The quality of the\nmodel library is evaluated within the framework of the criteria: documentation, formal correctness, functionality, usability, HMI\nand modeling level of detail. The presentation is evaluated as an additional aspects. The overall impression is evaluated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\nThe students will be able to analyze, structure and formally describe problems in the area of object-oriented physical\n•\n•\n•\n•\n•\n•\n•\n•\nsystem modeling.\nThe students will be able to understand, apply and further develop the Modelica modeling language.\nThe students are able to transfer bidirectionally acting systems into a model.\nThe students are able to transfer physical equations into the modeling environment.\nThe students are able to critically evaluate the different numerical integration methods for their applicability and to use\nthem sensibly.\nThe students are able to create system models and co-simulations using functional mockup units.\nThe students will be able to implement a real system at the appropriate modeling depth for the task.\nThe students will be able to abstract real system properties and, if necessary, decide whether they need to be modeled.\nThe students know suitable simulation tools and their application.",
+    "content": "•\nThis module is designed to provide students with the theoretical and practical aspects of object-theoretic equation-based\n•\n•\n•\n•\n•\nmodeling.\nThis module also provides a definition of the digital twin and its aspects of the management shell.\n◦\nIn this context, a classification of simulation models in the I4.0 VWS takes place.\nBoth system simulation in the Open Modelica Editor (OME) and co-simulation with Functional Mockup Units (FMU) will\nbe covered.\nStudents create a new model library of a mechatronic system in a semester-long project (teams of 3-4 students).\nThe module provides an overview of modern system simulation methods based on bidirectional flow and potential\nmodeling.\nBeyond theoretical and practical modeling, the module imparts the knowledge about practice-relevant modeling levels or\ndepths.\n•\nFurthermore, quality standards for simulation models with focus on the engineering of plants/systems are discussed.",
+    "workload": "The workload includes:\n1.\n2.\n3.\n4.\nattendance in lectures an exercises: 10*1,5 h = 15 h\npreparation / follow-up: 15*2 h = 30 h\nImplementation of the model library: 60 h\npreparation of and attendance in the final presentation: 15 h\nA total of 120 h = 4 CR",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100361": {
+    "id": "M-ETIT-100361",
+    "title": "Distributed Discrete Event Systems",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Michael Heizmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\nStudents have sound knowledge in the field of discrete-event systems. They can distinguish discrete-event systems from\ndiscrete-time and continuous-time systems and describe their properties.\nStudents have mastered the basic concepts of Markov theory, the theory of queueing systems and Max-Plus algebra for\nthe analysis and construction of distributed discrete-event systems.\nStudents are able to systematically analyse and formally describe tasks relating to distributed discrete-event systems,\nsynthesize possible solutions and assess the suitability of the various theoretical approaches for solving them.",
+    "content": "following topics:\nThe module deals with the basics of describing and analyzing discrete-event systems. The content of the lecture consists of the\n•\n•\n•\n•\n•\nSystem modeling\n◦\nState model\n◦\nModel classes\n◦\nModeling of discrete event systems, automata\nGraph Theory\n◦\nBasic concepts\n◦\nDescription of graphs by matrices\nMarkov theory\n◦\nStochastic state models of discrete event systems\n◦\nDiscrete-time Markov chains\n◦\nContinuous-time Markov chains\n◦\nEvent processes\n◦\nSemi-Markov processes\nQueueing systems\n◦\nEvent processes and number of customers\n◦\nQueuing systems with Poisson distributed customer flows\n◦\nQueuing systems with general distributions\n◦\nQueueing networks\nMax-Plus Algebra\n◦\nMax-plus algebraic structure\n◦\nMax-plus description of digraphs\n◦\nEigenvalue of the adjacency matrix",
+    "workload": "1.\n2.\n3.\nAttendance time in lectures and exercises: 45h\nPreparation and follow-up of lectures and exercises: 40h\nExam preparation and attendance: 35h\nTotal 120 h",
+    "recommendations": "Knowledge of probabilities and measurement technology (e.g. from the Bachelor's module \"Mess- und Regelungstechnik\") and\nsystem theory (e.g. from the Bachelor's module \"Signale und Systeme\") is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-101847": {
+    "id": "M-ETIT-101847",
+    "title": "Dosimetry of Ionising Radiation",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "PD Dr. Bastian Breustedt"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control is carried out as part of an overall written examination (2 h).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "",
+    "content": "Dosimetry of ionizing radiation The lecture defines the various dose terms used to characterize radiation exposure and the\nunderlying dosimetric system. It describes the methods and techniques of dosimetry for ionizing radiation for various\napplications. The topics covered are:\nIonizing radiation and interactions with matter, biological radiation effects\nCharacterization of radiation fields\nDose terms and your applications\nMethods and techniques for external exposure dosimetry (external dosimetry)\nMethods and techniques for internal exposure dosimetry (internal dosimetry)\nDosimetry applications in medicine Dosimetric laboratories at KIT",
+    "workload": "The workload includes:\nAttendance time in lectures (2 h 15 appointments each) = 30 h\nSelf-study (3 h 15 appointments each) = 45 h\nPreparation / post-processing = 20 h\nTotal effort approx. 95 hours = 3 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-107138": {
+    "id": "M-ETIT-107138",
+    "title": "Electric Drives and Power Electronics Lab",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Martin Doppelbauer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": true,
+    "examType": "Success control takes place in the form of other types of examination. It consists of one oral examination per experiment\n(approx. about 20 min. per person). The overall impression is assessed.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are able to connect power converters and electrical machines to the electrical grid and operate them correctly. They\nimplement current control in a rotating coordinate system. They analyze and document the operating characteristics of direct\ncurrent, induction and synchronous machines through measurements. You will know and operate measuring devices with which\ncharacteristic values, characteristic curves and time curves of electrical and mechanical variables are recorded and saved.",
+    "content": "The aim of the practical course is to use selected examples to guide students in applying and deepening the theoretical\nknowledge acquired in lectures in practice. In almost all experiments, the students deal with the combination of analog and\ndigital electrical signal processing, control engineering methods, a power electronic actuator and an electrical machine to be\ndriven. Specifically, the following 8 experiments are carried out:\n•\n•\n•\n•\n•\n•\n•\n•\nExperiment SoC:\n“Space vector transformation and current control with digital signal processing system (system on chip)”\nExperiment LH:\n“Power semiconductors - measurement of static and dynamic properties of an IGBT and a SiC MOSFET”\nExperiment PSM:\n“Permanently excited synchronous machine - speed control with subordinate current control in the constant flux and field\nweakening range”\nExperiment FAM:\n“Field-oriented control of the three-phase induction machine”\nExperiment DAB:\n“Getting to know topology, modulation methods and modeling”\nPV experiment:\n“Operation of solar modules at the point of maximum energy yield and integration of a lithium-ion storage system”\nMMC experiment:\n“Implementation of a cascaded MMC control system consisting of energy and current controllers”\nVASM experiment:\n“Measurement of the induction machine on the test bench to determine the machine parameters”",
+    "workload": "180h\n•\n•\n•\nAttendance time in the internship with interview: 40 h\nPreparation time: 125 h\nFollow-up time: 15h",
+    "recommendations": "The courses\n- Regelung elektrischer Antriebe und\n- Leistungselektronik\nshould have been completed or at least heard in parallel to the practical course.",
+    "literature": ""
+  },
+  "M-ETIT-106971": {
+    "id": "M-ETIT-106971",
+    "title": "Electric Drives for E-Mobility",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Martin Doppelbauer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The success control takes place in the form of a written examination of 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students will be able to assess the structure, performance and behavior of full-electric and hybrid drive systems for all types\nof traction applications from pedelecs to cars, utility vehicles, railroads and even large propulsion systems in ships. They can\ncritically evaluate the different drive systems and components.\nThe students will be able to understand the latest developments in electric drive technology and future possibilities.",
+    "content": "applications.\nTable of content:\nThis module is designed to provide students with the theoretical and practical aspects of electric drives for electric traction\n•\n•\n•\n•\n•\n•\n•\nOverview: Electric Drives in Hybrid and Electric Vehicles\nFundamentals of Rotary Field Machines\nFundamentals of Power Electronics\nDesign of Synchronous Machines\nDesign of Induction Machines\nNoise, Vibration and Harshness (NVH)\nThermodynamics of Electric Machines",
+    "workload": "The workload includes (3 SWS):\n1.\n2.\n3.\n4.\nattendance in lectures 15*2 h = 30 h\nAttendance in exercises: 15*1 h = 15 h\npreparation / follow-up: 15*3 h = 45 h\npreparation of and attendance in examination: 30 h\nA total of 120 h",
+    "recommendations": "Basic knowledge in the fields of electric machines (types and operation of three-phase machines), electric power systems\n(complex alternating current theory, three-phase systems, equivalent circuit diagrams) and electronic drives (three-phase bridge\ncircuit, modulation) is strongly recommended (e.g. as given in the BSc-modules \"M-ETIT-107133 - Lineare Elektrische Netze\",\n\"Elektromagnetische Felder\", \"M-ETIT-106419 - Elektrische Energietechnik\" and \"M-ETIT-102124 - Elektrische Maschinen und\nStromrichter\").\nBasic knowledge in the field of hybrid and electric vehicles is helpful (e.g. as given in the BSc-module components “T-\nETIT-113612 - Hybrid and Electric Vehicles” or \"T-ETIT-100784 – Hybride und elektrische Fahrzeuge\").",
+    "literature": ""
+  },
+  "M-ETIT-101917": {
+    "id": "M-ETIT-101917",
+    "title": "Electric Power Generation and Power Grid",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Bernd Hoferer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Type of Examination: oral exam\nDuration of Examination: approx. 20 minutes",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students\n•\n•\n•\n•\n•\n•\nare familiar with characteristics of different types of power generation\nare able to evaluate the performance of different types of power generation\ncomprehend the challenges in power transmission systems due to volatile power generation.\ncan derive solutions for a future power generation pool and power grid\nare able to calculate the efficiency factor of power generation systems\nknow how to apply mathematical concepts like load flow calculation and short-circuit calculations",
+    "content": "I. Energy resources and energy consumption\nII. Conversion of primary energy in power plants; thermo-dynamical fundamental terms, processes in steam power plants;\nsteam power plants components; flue gas cleaning\nIII. Synchronous machines\nIV. Thermal power plants (fossil-fueled steam generation, nuclear-fueled steam generation)\nV. Renewable energy generation (hydro-electric, wind, solar)\nVI. Transmission systems (AC power transmission, DC power transmission)\nVII. Load flow calculations",
+    "workload": "total 90 h, hereof 30 h contact hours and 60 h homework and self-studies",
+    "recommendations": "",
+    "literature": "Schwab; Electric energy systems;\nFink, Beaty; Standard handbook for electrical engineers"
+  },
+  "M-ETIT-105394": {
+    "id": "M-ETIT-105394",
+    "title": "Electric Power Transmission & Grid Control",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Leibfried"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "The following conditions have to be fulfilled:\n1.\nThe module M-ETIT-105394 - Electric Power Transmission & Grid Control must not have been started.",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are familiar with the functionality and physical basics as well as the components of AC and DC of electric\npower transmission systems. They will be able to calculate transmission characteristics and carry out a basic\ndesign. They are also familiar with the functioning of grid control.",
+    "content": "The lecture initially deals with the characteristics and stability of electrical energy transmission. A central chapter\ndeals with HVDC technology as a method for transmitting high power. FACTS elements, which are used to make\nenergy transmission more flexible, are then dealt with. Finally, the dynamics of power plants and grids are\ndiscussed.",
+    "workload": "The workload includes:\n1. attendance in lectures and exercises: 30 + 30 h = 60 h\n2. preparation / follow-up: 120 h\nA total of 180 h = 6 CR",
+    "recommendations": "•\n•\n•\n•\nBasic Knowledge in electrical network analysis\nBasic Knowledge about the functionality of electric grid components\nBasic Knowledge about the calculations of three-phase systems\nBasic Knowledge about symmetrical components, Park-transform and Clark-transform",
+    "literature": ""
+  },
+  "M-ETIT-105883": {
+    "id": "M-ETIT-105883",
+    "title": "Electrocatalysis",
+    "credits": 5,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Ulrike Krewer",
+      "Dr. Philipp Röse"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students have a well-grounded knowledge of electrocatalytic energy technologies for the conversion and storage of electrical\nenergy in chemicals (Power-to-X). They know the functional principle of state-of-the-art electrocatalysts in fuel cells and\nelectrolysis and understand the underlying electrochemical and physical processes. Participation in the course enables the\nstudents to assess and understand the relationship between electrode structure and their selectivity, performance and stability.\nFurthermore, the students learn the theoretical basics of experimental methods that are relevant for the investigation of model\nelectrodes and technical cells.",
+    "content": "Lecture:\n- Basics, concepts and definitions within the Power-to-X context: Catalysis and electrocatalysis; activity and selectivity;\nfundamentals of electrochemical processes, elementary steps involving adsorbed intermediates.\n- The role of intermediates: Electron transfer without intermediates, multi-electron transfer with intermediates; differences in\nadsorption energies of intermediates and active surfaces\n- Theoretical treatment of electron transfer reactions: Tunneling processes at electrodes; electron transfer reactions (Marcus\ntheory); role of electrode material on rate of electrode reaction.\n- Measurement methods for the investigation of electrocatalytic reactions: Determination of the effective surface;\nDetermination of the activity of electrochemically active species; Determination of the selectivity; Operando measurement\nmethods\n- Technically important electrocatalytic reactions and processes: The oxygen reduction reaction (ORR) and evolution\nreaction (OER); the chlorine evolution reaction.",
+    "workload": "attendance in lectures: 30 * 45 min. = 22,5 h\nattendance in exercises: 15 * 45 min. = 11,25 h\npreparation and follow up of the lectures and practice: 76.25 hours (approx. 1.75 hours per lecture or exercise)\npreparation of examination and attendance in examination: 40 h\nA total of 150 h = 5 CR",
+    "recommendations": "The participation of the module \"Electrochemical Energy Technologies\" is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-107648": {
+    "id": "M-ETIT-107648",
+    "title": "Electrolyzers and their Electrodes",
+    "credits": 3,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "TT-Prof. Dr. Johanna Schröder"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The success controll takes place in form of an other type of examination and consists of a written report on the scientific topic\n(max. 20 pages) and a presentation followed by a discussion, 15 minutes each. The overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completing the seminar, the students will be able to independently familiarize themselves with an engineering topic in the\nfield of electrolysers and their electrodes, identify relevant aspects in the associated literature, and summarize them in the form\nof a written report and a presentation.",
+    "content": "In this seminar, students independently work on a scientific topic from current research fields on electrolyzers and their\nelectrodes and prepare a written report and present it in order to improve their skills in literature research, scientific writing, and\npresentation in front of a scientific audience. First, there will be an introduction to literature research, scientific writing, and\npresentation techniques to guide the students towards independence. Then students will select a topic related to electrolyzers\nand their electrodes for their literature research and prepare a scientific report and presentation on this topic.",
+    "workload": "1.\n2.\n3.\nAttendance in the seminar: 15*2 h = 30 h\nPreparation of seminar report: 30 h\nPreparation of seminar presentation: 30 h\nTotal: 90 h = 3 LP",
+    "recommendations": "Knowledge of the fundamentals of batteries, fuel cells, electrolysis, or electrocatalysis is helpful but not necessary.",
+    "literature": ""
+  },
+  "M-ETIT-100386": {
+    "id": "M-ETIT-100386",
+    "title": "Electromagnetics and Numerical Calculation of Fields",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Yongbo Deng",
+      "Prof. Dr. Ulrich Lemmer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control is carried out in the form of a written test of 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students with very different background in electromagnetic field theory will be brought to a high level of comprehension. They\nwill understand the concept of electric & magnetic fields and of electric potential & vector potential and they will be able to solve\nsimple problems of electric & magnetic fields using mathematics. They will understand the equations and solutions of wave\ncreation and wave propagation. Finally the student will have learnt the basics of numerical field calculation and be able to use\nsoftware packages of numerical field calculation in a comprehensive and critical way.\nThe student will\n•\n•\n•\n•\n•\n•\nbe able to deal with all quantities of electromagnetic field theory (E, D, B, H, J, M, P, ...), in particular: how to calculate\nand how to measure them,\nderive various equations from the Maxwell equations to solve simple field problems (electrostatics, magnetostatics,\nsteady currents, electromagnetics),\nbe able to deal with the concept of field energy density and solve practical problems using it (coefficients of capacitance\nand coefficients of inductance),\nbe able to derive and use the wave equation, in particular: to solve problems how to create a wave and calculate\nsolutions of wave propagation through various media,\nbe able to outline the concepts, the main application areas and the limitations of methods of numerical field calculation\n(FDM, FDTD, FIM, FEM, BEM, MoM, TLM)\nbe able to use one exemplary software package of numerical field calculation and solve simple practical problems with it.",
+    "content": "This course first gives a comprehensive recap of Maxwell equations and important equations of electromagnetic field theory. In\nthe second part the most important methods of numerical field calculation are introduced.\nMaxwell’s equations, materials equations, boundary conditions, fields in ferroelectric and ferromagnetic materials\nelectric potentials, electric dipole, Coulomb integral, Laplace and Poisson’s equation, separation of variables in cartesian,\ncylindrical and spherical coordinates\nDirichlet Problem, Neumann Problem, Greens function, Field energy density and Poynting vector,\nelectrostatic field energy, coefficients of capacitance, vector potential, Coulomb gauge, Biot-Savart-law, magnetic field energy,\ncoefficients of inductance magnetic flux and coefficients of mutual inductance, field problems in steady electric currents,\nlaw of induction, displacement current\ngeneral wave equation for E and H, Helmholtz equation\nskin effect, penetration depth, eddy currents\nretarded potentials, Coulomb integral with retarded potentials\nwave equation for potential and Vector potential and A, Lorentz gauge, plane waves\nHertzian dipole, near field solution, far field solution\ntransmission lines, fields in coaxial transmission lines\nwaveguides, TM-waves, TE-waves\nfinite difference method FDM\nfinite difference - time domain FDTD, Yee ´s algorithm\nfinite difference - frequency domain\nfinite integration method FIM\nfinite element method FEM\nboundary element method BEM, Method of Moments (MOM), Transmission LIne Matrix Methal (TLM),\nsolving large systems of linear equations\nbasic rules for good numerical field calculation\nThe lecturer reserves the right to alter the contents of the course without prior notification.",
+    "workload": "Each credit point corresponds to approximately 25-30 hours of work (of the student). This is based on the average student who\nachieves an average performance. The workload includes:\nAttendance time in lectures (3 h 15 appointments each) = 45 h\nSelf-study (4 h 15 appointments each) = 60 h\nPreparation / post-processing = 20 h\nTotal effort approx. 125 hours = 4 LP",
+    "recommendations": "Fundamentals of electromagnetic field theory.",
+    "literature": "Matthew Sadiku (2001), Numerical Techniques in Electromagnetics.\nCRC Press, Boca Raton, 0-8493-1395-3\nAllen Taflove and Susan Hagness (2000), Computational electrodynamics: the finite-difference time-domain method.\nArtech House, Boston, 1-58053-076-1\nNathan Ida and Joao Bastos (1997), Electromagnetics and calculation of fields.\nSpringer Verlag, New York, 0-387-94877-5\nZ. Haznadar and Z. Stih (2000), Electromagnetic Fields, Waves and Numerical Methods.\nIOS Press, Ohmsha, 1 58603 064 7\nM.V.K. Chari and S.J. Salon (2000), Numerical Methods in Electromagnetism, Academic Press, 0 12 615760 X"
+  },
+  "M-ETIT-100511": {
+    "id": "M-ETIT-100511",
+    "title": "Electronic Circuits for Light Sources and Laser",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Rainer Kling"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in form of an overall oral examination (approx. 25 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students understand the various basic topologies for the electronic operation of light sources and lasers. They are able to\ndifferentiate between and apply the various electronic operating modes. What are operating topologies, how can spotlights be\ndimmed and ignited.\nStudents are able to critically assess the different operating methods and applications.",
+    "content": "The lecture provides a basic insight into electronic circuits for light sources and lasers, the fundamentals and characteristics\nof circuits, coupling, characteristic curves and equivalent circuit diagrams. Operating modes, testing methods such as EMC and\ncauses of failure are also discussed.\nConventional ballasts\nTransformer and transductor operation,\nStarter and ignition circuits, phase connection and disconnection\nElectronic ballasts for low and high pressure lamps\nPrinciples and switching topologies, dimming operation\nElectronic transformers: pulse operation (DBE etc.)\nEMC issues (compensation, PFC, shielding (1))\nHF and micro-wave operation\nPower supplies for LEDs and OLEDs\nConstant current switching regulators, LED lamps and modules\nDimmable current regulators, smoothed current outputs\nOLED and EL foil driver circuits\nCurrent drivers for laser diodes\nLaser driver circuits and IC\nCurrent limiting and current control, constant current sources for high-power LEDs\nCircuits for operating pump light sources for dye and solid-state lasers\npulse forming networks PFN), charging and trigger circuits\nOperation of CO2 gas lasers",
+    "workload": "1. attendance time in lecture 30 h\n2. preparation/follow-up of the same 30 h\n3. preparation for oral exam 30 h",
+    "recommendations": "Knowledge of \"M-ETIT-100481 - Plasmastrahlungsquellen\" is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-100410": {
+    "id": "M-ETIT-100410",
+    "title": "Electronics and EMC",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Martin Sack"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success is assessed in an overall oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are familiar with coupling mechanisms and possible coupling paths for interference signals in electronic circuits and\nsystems, as well as measures for interference suppression and the functionally reliable design of such systems.",
+    "content": "Based on the coupling mechanisms for interference signals, the lecture shows various coupling paths for interference, the\neffects of interference coupling on the circuit function as well as measures for suppression and the functionally reliable design of\nsystems.",
+    "workload": "Attendance time: 30 h\nSelf-study time: 60 h\nTotal 90 h = 3 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-101969": {
+    "id": "M-ETIT-101969",
+    "title": "Energy Storage and Network Integration",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Type of Examination: Oral exam\nDuration of Examination: approx. 30 minutes",
+    "prerequisites": "see course (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students understand the different types of energy storage and apply their knowledge for the selection and principal\ndimensioning of relevant energy storage tasks.\nFurthermore, students can reflect the state-of-the-art of most important energy storage types, their fundamental characteristics\nand viability at given boundary conditions; they are enabled to elaborate and apply basic integration issues dependent on the\ngrid structure for the different network types.\nPractical work: The students are able to analyse real applications of energy storage and calculate basic design examples for the\nvarious storage options.\nThe students are able to discuss topic-related aspects in English using the technical terminology of the field of study.",
+    "content": "The lecture provides an overview of the different storage types and their fundamental integration into the power supply grid.\nThereby, within the scope of this lecture, the necessity and the motivation for converting and storing energy will be given.\nStarting from the definition of fundamental terms different physical and chemical storage types along with their theoretical and\npractical basis are described. In particular, the decoupling of energy production and energy consumption, and the provision of\ndifferent energy scales (time, power, density) will be discussed. Furthermore, the challenge of energy transport and re-\nintegration into the different grid types is considered.\n1. Motivation for the need of energy storage in energy systems\na. National and international situation\nb. Storage motivation\n2. Terms and definitions\na. Different energy types\nb. Definitions energy content\nc. Definitions energy- and power density\n3. Thermal energy storage\na. Classification\nb. Sensitive heat storage\nc. Latent heat storage\nd. Reaction heat storage\n4. Mechanical energy storage\na. Flywheels\nb. Compressed air\nc. Pumpes storage systems\n5. Electrodynamic energy storage\na. Main principles\nb. Capacitive and inductive storage\n6. Electrochemical energy storage\na. Working principles\nb. Batteries\nc. Fuel Cells\n7. Electric Power Systems\na. Storage tasks\nb. Storage íntegration\nc. Planning reserves\nThe obligatory practical work (23689) is related to real applications of energy storage and to basic design examples for the\nvarious storage options.\nThe lecturer reserves the right to alter the contents of the course without prior notification.\nCourse material will be available on ILIAS. The link to ILIAS and Up-to-date information will be available via the ITEP-homepage\nprior to the beginning of the semester (https://www.itep.kit.edu/148.php).",
+    "workload": "Approximately 120h workload of the student. The workload includes:\n45h - attendance in lectures an exercises\n45h - preparation / follow-up\n30h - preparation of and attandance in examination",
+    "recommendations": "Basic knowledge in the fields of Electrical Engineering and Thermodynamics is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-101919": {
+    "id": "M-ETIT-101919",
+    "title": "Fabrication and Characterisation of Optoelectronic Devices",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "Prof. Dr. Ulrich Wilhelm Paetzold\nKIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Type of Examination: written exam\nDuration of Examination: 120 Minutes\nModality of Exam: One written exam offered at the end of each semester.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students build knowledge on process technology for the fabrication of a range of optoelectronic devices, including LEDs,\nsolar cells, laser diodes, photodiodes, etc. They learn to compare the advantages of different technological approaches,\nincluding their economic boundary conditions. This is a technologiccal-based course where students will use their prior\nfundamental knowledge to gain a firm grasp on the fabrication sequences and characterisation (optical, electrical, electronic,\nmaterials) steps that are required to realise the above devices.\nWhile fulfilling the learning targets, the students\n•\n•\n•\n•\n•\n•\n•\n•\npossess the basic knowledge about the working principles of optoelectronic devices;\ncomprehend the boundary conditions for the design of optoelectronic devices and have a good understanding of the\nchallenges in microfabrication\nare familiar with different lithographic techniques, including e-beam lithography, optical lithography, multiple-photon\nlithography, X-ray lithography, etc.\ncomprehend the different techniques that are available for thin-film deposition of dielectrics, metals and semiconductors\nunderstand what role micro-optics can play in such devices\nbe able to determine the most promising characterisation techniques for evaluating material quality, electronic properties,\nas well as optical and electrical performance.\nExposure to different dry- and wet-etching processes to help realise device structures\nhave an understanding of the economic implications of the chosen technologies and their compatibility with\nhighthroughput production",
+    "content": "I. Overview: Opto-electronic Devices\nII. Thin-film growth and deposition\n•\n•\n•\nepitaxial growth of III-V semiconductors, as well as Si and Ge\nchemical vapour deposition (CVD) based processes, including atomic layer deposition (ALD)\nphysical vapour deposition (PVD) based processes, including evaporation (thermal and e-beam) and sputtering (DC and\nRF)\nIII. Lithographic techniques\n•\ne-beam lithography, optical lithography, laser interference lithography, two-photon lithography, X-ray lithography\nIV. Etching processes\n•\nwet- and dry-etching processes for semiconductors, dielectrics and metals\nV. Micro-optics\n•\nmicro-optic design in opto-electronic devices\nVI. Characterissation:\n•\nmaterials properties (electron microscopy, crystallinity, bonding energies, elemeental concentrations, layer\n•\n•\n•\nthicknesses ...)\nelectronic properties (dopant profiling, mobility, minority carrier lifetimes, resistivity, bandgap measurements, ...)\noptical (spectrophotometry, photoluminescence, ...)\nelectrical (current-voltage measurements, quantum efficiency / spectral response, ...)\nVII. Excursion (TBA)",
+    "workload": "Total 90h, hereof 30h contact hours (24h lecture,\n6h problem class), and 60h homework and selfstudies",
+    "recommendations": "Semiconductor fundamentals",
+    "literature": "TBD"
+  },
+  "M-ETIT-100566": {
+    "id": "M-ETIT-100566",
+    "title": "Field Propagation and Coherence",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof.Dr.Dr.h.c. Wolfgang Freude"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Type of Examination: oral exam\nDuration of Examination: approx. 20 minutes\nModality of Exam: Oral examination, usually one examination day per month during the summer and winter terms. An extra\nquestions-and-answers session will be held for preparation if students wish so.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "optical comunications\nThe students\nPresenting in a unified approach the common background of various problems and questions arising in general optics and\n•\n•\n•\n•\n•\n•\n•\nknwo the common properties of counting of modes, density of states and the sampling theorem\ncomprehend the relationship between propagation in multimode waveguides, mode coupling, MMI and speckles\ncan analyze propagation in homogeneous media with respect to system theory, antennas, and the resolution limit of\noptical instruments\nunderstand that coherence as a general concept comprises coherence in time, in space and in polarisation\ncomprehend the implication of complete spatial incoherence, and what is the radiation efficiency of a source with a\ndiameter smaller than a wavelength (the mathematical Hertzian dipole, for instance)\ncan assess when can two incandescent bulbs form an interference pattern in time\nknow under which conditions a heterodyne radio receiver, which is based on a non-stationary interference, actually\nworks",
+    "content": "The following selection of topics will be presented:\n•\nLight waves, modes and rays: Longitudinal and transverse modes, sampling theorem, counting and density of modes\n•\n•\n•\n(\"states\")\nPropagation in multimode waveguides. Near-field and far-field. Impulse response and transfer function. Perurations and\nmode coupling. Multimode interference (MMI) coupler. Modal noise (speckle)\nPropagation in homogeneous media: Resolution limit. Non-paraxial and paraxial optics. Gaussian beam. ABCD matrix\nCoherence of optical fields: Coherence function and power spectrum. Polarisation, eigenstates and principal states.\nMeasurement of coherence with interferometers (Mach-Zehnder, Michelson). Self-heterodyne and self-homodyne setups",
+    "workload": "total 120 h, hereof 45 h contact hours (30 h lecture, 15 h problem class), and 75 h homework and self-studies",
+    "recommendations": "Minimal background required: Calculus, differential equations and Fourier transform theory. Electrodynamics and field\ncalculations or a similar course on electrodynamics or optics is recommended.\nSolution of the problems on the exercise sheet, which can be downloaded as homework each week, is highly recommended.\nAlso, active participation in the problem classes and studying in learning groups are strongly advised.",
+    "literature": "Detailed lecture notes as well as the presentation slides can be downloaded from the IPQ lecture pages. Additional reading:\nBorn, M.; Wolf, E.: Principles of optics, 6. Aufl. Oxford: Pergamon Press 1980\nGhatak, A.: Optics, 3. Ed. New Delhi: Tata McGraw Hill 2005\nHecht, E.: Optics, 2. Ed. Reading: Addison-Wesley 1974\nHecht, J.: Understanding fiber optics, 4. Ed. Upper Saddle River: Prentice Hall 2002\nIizuka, K.: Elements of photonics, Vol. I and II. New York: John Wiley & Sons 2002\nFurther textbooks in German (also in electronic form) can be named on request"
+  },
+  "M-ETIT-100483": {
+    "id": "M-ETIT-100483",
+    "title": "Fundamentals on Plasma Technology",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Rainer Kling"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in form of an overall oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students learn about the processes in technical plasmas and plasma technology applications. This enables them to critically\nassess the processes, e.g. applications in coating technology, functionalization or the manufacture of processors.",
+    "content": "Basic knowledge of technical plasmas, coating technology with plasmas, thin-film coatings, plasma etching processes, plasma\nsputtering, diagnostics: How is an IC produced? How does an ion thruster work?\n1 Introduction\n1.1 Characteristics of plasma\n1.2 Applications\n2. physical principles of plasma\n2.1 Basic concepts/ distributions and equilibrium conditions Transport processes\nGeneration of a plasma\n3.1 Stationary gas discharge\n3..2 Discharge in an alternating field\n4. plasmas in technical applications\n4. overview\n4.1 Low pressure discharges\n4.1.1 Plasma surface processes\n4.1.2 Thin film coatings\n4.1.3 Plasma etching processes\n4.1.4 Plasma sputtering\n4.1.5 Plasma functionalization\n4.1.6 Direct plasma emitters\n4.2 Plasma fusion\n5 Diagnostics\n5.1 Overview of procedures\n5.1.1 The plasma surface layer\n5.2 Probe measurements\n5.3 Microwave measurements",
+    "workload": "1. attendance time in lecture 30 h\n2. preparation/follow-up of the same 30 h\n3. preparation for oral exam 30 h",
+    "recommendations": "Knowledge from \"ETIT-100481 - Plasmastrahlungsquellen\" is helpful.",
+    "literature": ""
+  },
+  "M-BGU-106347": {
+    "id": "M-BGU-106347",
+    "title": "Geodetic Space Techniques for Engineers",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Hansjörg Kutterer",
+      "Dr. Kurt Seitz"
+    ],
+    "organisation": "KIT Department of Civil Engineering, Geo and Environmental Sciences",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Oral / Written examination",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "",
+    "content": "",
+    "workload": "120 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-MACH-105288": {
+    "id": "M-MACH-105288",
+    "title": "Handling Characteristics of Motor Vehicles I",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Martin Gießler",
+      "Dr.-Ing. Hans-Joachim Unrau"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Oral examination, duration: approximately 30 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students know the basic connections between drivers, vehicles and environment. They can build up a vehicle simulation\nmodel, with which forces of inertia, aerodynamic forces and tyre forces as well as the appropriate moments are considered.\nThey have proper knowledge in the area of tyre characteristics, since a special meaning comes to the tire behavior during\ndriving dynamics simulation. Consequently they are ready to analyze the most importent influencing factors on the driving\nbehaviour and to contribute to the optimization of the handling characteristics.",
+    "content": "the wheels)\n1. Problem definition: Control loop driver - vehicle - environment (e.g. coordinate systems, modes of motion of the car body and\n2. Simulation models: Creation from motion equations (method according to D'Alembert, method according to Lagrange,\nprogramme packages for automatically producing of simulation equations), model for handling characteristics (task, motion\nequations)\n3. Tyre behavior: Basics, dry, wet and winter-smooth roadway",
+    "workload": "The workload includes:\n1.\n2.\n3.\nattendance in lectures and exercises: 15*2 h = 30 h\npreparation / follow-up: 60 h\npreparation of and attendance in examination: 30 h\nA total of 120 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100449": {
+    "id": "M-ETIT-100449",
+    "title": "Hardware Modeling and Simulation",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Jens Becker",
+      "Prof. Dr.-Ing. Jürgen Becker"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Achievement is examined in the form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completing this module, students will be familiar with different hardware description languages and their applications in\nvarious abstraction levels. They will gain knowledge of the SPICE Hardware Description Language and become proficient in\nbuilding and deriving the analog matrix for spice simulation. In the realm of digital design, they will develop a comprehensive\nunderstanding of the hardware description language VHDL, encompassing the VHDL Standard and its extensions, such as\nVHDL 2008, the 9-valued logic, and the VHDL-AMS standard. Furthermore, students will achieve a profound comprehension of\nsimulator principles, particularly the delta cycle model. They will also grasp the fundamentals of fault simulations for testing\nfabricated circuits and learn to derive test vectors. Additionally, students will acquire an understanding of higher-level hardware\nconstruction languages like Chisel and SystemC.",
+    "content": "In order to address the complexity of modern chips during development, it is essential to utilize modern hardware description\nlanguages. This course offers insights into the various levels of abstraction in these languages. It starts by covering the\nfundamentals of analog description using SPICE and then progresses through VHDL, VHDL-AMS, and Verilog. Additionally, the\ncourse introduces more abstract languages like Chisel and SystemC.\nTopics covered in the course are:\n•\n•\n•\n•\nDesign Process\nBasics of Modeling and Simulation\nLow Level Modeling\nVHDL\n◦\n◦ ◦\n◦\nVHDL-AMS\n9-valued logic\nDelta cycle simulation\nFault simulation\n•\n•\n•\n◦\nVerilog\nChisel\nSystemC",
+    "workload": "The workload is covered by:\n1.\n2.\n3.\nParticipating in lectures and tutorials: 33h\nPreparing and wrap up of the above named units: 66h\nExam preparation and presence: 21h\nSum: 120h = 4 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-106963": {
+    "id": "M-ETIT-106963",
+    "title": "Hardware Synthesis and Optimization",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Becker"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place within the framework of an oral overall examination (approx. 30 minutes)",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students know the basic steps required for the automated design of optimized digital circuits. They are able to classify them in\nthe Y-chart and assess their complexity.\nThey will be able to name and explain the most important approaches for these design steps and evaluate them with regard to\noptimality and computational effort. This includes the ability to use algorithms for these approaches, e.g. selected graph\nalgorithms, metaheuristics such as simulated annealing. The students are also able to determine their respective runtime\ncomplexities.\nIn addition, they can solve given problems from the field of design automation by selecting a suitable approach based on certain\noptimization criteria and applying it to the respective problem.",
+    "content": "The module focuses on teaching the formal and methodological foundations for the automated design of optimized electronic\nsystems. The relevant scientific and methodological properties of the methods used are discussed and their implementation in\nindustrial practice is also taught.\nThe following topics are covered:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nGraph Algorithms and Complexity\nHigh-Level Synthesis\nAlgorithms for Scheduling, Allocation and Binding Problems\nRegister-Transfer-Level Synthesis\nRetiming Algorithms\nLogic Optimization\nTechnology Mapping for Standard Cells and FPGAs\nPhysical Design\nPlacement of Standard Cells with ILP and Simulated Annealing\nGlobal and Detailed Routing",
+    "workload": "The workload includes (4 SWS):\n1. attendance in lectures and exercises: 60 h\n2. preparation / follow-up: 60 h\n3. preparation of and attendance in examination: 60 h\nA total of 180 h = 6 CR",
+    "recommendations": "Basic knowledge in the field of digital circuits, e.g. as taught in the course “Digital Technology” (2311615) is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-107444": {
+    "id": "M-ETIT-107444",
+    "title": "Hardware/Software Co-Design",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Becker"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "EPSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place within the framework of an oral overall examination (approx. 25 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [
+      "M-ETIT-100453"
+    ],
+    "requires": [],
+    "competenceGoal": "By attending the lecture Hardware/Software Co-Design, students learn the necessary multi-criteria methods and hardware/\nsoftware target architectures. The theoretical foundations for the interlinked design of hardware and software parts of a system\nare presented. Attending the lecture contributes to the understanding of these methods of hardware/software co-design and\nenables students to apply what they have learned to novel problems.\nStudents learn about the main target architectures and are able to name their advantages and disadvantages with regard to\ntheir applicability in hardware/software co-design. Students will become more familiar with various methods for assessing design\nquality and will be able to apply these in the early phases of system design. Furthermore, students have an overview of\npartitioning methods for HW/SW systems, can classify them and know the respective advantages and disadvantages of the\nmethods. Students will be able to select and apply a suitable method for typical HW/SW partitioning problems. In addition, their\npractical application is demonstrated using various current software and hardware components\nBy attending the course, students will have a cross-component understanding of the topic of co-design. Furthermore, attending\nthe course enables students to apply the methods presented to problems independently. Tools that are introduces in the course\nof the lecture can be used for this purpose. The accompanying exercises are intended to consolidate the knowledge acquired in\nthe lectures. Selected topics are repeated and students learn how to apply the methods for modern system design using\ntheoretical and practical examples.\nAttending the lecture enables students to independently categorize current scientific work, e.g. theses, and to work on them\nusing the latest methods.",
+    "content": "Hardware-software co-design is the simultaneous and interlinked design of hardware and software parts of a system. Most\nmodern embedded systems (examples are cell phones, automotive and industrial control systems, game consoles, home\ncinema systems, network routers) consist of cooperating hardware and software components. Enabled by rapid advances in\nmicroelectronics, embedded systems are becoming increasingly complex with diverse application-specific criteria. The use of\nappropriate computer-aided design tools is not only necessary to handle the increasing complexity, but also to reduce design\ncosts and design time. The lecture Hardware Software Co-Design deals with the necessary multi-criteria methods and\nhardware/software target architectures:\n•\n•\n•\nTarget architectures for hardware/software systems:\n◦\nGeneral Structure\n◦\nClassification\n◦\nGeneral-Purpose Processors (GPP)\n▪\nArchitecture: Accumulator Machine, Stack Machine, Register-based Machine\n▪\nPerformance Enhancement: Pipelining, Superscalarity / Out-of-Order Execution, Very Large Instruction\nWord (VLIW), Single Instruction Multiple Data (SIMD), Caches, Multiple Instruction Multiple Data (MIMD)\n◦\nSpecialized Processors\n▪\nMicrocontroller (µC), Digital Signal Processors (DSP), Graphics Processing Units (GPU)\n◦\nBus, Multicore & Network-on-Chip (NoC)\n◦\nApplication-specific Instruction-set Processors (ASIP)\n◦\nField Programmable Gate Arrays (FPGA)\n◦\nSystem-on-Chip (SoC)\n◦\nChiplets\n◦\nMachine Learning on Embedded Devices\nEstimation of the design quality\n◦\nLevels of Abstraction\n◦\nSystem Synthesis\n◦\nGraph Models for Control/Data Flow\n◦\nParameters of Estimation Methods\n▪\nAccuracy, Fidelity\n◦\nEstimation of Hardware Metrics\n▪\nClock Period, Clock Slack\n◦\nEstimation of Software Metrics\n◦\nMIPS, FLOPS, WCET, Cache Conflict Graph, Profiling, Tracing\n◦\nEstimation of Communication Metrics\nHardware/software partitioning methods\n◦\nClassification of partitioning algorithms\n◦\nIterative and constructive heuristics\n▪\nHierarchical clustering, Tabu Search, Kernighan Lin, Fiduccia Mattheyses, Simulated Annealing, Genetic\nAlgorithms",
+    "workload": "The workload includes (4 SWS):\n1.\n2.\n3.\nattendance in lectures and exercises: 60 h\npreparation / follow-up: 50 h\npreparation of and attendance in examination: 70 h\nA total of 180 h = 6 CR",
+    "recommendations": "Basic knowledge in the fields of digital technology and information technology is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-100453": {
+    "id": "M-ETIT-100453",
+    "title": "Hardware/Software Co-Design",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Becker"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [
+      "M-ETIT-107444"
+    ],
+    "requires": [],
+    "competenceGoal": "By attending the Hardware/Software Co-Design lecture, students learn the necessary multi-criteria methods and hardware/\nsoftware target architectures. Attending the lecture contributes to the understanding of these methods of hardware/software co-\ndesign and enables students to apply what they have learned to novel problems.\nStudents learn about the main target architectures and are able to name their advantages and disadvantages with regard to\ntheir applicability in hardware/software co-design. Students will become familiar with various methods for assessing design\nquality and will be able to apply these in the early phases of system design. Furthermore, students have an overview of\npartitioning methods for HW/SW systems, can classify them and know the respective advantages and disadvantages of the\nmethods. Students will be able to select and apply a suitable method for typical HW/SW partitioning problems.\nBy attending the course, students will have a cross-component understanding of the topic of co-design. Furthermore, attending\nthe course enables students to apply the methods presented to problems independently. Tools that are introduced in the course\nof the lecture can be used for this purpose.\nAttending the lecture enables students to independently classify current scientific work, e.g. theses, and to work on them using\nthe latest methods.",
+    "content": "•\n•\n•\nThe lecture presents the theoretical principles of the interlinked design of hardware and software parts of a system. In\naddition, their practical application is demonstrated using various current software and hardware components.\nThe accompanying exercises are intended to consolidate the knowledge acquired in the lectures. Selected topics are\nrepeated and students learn how to apply the methods for modern system design using theoretical and practical\nexamples.\nHardware-software co-design is the simultaneous and interlinked design of hardware and software parts of a system.\nMost modern embedded systems (examples are cell phones, automotive and industrial control systems, game consoles,\nhome cinema systems, network routers) consist of cooperating hardware and software components. Enabled by rapid\nadvances in microelectronics, embedded systems are becoming increasingly complex with diverse application-specific\ncriteria. The use of appropriate computer-aided design tools is not only necessary to handle the increasing complexity,\nbut also to reduce design costs and design time. The lecture Hardware Software Co-Design deals with the necessary\nmulti-criteria methods and hardware/software target architectures:\n◦\nTarget architectures for hardware/software systems\n▪\nProcessor design: pipelining, superscalarity, VLIW, SIMD, cache, MIMD\n▪\nGeneral-purpose processors (GPP), microcontrollers (µC), digital signal processors (DSP), graphics\nprocessors (GPU), application-specific instruction set processors (ASIP), field programmable gate arrays\n(FPGA), system-on-chip (SoC), bus systems, multicore and network-on-chip (NoC)\n◦",
+    "workload": "The workload includes:\n1. attendance time in 14 lectures, 7 exercises: 31.5 hrs\n2. preparation and follow-up of the same: 63 hours (3 hours per unit)\n3. exam preparation and attendance: 20 hours preparation and 0.5 hours exam",
+    "recommendations": "Knowledge of the basics of digital technology and information technology is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-107363": {
+    "id": "M-ETIT-107363",
+    "title": "High-Power Microwave Technology",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. John Jelonnek"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "The success control is carried out as part of an oral overall examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The course provides a comprehensive insight into high-power microwave technology. By the end of the course, students will\nunderstand the principles of high-power microwave and sub-THz frequency generation, transmission, and diagnostics. They will\nbe introduced to the major types of electron tubes and their key components and become familiar with the major applications of\nmicrowaves at high and highest power levels. Considered applications include satellite communication, radar technology, THz\nspectroscopy, and industrial processes using microwaves, such as dielectric heating, microwave plasmas, particle accelerators,\nand plasma heating of magnetically confined nuclear fusion devices.",
+    "content": "\"High-power microwave technology\" covers the generation, transmission, diagnostics and applications of microwaves at high\npower levels and at frequencies ranging from a few hundred Megahertz up to several hundred Gigahertz.\nThe focus of the lecture is on electron tubes, which are the major sources for the generation of high power over a wide range of\nfrequencies and powers. The lecture will discuss the fundamental mechanisms of microwave generation and introduce the\nmajor types of microwave tubes. The preferred application areas for each tube type are explained and the different possibilities\nof high-power transmission and diagnostics are presented. Considered applications include satellite communication, terahertz\n(THz) spectroscopy, radar technology, particle accelerators, and fusion research.",
+    "workload": "The workload includes:\nAttendance study time lecture / exercise: 30 h\nSelf-study time including exam preparation: 60 h\nA total of 90 h = 3 LP",
+    "recommendations": "Fundamental knowledge of electromagnetic wave generation, transmission and diagnostics is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-105060": {
+    "id": "M-ETIT-105060",
+    "title": "High-Voltage Technology",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Leibfried"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Oral / Written examination",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students can determine electric fields using numerical methods or graphically, generate high voltages in the laboratory,\ndimension, design and calculate AC voltages and impulse voltages. They know the properties of insulating materials in the field\nspace and the processes that lead to breakdown in gases, liquids and solids. They know the most important technical insulating\nmaterials and can use them in the context of insulation coordination.",
+    "content": "Generation of high voltages in the laboratory, electric fields, dielectrics in the field space, gas discharge physics, breakdown in\nliquids and solids, technical insulating materials, insulation coordination.",
+    "workload": "180 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100417": {
+    "id": "M-ETIT-100417",
+    "title": "High-Voltage Test Technique",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Rainer Badent"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success is assessed in an overall oral examination (approx. 20 minutes) on the selected course.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student can measure partial discharges, carry out on-site tests, test cables and accessories. They can operate and design\ncomputer-based test systems. He can create the necessary requirements for the accreditation of test laboratories.",
+    "content": "This course familiarizes students with issues of high-voltage testing technology, calibration and the contents of international test\nstandards for electrical power engineering products.",
+    "workload": "Attendance time lecture: 30 h\nExercise attendance time: 15 h\nSelf-study time: 67.5 h\nExam preparation and attendance in the same: offset in preparation/follow-up work\nTotal 112.5 h = 4 LP\nModule: Human Brain and Central Nervous System: Anatomy, Information\nTransfer, Signal Processing, Neurophysiology and Therapy [M-\nINFO-100725]",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-100725": {
+    "id": "M-INFO-100725",
+    "title": "Human Brain and Central Nervous System: Anatomy, Information Transfer, Signal Processing, Neurophysiology and Therapy",
+    "credits": 3,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Tamim Asfour"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See Partial Achievements (Teilleistung).",
+    "prerequisites": "See Partial Achievements (Teilleistung).",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After successfully completing the course, students will have a basic understanding and basic information about the structure and\ncomplex functioning of the brain and the central nervous system (CNS). They will learn the basics of neurophysiology and\nsensory functions and, in particular, the technically complex modern diagnostics of the brain and CNS. In addition, students\nlearn the basics of modern treatment modalities for various neurological and neurosurgical diseases and are able to understand\nthe application and use of different medical equipment and devices. The overview of modern neuro-medicine allows\ninterdisciplinary recognition and analysis of problems and allows the implementation of theoretical models in a concrete practical\ncontext.",
+    "content": "The course provides an overview of modern neuro-medicine and provides a basic understanding of neuroanatomy, sensory and\nneurophysiology, which represents an important interface to the innovative research areas of neuroprosthetics (optical, acoustic\nprostheses). There is also a close connection to motor systems in robotics. There are further links to the fields of imaging and\nimage processing and intraoperative support systems. Practical relevance is established and specific application examples in\nmedical diagnostics and therapy are presented.",
+    "workload": "Lecture with 2 SWS, 3 LP.\n3 LP corresponds to approx. 90 hours, of which\napprox. 12 * 2h = 24 hrs. attendance time Lecture approx. 12 * 3h = 36 hrs. preparation and follow-up time Lecture approx. 30\nhrs. exam preparation and attendance in the same",
+    "recommendations": "See Partial Achievements (Teilleistung).",
+    "literature": ""
+  },
+  "M-ETIT-100399": {
+    "id": "M-ETIT-100399",
+    "title": "Industrial Circuitry",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Andreas Liske"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success is assessed in an overall oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Graduates know the structure and manufacturing process of printed circuits in order to be able to design and commission\nelectronic circuits themselves. They are familiar with the relevant circuit properties of electronic components available on the\nmarket and are able to design, commission and evaluate a practical circuit concept.",
+    "content": "This module is intended to provide students with basic knowledge of circuit technology, as this is an absolute prerequisite for\nbeing able to perform a task with electronic aids. In this module, basic principles of circuit design, manufacturing processes,\npassive and active electronic components, analog and digital circuits as well as programmable logic circuits are presented, also\nusing examples.",
+    "workload": "1.\n2.\n3.\n4.\nAttendance time lecture (2SWS): 15 appointments * 2 h = 30 h\nPreparation and follow-up time for lecture: 15 appointments * 2 h self-study = 30 h\nExam preparation and attendance in the same: 30 h\nTotal: 90 h = 3 CP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-103264": {
+    "id": "M-ETIT-103264",
+    "title": "Information Fusion",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Michael Heizmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The assessment takes the form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\nStudents have a sound knowledge of different methods for specifying uncertain knowledge and for processing it for the\npurpose of information fusion.\nStudents are familiar with different concepts of information fusion with regard to their prerequisites, model assumptions,\nmethods and results.\nStudents are able to analyze and formally describe information fusion tasks, synthesize possible solutions and assess\nthe suitability of different information fusion approaches for solving them.",
+    "content": "For many information acquisition tasks, it is not possible to fully and robustly capture the properties of interest of a scene or\nprocess with a single sensor or information source. In such cases, one possible solution is to use several sensors that capture\ndifferent aspects of the scene. The use of heterogeneous sensors with different sensor principles allows the evaluation of\nseveral physical properties of the scene. In addition, non-sensory information (e.g., in the form of a priori knowledge or physical\nmodels) may also be available that needs to be considered when determining scene properties of interest.\nThis lecture introduces concepts, architectures and methods of information fusion. Mathematical concepts for linking sensor\ndata and information from different sources are presented.\nThe contents include in detail\n•\n•\n•\n•\n•\n•\n•\n•\nPrerequisites for fusion\nSpecification of uncertain information\nPreprocessing for information fusion, registration\nFusion architectures\nProbabilistic methods: Bayesian fusion, Kalman filter, tracking\nFormulation of fusion tasks using energy functionals\nDempster-Shafer theory\nFuzzy fusion",
+    "workload": "Total: approx. 120h, of which\n1. attendance time in lectures: 34h\n2. preparation and follow-up of lectures: 34h\n3. exam preparation and attendance: 52h",
+    "recommendations": "Knowledge of the basics of stochastics is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-107159": {
+    "id": "M-ETIT-107159",
+    "title": "Information Systems in Power Engineering Lab",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Leibfried"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": true,
+    "examType": "Success control takes place in the form of other types of examination and is assessed in form of 3 experiments.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students have a basic understanding of how to use common calculation programs in the fields of network calculation, field\ncalculation and automation and control. They are able to carry out basic calculations in the respective sub-areas and are familiar\nwith the underlying theory.",
+    "content": "The focus of the lecture is to impart sound knowledge in the field of field calculation using the finite element method, load flow\nand short flow calculation, as well as the implementation of control programs for PLC systems. The theoretical basics of the sub-\nareas are taught and the practical application is practiced using common programs based on case studies.",
+    "workload": "The workload is 180 hours and is made up as follows:\n•\n•\nAttendance time 40 h\nSelf-study time 140 h",
+    "recommendations": "computer skills\nBasic knowledge on high-voltage technology, calculation of electrical networks and energy transmission and network control,",
+    "literature": ""
+  },
+  "M-ETIT-100367": {
+    "id": "M-ETIT-100367",
+    "title": "Information Technology in Industrial Automation Systems",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Peter-Axel Bort"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in fom of an oral examination (20-25 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completing the course, graduates will have a holistic basic understanding of modern automation technology, from simple\nsensor/actuator systems, programmable logic controllers and control systems to cloud-based technologies. They are familiar\nwith the interfaces to information technology and the interaction of the individual disciplines, as well as their use in automation\ntechnology. Graduates have an understanding and a feel for the various aspects of reliability and functional safety in automation\ntechnology. They know the possible applications and limitations of central information technology tools and modeling tools, as\nwell as methods of artificial intelligence in automation technology.",
+    "content": "The lecture provides an introduction to modern automation systems ranging from simple PLC controllers, control systems and\nmanufacturing execution systems (MES) to enterprise resource planning (ERP) systems. A wide variety of industries,\ntechnologies and standards are considered which are used in such complex systems.\nAnother focus is on the area of plant project planning, system integration and networking, right through to cloud-based solutions.\nVarious modeling approaches and tools for project planning are presented, as well as the special features of system integration\nin plant automation, such as the high number of different interfaces, the different life cycles of individual components,\nsubsystems and plant parts or the extreme demands on the functional safety and availability of the plants.\nEconomic aspects play a central role in all considerations. Using numerous practical examples, students should develop their\nown feeling for the economic impact of engineering decisions from the developer's and operator's point of view. In this context,\ntopics such as asset management and strategies for plant project planning and control are covered.\nThe lecturer reserves the right to deviate from the content given here in the context of the current lecture without special notice.",
+    "workload": "The workload is broken down as follows:\n•\n•\n•\n•\n•\n•\nAttendance time lecture: 7 * 4 h = 28 h\nPreparation/follow-up lecture: 7 * 4 = 28 h\nExercise attendance time: 0 h\nPreparation and follow-up work for the exercise (PLC programming with Codesys): 4 h\nExam preparation and attendance in exam: 30 h (alternatively: offset in preparation/follow-up)\nTotal: 90 h -> 90/30 LP = 3 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100457": {
+    "id": "M-ETIT-100457",
+    "title": "Integrated Intelligent Sensors",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Wilhelm Stork"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Achievement will be examined in an oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The lecture is intended to give students an insight into the wide range of possible applications of intelligent sensor systems and\ntheir economic significance.\nThe students\n•\n•\n•\n•\n•\n•\n•\nKnow the most important terms and processes for the development and manufacture of integrated intelligent sensors\nand are able to assess their advantages and disadvantages.\nAre able to describe the common sensor principles.\nCan select suitable methods for recording different physical variables using IIS.\nAre familiar with the basic processes for manufacturing microsystem sensors\nHave a broad understanding of the structure and functionality of microsystem sensors.\nHave the ability to communicate with experts in sensor technology.\nAre able to critically evaluate different processes.",
+    "content": "In the lecture, applications of various microtechniques for sensor technologies, such as microoptics or micromechanics, are\npresented using current examples from industry and research. The main topics of the lecture are microsensors with integrated\nsignal processing (\"smart sensors\") for applications in the automotive and manufacturing industries as well as in environmental\nprotection and biomedical technology.",
+    "workload": "1. attendance time in lectures, exercises: 30 h\n2. preparation and follow-up of the same: 30 h\n3. exam preparation and attendance in the same: 30h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-107344": {
+    "id": "M-ETIT-107344",
+    "title": "Integrated Photonics",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Christian Koos"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "The assessment takes place in the form of an oral examination (approx. 25 minutes); appointments individually on demand.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "At the end of the course, students\n•\nhave a refreshed and deepened understanding of the basic principles of light-matter-interaction and wave propagation in\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\ndielectric media,\nknow and understand the Lorentz model for frequency-dependent material properties and can use this knowledge to\nquantitatively analyze the dispersive properties of optical media using Sellmeier relations and scientific databases,\nunderstand and can quantitatively describe the formation and propagation of surface plasmon polaritons (SPP),\nknow basic structures of integrated optical waveguides and understand the formation of guided modes in these\nstructures,\ncan quantitatively describe the propagation of signals in optical waveguides under the influence of dispersion,\nare familiar with state-of-the-art material systems and technology platforms of integrated photonics,\nunderstand basic analytical methods for modeling of photonic circuits such as eigenmode expansion (EME) methods,\nscattering-matrix formalisms, or coupled-mode theory and can apply these methods to specific use cases,\nunderstand the concepts and limitations of widely used computational techniques for integrated optical devices such as\nnumerical mode solvers or finite-difference-time-domain (FDTD) simulators,\nknow and can quantitatively analyze widely used building blocks and passive devices of integrated photonics,\ncomprising, e.g., multi-mode interference (MMI) couplers, directional couplers, and waveguide gratings, as well as Mach-\nZehnder interferometers (MZI), arrayed-waveguide gratings (AWG), lattice filters, and ring resonators.\nunderstand lasers and optical amplifiers and are familiar with the associated models, e.g., based on rate equations, and\ntheir predictions for dynamic behavior\nknow material systems and device concepts used for electro-optic modulators\nunderstand photodetectors and the origin and quantitative description of noise in optoelectronic receiver systems.",
+    "content": "This course is geared towards engineering students that want to get a deeper insight into the vividly growing field of integrated\nphotonics. The lecture and the associated tutorial provide an advanced understanding of the physical concepts and associated\nmathematical models of photonic integrated circuits, of the underlying material platforms and fabrication technologies, and of\nrelated application in optical communications, optical sensing, or microwave photonics. The concepts explained in the lecture\nare widely applicable also in fields outside integrated optics and can be a perfect complement to a variety of topics and adjacent\nfields such as communications engineering and high-speed data transmission, radio-frequency (RF) electronics, sensor system\nengineering and automation, photovoltaics, or quantum technologies.\nThe course covers the following aspects:\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n10.\n11.\n12.\n13.\n14.\nReview of fundamentals of wave propagation and light-matter interaction in photonics: Maxwell’s equations in optical\nmedia, wave equation and plane waves; material dispersion; Lorentz and Drude model of refractive index; Sellmeier\nequations\nPlasmonics: Fundamentals of surface-plasmonic polariton (SPP) propagation\nIntegrated optical waveguides: Basic structures; formation of guided modes; mathematical description; orthogonality of\nmodes\nPropagation of optical signals in waveguides: Group velocity; dispersion; outlook to nonlinear optical effects\nOptical fibers: Step-index fibers and associated modes; micro-structured fibers\nOverview of material systems and integration platforms: Silicon photonics, silicon-nitride-based photonic circuits; III-V\ncompound semiconductors; thin-film lithium niobate; polymer-based photonic circuits\nEigenmode expansion (EME) method: Concept and applications\nNumerical methods in integrated photonics: Basics of numerical mode solvers and finite-difference-time-domain (FDTD)\nsimulators\nScattering-matrices (S-matrices) for optical devices: Definition and properties of S-matrices\nCoupled-mode theory and building blocks of integrated photonics: Multi-mode interference (MMI) devices; directional\ncouplers; waveguide gratings\nSelected passive devices: Mach-Zehnder interferometers (MZI); arrayed-waveguide gratings (AWG); lattice filters; ring\nresonators\nLasers and optical amplifiers: Material systems; quantitative model and rate equations; dynamic behaviour of lasers\nElectro-optic modulators: Material systems, device concepts, and figures of merit\nPhotodetectors and noise in optoelectronic receiver systems: Photodetector concepts and implementations; direct and\ncoherent detection; shot noise; thermal noise; noise figures",
+    "workload": "The workload amounts to approximately 180 h (6 CP), comprising the following items:\nAttendance of lectures and tutorials: 15 × (2 h +2 h) = 60 h\nPreparation and follow-up of lectures: 15 × 3 h = 45 h\nPreparation and follow-up of tutorials: 15 × 3 h = 45 h\nPreparation of oral exam: 30 h",
+    "recommendations": "Basics understanding of the underlying topics such as electromagnetic fields and waves, semiconductors and solid-state\nelectronics, and advanced calculus. These skills can, e.g., be acquired in the modules “Höhere Mathematik I-III”,\n“Elektromagnetische Felder und Wellen”, “Festkörperelektronik und Bauelemente“, and „Fundamentals of Photonics“ or in\ncomparable lectures.",
+    "literature": ""
+  },
+  "M-ETIT-100474": {
+    "id": "M-ETIT-100474",
+    "title": "Integrated Systems and Circuits",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Sebastian Kempf"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The assessment takes place as part of a written overall examination lasting 60 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will be able to understand and analyze the complete signal path in an integrated signal processing system. Students\nwill be able to understand the individual modules of signal processing, i.e. analog signal conditioning for processing sensor\nsignals, filter and sample & hold techniques, analog-to-digital converters, digital-to-analog converters, control of actuators and\nthus develop solutions for integrated systems. Special emphasis is placed on modern analog circuit technology for signal\nconditioning prior to analog-to-digital conversion. Filter amplifiers and sample & hold stages are also covered. Analog-to-digital\nconverters are presented in detail. The different families of user-specific circuits, in particular FPGA and PLD, are covered. This\nenables students to formulate their own solutions and evaluate new developments.",
+    "content": "Concepts for the implementation of integrated \"system-on-chip\" solutions with highly integrated circuits at the sensor level, via\nanalog and digital signal processing on a semiconductor basis through to the actuator are dealt with. In particular, concepts for\nthe automotive sector are discussed. Special features of analog and digital circuit technology are dealt with in detail and\ndiscussed using practical examples.",
+    "workload": "The workload in hours is calculated as follows:\n1) Attendance time in the lectures and exercises: 14*1.5h + 7*1.5h = 31.5h\n2) Preparation and follow-up of the lecture: 14*3h = 42 h\n3) Preparation and follow-up of the exercises: 7*4h = 28 h\n4) Preparation time for the exam: 20h",
+    "recommendations": "Successful completion of course 23655 (Electronic Circuits) is required, as the module builds on the material and previous\nknowledge of the course mentioned.",
+    "literature": ""
+  },
+  "M-ETIT-105803": {
+    "id": "M-ETIT-105803",
+    "title": "Interdisciplinary Qualifications",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "pass/fail",
+    "coordinators": [
+      "Prof. Dr.-Ing. Marc Hiller"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Interdisciplinary Qualifications"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Oral / Written examination",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "",
+    "content": "",
+    "workload": "180 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-WIWI-100498": {
+    "id": "M-WIWI-100498",
+    "title": "Introduction into Energy Economics",
+    "credits": 5,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Wolf Fichtner"
+    ],
+    "organisation": "KIT Department of Business and Economics",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The assessment consists of a written exam according to Section 4(2), 1 of the examination regulation.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student is able to\n•\n•\ncharacterize and judge the different energy carriers and their peculiarities,\nunderstand contexts related to energy economics.",
+    "content": "1. Introduction: terms, units, conversions\n2. The energy carrier gas (reserves, resources, technologies)\n3. The energy carrier oil (reserves, resources, technologies)\n4. The energy carrier hard coal (reserves, resources, technologies)\n5. The energy carrier lignite (reserves, resources, technologies)\n6. The energy carrier uranium (reserves, resources, technologies)\n7. The final carrier source electricity\n8. The final carrier source heat\n9. Other final energy carriers (cooling energy, hydrogen, compressed air)",
+    "workload": "5 CP Fichtner\nThe total workload for this course is approximately 165.0 hours. For further information see German version.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-105461": {
+    "id": "M-ETIT-105461",
+    "title": "Introduction to Automotive and Industrial Lidar Technology",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Wilhelm Stork"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The examination consists of an oral exam and a short oral presentation. The overall impression is rated.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\n•\n•\nThe students are able to explain the basic principles of a lidar sensor\nThe students can explain all relevant components of a lidar sensor and put them in context\nThe students can explain different forms of execution and make a meaningful choice depending on the requirements\nThe students can describe lidar sensors theoretically using the lidar equations and explain the interactions based on this\ntheory\nThe students are able to assess the eye safety of a system\nThe students are able to suggest possible sensor concepts for different applications or to evaluate existing concepts",
+    "content": "In this course the functionality of a lidar sensor is explained and then put into context with relevant use cases. Typical criteria for\nthe evaluation of the performance are then presented. In the following the concept of the sensor is presented in detail and all\nrelevant components are introduced individually. Afterwards they are qualitatively related to each other and the whole system is\nquantitatively examined by means of the lidar equation. Finally, the interaction of the components is further considered to\npresent meaningful combinations and design solutions. The eye safety of lidar sensors is always explicitly considered. The\ncourse concludes with a colloquium in which the students will give short presentations on what they have learned. This\nrepetition is intended to repeat and deepen what has been learned and to lead to a discussion of open question",
+    "workload": "1.\n2.\n3.\n4.\nparticipation in the lectures 12h - 8 dates á 1,5h\npreparation and postprocessing 14 h ( 2h for VL dates 1-7 )\npreparation of the short lecture (16h)\npreparation and participation in the oral exam : 48h",
+    "recommendations": "Basics of optics / optical technologies are helpful (e.g. optical engineering, optoelectronic, technical optics)",
+    "literature": ""
+  },
+  "M-MACH-107657": {
+    "id": "M-MACH-107657",
+    "title": "Introduction to Microsystem Technology I",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Vlad Badilita",
+      "Prof. Dr. Jan Gerrit Korvink"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Written exam: 60 min",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students are able to:\n•\nExplain the fundamental concepts of microsystems engineering and assess their relevance for modern technical\n•\n•\n•\n•\napplications.\nDescribe the physical principles and relevant materials of microsystems engineering and evaluate their suitability for\ndifferent applications.\nExplain key basic technologies of microsystems engineering and understand their role in the fabrication of\nmicroelectronic and micromechanical structures.\nAnalyze fundamental processes of silicon microtechnology and relate them to concrete components and systems.\nUnderstand scientific literature in the field of MEMS, classify key technological advances, and gain an overview of the\ncurrent state of the art in technology and research.",
+    "content": "•\n•\n•\n•\n•\n•\nIntroduction to microsystems engineering and its applications\nMaterials and physical fundamentals\nFabrication processes and basic technologies of microsystems engineering (e.g. lithography, etching, deposition, in\nparticular silicon micromachining)\nExamples of microsystems devices and their applications\nKey scientific advances in MEMS technologies\nCurrent state of the art and emerging trends in microsystems engineering",
+    "workload": "Time of attendance: Preparation and follow up: Exam Preaparation and Exam: Total: 120 h = 4 LP\n15 * 1,5 h = 22,5 h\n15 * 5,5 h = 82,5 h\n15 h",
+    "recommendations": "",
+    "literature": "M. Madou\nFundamentals of Microfabrication\nTaylor & Francis Ltd.; Auflage: 3. Auflage. 2011\nMikrosystemtechnik für Ingenieure, W. Menz und J. Mohr, VCH Verlagsgesellschaft, Weinheim 2005"
+  },
+  "M-INFO-100736": {
+    "id": "M-INFO-100736",
+    "title": "Introduction to Video Analysis",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Beyerer"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See Partial Achievements (Teilleistung).",
+    "prerequisites": "See Partial Achievements (Teilleistung).",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After attending the lecture and working through the sources mentioned and discussed, students will have an overview of\nclassical and current methods from various areas of image sequence analysis. These range from motion detection and\ncorrespondence formation to the estimation of three-dimensional structures from motion, the detection and tracking of objects in\nimage sequences and the interpretation of visually observable actions and behavior.\nStudents analyze problems posed to them in the field of image sequence evaluation and evaluate known methods and groups\nof methods for their suitability to solve the problems and thus select suitable methods and procedures.",
+    "content": "Image sequence analysis as a sub-area of machine vision refers to the automatic derivation of statements about the scene\ndepicted in an image sequence and its development over time. The derived statements can be made available to the human\nuser or directly transferred to the actions of technical systems. When analyzing image sequences, it is possible to include\nmovements as part of the temporal change of the observed scene in the derivation of statements compared to the observation\nof individual images.\nThe subject of the lecture is initially the determination of an existing movement in the scene from the images of an image\nsequence. Both change-based and correspondence-based methods are covered. The use of motion estimation between\nindividual images of an image sequence is then illustrated using examples such as mosaic formation, the\ndetermination of scene structures from motion and object detection based on motion cues.\nThe lecture focuses on object detection and, in particular, object tracking methods, which are used to automatically determine\nmotion traces in the image and to estimate the three-dimensional motion of scene objects. The estimated two- and three-\ndimensional traces form the basis for methods that link the quantitative information about an observed scene with qualitative\nconcepts. This is discussed using the example of action recognition in image sequences. The use of the conceptualization of\nimage sequence evaluation results to inform the human user as well as for automatic conclusions within an image evaluation\nsystem is illustrated using examples.",
+    "workload": "Total: approx. 90h, of which\n1. Attendance time in lectures: 23h\n2. Preparation and follow-up of the same: 23h\n3. Exam preparation and attendance: 44h",
+    "recommendations": "See Partial Achievements (Teilleistung).",
+    "literature": ""
+  },
+  "M-ETIT-106789": {
+    "id": "M-ETIT-106789",
+    "title": "IT/OT-Security Seminar",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Mike Barth"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in the form of an oral examinationof approx. 25 min.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students:\n- know the definitions of terms and use-cases in the IT/OT-Security Domain\n- know security requirements of both: the industrial information technology perspecitiv as well as the production related\noperational technology domain\n- can apply basic cryptographic mechanisms with focus on industrial IT networks\n- know protection goals of IT/OT-security\n- know various aspects of system security (buffer overflow, return-oriented programming, ...)\n- can differentiate between classic information technology (IT) and operational technology (OT) in an industrial environment\n- are familiar with attacks on industrial automation and control systems (Industrial Control Systems - ICS)\n- are familiar with various concepts (defense-in-depth, security by design, ...) and specific security mechanisms (Public-Key-\nInfrastucture, network segmentation, ...) of OT security\n- are familiar with current international security standards for ICS, in particular IEC 62443\n- know the different roles involved and their challenges in the life cycle of ICS\n- know and understand the concept of a risk analysis for security\n- can evaluate the quality of security mechanisms and architectures for industrial systems\n- know typical industrial communication protocols and can analyze and evaluate their security mechanisms",
+    "content": "- Industrial control and automation systems (ICS) are widely used in numerous domains and industries. They play a crucial\nrole in areas such as industrial production, the process industry, critical infrastructures such as energy and water management,\nbuilding automation and medical devices.\n- In recent years, the frequency of vulnerabilities and attacks on these systems has increased, especially since the\nemergence of Stuxnet in 2014. As a result, the protection of ICS has become increasingly important.\n- Compared to conventional IT systems, ICS have different boundary conditions and requirements. In particular, the focus is\non availability and maintaining functional safety. Therefore, classic approaches to information security cannot be applied to\nindustrial control systems without adaptation.\n- This module first provides basic knowledge of security. Building on this, concepts, mechanisms and standards for the\nspecific domain of ICS are introduced. This includes, for example:\no Defense-in-Depth concepts\no Risk-based approaches\no IEC 62443\no Structure and operation of cyber security management systems\no Security engineering\no Use of security information and event management systems in the industrial environment\no Secure use of Industry 4.0 technologies such as OPC UA",
+    "workload": "The workload includes:\n1. attendance in seminar lectures and exercises: 12*2 h = 24 h\n2. preparation / follow-up of seminar lectures: 12*3 h = 36 h\n3. implementation of challenges and exercises: 12*3 h = 36 h\n4. preparation of exam: 24 h.\nA total of 120 h = 4 CR",
+    "recommendations": "Enjoy working with networked software systems in the production and industrial IT environment. Curiosity in the\ninterplay between attackers and defenders as well as a general affinity to software related topics.",
+    "literature": ""
+  },
+  "M-ETIT-100419": {
+    "id": "M-ETIT-100419",
+    "title": "Lab Course Electrical Power Engineering",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Martin Doppelbauer",
+      "Prof. Dr.-Ing. Thomas Leibfried"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": true,
+    "examType": "Performance is assessed through alternative assessments as part of an ongoing evaluation process. The internship comprises\neight experiments, each of which is individually assessed. Each experiment includes a written component with experiment-\nspecific questions (approximately 15 minutes) followed by an oral component (approximately 45 minutes). The overall\nimpression is evaluated.\nThe final grade is calculated as the arithmetic mean of the eight individual grades.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students can calculate and use asynchronous machines, transformers, uncontrolled rectifier circuits, variable-speed drive\nsystems and high-voltage generators. They can carry out partial discharge measurements.",
+    "content": "Building on the basic lectures on electrical machines, power electronics and electrical energy systems, students gain an insight\ninto the fundamental systems of electrical power engineering.",
+    "workload": "The workload is 180 hours and is made up as follows:\n•\n•\nAttendance time 40 h\nSelf-study time 140 h",
+    "recommendations": "Electrical machines and power converters, electrical energy systems",
+    "literature": ""
+  },
+  "M-ETIT-100468": {
+    "id": "M-ETIT-100468",
+    "title": "Lab Course on Nanoelectronics",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Sebastian Kempf"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "EPSE",
+      "MPQT"
+    ],
+    "isLab": true,
+    "examType": "The control of success takes place in form of the evaluation of a written report (approx. 10-20 pages) which introduces the topic,\ndiscusses the execution of the lab course and the scientific results puts the results into the overall context.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After successful completion of the module, students will be familiar with elementary processes of microsystems and thin-film\ntechnology and will be able to optimize the fabrication of thin-film structures independently and without external guidance. In\naddition, they will be able analyze and critically evaluate their results using adequate measuring tools. By working on the\npractical course in small groups, students also acquire or improve their teamwork skills.",
+    "content": "The students learn the basic procedures and processes for the fabrication of integrated circuits as they are also used in industry.\nAfter an introduction, they work on specified tasks in the clean room and technology laboratory of the Institute for Micro- and\nNanoelectronic Systems and work independently on a set of tasks agreed upon in advance with the supervisor. In detail, the\nstudents learn the following methods or processes:\n•\nFabrication of thin films and multilayer systems by sputtering and thermal vapor deposition.\n•\n•\n•\nFotolithography\nCharacterization of the manufactured devices at room temperature and low temperatures.\nIndependent analyses, measurements and evaluations of characteristic quantities of the fabricated structures such as\ncritical temperature, residual resistance ratio, current-voltage characteristics, etc.\nThe results are subsequently summarized by the students in a final report, put into context and critically discussed.",
+    "workload": "A workload of approx. 180h is required for the successful completion of the module. This is composed as follows:\n•\n•\n•\n•\nPreparation of the lab course: 20h\nDiscussion and lab course planning with supervisor: 10h\nAttendance time in the lab course: 70h\nPreparation of the written report: 80h",
+    "recommendations": "Successful completion of the module M-ETIT-103451 - Thin Films: technology, physics and application I or M-ETIT-105608 -\nPhysics, Technology and Applications of Thin Films is recommended.",
+    "literature": ""
+  },
+  "M-ETIT-105614": {
+    "id": "M-ETIT-105614",
+    "title": "Lab course on superconducting materials",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Bernhard Holzapfel"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": true,
+    "examType": "The control of success takes place in form of the evaluation of a written report (approx. 10-20 pages) which introduces the topic,\ndiscusses the execution of the lab course and the scientific results puts the results into the overall context.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After successful completion of the module, students will know how elementary synthesis and characterization methods of\nsuperconducting materials work and will be able to synthesize and characterize superconducting materials in thin film and bulk\nform independently and without external guidance. They know how to interpret measured parameters and relate them to the\nstructural and superconducting properties of superconducting materials. Furthermore, the students understand elementary\naspects of the underlying synthesis and characterization techniques of superconducting materials at variable temperatures and\nhave an insight into the realization of concrete applications of superconducting materials. By working on the practical course in\nsmall groups, students also acquire or improve their teamwork skills.",
+    "content": "Superconducting energy and electronic applications play an important role in many areas of research, society and industry\ntoday. Superconducting magnets for medical MRI applications, or modern high-performance power engineering components\nsuch as superconducting motors and cables are just a few examples. In all superconducting applications, the specific properties\nof the underlying superconducting materials are critical to the performance and potential range of applications of the\ncorresponding superconducting electrical engineering components.\nAgainst this background, students in this module learn the basic synthesis and characterization techniques of superconducting\nmaterials and how to use them to produce superconducting materials and characterize their essential application-relevant\nsuperconducting properties independently and without outside guidance. In concrete terms, the students synthesize\nsuperconducting HTSL thin films or solid materials in consultation with the supervisor and characterize their structural and\nsuperconducting properties. For example, phase purity and growth textures can be analyzed by X-ray methods, and\nsuperconducting transition temperatures and temperature-dependent critical current densities can be analyzed by magnetic and\ntransport measurements, respectively. The students characterize the superconductors they have synthesized and compare the\nresults with literature values. In this environment, the students also gain insight into the methods of cryogenic engineering,\nwhich plays an essential role in the field of superconducting materials.",
+    "workload": "A workload of approx. 180h is required for the successful completion of the module. This is composed as follows:\n•\n•\n•\n•\nPreparation of the lab course: 20h\nDiscussion and lab course planning with supervisor: 10h\nAttendance time in the lab course: 70h\nPreparation of the written report: 80h",
+    "recommendations": "Successful completion of the modules \"Superconductivity for engineers\" and \" Superconducting Materials \" is recommended.",
+    "literature": ""
+  },
+  "M-ETIT-105605": {
+    "id": "M-ETIT-105605",
+    "title": "Lab Course on Superconducting Quantum Electronics",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Sebastian Kempf"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "EPSE",
+      "MPQT"
+    ],
+    "isLab": true,
+    "examType": "The control of success takes place in form of the evaluation of a written report (approx. 10-20 pages) which introduces the topic,\ndiscusses the execution of the lab course and the scientific results puts the results into the overall context.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After successful completion of the module, students will know how elementary components of quantum electronics work and will\nbe able to design, build and characterize quantum electronic circuits independently and without external guidance using these\ncomponents. They know how to interpret measured parameters and characteristics and how to relate them to circuit properties.\nFurthermore, the students understand elementary aspects of the characterization of quantum electronic circuits at low\ntemperatures and have an insight into the required interconnection technology as well as the realization of specific applications\nusing quantum electronic circuits. By working on the practical course in small groups, students also acquire or improve their\nteamwork skills.",
+    "content": "Today, superconducting quantum electronics plays an important role in many areas of research, society and industry. For\nexample, quantum computers have been shown to outperform classical computers, and diagnostic systems based on\nsuperconducting quantum interference detectors in the field of medical technology have become an indispensable part of\neveryday clinical practice.\nAgainst this background, students will learn the basic operation of elementary components of superconducting quantum\nelectronics (Josephson junctions, SQUID, superconducting wiring, etc.) and how to design, build and characterize quantum\nelectronic circuits independently and without external guidance using these components. In fact, students characterize\nJosephson tunnel junctions, superconducting quantum interference detectors or superconducting microwave resonators in\nconsultation with the supervisor and build circuits for a specific application using these elements. For example, a quasi-primary\nthermometer for low temperatures or an nA current sensor can be realized. Students characterize the circuits they build and\ncompare the results to the design parameters. In this environment, students also gain a brief insight into the methods of low-\ntemperature engineering, which plays an essential role in the field of superconducting quantum electronics.",
+    "workload": "A workload of approx. 180h is required for the successful completion of the module. This is composed as follows:\n•\n•\n•\nPreparation of the lab course: 20h\nDiscussion and lab course planning with supervisor: 10h\nAttendance time in the lab course: 70h\nPreparation of the written report: 80h",
+    "recommendations": "Successful completion of the modules \"Quantum detectors and sensors\" and \"Nano- and quantum electronics\" is\nrecommended.",
+    "literature": ""
+  },
+  "M-ETIT-100470": {
+    "id": "M-ETIT-100470",
+    "title": "Laboratory FPGA Based Circuit Design",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Sebastian Kempf"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": true,
+    "examType": "The success control takes place in form of another type of examination, consisting of the evaluation of the three projects and a\nfinal report (30-40 pages). The overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students acquire the ability to analyze, structure and formally describe the problem. Furthermore, students will be able to\ntransform the formal descriptions into logical functions and implement these in the programmable FPGA using the development\nenvironment. In their experimental work, students will be able to critically evaluate the results they have achieved and modify\nthem if necessary.",
+    "content": "The students get to know the development environment for FPGA and acquire the knowledge to implement logical functions in\nprogrammable circuits. The following sub-projects are worked on in detail:\n•\n•\n•\n•\n•\nIntroduction to the integrated development environment Altera Quartus II based on the creation of convolutional coders.\nCreation of simulation stimuli and comparison of the simulation results of the created encoders.\nCreation of digital filters by means of advanced graphic design using the integrated tools of the development\nenvironment.\nProgramming and measurement of the created filters.\nCreation of parameterized digital filters in VHDL considering different implementation variants.\n•\nComparison and discussion of the need for logic cells and the performance of the filters.",
+    "workload": "The workload in hours is broken down below:\n1. attendance time in the internship 48 h\n2. preparation/follow-up 82 h\n3. preparation of the final report 50 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100460": {
+    "id": "M-ETIT-100460",
+    "title": "Laboratory in Software Engineering",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Eric Sax"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": true,
+    "examType": "Success is assessed by means of two oral examinations (5-10 min.) during the laboratory, the submitted software project and a\nfinal presentation (5-10 min.) with a question and answer session. The overall impression will be assessed.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completing the module, students can independently design and implement an application-oriented software project in the\nfield of embedded systems. This includes analyzing the problem, designing the system and solution, implementing it, and\nconducting extensive testing within a simulation environment. Their knowledge of UML, object-oriented programming, service-\noriented architecture, virtualization, and the C++ and Python programming languages has been deepened.\nStudents can derive the necessary specifications from a given user story and create a system design based on these\nspecifications. Using current UML standards, they can develop and clearly visualize software architectures. They are also\ncapable of successfully managing projects as part of a team, including task coordination, constructive conflict resolution, and\nevaluating and presenting their own results.",
+    "content": "Under guidance, students first acquire foundational knowledge in virtualization and service orientation, using Docker/Podman\nand ROS2 as examples. Building on this, they independently design and implement service-oriented software to develop an\nautomated driving function. This includes processing sensor data to control the vehicle's actuators within a simulation\nenvironment.\nThe work is carried out in teams of three to four students, who independently pursue and work on the lab's objectives.\nProfessional development tools are used throughout the lab, including the CarMaker simulation environment.",
+    "workload": "1. attendance time in laboratory appointments: 48 hours\n2. preparation/follow-up: 96 hours\n3. preparation of the presentation: 10 hours\n4. preparation of the oral examination: 10 hours\nTotal: 164 hours",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-102356": {
+    "id": "M-ETIT-102356",
+    "title": "Laboratory Lighting Technology",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Cornelius Neumann",
+      "Dr.-Ing. Klaus Trampert"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": true,
+    "examType": "Success is assessed on the basis of a total of four experiments. The overall impression is graded.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students have practical experience in using photometric measurement equipment and methods for determining the photometric\nand electrical properties of lamps and luminaires. They also have basic experience in the simulation of luminaires with CAE\ntools.\nThey will be able to assess the plausibility of measurement results and estimate the influence of the measurement method on\nthe uncertainty of the result.\nThey also have the competence to summarise the results in written form and to interpret the knowledge gained from the\nmeasurements scientifically and to explain the physical and photometric properties of lamps and luminaires.",
+    "content": "This module is designed to teach students the theoretical and practical aspects of laboratory work in the field of lighting\ntechnology by means of independently performed practical experiments. In the four experiments, the handling of real\nmeasurement technology is trained on the institute's scientific equipment. The module also teaches the skills required to write a\nscientific report and the rules for the appropriate visualisation of data sets.\nThe working titles of the experiments are:\n1. thermal spectral behaviour of LEDs\n2. far-field goniophotometry\n3. near-field goniophotometry\n4. simulation of optical systems",
+    "workload": "Due to the self-administration of the small groups:\n1 x 5 h are required for organizational tasks. This includes attending the information event, attending 2 safety briefings (laser\nand clean room) and making individual appointments between the experiment supervisor and the small group.\nThe workload for the 4 experiments in the module is calculated as follows:\n4 x 5 h familiarization with the topic and literature study on the basics including preparation for the admission test.\n4 x 8 h attendance at the institute\n4 x 10 h data preparation and visualization\n4 x 16 h Writing an individual report on the basis of the measurement data and the research question for the experiment.\n4 x 1 h final discussion on the experiment with feedback on the report\n4 x 4 h Improvement of the report based on the feedback on the report\nTotal hours required = 181 h = 6 CR",
+    "recommendations": "Knowledge of the theoretical principles of the individual experiments is helpful. It is highly recommended to attend the module\nafter attending the lectures relevant to the subject, as knowledge of the theoretical basics is helpful but not mandatory. If the\nbasics from the corresponding modules are not present, a longer preparation time for the respective experiment is needed.\nHelpful modules: Light technology, optoelectronic measurement technology, photometry and radiometry",
+    "literature": ""
+  },
+  "M-MACH-102699": {
+    "id": "M-MACH-102699",
+    "title": "Laboratory Mechatronics",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "pass/fail",
+    "coordinators": [
+      "Prof. Dr. Veit Hagenmeyer",
+      "Prof. Dr.-Ing. Wolfgang Seemann",
+      "Prof. Dr.-Ing. Christoph Stiller"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": true,
+    "examType": "The laboratory course is offered exclusively as ungraded course work. The assessment consists of a group colloquium at the\nbeginning of the individual specialization phases (Part 1). In addition, a robot control system for a pick-and-place task must be\nsuccessfully implemented in the group phase (Part 2).",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students are able to put the knowledge from the specialization in mechatronics and microsystems technology into practice\non an exemplary mechatronic system, a handling system. The students can create an automated object recognition, calculate\nkinematic systems and realize a communication between different systems (PC, CAN, USB).\nFurthermore, the students can integrate the individual parts of a manipulator in teamwork to a functioning overall system.",
+    "content": "Part I\nControl, programming and simulation of robots\nCAN-Bus communication\nImage processing / machine vision\nDynamic simulation of robots in ADAMS\nPart II\nIn a group work, a kinematic system has to be programmed so that it is able to recognize and grip objects fully automatically.",
+    "workload": "1.\n2.\nAttendance time Lecture: 15 * 2 h = 30h\nself-study: 15 * 6 h = 90h\nTotal: 120h = 4 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100478": {
+    "id": "M-ETIT-100478",
+    "title": "Laboratory Nanotechnology",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Ulrich Lemmer",
+      "Dr.-Ing. Klaus Trampert"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": true,
+    "examType": "Success control takes place in the form of a total of four tests. The overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students have practical experience in the use of measuring devices and manufacturing processes in nanotechnology and\nthe methods for determining the physical and optical properties of optoelectronic components with functional nanotechnology\ncomponents.\nThey can evaluate measurement results with regard to their plausibility and assess the influence of the measurement method on\nthe uncertainty of the result.\nYou will also be able to reproduce the results in written form and interpret the knowledge gained from the measurements\nscientifically and explain the physical properties and the influence of the nanotechnology components.",
+    "content": "This module is designed to teach students the theoretical and practical aspects of laboratory work in the field of nanotechnology\nby means of independently conducted practical experiments. In the four experiments, students practise working with real\nmeasurement technology using the scientific equipment of the institute. The module also teaches students how to write a\nscientific report and the rules for the meaningful visualization of data sets.\nThe working titles of the experiments are\n1.\n2.\n3.\n4.\nProduction and characterization of an OLED\nOptical mask lithography\nFabrication and characterization of an electrochromic device\nNanoimprint lithography and scanning electron microscopy",
+    "workload": "Due to the self-administration of the small groups:\n1 x 5 h are required for organizational tasks. This includes attending the information event, attending 2 safety briefings (laser\nand clean room) and making individual appointments between the experiment supervisor and the small group.\nThe workload for the 4 experiments in the module is calculated as follows:\n4 x 5 h familiarization with the topic and literature study on the basics including preparation for the admission test.\n4 x 8 h attendance at the institute\n4 x 10 h data preparation and visualization\n4 x 16 h Writing an individual report on the basis of the measurement data and the research question for the experiment.\n4 x 1 h final discussion on the experiment with feedback on the report\n4 x 4 h Improvement of the report based on the feedback on the report\nTotal hours required = 181 h = 6 CR",
+    "recommendations": "Knowledge of the theoretical principles of the individual experiments is helpful. It is advisable to attend the module after\nattending the subject-relevant courses, as knowledge of the theoretical basics is helpful but not mandatory. If the basics from the\ncorresponding modules are not available, this means a longer preparation time for the respective experiment.\nHelpful modules: Solid state electronics",
+    "literature": ""
+  },
+  "M-ETIT-100477": {
+    "id": "M-ETIT-100477",
+    "title": "Laboratory Optoelectronics",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Klaus Trampert"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": true,
+    "examType": "Success control takes place in the form of a total of four tests. The overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students have practical experience in using optoelectronic measuring devices and methods for determining the photometric and\nelectrical properties of light sources and their operating devices.\nThey will be able to assess the plausibility of measurement results and estimate the influence of the measurement method on\nthe uncertainty of the results.\nYou will also be able to reproduce the results in written form and interpret the knowledge gained from the measurements\nscientifically and use this to explain the physical properties of the light sources or the control gear.",
+    "content": "This module is designed to teach students the theoretical and practical aspects of laboratory work in the field of optoelectronics\nby means of independently conducted practical experiments. In the four experiments, students practise using real measurement\ntechnology on the scientific equipment of the institute. The module also teaches students how to write a scientific report and the\nrules for the meaningful visualization of data sets.\nThe working titles of the experiments are\n1.\n2.\n3.\n4.\nOperating behavior of fluorescent lamps\nSpectrophotometer | spectral transmission and reflection\nCharacterization of organic lasers\nSpectroscopy & photosensor technology.",
+    "workload": "Due to the self-administration of the small groups:\n1 x 5 h are required for organizational tasks. This includes attending the information event, attending 2 safety briefings (laser\nand clean room) and making individual appointments between the experiment supervisor and the small group.\nThe workload for the 4 experiments in the module is calculated as follows:\n4 x 5 h familiarization with the topic and literature study on the basics including preparation for the admission test.\n4 x 8 h attendance at the institute\n4 x 10 h data preparation and visualization\n4 x 16 h Writing an individual report on the basis of the measurement data and the research question for the experiment.\n4 x 1 h final discussion on the experiment with feedback on the report\n4 x 4 h Improvement of the report based on the feedback on the report\nTotal hours required = 181 h = 6 CR",
+    "recommendations": "Knowledge of the theoretical principles of the individual experiments is helpful. It is advisable to attend the module after\nattending the subject-relevant courses, as knowledge of the theoretical basics is helpful but not mandatory. If the basics from the\ncorresponding modules are not available, this means a longer preparation time for the respective experiment.\nHelpful modules: Solid-state electronics, optoelectronic measurement technology, plasma radiation sources",
+    "literature": ""
+  },
+  "M-ETIT-102350": {
+    "id": "M-ETIT-102350",
+    "title": "Laboratory Solar Energy",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": true,
+    "examType": "Success is assessed on the basis of a total of four experiments. The overall impression is graded.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students have practical experience in using photometric measurement equipment and methods for determining the photometric\nand electrical properties of lamps and luminaires. They also have basic experience in the simulation of luminaires with CAE\ntools.\nThey will be able to assess the plausibility of measurement results and estimate the influence of the measurement method on\nthe uncertainty of the result.\nThey also have the competence to summarise the results in written form and to interpret the knowledge gained from the\nmeasurements scientifically and to explain the physical and photometric properties of lamps and luminaires.",
+    "content": "This module is designed to teach students the theoretical and practical aspects of laboratory work in the field of solar\ntechnology, particularly in the field of photovoltaics, by means of independently conducted practical experiments. In the four\nexperiments, the handling of real measurement technology is trained on the institute's scientific equipment. The module also\nteaches the skills required to write a scientific report and the rules for the appropriate visualisation of data sets.\nThe working titles of the experiments are:\n1. Light Beam Induced Current (LBIC) measurement in solar cells\n2. Optical and electrical modelling of thin-film solar cells\n3. Quantum efficiency measurements on solar cells\n4. Outdoor measurements of PV modules",
+    "workload": "Due to the self-administration of the small groups:\n1 x 5 h are required for organizational tasks. This includes attending the information event, attending 2 safety briefings (laser\nand clean room) and making individual appointments between the experiment supervisor and the small group.\nThe workload for the 4 experiments in the module is calculated as follows:\n4 x 5 h familiarization with the topic and literature study on the basics including preparation for the admission test.\n4 x 8 h attendance at the institute\n4 x 10 h data preparation and visualization\n4 x 16 h Writing an individual report on the basis of the measurement data and the research question for the experiment.\n4 x 1 h final discussion on the experiment with feedback on the report\n4 x 4 h Improvement of the report based on the feedback on the report\nTotal hours required = 181 h = 6 CR",
+    "recommendations": "Knowledge of the theoretical background of each experiment is recommended. It is strongly recommended that you attend this\nmodule after attending the relevant lectures, as knowledge of the theoretical background is important but not strictly necessary.",
+    "literature": ""
+  },
+  "M-ETIT-100434": {
+    "id": "M-ETIT-100434",
+    "title": "Laser Metrology",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Marc Eichhorn"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "The exam will be taken as an oral examination (about 20 minutes). The individual appointments for examination are offered\nregularly at two previously determined dates.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students understand the fundamental properties of laser light and possess the knowledge necessary to understand the\nmetrologically obtainable information, understand the basics of various detectors as well as their limits and have the knowledge\nnecessary to understand a multitude of laser metrological setups, mainly for interferometry, Moiré methods, distance and\nvelocity measurements and absorption as well as scattering techniques.",
+    "content": "In the module several aspects of laser diagnostics will be discussed, beginning with the fundamental properties of laser light and\nthe related metrologically useful information. In addition beam diagnostics and interferometric setups in general, as well as\nMoiré methods in particular, will be discussed. Further topics of the lecture will be commonly used setups, mainly for laser\ndistance and velocity measurements along with widely used absorption and scattered light methods.\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\nLaser diagnostics - theoretical considerations (laser beam properties, coherence, spectral emission of lasers, mode\nstructure and selection, coherence length)\nMetrological accessible information (propagation in homogeneous and isotropic, in inhomogeneous and in anisotropic\nmedia)\nBeam diagnostics (photoelectric detectors, information theory, granulation properties of laser light)\nLaser-Interferometer (fundamentals, two-beam Interferometer, interferometry applications in plasma physics, two- and\nmultiwavelength-interferometry, laser gyroscopes)\nMoiré technique (Moiré deflectometry, Fresnel- and Fraunhofer diffraction, applications and evaluation of the Moiré\ntechnique)\nLaser range measurements (fundamentals, atmospheric influence on propagation, optical distance measurement\ntechniques, accuracy, sensitivity, heterodyne detection, selected heterodyne detection schemes, tomoscopy)\nLaser velocity measurement techniques (Doppler principle, measuring flow velocities using Doppler effect, the two-focus\ntechnique or laser anemometry; time-resolved imaging particle-trace anemometry)\nAbsorption and scattering techniques (absorption techniques, LIDARs, scattering processes in laser diagnostics,\nspontaneous scattering techniques, spectroscopic techniques, stimulated scattering, nonlinear optical laser light\nscattering techniques)",
+    "workload": "About 90 h in total, consisting of\n30 h lectures\n60 h recapitulation and self-studies",
+    "recommendations": "Solid mathematical background, basic knowledge in physics. Steady participation in the lecture as well as thorough preparation\nbased on the scriptum is highly recommended.",
+    "literature": "M. Eichhorn, Laser metrology - Scriptum\nA. E. Siegman, Lasers (university Science Books)\nB. E. A. Saleh, M. C. Teich, Fundamentals of Photonics (Wiley-Interscience)"
+  },
+  "M-ETIT-100435": {
+    "id": "M-ETIT-100435",
+    "title": "Laser Physics",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Marc Eichhorn"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The exam will be taken as an oral examination (about 20 minutes). The individual appointments for examination are offered\nregularly at two previously determined dates.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students understand the fundamental relations and basics of a laser. They obtain the knowledge necessary for\nunderstanding and designing lasers (laser media, optical resonators, pumping schemes) and understand the basics and\nschemes for pulse generation in a laser. They have the knowledge needed for a multitude of lasers: gas, solid-state, fiber and\ndisc lasers from the visible up to the mid-Infrared spectrum.",
+    "content": "Within the module the physical basics of lasers, the fundamental processes of light amplification and the formalisms necessary\nto describe lasers and laser resonators are covered. The generation of laser pulses and various laser architectures as well as\nrealisations are presented in detail.\nThe exercises specifically discuss the topics of laser description, theoretical background as well as the realization of different\nlaser designs. The tasks of the exercise will be handed out at the end of each lecture as well as uploaded to the lecture website\nand are to be solved for the following exercise, in which the solution will be discussed.\nContents:\n1 Quantum-mechanical fundamentals of lasers\n1.1 Einstein relations and Planck´s law\n1.2 Transition probabilities and matrix elements\n1.3 Mode structure of space and the origin of spontaneous emission\n1.4 Cross sections and broadening of spectral lines\n2 The laser principles\n2.1 Population in version and feedback\n2.2 Spectroscopic laser rate equations\n2.3 Potential model of the laser\n3 Optical Resonators\n3.1 Linear resonators and stability criterion\n3.2 Mode structure and intensity distribution\n3.3 Line width of the laser emission\n4 Generation of short and ultra-short pulses\n4.1 Basics of Q-switching\n4.2 Basics of mode locking and ultra-short pulses\n5 Laser examples and their applications\n5.1 Gas lasers: The Helium-Neon-Laser\n5.2 Solid-state lasers\n5.2.1 The Nd3+-Laser\n5.2.2 The Tm3+-Laser\n5.2.3 The Ti3+:Al2O3 Laser\n5.3 Special realisations of lasers\n5.3.1 Thermal lensing and thermal stress\n5.3.2 The fiber laser\n5.3.3 The thin-disk laser",
+    "workload": "About 120 h in total, consisting of\n30 h lectures\n15 h tutorial\n75 h recapitulation and self-studies",
+    "recommendations": "Steady participation in the lecture as well as thorough preparation based on the scriptum is higly recommended.",
+    "literature": "M. Eichhorn, Laser physics (Springer)\nM. Eichhorn, Laserphysik (Springer)\nA. E. Siegman, Lasers (University Science Books)\nB. E. A. Saleh, M. C. Teich,Fundamentals of Photonics (Wiley-Interscience)\nF. K. Kneubühl, M. W. Sigrist, Laser (Teubner)"
+  },
+  "M-WIWI-105403": {
+    "id": "M-WIWI-105403",
+    "title": "Liberalised Power Markets",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Wolf Fichtner"
+    ],
+    "organisation": "KIT Department of Business and Economics",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success is monitored in the form of a written examination.",
+    "prerequisites": "See course description.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Upon successful completion of the module, students will be able to:\n1. Knowledge and Understanding\n•\nDescribe the historical evolution of power markets and forecast potential future developments within the electricity value\n•\n•\nchain.\nExplain the fundamental principles of market design, specifically the concepts of unbundling, central versus\ndecentralized dispatch, and the distinction between short-term and long-term market models.\nIdentify and define the various segments of the electricity market, including day-ahead, intraday, forwards, and futures\nmarkets, as well as specialized markets for ancillary services and emission rights.\n2. Analysis and Application\n•\n•\n•\nAnalyze the technical and economic interdependencies between grid operation and congestion management in a\nliberalized environment.\nDifferentiate between various market mechanisms and their roles in integrating renewable energies into the power\nsystem.\nExamine the causes and consequences of market flaws and market failures, and evaluate the role of regulation in\nmitigating these issues.\n3. Evaluation and Synthesis\n•\n•\n•\nCritically assess the presence of market power by applying quantitative and qualitative indicators, and discuss effective\nstrategies for its reduction.\nEvaluate the impact of different regulatory frameworks on market efficiency and security of supply.\nSynthesize complex information to develop perspectives on future market structures and the shifting roles of actors\nwithin the electricity value chain.",
+    "content": "1. Power markets in the past, now and in future\n2. Designing liberalised power markets\n2.1. Unbundling Dimensions of liberalised power markets\n2.2. Central dispatch versus markets without central dispatch\n2.3. The short-term market model\n2.4. The long-term market model\n2.5. Market flaws and market failure\n2.6. Regulation in liberalised markets\n3. The power (sub)markets\n3.1 Day-ahead market\n3.2 Intraday market\n3.3 (Long-term) Forwards and futures markets\n3.4 Emission rights market\n3.5 Market for ancillary services\n3.6 The “market” for renewable energies\n3.7 Future market segments\n4. Grid operation and congestion management\n4.1. Grid operation\n4.2. Congestion management\n5. Market power\n5.1. Defining market power\n5.2. Indicators of market power\n5.3. Reducing market power\n6. Future market structures in the electricity value chain\n1. Power markets in the past, now and in future\n2. Designing liberalised power markets\n2.2. Unbundling Dimensions of liberalised power markets\n2.3. Central dispatch versus markets without central dispatch\n2.4. The short-term market model\n2.5. The long-term market model\n2.6. Market flaws and market failure\n2.7. Regulation in liberalised markets\n3. The power (sub)markets\n3.1 Day-ahead market\n3.2 Intraday market\n3.3 (Long-term) Forwards and futures markets\n3.4 Emission rights market\n3.5 Market for ancillary services\n3.6 The “market” for renewable energies\n3.7 Future market segments\n4. Grid operation and congestion management\n4.1. Grid operation\n4.2. Congestion management\n5. Market power\n5.1. Defining market power\n5.2. Indicators of market power\n5.3. Reducing market power\n6. Future market structures in the electricity value chain",
+    "workload": "The total workload for this module is approximately 180 hours.\n•\n•\n•\n•\nAttendance: Lectures (2 SWS × 15 weeks): 30 h\nAttendance: Exercises (2 SWS × 15 weeks): 30 h\nSelf-Study: Preparation and follow-up of course material: 75 h\nExam Preparation and Participation: 45 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100512": {
+    "id": "M-ETIT-100512",
+    "title": "Light and Display Engineering",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Rainer Kling"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Type of Examination: Oral exam\nDuration of Examination: approx. 25 minutes\nModality of Exam: The oral exam is flexibly held by student request after the WS.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students will apply their comprehensive knowledge of physics of optical phenomena to applied optical systems in light and\ndisplay engineering. These applications span from human sensing with the eye to light technologies with lamps, luminaires and\ndisplays. The course gives a broad overview how optics can be applied in modern technology fields. The subjects taught are\nfurther clarified by demonstrations, models and experiments.\nThe students\n•\n•\n•\n•\n•\n•\n•\n•\n•\ncan derive the description of basic of light engineering starting from the eye and the visual system\nknow how to handle basic metrical units and know how to measure them\nunderstand the visible sensing in contrast to radiation measurements\ncomprehend the concepts of colour and colour control\nare familiar with all types of light sources from low pressure lamps to LED modules\nconceive the operation principle of various types of drivers\nknow how to set up a luminaire and how simulate a reflector\nthey understand how active (Plasma Displays) and passive displays (TFT Display) work and how to operate them\nhave a good visualization of numerous optical design approaches",
+    "content": "1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\nMotivation: Light & Display Engineering\nLight, the Eye and the Visual System (including Melatonin)\nFundamentals in Light Engineering\nLight in non - visual Processes (UV Processes)\nColor and Brightness\nLight Sources (Halogen, Low Pressure and High Pressure Lamps, LED Engines) and electronic Drivers\nDisplays (Active and Passive Displays: AMOLED, E-ink, TFT Display, Plasma Display)\nLuminaries (Fundamentals, Design Rules, Simulations)\nOptical Design (Ray tracing, Reflector design, Computed Ray tracing)",
+    "workload": "total 120 h, hereof 45 h contact hours (lecture and tutorial), and 75 h homework and self-studies",
+    "recommendations": "Basic physics background",
+    "literature": "Simons, Lighting Engineering: Applied Calculations, 2001\nShunsuke Kobayashi: LCD Backlights, 2009\nWinchip, Fundamentals of Lighting, 2nd Edition, 2011\nMalacara, Handbook of Optical Design, 2004"
+  },
+  "M-ETIT-100577": {
+    "id": "M-ETIT-100577",
+    "title": "Lighting Design - Theory and Applications",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Rainer Kling"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Type of Examination: Oral exam\nDuration of Examination: approx. 25 minutes\nModality of Exam: The oral exam is flexibly held by student request after the WS.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students will apply a comprehensive knowledge of Lighting Design from theory, standards and applications in Indoor and\nOutdoor lighting. Examples and own Lighting design examples as projects. So a practical and theoretical background is applied\nto Lighting Design. From metrics too Light Planning projects in small exercise groups. The subjects taught are further clarified by\ndemonstrations, models and experiments. Attending students get the knowledge to Lighting Design, in a shorter theoretical part\nand practical lighting design simulations with examples from all over the world.\nThe students\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\ncan derive the description of basics of Lighting Design\nknow how to handle basic metrical units and know how to measure them\nunderstand the Lighting Design metrics to apply on projects\nhave a good visualization of numerous design approaches\nrealize good Lighting Design with codes and standards.\ncan see energy savings levels for Lighting Design\ncomprehend the lighting design by practical self-computing lessons:\ncan realize own indoor Lighting design concepts for different applications like Office, School, Shops, Gyms & Industry\ncan realize own outdoor Lighting Design concepts for Street lighting, Tunnels, Stade and Parkings\ncan use for realization Relux and Dialux light planning software so set up Project Planning for Lighting Design.",
+    "content": "1. Lighting Design - Introduction form all over the world\n2. Lighting Fundamentals\n3. Lighting Design Theory\n4. Energy Savings and Lighting design\n5. Lighting Design Tools\n6. Computing Standards\n7. Lighting Design Applications (Practical Part)\n7.1 Interior Lighting\n7.2 Exterior lighting\n7.3 IlluminationOwn Calculation Examples (Practical Part)Motivation: Light & Display Engineering\n8. Own Calculation Examples (Practical Part)Motivation: Light & Display Engineering",
+    "workload": "total 90 h, hereof 45 h contact hours (Seminar), and 45 h homework and self-studies",
+    "recommendations": "Hearing first M-ETIT-100512 - Light and Display Engineering lecture is beneficial.",
+    "literature": "J. Livingstone: Designing With Light: The Art, Science and Practice of Architectural Lighting Design, 2014\nS. Russel: The Architecture Of Light: Interior Designer and Lighting Designer, 2012\nM. Karlen: Lighting Design Basics, Indoor Lightin, 2004\nR.H. Simons Lighting Engineering, 2001Simons, Lighting Engineering: Applied Calculations, 2001\nR. Winchip, Fundamentals of Lighting, 2nd Edition, 2011"
+  },
+  "M-ETIT-100485": {
+    "id": "M-ETIT-100485",
+    "title": "Lighting Engineering",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Cornelius Neumann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success is assessed in the form of an overall oral examination (approx. 20 minutes) on the selected courses, which together\nfulfill the minimum LP requirement.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students gain an overview of the basics and application of lighting technology, light generation and light measurement\ntechnology. They learn that the focus of applications is on people and their perception.\nThey will be able to assess the influence of different lighting applications on people, define application-specific light sources and\nassess optical systems in applications.\nThe highly topical nature of the course allows students to follow current market and research developments. They are prepared\nto work on the topics in research and application.\nStudents are able to assess and evaluate the consequences of specific developments in lighting technology.\nStudents deepen their knowledge and application skills through the calculation and joint discussion of practice applications.",
+    "content": "Lighting technology is a combination of physics, electrical engineering and physiology. Physics describes the objective side of\nlight as radiation, electrical engineering deals with the technical generation of light and physiology describes the subjective\nperception of light. Another important focus is photometry, i.e. the measurement of light according to human perception.\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nMotivation: Focus on human\nPerception of light\nBasic parameters of lighting technology\nThe human eye\nBasics of color perception\nWhat is light and how is it produced?\nAmbassadors of the atoms\nThermal radiators\nGas discharge\nLED\nManipulation of light\nFundamentals of optical systems\nExemplary applications\nMeasurement of light\nThe lecturer reserves the right to deviate from the content given here in the context of the current lecture without special notice.",
+    "workload": "1. attendance time lecture: 15 * 2 h = 30 h\n2. preparation and follow-up time lecture: 15 * 1 h = 15 h\n3. attendance time exercise: 15 * 2 = 30 h\n4. preparation and follow-up time for exercise: 15 * 1 h = 15 h\n5. exam preparation and attendance: 30 h\nTotal: 120 h = 4 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-107663": {
+    "id": "M-INFO-107663",
+    "title": "Localization of Mobile Agents",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Uwe Hanebeck"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See Partial Achievements (Teilleistung).",
+    "prerequisites": "See Partial Achievements (Teilleistung).",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Participants in this course will gain a broad overview of probabilistic machine learning tools and learn how to creatively combine\nthem to solve a wide variety of problems.",
+    "content": "This module provides a systematic introduction to the field of localization methods. To facilitate entry, the module is divided into\nfour central topics. Dead reckoning (1) deals with the step-by-step determination of a vehicle's position from dynamic\nparameters such as speed or steering angle, as well as intertial measurement unit (IMU) data. Localization with the aid of\nmeasurements to external, known landmarks is part of static localization (2). Specifically, signal times of arrival (multilateration\nand GPS), distance measurements, and angle measurements (bearings) are covered. In addition to closed-form solutions for\nspecial measurements, the method of least squares for fusing arbitrary measurements is introduced. This also includes\nnonlinear optimization methods and certifiable global optimization. Dynamic localization (3) deals with the combination of dead\nreckoning and static localization using the Kalman filter, which is used in virtually all object tracking scenarios and other state\nestimation problems. General estimator properties are also discussed. The course concludes with simultaneous localization and\nmapping (SLAM) (4), which allows localization even when the location of landmarks is partially unknown. Thereby the\nmeasurement association problem is also addressed.",
+    "workload": "Per week:\n2 SWS Presence\n2h Follow-up\n6h Digital exercise with computation tasks\n2h exam preparation\n= 12h/week und 180h/semester",
+    "recommendations": "Knowledge of a higher-level programming language with mature libraries for scientific and numerical computing (e.g., Julia,\nMatlab, Python) is an advantage.",
+    "literature": ""
+  },
+  "M-INFO-100807": {
+    "id": "M-INFO-100807",
+    "title": "Low Power Design",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jörg Henkel"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achievements (Teilleistung)",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are made aware of various low power design optimizations employed in state-of-the-art embedded devices. This\ninvolves optimization techniques that incorporate embedded machine learning algorithms to enhance system performance. At\nthe end of the lecture, the students will be able to recognize the challenges involved in crafting efficient low power designs and\nhow to tackle them.",
+    "content": "The lecture provides an overview of design methods, synthesis tools, estimation models, software techniques, operating system\nstrategies, scheduling algorithms, embedded machine learning methods, etc., with the aim of minimizing the power consumption\nof embedded devices without compromising their performance. Both the research-relevant and industry-prevalent topics at\ndifferent level of abstractions (from circuit to system) are discussed in this lecture.",
+    "workload": "Attendance time: 30 hours (2 SWS × 15 weeks)\nSelf-study: 45 hours (1.5 × 2 SWS × 15 weeks)\nExam preparation: 15 hours\nTotal: 90 hours (3 ECTS)",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-WIWI-105003": {
+    "id": "M-WIWI-105003",
+    "title": "Machine Learning 1",
+    "credits": 5,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "Prof. Dr.-Ing. Johann Marius Zöllner\nKIT Department of Business and Economics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success is assessed in the form of a written examination (60 minutes) (in accordance with §4(2), 1 SPO) or in the form of an\noral examination (approx. 20 minutes) (in accordance with §4(2), 2 SPO).\nThe examination is offered every semester and can be repeated at any regular examination date.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\nStudents gain knowledge of the basic methods in the field of machine learning.\nStudents understand advanced concepts of machine learning and their application.\nStudents can classify, formally describe and evaluate methods of machine learning.\nStudents can use their knowledge to select suitable models and methods for selected problems in the field of machine\nlearning.",
+    "content": "The course prepares students for the rapidly evolving field of machine learning by providing a solid foundation, covering core\nconcepts and techniques to get started in the field. Students delve into different methods in supervised, unsupervised, and\nreinforcement learning, as well as various model types, ranging from basic linear classifiers to more complex methods, such as\ndeep neural networks. Topics include general learning theory, support vector machines, decision trees, neural network\nfundamentals, convolutional neural networks, recurrent neural networks, unsupervised learning, reinforcement learning, and\nBayesian learning.\nThe course is accompanied by a corresponding exercise, where students gain hands-on experience by implementing and\nexperimenting with different machine learning algorithms, helping them to apply machine learning algorithms on real world\nproblems.\nBy the end of the course, students will have acquired a solid foundation in machine learning, enabling them to apply state-of-\nthe-art algorithms to solve complex problems, contribute to research efforts, and explore advanced topics in the field.",
+    "workload": "The total workload for this module is approximately 150 hours.\n•\n•\n•\n•\nAttendance: Lectures (2 SWS × 15 weeks): 30 h\nAttendance: Exercises (1 SWS × 15 weeks): 15 h\nSelf-Study: Preparation and follow-up of course material: 60 h\nExam Preparation and Participation: 45 h",
+    "recommendations": "",
+    "literature": "Further reading\n•\n•\n•\n•\n•\nMachine Learning - Tom Mitchell\nDeep Learning - Ian Goodfellow, Yoshua Bengio, Aaron Courville\nPattern Recognition and Machine Learning - Christopher M. Bishop\nArtificial Intelligence: A Modern Approach - Peter Norvig and Stuart J. Russell\nReinforcement Learning: An Introduction - Richard S. Sutton and Andrew G. Barto\nFurther (specific) literature on individual topics will be given in the lecture."
+  },
+  "M-WIWI-105006": {
+    "id": "M-WIWI-105006",
+    "title": "Machine Learning 2",
+    "credits": 5,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "Prof. Dr.-Ing. Johann Marius Zöllner\nKIT Department of Business and Economics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The assessment of this course is a written examination (60 min) according to §4(2), 1 of the examination regulation or an oral\nexam (approx. 20 min) following §4, Abs. 2, 2 of the examination regulation.\nThe exam takes place every semester and can be repeated at every regular examination date.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\nStudents gain knowledge of the basic methods in the field of machine learning.\nStudents understand advanced concepts of machine learning and their application.\nStudents can classify, formally describe and evaluate methods of machine learning.\nStudents can use their knowledge to select suitable models and methods for selected problems in the field of machine\nlearning.",
+    "content": "The subject area of machine intelligence and, in particular, machine learning, taking into account real challenges of complex\napplication domains, is a rapidly expanding field of knowledge and the subject of numerous research and development projects.\nThe lecture \"Machine Learning 2\" deals with modern advanced methods of machine learning such as semi-supervised and\nactive learning, deep neural networks (deep learning, CNNs, GANs, diffusion models, transformer, adversarial attacks) and\nhierarchical approaches, e.g. reinforcement learning. Another focus is the embedding and application of machine learning\nmethods in real systems.\nThe lecture introduces the latest basic principles as well as extended basic structures and elucidates previously developed\nalgorithms. The structure and the mode of operation of the methods and methods are presented and explained by means of\nsome application scenarios, especially in the field of technical (sub) autonomous systems (vehicles, robotics, neurorobotics,\nimage processing, etc.).",
+    "workload": "The total workload for this module is approximately 150 hours.\n•\n•\n•\n•\nAttendance: Lectures (2 SWS × 15 weeks): 30 h\nAttendance: Exercises (1 SWS × 15 weeks): 15 h\nSelf-Study: Preparation and follow-up of course material: 60 h\nExam Preparation and Participation: 45 h",
+    "recommendations": "",
+    "literature": "•\n•\n•\n•\n•\n•\nDeep Learning - Ian Goodfellow\nArtificial Intelligence: A Modern Approach - Peter Norvig and Stuart J. Russell\nMachine Learning - Tom Mitchell\nPattern Recognition and Machine Learning - Christopher M. Bishop\nReinforcement Learning: An Introduction - Richard S. Sutton and Andrew G. Barto\nDeep Learning - Ian Goodfellow, Yoshua Bengio, Aaron Courville"
+  },
+  "M-ETIT-104988": {
+    "id": "M-ETIT-104988",
+    "title": "Machine Learning and Optimization in Communications",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Laurent Schmalen"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Written examination of 120 minutes.",
+    "prerequisites": "Knowledge of basic engineering mathematics probability theory as well as basic knowledge of communications engineering\n(e.g. \"M-ETIT-102103 – Nachrichtentechnik I\" and \"M-ETIT-102104 – Wahrscheinlichkeitstheorie\").",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students will be able to apply the methods and tools of machine learning, artificial intelligence and optimization in\ncommunications engineering. You will learn various tools and solution methods of machine learning, artificial intelligence and\nnumerical optimization, and you can use these tools to solve telecommunications problems.",
+    "content": "The course broadens the questions dealt with in the lecture Communication Engineering I. The focus here is on methods that\narise when considering communication networks. For this purpose, partially known techniques have to be extended, in some\ncases new methods have to be learned. The first part of the lecture deals with modern methods of machine learning, e.g. deep\nneural networks, and uses examples to show how they are used in communication networks. The second part of the lecture\nconsiders numerical optimization methods and their application to telecommunication questions. In the exercise concrete\nquestions from practice are considered and solved together with the students. The focus of the problems lies in the field of\ncommunications engineering. Many of the applications are illustrated with example implementations in software (python).",
+    "workload": "- Lecture attendance: 15 * 2 h = 30 h\n- Presence time exercise: 15 * 1 h = 15 h\n- Lecture preparation/-revision phase: 15 * 2 h = 30 h\n- Exercise preparation/-revision phase: 15 * 1 h = 15 h\n- Exam preparation and attendance: 30 h\nTotal workload: approx. 120 h",
+    "recommendations": "Technology\" is helpful.\nKnowledge from the modules \"M-ETIT-100444 – Angewandte Informationstheorie\" and \"M-ETIT-105982 – Measurement",
+    "literature": ""
+  },
+  "M-WIWI-106604": {
+    "id": "M-WIWI-106604",
+    "title": "Machine Learning and Optimization in Energy Systems",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Wolf Fichtner"
+    ],
+    "organisation": "KIT Department of Business and Economics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "participants.\nThe assessment of this module is a written examination (60 min) or an oral exam (approx. 30 min) depending on the number of",
+    "prerequisites": "None.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Participants know about the most common optimization and machine learning approaches for the application in energy systems.\nThey understand the basic principles of the methods and are able to apply them for solving important problems of future energy\nsystems with high shares of renewable energy sources.",
+    "content": "In the beginning, the essential transition of the energy system into a smart grid and the need for methods from the field of\noptimization and machine learning are explained. The course can be subdivided into an optimization part and a larger machine\nlearning part. In the optimization part, the basics of optimization approaches that are used in energy systems are shown.\nFurther, heuristic methods and approaches from the field of multiobjective optimization are introduced. In the machine learning\npart, the most important methods from the field of unsupervised learning, supervised learning and reinforcement learning are\nintroduced and their application in future energy systems are investigated.\nAmongst the considered applications are power plant dispatch, intelligent heating with heat pumps, charging strategies for\nelectric vehicles, clustering of energy data for energy system models and electricity demand and renewable generation\nforecasting.\nWe also offer a voluntary computer exercise that deepens the understanding of the methods and applications covered in the\nlecture. The students will have the opportunity to solve problems from the energy domain by using optimization and machine\nlearning approaches implemented in the programming language Python.\nThe course's general focus is on the application of the methods in the energy field and not on the mathematical details of the\ndifferent approaches.",
+    "workload": "The total workload for this module is approximately 120 hours:\n•\n•\n•\nAttendance: 30 hours\nSelf-study: 45 hours\nExam preparation: 55 hours",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-MACH-101286": {
+    "id": "M-MACH-101286",
+    "title": "Machine Tools and Industrial Handling",
+    "credits": 9,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Fleischer"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Oral exam (approx. 45 minutes)",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students\n•\n•\n•\n•\nare able to assess the use and application of machine tools and high-precision manufacturing systems and to\ndifferentiate between them in terms of their characteristics and design.\ncan describe and discuss the essential elements of machine tools and high-precision manufacturing systems (frame,\nmain spindle, feed axes, peripheral equipment, control unit).\nare able to select and dimension the essential components of machine tools and high-precision manufacturing systems.\nare capable of selecting and evaluating machine tools and high-precision manufacturing systems according to technical\nand economic criteria.",
+    "content": "The module gives an overview of the construction, use and application of machine tools and high-precision manufacturing\nsystems. In the course of the module a well-founded and practice-oriented knowledge for the selection, design and evaluation of\nmachine tools and high-precision manufacturing systems is conveyed. First, the main components of the systems are\nsystematically explained and their design principles as well as the integral system design are discussed. Subsequently, the use\nand application of machine tools and high-precision manufacturing systems will be demonstrated using typical machine\nexamples. Based on examples from current research and industrial applications, the latest developments are discussed,\nespecially concerning the implementation of Industry 4.0 and artificial intelligence.\nGuest lectures from industry round off the module with insights into practice.\nThe individual topics are:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nStructural components of dynamic manufacturing Systems\nFeed axes: High-precision positioning\nSpindles of cutting machine Tools\nPeripheral Equipment\nMachine control unit\nMetrological Evaluation\nMaintenance strategies and condition Monitoring\nProcess Monitoring\nDevelopment process for machine tools and high-precision manufacturing Systems\nMachine examples",
+    "workload": "regular attendance: 63 hours\nself-study: 207 hours",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-MACH-101923": {
+    "id": "M-MACH-101923",
+    "title": "Machine Vision",
+    "credits": 8,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Martin Lauer",
+      "Prof. Dr.-Ing. Christoph Stiller"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Type of Examination: written exam\nDuration of Examination: 60 minutes",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After having participated in th lecture the participants have gained knowledge on modern techniques of machine vision and\npattern recognition which can be used to evaluatecamera images. This especially includes techniques in the areas of gray level\nimage analysis, analysis of color images, segementation of images, describing the geometrical relationship between the image\nand the 3-dimensional world, and pattern recognition with various classification techniques. The participants have learned to\nanalyze the algorithms mathematically, to implement them in software, and to apply them to tasks in video analysis. The\nparticipants are able to analyze real-world problems and to develop appropriate solutions.",
+    "content": "The lecture on machine vision covers basic techniques of machine vision. It focuses on the following topics:\nimage preprocessing\nedge and corner detection\ncurve and parameter fitting\ncolor processing\nimage segmentation\ncamera optics\npattern recognition\ndeep learning\nImage preprocessing:\nThe chapter on image processing discusses techniques and algorithms to filter and enhance the image quality. Starting from an\nanalysis of the typical phenomena of digital camera based image capturing the lecture introduces the Fourier transform and the\nShannon-Nyquist sampling theorem. Furthermore, it introduces gray level histogram based techniques including high dynamic\nrange imaging. The disussion of image convolution and typical filters for image enhancement concludes the chapter.\nEdge and corner detection:\nGray level edges and gray level corners play an important role in machine vision since gray level edges often reveal valueable\ninformation about the boundaries and shape of objects. Gray level corners can be used as feature points since they can be\nidentified easily in other images. This chapter introduces filters and algorithms to reveal gray level edges and gray level corners\nlike the Canny edge detector and the Harris corner detector.\nCurve and parameter fitting:\nIn order to describe an image by means of geometric primitives (e.g. lines, circles, ellipses) instead of just pixels robust curve\nand parameter fitting algorithms are necessary. The lecture introduces and discusses the Hough transform, total least sum of\nsquares parameter fitting as well as robust alternatives (M-estimators, least trimmed sum of squares, RANSAC)\nColor processing:\nThe short chapter on color processing discusses the role of color information in machine vision and introduces various models\nfor color understanding and color representation. It concludes with the topic of color consistency.\nImage Segmentation:\nImage segmentation belongs to the core techniques of machine vision. The goal of image segmentation is to subdivide the\nimage into several areas. Each area shares common properties, i.e. similar color, similar hatching, or similar semantic\ninterpretation. Various ideas for image segmentation exist which can be used to create more or less complex algorithms. The\nlecture introduces the most important approaches ranging from the simpler algorithms like region growing, connected\ncomponents labeling, and morphological operations up to highly flexible and powerful methods like level set approaches and\nrandom fields.\nCamera optics:\nThe content of an image is related by the optics of the camera to the 3-dimensional world. In this chapter the lecture introduces\noptical models that describe the relationship between the world and the image including the pinhole camera model, the thin lens\nmodel, telecentric cameras, and catadioptric sensors. Furthermore, the lecture introduces camera calibration methods that can\nbe used to determine the optical mapping of a real camera.\nPattern recognition:\nPattern recognition aims at recognizing semantic information in an image, i.e. not just analyzing gray values or colors of pixels\nbut revealing which kind of object is shown by the pixels. This task goes beyond classical measurement theory and enters the\nlarge field of artificial intelligence. Rather than just being developped and optimized by a programmer, the algorithms are\nadapting themselves to their specific task using training algorithms that are based on large collections of sample images.\nThe chapter of pattern recognition introduces standard techniques of pattern recognition in the context of image understanding\nlike the support vector machine (SVM), decision trees, ensemble and boosting techniques. It combines those classifiers with\npowerful feature representation techniques like the histogram of oriented gradients (HOG) features, locally binary patterns\n(LBP), and Haar features.\nDeep learning:\nThroughout recent years standard pattern recognition technqiues have more and more been outperformed by deep learning\ntechniques. Deep learning is based on artificial neural networks, a very generic and powerful form of a classifier. The lecture\nintroduces multi layer perceptrons as the most relevant form of artificial neural networks, discusses training algorithms and\nstrategies to achieve powerful classifiers based on deep learning including deep auto encoders, convolutional networks, and\nmulti task learning, among others.",
+    "workload": "240 hours, omposed out of\nhours of lecture: 15*4 h = 60 h\npreparation time prior to and after lecture: 15*6 h = 90 h\nexam preparation and exam: 90 h",
+    "recommendations": "",
+    "literature": "lecture.\nMain results are summarized in the slides that are made available as pdf-files. Further recommendations will be presented in the"
+  },
+  "M-ETIT-107191": {
+    "id": "M-ETIT-107191",
+    "title": "Master's Thesis",
+    "credits": 30,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Marc Hiller"
+    ],
+    "organisation": "",
+    "categories": [
+      "Master's Thesis"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The Master's Thesis module has 30 credits. It consists of the Master's Thesis and a presentation. The presentation must be\ncarried out within the processing time in accordance with SPO Section §14(4).",
+    "prerequisites": "According to SPO Section §14(1) the prerequisite for admission to the Master's Thesis module is that the student has\nsuccessfully completed module examinations totaling 75 credits.",
+    "modeledPrerequisites": "The following conditions have to be fulfilled:\n1.\nYou need to have earned at least 75 credits in the following fields:\n◦\nElectives\n◦\nField of Specialization\n◦\nInterdisciplinary Qualifications",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After successful completion of the module, students are able to work independently on a challenging task in the field of electrical\nengineering or information technology within a given period of time using scientific methods and in compliance with the rules of\ngood scientific practice under guidance and by applying the theoretical and methodological knowledge acquired in the Master's\nprogram. Students are able to do research, analyze and abstract the information and to compile and recognize basic principles\nand laws from less structured information. Students are able to get an overview of a problem, select complex scientific methods\nand procedures and use them to find solutions or show further potentials. In principle, this also takes into account social and/or\nethical aspects.\nThe students are able to interpret and evaluate their results. They are also able to document their results in a clearly structured,\nwritten elaboration using the appropriate technical terminology. Furthermore, students are able to present and defend their\nresults in front of a scientific audience. They have also deepened their problem-solving skills and their competence in\ntransferring the theoretical and methodological knowledge of electrical engineering and information technology into concrete\napplications.\nIn addition to the subject-related qualification goals, the students also gain knowledge and experience in the areas of project\nmanagement as well as self and time management. This also includes knowledge and methods of various presentation\ntechniques.",
+    "content": "The students work independently and with scientific methods on a research topic agreed with the subject examiner, which deals\nwith a problem from the area of the Master's program in Electrical Engineering and Information Technology.",
+    "workload": "900 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-105982": {
+    "id": "M-ETIT-105982",
+    "title": "Measurement Technology",
+    "credits": 5,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Michael Heizmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The examination takes place in form of a written examination lasting 120 minutes.",
+    "prerequisites": "M-ETIT-102652 - Messtechnik (German version) must not have started.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\nStudents have a sound knowledge of the theoretical foundations of measurement technology, including modeling of\nmeasurement systems, consideration of nonlinearities, stochastic deviations and stochastic signals, acquisition of analog\nsignals, and frequency and rotational speed measurement.\nStudents are proficient in the approaches to measurement system design in terms of model assumptions, methods, and\nachievable results.\nStudents are able to analyze and formally describe measurement technology tasks, synthesize possible solutions for\nmeasurement systems and assess the properties of the solution obtained.",
+    "content": "The module deals with the formal, methodical and mathematical fundamentals for the analysis and design of measurement\nsystems. Focal points of the course are\n•\n•\n•\n•\n•\n•\n•\nMeasurement systems and deviations (including scales, the SI systems, modeling of measurement systems)\nCurve fitting (approximation, interpolation)\nStationary behavior of measurement systems (characteristic curve, errors of the characteristic curve, nonlinearities,\nadjustment)\nStochastic measurement errors (probabilistic analysis, samples, statistical test methods, statistic process control, error\npropagation)\nStochastic processes (correlational measurements, spectral description of stochastic signals, system identification,\nmatched filter, Wiener filter)\nDigitization of analog signals (sampling, quantization, analog-digital converters, digital-analog converters)\nFrequency and rotational speed measurement (generalized frequency concept, digital speed measurement, detection of\ndirection)",
+    "workload": "The workload includes:\n1.\n2.\n3.\nattendance in lectures and exercises: 34 h\npreparation / follow-up of lectures and exercises: 51 h\npreparation of and attendance in examination: 65 h\ntotal: 150 h = 5 CR",
+    "recommendations": "Basic knowledge in the fields of “Probability Theory” as well as “Signals and Systems” is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-107294": {
+    "id": "M-ETIT-107294",
+    "title": "Mechatronic Measurement Systems Lab",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Michael Heizmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": true,
+    "examType": "The success control is carried out in the form of a oral examination of approx. 20 min.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\nStudents have in-depth knowledge of different methods for measuring objects, especially surfaces.\nStudents master different procedures for the metrological recording of objects and know the relevant requirements,\nprocedures and results.\nStudents are able to implement procedures for evaluating sensor data from (surface) measuring devices and to evaluate\nthe quality of the measurement result.",
+    "content": "A large number of different measuring methods and systems can be used for the quality inspection of technically manufactured\nobjects and their surfaces. Examples are white light interferometry, confocal microscopy and systems based on focus variation.\nThe measurement methods and systems naturally differ in terms of the physical measurement principle used, but also in terms\nof the evaluation of the raw sensor data recorded.\nIn this internship, different systems for the metrological recording of (technical) surfaces are presented and their properties are\ncharacterized. In the test dates, the students themselves create procedures and algorithms for processing the sensor data in\norder to obtain information about the desired geometric and / or optical properties of the examined surface. The algorithms\nobtained are evaluated on the basis of sensor data from exemplary objects and characterized in terms of the quality of the\nmeasurement statements achieved.",
+    "workload": "Total: approx. 170 hours, of which\n1. Attendance time in introductory session: 2 hours\n2. Preparation of the test dates: 36 h\n3. Attendance time in test appointments (8 appointments of 4 hours each): 36 hours\n4. Follow-up of the test dates, Creation of the minutes: 36 h\n5. Exam preparation and attendance in the same: 60 h",
+    "recommendations": "Knowledge in measurement technology as well as basic knowledge of programming (e.g. in Matlab, Python) are helpful.",
+    "literature": ""
+  },
+  "M-ETIT-106672": {
+    "id": "M-ETIT-106672",
+    "title": "Medical Image Processing for Guidance and Navigation",
+    "credits": 9,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "Prof. Dr.-Ing. Maria Francesca Spadea\nKIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The examination takes place within the framework of an oral overall examination of approx. 30 minutes about the lecture\nincluding a presentation and discussion of the project developed during the course. The overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\nThe students will be able to analyze, structure and formally describe problems in the field of image guided surgery and\n•\n•\n•\n•\ntherapy.\nThe students can apply the methods form medical image processing, surgical navigation, augmented reality for surgery\nand therapy, medical data science.\nThe student will be able to communicate in English technical language.\nThe students are able to perform calculations and use the necessary tools for this in a methodologically appropriate way.\nThe students are able to critically evaluate them",
+    "content": "•\n•\n•\n•\nThis module is designed to provide students with the theoretical and practical aspects of image guidance for\nminimally invasive surgery and therapy\nThis module gives an overview about current status of technology in operation rooms (OR) and advanced\nradiotherapy bunkers\nFurthermore, this module gives knowledge about image process for quantitative information extraction\nTable of contents\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\n◦\nIntroduction to the course: minimally invasive surgery and medical data science\nGit introduction\nImage characteristics\nBasic point, histogram and masked based operations\nSimilarity metrics, projections\nPlanning imaging, Dicom format, pre processing pipeline\nCase study: planning in radiotherapy\nPath planning\nPixel based image segmentation: manual segmentation, threshold, region growing\nConvolution based segmentation: edge detection, morphological filters\nCase study: neurosurgery and tractography\nImage registration\nAtlas based segmentation: SABS, MABS, atlas selection\nRendering and computer graphics\nIn room imaging technology\nReference system, notation and transformation\nLocalizing systems, tracking and calibration\nCase study: patient monitoring in radiotherapy, adaptive treatments\nLab demonstration\nPoint based registration\nSurface registration\nImage features and descriptors (example with SIFT SURF)\nRadiomics Features\nDeep Learning in image processing\nThe role of deep learning in radiotherapy\nAugmentet reality",
+    "workload": "The workload includes:\n1.\n2.\n3.\nattendance in lectures and exercises: 15*6 h = 90 h\npreparation / follow-up: 15*8 h = 120 h\npreparation of and attendance in examination: 60 h\nA total of 270 h = 9 CR",
+    "recommendations": "•\n•\n•\n•\n•\n•\nBasic knowledge in the field of medical imaging;\nKnowledge of basic programming concept;\nFamiliarity with Linux environment;\nBasic knowledge of linear algebra (transformations);\nAttitude towards teamwork and code management in Git;\nIt is recommended to have access to a personal computer or desktop",
+    "literature": ""
+  },
+  "M-MACH-100487": {
+    "id": "M-MACH-100487",
+    "title": "Microactuators",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Manfred Kohl"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Written exam: 60 min",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "- Knowledge of the actuation principles including pros and cons\n- Knowledge of important fabrication technologies\n- Explanation of layout and function of the microactuators\n- Calculation of important properties (time constants, forces, displacements,\netc.)\n- Development of a layout based on specifications",
+    "content": "- Basic knowledge in the material science of the actuation principles\n- Layout and design optimization\n- Fabrication technologies\n- Selected developments\n- Applications\nThe lecture includes amongst others the following topics:\n•\n•\n•\n•\nMicroelectromechnical systems: linear actuators, microrelais, micromotors\nMedical technology and life sciences: Microvalves, micropumps, microfluidic systems\nMicrorobotics: Microgrippers, polymer actuators (smart muscle)\nInformation technology: Optical switches, mirror systems, read/write heads",
+    "workload": "lTime of attendance: Preparation and follow up: Exam Preaparation and Exam: Total: 120 h = 4 LP\n15 * 1,5 h = 22,5 h\n15 * 5,5 h = 82,5 h\n15 h",
+    "recommendations": "",
+    "literature": "- Lecture notes\n- D. Jendritza, Technischer Einsatz Neuer Aktoren: Grundlagen, Werkstoffe, Designregeln und Anwendungsbeispiele, Expert-\nVerlag, 3. Auflage, 2008\n- M. Kohl, Shape Memory Microactuators, M. Kohl, Springer-Verlag Berlin, 2004\n- N.TR. Nguyen, S.T. Wereley, Fundamentals and applications of Microfluidics, Artech House, Inc. 2002\n- H. Zappe, Fundamentals of Micro-Optics, Cambride University Press 2010"
+  },
+  "M-MACH-102714": {
+    "id": "M-MACH-102714",
+    "title": "Microenergy Technologies",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Manfred Kohl"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Oral examination (approx 30 min.)",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students can:\n•\n•\n•\n•\n•\ndescribe the energy conversion principles and exemplify them\nexplain the underlying concepts of thermodynamics and materials science\nillustrate the layout, fabrication and function of the treated devices\ncalculate important properties (time constants, power output, efficiency, etc.)\ndevelop a layout based on specifications",
+    "content": "- Basic physical principles of energy conversion - Layout and design\noptimization -\nTechnologies - Selected\ndevices - Applications\nThe lecture includes amongst others the following topics:\n•\n•\n•\n•\n•\n•\n•\n•\n•\nMicro energy harvesting of vibrations using different conversion principles (piezo, electrostatic, electromagnetic, etc.)\nThermoelectric energy generation\nNovel thermal energy conversion principles (thermomagnetic, pyroelectric)\nMiniature scale solar devices\nRF energy harvesting\nMiniature scale heat pumping\nSolid-state cooling technologies (magneto-, electro-, mechanocalorics)\nPower management\nEnergy storage technologies (microbatteries, supercapacito4rs, fuel cells)",
+    "workload": "Time of attendance: Preparation and follow up: Exam Preaparation and Exam: Total: 120 h = 4 LP\n15 * 1,5 h = 22,5 h\n15 * 5,5 h = 82,5 h\n15 h",
+    "recommendations": "",
+    "literature": "- Lecture notes (overhead transparencies) „Micro Energy Technologies“\n- Stephen Beeby, Neil White, Energy Harvesting for Autonomous Systems, Artech House, 2010\n- Shashank Priya, Daniel J. Inman, Energy Harvesting Technologies, Springer, 2009"
+  },
+  "M-ETIT-100454": {
+    "id": "M-ETIT-100454",
+    "title": "Microsystem Technology",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Wilhelm Stork"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Achievement will be examined in an oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students\n•\nKnow the most important terms and processes in microsystems technology and can assess their advantages and\n•\n•\n•\n•\n•\ndisadvantages.\nAre able to describe the common methods and tools.\nCan select suitable processes for the production of microsystems.\nHave a broad understanding of the structure and functionality of microsystem sensors.\nHave the ability to communicate with experts in microtechnology.\nAre able to critically evaluate various microsystems technology processes.",
+    "content": "The methods of microstructure technology from lithography and etching techniques to ultra-precise machining processes are\nexplained and their applications, especially in micromechanics and microoptics, are presented.",
+    "workload": "1. attendance time in lectures, exercises: 30 h\n2. preparation and follow-up of the same: 30 h\n3. exam preparation and attendance: 30 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-106973": {
+    "id": "M-ETIT-106973",
+    "title": "Microwave Engineering Lab",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Zwick"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": true,
+    "examType": "In preparation for the laboratory experiments, each laboratory group must work together on a number of tasks as homework\nbefore the experiment and submit a single copy to the supervisor immediately before the start of the experiment. The tasks for\nthe experiment itself are completed and recorded during the experiment. The protocol should be handed in to the supervisor\nimmediately after the experiment. Before each experiment is carried out, there is a written or oral examination (approx. 20\nminutes, no aids) on the content of the experiment.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will have in-depth knowledge of high-frequency components and systems as well as the functionality of the most\nimportant high-frequency measuring devices (network analyzer, spectrum analyzer, noise measurement, power measurement,\noscilloscope, antenna measurement). They are also familiar with the use of high-frequency measuring devices and components.\nThey are able to independently select and operate measuring devices based on specific applications and interpret the\nmeasurement results. Furthermore, they are able to work together in a self-organized team.",
+    "content": "Under the motto: “Practical relevance through state-of-the-art equipment and current problems”, students are offered a modern\nand technically sophisticated high-frequency laboratory at Master's level. The aim of the experiments is to deepen the theory\ntaught in the lectures in a practical way and to train the handling of high-frequency measuring devices and HF components. In\ngroups of 2-4 students, various experiments are carried out and recorded over 8 afternoons. The order and topics of the\nexperiments may vary.",
+    "workload": "The workload includes:\n•\n•\nattendance study time laboratory: 45 h\ntest preparation protocols, test preparation: 135 h\nA total of 180 h = 6 LP",
+    "recommendations": "Knowledge of microwave measurement technology and RF components and systems is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-105701": {
+    "id": "M-ETIT-105701",
+    "title": "Microwave Module Design",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Zwick"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The success control is carried out as part of an oral overall examination (approx. 20 minutes) of the selected courses, which is\nin total meet the minimum requirement for LP.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After successful completion of the module, students will be able to design complex microwave modules. This includes in\nparticular complete transmit and receive modules consisting of amplifiers, mixers, filters, signal generation, etc. They have a\ndeep understanding of the technological and circuit aspects as well as for embedding in the overall system. The students are\nable to understand and describe the operation of the individual components and the systems. They are able to transfer this\nknowledge to other areas of high-frequency technology and thus to analyze and solve high-frequency technical problems. They\nare able to apply what they have learned in a practical manner.",
+    "content": "Applied course on microwave module design: lines on substrates, connectors, limiters, PIN switches, SIW components and filter\ndesign, amplifiers, frequency response compensation, phase noise, signal generation, planar mixers, and receiver noise figure.\nIn addition, during the lecture examples of microwave module design will be implemented and discussed in detail in a state-of-\nthe-art software environment.",
+    "workload": "The workload includes:\nAttendance study time lecture: 30 h\nSelf-study time including exam preparation: 60 h\nA total of 90 h = 3 LP",
+    "recommendations": "Knowledge of the basics of radio frequency technology and communications technology is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-107007": {
+    "id": "M-ETIT-107007",
+    "title": "Microwaves Measurement Techniques",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Mario Pauli"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students have an in-depth knowledge of the structure and functioning of microwave measuring devices (signal generator,\npower measurement, frequency measurement, spectral analyzer, network analyzer). They understand the special features of\nmeasuring power, frequency and scattering parameters in the microwave range. They can apply the knowledge\nthey have learned in practice and interpret the measurement results. They can analyze and assess possible sources of error in\nthe measurement. They are able to design measurement setups and to carry out measurements correctly.",
+    "content": "This lecture contains all basic areas of today's high-frequency measurement techniques, such as power measurement,\nfrequency measurement, spectral analysis and network analysis. Particular attention is paid to the description of those\nmeasurement systems and methods that are used in modern applications.",
+    "workload": "The workload includes:\nAttendance study time lecture / exercise: 45 h\nSelf-study time including exam preparation: 75 h\nA total of 120 h = 4 CR",
+    "recommendations": "Knowledge of the basics of high frequency technology is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-101968": {
+    "id": "M-ETIT-101968",
+    "title": "Miniaturized Passive Microwave Circuits",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Stefan Wünsch"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Succes controll takes place in form of an overall oral examination lasting approx. 20 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completing the module, students will be able to analyse the processes required to miniaturize passive microwave circuits\nand critically evaluate the achievable results in terms of component performance. In addition, they will be able to transfer the\nbasic knowledge already acquired in the course \"Fundamentals of High Frequency Technology\" to the development of\nminiaturized passive microwave circuits in an application-oriented manner.",
+    "content": "Students are given an overview of trends in the miniaturization of passive microwave circuits and their current areas of\napplication. The driving forces for miniaturization are first worked out and the procedure is presented using concrete examples,\ntaking into account the corresponding boundary conditions. The course concludes with a presentation of current research\nfocuses and applications of such microwave circuits. The focal points will be deepened in practical exercises.",
+    "workload": "The workload in hours is broken down below:\n1.\n2.\n3.\n4.\nAttendance time in lectures in the winter semester 18 h\nAttendance time in exercise to lecture 9 h\nPreparation and follow-up of lectures and tutorials 36 h\nExam preparation and attendance in the same 57 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-105893": {
+    "id": "M-ETIT-105893",
+    "title": "Mixed-Signal IC Design",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in form of an oral examination (approx. 30 min.)",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "- The students acquire the competencies to mixed-signal advanced microelectronics integrated\ncircuits.\n- They have a good understanding of circuit design with linear circuits and \"switched-capacitor\"\ncircuit techniques.\n- They can design a sample-and-hold and track-and-hold circuits and discuss how it can improve an A/D converter's\nperformance.\n- They can design an A/D or D/A converter to a given performance specification, choosing an overall architecture, number of\nstages and internal precision.\n- They can design phase lock loop (PLL) circuits, including design details and benefits and disadvantages of each type.\n- They are familiar with time-to-digital converters and applications.\n- They are familiar with the design of low-power circuits.\n- They are able to develop test procedures, test structures and test patterns (ATPG - Automatic Test Pattern Generation) for\nASICs.\n- They have the basic understanding of the printed circuit board design practices, die-attached and high-density interconnection\ntechnology in order to connect the final ASIC to other chips and measurement equipment.",
+    "content": "This course covers fundamentals of data converters, Nyquist-rate converters, discrete-time signal processing, central concept of\noversampling and noise-shaping, and delta-sigma modulators, phasedlocked loops, assembly and testing procedures of such\nmixed-signal ICs. Intended for engineers working with digital and analog signals, seeking to learn more about mixed-signal\n(analog plus digital) circuit design, analysis, and application.",
+    "workload": "Each credit point corresponds to an approximately 25-30h of workload in average. Based on this, the\namount of work for this lecture is calculated as follows:\n1. Attendance to the lectures (15*2=30h)\n3. Preparation to the lectures (15*2=30h)\n4. Preparation to the oral exam (25h)\nTotal: 85h",
+    "recommendations": "Basic knowledge on analog and digital circuits are recommended.",
+    "literature": "1. CMOS Analog Integrated Circuits; Razavi; McGraw-Hill Education\n2. Principles of Data Conversion System Design; Razavi; Wiley-IEEE Press\n3. Time-to-Digital Converters; Stephan Henzler; Springer Series in Advanced Microelectronics\n4. VLSI Technology; Sze; McGraw-Hill"
+  },
+  "M-ETIT-105464": {
+    "id": "M-ETIT-105464",
+    "title": "MMIC Design Laboratory",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": true,
+    "examType": "impression is assessed.\nThe written report (approx. 30-40 slides) and the oral presentation (approx. 40 min.) are used to mark the course. The overall",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students have a comprehensive understanding on the design of monolithic microwave integrated circuits.\nThe students are able to deduce specifications of individual building blocks in a microwave system and are able to connect\nthese with system level considerations.\nThey are familiar with various IC fabrication technologies, and are able to identify pros and cons of the various state of the art\ntechnologies that are available today.\nThe students are able to perform the design of a complete microwave sub-system from conception to schematic level design\nand layout design, and are able to apply high-level design verification methods.\nThe students can apply their theoretical knowledge on RF engineering using modern design tools.",
+    "content": "In this laboratory course, the students will be assigned an RF system and will propose a hardware solution that will meet the\nrequirements of the assigned RF system. The students will then perform schematic level design and system-level simulations of\nthe proposed hardware. The laboratory course will be finalized with a layout implementation and verification of the proposed\nhardware. The students will learn to use state of the art CAD tools for system level simulations, schematic design,\nelectromagnetic simulations, and layout design and verification in modern IC process technologies. Each RF sub-system will be\ndeveloped by a group of 3-4 students.",
+    "workload": "Each credit point corresponds approximately to 30h of the student's workload. Here, the average student is expected to reach\nan average performance. This contains:\n1. Attendance to the laboratory tutorials (10*(3)=30h)\n2. Preparation to the laboratory tutorials (10*(2)=20h)\n3. Implementation of assigned design tasks after each tutorial (10*(8)=80h)\n4. Preparation of report and oral presentation (20h)\nTotal: 150h",
+    "recommendations": "Radio-Frequency Integrated Circuits and Systems, Modern Radio Systems Engineering, Microwave Engineering,\nElectromagnetics and Numerical Calculation of Fields",
+    "literature": ""
+  },
+  "M-ETIT-105971": {
+    "id": "M-ETIT-105971",
+    "title": "Mobile Communications",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Peter Rost"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The success control takes place in the form of an oral examination lasting approx. 25 minutes. Before the\nexamination, there is a preparation phase of 15 minutes in which preparatory tasks are solved.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are enabled to analyze and assess functionalities of mobile communication systems. They learn how to apply and\nimplement fundamental methods of the lecture “Communications Engineering I” in mobile radio networks. Furthermore, students\nwill be enabled to understand requirements and limitations of mobile applications.",
+    "content": "At the beginning, this course describes exemplary applications of mobile communications and elaborates on resulting\nrequirements. Based on a solid understanding of those requirements, selected approaches and techniques will be presented\nthat are solving the respective challenges in mobile communication systems. To this end, algorithms as well as system\narchitectures are discussed in order to acquire solid knowledge on the radio network, the core network and the integration with\napplications and services.",
+    "workload": "1.\n2.\n3.\n4.\n5.\nAttendance time in lectures: 15 * 2 h = 30 h\nPreparation and follow-up of lectures: 15 * 2 h = 30 h\nAttendance time in excercises: 15 * 1 h = 15 h\nPreparation and follow-up of excercises: 15 * 1 h = 15 h\nPreparation for the oral exam: 30 h\nIn total: 120 h = 4 LP",
+    "recommendations": "Knowledge of basic engineering as well as basic knowledge of communications engineering and Previous attendance of the\nlecture \"Communication Engineering I\" is recommended. Sound English language skills are required.",
+    "literature": ""
+  },
+  "M-ETIT-106244": {
+    "id": "M-ETIT-106244",
+    "title": "Mobile Communications II",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Peter Rost"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The success control takes place in the form of an oral examination lasting approx. 25 minutes. Before the examination, there is\na preparation phase of 15 minutes in which preparatory tasks are solved.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are able to analyze and assess functionalities of mobile communication systems. They know how to apply and\nimplement fundamental methods of the lecture “Communications Engineering” in mobile radio networks. Furthermore, students\nare able to understand requirements and limitations of mobile applications.\nThis lecture complements the contents of the lecture \"Mobile Communications\", which mainly deals with aspects of\ncommunications access networks. Building on this, the focus of this lecture is on mobile communication architectures, core\nnetworks, and specific application scenarios and relevant technologies.",
+    "content": "The subject of the lecture is to first introduce a basic mobile communication system architecture including core network and the\nintegration into applications. Based on this, specific core network functions are explained in detail, e.g. user administration,\nsecurity, quality of service. Finally, specific applications are introduced and it is explained how mobile communication services\nare integrated in, e.g. industrial networks, connected cars, wide-area IoT applications.",
+    "workload": "1.\n2.\n3.\nAttendance to the lecture: 15 * 2 h = 30 h\nPreparation and review: 15 * 2 h = 30 h\nPreparation for the exam: included in preparation and review = 30 h\nIn total: 90 h = 3 LP",
+    "recommendations": "Basic knowledge of communications engineering. For this purpose previous attendance of the modules \"M-ETIT-102103 -\nCommunication Engineering I\" and “M-ETIT-105971 - Mobile Communications” is strongly recommended.",
+    "literature": ""
+  },
+  "M-ETIT-106456": {
+    "id": "M-ETIT-106456",
+    "title": "Mobile Communications Workshop",
+    "credits": 4,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Peter Rost"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": true,
+    "examType": "The success controll takes place in the form of other types of examination. The exam consists of report covering the individual\nexperiments. The reports are evaluated as a whole.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students are enabled to understand communication protocols and systems. They will be able to comprehend the structure\nand functioning of mobile radio systems with the help of simple experimental setups. This allows for better understanding of\nrequirements and design principles of mobile radio systems.",
+    "content": "The workshop consists of 5 experiments:\n•\n•\n•\n•\n•\nSetting up a cellular connection using a cellular modem and control commands via a connected computer. Observing the\nbehavior of the modem in different setups.\nMeasurement and recording of typical features of a mobile phone connection, e.g. received signal power and quality.\nBuilding and analyzing a map showing the different quality indicators in a limited area.\nComparison and synthesis of different maps to understand measurements on different frequency bands and using\ndifferent setups.\nBuilding an ML algorithm based on measured values to predict quality indicators of the mobile network. This part is\ndivided into a part of building the algorithm and conducting experiments to evaluate its performance.",
+    "workload": "1.\n2.\n3.\n4.\nAttendance: 6 * 3 h = 18 h\nPrepration: 6 * 6 h = 36 h\nExecution of experiments: 6 * 6 h = 36 h\nReview of experiments / report: 6 * 6 h = 36 h\nOverall: 126 h = 4 LP",
+    "recommendations": "Basic knowledge of communications engineering. Previous attendance of the lecture \"Communication Engineering I\" and\n“Mobile Communications” is recommended. Sound English language skills are required.",
+    "literature": ""
+  },
+  "M-ETIT-106782": {
+    "id": "M-ETIT-106782",
+    "title": "Modeling Physiological Systems",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Axel Loewe"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "•\n•\nThe examination takes place in form of a written examination lasting 90 min.\nThe submission of the ungraded workshop (2 exercise sheets) tasks before the exam is mandatory.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students will be able to\n•\n•\n•\n•\n•\n•\nDescribe physiological functional principles of selected organs\nFormalize physiological relationships using engineering methods (e.g. mathematical equations, standardized diagram\nforms, etc.)\nImplement these models with adequate numerical schemes\nApply formalized models to develop a deeper understanding of physiological relationships; e.g. by means of simulation\nstudies\nDescribe pathomechanisms of selected diseases\nCharacterize selected pathologies qualitatively and quantitatively by using physiological models",
+    "content": "The module provides knowledge and methods for modeling physiological processes and pathomechanisms. Physiological\nfunctional principles are described using the example of 2-3 organ systems and then implemented in mathematical-technical\nmodels. The model types of ordinary differential equations, electrical equivalent circuits and control loops are taken up and\ndeepened in practical tasks. The course is deepened both fundamentally by working on theoretical tasks with pen and paper as\nwell as through programming and simulation studies.\nAt least one clinical disease entity is introduced for each example organ system and examined using modeling and simulation.",
+    "workload": "Attendance in lectures and exercises: 22*2h = 44h\nPreparation / follow-up: 22*2h = 44h\nPreparation of and attendance in examination: 42h\nProgramming exercises25h+25h = 50h\nA total of 180 h = 6 CR",
+    "recommendations": "Basic knowledge of\n•\n•\n•\n•\n•\nordinary differential equations and linear algebra (e.g. Höhere Marthematik I, Höhere Mathematik III),\nsystem dynamics and control engineering (e.g. Signale und Systeme)\nprogramming in a scripting language like Python or Matlab (e.g. Informationstechnik I)\nversion control using git and GitLab (e.g. Practical Introduction to Research Software Engineering)\nhuman anatomy & physiology (e.g. Physiologie und Anatomie für die Medizintechnik)",
+    "literature": ""
+  },
+  "M-ETIT-100508": {
+    "id": "M-ETIT-100508",
+    "title": "Modelling and Simulation of Electrochemical Systems",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Andre Weber"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an oral examination lasting approx. 20 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students know models on different scales (elementary kinetics to system model) for the description of electro-chemical\nsystems and are able to use them in the development of batteries and fuel cells.",
+    "content": "The modeling of electrochemical systems is a multiscale problem. While the charge transfer at the electrode/electrolyte interface\ntakes place on an atomic scale, system modeling requires highly simplified submodels for the system components that allow\nreal-time simulation of system operation. In the lecture, current electrochemical models for batteries and fuel cells are presented\nat the various levels, the experimental determination of the model parameters is discussed and examples of model validation\nare shown.",
+    "workload": "1. lecture attendance time: 15 * 2 h = 30 h\n2. Preparation and follow-up time for lecture: 15 * 2 h = 30 h\n3. Exam preparation and attendance in the same: 30 h\nTotal: 90 h = 3 CP",
+    "recommendations": "The contents of the lecture \"M-ETIT-107005 - Batteries, Fuel Cells, and Electrolysis\" are assumed to be known. Students who\nhave not (yet) heard this lecture are recommended to work through the lecture notes for this lecture in advance.",
+    "literature": ""
+  },
+  "M-ETIT-100427": {
+    "id": "M-ETIT-100427",
+    "title": "Modern Radio Systems Engineering",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Zwick"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "The success control takes place in the form of an oral examination of approx. 20 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After attending this course, students will be able to design an analog front end for a radio transmission system at the\nblock diagram level. In particular, the non-idealities of typical components of high-frequency technology and their effects on\nthe overall system performance are part of the knowledge imparted. The students also have an in-depth understanding of wave\npropagation.",
+    "content": "The course gives a general overview of radio transmission systems and their components including the radio channel and wave\npropagation. A brief repetition of microwave basics is also included. The focus is on the system components realized in analog\ntechnology and their non-idealities. Based on the physical functioning of the various system components, parameters are\nderived that allow an examination of their influence on the overall system performance.\nThe exercise is closely linked to the lecture and mainly consists of computer-based exercises that allow a visualization of the\ninfluences of various non-idealities on the overall system performance and demonstrate the practical system design of modern\nradio transmission systems.",
+    "workload": "The workload includes:\n•\n•\n•\nAttendance study time lecture: 45 h\nAttendance study time computer exercise SystemVue ESL Design Software / MATLAB: 15 h\nSelf-study time including exam preparation: 120 h\nA total of 180 h",
+    "recommendations": "Knowledge of the basics of radio frequency technology and communications technology is recommended.",
+    "literature": ""
+  },
+  "M-ETIT-106921": {
+    "id": "M-ETIT-106921",
+    "title": "Modern VLSI Technologies",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Jasmin Aghassi-Hagmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "•\n•\nSuccess control takes place in form of an oral examination with a duration of approx. 20 minutes.\n50% of approx. 10 ungraded lab exercises have to be sucessfully completed before the oral examination is taken.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\nThe students will gain distinct knowledge in the field of modern CMOS technologies (FinFETs, High-k Gate-Stacks,\nBelow 20nm nodes, Nanosheets).\nThey will gain a good understanding of device physics and how to apply the most important design rules to design\nphysical layouts of components and simple circuits.\nThe students will be able to compare the functionality (current, performance, noise) of electrically characterized\ncomponents with simulated devices, while assessing advantages and disadvantages.\nStudents will learn to compare different technologies and to perform technology assessments based on benchmark\ncircuit analyses. Understanding of critical paths in circuits for power-performance assessments.",
+    "content": "The lecture introduces CMOS technology with the latest technological innovations (high-k materials, gate-last processes, stress\nengineering, FinFETs, Gate all around FETs, nanosheets, etc.). A detailed understanding of interactions between novel\nmaterials, device architectures, and the functionality of basic components will be studied. In addition to physical and circuit\nproperties (variations, self-heating, noise, performance), so-called layout effects, which play a crucial role in advanced CMOS\nare introduced. Special emphasis is put on the respresentation of technologies in design systems (electronic design automation)\nas well as SPICE simulations according to the BSIM (Berkeley Simulation Transistor Models) and PSP (Advanced Surface-\nPotential-Based MOSFET Model) standards. In addition, the use of industrial software (PDKs) for electrical simulation and circuit\ndesign will be introduced and practiced in the Excercises. Finally, highly integrated low power systems and their special\nrequirements, wiring concepts and variation modeling are explained.",
+    "workload": "The workload includes:\n1.\n2.\n3.\n4.\nAttendance time in laboratory (15h*2=30h)\nAttendance time in lectures (15h*2=30h)\nPreparation/follow-up, lecture and exercises (15h*(2+2)=60h)\nPreparation, written exercises and oral exam (60h)\nTotal: 180h",
+    "recommendations": "recommended.\nPrevious knowledge from the lectures \"Festkörperelektronik und Bauelemente\" and \"Elektronische Schaltungen\" is",
+    "literature": ""
+  },
+  "M-INFO-107676": {
+    "id": "M-INFO-107676",
+    "title": "Multimodal Artificial Intelligence",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Jan Niehues",
+      "Prof. Dr.-Ing. Rainer Stiefelhagen"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See Partial Achievements (Teilleistung).",
+    "prerequisites": "See Partial Achievements (Teilleistung).",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\nThe students know the relevant elements of a multimodal AI .\nThe students understand the algorithms and methods of multimodal AI.\nThe students are able to understand the different sub-components to develop and analyze a system .\nThe students can transfer this knowledge to new applications, as well as analyze and compare different methods.",
+    "content": "Due to the successes in research, multimodal AI systems are increasingly integrated into our everyday lives. These are, for\nexample, systems that can understand and generate language and speech or analyze images and videos. Furthermore,\nadvanced video and image generation AI shows leads to new applications\nBased on the knowledge of the lecture “Introduction to AI”, the students learn to understand, develop and evaluate multimodal\nAI Systems.\nIn order to bring this knowledge closer to the students, the lecture is divided into 5 parts. First, the lecture investigates method of\nspeech and language perception followed by a part about visual perception. The second part deals speech and language\ngeneration followed by a part about video processing. Finally, multimodal AI methods are presented.",
+    "workload": "Lecture with 3 SWS + 1 SWS exercise , 6 CP.\n6 LP corresponds to approx. 180 hours, of which\napprox. 45 hours lecture attendance\napprox. 15 hours exercise visit\napprox. 90 hours post-processing and processing of the exercise sheets (self-study)\napprox. 30 hours exam preparation (self-study)",
+    "recommendations": "See Partial Achievements (Teilleistung).",
+    "literature": ""
+  },
+  "M-ETIT-107515": {
+    "id": "M-ETIT-107515",
+    "title": "Multivariable Control Systems",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Sören Hohmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nThe students are able to describe linear multivariable Systems in time and frequency domain with as well time continous\nas time discrete models.\nIn particular the students are familiar with the state space representation and its transformations in canonical forms.\nThe students are able to analyze multivariable system with respect to stability, trajectory plots in state space,\ncontrollability, observability and zeros and poles.\nThey master the control of linear multivariable systems in frequency domain by series decoupling with frequency control.\nThe students are familiar with the basic control structures in time domain (pole placement with preliminary filter).\nThe students are able to use different methods for direct pole placement in state space via state feedback like the\nAckermann formula, modal synthesis and the complete modal synthesis.\nThey are able to synthesize controllers for the decoupling control of multivariable systems in state space.\nThe students are able to design time discrete controllers, in particular dead-beat control.\nThey are familiar with the problem of determining non measurable state variables using complete and reduced state\nobservers.\nAs an extension, they are able to solve a generalized estimation problem in state space including noise by the design of\nKalman filters.\nThey can apply state feedback methods for the elimination of permanent deterministic disturbances like disturbance\nfeedforward control, use of disturbance models or PI-State space controllers.\nThe students can apply complete modal synthesis to design output feedback controllers in state space.\nThey are able to extend the state feedback control with dynamical elements in order to create dynamical controllers.",
+    "content": "The module is designed to provide students with basic knowledge and skills to analyze linear multivariable dynamic systems\n(described both in continuous and discrete time) and to design respective controllers. Furthermore the students are enabled to\nhandle poor sensor information by state estimation methods or to eliminate disturbances and uncertainties, for example by\ndynamic state feedback.",
+    "workload": "The workload includes (4 SWS):\n1.\n2.\n3.\nattendance in lectures and exercises: 15*4 h = 60 h\npreparation / follow-up: 15*4 h = 60 h\npreparation of and attendance in examination: 60 h\nA total of 180 h = 6 CR",
+    "recommendations": "Basic knowledge in the field of control theory is required (for example the contents of the bachelor module M-ETIT-106339\n“Mess- und Regelungstechnik” ).",
+    "literature": ""
+  },
+  "M-ETIT-105604": {
+    "id": "M-ETIT-105604",
+    "title": "Nano- and Quantum Electronics",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Sebastian Kempf"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "The assessment of success takes place in the form of a written examination lasting 120min. The grade corresponds to the result\nof the written examination.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will understand the physical limits of CMOS scaling and will be able to analyze the function of conventional\nnanoelectronic devices. Students will also understand the operation of novel nanoelectronic and quantum electronic devices and\nwill be able to design this kind of devices that are based on quantum mechanical effects. They develop the ability to design\nnanoelectronic sensors and devices and can understand and analyze the fabrication methods for nano- and quantum electronic\ndevices.",
+    "content": "Nanoelectronics deals with integrated circuits whose typical length scale is well below 100nm. In this regime, physical effects, in\nparticular of quantum mechanical origin, occur and strongly influence the scaling of classical microelectronic devices. This\nultimately leads to a new form of electronic components as well as novel operation principles. A special form of nanoelectronics\nis quantum electronics in which quantum mechanical effects are exploited on purpose to build an entirely new class of devices\nwhose performance reaches far beyond any other microelectronics devices. Well-known examples are superconducting digital\nelectronics which enables to build, for example, microprocessors with clock rates exceeding several 100GHz, or the quantum\ncomputer, which will lead to a change of paradigms in the field of information processing.\nWithin this context, the module \"Nano- and quantum electronics\" intends to give students an overview of the theoretical and\npractical aspects of nano- and quantum electronics. In particular, it discusses the following topics:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nLimitations of conventional CMOS technology\nQuantum mechanical effects in the field of nano- and quantum electronics (quantized conductance, Coulomb blockade,\ntunnel effect, etc.)\nHot-electron effect\nNano- and quantum-technological manufacturing and analysis methods\nNanostructure field-effect transistors\nQuantum dots\nCarbon nanotube field-effect transistor\nResonant tunnel diodes\nUnipolar resonant tunnel transistor\nSingle Electron Transistor (SET)\nJosephson junction based analog and digital electronics\nQuantum bits, quantum computers and quantum computing\nThe tutorial is closely linked to the lecture and deals with special aspects concerning the development of nano- and quantum\nelectronics. In particular, the development and system integration of such devices for various applications is discussed by\nmeans of exercises.",
+    "workload": "A workload of approx. 175h is required for the successful completion of the module. This is composed as follows:\n•\n•\n•\n•\nAttendance time in lectures and exercises: 18*1.5h + 6*1.5h = 36h\nPreparation and follow-up of lectures: 21*3h= 54h\nPreparation and follow-up of tutorials: 7*5h= 35h\nPreparation for the exam: 50h",
+    "recommendations": "Successful completion of the modules \"Superconductivity for Engineers\" and „Einführung in die Quantentheorie für\nElektrotechniker“ is recommended.",
+    "literature": ""
+  },
+  "M-ETIT-105881": {
+    "id": "M-ETIT-105881",
+    "title": "Navigation and Localization Techniques",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Zwick"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "The success control is carried out as part of an oral overall examination (approx. 20 minutes) of the selected courses, which in\ntotal meet the minimum requirement for LP.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students are able to understand navigation-related problems and develop appropriate solutions. They have a solid\nunderstanding of navigation and positioning principles, corresponding location-dependent measurements, parameter and\nposition estimation as well as position tracking algorithms. With suitable performance measures, they can compare different\nnavigation and localization solutions. For example, the students have sound knowledge on GNSS receivers, IMUs, sensor\nfusion, and radio navigation for aerospace and land-based applications. In case they face advanced problems, they have ideas\nhow to approach them.",
+    "content": "Today navigation systems are an integral part of our daily live. Most of us use a global navigation satellite system (GNSS)\nreceiver integrated in our smartphones to find our way in cities and outdoors. Often, these systems are augmented by\nlocalization information from radio systems such as WLAN access points, correction information for assisted GNSS (A-GNSS)\nor inertial measurement units (IMUs) and magnetometers. In the near future navigation technologies become a key enabler for\nmore efficient, safe, and environmentally friendly automated transport, be it autonomous driving cars and trains or automated\nlanding of airplanes and space vehicles. Therefore, this lecture addresses the following topics:\nThe first chapter will introduce navigation systems, define common terms, and provide an outline of the lecture as well as\norganizational details.\nThe second chapter will discuss navigation and positioning principles based on dead reckoning, landmarks, and electromagnetic\nwaves.\nSubsequently, Chapter 3 will present first the estimation problem and lower bounds for estimating location dependent\nparameters and then suitable estimation methods for location dependent parameters, e.g. received power, time of flight, and\ndirection of arrival of radio signals.\nBuilding on Chapter 3, Chapter 4 will explain snapshot position estimation algorithms including triangulation, trilateration,\nmultilateration, and signature matching. To enable comparisons between different methods, performance bounds and measures\nare discussed.\nChapter 5 will address the continuous position tracking first with a performance bound and second with different tracking filters\nsuch as the Kalman filter and particle filter.\nBeing familiar with navigation and positioning principles, estimation of location dependent parameters and positions as well as\nposition tracking, Chapter 6 elaborates the architecture and functionality of GNSSs, GNSS receivers, and augmentation\nsystems.\nIn Chapter 7, inertial navigation and the sensor fusion between IMU and GNSS receiver data is discussed including loosely and\ntightly coupled approaches.\nParticular navigation aspects and systems in the aerospace domain are explained in Chapter 8 whereas Chapter 9 explains\nnavigation and localization for railways and road transport as well as indoors.\nFinally, Chapter 10 introduces some advanced research topics in navigation and how to approach them. For instance, multipath\nand non-line-of-sight propagation, mitigation, and exploitation or cooperative and swarm navigation may be discussed. The\ntopics may be adapted based on current research work and discussions throughout the course.",
+    "workload": "Each credit point corresponds to approximately 25-30 hours of work (of the student). This is based on the average student who\nachieves an average performance. The workload includes:\nAttendance study time lecture: 30 h\nSelf-study time including exam preparation: 60 h\nA total of 90 h = 3 LP",
+    "recommendations": "Basic knowledge of linear algebra, stochastic, radio frequency technology, and communications technology is helpful.",
+    "literature": ""
+  },
+  "M-CIWVT-105890": {
+    "id": "M-CIWVT-105890",
+    "title": "NMR Methods for Product and Process Analysis",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "apl. Prof. Dr. Gisela Guthausen\nKIT Department of Chemical and Process Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Oral / Written examination",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will be able to\n•\n•\n•\nexplain the physical principles of nuclear magnetic resonance (NMR) and describe the underlying phenomena.\nidentify various areas of application for NMR and assess its usefulness in the fields of bioengineering/chemical\nengineering & process engineering.\nunderstand and critically evaluate the functioning and usefulness of the NMR method using concrete examples.",
+    "content": "An overview of applications of nuclear magnetic resonance (NMR) will be given together with the basic description of this\nanalytical tool. In the focus of the lectures are typical applications of NMR in chemical and bio engineering. The understanding\nof this versatile analytical method will be developed on the basis of dedicated examples.",
+    "workload": "•\n•\n•\nAttendance time (Lecture): 30 h\nRevision course: 30 h\nExam Preparation: 60 h",
+    "recommendations": "",
+    "literature": "Textbooks: Kimmich and Callaghan; further reading will be announced during the lectures."
+  },
+  "M-ETIT-106263": {
+    "id": "M-ETIT-106263",
+    "title": "Noise Thermometry Lab",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Sebastian Kempf"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "EPSE",
+      "MPQT"
+    ],
+    "isLab": true,
+    "examType": "The examination takes place in form of other types of examination. This consists of oral questions and a report on the contents\nand results of each of the three independent parts of the internship. The overall impression is evaluated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After successful completion of the module, students will know the basics of noise thermometry as well as how modern, SQUID\nbased noise thermometers can be built and operated. They will particularly know how to interpret measured temperature values\nand critically evaluate the noise budget. By working on the practical course in small groups, the students will also acquire or\nimprove their teamwork skills.",
+    "content": "Noise thermometry is a proven method for primary thermometry and is therefore intensively used and further developed in many\nmetrology institutes. The principle of this method is based on the measurement of the voltage or current noise of an electrical\nresistor. Within the scope of this practical course, the students will gain a detailed insight into noise thermometry. In the first part,\nthey will design a transistor or operational amplifier-based circuit for measuring the thermal noise of a high-impedance resistor\nat room temperature. Using this circuit, the students will then measure the thermal noise of some resistors to verify the Nyquist\ntheorem, Based on this, the students will design a noise thermometer for the temperature range between 4 K and 10 K in the\nsecond part of the lab course. It will be based on a superconducting quantum interference device (SQUID). With the help of this\nhighly sensitive current sensor, the students will measure the thermal noise of a low-resistance resistor at different temperatures\nbelow 10 K and thus practically experience the basic principle of noise thermometry. Finally, in the last part of the practical\ncourse, the students will become familiar with the construction of a commercial noise thermometer in the range from 100 mK to\n4 K with this noise thermometer. All three parts of the experiment will be accompanied by explanations and discussions of the\nunderlying physical principles, the special features of the circuit design, etc. The students will also have the opportunity to learn\nmore about the cryostats.",
+    "workload": "A workload of approx. 180 h is required for the successful completion of the module. This is composed as follows:\n1.\n2.\n3.\n4.\nPreparation of the lab course: 40 h\nDiscussion and lab course planning with supervisor: 10 h\nAttendance time in the lab course: 70 h\nPreparation of the written report: 60 h",
+    "recommendations": "The contents of the module “Quantum Detectors and Sensors” or “Nano- and Quantum Electronics” might be helpful.",
+    "literature": ""
+  },
+  "M-ETIT-107644": {
+    "id": "M-ETIT-107644",
+    "title": "Nonlinear Control Systems",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Sören Hohmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\nThe students are able to describe nonlinear systems in time domain, in particular they are familiar with the state space\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nrepresentation.\nThe students are able to analyze the behavior of nonlinear systems on the basis of the respective trajectory plots in state\nspace.\nThey master the stability analysis of equilibrium points with the fundamental Lyapunov theory and its extensions.\nThey are familiar with the passivity concept in nonlinear systems.\nThey are as well familiar with dissipativity as the generalization of passivity.\nThey are able to design controllers with control Lyapunov functions.\nThey master the controller design with the back-stepping principle.\nThey are able to design sliding-mode control in nonlinear systems.\nThey are able to synthesize passivity-based controllers.\nThey are able to use design compensation control methods with feedback linearization on the basis of relative degree.\nThey can design controllers based on the concept of flatness.",
+    "content": "",
+    "workload": "The workload includes (4 SWS):\n1.\n2.\n3.\nattendance in lectures and exercises: 15*4 h = 60 h\npreparation / follow-up: 15*4 h = 60 h\npreparation of and attendance in examination: 60 h\nA total of 180 h",
+    "recommendations": "Basic and advanced knowledge knowledge in the field of control theory is recommended (for example the contents of the\nbachelor module M-ETIT-106339 “Mess- und Regelungstechnik” and the master module M-ETIT-107515 “Multivariable Control\nSystems”)",
+    "literature": ""
+  },
+  "M-ETIT-100430": {
+    "id": "M-ETIT-100430",
+    "title": "Nonlinear Optics",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Christian Koos"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Type of Examination: oral exam\nDuration of Examination: approx. 30 Minutes\nModality of Exam: The oral exam is offered continuously upon individual appointment.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students\n•\nunderstand and can mathematically describe the effect of basic nonlinear-optical phenomena using optical susceptibility\n•\n•\n•\n•\n•\n•\n•\ntensors,\nunderstand and can mathematically describe wave propagation in nonlinear anisotropic materials,\nhave an overview and can quantitatively describe common second-order nonlinear effects comprising the electro-optic\neffect, second-harmonic generation, sum- and difference frequency generation, parametric amplification and optical\nrectification,\nhave an overview and can quantitatively describe the Kerr effect and other common third-order nonlinear effects,\ncomprising self- and cross-phase modulation, four-wave mixing, self-focussing, and third-harmonic generation,\nhave an overview and can describe nonlinear-optical interaction in active devices such as semiconductor optical\namplifiers\nconceive the basic principles of various phase-matching techniques and can apply them to practical design problems,\nconceive the basic principles electro-optic modulators, can apply them to practical design problems, and have an\noverview on state-of-the art devices,\nconceive the basic principles third-order nonlinear signal processing and can apply them to practical design problems.",
+    "content": "1.\n2.\n3.\n4.\n5.\nThe nonlinear optical susceptibility: Maxwell´s equations and constitutive relations, relation between electric field and\npolarization, formal definition and properties of the nonlinear optical susceptibility tensor,\nWave propagation in nonlinear anisotropic materials\nSecond-order nonlinear effects and devices: Linear electro-optic effect / Pockels effect, second-harmonic generation,\nsum- and difference-frequency generation, phase matching, parametric amplification, optical rectification\nThird-order nonlinear effects and devices: Nonlinear refractive index and Kerr effect, self- and cross-phase modulation,\nfour-wave mixing, self-focussing, third-harmonic generation\nNonlinear effects in active optical devices",
+    "workload": "Approx. 180 h – 30 h lectures, 30 h exercises, 120 h homework and self-studies",
+    "recommendations": "Solid mathematical and physical background, basic knowledge in optics and photonics.",
+    "literature": "R. Boyd. Nonlinear Optics. Academic Press, New York, 1992.\nE.H. Li S. Chiang Y. Guo, C.K. Kao. Nonlinear Photonics. Springer Verlag, 2002\nG. Agrawal, Nonlinear Fiber Optics, Academic Press, San Diego, 1995."
+  },
+  "M-ETIT-102311": {
+    "id": "M-ETIT-102311",
+    "title": "Numerical Methods for Partial Differential Equations",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Sören Hohmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place ni form of an overall oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\nStudents are familiar with the concepts and structures of partial differential equations as well as the basic methods and\nalgorithms for their numerical treatment.\nThey are familiar with all aspects from modeling and the development of numerical methods to algorithmic\nimplementation and concrete programming, e.g. in MATLAB.\nStudents are proficient in the application of computer-aided calculation methods to practical tasks.\nThey are able to derive and practically implement a discretization of a partial differential equation and to assess and\nnumerically check the convergence behaviour.",
+    "content": "•\n•\n•\n•\n•\n•\n•\n•\nExamples of partial differential equations from the natural sciences\nDirichlet boundary value problem for the Poisson equation\nWave equation\nHeat conduction equation\nBasic concepts of functional analysis\nSeparation of variables for some elementary partial differential equations\nNumerical solution methods -- Finite elements\n◦\nVariational methods\n◦\nFinite element method\n◦\nError estimation\n◦\nRealization of finite element methods\n- Numerical methods in electrodynamics\n◦\nMaxwell equations, modeling\n◦\nConsideration in the frequency domain, eigenvalue problems\n◦\nFinite elements for Maxwell's equations\n◦\nError estimation",
+    "workload": "The workload includes\n1.\n2.\n3.\nAttendance time in lecture/exercise (2+1 SWS: 45h1.75 LP)\nPreparation/follow-up of lecture/exercise (60h2 CP)\nPreparation/attendance time for oral examination (7.5h0.25 CP)",
+    "recommendations": "Knowledge of the following modules is recommended:\nHigher Mathematics I-III in the Bachelor\n\"M-MATH-106972 - Numerical Methods with Programming Practice\" or \"M-MATH-105831\nNumerical Methods\"",
+    "literature": ""
+  },
+  "M-MATH-106972": {
+    "id": "M-MATH-106972",
+    "title": "Numerical Methods with Programming Practice",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Wolfgang Reichel"
+    ],
+    "organisation": "KIT Department of Mathematics",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "EPSE",
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes the form of a written examination (120 minutes)and mandatory participation in the programming\nworkshop. Successful participation in the workshop is confirmed by signing the attendance sheet provided at each practice\nsession.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students who pass the module are familiar with basic concepts and ways of thinking on the topic of numerical mathematics.\nThey know different procedures for solving linear and nonlinear problems in numerical mathematics. They are furthermore able\nto use numerical methods for solving problems from applications in an independent, critical, and needs-based way. The\nstudents are capable to implement the numerical procedures they have learned in programming workshop.",
+    "content": "In the lecture basic ideas and numerical methods for the following topics will be presented:\n•\n•\n•\n•\n•\n•\n•\n•\n•\nsystems of linear equations, Gauss-algorithm, LR-decomposition, Cholesky decomposition\neigenvalue problems, von-Mises iteration\nlinear optimization (also called linear programming)\nerror analysis\nNewton’s method\nquadrature, Newton-Cotes formulas\nnumerical solution of initial value problems, Runge-Kutta methods\nfinite difference method for solving boundary value problems\nfinite elements",
+    "workload": "Approximately 180h workload. The workload includes:\n45h - attendance in lectures, exercises and examination\n4h - attendance in workshop\n131h – self studies:\n•\n•\n•\n•\n•\nfollow-up and deepening of the course content\nsolving problem sheets\nliterature study and internet research on the course content\npreparation for the module examination\npreparation of workshop",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100464": {
+    "id": "M-ETIT-100464",
+    "title": "Optical Design Lab",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Wilhelm Stork"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": true,
+    "examType": "The examination consists of an oral exam (approx. 20 min).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students can apply previous theoretical knowledge in optics to design optical systems based on ray tracing, using a typical\noptics design software.\nThe students can apply typical analysis methods to evaluate the imaging performance of optical systems.\nThe students can recognize aberrations in optical systems and apply methods to compensate them.",
+    "content": "The students participating in this lab are given the opportunity to gain practical experience in the use of software tools commonly\nused in industry for the design of optical elements and systems. Thus improving their knowledge in optical engineering.",
+    "workload": "Approximately 162 h workload of the student.\nThe workload includes:\n1.\n2.\n3.\nattendance in lectures an exercises: 36 h\n- 9 excercises of 4 h\npreparation / follow-up: 51 h\n- preparation 9x3 h\n- writing lab reports: 8x3 h\npreparation of and attendance in examination: 75h",
+    "recommendations": "Basic knowledge in optics. The participation in the course Optical Engineering is strongly adviced.",
+    "literature": ""
+  },
+  "M-ETIT-106974": {
+    "id": "M-ETIT-106974",
+    "title": "Optical Engineering and Machine Vision",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Michael Heizmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\nStudents have a sound knowledge of the fundamentals (physical basics of optics, optical imaging, image sensors) and\nprocedures of optical engineering and machine vision.\nStudents are proficient in diverse methods for optical imaging, image acquisition, pre-processing and image evaluation\nand can characterize them based on their prerequisites, model assumptions and results.\nStudents are able to analyze and structure optical engineering and machine vision tasks, synthesize possible solutions\nfrom optics principles and image processing methods and assess their suitability.",
+    "content": "Optical engineering and machine vision are collective terms for using optical signals to solve tasks of information retrieval for\ntechnical and other application. They comprise the propagation of light in optical systems, the acquisition of image signals using\noptical imaging and cameras, the processing of the recorded image signals using (digital) image processing and the evaluation\nof the image data to obtain useful information from the recorded images.\nThe module teaches the basics, procedures and exemplary applications of optical engineering and image processing.\nThe module include in detail:\n•\nOptical Imaging\n◦\nImaging with a pinhole camera, central projection\nImaging using a (single) lens\n•\nColor\n◦\n◦\n•\n•\n•\nPhotometry\n◦\nColor perception and color spaces\n◦\nFilters\nSensors for Image Acquisition\n◦\nPoint, line and area sensors\n◦\nCCD, CMOS sensors\n◦\nLine-scan cameras\n◦\nColor sensors and color cameras\n◦\nInfrared cameras\n◦\nQuality criteria for image sensors\nMethods of Image Acquisition\n◦\nMeasuring optical properties\n◦\n3D shape capturing\nImage Signals\n◦\nMathematical model of image signals\n◦\nSystems theory\n◦\nTwo-dimensional Fourier transform\n◦\nNoise of digital imaging sensors (EMVA 1288)\n◦\nPrincipal component analysis (Karhunen-Loève transform)\n•\nPreprocessing and Image Enhancement\n◦\nSimple image enhancement methods\n◦\nReduction of systematic errors\n◦\nAttenuation of random disturbances\nThe following topics do not apply for KSOP students:\n•\nLight\n•\n•\n•\n◦\nLight as an electromagnetic wave\n◦\nLight as a quantum phenomenon\n◦\nInteraction of light and matter\n◦\nLight sources\nSegmentation\n◦\nRegion-based segmentation\n◦\nEdge-oriented methods\nMorphological Image Processing\n◦\nBinary morphology\n◦\nGray-scale morphology\nTexture analysis\n◦\nTypes of textures\n◦\nModel-based texture analysis\nFeature-based texture analysis\n•\n◦\nDetection\n◦\n◦\n◦\nDetection of known objects by linear filters\nDetection of unknown objects (defects)\nDetection of straight lines (Radon and Hough transform)",
+    "workload": "The workload includes:\n1.\n2.\n3.\nattendance in lectures and exercises: 15*4 h = 60 h\npreparation / follow-up: 15*4 h = 60 h\npreparation of and attendance in examination: 60 h\nA total of 180 h = 6 CR",
+    "recommendations": "helpful.\nBasic knowledge of systems theory and signal processing (e.g. from the module “Signals and Systems”) as well as optics is",
+    "literature": ""
+  },
+  "M-ETIT-103270": {
+    "id": "M-ETIT-103270",
+    "title": "Optical Networks and Systems",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Sebastian Randel"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Type of Examination: oral exam\nDuration of Examination: 20 min (approx.)\nModality of Exam: Oral exams (approx. 20 minutes) are offered throughout the year upon individual appointment.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The module provides knowledge about optical networks and systems with applications ranging from photonic interconnects, to\nfiber-to-the-home (FTTH), optical metro and long-haul networks, and automotive and industrial automation. The role of various\nnetwork layers will be discussed in conjunction with relevant standards and protocols. Physical-layer specifications of relevant\nphotonic components and system design trade-offs will be introduced.\nThe students\n•\ncan describe and compare different optical network architectures and protocols, and evaluate their suitability for specific\n•\n•\n•\n•\napplication scenarios.\ncan design optical communication systems tailored to various application requirements, considering technical constraints\nand performance goals.\ncan analyze how constraints such as performance, cost, and energy efficiency influence the selection and innovation of\noptical technologies.\ncan assess the advantages and limitations of optical communication in comparison to electrical and wireless\nalternatives, and justify technology choices.\ncan identify relevant standardization bodies and interpret key aspects of standard documents related to optical\ncommunication systems.",
+    "content": "Photonic interconnects: rack-to-rack, board-to-board, chip-to-chip, datacenter interconnects, intensity modulation, direct\ndetection, single-mode fiber vs. multi-mode fiber, serial vs. parallel optics, space-division multiplexing vs. wavelength-division\nmultiplexing, Ethernet (10G, 40G, 100G), Fibre Channel, scaling and energy efficiency.\nAccess neetworks: fiber-to-the-X, passive optical networks (GPON, EPON, NG-PON2, WDM PON), statistical multiplexing vs.\npoint-to-point\nMetro- and long-haul networks:\n•\n•\n•\nSystem-design aspects: dense WDM (ITU grid), optical amplifiers, chromatic dispersion, coherent detection, optical vs.\nelectronic impairment mitigation, capacity limits.\nWavelength switching: wavelength selective switch (WSS), reconfigurable optical add-drop multiplexer (ROADM).\nStandards and protocols: synchronous optical networking and synchronous digital hierarchy (SONET/SDH), optical\ntransport network (OTN), generalized multi-protocol label switching (GMPLS), software-defined networking (SDN).\nOptical networks in automotive and industrial automotion: polymer-optical fiber (POF), MOST Bus, Profibus and Profinet, optical\nvs. electrical communication links, overcoming bandwidth limitations using digital signal processing.",
+    "workload": "total 180 h, here of 45 h lecture, 15 h problems class and 120 h recapitulation and self-studies.",
+    "recommendations": "Interest in communications engineering, networking, and photonics.",
+    "literature": "Ivan Kaminow, Tingye Li, Alan E. Willner (Editors), Optical Fiber Telecommunications (Sixth Edition), Elsevier\nRajiv Ramaswami, Kumar N. Sivarajan and Galen H. Sasaki, Optical Networks (Third Edition), Elsevier"
+  },
+  "M-ETIT-103252": {
+    "id": "M-ETIT-103252",
+    "title": "Optical Systems in Medicine and Life Science",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Werner Nahm"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Written exam (60 minutes)",
+    "prerequisites": "Only one out of the two modules \"M-ETIT-100552 - Optische Systeme für Medizintechnik und Life Sciences\" and\n\"METIT-103252 - Optical Systems in Medicine and Life Science\" is allowed.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Overall Course Objectives:\nThis course will allow the students to understand how the basic optical and optoelectronic principles are applied in the design of\nmodern medical devices and routine diagnostic equipment. Besides extending and deepening their expert knowledge in\nengineering sciences and physics this course will provide profound insight into the applicative, the regulatory and safety and the\ncost requirements. This will help to be able to understand how the systems are designed to fulfill the requirements.\nFurthermore, in this course the students will be introduced into case-based learning. The in-class journal club helps to make the\nstudents become more familiar with the advanced literature in the field of study. This interactive format helps to improve the\nstudents' skills of understanding and debating current topics of active interest.\nTeaching Targets:\nThe successful participation in this course enables the students to\n•\n•\n•\n•\nderive and formulate system requirements\nlayout the system architecture of optical devices\nexplain the underlying physical and physiological principles and mechanisms\nelaborate technical and methodological constraints and limitations\npresent, challenge and debate recent research results",
+    "content": "Optical Systems:\n•\n•\n•\n•\n•\nSurgical microscope\nScanning laser ophthalmoscope (SLO) / Confocal endomicroscope (CEM)\nOptical coherence tomography (OCT) / Optical biometer\nRefractive surgical laser\nFlow-Cytometry\nApplied Optical Technologies:\n•\n•\n•\n•\n•\n•\nMagnification and illumination\nFluorescence and diffuse reflectance imaging\nConfocal laser microscopy\nLow coherence interferometry\nfs-Laser\nLaser scattering (Mie-Therory)\nSystems Design and Engineering:\n•\nSystem architecture\nV-Model of Product Development Process",
+    "workload": "Each credit point corresponds approximately to 30h of the student's workload. Here, the average student is expected to reach\nan average performance. This contains:\n1.\n2.\nPresence during lectures (15 x 1.5 = 22.5h)\nPreparation and wrap-up of subject matter (57.5h)\nPreparation and presentation of one contribution to the in-class journal club (1 x 10h)",
+    "recommendations": "Good understanding of optics and optoelectronics.",
+    "literature": "M. Kaschke, Optical Devices in Opthalmology and Optometry, Willey-VCH"
+  },
+  "M-ETIT-100486": {
+    "id": "M-ETIT-100486",
+    "title": "Optical Technologies for Automotive Applications",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Cornelius Neumann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in form ofan overall oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "In this course, students learn the basics and applications of automotive lighting technology. They know the essential legal\nrequirements, the design principles for signal, headlamp and interior lighting functions and are up to date with the latest\nknowledge on the subject.\nThey are able to assess lighting technology designs for vehicle lighting and are prepared to make active contributions to\nresearch and development in this field.\nThanks to their knowledge of the current state of development, students are able to assess the influence of vehicle lighting on\nsocial aspects such as safety when driving at night.",
+    "content": "•\n•\n•\n•\n•\n•\n•\n•\nRecap: Light & color\nRecap: Light sources\nSignal & rear lights\nReflectors\nHeadlights\nInterior lights\nManufacturing technology\nHistory of automotive lighting technology\nThe lecturer reserves the right to deviate from the content of the current lecture without special notice.",
+    "workload": "The workload includes:\n1. attendance time in lectures, exercises 30 h\n2. preparation/follow-up of the same 30 h\n3. preparation for and attendance at exams 30 h.",
+    "recommendations": "Knowledge of the module \"M-ETIT-100485 - Lichttechnik\"",
+    "literature": ""
+  },
+  "M-ETIT-100436": {
+    "id": "M-ETIT-100436",
+    "title": "Optical Transmitters and Receivers",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof.Dr.Dr.h.c. Wolfgang Freude"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Oral examination (approx. 20 minutes). The individual dates for the oral examination are offered regularly.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nunderstand the peculiarities of optical communications, and how optical signals are generated, transmitted and received,\nknow about sampling, quantization and coding,\nlearn the basics about noise on reception,\nunderstand the properties of a linear and a nonlinear optical fibre channel,grasp the idea of channel capacity and\nspectral efficiency,\nknow about various forms of modulation,\nacquire knowledge of optical transmitter elements,\nunderstand the function of optical amplifiers,\nhave a basic understanding of optical receivers,\nknow the sensitivity limits of optical systems, and\nunderstand how these limits are measured.",
+    "content": "The course concentrates on basic optical communication concepts and connects them with the properties of physical\ncomponents. The following topics are discussed:\n•\n•\n•\n•\nAdvantages and limitations of optical communication systems\nOptical transmitters comprising lasers and modulators\nOptical receivers comprising direct and heterodyne reception\nCharacterization of signal quality",
+    "workload": "Approx. 180 hours workload for the student. The amount of work is included:\n30 h - Attendance times in lectures\n30 h - Exercises\n120 h - Preparation / revision phase",
+    "recommendations": "Knowledge of the physics of the pn-junction",
+    "literature": "Detailed textbook-style lecture notes can be downloaded from the IPQ lecture pages.\nGrau, G.; Freude, W.: Optische Nachrichtentechnik, 3. Ed. Berlin: Springer-Verlag 1991. In German. Since 1997 out of print.\nElectronic version available via w.freude@kit.edu.\nKaminow, I. P.; Li, Tingye; Willner, A. E. (Eds.): Optical Fiber Telecommunications VI A: Components and Subsystems +VI B:\nSystems and Networks', 6th Ed. Elsevier (Imprint: Academic Press), Amsterdam 2013"
+  },
+  "M-ETIT-107497": {
+    "id": "M-ETIT-107497",
+    "title": "Optimal Control",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Sören Hohmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The assessment consists of a written exam (120 min) taking place in the recess period.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\n•\n•\n•\nThe students know as well the mathematical basics as the fundamental methods and algorithms to solve constraint\nand unconstraint nonlinear static optimization problems.\nThey can solve constraint and unconstraint dynamic optimization by using the calculus of variations approach and the\nDynamic Programming method.\nThe students understand and can apply the Bellman Principle, including its theoretical foundations and practical\nrelevance.\nAlso they are able to transfer dynamic optimization problem to static problems.\nThey are proficient in formulating Optimal Control Problems and applying Model Predictive Control techniques\nThe students know the mathematic relations, the pros and cons and the limits of the particular optimization methods.\nThey can transfer problems from other fields of their studies in a convenient optimization problem formulation and they\nare able to select and implement suitable optimization algorithms for them by using common software tools.",
+    "content": "The module teaches the mathematical basics that are required to solve optimization problems. The first part of the lecture treats\nmethods for solving dynamic optimization problems, including Dynamic Programming and methods derived from the calculus of\nvariations, such as the Hamilton method.\nThis is followed by a section on optimal control problems. After presenting techniques to transform dynamic optimization\nproblems into static ones, the final part of the lecture addresses methods for solving static optimization problems, both\nconstrained and unconstrained.",
+    "workload": "The amount of work includes\n1. presence in lecture/exercises/tutorial(optional) (2+2 SWS: 60h)\n2. preparation/postprocessing of lecture/exercises (90h)\n3. preparation/presence in the written exam (30h)",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-107229": {
+    "id": "M-INFO-107229",
+    "title": "Optimization and Synthesis of Embedded Systems (ESI)",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jörg Henkel"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achievements (Teilleistung)",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student can develop embedded systems. They can specify, synthesize and optimize their own hardware. They learn the\nhardware description language and are familiar with the special boundary conditions of the design of embedded systems.",
+    "content": "The cost-effective and error-free development of embedded systems represents a challenge that should not be underestimated\nand which is having an ever greater influence on the added value of the overall system. In Europe in particular, the design of\nembedded systems is playing an increasingly important economic role in many sectors of the economy, such as the automotive\nindustry, so that a number of well-known companies are already involved in the development of embedded systems.\nThe lecture deals comprehensively with all aspects of the development of embedded systems at hardware, software and system\nlevel. This includes diverse areas such as modelling, optimization and synthesis of systems.",
+    "workload": "90 hours:\n30 hours of lectures (15 weeks*2 hours)\n30 hours of self study (15 weeks*2 hours)\n15 hours of deepening (coding RTL) to grasp the theory with practical\n15 hours exam preparation",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100509": {
+    "id": "M-ETIT-100509",
+    "title": "Optoelectronic Components",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "TT-Prof. Dr. Tobias Huber-Loyola"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Type of Examination: oral exam\nDuration of Examination: approx. 30 minutes\nModality of Exam: Oral examination, usually one examination day per month during the Summer and Winter terms. An extra\nquestions-and-answers session will be held if students wish so.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Comprehending the physical layer of optical communication systems. Developing a basic understanding which enables a\ndesigner to read a device´s data sheet, to make most of its properties, and to avoid hitting its limitations.\nThe students\n•\n•\n•\n•\n•\nunderstand the components of the physical layer of optical communication systems\nacquire the knowledge of operation principles and impairments of optical waveguides\nknow the basics of laser diodes, luminescence diodes and semiconductor optical amplifiers\nunderstand pin-photodiodes\nknow the systems´sesitivity limits, which are caused by optical and electrical noise",
+    "content": "The course concentrates on the most basic optical communication components. Emphasis is on physical understanding,\nexploiting results from electromagnetic field theory, (light waveguides), solid-state physics (laser diodes, LED, and photodiodes),\nand communication theory (receivers, noise). The following components are discussed:\n•\nLight waveguides: Wave propagation, slab waveguides, strip wave-guides, integrated optical waveguides, fibre\n•\n•\nwaveguides\nLight sources and amplifiers: Luminescence and laser radiation, luminescent diodes, laser diodes, stationary and\ndynamic behavior, semiconductor optical amplifiers\nReceivers: pin photodiodes, electronic amplifiers, noise",
+    "workload": "total 120 h, hereof 45 h contact hours (30 h lecture, 15 h problem class), and 75 h homework and self-studies",
+    "recommendations": "Minimal background required: Calculus, differential equations, Fourier transforms and p-n junction physics.",
+    "literature": "Detailed textbook-style lecture notes as well as the presentation slides can be downloaded from the IPQ lecture pages.\nAgrawal, G.P.: Lightwave technology. Hoboken: John Wiley & Sons 2004\nIizuka, K.: Elements of photonics. Vol. I, especially Vol. II. Hoboken: John Wiley & Sons 2002\nFurther textbooks in German (also in electronic form) can be named on request."
+  },
+  "M-ETIT-100484": {
+    "id": "M-ETIT-100484",
+    "title": "Optoelectronic Measurement Engineering",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Klaus Trampert"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in form of an overall oral examination (approx. 25 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students have basic knowledge of the measurement of optical quantities and the procedures and measuring devices required\nfor this. They can analyze the common methods for determining spectrally resolved optical quantities and describe their physical\noperating principle. You will be able to select the appropriate method for the measurement task from the pool of methods and\ndevices, depending on the desired measured quantity. They are also able to adapt known methods for new tasks, taking into\naccount the strengths and weaknesses of the selected method or device.",
+    "content": "The focus of the module is to impart sound knowledge of the methods and devices of optical measurement technology. In\nparticular, spectrally resolved methods. The lecture is structured along the measurement chain starting from the optical quantity\nvia the optical system via the conversion of the optical quantity into the electrical quantity and the processing and interpretation\nof the electrical measurement signal. The module provides an overview of the existing types of measurement receivers and their\nphysical properties and teaches the ability to select the appropriate type of receiver for the specific application.",
+    "workload": "Based on 15 courses per semester, each with 1.5 h presence in the lecture, 2.5 h each Before and after, as well as approx. 2\nhours of literature reading and self-exercises, the total workload is 90 hours",
+    "recommendations": "Knowledge from Lighting Technology and Technical Optics is an advantage.",
+    "literature": ""
+  },
+  "M-ETIT-107455": {
+    "id": "M-ETIT-107455",
+    "title": "Organic and Flexible Electronics",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Gerardo Hernandez Sosa"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The control of success takes place within the framework of an oral overall examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students\n•\n•\n•\n•\n•\n•\nunderstand the electronic and optical characteristics of organic semiconductors.\nknow the fundamental differences between organic and conventional inorganic semiconductors.\nhave basic knowledge of manufacturing and processing technologies for rigid, flexible and stretchable electronics.\nhave knowledge of organic light-emitting diodes, organic solar cells and photodiodes, organic field-effect transistors and\nphysical/chemical sensors based on organic materials.\nhave an overview of the possible applications, markets and development lines for these components.\nare able to work in multidisciplinary teams with engineers, chemists and physicists.",
+    "content": "1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\nIntroduction\nOptoelectronic properties of organic semiconductors\nOrganic light-emitting diodes (OLEDs) and applications\nOrganic Solar Cells\nOrganic Photodetectors\nOrganic FETs\nPhysical and chemical sensors\nPrinting technology for flexible and stretchable electronics",
+    "workload": "1. lecture: 21 h\n2. recapitulation and self-studies: 42 h\n3. preparation of examniation: 27 h\nin total: 90 h",
+    "recommendations": "Knowledge of semiconductor components",
+    "literature": "The corresponding documents are available online in ILIAS (https://studium.kit.edu/)"
+  },
+  "M-INFO-100825": {
+    "id": "M-INFO-100825",
+    "title": "Pattern Recognition",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Beyerer"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See Partial Achievements (Teilleistung)",
+    "prerequisites": "See Partial Achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\nStudents have a sound knowledge of the selection, extraction and properties of features used to characterize objects to\nbe classified. Students know how the feature space can be examined, how features can be transformed and how\ndistances in the feature space can be determined. Furthermore, they can normalize features and construct features. In\naddition, students know how to reduce the dimension of the feature space.\nStudents have a sound knowledge of how to select and adapt suitable classifiers for different tasks. They are familiar\nwith Bayesian decision theory, parameter estimation and parameter-free methods, linear discriminant functions, support\nvector machines and matched filters. Students are also proficient in classification with nominal features.\nStudents are able to solve pattern recognition problems, taking into account the efficiency of classifiers and the\nrelationships in the processing chain object - pattern - feature - classifier on a task-specific basis. To this end, students\nare familiar with the principle for determining the performance of classifiers and the principle of boosting.",
+    "content": "Features:\n•\n•\n•\n•\n•\n•\n•\nFeature types\nExamination of the feature space\nTransformation of the features\nDistance measurement in the feature space\nNormalization of features\nSelection and construction of features\nReduction of the dimension of the feature space\nClassifiers:\n•\n•\n•\n•\n•\n•\n•\nBayesian decision theory\nParameter estimation\nParameter-free methods\nLinear discriminant functions\nSupport Vector Machine\nMatched Filter, Template Matching\nClassification with nominal features\nGeneral principles:\n•\n•\n•\nVapnik-Chervonenki's theory\nPerformance determination of classifiers\nBoosting",
+    "workload": "Total: approx. 180h, of which\nLecture attendance time 31h\nPreparation and follow-up 40h\nExercise attendance time 10h\nPreparation, solving exercises, follow-up 40h\nExam preparation and attendance 59h",
+    "recommendations": "See Partial Achievements (Teilleistung)",
+    "literature": ""
+  },
+  "M-ETIT-100519": {
+    "id": "M-ETIT-100519",
+    "title": "Photometry and Radiometry",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Klaus Trampert"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an overall oral examination (approx. 25 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students have basic knowledge of the measurement of absolute optical quantities and the necessary procedures and\ncalibrations. They can describe the common methods for determining optical quantities. They are able to select the appropriate\nmethod for the measurement task from the pool of methods, depending on the desired measurement quantity. They are also\nable to adapt known methods for new tasks, taking into account the strengths and weaknesses of the selected method. They\nare able to name the most important influencing variables on the uncertainty of the measurement result and can name methods\nto quantify this influence in the real measurement task.",
+    "content": "The focus of the module is to impart sound knowledge of the methods of light measurement technology including the description\nof measurement uncertainties. The first essential subject area is the established methods and determination of the photometric\nquantities luminous flux, luminous intensity, illuminance and luminance and the associated measuring equipment. The second\nimportant subject area comprises the recording and description of the measurement uncertainties that occur during the\ncalibration of such systems using the established GUM method.",
+    "workload": "Based on 14 courses per semester, the workload is calculated as 1.5 h attendance in the lecture, 3 h preparation and follow-up,\nas well as a total of approx. 40 h literature research and preparation and 40 h exam preparation = 133 h total workload",
+    "recommendations": "advantage.\nKnowledge of the module \"M-ETIT-100484 - Optoelektronische Messtechnik\" and \"M-ETIT-100485 - Lichttechnik\" is an",
+    "literature": ""
+  },
+  "M-ETIT-105914": {
+    "id": "M-ETIT-105914",
+    "title": "Photonic Integrated Circuit Design and Applications",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Christian Koos",
+      "Prof. Dr.-Ing. Sebastian Randel"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "•\n•\nPart 1 – Solutions of problem sets: We will grade your solutions of the various problem sets and design projects. To this\nend, please upload your solution via the online teaching platform of your respective institution (see above) before the\nrespective deadline. Please merge all pages into a single pdf file, and please use a scanner. Smartphone made\nsnapshots are often illegible, and in this case your solutions cannot not be evaluated. In case there are any technical\ndifficulties with the platforms, you may also submit your solutions by e‑mail to picda@ipq.kit.edu before the respective\ndeadline.\nPart 2 - Presentation of one pre-assigned problem set: At the beginning of the term, design projects will be pre-assigned\nto groups of participants. Each of these groups will explain their approach and results to lecturers and peer students in a\nshort presentation (approx. 15 min), followed by approx. 10 min of public discussion with peer students and professors,\nand an individual private interview of each group member (approx. 10 min per person).\nThe overall impression is rated.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students understand the basic principles of photonic component design and can apply them to concrete design tasks of\nincreasing complexity and independence, that they will solve in small groups and present to their peers. Doing so they will learn\nto translate theoretical knowledge gained during the lecture into actionable knowledge used to solve hands-on design tasks. In\naddition to design principles, students will learn how to satisfy key requirements for making photonic integrated circuits\nmanufacturable and useable in a system environment, such as corner analysis of manufacturing tolerances, design for\ntestability, design for manufacturability, and packaging. In short, we aim at teaching students the skills for hands-on design of\nmanufacturable and application relevant photonic integrated circuits, preparing them to productively contribute to a design team.\nIn addition, we will convey the most recent trends in the application of photonic integrated circuits and let students design a\ncircuit addressing one of these application spaces, giving them a feeling for both the potential as well as the limitations of the\ntechnology, so that they may take informed decisions on what systems to integrate in the future.",
+    "content": "Lectures:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nLecture 1: Introduction to silicon photonics\nLecture 2: Silicon photonics – technology overview\nLecture 3: Wave propagation in silicon photonic waveguides\nLecture 4: Mode expansion and orthogonality\nLecture 5: Coupled-mode theory\nLecture 6: Selected passive devices\nLecture 7: Modulators\nLecture 8: Photodetectors\nLecture 9: Optical amplifiers and lasers\nLecture 10: Test and packaging\nLecture 11: Optical communications\nLecture 12: Optical metrology\nLecture 13: Biophotonics and neurophotonics\nLecture 14: Integrated quantum optics and optical computing\nDesign lab:\n•\n•\n•\n•\n•\nProblem Set 1: Mode fields and mode expansion\nProblem Set 2: Coupling efficiency and coupled-mode theory\nDesign Project A: Optical filter\nDesign Project B: Optical transceiver\nDesign Project C: Optical communication link",
+    "workload": "Each credit point corresponds to approximately 30 hours of work (of the students). This is based on average students who\nachieve an average performance. The workload includes (e.g. 2 SWS):\n1.\n2.\n3.\nattendance in lectures an exercises: 15*2 h = 30 h\npreparation / follow-up: 15*2 h = 30 h\npreparation of and attendance in examination: 120 h\nA total of 180 h = 6 CR",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-104485": {
+    "id": "M-ETIT-104485",
+    "title": "Photonics and Communications Lab",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Christian Koos",
+      "Prof. Dr.-Ing. Sebastian Randel"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": true,
+    "examType": "Success control takes place in the form of other types of examination. Success is assessed by solving the tasks relating to the\npreparation of the experiment (written and oral) and writing an experiment report.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students have gained practical experience with experimental setups and experimental setups. Students are able to handle\nlaboratory equipment/devices and simulation environments for optical data transmission and optical measurement technology.\nStudents are familiar with the organization, preparation and supervision of the necessary practical experiments.",
+    "content": "The following topics are covered in the practical course:\n•\n•\n•\n•\n•\n•\n•\n•\nLaser diodes and LEDs\nphotodetectors\noptical coherence tomography (OCT)\nReverse control in fibers\nBPM simulations of integrated optical waveguides\nRing resonator filters\nSimulations of optical transmitters (-40 GBps)\nGeneration, transmission and reception of digitally modulated signals",
+    "workload": "180 hours workload.",
+    "recommendations": "Successful participation in the module \"M-ETIT-100436 – Optical Transmitters and Receivers\" and basic knowledge in MatLab",
+    "literature": ""
+  },
+  "M-ETIT-100513": {
+    "id": "M-ETIT-100513",
+    "title": "Photovoltaics",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Michael Powalla"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success is assessed in the form of a written examination (2 hours). The module grade is the grade of this written examination.",
+    "prerequisites": "Module \"M-ETIT-100524 - Solar Energy\" must not have started.",
+    "modeledPrerequisites": "The following conditions have to be fulfilled:\n1.\nThe module M-ETIT-100524 - Solar Energy must not have been started.",
+    "exclusions": [
+      "M-ETIT-100524"
+    ],
+    "requires": [],
+    "competenceGoal": "the following objectives:\nA.Specialist knowledge:\nAfter attending the course, students will be able to:\nFor the lecture Photovoltaics with 3 SWS lecture and 1 SWS exercise, the following competence requirements are specified by\n•\n•\n•\n•\n•\nunderstand energy conversion in semiconductors. They will be able to analyze the physical description of light and the\ninteraction of light with solids. Students will gain knowledge about the energy conversion of different forms of energy and\nthe transport of electrical energy in semiconductors and metals. They will be able to describe and mathematically\nrepresent the functioning of p/n diodes.\ndiscuss the associated current technological and production-related issues. In particular, students examine the technical\nimplementation of semiconductor requirements in technical processes. They gain knowledge of the entire value chain\n(physical principles, material science aspects, production engineering applications and systemic integration)\nunderstand photovoltaic energy systems in the interaction of all components. The comparison of the systemic integration\nof off-grid and grid-integrated solar-based energy generation systems helps to explain the components and their design.\nThe system quality, efficiency, costs etc. can be explained with the help of key figures.\nStudents quantify the loss mechanisms in the solar cell in the solar converter and the solar systems, in particular to\noptimize economic and ecological key figures, and learn about operating experience and long-term stability issues.\nunderstand how different solar cell technologies and solar thermal energy conversion work and how to classify them in\nan overall energy system\nB. Research and problem-solving skills:\nThe students (after participating in the course)\n•\n•\n•\nare able to think in an interdisciplinary way. Basic skills from physics, electrical engineering and information technology,\nproduction engineering and economics are brought together and complement each other to form an overall picture.\nare familiar with methods for analyzing systems composed of discrete components,\nare familiar with state-of-the-art methods of describing energy conversion systems using solar primary energy,\nC. Assessment and planning skills:\nStudents (after participating in the course)\n•\n•\n•\nare able to assess and categorize different solar cell concepts and different solutions for solar power generation,\nrecognize the limits and challenges of providing electrical energy from locally and temporally fluctuating sources and can\nthus initiate new developments,\nscrutinize new concepts in the highly dynamic field of solar electrical energy generation in connection with climate\nprotection and security of supply\nD. Personal and social skills:\nThe students (after participating in the course)\n•\n•\n•\nare familiar with the derivation and origin of the most important physical relationships and recognize the synergy of\ndifferent scientific disciplines,\ncan calculate tasks independently and communicate the results orally and in writing,\nrecognize the relevance of technical solutions for climate protection",
+    "content": "This module is designed to help students understand energy conversion in semiconductors. Photovoltaic energy systems are\ndealt with in the interaction of all components and loss mechanisms in the solar cell and in the photovoltaic system are\nquantified. The functionality of solar thermal energy generation is taught. In addition, the associated current technological and\nproduction-related issues are discussed.",
+    "workload": "Calculation basis: 15 lecture weeks\n1.\n2.\n3.\n4.\n5.\n6.\nLecture attendance time: 23 * 1.5 h = 34.5 h\nPreparation and follow-up time for lecture: 23 * 2 h = 46 h\nExercise 7 x 1.5 h = 10.5 h.\nPreparation and follow-up time for exercise: 7 x 4 h = 28 h\nExcursion 10 h\nExam preparation and attendance (2 h): 51 h\nTotal = 180 h",
+    "recommendations": "",
+    "literature": "List of relevant technical literature.\nhttp://www.erneuerbare-energien.de\nhttp://pveducation.org/pvcdrom.\nhttp://www.sciencedirect.com/science/referenceworks/9780080878737#ancv1\nWürfel, Physik der Solarzellen, 2nd edition (Spektrum Akademischer Verlag, Heidelberg, 2000)\nKonrad Mertens Photovoltaik: Lehrbuch zu Grundlagen, Technologie und Praxis (Carl Hanser Verlag GmbH & Company KG,\n06.08.2018)"
+  },
+  "M-CIWVT-103068": {
+    "id": "M-CIWVT-103068",
+    "title": "Physical Foundations of Cryogenics",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Steffen Grohmann"
+    ],
+    "organisation": "KIT Department of Chemical and Process Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Learning control is an oral examination lasting approx. 30 minutes.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Understanding of the mechanisms of entropy generation, and the interaction of the first and the second law in thermodynamic\ncycles; understanding of cryogenic material properties; application, analysis and assessment of real gas models for classical\nhelium I; understanding of quantum fluid properties of helium II based on Bose-Einstein condensation, understanding of cooling\nprinciples at lowest temperatures.",
+    "content": "Relation between energy and temperature, energy transformation on microscopic and on macroscopic scales, physical\ndefinitions of entropy and temperature, thermodynamic equlibria, reversibility of thermodynamic cycles, helium as classical and\nas quantum fluid, low-temperature material properties, cooling methods at temperatures below 1 K.",
+    "workload": "•\n•\n•\nAttendance time (Lecture): 45 h\nHomework: 45 h\nExam Preparation: 90 h",
+    "recommendations": "",
+    "literature": "Schroeder, D.V.: An introduction to thermal physics. Addison Wesley Longman (2000)\nPobell; F.: Matter and methods at low temperatures. 3rd edition, Springer (2007)"
+  },
+  "M-ETIT-105608": {
+    "id": "M-ETIT-105608",
+    "title": "Physics, Technology and Applications of Thin Films",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Konstantin Ilin"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Oral examination of approximately 20 minutes",
+    "prerequisites": "The modul \"M-ETIT-102332 - Thin films: technology, physics and applications\" and \"Thin Films: Technology, Physics and\nApplications I\" may neither be started nor completed.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students should be able to discuss interplay between growth conditions of thin films, physical and geometrical properties of\nnanostructure made of these films, and performance and suitable areas of application of detectors of radiation based on\ninteraction of these nanostructures with electromagnetic power. The knowledge obtained by students should provide a\ntheoretical basis for the most important steps in development of thin film nanoelectronic devices.",
+    "content": "Students will get practically oriented information about technology of thin films including different methods of deposition of thin\nfilms like magnetron sputtering, thermal evaporation, pulsed laser ablation, about basics of vacuum technology, and about\nmechanisms of growth of thin films of different materials at different conditions.\nPatterning methods (photo- and e-beam lithography, reactive ion etching, ion milling, and lift-off techniques) suitable for\nnanometer scale features of electronic devices will be considered in details.\nExperimental methods of characterization of material, geometrical, optical, physical, superconducting, electron and phonon\nproperties of thin films, nanostructures made of these films, and devices based on these nanostructures will be discussed.\nConsideration of technology and physics of thin film structures will be done on example of development of three types of fast\nand sensitive detectors of electro-magnetic radiation for applications in optical and THz spectral ranges: superconducting\nnanowire single-photon detector, hot-electron bolometer, and YBCO ps-fast detector of synchrotron emission. Dependence of\ndetector’s performance on their fabrication condition will be analyzed in frame of physical models which describe response\nmechanisms of the detectors to absorbed radiation.\nPractical actualization of the knowledge is possible in frame of Praktikum Nanoelektronik (LVN 23669).",
+    "workload": "A workload of approx. 90 h is required for the successful completion of the module. This is composed as follows\n1. attendance time in lecture/exercise 18 h\n2. pre-/postprocessing of the lecture 24 h\n3. preparation/attendance oral exam 48 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100481": {
+    "id": "M-ETIT-100481",
+    "title": "Plasma Sources",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Rainer Kling"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The success control takes place within the framework of an oral examination (approx. 25 minutes) on the selected courses,\nwhich together fulfill the minimum requirement of CP.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students understand the electronic processes and radiation mechanisms in plasmas.\nThis enables them to master the designs and properties of technical plasma emitters such as UV emitters, gas lasers, display\nemitters, as well as the basics of operating devices - electronic ballasts. Students will be able to critically assess the various\noperating procedures and applications",
+    "content": "The lecture gives a well-founded insight into plasma emitters from UV emitters to gas lasers in the infrared as well as the basics\nof the operation of the emitters::\n1 Motivation / radiation characteristics and applications\n2 Fundamentals of plasma radiation sources:\n- Shock processes and radiation\n- Plasma dynamics and transport equations\n- Types of stationary gas discharges and ignition\n- Low pressure plasmas\n- High pressure plasmas\n- Laser plasmas\n3. plasma emitters in applications\n*VUV and UV emitters\n- Z-pinch, amalgam emitters\n- Excimer plasma emitters, excimer lasers\n*General lighting\n- Low-pressure fluorescent lamps\nCFL, FL, phosphors, sodium\n*High-pressure lamps: HQL, metal halide HCI, sodium\n*Stage / projection / display: PVIP; Xenon high pressure, MHD, laser radiation sources\n*Automotive lighting xenon, laser\n* IR applications: Laser plasma emitters\n4. basics of operating devices\n- Requirements for control gear, basic topologies\n- Control gear for low-pressure and high-pressure lamps and plasma lasers\n- Ignitors, brightness controls and pulse circuits",
+    "workload": "1. attendance time lecture: 15 * 2.25 h = 33.75 h\n2. preparation and follow-up time lecture: 15 * 3 h = 45 h\n3. exam preparation and attendance in the same: 50 h\nTotal: 128.75 h = 4 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-107533": {
+    "id": "M-ETIT-107533",
+    "title": "Power Electronic Systems",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Marc Hiller"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an oral examination lasting approx. 25 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are familiar with the grid-connected and self-commutated power converter circuits relevant to energy technology\napplications.\nThey are able to select power converters for drive technology and grid applications (including high-voltage direct current\ntransmission) and assess their operating characteristics.\nThey are familiar with the functionality as well as the advantages and disadvantages of the various multi-stage inverter circuits\nand are able to select the required power semiconductors depending on the electrical requirements and the type of cooling.\nStudents are also able to design the power semiconductors and passive components of a power converter circuit electrically\nand thermally.\nThey are familiar with the normative insulation requirements and can analyze and explain the requirements for the protection of\na power converter.",
+    "content": "The electrical and thermal design and dimensioning of power converters in drive and energy technology are presented and\ndiscussed in detail in this lecture. Based on the terminal behavior of the various power converter topologies, the interactions with\nother system components are presented and evaluated.\nThe lecture provides an overview of possible measures to improve the system behavior and deals with the protection of power\nconverter circuits.\nThe following topics are covered in detail:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nIntroduction\nGrid-connected power converters under idealized and real conditions and their most important applications in power\nengineering\nSelf-commutated multilevel converters: Neutral point clamped inverters, floating capacitor inverters, series cell inverters,\nmodular multilevel converters, hybrid circuits, modulation methods\nSemiconductor components for grid-connected and self-commutated power converters, protective devices\nHeat dissipation concepts for power semiconductors and passive components, junction temperature calculations\nLoad cycle stability of power semiconductors\nShort-circuit current design for mains and motor side\nProtection concepts\nInsulation coordination, standards\nTransformer, grid connection\nMains and motor-side filters\nCable models\nInteraction between inverter and machine (insulation, bearing currents)\nReliability calculations\nExcursion to converter plant if necessary\nThe lecturer reserves the right to deviate from the content of the current lecture without special notice.",
+    "workload": "•\n•\n•\n•\n•\n22x lecture and 8x exercise à 2 h = 60 h\n22x follow-up of the lecture à 1 h = 22 h\n8x preparation of the exercise à 2 h = 16 h\nPreparation for the exam = 81 h\nExamination time = 1 h\nTotal = 180 h",
+    "recommendations": "Knowledge of the basics of power electronics and electrical machines is helpful, but not essential.",
+    "literature": ""
+  },
+  "M-ETIT-104567": {
+    "id": "M-ETIT-104567",
+    "title": "Power Electronics",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Marc Hiller"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of a written examination lasting 120 minutes.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will be familiar with state-of-the-art power semiconductors including their application related features. Furthermore\nstudents will be familiar with the circuit topologies for DC/DC and DC/AC power conversion. They know the associated\nmodulation and control methods and characteristics. They are able to analyze the circuit topologies with regard to harmonics\nand power losses. This also includes the thermal design of power electronic circuits. In addition, they are able to select and\ncombine suitable circuits for given electrical energy conversion requirements.",
+    "content": "In the lecture, power electronic circuits for DC/DC and DC/AC power conversion using IGBTs and MOSFETs are presented and\nanalyzed. First, the basic properties of self-commutated circuits under idealized\nconditions are elaborated using the DC/DC converter as an example. Then, self-commutated power converters for three-phase\napplications are presented and analyzed with respect to modulation and their AC\nand DC terminal behavior. Based on the real power semiconductor behavior in on- and off-state the device losses are\ncalculated. Furthermore the thermal design of power converters is explained using thermal equivalent circuits of power devices\nand cooling equipment. The voltage and current stress on the power\nsemiconductors in switching operation is explained as well as protective snubber circuits allowing a reliable operation within the\nsafe operating area of the devices.\nIn detail, the following topics are treated:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nPower Semiconductors\nCommutation principles\nDC/DC converters\nSelf-commutated 1ph and 3ph DC/AC inverters\nModulation methods (Fundamental frequency modulation, Pulse width modulation with 3rd harmonic injection, Space\nvector modulation)\nMultilevel inverters\nSwitching behavior in hard and soft switching applications\nLoss calculation\nThermal equivalent circuits, thermal design\nSnubber circuits.\nThe lecturer reserves the right to adapt the contents of the lecture to current needs without prior notice.",
+    "workload": "14x lecture and 14x exercise à 2 h = 56 h\n14x wrap-up of the lecture à 1 h = 14 h\n14x preparation of the exercise à 2 h = 28 h\nPreparation for the exam = 75 h\nExamination time = 2 h\nTotal = approx. 175 h (corresponds to 6 LP)",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-106506": {
+    "id": "M-ETIT-106506",
+    "title": "Power System Protection and Automation",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Leibfried"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success is assessed in an overall oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students know the main components of protection and control technology in electrical networks and how they interact. Students\nunderstand the main protection functions and their areas of application. They are familiar with the structure and function of\nsubstations. The role of network control technology in electrical networks is understood. They will be able to reproduce key\ninterrelationships. Students know the future challenges for the electrical grid in general and for protection and control technology\nin particular and are able to understand them.",
+    "content": "•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nIntroduction to protection systems\n- Short-circuit quantities\n- Star point treatment\n- Fault types in the grid\nPlanning of grid protection devices\n- Planning of switchgear and substations\n- Protection principles and philosophies\n- Relay planning\nMeasurement data acquisition\n- Voltage transformers\n- Current transformers\n- Switching of transformers\n- Developments in transformer technology\nEarth fault detection\n- Planning of compensated networks\n- Earth fault suppression coil\n- Earth fault detection\nMains protection/ branch circuit protection\n- Overcurrent protection\n- Distance protection\n- Differential protection\nFrequency protection\n- Principle of system protection\n- Underfrequency protection\nGenerator protection\n- Design of generator protection systems\n- Short-circuit protection - Stator protection\n- Rotor protection\nIntroduction to control technology\n- Structure of grid control systems\n- Communication in grid control technology\n- Basics of telecontrol and station control technology\nSwitchgear technology\n- Conventional systems\n- Digital station control technology\nNetwork control technology\n- Structure of network control technology\n- SCADA\n- HEO functions\nDevelopments in protection and control technology\n- Digital substations\n- Influence of converters on fault behavior\n- Preventive or curative grid management",
+    "workload": "The workload includes (for one lecture)\n1. attendance time in lecture (30 h = 1 CP)\n2. self-study time for preparation and follow-up of the lecture including exam preparation (60h = 2 CP)\nThis results in a total of 90 hours = 3 CP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100413": {
+    "id": "M-ETIT-100413",
+    "title": "Power Systems and Economy",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Bernd Hoferer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an overall oral examination (20 minutes)",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will be familiar with the key characteristics, operational tasks and responsibilities of the interacting areas of the energy\nindustry, generation, trading, sales and grids, including the important legal framework and regulation. The focus is on the\ntransformation of a traditionally centrally organized energy industry into an increasingly decentralized supply structure with\nspecial consideration of the expansion of renewable energies, transmission and distribution grids and the necessary storage\nsystems. As a synthesis, students will learn about a possible transformation path on which the German government's climate\nand environmental policy goals appear achievable by 2045.",
+    "content": "This lecture is aimed at undergratuate students and is intended to convey the\ninterrelationships and interactions, particularly in the European energy market. Based\non the presentation of fossil energy resources available today, the expected energy\ndemand on earth for the year 2030 is forecast with reference to an Exxon study.\nConsequences for the type and scope of sensible energy use and the required\nenergy supply are derived from this. The structure, the legal framework and the\ninteraction of the various market participants in the European energy market are\ndescribed in detail. The treatment of practical examples provides a basic\nunderstanding of the complex processes in these markets.\nFirst, the energy demand in Germany and worldwide is presented. Opportunities for\ntargeted energy savings are described in their dimensions. The forecast global\nenergy demand in 2030 is the benchmark for the type and scope of energy\ngeneration to be provided. Renewable energy generation plants of the highest\nefficiency are discussed as a sensible and necessary supplement to fossil energy\ngeneration.\nThe European Union has liberalized the energy market through legislative changes.\nThe transition from a monopoly to a competitive market is described in detail in the\nlecture. The changes for the market partners, especially for the customers, are\npresented and newly created structures and processes such as trading on energy\nexchanges are developed.\nThe market environment for energy trading and energy sales has changed\nfundamentally. Today, energy pricing is increasingly subject to national and\ninternational influences. Costs for energy generation, energy transportation and,\nabove all, government levies determine the price of energy and cause sales margins\nto shrink. New products are expected to generate new business and sales.\nThe deregulation of energy transportation systems is an essential basis for a\ncompetitive energy market. Options for the further development of this transportation\ninfrastructure with the aim of guaranteeing all market participants unhindered access\nat the same prices are discussed in the lecture.\nThe competitive market requires a very detailed provision of data of all kinds. Energy\ndata management as an indispensable basis for planning, forecasting, production,\ntransportation and billing is described in the lecture in terms of its structure and\npractical implementation.\nIncreasing efficiency and improving customer service are goals of current\ninternational legislation. They place new demands on future companies in the energy\nindustry and will give rise to new solutions. The previous centrally structured energy\nindustry will be expanded to include decentralized structures in generation and\ndistribution and the products of electricity and gas supply will be increasingly\nsupplemented or replaced by service products.\nTo implement the energy transition in Germany a model of networked, cellular energy\nsystems with sector coupling is presented, and the necessary systems and\ncomponents for energy grids and energy storage are discussed in terms of their\neffective, sustainable and economically successful interaction. This chapter on\ncorporate structures, corporate management and profit and loss acounting rounds off\nthe „Energy Industy“ lecture.",
+    "workload": "Attendance time: 30 h\nSelf-study time: 45 h\nTotal 75 h = 3 CP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-107156": {
+    "id": "M-ETIT-107156",
+    "title": "Practical Amplifier Design",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an oral examination of approx. 30 min.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\nThe students learn to apply theory of high-speed amplifier design into practical implementation\nThey understand critical limitations such as interconnect parasitics, self-heating, power supply and stability, and learn\nmethods how to handle these limitations in practice\nThey are familiar with the required fabrication process and the components for the implementation of such amplifiers\nStudents acquire hands-on experience on fabrication, assembly and characterization of high-speed amplifiers",
+    "content": "In this lecture, the student will be provided with material for theoretical understanding of high-speed amplifier design. The\nlectures will be organized around the design of a high-speed amplifier, that will be fabricated, assembled and characterized.\nFollowing topics will be covered:\n•\n•\n•\n•\n•\n•\n•\nTransistor analysis, and characterization\nSchematic level amplifier design, steady-state analysis and important metrics of amplifier performance\nLayout design and practical limitations with respect to parasitics, interconnections\nElectro/thermal effects and self heating\nImpact of bias circuitry\nStability analysis\nAssembly and characterization of high-speed amplfiiers",
+    "workload": "The total effort for this lecture is estimated as following:\n1.\n2.\n3.\n4.\nAttendance to the lectures and exercises (15*(2)=30h)\nPreparation to the lectures and exercises (15*(2)=30h)\nAmplifier design, assembly, characterization (15h)\nPreparation to the exam (15h)\nTotal: 90h",
+    "recommendations": "The contents of \"M-ETIT-105124 – Radio-Frequency Electronics\" is recommanded.",
+    "literature": ""
+  },
+  "M-ETIT-100394": {
+    "id": "M-ETIT-100394",
+    "title": "Practical Aspects of Electrical Drives",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Martin Doppelbauer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success is assessed in a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students understand the function of all components of modern electrical drive systems. They have detailed knowledge of the\nbasic electrical machine types and know the function and physical behavior of loads and other drive components. Students will\nbe able to design electrical drive systems for an application-specific use, taking into account all boundary conditions, and\ncalculate their mechanical and electrical behavior.",
+    "content": "The lecture is divided into the following areas\n•\n•\nDrive systems\nelectric motors\n•\nTransmission elements\n•\nDrive and load\n•\n•\n•\n•\n•\nStarting, braking, positioning\nThermal and protection\nVariable speed drives\nElectromagnetic compatibility\nSmall drives\n•\nNoise\n•\nDrives with limited movement",
+    "workload": "14x lecture + 7x exercises of 1.5 h each = 31.5 h\n14x post-processing of lectures à 1 h = 14 h\n6x preparation of exercises à 2 h = 12 h\nPreparation for the exam = 50 h\nTotal = 107.5 h (corresponds to 4 CP)",
+    "recommendations": "To understand the module, basic knowledge in the field of electrical machines is recommended (acquired, for example, by\nattending the modules \"Electrical Machines and Power Electronics\"",
+    "literature": ""
+  },
+  "M-MACH-107052": {
+    "id": "M-MACH-107052",
+    "title": "Practical Course: Autonomous Driving",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Martin Gießler",
+      "Kevin Simon"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "see module component",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\n•\nStudents can configure sensors on the test vehicle, record data and check the quality of the recorded sensor data.\nStudents can annotate and segment sensor data and recognize and classify objects using suitable algorithms.\nStudents can plan paths and trajectories for driving maneuvers, generate behavioral strategies and evaluate their\nfeasibility.\nStudents can implement driving maneuvers using suitable control strategies and control the actuators of the test vehicle.\nStudents can implement the entire pipeline - from environmental perception to planning and execution - and test it in a\nreal test vehicle.",
+    "content": "The main objective of the event is the practical implementation of the pipeline required for automated/autonomous driving\nfunctions with a real test vehicle. This includes recording the environment using various sensors, processing the recorded\nsensor data (perception), planning driving manoeuvres and the final execution of the manoeuvre by the actuators.\n- Sensor data acquisition: Setup and data recording of the sensors on the test vehicle\n- Perception: data annotation, segmentation of sensor data, object recognition\n- Manoeuvre planning: path and trajectory planning, behaviour generation, etc.\n- Manoeuvre execution: vehicle control, implementation of the driving manoeuvre in the real test vehicle using actuators",
+    "workload": "The workload includes:\n1.\n2.\nAttendance time in lectures: 45 h\nWork on the project: 75 h\nTotal: 120 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-105955": {
+    "id": "M-INFO-105955",
+    "title": "Practical Course: Smart Energy System",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Veit Hagenmeyer"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": true,
+    "examType": "See partial achievements (Teilleistung)",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After successfully completing the course, students will be able to\n- explain and categorize a set of current research issues in modern energy systems\n- explain structure and objectives of the KIT Energy Lab and its role in smart grid research\n- conduct selected research activities in the field of innovative, application-oriented information, automation and system\ntechnology for sustainable energy systems\n- isolate a research activity / hypothesis suitable for evaluation in the Smart Energy System Simulation and Control Center\n- plan, organize and manage their laboratory / experimental work to fit a given time-frame\n- concisely present and defend their research activity and results in front of a peer audience\n- structure and writeup their work in research-paper-style\n- work in team",
+    "content": "As part of the two-week lab course, students work in teams of two on a project topic derived from current research questions of\nthe Smart Energy System Simulation and Control Centre of the Energy Lab (https://www.iai.kit.edu/RPE.php). A list of topics is\nmade available in advance via the Campus Plus Portal. Interested students should indicate their preferences based on which\nthe topics will be assigned.\nThe group of students typically goes through the following phases: Concept development/experiment\npreparation, implementation/experiment execution, evaluation/experiment analysis, presentation of results and write-up. The\nteams will work independently on the assigned project - supervision is provided by research assistants.\nThe course begins with a joint kick-off event. This includes an organizational introduction, a tour of the Energy\nLab and a brief presentation of all project topics. For the following preparation phase students are provided with literature and\nmaterial to thoroughly familiarize themselves with the topic, research background and literature, plan and prepare experiments\netc. In the two lab weeks the experiments are conducted and a scientific writing workshop is held. At the end of the lab course\neach team has to defend their work in a 10 min presentation followed by 5 minutes of discussion in front of peers and\nexaminers. Additionally, the work needs to be documented in the style of a scientific paper.",
+    "workload": "6 credit points corresponds to approx. 180 working hours, of which\n- Attendance time / meetings in large and small groups: 10h\n- Select and carry out project work: 140h\n- Writing a research report and preparing a presentation: 30 hours",
+    "recommendations": "- Knowledge of the fundamentals of energy informatics is a prerequisite.\n- Knowledge of the fundamentals of electrical engineering and energy technology is required.\n- Knowledge of the basics of mechatronics, data analysis and signal processing is helpful.\n- Knowledge of power systems or power electronics is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-106673": {
+    "id": "M-ETIT-106673",
+    "title": "Practical Machine Learning",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Michael Heizmann",
+      "Prof. Dr.-Ing. Sander Wahls"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": true,
+    "examType": "project.\nSuccess is assessed by the submission of the scientific essay (approx. 10 pages) and a 30-minute presentation of the team",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\n•\nAfter completing the module, students have in-depth knowledge in the field of machine learning.\nThey have in-depth knowledge and an overview of various algorithms and methods in the field of machine learning.\nStudents are able to describe different concepts and methods of machine learning and recognize connections between\ndifferent algorithms.\nThey are able to communicate with specialists in related disciplines in the field of machine learning and artificial\nintelligence and to formulate and evaluate solution approaches for tasks in this area.\nStudents will gain practical experience in the field of machine learning through the semester-long team project. In\nparticular, students will benefit from mutual feedback on their theoretical work at the end of the semester.",
+    "content": "Remarkable progress has been made in the field of artificial intelligence (AI) in recent years. Machine learning (ML) is a sub-\ndiscipline of AI that attempts to develop techniques that enable computers to learn from data. The goal of ML methods is to\nreliably abstract the underlying model for specific tasks.\nThis lecture covers the theoretical foundations as well as the basic concepts and techniques of machine learning, with a focus\non problem solving and practical application. The course offers the opportunity to explore various ML algorithms and their\napplications in different areas, including computer vision, natural language processing and data mining.\nDuring the course, you will have the opportunity to work on various application tasks and a group project in which you will apply\nthe concepts you have learned to real-world data sets. You will learn how to use common libraries and tools for ML such as\nScikit-Learn, TensorFlow and Keras and apply them to real-world datasets. You will also learn how to evaluate the performance\nof your models and interpret their results.\nThe lecture style will be a mix of theory and practical applications, with an emphasis on problem solving and hands-on\nexperimentation. The theoretical part of the lecture will be offered as a block course at the beginning of the semester (early/mid\nApril). Students then have the opportunity to work on a problem from the field of\nML alone or in small groups during the semester and present their results in the form of a scientific essay.\nThe quality assurance of the essay is carried out through a mutual peer review process in which students benefit from mutual\nfeedback both from a technical point of view and with regard to the presentation of content.\nThe module covers the fundamentals and concepts of machine learning. Topics covered include the following:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nIntroduction to machine learning and its applications.\nData pre-processing and feature engineering techniques.\nSupervised and unsupervised learning algorithms.\nDeep learning techniques such as Convolutional Neural Networks and Recurrent Neural Networks.\nTransfer learning and Tiny ML.\nProbabilistic ML.\nEvaluation metrics for ML models.\nHyperparameter tuning and model selection techniques.\nInterpreting the results of ML models.\n... other interesting topics.",
+    "workload": "•\n•\n•\n•\nAttendance of the lectures: approx. 21 hours\nPreparation and follow-up of the lecture: approx. 42 hours\nTeam project during the semester: approx. 60 hours\nPeer review of the scientific essays\nand presentation of the team project: approx. 47 hours\nTotal: approx. 170 hours (6 CP)",
+    "recommendations": "Basic knowledge of mathematics and linear algebra (matrices, vectors, etc.)\nas well as basic knowledge of Python.",
+    "literature": ""
+  },
+  "M-ETIT-106780": {
+    "id": "M-ETIT-106780",
+    "title": "Practical Tools for Control Engineers",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Balint Varga"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of other types of examination. It consists of an oral overall examination in the amount of 25\nminutes and a homework programming task. The examination includes questions from the lecture slides and the presentation of\nthe homework assignment. The homework must be submitted two weeks before of the oral exam. The overall impression is\nevaluated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "1. 2. 3. The students will be able to analyze, structure and formally describe problems in the field of practical control engineering.\nThe students are able to use the necessary tools for software projects with control engineering focus.\nThe students can apply the methods\n- Modular software development for control engineering problems\n- Model Predictive Controller for practical engineering problems\n- Inevitable software engineering tools to able to develop control system",
+    "content": "•\n•\n•\nPractical examples from the control engineering problems and modelling tool\n◦\nRobotics examples\n◦\nHuman-machine interaction\n◦\nAutomotive\nControl solution concepts for these practical problems\nSoftware development tool",
+    "workload": "The workload includes 2 SWS:\n1. attendance in lectures and exercises: 15*2 h = 30 h\n2. preparation / follow-up: 15*2,5 h = 37,5 h\n3. preparation of the homework assignment: 22,5 h\n4. preparation of and attendance in examination: 30 h\nSum: 120 h = 4 CR",
+    "recommendations": "The contents of the modules “Optimization of Dynamic Systems (ODS)” and “Regelung linearer Mehrgrößensysteme (RLM)” are\nhelpful for the lecture.",
+    "literature": ""
+  },
+  "M-MACH-107574": {
+    "id": "M-MACH-107574",
+    "title": "Principles of Whole Vehicle Engineering",
+    "credits": 4,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Martin Gießler",
+      "Martina Kaiser",
+      "Rieke Kokenge"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Written exam, duration 90 minutes.\nAuxiliary means: none",
+    "prerequisites": "see module component",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students have an overview of the entire development process of a passenger car. In addition to the chronological sequence\nof passenger car development, they also know the national and international legal requirements. They have knowledge of the\nconflict of objectives between aerodynamics, thermal management and design. They will be able to assess conflicting goals in\nthe area of passenger car development and work out possible solutions. Students are familiar with the selection of suitable\nmaterials and with various manufacturing techniques. They have an overview of the acoustics of the vehicle. They are familiar\nwith both the aspects of acoustics in the interior of the vehicle and the aspects of exterior noise. They are familiar with testing\nthe vehicle and assessing the overall vehicle characteristics. They are able to participate competently in the development\nprocess of the entire vehicle.",
+    "content": "1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n10.\n11.\n12.\n13.\nProcess of automobile development\nConceptual dimensioning and design of an automobile\nLaws and regulations – National and international boundary conditions\nAero dynamical dimensioning and design of an automobile I\nAero dynamical dimensioning and design of an automobile II\nThermo-management in the conflict of objectives between styling, aerodynamic and packaging guidelines I\nThermo-management in the conflict of objectives between styling, aerodynamic and packaging guidelines\nApplication-oriented material and production technology I\nApplication-oriented material and production technology II\nOverall vehicle acoustics in the automobile development\nDrive train acoustics in the automobile development\nTesting of the complete vehicle\nProperties of the complete automobile",
+    "workload": "1.\n2.\n3.\nAttendance time in lectures (summer semester + winter semester): 2* 9 h = 18 h\nPreparation/follow-up of the same: 2* 40 h = 80 h\nExam preparation and attendance in the same: 20 h\nTotal = 118 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-107343": {
+    "id": "M-ETIT-107343",
+    "title": "Printed and Thin-Film Electronics",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Jasmin Aghassi-Hagmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The assessment takes place in form of an oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students\n•\n•\n•\n•\n•\n•\nhave a general overview over the topic of Printed Electronics and basic knowledge of the materials, manufacturing\nmethods and applications\ncan critically analyze the specific advantages and limits of different methods and approaches of manufacturing printed\nelectronics and can thus evaluate the potential for certain applications in relation to classical electronics\nare able to design basic printed electronic devices and know how to characterize their electronic properties\nare enabled to follow current developments in printed electronics and utilize this knowledge in their own research\nprojects\nare enabled to navigate in applications of multidisciplinary nature (physics, material science, medical engineering)\nhave gained relevant expertise for responsible R&D positions in industries such as semiconductor, sensors, automation,\ninstrumentation and measurement technology.",
+    "content": "This module gives the student an overview over theoretical and practical aspects of printed and thin-film electronics, including\napplications. It will introduce the basics of manufacturing methods such as 2D / 3D printing, thin-film methods as CVD, PLD,\nsputtering, nanolithography, e-beam lithography and lift-off processes. Different classes of materials (e.g. inorganic\nsemiconductors, metals, biomaterials, ceramics) and their properties are discussed. Furthermore, the module will introduce the\nstudents to applications of printed electronics in a broad range of fields, as IoT, computing, medical wearables, hybrid sensor\ndevices, bioelectronics, and soft robotics.",
+    "workload": "1.\n2.\n3.\nattendance time in lecture: 15*2 h = 30 h\npreparation/follow-up of the same: 15*2 h = 30 h\nexam preparation and attendance in the same: 30 h\nTotal: 90 h = 3 CP",
+    "recommendations": "Ideally, this module will be selected by students in combination with “Lab Course Printed and Flexible Electronics”, but this is\noptional. Basic knowledge in electronic devices, materials of electronics, introductory courses in physics and sensor systems will\nbe beneficial.",
+    "literature": ""
+  },
+  "M-ETIT-106464": {
+    "id": "M-ETIT-106464",
+    "title": "Printed Flexible Electronics Lab",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "pass/fail",
+    "coordinators": [
+      "Prof. Dr. Gerardo Hernandez Sosa"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": true,
+    "examType": "The examination consists of a written journal article and an oral presentation of the student’s work, both given in English. The\noverall impression is rated.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students will gain practical experience in the use of measuring instruments and manufacturing processes for printed\nelectronics technology and the methods for determining the physical and optical properties of the fabricated components. They\nwill be able to fabricate devices such as photodetectors and thin film transistors, and electrically characterize them.\nFurthermore, they will evaluate measurement results and correlate the fabrication process conditions to the device\ncharacteristics. They will be able to critically evaluate their results using adequate measurement tools. In addition, they will have\nthe competence to report the results in written form and to interpret the knowledge gained from the experiments. By working on\nthe practical course in small groups, students also acquire or improve their teamwork skills.",
+    "content": "This module is designed to teach students the theoretical and practical aspects of laboratory work in the field of Printed and\nFlexible Electronics by means of guided and independently conducted practical experiments. In the four experiments, the\nstudent will learn to handle real measurement and fabrication technology on the scientific equipment of the institute such as\nvarious printers, probe stations, characterization methods and formulation of inks. The module also teaches the competence to\nwrite a scientific report, as well as the rules to visualize data sets in a meaningful way.\nThe working titles of the experiments are:\n1) 2) 3) Ink formulation and characterization of Functional Inks\nPrinting optimization of an Inkjet Printer for functional Electronics\nFabrication and characterization of a printed sensor device.\nFabrication of a printed thin film transistor device with subsequent electrical characterization",
+    "workload": "Due to the self-administration of the groups (max. 3 students):\n1 x 5 hours are required for organizational tasks. This includes the attendance of the information event, the attendance of 2\nsafety briefings (general safety and clean room) as well as the organizational tasks for the individual appointment between the\nexperiment supervisor and the small group.\nFor the 4 experiments in the module, the workload is calculated as follows:\n4 x 5 h familiarization with the topic and literature study on the basics incl. preparation for the entrance examination.\n4 x 8 h presence for the execution of experiments at the institute\n4 x 1 h discussion of results and learned concepts\n4 x 10 h data preparation and visualization\n4 x 15 h writing of an individual report on the basis of the measured data and the research question.\n4 x 1 h final discussion on the experiment with feedback on the report\n4 x 4 h Rework of the report on the basis of the feedback on the report.\nTotal hours = 181 h = 6 LP",
+    "recommendations": "Basic knowledge in the field of conventional and/or organic (opto) electronic or printed devices and sensors is helpful. The\ncourse Modern VLSI is recommended but not necessary.\nIt is recommanded to have started \"M-ETIT-100475 Modul: Plastic Electronics / Polymerelektronik\"",
+    "literature": ""
+  },
+  "M-ETIT-105594": {
+    "id": "M-ETIT-105594",
+    "title": "Process Analysis: Modeling, Data Mining, Machine Learning",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Michael Heizmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an oral examination lasting approx. 30 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students learn about process engineering issues from the perspective of industrial practice, which are dealt with using physico-\nchemical modeling and data science methods. Students learn about important relationships in process engineering and can\nexplain these using example processes. They are able to recognize relevant process data and select and apply suitable\nmodelling approaches for their interpretation. Students can carry out practical analyses with process data and apply methods of\nvarying complexity. Students are familiar with the data analysis value chain and are able to select a suitable data analysis\nmethod. The focus is on teaching broad methodological knowledge and application using practical examples. Students are\nreferred to specialized in-depth lectures and/or in-depth literature.",
+    "content": "Aims of process technology\n•\n•\n•\n•\n•\nMaterial and energy conversion by means of chemical, mechanical, thermal or biological operations\nBasic operations (selection)\nSystem examples\nImportant variables in process technology (temperature, pressure, composition,...)\nEconomic efficiency in the process industry\nData acquisition\n•\n•\nMeasured variables and measuring principles (selection)\nMeasurement uncertainty\nModels of process technology\n•\n•\n•\n•\n•\n•\nBalance equations (selection)\nConstitutive equations (selection)\nSolving balance equations (example in Matlab)\nParameter uncertainty and estimation\nData-driven models\nGrey box models / hybrid models\nData analysis\n•\n•\n•\n•\n•\nRequirements for data analysis in the process industry\nCost-effectiveness and prioritization of process analyses\nData pre-treatment\nApplication of data mining and machine learning\nOnline processes\nExcursion\n•\nExcursion to BASF Ludwigshafen\nTerm paper 1: Process model and simulation.\nTerm paper 2: Identification and analysis.\nHomework 3: Predictive maintenance.",
+    "workload": "28 hours of teaching,\n30 hrs. Homework,\n32 hours of preparation and follow-up work, exam preparation and implementation.",
+    "recommendations": "Basics in: Mathematics, differential equations, linear algebra, statistics, basic knowledge of Matlab",
+    "literature": "Bequette (1998). Process Dynamics: Modeling, Analysis and Simulation. Prentice Hall.\nRussel & Novig (2016). Artificial Intelligence - A modern approach. Pearson.\nMatlab Documentation (In2019). Mathworks."
+  },
+  "M-ETIT-104475": {
+    "id": "M-ETIT-104475",
+    "title": "Project Management in the Development of Products for Safety- Critical Applications",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Manfred Nolle",
+      "Prof. Dr.-Ing. Eric Sax"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "Success is assessed in the form of a written examination lasting 90 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students have a fundamental understanding of all the key terms, methods and processes used in project management, which\nare applied in the various phases of a project. Students can contribute actively to international projects for the development of\ntechnical systems in project management and are also capable of managing smaller projects themselves and leading a project\nteam. They are familiar with the specific requirements wherever product safety is an essential feature. As project managers,\nstudents know what is important without being experts in technical matters themselves.",
+    "content": "The lecture covers:\n1.\n2.\n3.\n4.\nTerms and fundamental understanding of project management (PM).\nSegmentation of project implementation into phases with the respective tasks, methods, and processes of PM on the\none hand and project realisation on the other.\nUnderstanding of different approach models for project realisation, such as plan-based, agile, and hybrid, as well as the\nimplementation of specific requirements that are mandatory for certification in products for safety-critical applications.\nUnderstanding and application of typical processes such as\n- Planning / control\n- Organisation / team building / leadership\n- Requirements management\n- Change and configuration management\n- Risk (& opportunity) management\n- Stakeholder management\n- Quality management\n- Contract & claim management\nwith references to specific challenges regarding safety\n1.\n2.\n3.\nunderstanding of the requirements from the project environment within and outside the organisation initiating the project\n(norms, standards, processes, certifications, etc.),\nintroduction to social skills such as team building, leading a project team, communication, conflict management, etc.,\ncultural differences and the resulting challenges in international projects in general.\nExamples are demonstrated and explained for the development of products for safety-critical applications.\nExercises in which the acquired knowledge is applied and consolidated:\n1.\n2.\n3.\nby testing and repeating the knowledge acquired,\nby carrying out smaller projects,\nwith simulation scenarios and case studies.",
+    "workload": "The workload includes:\n1. attendance time in lectures, exercises: 45h\n2. preparation and follow-up of the same: 30h\n3. exam preparation and participation: 45h",
+    "recommendations": "Basic knowledge of hardware and software design is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-105596": {
+    "id": "M-ETIT-105596",
+    "title": "Pulsed Power Technology and Applications (Tutorial)",
+    "credits": 5,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Georg Müller"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The examination takes place in form of other types of examination. It consists of oral examination and discussioning the amount\nof 30 min and a written report about the results of the experiments conducted (one report per group) The overall impression is\nevaluated. Details will be given during the lecture.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completing the course students have theoretical and practical experience on the performance of different types of pulse\ngenerators and components (e.g. switches), according measurement techniques and data acquisition systems. Additionally,\nstudents will know the basics of electroporation process and analytical methods for material characterization (SEM, EDX, XRD).",
+    "content": "The course gives an overview of the features and phenomena of pulse power engineering and emerging applications. Modern\napplications of pulsed power technologies cover a wide range of topics, ranging from applications in the field of renewable\nenergies as a pretreatment method for biomass conversion, material processing for high temperature applications (e.g.\nconcentrated solar power), inertial confinement fusion to medical applications. Beside the electrical engineering aspect, one\ngoal of this course is to provide basic knowledge in bioelectric and in analytical methods for material characterization. Following\ntopics will be addressed:\n• Transmission line based generators\n• Marx- generators\n• Gas filled spark gaps\n• Impedance measurements on biological tissue\n• Inactivation of biological cells and electro-orientation\n• Surface modification by high-power pulsed electron beams\n• Material characterization by SEM, EDX and XRD\nThe tutorials are carried out in groups of two or three students. Since working with high voltages (up to 120 kV) particular\nemphasis is put on safety. Therefore, part of the tutorial is an obligatory safety briefing conducted at the beginning of the course.",
+    "workload": "After completing the course students have theoretical and practical experience on the performance of different types of pulse\ngenerators and components (e.g. switches), according measurement techniques and data acquisition systems. Additionally,\nstudents will know the basics of electroporation process and analytical methods for material characterization (SEM, EDX, XRD).\nThe workload includes:\n32 h - attendance in tutorials : 8*4 h=32 h\n4 h - safety instruction 1*4 h=4 h\n112 h - preparation of each tutorial: 8 x14 h = 112 h\nA total of 148 h = 5 CR",
+    "recommendations": "Knowledge of the content provided in the lecture `Pulsed Power Technology and Applications` is strongly recommended.",
+    "literature": ""
+  },
+  "M-ETIT-105595": {
+    "id": "M-ETIT-105595",
+    "title": "Pulsed Power Technology and Applications (Lecture)",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Georg Müller"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The success control takes place within the scope of an overall oral examination (approx 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students know the common methods of high-power pulse generation including voltage multiplication by stacking, pulsed\ngenerators based on transmission lines, different methods of pulse forming and the related measurement technique.\nFurthermore, students become familiar with actual scientific and industrial applications of pulsed power.",
+    "content": "•\n•\n•\n•\n•\n•\nIntroduction: general principles of pulsed power technology\nBasics: static and dynamic breakdown strength of dielectric materials, energy storage (capacitive, inductive, chemical\nand mechanical), basic circuits and pulse shaping\nSwitches: opening and closing switches\nSystems: pulse forming and transmission lines, voltage and power amplification, high-power generators,\nDiagnostics: metrology in pulsed technique (e.g. capacitve/ inductive sensors)\nApplications: surface treatment by charged particle beams, electrodynamic fragmentation, electroporation and\nbioelectrics, inertial confinement fusion\nAn excursion to the Institute for Pulsed Power and Microwave Technology (IHM) at KIT CN will give an insight to different pulsed\npower facilities and it´s specific applications.",
+    "workload": "Each credit point corresponds to approximately 25-30 hours of work (by the student). Approximately workload corresponds to:\n1. Presence time in lectures (2 SWS: 28 h)\n2. Preparation / follow-up of the lecture (30 h)\n3. Preparation for oral exam and presence (24 h)\nTotal 82 h equals to 3 credit points.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-105606": {
+    "id": "M-ETIT-105606",
+    "title": "Quantum Detectors and Sensors",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Sebastian Kempf"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "The assessment of success takes place in the form of a written examination lasting 120min. The grade corresponds to the result\nof the written examination.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students know the basics and fundamentals of quantum detectors and sensors and understand how quantum technology can\nbe used to design and realize devices those performance reaches far beyond the limits of any classical sensor or detector. They\nknow the basic components of quantum sensors and detectors, in particular in the field of superconducting quantum technology,\nand are able to analyze the operation of such detectors and sensors on the basis of circuit diagrams. Students are able to\ndevelop quantum sensors and detectors for given applications and know how to consider special requirements in a concrete\ncomponent.",
+    "content": "This module provides a comprehensive overview of the basics and physical principles of quantum detectors and sensors and\ndiscusses in detail how quantum technology can be used to design and realize detectors and sensors with performance that\nreaches far beyond the limits of any classical sensor or detector. The discussion includes particularly an introduction to the basic\ncomponents of quantum sensors and detectors, especially in the field of superconducting quantum technology, and their\nfabrication. Using simplified circuit diagrams, the functionality and operation of quantum detectors and sensors such as\nsuperconducting quantum interference devices, low-temperature detectors, noise thermometers or superconducting radiation\ndetectors is analyzed. Furthermore, methods and simple models are developed allowing to realize quantum sensors and\ndetectors that are matched to given applications. Within this context, typical applications of quantum detectors and sensors are\nalso discussed.\nThe tutorial is closely related to the lecture and deals with special aspects concerning the development of quantum detectors\nand sensors. In particular, the development and system integration of quantum detectors and sensors for applications in\nprecision metrology, particle detection or applied sciences is discussed by means of exercises.",
+    "workload": "A workload of approx. 180h is required for the successful completion of the module. This is composed as follows:\n•\n•\n•\n•\nAttendance time in lectures and exercises: 21*1.5h + 7*1.5h = 42h\nPreparation and follow-up of lectures: 21*3h= 63h\nPreparation and follow-up of tutorials: 7*5h= 35h\nPreparation for the exam: 40h",
+    "recommendations": "Successful completion of the module \"Superconductivity for Engineers\" is recommended.",
+    "literature": ""
+  },
+  "M-ETIT-106954": {
+    "id": "M-ETIT-106954",
+    "title": "Quantum Engineering",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Sebastian Kempf"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students will be able to analyze, structure and formally describe problems in the field of quantum engineering. They will\nparticularly be able to understand the difference between classical and quantum engineering. They will be able to analyze,\ndesign and implement concepts, technology, circuits and algorithms in the fields of quantum computing, quantum\ncommunication and quantum sensing. Moreover, the students will be able to critically evaluate existing concepts, methods,\ntechnologies, and circuits regarding complexity, suitability and applicability.",
+    "content": "This module introduces the emerging field of quantum engineering. For this, the module (1) addresses physics basics and the\nrelated mathematical framework, (2) discusses recent realizations of engineered quantum systems for the sub-fields of quantum\ncomputing, quantum communication and quantum sensing, (3) introduces hardware designs and practical realizations, (4)\nsummarizes quantum information processing aspects, and (5) discusses real implementations and applications.\nThe module particularly addresses:\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n10.\nBasics of quantum mechanics and the mathematical frameworks (state vector, postulates of quantum mechanics, bra-\nket-formalism, superposition, entanglement and Bell inequalities, probability density matrix formalism, pure and mixed\nstates, squeezing)\nDescription of light and photons\nDecoherence and coherence of quantum systems, quantum errors\nBasics of quantum computers: quantum gates, gate-based quantum computing architecture\nQuantum algorithms: quantum random number generator, quantum penny flip, Deutsch-Josza-Algorithm, Grover\nalgorithm, quantum Fourier transform, Shor algorithm, quantum phase estimation, HHL algorithm\nQuantum error correction: Concepts and architectures\nHardware realization of quantum bits: DiVincenzo criteria, Cooper pair box, phase qubit, flux qubit, transmon, quantum\ndots etc.\nExamples of recent quantum computing architectures\nQuantum sensing: Atomic clocks, NV centers, SQUIDs, parametric amplifiers, quantum imaging, interaction free\nquantum measurements, interferometry at the quantum limit, quantum logic spectroscopy,\nQuantum communication: Quantum cryptography, quantum key distribution, quantum teleportation, entanglement\nswapping, quantum repeater and quantum networks\nAs the lecture intends to include recent advancements of the field of quantum engineering, the actual content might slightly differ\nfrom the announced topics.\nThe exercises are closely related to the lecture and deal with special aspects concerning quantum engineering. Moreover, it\ndeepens the student’s knowledge by discussing various examples.",
+    "workload": "The workload includes:\n1.\n2.\n3.\n4.\nAttendance in lectures: 15 * 3 h = 45 h\nAttendance in exercices: 15 * 1 h = 15 h\nPreparation and follow up of lectures and exercises: 90 h\nPreparation of and attendance in examination: 30 h\nA total of 180 h.",
+    "recommendations": "Basic knowledge of quantum mechanics and the related mathematical framework, as taught, for example, within the module “M-\nETIT-106264 – Introduction to Quantum Information Processing” is strongly recommended.",
+    "literature": ""
+  },
+  "M-ETIT-105889": {
+    "id": "M-ETIT-105889",
+    "title": "Quantum Machine Learning",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Michael Heizmann",
+      "Prof. Dr.-Ing. Sander Wahls"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in form of an oral examination lasting approx. 20 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\nAfter completing the module, students will have a sound knowledge of quantum machine learning.\nThey have in-depth knowledge and an overview of various algorithms and methods in the field of quantum machine\nlearning.\nStudents are able to describe different concepts and methods of Quantum Machine Learning and recognize connections\nbetween different algorithms.\nThey are able to communicate with specialists in related disciplines in the field of machine learning and artificial\nintelligence and to formulate and evaluate solution approaches for tasks in this area.",
+    "content": "Remarkable progress has been made in the field of artificial intelligence (AI) in recent years. Machine learning (ML) is a sub-\ndiscipline of AI that attempts to develop techniques that enable computers to learn from data. The aim of ML methods is to\nreliably abstract the underlying model for specific tasks. Quantum computing describes information processing with devices\nbased on the laws of quantum theory. Based on the success of ML and quantum computing to date, it can be expected that both\ntechnologies will play a huge role in digital data processing in the future. It is therefore exciting to find out how these two\ntechniques can be combined to provide better and more reliable solutions for different tasks.\nQuantum Machine Learning (QML) is an interdisciplinary field of research that encompasses physics, mathematics, computer\nscience and electrical engineering. It is dedicated to the use of quantum computers to calculate machine learning algorithms.\nQML methods help to improve classical ML methods by utilizing the advantages of quantum computing. The use of QML not\nonly enables previous tasks to be solved more quickly, but also allows more aspects of the natural world to be integrated into\nexisting AI methods.\nThe module covers the fundamentals and concepts of quantum machine learning.\nTopics covered include the following.\n- Basic concepts of quantum mechanics\n- From bits to qubits\n- Quantum computers and quantum circuits\n- Quantum information theory\n- Quantum signal processing\n- Repetition of classical machine learning\n- Quantum algorithms\n- Quantum classification and regression\n- Quantum deep learning\n- ... other interesting topics.",
+    "workload": "Lecture attendance: approx. 23 hours\nLecture preparation and follow-up: approx. 23 hours\nExam preparation: approx. 40 hours\nTotal: approx. 86 hours (3 CP)",
+    "recommendations": "Knowledge of machine learning and stochastics\nas well as quantum computing is an advantage, but not a prerequisite.",
+    "literature": ""
+  },
+  "M-ETIT-100420": {
+    "id": "M-ETIT-100420",
+    "title": "Radar Systems Engineering",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Marwan Younis",
+      "Prof. Dr.-Ing. Thomas Zwick"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Success control is carried out as part of a written overall examination (120 minutes) of the selected course, which in total meets\nthe minimum requirement for LP.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students can name the basic radar principles and explain how they work, their primary uses and their advantages and\ndisadvantages. They are able to characterize the basic characteristics and mechanisms of propagation of electromagnetic\nwaves and to apply the relevant equations. You can evaluate the influence of various system parameters on accuracy,\nresolution, false alarm rate, etc. and optimize systems. You can describe different radar system configurations (CW, FMCW,\npulse, SAR) and apply the relevant radar signal processing methods. They are especially able to use and use the technologies\nand system configurations for the radars of the future for surveillance, automotive and industrial applications for research and\ndevelopment. In this lecture system technology is specifically taught.",
+    "content": "Based on electromagnetic field theory, the lecture teaches the basics of radar principles and their system technology. An insight\ninto the system hardware is given and processing techniques are presented. All relevant, known radar systems (CW, FMCW,\npulse and synthetic aperture radar) are described in detail. The system technology for the radars of the future is specifically\ndealt with. The reflective properties of radar targets are analyzed for their classification. In particular, polarimetry is taught. In this\nlecture, students learn how system technology contributes to the implementation of a radar system.",
+    "workload": "Each credit point corresponds to approximately 25-30 hours of work (of the student). This is based on the average student who\nachieves an average performance. The workload includes:\nAttendance study time lecture: 44 h\nAttendance time computer exercise: 16 h\nSelf-study time including exam preparation: 120 h\nA total of 180 h = 6 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-105123": {
+    "id": "M-ETIT-105123",
+    "title": "Radio Frequency Integrated Circuits and Systems",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "The success criteria will be determined by an oral examination (approx. 20-30 min.)",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\n•\nThe students acquire a comprehensive understanding in the design of monolithic integrated circuits for millimeter-wave\nfrequencies, and they can apply the acquired knowledge using modern design tools.\nThey have a good understanding of the critical performance parameters of high-frequency circuits such as stability,\npower gain and efficiency and reflection coefficient.\nThey can describe the benefits and disadvantages of modern transistor technologies for millimeter-wave applications.T\nThey can identify potential applications of integrated millimeter-wave circuits and understand the specific requirements of\neach application.\nThey are familiar with basic elements of a high-frequency system, which consists of linear and non-linear circuits, low-\nnoise and power amplifiers, as well as oscillators, switches and frequency converting circuits such as frequency\nmultipliers and mixers.",
+    "content": "In this lecture the theory and the design methodology of monolithic integrated millimeter-wave circuits will be\nstudied in detail. The focus of the lecture is on the active linear and non-linear circuits in high-frequency frontends up to an\napplication frequency of 300 GHz. In addition to this, fundamental topics such as impedance matching, stability, performance\nparameters of high-frequency transistors, and properties of active and passive circuit elements will be studied in detail. The\noperation principal of critical building blocks of a millimeter-wave system will be introduced including low-noise and power\namplifiers, mixers, oscillators and switches. In the workshop, the students will have the chance to apply the acquired theoretical\nknowledge to design a millimeter-wave frontend using state-of-the art integrated circuit technology.",
+    "workload": "1. Attendance to the lectures (15*(2)=30h)\n2. Attendance to the exercises (15*(2)=30h)\n3. Preparation to the lectures and exercises (15*(2+2)=60h)\n4. Preparation to the oral exam (40h)\nTotal: 160h",
+    "recommendations": "The lecture materials to „Grundlagen der Hochfrequenztechnik“ and „Halbleiterbauelemente“ are recommended.",
+    "literature": ""
+  },
+  "M-ETIT-103241": {
+    "id": "M-ETIT-103241",
+    "title": "Radio Receivers",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Friedrich Jondral"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Success ontrol takes place in the form of an oral examination lasting approx. 20 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will be able to understand the full functionality of radio receivers, write specifications and design radio receivers from a\nsystems theory perspective.",
+    "content": "The course expands on the issues covered in the Communications Engineering I lecture. The focus here is on the detailed\ntreatment of complex receiver technologies, which particularly concern the interaction between analog and digital signal\nprocessing.",
+    "workload": "•\n•\n•\nAttendance time lecture: 15 * 2 h = 30 h\nLecture preparation/follow-up: 15 * 4 h = 60 h\nExam preparation and attendance in the same: offset in preparation/follow-up work\nTotal: 90 h",
+    "recommendations": "Knowledge of basic engineering mathematics including integral transformations and probability theory as well as basic\nknowledge of communications engineering.",
+    "literature": ""
+  },
+  "M-ETIT-106955": {
+    "id": "M-ETIT-106955",
+    "title": "Radio-Frequency Electronics",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "EPSE",
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\nThe students have a comprehensive understanding of the theory and the basic design methodology of RF and\nmicrowave circuits up to 300 GHz.\nThey understand the limitations of active and passive circuit elements at high frequencies and their impact on the\napplications.\nThey understand the limitations and how linear network theory is applied at higher frequencies.\nThe students can apply the acquired theoretical knowledge to modern RF design problems.",
+    "content": "In this lecture, the theory and design methodology of RF electronic circuits will be studied in detail. The focus of the lecture is on\nthe fundamentals of active and passive linear circuits. The important topics are:\n•\n•\n•\n•\n•\n•\n•\nPhasor analysis and resonance,\nElectromagnetic theory, transmission lines and waveguides,\nImpedance matching networks,\nTwo-port parameters of RF components and microwave network analysis,\nFeedback and stability analysis,\nHigh-frequency behavior of basic amplifier circuits, RF amplifiers design techniques,\nMicrowave power dividers, couplers and filters",
+    "workload": "The total effort for this lecture is estimated as following:\n1.\n2.\n3.\n4.\nAttendance to the lectures (15*(3)=45h)\nAttendance to the exercises (15*(1)=15h)\nPreparation to the lectures and exercises (17*(3+1)=68h)\nPreparation to the exam (52h)\nA total of 180h",
+    "recommendations": "Basic knowledge of linear electrical networks and electronic circuits is recommended (e.g. M-ETIT-106417 – Lineare Elektrische\nNetze; M-ETIT-104465 – Elektronische Schaltungen).",
+    "literature": ""
+  },
+  "M-ETIT-105916": {
+    "id": "M-ETIT-105916",
+    "title": "Real Time Control of Electrical Drives",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Andreas Liske"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Success is assessed in an overall oral examination (approx. 30 minutes).",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are familiar with common methods for modeling electrical machines (permanent magnet and separately excited\nsynchronous machines, asynchronous machines). In addition to analytical fundamental wave models, they are also familiar with\nthe method of mapping non-linear, real machine behavior using flux maps. They are able to determine the parameters required\nfor the models using methods for offline or online parameter identification. Students will be able to design standard and\nadvanced control methods for electrical drives (current, voltage, speed and torque control). In addition to classic cascade\ncontrol, this includes in particular flow-map-based control, direct control methods (DSR), model-based predictive control (MPC)\nand adaptive control methods. The students know how the time sequences in an inverter-controlled drive system are connected,\nwhich requirements result from this and what solutions look like in concrete terms. They gain concrete experience with real\nsignal processing hardware and real drive test benches through the concrete implementation of the content covered in the\nmodule on test afternoons.",
+    "content": "Electric drive technology is increasingly dominated by inverter-fed three-phase machines. Particularly in the field of\nelectromobility, the electric drive train is a central component alongside the battery. The energy efficiency and reliability of\nelectric drives are achieved to a large extent through fast, precise and load-adapted control of the electrical energy.\nThe lecture presents common and modern control methods that enable highly dynamic and energy-efficient current, voltage,\nposition, speed or torque control. The non-linear modeling required for the control methods of highly utilized, efficient three-\nphase machines is discussed analytically, based on characteristic diagrams and also using adaptive methods.\nThe module also focuses on the implementation and real-time signal processing of inverter-controlled drive systems. Hardware\nrequirements, common programming and development workflows as well as specific implementation options are explained\nusing examples and practiced in practical experiments.",
+    "workload": "Each credit point corresponds to approx. 25-30 hours of work (by the student). This is based on the average student who\nachieves an average performance.\n56h = 22x lecture à 2h + 3x exercise à 4h\n21h = 21x post-processing of lecture à 1 h\n12h = 3x preparation of exercises of 4 h each\n80h = preparation for the exam\nTotal = 169 h (corresponds to 6 LP)",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-CIWVT-104354": {
+    "id": "M-CIWVT-104354",
+    "title": "Refrigeration B - Foundations of Industrial Gas Processing",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Steffen Grohmann"
+    ],
+    "organisation": "KIT Department of Chemical and Process Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The examination is an oral examination with a duration of about 30 minutes (section 4 subsection 2 number 2 SPO).",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Understanding the principles of different processes for gas liquefaction and gas separation; Analysing processes in order to\nreveal the sources of energy demand; Applying the principles of thermodynamics of mixtures and analysing the states of fluids\nin rectification columns; Assessing the potential of technical concepts from a thermodynamic point of view",
+    "content": "Gas liquefaction processes, process analyses, refrigerators and mixed-refrigerant cycles, gas separation by low-temperature\nrectification, air separation and extraction of noble gasses, processing and separation of natural gas, ethylene production,\nprocessing of H2-enriched gas mixtures, storage and transport of liquefied gasses",
+    "workload": "•\n•\n•\nAttendance time (Lecture): 45 h\nHomework: 45 h\nExam Preparation: 90 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-WIWI-100500": {
+    "id": "M-WIWI-100500",
+    "title": "Renewable Energy-Resources, Technologies and Economics",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Russell McKenna"
+    ],
+    "organisation": "KIT Department of Business and Economics",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The assessment consists of a written exam according to Section 4(2), 1 of the examination regulation.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student:\n•\n•\n•\n•\n•\nunderstands the motivation and the global context of renewable energy resources.\ngains detailed knowledge about the different renewable resources and technologies as well as their potentials.\nunderstands the systemic context and interactions resulting from the increased share of renewable power generation.\nunderstands the important economic aspects of renewable energies, including electricity generation costs, political\npromotion and marketing of renewable electricity.\nis able to characterize and where required calculate these technologies.",
+    "content": "1. General introduction: Motivation, Global situation\n2. Basics of renewable energies: Energy balance of the earth, potential definition\n3. Hydro\n4. Wind\n5. Solar\n6. Biomass\n7. Geothermal\n8. Other renewable energies\n9. Promotion of renewable energies\n10. Interactions in systemic context\n11. Excursion to the “Energieberg” in Mühlburg",
+    "workload": "The total workload for this course is approximately 105.0 hours. For further information see German version.",
+    "recommendations": "",
+    "literature": "Elective literature:\n•\n•\n•\n•\n•\nKaltschmitt, M., 2006, Erneuerbare Energien : Systemtechnik, Wirtschaftlichkeit, Umweltaspekte, aktualisierte,\nkorrigierte und ergänzte Auflage Berlin, Heidelberg : Springer-Verlag Berlin Heidelberg.\nKaltschmitt, M., Streicher, W., Wiese, A. (eds.), 2007, Renewable Energy: Technology, Economics and Environment,\nSpringer, Heidelberg.\nQuaschning, V., 2010, Erneuerbare Energien und Klimaschutz : Hintergründe - Techniken - Anlagenplanung –\nWirtschaftlichkeit München : Hanser, Ill.2., aktualis. Aufl.\nHarvey, D., 2010, Energy and the New Reality 2: Carbon-Free Energy Supply, Eathscan, London/Washington.\nBoyle, G. (ed.), 2004, Renewable Energy: Power for a Sustainable Future, 2ndEdition, Open University Press, Oxford."
+  },
+  "M-ETIT-107596": {
+    "id": "M-ETIT-107596",
+    "title": "Research Seminar Cooperative and Haptic Human-Machine Interactions",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Balint Varga"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in the form of another type of examination. It consists of an the preparation of an research paper in\nIEEE-conference style (4-6 IEEE pages) and an oral presentation (approx. 15 min). The overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Upon completion of the seminar, students will be able to:\n•\n•\n•\nindependently develop and test research questions in the field of MPC, Shared Control and haptics methodically.\nconceive, conduct and critically evaluate practical experiments with MPC and robotics systems.\nclearly and methodically document and present complex technical and user-centered research results in research paper\nform and presentation.",
+    "content": "1.\n2.\n3.\nTheoretical Foundations and Interactive Learning: The course begins with an initial phase dedicated to building a\ntheoretical foundation in key areas such as Model Predictive Control (MPC), Shared/Cooperative Control, robotics, and\nhaptics. This is achieved through a mix of short lectures, workshops, and discussions of current research papers. A\nsignificant emphasis is placed on active learning, where students prepare and present some of topics themselves,\nmoving away from traditional lectures towards an interactive, group-based discourse.\nPractical, Hands-on Research Project: Following the theory phase, students engage in an intensive, multi-week project\nin 2-person groups. Each group formulates a specific research question, designs an experimental plan, and then\nindependently implements their project in a laboratory setting. This practical work involves tasks like programming MPC\ncontrollers in MATLAB/Python/C++, integrating haptic devices, conducting experiments or simulations, and performing\nstatistical analysis on the collected data, all while receiving regular coaching and peer feedback.\nScientific Communication and Conference Simulation: The final phase of the course is focused on the dissemination of\nresearch findings in a professional, scientific manner. Students learn the principles of academic writing by preparing a\nproject report in the format of a 4-6 page conference paper (in IEEE format). The seminar culminates in a simulated\nacademic conference where each group presents their work in a 15-minute talk, followed by a Q&A session, thereby\nmirroring the complete research process from conception to publication.",
+    "workload": "The workload includes:\n1.\n2.\n3.\n4.\n5.\nAttendance in preparational lectures and seminars (2 SWS): 15*2 h = 30 h\nAttendance in workshops, on-site experiments, and the in-house conference (2 SWS): 15*2 h = 30 h\nFormulation and Answering the research question 30 h\nPractical research implementation: 60 h\nWriting the research paper and presentation: 30 h\nA total of 180 h = 6 CR",
+    "recommendations": "The contents of the modules “Optimization of Dynamic Systems (ODS)” or \"Optimal Control (OC)\", “Regelung linearer\nMehrgrößensysteme (RLM)”, and Practical Tool for Control Engineers (PTCE) are strongly recommended, since they are helpful\nfor the seminar.",
+    "literature": ""
+  },
+  "M-MACH-107558": {
+    "id": "M-MACH-107558",
+    "title": "Robotic Intelligence: Perception and Scene Understanding",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Arne Rönnau"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "See module component",
+    "prerequisites": "See module component",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student will understand the fundamental principles and state-of-the-art methods for robotic perception and scene\nunderstanding. They will gain the ability to select and apply suitable machine learning and computer vision techniques to\ninterpret complex real-world environments, from raw sensory data to structured scene representations. The student will be able\nto design perception pipelines that combine multiple sensing modalities, enabling robust object recognition, tracking,\nsegmentation, and 3D scene analysis. Furthermore, they will be able to critically assess and adapt these methods for robotic\napplications that require situational awareness and informed decision-making.",
+    "content": "The lecture Robotic Intelligence: Perception and Scene Understanding combines modern AI-based perception methods with the\nengineering skills needed to apply them in robotics. It covers the full perception chain, from acquiring and calibrating sensor\ndata to interpreting scenes and integrating perception modules into robotic systems, like mobile walking robots.\nStudents will first build a foundation in machine learning and computer vision, covering image classification, object detection,\ntracking, and segmentation in both 2D and 3D. The course then explores advanced deep learning architectures, including Vision\nTransformers, multimodal perception systems, and end-to-end multimodal machine learning pipelines. Special emphasis is\nplaced on techniques for integrating vision, depth, and other sensing modalities, enabling robust perception in challenging real-\nworld environments.\nA key part of the course is practical group work in the Machine Intelligence and Robotics Lab (MaiRo), where students solve\nhands-on tasks using real sensors and robots, building both technical competence and teamwork skills.\nTopics include:\n•\n•\n•\n•\n•\n•\n•\nFundamentals of machine learning and computer vision for robotics\nVision Transformers and advanced deep learning architectures\nObject detection, tracking, and segmentation (2D and 3D)\nInstance, semantic, and panoptic segmentation\nMultimodal sensing, fusion, and end-to-end multimodal ML\nWorld models and their role in robotics\nSensor modeling, calibration, and perception system integration\nBy the end of the course, students will be able to design, implement, and integrate intelligent robotic perception systems that\nenable mobile robots to understand and act within complex, dynamic environments.",
+    "workload": "180 working hours, of which approx:\n•\n•\n•\n30h for attendance time in lectures\n110h for exercises and group work\n40h for exam preparation and participation in the written exam",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-107135": {
+    "id": "M-ETIT-107135",
+    "title": "Robotic Winding Technology for Superconducting Wires Lab",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Tabea Arndt"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": true,
+    "examType": "Success control takes place in the form of other types of examination. It takes place in form of 3 experimental works. The\noverall performance gives the grade.",
+    "prerequisites": "The module \"Superconducting Magnet Technology\" must be passed.",
+    "modeledPrerequisites": "The following conditions have to be fulfilled:\n1.\nThe module M-ETIT-106684 - Superconducting Magnet Technology must have been passed.",
+    "exclusions": [],
+    "requires": [
+      "M-ETIT-106684"
+    ],
+    "competenceGoal": "•\n•\n•\nThe students have a solid knowledge of architecture and design aspects of windings applied in magnets, coils and\nenergy technology devices.\nThe students have a clear understanding of opportunities, benefits and limitations of superconducting windings.\nThe students are able to perform the required design estimations.",
+    "content": "As the superconducting wires become increasingly mature and powerful, using superconductivity in a variety of applications of\nelectrical engineering is of rising interest and benefit, too. Most components and applications require dedicated coil windings.\nThis module focuses on\n•\n•\n•\n•\n•\n•\n•\n•\nWire properties to consider in advance\nSpecification and design of windings (planar & non-planar geometries) & important sensing (current, voltage,\ntemperature)\nDescription of the winding process\nIn advance testing of winding process in „digital twin“ environment (RobotStudio to control two 6-axis robots and a 2-axis\npositioner)\nPreparation of simple coils (by Copper-wire or by High-Temperature Superconductor wire; depending on the realized\nfunding options of the module).\nVacuum-Pressure-Impregnation of coils to prepare a robust sample device\nPerformance test (Voltage vs. Current) immersed in liquid nitrogen\nDetailed report on work performed and achieved results.\nPart of the (experimental) work has to be conducted in working groups.\nThe contents may be adopted without further announcement.\nAdditional materials for reference and study will be offered partly on ILIAS.",
+    "workload": "180h\n1.\n2.\n3.\nAttendance in teaching/ exercises: 48 h\nDesign/ Preparation/ Documentation/ Clean-up: 120 h\nReporting (post-process): 12 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-107123": {
+    "id": "M-INFO-107123",
+    "title": "Robotics II - Humanoid Robotics",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Tamim Asfour"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achievements (Teilleistung)",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students can explain the challenges and goals of humanoid robotics research, particularly regarding the implementation of\ncomplex sensorimotor and cognitive abilities in humanoid robots. They are familiar with the history of the field and understand\nhow biomechanical models of the human body inform humanoid robot design.\nStudents have comprehensive knowledge of human and robotic grasping and manipulation. They can analyze human grasping\nand manipulation strategies, understand taxonomies, and evaluate different computational approaches for grasping and\nmanipulation. They understand the challenges in transferring concepts from human studies to humanoid robots.\nStudents understand fundamentals of learning from human demonstration and imitation learning. They can explain the learning\nfrom demonstration cycle and methods for learning generalized task representation, especially task constraints from\ndemonstrations, and how learned behaviors are reproduced on robots.\nStudents can describe cognitive and AI-based architectures for humanoid robots, including approaches to address the signal-to-\nsymbol gap and human-inspired memory architectures that enable intelligent robot behavior.",
+    "content": "This lecture addresses the implementation of complex sensorimotor and cognitive abilities in humanoid robots, with humans\nserving as inspiration. The lecture begins by addressing the motivation for humanoid robotics. The history of humanoid robotics\nand biomechanical models of the human body that inform robot design are covered, along with some mechatronic principles\nunderlying humanoid robot systems.\nThe first main topic comprehensively addresses grasping and manipulation. After covering fundamentals, the lecture discusses\nneuroscientific insights and concepts like grasp phases and grasping synergies to reduce control complexity. Taxonomies are\npresented as structured frameworks for understanding the space of possible constraints in grasping and manipulation. The\nlecture addresses computational approaches for grasping known, familiar, and unknown objects, covering both classical\nmethods and modern learning-based approaches using deep learning and vision-language-action models.\nThe second main topic covers learning from demonstration and imitation learning. After introducing the topic, fundamentals are\npresented including the learning from demonstration cycle. The lecture emphasizes learning task models on both symbolic/\nsemantic and subsymbolic/sensorimotor levels. While methods for capturing human demonstrations are briefly covered, the\nfocus is on semantic segmentation of human demonstrations and learning of task constraints that capture the task and allow\ngeneralization. Movement primitives are presented as efficient representations that allow robots to generalize learned behaviors\nto new situations.\nThe lecture concludes with cognitive and AI-based architectures for humanoid robots, discussing state-of-the-art approaches,\nmethods to address the signal-to-symbol gap, and human-inspired memory architectures that enable intelligent robot behavior.",
+    "workload": "Lecture with 2 SWS, 3 ECTS.\n3 ECTS corresponds to approx. 90 hours, thereof:\napprox. 15 * 2h = 30h attendance time\napprox. 15 * 2h = 30h self-study prior/after the lecture\napprox. 30h preparation for the exam and exam itself",
+    "recommendations": "Having visited the lecture on Robotics I – Introduction to Robotics is recommended",
+    "literature": ""
+  },
+  "M-INFO-107130": {
+    "id": "M-INFO-107130",
+    "title": "Robotics III - Sensors and Perception in Robotics",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Tamim Asfour"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achivements (Teilleistung)",
+    "prerequisites": "See partial achivements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students can explain the main sensor principles used in robotics and distinguish between proprioceptive sensors (encoders,\nforce/torque sensors, IMUs) and exteroceptive sensors (proximity, range, visual, and tactile sensors). They understand and can\ncharacterize sensor properties such as resolution, range, accuracy, and bandwidth, and can explain the principles of analog-to-\ndigital conversion. Students are able to propose, analyze, and justify suitable sensor concepts for specific robotic tasks, taking\ninto account trade-offs between different sensor modalities.\nStudents can apply fundamental perception methods for robotic applications. This includes robot vision techniques such as\nfeature detection and matching, object detection and recognition, and semantic segmentation, including deep learning-based\napproaches. They can describe and analyze perception methods for manipulation tasks, including object pose estimation, grasp\ndetection, active vision strategies, and haptic exploration. In addition, students can explain point cloud processing methods for\nregistration and surface reconstruction, as well as principles of simultaneous localization and mapping (SLAM).",
+    "content": "This lecture complements the lecture “Robotics I” and provides a comprehensive overview of sensors and perception methods\nin robotics. It is divided into two main parts.\nThe first part introduces fundamental concepts of perception in robotics, including the distinction between sensation and\nperception within the perception-cognition-action loop. It covers sensor fundamentals, such as sensor characteristics (resolution,\nrange, accuracy, bandwidth), analog-to-digital conversion, and common sensor classification schemes. Proprioceptive sensors\nfor measuring the robot’s internal state are discussed, including encoders (optical, magnetic, absolute, and incremental), force/\ntorque sensors, and inertial measurement units (IMUs). The lecture then covers exteroceptive sensors, including proximity\nsensors, range sensors (LiDAR, time-of-flight cameras, ultrasonic sensors), visual sensors (monocular, stereo, RGB-D\ncameras), and tactile sensing technologies (capacitive, resistive, and optical).\nThe second part focuses on processing and interpreting sensor data. Topics in robot vision include image representation,\nfeature detection and matching, object detection and recognition, semantic segmentation, and corresponding deep learning\napproaches. Point cloud processing is covered with emphasis on data structures, registration, surface reconstruction, and\nsemantic segmentation. The lecture also addresses perception for manipulation, covering object pose estimation, grasp\ndetection, visual servoing, active vision, and haptic exploration. It concludes with the simultaneous localization and mapping\n(SLAM) problem, including EKF SLAM, Graph SLAM, and FastSLAM.",
+    "workload": "Lecture with 2 SWS, 3 ECTS.\n3 ECTS corresponds to approx. 90 hours, thereof:\napprox. 15 * 2h = 30h attendance time\napprox. 15 * 2h = 30h self-study prior/after the lecture\napprox. 30h preparation for the exam and exam itself",
+    "recommendations": "Having visited the lectures on Robotics I – Introduction to Robotics is recommended.",
+    "literature": ""
+  },
+  "M-ETIT-107524": {
+    "id": "M-ETIT-107524",
+    "title": "Robotics, Automation, and Systems Control Lab",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Mike Barth",
+      "Prof. Dr.-Ing. Sören Hohmann"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": true,
+    "examType": "The examination takes place in the form of other types of examination. It consists of pitches after every thematic block, a final\npresentation and an oral examination in the amount of 20 minutes. The overall impression is evaluated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\n•\n•\n•\nStudents are enabled to develop approaches to various problems in a group, solve them, and present and defend their\nresults. In addition, they are able to present their approach, thought processes, applied methods, and results in a\ncomprehensible and scientifically precise style\nStudents are able to familiarize themselves independently with a complex technical system and its components\nStudents can discuss problem-solving strategies with team members in technical language and argue their preferred\nsolution. Further they are able to reflect on the solution approaches used.\nStudents can implement and validate automation solutions in various development environments (e.g. MATLAB/\nSimulink, ROS, …). They are further able to apply their solutions across various system boundaries (e.g. automation\nconcepts on Windows, ROS on Linux)\nStudents gain insights into various engineering disciplines (e.g. mechanical engineering) and in rapid prototyping\nprocesses\nStudents are able to use industrial bus systems (e.g. EtherCAT) in an automation context\nStudents are able to apply methods that they have previously acquired in lectures on automation, control and robotics",
+    "content": "This module is designed to teach students the stated qualification objectives in the fields of automation, robotics and control by\nmeans of a complex automation task. The task not only covers the automation concept itself but also underlying aspects like\nhardware design, communication using an industrial bus system, drive system control and others. To do so, laboratory systems,\nnamely laboratory scale robotic manipulator arms, are provided to the students.",
+    "workload": "1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\nIntroduction to the test stand (15h)\nIntroduction to single-axis motor control (15h)\nConstruction and print of end-effector components (30h)\nIntroduction to ROS (15h)\nImplementation of hardware-interfaces in ROS (30h)\nAutomation, motion planning and control (30h)\nImplementation on the real robot (15h)\nPresentations and preparation (15h)\nOral exam and preparation (15h)\nA total of 180 h = 6 CR",
+    "recommendations": "Knowledge in automation, control and robotics in general. Recommended, but not mandatory, lectures are:\n•\n•\n•\n•\n•\n•\nPractical Tools for Control Engineers – M-ETIT-106780\nCyber Physical Modeling – M-ETIT-106953\nSeminar Industrial Process and Plant Engineering – M-ETIT-106970\nOptimization of Dynamic Systems – M-ETIT-100531\n(or successor Optimal Control – M-ETIT-107497)\nRegelung linearer Mehrgrößensysteme – M-ETIT-100374\n(or successor Multivariable Control Systems – M-ETIT-107515)\nNichtlineare Regelungssysteme – M-ETIT-100371\n(or successor Nonlinear Control Systems - in preparation)",
+    "literature": ""
+  },
+  "M-INFO-104877": {
+    "id": "M-INFO-104877",
+    "title": "Safe Human-Robot-Collaboration",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Tamim Asfour"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": true,
+    "examType": "Oral / Written examination",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "You will get familiar with the various forms of human-robot collaboration (HRC) and their respective advantages. You will\nunderstand the requirements of the Machinery Directive and the relevant standards for the safety of HRC applications.\nParticipants will be able to identify risks and to develop a safety concept for HRC systems.\nCourse objectives:\n•\n•\n•\n•\nSuccessful participants are familiar with all relevant aspects of human-robot collaboration, from the planning to the\nimplementation of an HRC application as well as the requirements for safety.\nSuccessful participants understand the process of risk assessment, the importance of functional safety and predictable\nmisuse.\nSuccessful participants will understand the different safety functions of robots and their use to reduce the risk to an\nacceptable residual risk and know to use complementary safety light curtains and laser scanners.\nThe participants will know what has to be considered in designing a HRC system and can create a safety concept for\nthis system and check it for completeness.",
+    "content": "•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nIntroduction and fundamentals of Human-Robot Collaboration (HRC)\nDifferent forms of HRC and differentiation to full automation\nPractical examples from series applications\n◦\nAdvantages of HRC compared to full automation with robots\nDefinition of safety\n◦\nMachinery Directive / Standards\n◦\nDeclaration of incorporation / CE conformity\n◦\nSafety Levels\n◦\nSafety requirements in robotics\nPotential hazards in human-robot collaboration\n◦\nbump and squeeze\n◦\nForeseeable misuse\n◦\nError in the application\n\"Safe (?)\" Robots\n◦\nRequirements for collaborative operation according to ISO 10218-1\n◦\nOverview of robots and their security concepts\n◦\nSafely supervised robots\n◦\nGray technology / yellow technology in the robot controller\n◦\nSafety functions based on position values and on force / torque values\nSafe HRC-Applications\n◦\nRisk assessment\n◦\nHRC cell layout\n◦\nDesign of HRC end effectors, peripherals\n◦\nUse of safety features\n◦\nExamples of industrial HRC-solutions\nFrom planning to the realization of HRC systems\n◦\nHRC compliant engineering\n◦\nDetailing of the HRC concept in the design phase\n◦\nProgramming and validation\n◦\nMeasurements demonstrating compliance with biomechanical limits\nBiomechanical limits\n◦\nTS 15022\n◦\ntransient and quasi-static contact\n◦\nbody atlas with limits\nSafe sensor technology for safeguards\n◦\nBasics\n◦\nLaser scanners\n◦\nLight curtains\n◦\nTactile sensors\n◦\nSafe vision systems\n◦\nPlanning and design of safeguards\n- Reaction time from the triggering event to the robot reaction\n- Necessary safety distances for effectiveness of safeguards\n- Safety in mobile robotics",
+    "workload": "90 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-105272": {
+    "id": "M-ETIT-105272",
+    "title": "Satellite Communications",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "2 terms",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Laurent Schmalen"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The assessment will be carried out as part of an overall oral exam (about 20 minutes).",
+    "prerequisites": "Knowledge of basic engineering mathematics probability theory as well as basic knowledge of communications engineering\n(e.g. \"M-ETIT-102103 – Nachrichtentechnik I\" and \"M-ETIT-102104 – Wahrscheinlichkeitstheorie\")",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will be able to understand and apply the basics of satellite communications and navigation. They will be able to design\nand evaluate a satellite communication link and compute the achievable data rates over the link. They understand the key\ncomponents of a satellite communication system, and get to distinguish the different types of satellite systems. Additionally, they\nknow about existing satellite systems and novel ideas such as mega constellations",
+    "content": "The course covers the following contents:\n•\n•\n•\n•\n•\n•\n•\n•\n•\nIntroduction and Historical Notes\nOrbits and Geometry (including also constellations)\nLink BudgetsInformation Transmission Aspects\nMultiple Access and Multiplexing * Multi-Beam Satellite Systems\nSpacecraft Payload Aspects\nNetwork Aspects\nOverview of Existing Satellite Systems\nOverview of Future Satellite Systems\nSatellite Systems for Navigation",
+    "workload": "Attendance lecture: 15 * 2 h = 30 h\nPreparation / Postprocessing Lecture: 15 * 2 h = 30 h\nExam preparation and presence: 30 h Total: 90 h = 3 LP\nTotal: 90 h = 3 LP",
+    "recommendations": "Knowledge from the module \"Communications Engineering II\" can be helpful, but is not necessary.",
+    "literature": ""
+  },
+  "M-ETIT-107661": {
+    "id": "M-ETIT-107661",
+    "title": "Scanning Probe Lithography for Biomedical Applications",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Dr. Michael Hirtz"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The examination takes place within the framework of an oral overall examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students\n•\n•\n•\n•\n•\n•\nwill gain a general overview over scanning probe lithography methods (e.g. dip-pen nanolithography, polymer pen\nlithography, microcapillary printing and related techniques) for micro/nanofabrication\nwill understand the working principles, capabilities of the introduced methods\nwill be introduced to the basic biological and biotechnological building blocks for biofunctionalization\ncan critically analyze the specific advantages and limits of different methods and approaches of SPL based\nmanufacturing in the biomedical field\nare enabled to follow current developments in SPL methods and utilize this knowledge in their own research projects\nare enabled to navigate in applications of multidisciplinary nature (physics, material science, medical engineering)",
+    "content": "This module gives students an overview of the field of scanning probe lithography (SPL) methods with a special focus on their\napplications in biomedical research and applications. The module will introduce the basic working principles of the main SPL\nmethods (e.g. dip-pen nanolithography (DPN), polymer pen lithography (PPL), microcantilever contact spotting (µCS)) and how\nthese methods are used in particular for biofunctionalization of surfaces and devices. The students will also be introduced to\nbasic concepts in biotechnology in regard to biomaterials, binding and sensing mechanism and the physics and chemistry\nneeded to understand their use in SPL based manufacturing. Biomedical applications in particular in diagnostics and disease\nmonitoring applications will be showcased and critically discussed.",
+    "workload": "1.\n2.\n3.\nattendance in lectures and exercises: 15*2 h = 30 h\npreparation / follow-up: 15*2 h = 30 h\npreparation of and attendance in examination: 30 h\nA total of 90 h",
+    "recommendations": "Basic knowledge in biomedical technology is helpful.",
+    "literature": ""
+  },
+  "M-MACH-105369": {
+    "id": "M-MACH-105369",
+    "title": "Scientific Computing for Engineers",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Daniel Weygand"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "written exam 90 minutes",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student can\n•\n•\n•\napply the programming language C++ for scientific computing in the field of materials science\nadapt programs for use on parallel platforms\nchoose suitable numerical methods for the solution of differential equations.",
+    "content": "1. Introduction: why scientific computing\n2. computer architectures\n3. Introduction to Unix/Linux\n4. Foundations of C++\n* progamm organization\n* data types, operator, control structures\n* dynamic memory allocation\n* functions\n* class\n* OpenMP parallelization\n5. numeric /algorithms\n* finite differences\n* MD simulations: 2nd order differential equations\n* algorithms for particle simulations\n* solver for linear systems of eqns.\nAdditional Information\nengineering\" (2182735).\nThe lecture can not be combined with the lecture \"Application of advanced programming languages in mechanical",
+    "workload": "egular attendance: 22,5 hours\nLab: 22,5 hours (optional)\nself-study: 75 hours",
+    "recommendations": "",
+    "literature": "1.\n2.\n3.\n4.\n5.\n6.\n7.\nC++: Einführung und professionelle Programmierung; U. Breymann, Hanser Verlag München\nC++ and object-oriented numeric computing for Scientists and Engineers, Daoqui Yang, Springer Verlag.\nThe C++ Programming Language, Bjarne Stroustrup, Addison-Wesley\nDie C++ Standardbibliothek, S. Kuhlins und M. Schader, Springer Verlag\nNumerical recipes in C++ / C / Fortran (90), Cambridge University Press\nNumerische Mathematik, H.R. Schwarz, Teubner Stuttgart\nNumerische Simulation in der Moleküldynamik, Griebel, Knapek, Zumbusch, Caglar, Springer Verlag"
+  },
+  "M-MACH-105725": {
+    "id": "M-MACH-105725",
+    "title": "Seamless Engineering",
+    "credits": 9,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Kai Furmans",
+      "Prof. Dr.-Ing. Eric Sax"
+    ],
+    "organisation": "KIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": true,
+    "examType": "component.\nExamination of another type. The description of the form of examination can be found in the description of the module",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After successful completion of the course, the students are able to model and parameterise the requirements and boundary\nconditions for typical mechatronic systems. In addition, students learn the ability to select the appropriate procedures,\nprocesses, methods and tools for the development of a mechatronic system.\nImportant core competences in the areas of communication, problem solving and self-organisation are further essential\ncomponents of the workshop, which enable the students to do reflected work independently and in a team.",
+    "content": "This module is designed to teach students how to develop a heterogeneous integrated mechatronic system. In the lecture,\nstudents are introduced to a system-oriented, higher-level approach to the description, assessment and development of a\nmechatronic system.\nParallel to this, the contents taught are applied and deepened in the practical part on hardware that is close to industry. The\nstudents learn the systematic development in a simulative environment as well as the transition from simulation to real\nhardware.\nTo achieve this, important components of software development in the robotics environment are taught. This includes, among\nother things, the basics of programming (Python) as well as the handling of the framework \"Robot Operating System (ROS)\". In\naddition, students gain insights into the use of sensors and actuators, image processing, autonomous navigation of automated\nguided vehicles and robotic grasping.",
+    "workload": "1.\n2.\n3.\n4.\n5.\nattendance time lecture and exercise: 45 h\ninterdisciplinary qualification: 45 h\ngroup work project: 130 h\ncolloquia and final event: 30 h\nexam preparation and presence in the same: 20 h\nIn total: 270 = 9 LP",
+    "recommendations": "None",
+    "literature": "None"
+  },
+  "M-ETIT-106674": {
+    "id": "M-ETIT-106674",
+    "title": "Seminar Advanced Concepts for Flexible and Soft Optoelectronic Devices and Sensors",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "Prof. Dr. Gerardo Hernandez Sosa\nKIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The examination consists of a written journal article and an oral presentation of the student’s work, both given in English. The\noverall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "At the end of the seminar, students will be able to independently familiarize themselves with new research topics, independently\nsearch and select relevant scientific literature and summarize the topic in the form of a concise journal-style article as well as an\noral presentation. Through the critical evaluation and exposure to current scientific literature, the students will develop a deeper\nknowledge in the future directions in the research field of flexible and soft electronics. Furthermore, they will develop skills in\nscientific writing and communication in English language, which are key competences for their future academic and professional\ncareer.",
+    "content": "The seminar on \"Seminar Advanced Concepts for Flexible and Soft Optoelectronic Devices and Sensors“ is for students curious\nin the latest research developments on devices, materials and the physics of novel optoelectronic devices. Discussed topics\ninclude but are not limited to: solution processable and printed electronics, flexible and stretchable electronics, wereable\nsensors, soft robotics, printed optics, biodegradable & sustainable electronics, 3D electronics, etc.\nThe seminar addresses master students from electrical engineering, physics, mechanical engineering, material science, KSOP\nand related MSc programs. During the seminar, the students will get the opportunity to familiarize themselves with state-of-the-\nart research from a selection of topics under the guidance of a mentor and discuss the topic during a presentation in the\nseminar. The students must attend the seminar regularly, independently present the research topic in a 30-min scientific talk and\nsubmit a short scientific review paper (3-5 pages) based on the scientific literature the presentation was based on.\nProf. Dr. Gerardo Hernandez Sosa and Prof. Dr. Jasmin Aghassi-Hagmann will select the topics and guide the discussion.",
+    "workload": "The workload includes (2 SWS):\n•\n•\n•\nactive participation in the preparation sessions and seminar lectures: 22,5 h\npreparation of the seminar presentation: 36 h\npreparation of the written journal article: 31,5 h\nTotal: 90 h = 3 LP",
+    "recommendations": "Basic knowledge in the field of conventional and/or organic (opto) electronic devices and sensors is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-105321": {
+    "id": "M-ETIT-105321",
+    "title": "Seminar Battery II",
+    "credits": 3,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Andre Weber"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in form of an examination of another type. It consists of a written paper (20-40 pages) and an oral\npresentation (approx. 20 min.) of the students work. The overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completion of the seminar the students are able to work independently on an engineering problem in the field of batteries,\nto analyze the related literature and to present it in the form of a written paper and a presentation.",
+    "content": "The seminar \"Batteries II\" is primarily aimed at master students who are planning to write their master thesis in the field of\nbatteries. In this seminar the participants will work on a scientific topic in the field of batteries. This usually includes a literature\nstudy, the compilation of the methods, procedures and results described in the publications as well as a critical evaluation of the\nsame. In individual cases, next to a literature study more practical topics can be in focus.\nThe results are summarized in a seminar paper and presented in a lecture during the seminar. The grading is based on the\nwritten paper as well as the presentation t.",
+    "workload": "1. presence time seminar: 15 * 2 h = 30 h\n2. preparation of seminar paper: 30 h\n3. preparation of seminar presentation: 30 h\nTotal: 90 h = 3 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-105629": {
+    "id": "M-ETIT-105629",
+    "title": "Seminar Electrocatalysis",
+    "credits": 3,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Ulrike Krewer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The success control takes place in form of a different type of examination. It comprises a written report (maximum 25 pages) on\nthe scientific topic and an oral presentation with subsequent discussion, each lasting aprox. 15 minutes. The overall impresssion\nwill be rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Upon completion of the seminar, students are able to research an scientific-engineering topic in the field of electrocatalysis/\nelectrolysis, identify the essential aspects of the technology, and prepare them in the form of a written report and an oral\npresentation, which they then present.",
+    "content": "In the seminar, students independently work on a scientific topic from the current research areas of electrocatalysis/electrolysis\nand present it in order to improve their skills in literature research, scientific writing, and presentation. At the beginning, there will\nbe an introduction to literature research, scientific writing, presentation techniques.\nFinally, students select a topic from the field of electrocatalysis/electrolysis for their scientific work and prepare both a written\nreport and a presentation on this topic.",
+    "workload": "1. attendance time seminar: 15*2 h = 30 h\n2. preparation of seminar paper: 30 h\n3. preparation of seminar presentation: 30 h\nTotal: 90 h = 3 CP",
+    "recommendations": "Knowledge of the basics of fuel cells is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-100455": {
+    "id": "M-ETIT-100455",
+    "title": "Seminar Embedded Systems",
+    "credits": 4,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Becker",
+      "Prof. Dr.-Ing. Eric Sax",
+      "Prof. Dr. Wilhelm Stork"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Success is assessed in the form of a written paper, reviews and a presentation.\nThe assessment consists of the following parts:\n- Written report (approx. 6 pages)\n- 2 peer reviews (approx. 1 page each)\n- Presentation (approx. 15 minutes) followed by discussion (approx. 10 minutes)",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Seminar participants can independently familiarize themselves with a given technical topic, identify all relevant aspects and\nsummarize the results. In this context, students can identify relevant literature in terms of the research question, assess the\nstrengths and weaknesses of existing approaches and methods, and formally evaluate other works according to specified\ncriteria. They can also suggest new aspects in line with the research question. They can present the results of their work\nconcisely in the form of a short text (approx. 6-page paper, usually written in English) and an approx. 15-minute presentation in\nwords and pictures (slides).",
+    "content": "In the \"Embedded Systems\" seminar, students work on a given topic from the field of information processing through literature\nand internet research under the guidance of research assistants and then present it to the other seminar participants in a short\ntext (approx. 6-page paper, usually written in English) and a 15-minute presentation in words and pictures (slides). The students\ngive each other feedback as part of a peer review and thus experience a part of the scientific publication process.",
+    "workload": "The workload includes:\n1.\n2.\n3.\n4.\nIndependent familiarization with a topic: 50h\nWriting a scientific article: 40h\nPreparing a peer review: 10h\nPreparing and giving a presentation: 20h\nTotal: 120h = 4 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-105322": {
+    "id": "M-ETIT-105322",
+    "title": "Seminar Fuel Cell II",
+    "credits": 3,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Andre Weber"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in form of an examination of another type. It consists of a written paper (20-40 pages) and an oral\npresentation (approx. 20 min.) of the students work. The overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completing the seminar, the students are able to familiarize themselves independently with an engineering question in the\nfield of fuel cells, analyze the associated literature and present it in the form of a written report and a presentation.",
+    "content": "The seminar “Fuel Cell Research Projects” is primarily aimed at students who are planning to carry out a scientific thesis in the\nfuel cell research area.\nIn this seminar the participants deal with scientific questions in the field of fuel cells. This includes a literature search, the\ncompilation of the methods, processes and results described in the publications as well as a critical evaluation of the same.\nThe results are summarized in a seminar paper and presented in a lecture during the seminar. The written work and a lecture\nthat has to be given during the event are included in the grading of the thesis.",
+    "workload": "1. Presence seminar: 15 * 2 h = 30 h\n2. Preparation of seminar paper and lecture: 30 h\n3. Preparation of seminar lecture: 30 h\nTotal: 90 h = 3 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-106970": {
+    "id": "M-ETIT-106970",
+    "title": "Seminar Industrial Process and Plant Engineering",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Mike Barth"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The examination will be the seminar presentation at the end of the semester. The criteria are:\n•\n•\n•\n•\nLive presentation of the created CAD and simulation models\nPoster design and usage within the presentation\nAnswering the questions from the examiners\nStructure of the talk",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students:\n•\n•\n•\n•\n•\n•\n•\n•\n•\nare able to create (concept and virtual realization) mechatronic plants and production facilities (e.g. robot cells).\nunderstand the Engineering-Lifecycle of unique production plants, machines and modules.\nare familiar with modern CAX-Engineering Methods.\nknow advanced (cloud-based) CAX-Tool-Chains.\nknow about advanced computer-aided design principles, e.g. model- and equation-based 3D-Design.\nare familiar with design definitions, patterns and features for semi-automated engineering tasks, e.g. automatic\ngeneration of variants.\nknow CAX-information models, e.g. asset administration shell (AAS) or Parasolid.\ncan implement new software-based Engineering features and interfaces.\nare able to perform the virtual commissioning of complex systems using advanced CAX-features.",
+    "content": "•\n•\n•\n•\n•\n•\n•\nThis module is designed to teach students the theoretical and practical aspects of advanced model-based and\ncomputer-aided design of unique systems, e.g.\n◦\nIndustrial plants,\n◦\nProduction cells (e.g. robot),\n◦\nProduction modules and machines.\nThis includes every lifecycle phase of an engineering project starting from 3D-CAD Design to advanced system\nsimulations and concluding in virtual commissioning and optimization during operations.\nIntroduction to advanced cloud-based 3D-Plant-Engineering (e.g. OnShape).\nPrincipals of model-based system design (3D-Modeling, Drawings, Feature-based Rule Set) including advanced\nkinematics and simulation.\nConfiguration and use of VR-, AR-Setups for virtual commissioning and operator training setups.\nConcept and implementation of software-based feature scripts (e.g. C++, python) for advanced engineering in the used\ntool chain.\nConcept and implementation of interfaces to external engineering data-sources (e.g. data tables, Asset Administration\nShell via REST-API, ROS, MQTT or OPC UA).",
+    "workload": "1.\n2.\n3.\nAttendance in Lecture Blocks for Engineering Theory: 10*2 h = 20 h\nGuided Seminar Work Block: 80 h\nPreparation of exam: 20 h\nA total of 120 h = 4 CR",
+    "recommendations": "Enjoyment and interest in industrial engineering and Computer-aided-X Technologies like e.g. 3D CAD, Robotics,\nKinematic Simulations, VR, MR and AR-Technologies.",
+    "literature": ""
+  },
+  "M-ETIT-107588": {
+    "id": "M-ETIT-107588",
+    "title": "Seminar New Power Electronic Systems and Technologies",
+    "credits": 4,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Marc Hiller"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The success control takes place in the form of an examination of another type. It consists of a 15-minute final presentation\nfollowed by a discussion and a 2- to 3-page written summary paper. The overall impression is evaluated.\nThe following aspects are assessed:\nPresentation:\n•\n•\n•\nQuality of the presentation (form and content)\nPresentation style (structure, style, content)\nBehavior during the discussion\nPaper with a summary of the main content:\n•\n•\n•\nFormat, spelling, linguistic style (academic/factual)",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "During the seminar, students learn to independently familiarize themselves with previously unknown technologies and\napplications in the field of power electronics. They will be able to independently research and select relevant scientific literature,\nwhich is usually in English, and interpret its content. In addition, students will be able to present the topic in a scientific lecture to\nan expert audience and summarize the essential content in a compact article in the style of a journal publication.\nBy critically evaluating and analyzing current scientific literature, students develop a deeper understanding of current\ndevelopment trends in technologies and applications in the field of power electronics. In addition, they develop skills in scientific\nwriting and in presenting new scientific topics. These qualifications represent key competencies for the students' future\nacademic and professional careers.",
+    "content": "The seminar “New Power Electronics Systems and Technologies” is aimed at students who are interested in the latest\ntechnologies and applications in the field of power electronics.\nParticipants in the seminar are expected to conduct independent studies on current topics in science and research. In addition\nto research, the selection of the most relevant findings and their presentation to an expert audience are key components of the\nseminar.\nThe specific topics are redefined each semester by the doctoral students and professors at ETI and are based on current\ndevelopments in research and science. The topics cover a wide range and are presented in detail at the beginning of the\nseminar. Each participant can usually choose their “favorite topic.”\nIn past seminars, topics from the following areas were offered, for example:\n•\n•\n•\n•\n•\n•\nElectrical energy storage\nPhotovoltaic systems\nPower converter systems in energy transmission and distribution\nControl of power electronic systems\nDrive systems for cars and trucks\nStructure and properties of modern power semiconductors\nIf there is particular interest, topics suggested by the participating students can also be considered.\nThe seminar is aimed at master's students in electrical engineering, mechatronics, and biomedical engineering. During the\nseminar, students have the opportunity to familiarize themselves with current research results in the field of their chosen topic\nunder the guidance of their supervisor and to discuss the topic during a presentation in the seminar.\nStudents should regularly attend group and individual meetings throughout the seminar. They will independently present the\nresearch topic in a 15-minute scientific lecture and prepare a short scientific summary (2-3 pages) based on the scientific\nliterature on which the presentation is based.\nThe seminar includes participation in the following group and individual sessions:\n•\n•\n•\n•\n•\n•\n•\n•\nIntroduction and presentation of possible seminar topics (all seminar participants)\nDiscussion and assignment of topics (all seminar participants)\nTips for literature research (all seminar participants)\nHelpful presentation techniques (all seminar participants)\nPresentation of the structure and content of the presentations (individually with the seminar topic supervisors)\nDiscussion and feedback on the final presentation (individually with the supervisors of the seminar topic)\nRehearsal presentation (individually with the supervisors of the seminar topic)\nPlenary seminar presentations (all seminar participants)",
+    "workload": "The workload of approx. 110 hours (equivalent to 4 LP) includes:\n•\n•\n•\n•\n•\nParticipation in organizational and preparatory meetings: 14 hours",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-103447": {
+    "id": "M-ETIT-103447",
+    "title": "Seminar Novel Concepts for Solar Energy Harvesting",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "Prof. Dr. Bryce Sydney Richards\nKIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The examination consists of two components: a written journal article and an oral presentation on a research topic selected by\nthe student under the lecturer’s guidance. Topics are agreed upon during the first weeks of the semester. Both the lecture and\nthe presentation are conducted in English. The preparation of the manuscript is completed as homework.\nThe journal article must be at least 3 pages long and adhere to the template provided by the lecturer. The oral presentation\nshould last approximately 25 minutes, followed by a 20-minute discussion.\nThe overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completion of the seminar, students are able to independently familiarize themselves with a new research topic,\nrecapitulate the corresponding literature and present the topic in the form of a review journal article as well as an oral overview\npresentation. Besides the exposure to new scientific research topics, the students will develope their know-how in scientific\npresentations and scientific writing in English which are key competences for their future (e.g. MSc thesis projects and\nresearch).",
+    "content": "We are offering an advanced seminar on „Novel Concepts for Solar Energy Harvesting“ for students curious in latest research\ntopics on devices, materials and physics of next generation solar energy harvesting. The students will get the opportunity to\nfamiliarize themselves with a state-of-the-art research topic of their choice under the guidance of a mentor and present the topic\nduring the seminar. The seminar addresses master students from electrical engineering, physics, mechanical engineering,\nmaterial science, KSOP and related MSc programs.",
+    "workload": "1.\n2.\n3.\nparticipation in the seminar lectures: 20 h\npreparation of the seminar presentation: 35 h\npreparation of the journal article: 35 h",
+    "recommendations": "Good knowledge of semiconductor components/optoelectronics is desirable.",
+    "literature": ""
+  },
+  "M-ETIT-105615": {
+    "id": "M-ETIT-105615",
+    "title": "Seminar on Applied Superconductivity",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Tabea Arndt",
+      "Prof. Dr. Bernhard Holzapfel",
+      "Prof. Dr. Sebastian Kempf",
+      "Prof. Dr.-Ing. Mathias Noe"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Elaboration of a scientific topic and presentation of a talk on the topic within the seminar of about 30min.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are to familiarize themselves with an unknown scientific topic in the field of applied superconductivity. They\nindependently prepare a presentation on the topic they have chosen and are able to present it to the general audience. In this\nrole, the students will learn to clearly and didactyly communicate scientific topics and to lead a scientific discussion. As audience\nmembers, students are also enabled to recognize strengths and weaknesses of a presentation and to give constructive\nfeedback to the person giving the presentation.",
+    "content": "In the seminar, students choose a current topic from the fields of\n•\n•\n•\n•\n•\nSuperconducting materials\nSuperconducting magnet technology\nSuperconducting power supply systems\nSuperconducting detectors and sensors\nSuperconducting Quantum Bits and Quantum Computing\nand present this topic in a lecture to the other seminar participants.",
+    "workload": "For the successful completion of the module, a workload of approx. 90h is required. This is composed as follows:\n1.) Attendance time in the seminar: 12*1.5h = 18h\n2.) Preparation and follow-up of the seminar: 12*3h = 36h\n3.) Preparation and execution of the presentation with handouts: 36h",
+    "recommendations": "None",
+    "literature": ""
+  },
+  "M-ETIT-100441": {
+    "id": "M-ETIT-100441",
+    "title": "Seminar Selected Topics in Communication",
+    "credits": 4,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Holger Jäkel"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The success controll consists of a written paper (approx. 5 pages in IEEE format) and a presentation (approx. 25 minutes). The\noverall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students can familiarize themselves independently with a subject area and rely on independent time management. They are\nable to reflect on what they have worked on and to summarize and present it in a comprehensible manner.\nStudents are proficient in the methods and tools for creating academic texts and presentations.",
+    "content": "The participants work their way into a given communication technology issue through independent literature research,\nsummarize the topic in an overview and present it to the other seminar participants in a lecture.\nIn addition to the technical skills required for familiarization and understanding of the topic, the focus is on communicating\nscientific facts. A structured and comprehensible presentation of the topic in an article is just as important as a clear layout of the\nslides and a confident presentation style.",
+    "workload": "1. independent familiarization with a topic: 60 h\n2. writing a scientific article: 40 h\n3. preparation and giving a presentation: 20 h\nTotal: 120 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100380": {
+    "id": "M-ETIT-100380",
+    "title": "Seminar Sensors",
+    "credits": 3,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Wolfgang Menesklou"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Die Erfolgskontrolle erfolgt als Prüfungsleistungen anderer Art in Form einer schriftlichen Ausarbeitung sowie einer\nPräsentation. The overall impression is rated.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Seminar participants can independently familiarize themselves with a given technical topic, identify all relevant aspects and\nsummarize the results. They can present the results concisely in the form of a text (approx. 20-page paper) and in an approx.\n15-minute presentation in words and pictures.",
+    "content": "The seminar is aimed at students on the Master's degree course in Electrical Engineering and Information Technology,\nMechanical Engineering and Industrial Engineering and Management. In the seminar, participants will work on questions relating\nto sensor technology. In particular, new measurement and sensor principles are to be evaluated for their innovation potential.\nThis includes a literature search, a description of the measurement principles and a comparative evaluation. The results will be\nsummarized in a written seminar paper and finally presented in a lecture during the seminar.",
+    "workload": "1.\n2.\n3.\nSeminar attendance time: 15 h\nPreparation/follow-up: 25 h\nPreparation of paper and presentation: 50 h\nTotal: 90 h",
+    "recommendations": "Knowledge of the module \"M-ETIT-100378 - Sensoren\" is recommended.",
+    "literature": ""
+  },
+  "M-INFO-105884": {
+    "id": "M-INFO-105884",
+    "title": "Seminar: Digital Accessibility and Assistive Technologies",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German/English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Rainer Stiefelhagen"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Oral / Written examination",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "",
+    "content": "Digital accessibility is a topic that affects us all. Accessing information digitally, from childhood to old age. Assistive technologies,\nsuch as smartphones, tablets, smartwatches, wearables in general have become a part of our everyday life. Exactly these\nthings should be operable and usable by all people. Regardless of any barriers.\nBut what are the details behind this? What are the rights and foundations for this? What all has to be done to be \"barrier-free\"?\nThis can all be best illustrated by the example of \"visual impairment\".\nAccording to the World Health Organization, there are approximately 285 million people with visual impairments worldwide,\nincluding approximately 39 million people who are blind. The partial or complete loss of vision significantly restricts blind and\nvisually impaired people in their working and social lives. It is difficult for blind and visually impaired people to orient themselves\nand move around in public spaces without assistance. The reasons for this are problems in perceiving obstacles and landmarks\nas well as the resulting fear of accidents and orientation difficulties. Other problems in everyday life are: reading texts,\nrecognizing banknotes, food, clothes or finding objects in the household.\nFor support, blind and visually impaired people can already rely on a number of technical aids. For example, digitized texts can\nbe made accessible through speech output or Braille output devices. There are also various devices made specifically for the\nblind. The most important aid for improving mobility is by far the cane for the blind. In recent years, some electronic aids for\nobstacle detection or orientation support have also been developed, but these offer only very limited functionality at a relatively\nhigh price and are therefore rather rarely in use.\nThe seminar is intended to provide insight into topics of IT-based assistive technologies (AT) and, on the other hand, to prepare\nparticipants for writing conference articles on the topic. The selection of topics may span a wider range. Such as:\n- Legal principles\n- Existing assistive technology tools for different application areas\n- AT for information access\n- New steps of accessible software development\n- New basics and techniques for accessible web design (websites and web applications)\n- Accessible documents today and tomorrow\n- Use of machine vision methods\n- Feedback systems and their basics\n- Insights into current research topics around the topic of digital accessibility\nFor the latest information, visit http://cvhci.anthropomatik.kit.edu/",
+    "workload": "90 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100378": {
+    "id": "M-ETIT-100378",
+    "title": "Sensors",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Ulrike Krewer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "Success is assessed in the form of a written examination lasting 90 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students know the basic properties and functions of the most important industrially and commercially used sensors\n(temperature, pressure, gas, etc.). They have a basic understanding of the physical and chemical processes of signal formation\nand can use this knowledge to analyze problems, design and apply sensors and transfer it to other areas of their studies. They\nare able to communicate with specialists from related disciplines in the field of sensor technology and can actively contribute to\nthe opinion-forming process in society with regard to scientific and technical issues.",
+    "content": "The lecture provides the most important basics for understanding commercially available sensors. In addition to the sensor\neffects, material aspects and the technical realization in components as well as the application of sensors in electrical circuits\nand systems are discussed. The following are covered: mechanical sensors, temperature sensors, optical sensors, magnetic\nsensors, ultrasonic sensors, gas sensors, chemical sensors.",
+    "workload": "1. lecture attendance time: 15 * 2 h = 30 h\n2. Preparation and follow-up time for lecture: 15 * 4 h = 60 h\n3. Exam preparation and attendance in the exam: included in preparation and follow-up time.\nTotal: 90 h = 3 CP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100443": {
+    "id": "M-ETIT-100443",
+    "title": "Signal Processing in Communications",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Holger Jäkel"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in the form of a written examination lasting 120 min.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students are able to analyze and assess algorithms of signal processing used in communication systems and to consider\naspects of implementation. They can use mathematical methods in the context of signal processing in communication systems\nfor autonomously deriving and elaborating theoretical results, and check their viability by simulations.",
+    "content": "Topics already covered in the Bachelor system theory modules are deduced thoroughly and mathematical derivation and\nreasoning is provided.",
+    "workload": "1.\n2.\n3.\n4.\n5.\nAttendance to the lecture: 20 * 1,5 h = 30 h\nPreparation and review: 20 * 3 h = 60 h\nAttendance to the tutorial: 6 * 1,5 h = 9 h\nPreparation and review: 6 * 3,5 h = 21 h\nPreparation for the exam: 60 h\nIn total: 180 h = 6 LP",
+    "recommendations": "Basics knowledge of communication systems, as, e.g., provided in KIT’s Bachelor courses, is supposed, Furthermore, working\nknowledge in the areas system theory and probability theory is assumed.",
+    "literature": ""
+  },
+  "M-ETIT-106633": {
+    "id": "M-ETIT-106633",
+    "title": "Signal Processing Lab",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Sander Wahls"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": true,
+    "examType": "Success is assessed in the form of a written examination lasting 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After this module, students will have a sound basic knowledge of the main methods of signal processing as well as their areas of\napplication, key parameters and the effects of parameter changes on the behavior of the methods. Students will be able to\nanalyze given signal processing tasks in group work, develop solutions and document their results.",
+    "content": "The Digital Signal Processing practical course currently comprises eight experiments designed to familiarize students with the\nfundamentals of signal processing, in particular some selected measurement methods such as correlation measurement\ntechnology and modal analysis as well as Kalman filtering and the fundamentals of image processing. The focus of the\nexperiments to be completed with various programs and devices is to teach students the practical aspects of modern signal\nprocessing.\nNote: The lecturer reserves the right to include experiments other than those listed here in this practical course without prior\nnotice.",
+    "workload": "The workload results from attending the introductory event (1.5 h), 8 experimental sessions of 4 h each. In addition, the\npreparation of the experiments is estimated at 8x4 h and the writing of the protocols as well as the follow-up work at 8x4 h.\nPreparing for the exam and attending it takes about 60 hours. This results in a total workload of approx. 160 hours.",
+    "recommendations": "Knowledge of the contents of the modules \"Signals and Systems\", \"Measurement Technology\" and \"Methods of Signal\nProcessing\" is strongly recommended.",
+    "literature": ""
+  },
+  "M-ETIT-106899": {
+    "id": "M-ETIT-106899",
+    "title": "Signal Processing Methods",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Sander Wahls"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "Written exam, approx. 120 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students can\n•\n•\n•\n•\n•\n•\n•\nchoose appropriate estimation methods based on theoretical properties and practical considerations\ndetermine estimators for specific problems\ncan weight the pros and cons of data decomposition methods; apply them to given problems; interpret the results\nunderstand the advantages and limitations of the considered time-frequency analysis methods\ninterpret time-frequency representations\nchoose appropriate analysis and synthesis windows/wavelets\ndetermine time-frequency transforms of given signals",
+    "content": "This module introduces students to advanced signal processing methods that are widely employed in engineering. The three\nmain topic areas are\n1. Parameter estimation\n2. Decomposition of data into components and modes\n3. Time-frequency analysis\nThe following topics are treated:\n· Best linear unbiased estimator\n· Maximum likelihood estimation\n· General Bayesian estimators\n· Linear Bayesian estimators\n· Principal component analysis\n· Independent component analysis\n· Dynamic and empirical mode decomposition\n· Hilbert spaces and frames\n· Short-time Fourier transform\n· Wavelets\n· Analytic signals\n· Wigner-Ville-Distribution\n· Huang-Hilbert transform\nIllustrating examples from diverse application areas are discussed.",
+    "workload": "The workload includes:\n1.\n2.\n3.\nattendance in lectures and tutorials: 15*4 h = 60 h\npreparation / follow-up: 15*4 h = 60 h\npreparation of and attendance in examination: 60 h\nA total of 180 h = 6 CR",
+    "recommendations": "Familiarity with signals and systems (in particular, Fourier transforms) and probability theory at the Bachelor level is assumed.",
+    "literature": ""
+  },
+  "M-ETIT-106675": {
+    "id": "M-ETIT-106675",
+    "title": "Signal Processing with Nonlinear Fourier Transforms and Koopman Operators",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Sander Wahls"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The examination in this module consists of programming assessments and a graded written examination of 120\nminutes.\nThe programming assignments are either pass or fail. They must be passed during the lecture period for admission\nto the written examination.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students\n•\nunderstand the basic theory of linear operator on Hilbert spaces and can analyze simple operators\n•\n•\n•\n•\n•\n•\nanalytically\nknow the use cases for selected integrable partial differential equations (PDEs) and can apply them under\nnon-ideal circumstances (small non-integrable terms)\ncan determine the PDE corresponding to a given Lax-pair and check if the PDE is actually integrable (i.e.\ncheck if the Lax pair is “fake”)\nunderstand the theory of nonlinear Fourier analysis for selected PDEs and can compute nonlinear (inverse)\nFourier transforms numerically and, in simple cases, analytically\nknow and implement practical engineering applications of nonlinear Fourier transforms\nunderstand the theory of the Koopman operator including selected engineering applications\ncompute Koopman spectra numerically using data-driven methods and use them in practical engineering\napplications",
+    "content": "This module introduces students to signal processing methods that rely on nonlinear Fourier transforms and\nKoopman operators. These methods allow us to transform large classes of nonlinear systems such that they\nessentially behave like linear systems. They can also be used to decompose signals driven by such systems into\nphysically meaningful nonlinear wave components (for example, solitons).\nWhile these methods originated in mathematical physics, there has been a growing interesting of exploiting their\nunique capabilities in engineering contexts. The goal of this module is to give engineering students a practical\nintroduction to this area. It provides the necessary theoretical background, enables students to apply the methods\nin practice via computer assignments, and discusses recent research from the engineering literature.\nThe following topics will be discussed:\n•\n•\n•\n•\n•\n•\n•\n•\n•\nIntroduction to linear operators on Hilbert spaces\nIntegrable model systems (Korteweg-de Vries equation, Nonlinear Schrödinger equation)\nLax-integrable systems (representations of Lax pairs, fake Lax pairs, conserved quantities)\nSolution of integrable model systems using nonlinear Fourier transforms (inverse scattering method) and the\nunified transform method\nPhysical interpretation of nonlinear Fourier spectra (in particular, solitons)\nPractical applications of nonlinear Fourier transforms\nTheoretical properties of Koopman operators\nData-driven computation of Koopman operators (residual dynamic mode decomposition)\nPractical applications of Koopman operators",
+    "workload": "The workload includes:\n1.\n2.\n3.\n4.\nattendance in lectures and tutorials: 15*4 h = 60 h\npreparation / follow-up: 30*3 h = 60 h\nfinishing programming assignments: 30 h\npreparation of and attendance in examination: 30 h\nA total of 180 h = 6 CR",
+    "recommendations": "assumed.\nFamiliarity with signals and systems at the Bachelor level (Fourier and Laplace transforms, linear systems, etc.) is\nModule: Single-Crystal Growth – Crystal Growth Methods and\nApplications of Crystals for Electronic and Optical Components [M-\nETIT-106597]",
+    "literature": ""
+  },
+  "M-ETIT-106597": {
+    "id": "M-ETIT-106597",
+    "title": "Single-Crystal Growth – Crystal Growth Methods and Applications of Crystals for Electronic and Optical Components",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Marc Eichhorn"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in form of an overall oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students should be able to interpret phase diagrams and solubility curves of crystals and select suitable crystal growth methods\nfor these crystals. Students will be able to describe the various crystal growth methods and discuss their special features.\nStudents will be able to explain the functionality and physical principles of important commercial crystals and their application.",
+    "content": "•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nThis module is designed to teach students the theoretical and practical aspects of single crystal growth and the special\nphysical properties of commercially usable single crystals.\nIt covers:\nHistory of commercial single crystal growth\nFundamentals of crystallography\nCrystal optics\nAbsorption and colors of crystals, crystal field theory\nPhase diagrams\nGrowing crystals from aqueous solution\nMelt growth methods (Czochralski, skull melting, flux, Kyropoulos, hot zone)\nHydrothermal growth processes",
+    "workload": "1.\n2.\n3.\nAttendance time in lectures, exercises: 5*5 h = 25 h\nPreparation and follow-up of the same: 5*6 h = 30 h\nExam preparation and attendance: 35 h\nTotal: 90 h = 3 LP",
+    "recommendations": "Knowledge of the fundamentals of inorganic chemistry, solid state physics or photonics",
+    "literature": ""
+  },
+  "M-ETIT-101971": {
+    "id": "M-ETIT-101971",
+    "title": "Single-Photon Detectors",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Konstantin Ilin"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Type of Examination: Oral exam\nDuration of Examination: approx. 20 minutes",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completing the module, students will get basic knowledges on various physical mechanisms underlying optical response of\nthe currently available detectors with the ultimate sensitivity – the single-photon detectors (SPDs) – thereby will be able to\nexplain their functionality in details. The grasp of these knowledges enables students to critically analyze advantages and\nlimitations of different types of SPDs and to make a decision on development of the detection system for particular applications.",
+    "content": "The students will get an overview of the modern types of single-photon detectors already widely used in applications and\ncurrently developing as well. Basics of the response mechanisms of the detectors and particular areas of their application will be\nconsidered as well as the main directions of development and optimization of new types of SPDs and detection systems. In\nparticular the following topics will be addressed:\n•\n•\n•\n•\n•\n•\n•\nApplications of single-photon detectors (SPD)\nDetection system and light-matter interaction\nBasic characteristics of SPDs and experimental methods of their determination\nPhotoelectric effect: photomultiplier tubes (PMT); microchannel plate (MCP)\nSemiconducting detectors: photoresistor, PIN photodiode, avalanche photodiode (APD), single-photon avalanche diode\n(SPAD), visible light photon counter (VLPC), quantum dot field effect transistor (QD-FET)\nSuperconducting detectors: transition edge sensor (TES), superconducting tunnel junction (STJ), superconducting\nnanowire single-photon detector (SNSPD)\nHybrid detection system",
+    "workload": "1.\n2.\n3.\n4.\nLecture presence time in winter semester– 18 h\nExercises presence time – 9 h\nPre- /Post-preparation on lectures/exercises- 36 h\nPreparation to and examination – 57 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100450": {
+    "id": "M-ETIT-100450",
+    "title": "Software Engineering",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Clemens Reichmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an oral examination lasting approx. 25 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students know the terms and processes of systematic software development. They can apply and describe common methods\nand tools. They are able to compare different solution approaches and assess the respective advantages and disadvantages.\nThey have an extensive understanding of the UML modeling language and can apply it to software engineering problems.",
+    "content": "Building on the Systems and Software Engineering (SSE) lecture, software-specific knowledge is deepened. In order to develop\nstudents' skills, the aim is to deepen their understanding of the necessity and application of procedures, aids and tools from all\nareas of software development.",
+    "workload": "The workload includes:\n1. attendance time in lectures, exercises: 22.5h\n2. preparation and follow-up of the same: 22.5h\n3. exam preparation and attendance in the same: 30h-45h",
+    "recommendations": "Knowledge of Systems and Software Engineering (course 2311605) is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-100524": {
+    "id": "M-ETIT-100524",
+    "title": "Solar Energy",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Type of Examination: written exam\nDuration of Examination: 120 Minutes\nModality of Exam: One written exam at the end of each semester.",
+    "prerequisites": "•\n•\nKnowledge of optoelectronics is a prerequisite, e.g. \"M-ETIT-107146 - Bauelemente der Opto- und Nanoelektronik\".\nStudents are not allowed to take \"M-ETIT-100513 - Photovoltaik“ in addition to this one.",
+    "modeledPrerequisites": "The following conditions have to be fulfilled:\n1.\nThe module M-ETIT-100513 - Photovoltaics must not have been started.",
+    "exclusions": [
+      "M-ETIT-100513"
+    ],
+    "requires": [],
+    "competenceGoal": "The students:\n• understand the basic working principle of pn-junction solar cells,\n• learn about the different kinds of solar cells (crystalline and amorphous silicon, CIGS, Cadmium telluride, organic, dye-\nsensitized solar cells, etc.),\n• get an overview over upcoming third-generation photovoltaic concepts,\n• receive information on photovoltaic modules and module fabrication,\n• develop an understanding of solar cell integration and examples of systems,\n• get insight into solar concentration and tandem solar cells for highly efficient energy conversion,\n• understand potential synergies with solar thermal technologies\n• understand the environmental impact of solar energy technologies.\nDie Studentinnen und Studenten können in englischer Fachsprache sehr gut kommunizieren.",
+    "content": "I. Introduction: The Sun\nII. Semiconductor fundamentals\nIII. Solar cell working principle\nIV. First Generation solar cells: silicon wafer based\nV. Second Generation solar cells: thin films of amorphous silicon, copper indium gallium diselenide, cadmium telluride, organic\nphotovoltaics and dye sensitized solar cells\nV. Third Generation Photovoltaics: high-efficiency device concepts incl. tandem solar cells\nVI. Modules and system integration\nVII. Cell and module characterization techniques\nVIII. Economics, energy pay-back time, environmental impact\nIX. Other solar energy harvesting processes, incl. thermal and solar fuels\nX. Excursion",
+    "workload": "Total 180 h, thereof 60h contact hours (45h lecture, 15h problems class), and 120h homework and self-studies",
+    "recommendations": "",
+    "literature": "•\n•\n•\n•\nA. Smets: Solar Energy: The physics and engineering of photovoltaic conversion, technologies and systems\nP. Würfel: Physics of Solar Cells\nV. Quaschning: Renewable Energy Systems\nC. Honsberg and S. Bowden, PV Education CD-ROM and website, http://www.pveducation.org/pvcdrom"
+  },
+  "M-MACH-101924": {
+    "id": "M-MACH-101924",
+    "title": "Solar Thermal Energy Systems",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "oral exam of about 30 minutes",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students get familiar with the global energy demand and the role of solar thermal systems for this demand\nlearn about improved designs for using efficiently the potential of solar energy\ngain basic understanding of the main thermal hydraulic phenomena which support the work on future innovative applications\nwill be able to evaluate quantitatively various aspects of the thermal solar systems",
+    "content": "I. Introduction to solar energy: Energy resources, consumption and costs\nII. The sun as an energy resource:\nStructure of the sun, Black body radiation, solar constant, solar spectral distribution\nSun-Earth geometrical relationship\nIII. Passive and active solar thermal applications.\nIV. Fundamentals of thermodynamics and heat transfer\nV. Solar thermal systems - solar collector-types, concentrating collectors, solar towers. Heat losses and efficiency\nVII. Energy storage\nThe course deals with fundamental aspects of solar energy. Starting from a global energy panorama the course deals with the\nsun as a thermal energy source. In this context, basic issues such as the sun’s structure, blackbody radiation and solar–earth\ngeometrical relationship are discussed. In the next part, the lectures cover passive and active thermal applications and review\nvarious solar collector types including concentrating collectors and solar towers and the concept of solar tracking. Further, the\ncollector design parameters determination is elaborated, leading to improved efficiency. This topic is augmented by a review of\nthe main laws of thermodynamics and relevant heat transfer mechanisms.\nThe course ends with an overview on energy storage concepts which enhance practically the benefits of solar thermal energy\nsystems.",
+    "workload": "Total 90 h, hereof 30 h contact hours and 60 h homework and self-studies",
+    "recommendations": "",
+    "literature": "Foster, Ghassemi, cota,; Solar Energy\nDuffie and Beckman; Solar engineering of thermal processes\nHolman:, Heat transfer\nHeinzel; script to solar thermal energy (in German)\nW. Platzer, R. Stieglitz “Solar thermal Energy Systems”"
+  },
+  "M-ETIT-100545": {
+    "id": "M-ETIT-100545",
+    "title": "Space-Born Microwave Radiometry - Advanced Methods and Applications",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Zwick"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control is carried out as part of an overall oral examination (approx. 20 minutes) of the selected courses, with which the\nminimum requirement for CP is met.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students have a basic knowledge of remote sensing with microwave radiometers on satellites. Applications of microwave\nradiometry on the ground, on airplanes and satellites. They are familiar with modern methods for the detection of anti-personnel\nmines, detection of hidden explosives and weapons. They can describe and evaluate the different types of radiometers and are\nable to apply the theoretical basics.",
+    "content": "The term microwave radiometry is the measurement of the natural thermal electromagnetic radiation in our natural environment.\nIt has its origin in the atomic and molecular state transitions in matter at a physical temperature above 0K. It appears as\nunpolarized, random, broadband radiation (noise) and is dependent on the chemical / physical composition of the body to be\nimaged, its surface quality, frequency, polarization and the physical temperature.\nMicrowave radiometry is the logical continuation of photographic imaging in the optical range and radiometry in the infrared\nwavelength range.\nThe lecture is interdisciplinary and covers the entire system chain of imaging systems (radiation properties of the measurement\nobject - propagation medium - sensor technology - data analysis) on the ground, on aircraft and satellites.",
+    "workload": "Each credit point corresponds to approximately 25-30 hours of work (of the student). This is based on the average student who\nachieves an average performance. The workload includes:\nAttendance study time lecture / exercise: 30 h\nSelf-study time including exam preparation: 60 h\nA total of 90 h = 3 LP",
+    "recommendations": "Knowledge of the basics of high frequency technology is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-103042": {
+    "id": "M-ETIT-103042",
+    "title": "Spaceborne Radar Remote Sensing",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Zwick"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT"
+    ],
+    "isLab": false,
+    "examType": "The assessment takes place in the form of a written examination lasting 120 min. and in the form of reports (other types of\nexamination). Those reports have to be submitted as part of the SAR computer workshop (approx. a total of five workshops).\nDetails will be given during the lecture.",
+    "prerequisites": "\"M-ETIT-100426 - Spaceborne SAR Remote Sensing\" is not allowed to be started or to be completed.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students obtain a sound knowledge on the fundamentals, theory and applications of spaceborne radar systems. They\nunderstand the principle and function of synthetic aperture radars (SAR). They are able to explain the theory, techniques,\nalgorithms for data processing and system concepts as well as to report on several application examples.",
+    "content": "The lecture is interdisciplinary and well suited for students interested in learning different aspects of the entire end-to-end\nsystem chain of spaceborne radar systems. Today, Synthetic Aperture Radar (SAR) systems are generating images of the Earth\n´s surface with a resolution better than 1 meter. Due to their ability to produce high-resolution radar images independent of\nsunlight illumination and weather conditions, SAR systems have demonstrated their outstanding capabilities for numerous\napplications, ranging from environmental and climate monitoring, generation of three-dimensional maps, hazard and disaster\nmonitoring as well as reconnaissance and security related applications. We have entered a new era of spaceborne and airborne\nSAR systems. New satellite systems like TerraSAR-X and TanDEM-X provide radar images with a resolution cell of more than a\nhundred times better than the one of conventional SAR systems. The lecture will cover all aspects of spaceborne radar systems\nincluding an overview of new technologies, applications and future developments.\nSupporting the main lecture, exercise assignments are distributed to the students. The exercise solutions are presented and\ndiscussed in detail during lecture hall exercises. Further dedicated topics are explained to deepen the understanding of the main\nlecture contents.\nThe aim of the computer-workshop is to gain practical experience on radar systems using data and parameter simulations which\nare based on the evaluation of simplified models.",
+    "workload": "Each credit point corresponds to approximately 25-30 hours of work (of the student). This is based on the average student who\nachieves an average performance. Workload (for a lecture)\nAttendance time in lectures, exercises: 60 h\nPresent study time computer exercise: 40 h\nSelf-study time including exam preparation: 80 h\nA total of 180 h = 6 LP",
+    "recommendations": "Signal processing and radar fundamentals.",
+    "literature": "Lecture viewgraphs, reading material, and literature references can be found on ILIAS at https://s.kit.edu/srrs."
+  },
+  "M-INFO-100829": {
+    "id": "M-INFO-100829",
+    "title": "Stochastic Information Processing",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Uwe Hanebeck"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See Partial Achievements (Teilleistung).",
+    "prerequisites": "See Partial Achievements (Teilleistung).",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Qualification objective: Students can describe a given nonlinear dynamic model probabilistically and set up the equations for\nBayesian inference. If no analytical solution exists, they can estimate the strength of the nonlinearity and select and implement a\nsuitable practical filter for real-time state estimation.\nLearning objective: Students are familiar with dynamic state models and methods for recursively estimating the state. The\nadvantages and disadvantages of the various practical filters can be assessed in a problem-oriented manner.",
+    "content": "To deal with complex dynamic systems, as they occur for example in robotics, one typically requires both system models and\nthe temporal evolution of the system states. For both system identification and state reconstruction, however, usually only noisy\ndata are available.\nFor continuous state spaces, an exact calculation of the probability densities is only possible in a few special cases. In practice,\ngeneral nonlinear systems are often traced back to these special cases by simplifying assumptions. One extreme is linearization\nwith subsequent application of linear estimation theory. However, this often leads to unsatisfactory results and requires\nadditional heuristic measures. At the other extreme are numerical approximation methods, which only evaluate the desired\nprobability densities at discrete points in the state space. Although the basic principle of these methods is usually quite simple,\ntheir practical implementation is often difficult and, in particular for higher-dimensional systems, computationally demanding.\nAs a middle ground, analytical nonlinear estimation methods would therefore often be desirable. In this lecture the main\ndifficulties in the development of such estimation methods are outlined and corresponding solution modules are presented.\nBased on these building blocks, some analytical estimation methods are discussed in detail as examples, which are very\nsuitable for practical implementation and offer a good compromise between computing effort and performance. Useful\napplications of these estimation methods are also discussed. Both known methods and the results of current research are\npresented.\nAdditional Information\nAs a theoretical foundation lecture, \"Stochastic Information Systems\" is an ideal introduction to the ISAS lectures. Conversely,\nprior knowledge of \"Localization of Mobile Agents\" (LMA) [course no. 24613] and \"Information Processing in Sensor\nNetworks\" (IIS) [course no. 24102],\n, may nevertheless be helpful depending on the type of learner - more concrete applications are highlighted there. In all of our\nlectures, the content is always derived and explained in detail from the beginning; it is therefore possible to start with SI, LMA or\nIIS.",
+    "workload": "[1.5 h lecture + 1.5 h exercise (3 SWS)] x 15\n+ [4.5 h follow-up lecture + 3.5 h preparation exercise] x 15\n+ 15 h exam preparation\n= 180 h ≙ 6 ECTS",
+    "recommendations": "Knowledge of the basics of probability theory is helpful.",
+    "literature": ""
+  },
+  "M-ETIT-105073": {
+    "id": "M-ETIT-105073",
+    "title": "Student Innovation Lab",
+    "credits": 15,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "2 terms",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Sören Hohmann",
+      "Prof. Dr. Werner Nahm",
+      "Prof. Dr.-Ing. Eric Sax",
+      "Prof. Dr. Wilhelm Stork",
+      "Prof. Dr. Orestis Terzidis",
+      "Prof. Dr.-Ing. Thomas Zwick"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": true,
+    "examType": "This module consists of an 60-minute written exam on the contents of the Entrepreneurship lectures, as well as 5 other types of\nexams on the contents of the seminar Entrepreneurship and Innovation Lab in the form of term papers and presentations. All\nexams results are graded. Details will be given during the course.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Personal competence\n•\n•\n•\n•\nReflection faculty:\nThe students are able to analyze, evaluate and develop an alternative for action for certain elements of action in social\ninteraction\nDecision-making ability:\nThe students are able to prepare a decision template in time and to provide the necessary arguments for alternative\ndecisions and therefore are able to decide in time.\nInterdisciplinary teamwork\nStudents are able to detect their limits of competence in one domain and to adjust to a the non-specialist domain. The\nstudents are able to detect a lack in competence and to compensate this lack via competences of other team members.\nThe students are able to communicate their domain-specific knowledge and develop a basic understanding of other\ndomains.\nValue-based action:\nThe students are able to use selected psychological tools to determine their own values. They are able to match these\nvalues with team members and reflect if their offer fits these values.\nSocial competence\n•\n•\n•\nAbility to cooperate:\nThe students are able to analyze and judge their cooperative behavior in a group.\nCommunication competence:\nThe students are able to present their information in persuasive, focused and target group oriented way.\nAbility to deal with conflicts:\nThe students are able to detect conflicts in advance, analyze them and name solution concepts.\nInnovation and entrepreneurship competence\n•\n•\n•\n•\n•\n•\nAgile product development:\nThe students are able to apply methods of agile product development e.g. Scrum.\nMethodical innovation retrieval:\nThe students are able to conduct processes for user- and technology-centered innovation to develop sustainable value\npropositions for certain target groups (e.g. Design Thinking (DT), Technology Application Selection (TAS)- process).\nOrientation on management of new technology-based firms (NTBF):\nThe students are able to name central concepts of intellectual property and legal structures. The students are able to\nname the most important tasks of entrepreneurial leadership. They are able to name the most common form of business\nmodeling and to setup a business plan. The students know important approaches to establish an organization. The\nstudents are able to determine the ownership structure in an investment situation. The students are able to name\nmarketing concepts and setup a business model.\nGenerate investment readiness:\nThe students are able to setup rudimentary revenue and cost plan. Furthermore, they are able to establish a project plan\nfor a company in order to derive an investment plan. The students are able to present their business proposal to\ninvestors and develop empathy for the investors.\nCompetence to develop a business model:\nThe students are able to apply respective tools for business modeling e.g. Business Model Canvas. The students are\nable to develop and assess alternative business models.\nRisk handling:\nThe students are able to name basic risks w.r.t. requirements, technical limitations and profitability. The students are able\nto apply methods of customer interaction for evaluation of requirements and willingness to pay. The students are able to\nsetup a rudimentary competitors analyze. The students are able to name and identify risks and present potential\nreactions.\nSystemic technical competence\n•\n•\n•\n•\n•\nProblem solution competence:\nThe students are able to analyze, assess and structurally solve a technical problem.\nAgile methodology of system development:\nThe students are able to name and apply different system development processes.\nValidation in volatile environment:\nThe students are able to conduct technical and economical validation under volatile constraints. For this, they are able to\nname the constraints and interpret the results of the validation.\nFunctional decomposition:\nThe students are able to identify, interpret and derive functional requirements from complex customer needs.\nArchitecture development:\nThe students are able to recognize coherences from the functional requirements and derive a suitable system\narchitecture.",
+    "content": "This module strives to combine technical, social and personal competences from the technical and entrepreneurial domain. The\nobjective is to prepare students as best as possible for entrepreneurial activity within or outside of an established organization.\nOur teaching methods are research-based with a practical orientation.\nThe lecture Entrepreneurship as the essential component offers the theoretical basis and provides insight in important\ntheoretical concepts and empirical evidence. Currently released case studies and practical experiences of successful founders\nsupport the theoretical and empirical content. In order to run a company for the long term additional knowledge is important.\nThat’s why the lecture also teaches basic principles for opportunity recognition, business modeling, an introduction to\nentrepreneurial marketing and leadership. Customer-based design methods from the lean startup approach as well as methods\nof technology-centered innovation are presented. Future founders have to be able to develop and handle resources such as\nfinancial and human capital, infrastructure and intellectual property. Further aspects tackle the establishment of an organization\nand funding of the own project.\nThe knowledge taught in the lecture Entrepreneurship will be applied in an application-oriented seminar and the labs. Hence we\nuse an action learning approach to extend the taught knowledge by practical skills and reflection capabilities. In an team of five,\nthe students will experience their way from the ideation process to the final pitch in front of investors.\nThe students are able to choose between the following options concerning the labs:\n•\n•\n•\n•\nThe Automation Innovation Lab offers drones as an innovation platform for cooperative swarm solutions.\nThe Industry 4.0 Innovation Lab enables innovation in the context of the next industrial revolution via mobile robot\nplatforms.\nIn the Interconnected Intelligent Systems Lab innovations in the context of Assisted Living and Smart Housing are\nenabled by providing a rich assembly set of mobile robots, actuators and sensors.\nThe Computer Vision for Health Lab offers a selection of state-of-the-art imaging devices and powerful computing\nhardware for innovative image-based applications for medicine and healthcare.\nThe module also presents methods of agile system development (Scrum) along with associated validation methods as well as\nmethods for functional prototyping. Gate plans are used within the module to determine the progress of the project. Methods for\nsingle person work and teamwork are presented and applied. Additionally group-specific knowledge of the different roles of\nteam members, solutions to conflict situations and interdisciplinary teams are presented.",
+    "workload": "Lecture Entrepreneurship: 32h attendance time, 48h preparation and follow-up time, 10h preparation time for assessment\nSeminar Entrepreneurship: 34h attendance time, 3h preparation and follow-up time, 53h preparation time for assessment.\nInnovation Lab: 8h attendance time, 213h preparation and follow-up time, 49h preparation time for assessment.\nThis results in a total of 450 hours and a total of 15 LPs for both semesters (15*30/2 = 225).",
+    "recommendations": "It is recommended to attend the lecture Entrepreneurship at the same time as the seminar Entrepreneurship Project and the\nInnovation Lab in the winter semester.",
+    "literature": ""
+  },
+  "M-ETIT-106684": {
+    "id": "M-ETIT-106684",
+    "title": "Superconducting Magnet Technology",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Tabea Arndt"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of an oral exam (abt. 30 minutes).\nTwo timeslots (weeks) for examination dates will be announced (usually near end of lecture period & end of semester)",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\nThe students have a solid knowledge of architecture and design aspects of applications in magnets, windings and coils\n•\n•\n•\nin power engineering.\nFor the most important magnet applications the students can apply the state of the art, choose between options and can\nreflect the main benefits.\nThe students have a clear understanding of opportunities, benefits and limitations of superconducting windings and\nmagnets.\nThe students are able to perform the required design calculations and to solve fundamental design questions\nindependently.",
+    "content": "As the materials become increasingly mature and powerful, using superconductivity in a variety of applications of electrical\nengineering is of rising interest and benefit, too. This module is focuses on Superconducting Magnet Technology:\nWindings, coils and magnets may be used as a device by itself (providing high magnetic fields e.g. in MRI, NMR, accelerators,\nindustry magnets, etc.) or as components for Power Systems.\nThis section will cover the following aspects:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nUnique selling points of superconducting windings.\nBasic approaches and tools to design superconducting windings.\nDiscussion of winding architectures\nCriteria to design the appropriate operating temperatures, materials, conductors, cooling technology for the\nelectromagnetic purpose.\nLimits and opportunities when preparing and operating superconducting windings.\nMeasures for safe operation of superconducting magnets.\nHigh-Field Magnets\nMagnets for Fusion Technology\n3D topologies (e.g. in dipole magnets or motors/ generators)\nNew options potentially offered by widespread use of hydrogen.\nNew winding topologies\nIn the exercises, selected magnets will be designed and calculated analytically and with some computational tools (e.g. dipole\nmagnets and compact, cryogen free HTS-magnets)\nThe lecturer may change the details of the content without further notice. Materials will be offered on ILIAS.",
+    "workload": "1.\n2.\n3.\nattendance in lectures and exercises: 15*3 h = 45 h\npreparation / follow-up: 15*3 h = 45 h\npreparation of and attendance in examination: 30 h\nA total of 120 h = 4 CR",
+    "recommendations": "Having knowledge in “Superconducting Materials” is beneficial, but not mandatory.",
+    "literature": ""
+  },
+  "M-ETIT-105521": {
+    "id": "M-ETIT-105521",
+    "title": "Superconducting Materials",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "2 terms",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Jens Hänisch",
+      "Prof. Dr. Bernhard Holzapfel"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The success contral takes place in two parts:\n1.\n2.\nPart I (lecture): in the form of an oral examination lasting approx. 30 minutes.\nPart II (lab): in the form of a written protocol (approx. 40 pages).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students have a good knowledge and can describe and compare the properties of different superconducting materials\nincluding those currently employed in energy and electronic applications (niobium-based superconductors, oxocuprates, MgB2)\nand also promising recently discovered ones (pnictides), including their synthesis methods.\nStudents have a thorough understanding of the synthesis variations of superconducting materials in bulk, thin film and wire form\nas well as the close relationship between microstructural properties of superconductors and their current carrying capabilities.\nThey are able to select the appropriate superconducting materials for the different application scenarios of superconductors.\nThe students are able to talk about topic-related aspects in English using the technical terminology of the field of study.",
+    "content": "This lecture series gives an overview on the basic properties of the known different classes of superconducting materials as well\nas their synthesis routes in bulk, thin film and wire form. Special emphasis s given to the close interaction of micro- and\nnanoscale microstructural properties and the superconducting electrical transport properties, which are the key to all large scale\napplications in power and magnet technology.\nThe lecture series will cover basic properties of superconductors, superconducting elements, classical metallic superconducting\nalloys and compounds, high temperature superconductors, Fe-based superconductors and some other “exotic”\nsuperconductors, synthesis of superconducting films and wires, superconducting critical currents and pinning in type II\nsuperconductors as well an overview on the most prominent applications of superconductors in electronics, medicine and power\napplication.\nThe obligatory practical work covers a few experiments regarding the synthesis and characterization of superconducting\nmaterials.\nThe lecturer reserves the right to alter the contents of the course without prior notification.\nCourse material will be available on ILIAS. Up-to-date information will be available via the ITEP- homepage prior to the\nbeginning of the semester.",
+    "workload": "A workload of approx. 186h is required for the successful completion of the module. This is composed as follows:\n•\n•\n•\nAttendance time in lectures: 30*2h = 60h\nPreparation and follow-up of lectures: 30*3h = 90h\nPreparation for the exam: 30h",
+    "recommendations": "It is recommanded to pass the lecture (part I) before the lab (part II).",
+    "literature": ""
+  },
+  "M-ETIT-105609": {
+    "id": "M-ETIT-105609",
+    "title": "Superconducting Nanowire Detectors",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Konstantin Ilin"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Oral Exam (approx. 20 min.)",
+    "prerequisites": "II must not be started.\nModule \"M-ETIT-102332 - Thin films: technology, physics and applications\" + Thin Films: Technology, Physics and Applications",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students should be able to discuss interplay between growth conditions of thin films, physical and geometrical properties of\nnanostructure made of these films, and performance and suitable areas of application of detectors of radiation based on\ninteraction of these nanostructures with electromagnetic power. The knowledge obtained by students should provide a\ntheoretical basis for the most important steps in development of thin film nanoelectronic devices.",
+    "content": "Students will get practically oriented information about technology of thin films including different methods of deposition of thin\nfilms like magnetron sputtering, thermal evaporation, pulsed laser ablation, about basics of vacuum technology, and about\nmechanisms of growth of thin films of different materials at different conditions.\nPatterning methods (photo- and e-beam lithography, reactive ion etching, ion milling, and lift-off techniques) suitable for\nnanometer scale features of electronic devices will be considered in details.\nExperimental methods of characterization of material, geometrical, optical, physical, superconducting, electron and phonon\nproperties of thin films, nanostructures made of these films, and devices based on these nanostructures will be discussed.\nConsideration of technology and physics of thin film structures will be done on example of development of three types of fast\nand sensitive detectors of electro-magnetic radiation for applications in optical and THz spectral ranges: superconducting\nnanowire single-photon detector, hot-electron bolometer, and YBCO ps-fast detector of synchrotron emission. Dependence of\ndetector’s performance on their fabrication condition will be analyzed in frame of physical models which describe response\nmechanisms of the detectors to absorbed radiation.\nPractical actualization of the knowledge is possible in frame of Praktikum Nanoelektronik (LVN 23669).",
+    "workload": "The workload in hours is broken down below:\n1.\n2.\n3.\nAttendance time in lectures in the winter semester 15*3h = 45h\nPreparation / follow-up of the same 15*3h = 45h\nExam preparation and attendance in the same 30h",
+    "recommendations": "Previous participation on Module \"Physics, Technology and Applications of thin films \" is recommanded.",
+    "literature": ""
+  },
+  "M-ETIT-106683": {
+    "id": "M-ETIT-106683",
+    "title": "Superconducting Power Systems",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Mathias Noe"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "The examination takes place in form of an oral exam (abt. 45 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\nThe students have a solid knowledge of architecture and design aspects of applications in windings and energy\n•\n•\n•\ntechnology devices.\nbenefits.\ndevices.\nindependently.\nFor the most important power system applications the students can apply the state of the art and can reflect the main\nThe students have a clear understanding of opportunities, benefits and limitations of superconducting components and\nThe students are able to perform the required design calculations and to solve fundamental design questions",
+    "content": "As the materials become increasingly mature and powerful, using superconductivity in a variety of applications of electrical\nengineering is of rising interest and benefit, too. This module focuses on Superconducting Power Systems.\nIt will provide an overview of the state of the art, will give an insight into the basic setup, the design, the characteristic\nparameters and the specific operation behaviour of the following applications:\n· Power Transmission Cables and Lines\n· Motors and Generators\n· Transformers\n· Fault Current Limiters\n· Magnetic Energy Storage\n· Basics of Cryo Technology\nFor each application a design example is shown and the focus is given on the conceptual design of each application.\nThe lecturers may change the details of the content without further announcement.\nMaterials will be offered on ILIAS.",
+    "workload": "1.\n2.\n3.\nattendance in lectures and exercises: 15*3 h = 45 h\npreparation / follow-up: 15*3 h = 45 h\npreparation of and attendance in examination: 30 h\nA total of 120 h = 4 CR",
+    "recommendations": "Having knowledge in „Superconducting Materials“ is beneficial.\nSuccessful participation in „Superconductivity for Engineers“",
+    "literature": ""
+  },
+  "M-ETIT-105611": {
+    "id": "M-ETIT-105611",
+    "title": "Superconductivity for Engineers",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Bernhard Holzapfel",
+      "Prof. Dr. Sebastian Kempf"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "EPSE",
+      "MPQT"
+    ],
+    "isLab": false,
+    "examType": "The assessment of success takes place in the form of a written examination lasting 120min.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students know the physical fundamentals of superconductivity and can place various theoretical and practical aspects of\nsuperconductivity in the overall context. They understand the principles behind specific applications of superconductivity and are\nable to communicate with experts in the field.",
+    "content": "Superconductivity is one of the most fascinating and astonishing effects in solid state physics. It plays technologically an\nimportant role in many modern, scientific, medical and industrial applications. It establishes, for example, the basis of realizing\nhigh field electromagnets to be used in magnetic resonance imaging systems in healthcare or for guiding charged particle in\nmodern particle accelerators such as the LHC. Moreover, it allows to build state-of-the-art energy systems as well as sensing\ndevices such as magnetic field sensors or energy-dispersive single particle sensors. In addition, it is conceivable that\nsuperconductivity will be utilized in near future for energy and traffic engineering applications, e.g. for dissipationless power\ntransmission over large distances or high-speed trains connecting major cities.\nWithin this context, this module gives a comprehensive introduction in the basics of superconductivity paving the way for the\ndiscussion of state-of-the-art applications of superconductivity. In particular, the module will cover the following topics:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nHistorical remarks\nOverview of superconducting materials and applications of superconductivity\nReminder of normal metals: free electron gas, Drude and Sommerfeld model, electrical and thermal properties, band\nstructure\nPhenomena of superconductivity: zero electrical dc resistance, Meissner Ochsenfeld effect\nThermodynamics and thermal properties of superconductors\nPhenomenological theories of superconductors: Two-fluid model, London theory, Pippard theory, Ginzburg-Landau\ntheory\nMicroscopic theory of conventional superconductors\nType-I and type-II superconductivity\nMagnetic properties of type-I and type-II superconductors\nIrreversible magnetic properties, Bean model\nAC losses\nElectrical and thermal stabilization\nEnergy gap and quasiparticle tunneling\nUnconventional superconductors\nHigh-frequency electrodynamics of superconductors\nMacroscopic quantum effects\nOverview of applications of superconductivity\nSuperconducting magnets, especially for fusion\nSuperconducting devices in power engineering\nThermo-mechanical properties of relevant construction materials for superconducting applications\nThe tutorial is closely connected to the lecture and deepens important aspects from the field of superconductivity. Using\nexercises, important theories and effects as well as the realization of applications of superconductivity are discussed.",
+    "workload": "A workload of approx. 180h is required for the successful completion of the module. This is composed as follows:\n•\n•\n•\n•\nAttendance time in lectures and exercises: 15*2*2h = 60h\nPreparation and follow-up of lectures: 22*3 h = 66h\nPreparation and follow-up of tutorials: 8*3h = 24h\nPreparation for the exam: 30h",
+    "recommendations": "None",
+    "literature": ""
+  },
+  "M-ETIT-106026": {
+    "id": "M-ETIT-106026",
+    "title": "System Integration and Communication Structures in Industry 4.0 and IoT",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Becker"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "oral examination.\nSuccess control takes place in form of an overall oral examination (approx. 20 minutes). The module grade is the grade of the",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are familiar with the theoretical and practical aspects of system integration of measuring devices (field devices) and\nmeasuring systems in the horizontal and vertical automation and communication structures of Industry 4.0 and IoT.",
+    "content": "•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nComprehensive overview of automation technology since 1970 to 2020 and its future, summarized in a time scale.\nContexts regarding system integration of the automation of measurement devices and systems.\nIndustry 4.0 and IoT and how they fit into automation technology.\nOffline, online and inline automation in their development based on the technical complexity pyramid mentioned above.\nThe time scale of milestones in automation from the beginning of Ethernet and fieldbus system developments, the\ndevelopment of the OSI model and the automation pyramid.\nPresentation and discussion of the 7-layer OSI model and the automation pyramid based on it as the interface basis of\nthe important bus systems in automation with regard to horizontal and vertical communication structures.\nAI and predictive maintenance as pillars of Industry 4.0 and IoT as well as their applications over more than 50 years\ndepending on the available technologies of electronics and software.\nHarmonization efforts and standardization in automation and system technology to contain the rapidly growing fieldbus\nsystems.\nDevelopment of field devices and automation components in the context of the influence of electronics, µ-controller,\nDSP, FPGA, multi-core processor and chip-on-bond developments as well as software developments with examples\nfrom measurement technology.\nThe problem of adapting field devices and components to the harsh operating and environmental conditions in factory\nand process automation, illustrated in a complexity pyramid (EMC, protection class IPxx, explosion protection, CE).\nDue to the complexity of the requirements, quality control in measurement technology is the last step in system\nintegration and communication networking in the automation chain based on analytical measurement technology and\nphysical parameters such as pressure, level, flow and temperature.\nThe influence of µ-controllers, DSPs (Digital Signal Processors), FPGAs, ASICs etc. on the transition from mainframes,\nworkstations to PCs and the integration of ever smaller electronics into field devices up to the current state of the art is\npresented.\nDiscussion and comparison of the distribution of tasks between SCADA/HMI-MES and ERP systems. In particular, the\nhierarchical relationships from the ERP system down to the field devices, the communication levels and their typical\nnetwork topologies with the different bus systems are discussed.\nPresentation of future technologies in various industries and their innovation in measurement technology with modern\ncommunication and automation interfaces. Examples for automotive, solar, semiconductor and environmental\ntechnology\nDistribution of bus systems in the markets explained and what you should know about them at a glance.\nIn this context, I also show the problems that SMEs have faced and continue to face in automation and how many\ncompanies are still trying to catch up in automation technology today. The focus here is also on the adaptation of old\ndevices to modern automation interfaces and the development of new platforms for automation-compatible applications,\nfor some of which solutions are presented.",
+    "workload": "1.\n2.\n3.\nAttendance time in lectures: 15*2 h = 30 h\nPreparation/follow-up of the same: 15*2 h = 30 h\nExam preparation and attendance in the same: 30 h\nTotal: 90 LP = 3 CR",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100451": {
+    "id": "M-ETIT-100451",
+    "title": "System-on-Chip Laboratory",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Becker",
+      "Prof. Dr. Ivan Peric"
+    ],
+    "organisation": "",
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "ICT",
+      "MPQT"
+    ],
+    "isLab": true,
+    "examType": "Assessment will take the form of other assessment methods:\n- Preparation sheets for the introductory lab material (approx. 6 pages each) (7 submissions per group)\n- GitLab project involving the implementation and documentation of project work on a course-relevant topic (1 project per group,\n6 weeks processing time)\n- Presentation on the project work (approx. 15 minutes per group, followed by a 5-minute Q&A session)\n- Post-course quiz on the lab and project content (15 minutes per student)",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students can reproduce basic knowledge of digital and analog circuit design and hardware-related software programming. In\npractice, students are able to apply these methods in the following areas using a current system-on-chip architecture:\n• Design of a system architecture for mixed-signal systems\n• Simulation of the designed digital and analog circuits\n• Debugging the implementations at the simulation and implementation level\n• Verification of the overall system developed through test benches\nIn addition, they can apply the hardware / software code design approach and can evaluate implementation targets based on\nthe given requirements (FPGA and ASIC).",
+    "content": "In the System-on-Chip Laboratory, a fully-fledged mixed-signal hardware architecture for audio playback based on a system-on-\nchip (SoC) is developed.\nThe system design includes the creation of necessary sub-components, their integration into an overall system, and the\nsimulation and verification of the individual components and the overall system. A prototype is implemented and tested on an\nFPGA basis. The integration is then prepared for a possible ASIC production. Analog circuits are also considered and designed\nto build an audio amplifier.",
+    "workload": "1. Presence time in laboratory appointments: 15 * 4 = 60 hours\n2. Preparation / post-processing: 15 * 4 = 60 hours\n3. Demonstration and integration tests: 3 * 3 = 9 hours\n4. Preparation of the final presentation: 15 hours",
+    "recommendations": "•\n•\n•\n•\n•\nKnowledge of Verilog Hardware Description Language, e.g. from Digital Circuit Design\nKnowledge in the design of analog circuits (amplifier circuits, stability considerations), e.g. from the Analog Circuit\nDesign\nKnowledge of VHDL design, e.g. from Hardware Modeling and Simulation\nKnowledge of simulation of digital circuits, e.g. from Hardware Modeling and Simulation\nKnowledge of hardware design processes and algorithms, e.g. from Hardware Synthesis and Optimisation",
+    "literature": ""
+  },
+  "M-ETIT-100537": {
+    "id": "M-ETIT-100537",
+    "title": "Systems and Software Engineering",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Eric Sax"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area",
+      "Fundamentals"
+    ],
+    "applicableSpecializations": [
+      "ARSE",
+      "EPSE"
+    ],
+    "isLab": false,
+    "examType": "Written exam of 90 minutes.\nStudents are given the opportunity to earn a grade bonus through separate task assignments. If the grade of the written exam is\nbetween 4.0 and 1.3, the bonus improves the grade by a maximum of one grade level (0.3 or 0.4). The exact criteria for\nawarding a bonus will be announced at the beginning of the lecture. Bonus points do not expire and remain valid for exams\ntaken at a later date.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "• Students are able to analyse and explain the functional principles and applications of embedded systems.\n• Students are able to evaluate and apply maturity models as well as Software Development Life Cycle models including the\nwaterfall model, V-model, prototyping model, agile models, and DevOps.\n• Students are able to apply various creativity techniques to develop innovative solutions to problems. They will be able to derive\nand analyse requirements.\n• Students are familiar with diagram formats software modelling languages; they can evaluate and create these based on\nproblem descriptions of an application area. They will be able to create and evaluate functional, data-oriented, algorithmic, state-\noriented, and object-oriented views.\n• Students are able to understand and apply various aspects of the realization of embedded systems. They will be able to\nconsider implementation alternatives: hardware, co-design and scheduling aspects.\n• Students are familiar with the various testing phases in a project and can explain them. They can assess the reliability of a\nsystem and understand the concept of functional safety.",
+    "content": "The focus of the course is on processes and methods for the design of systems composed of electrical, electronic and\nelectronically programmable systems that contain software, hardware and mechanical components. The desired competencies\nof the course include the knowledge and goal-oriented use of modeling techniques, design processes, description and\nrepresentation tools as well as specification languages that correspond to the current state of the art.",
+    "workload": "•\n•\n•\n15 weeks of 1.5h attendance in lecture and of 1.5h attendance in each exercise = 45 h\n15 weeks of 2h preparation and follow-up per lecture and at least 3h preparation for each exercise (includes processing\nof exercise sheets and additional learning material, the processing of tasks for the acquisition of bonus points) = 75h\nPreparation for the exam = 60h\nIn total: 180h",
+    "recommendations": "ETIT-106336)\nKnowledge in Digital Technology and Information and Automation Technology (e.g. module M-ETIT-102102 and M-",
+    "literature": ""
+  },
+  "M-ETIT-100462": {
+    "id": "M-ETIT-100462",
+    "title": "Systems Engineering for Automotive Electronics",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Jürgen Bortolazzi"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "The type and method (written or oral examination) of the assessment will be announced at the beginning of the course.\nThe examination will take place without any aids.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are familiar with the systematic development process of electrical and electronic systems and architectures in the field\nof vehicle technology and the automotive industry. They are able to apply the tools supporting systematic development and to\ndescribe electrical and electronic architectures based on models. You will be able to analyze and evaluate systems in the\ndomains of functional and physical modeling.",
+    "content": "The lecture provides knowledge of methods, techniques and procedures used in the development phases of electrical and\nelectronic systems for vehicles.",
+    "workload": "1. attendance time in lecture and exercise: 60 h\n2. preparation/follow-up of the same: 30 h\n3. exam preparation: 30 h",
+    "recommendations": "It is recommended to attend the lecture SE (23611)",
+    "literature": ""
+  },
+  "M-ETIT-105465": {
+    "id": "M-ETIT-105465",
+    "title": "Team Project: Sensors and Electronics",
+    "credits": 3,
+    "term": "WS+SS",
+    "termString": "Each term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "pass/fail",
+    "coordinators": [
+      "Prof. Dr.-Ing. Ahmet Cagri Ulusoy",
+      "Prof. Dr.-Ing. Thomas Zwick"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Final design report (approx. 8-10 pages)",
+    "prerequisites": "An application is required to participate in this module. Information about the application: https://www.ihe.kit.edu/\nVorlesungenWS_4850.php",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\n•\n•\nStudents independently expand their knowledge in a selected field of sensors and electronics beyond lecture contents\nStudents will go through multiple phases from conceptual design to measurement and thereby gain practical experience\nStudents are able to respect practical limits when applying theoretical knowledge\nStudents can consider available measurement equipment in their design process\nStudents are able to work in a team and organize a project independently and under their own responsibility",
+    "content": "Students will develop a system or a component in the field of sensors and electronics. The project’s content has to go beyond\nthe content of a single lecture or require the combination of multiple lectures. It has to be connected to general challenges or\nproblems in research. On top of the theoretical aspects students will have to plan and execute their project’s realization.\nManufacturing tolerances/limits and available measurement equipment have to be respected. This module can be combined\nwith an international student design competition.",
+    "workload": "A total of 90 hours (per Student) is estimated for the completion of this module.\n1.\n2.\n3.\n4.\nPlanning and conceptual design: 10h\nSimulation & Design: 50h\nAssembly, Verification, Measurement: 15h\nFinal report: 15h",
+    "recommendations": "Lectures at the Institute for Radio Frequency Engineering and Electronics (IHE)",
+    "literature": ""
+  },
+  "M-ETIT-101835": {
+    "id": "M-ETIT-101835",
+    "title": "Technical Acoustic",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Nicole Ruiter"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control is carried out as part of an overall oral examination (approx. 20 minutes) of the selected courses, with which the\nminimum requirement for CP is met.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students understand the basics of acoustics and their technical applications and can understand the basic technical\nimplementation.",
+    "content": "The lecture deals with the basics of sound and sound propagation. In addition to sound generation, the measurement and\nanalysis methods for sound, the perception of sound in humans and is also discussed. Selected applications and their technical\nimplementation are presented.",
+    "workload": "The workload includes:\nAttendance time in lectures (2 h 15 appointments each) = 30 h\nSelf-study (3 h 15 appointments each) = 45 h\nPreparation / post-processing = 20 h\nTotal effort approx. 95 hours = 3 LP",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100538": {
+    "id": "M-ETIT-100538",
+    "title": "Technical Optics",
+    "credits": 5,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Cornelius Neumann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Oral / Written examination",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students learn the basics of imaging and non-imaging optics, as well as their applications using examples of optical observation\nand measurement methods, data storage, micro- and nano-optics, as well as the manufacturing methods for optical\ncomponents. The course allows students to gain an overview of the many possible applications of optical technology.\nThey are able to apply what they have learned to the design of various optical systems and develop their own concepts.\nBased on the examples learned, they are aware of the social and societal influence of new optical technologies and are able to\nassess the effects of new developments in research and industrial applications.",
+    "content": "Technical optics deals with the essential physical principles of optics, as well as a variety of technical applications of optical\nsystems. These range from applications in the automobile, medicine, measurement technology, printing, optical data storage, to\nmicro/nano optics and manufacturing processes for plastic and glass optics.\nThe following chapters are covered:\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\nMotivation\nFundamentals\nReflection & Refraction\nAbsorption\nMirrors\nPrisms & lenses\nApplications: Prism pole, Fresnel lens, telescope, camera\nDiffraction & Interference\nApplication: Microscope\nParaxial beam matrices\nApplication: Focusing of beams\nApplication: Distance & angle measurement\nOptics in data storage\nMicro- and nano-optics\nProduction of optics\nThe lecturer reserves the right to deviate from the content given here in the context of the current lecture without special notice.",
+    "workload": "150 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-107243": {
+    "id": "M-INFO-107243",
+    "title": "Telematics",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Martina Zitterbart"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achievements (Teilleistung)",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students\n•\n•\n•\n•\nmaster protocols, architectures, and methods and algorithms that are used on the Internet for routing and for\nestablishing a reliable end-to-end connection, as well as various media allocation procedures in local networks.\nhave an understanding of the systems and the problems that appear in a global, dynamic network as well as the\nmechanisms used to remedy them.\nare familiar with current developments such as SDN and data center networking.\nknow methods to manage and administrate networks.\nStudents master the basic protocol mechanisms for establishing reliable end-to-end communication. Students have detailed\nknowledge of the mechanisms used in TCP for congestion and flow control and can discuss the issue of fairness with multiple\nparallel transport streams. Students can analytically determine the performance of transport protocols and know methods that\nfulfill special requirements of TCP, such as high data rates and short latencies. Students are familiar with current topics such as\nproblems introduced by utilization of middle boxes in the Internet, the use of TCP in data centers and multipath TCP. Students\ncan use transport protocols in practice.\nStudents know the functions of routers in the Internet and can reproduce and apply common routing algorithms. Students can\nreproduce the architecture of a router and know different approaches to buffer placement as well as their advantages and\ndisadvantages.\nStudents understand the distinction of routing protocols into interior and exterior gateway protocols and have detailed\nknowledge of the functionality and properties of common protocols such as RIP, OSPF and BGP. The students are familiar with\ncurrent topics such as SDN.\nStudents know the function of media allocation and can classify and analytically evaluate media allocation processes. Students\nhave in-depth knowledge of Ethernet and are familiar with various Ethernet forms and their differences, especially current\ndevelopments such as real-time Ethernet and data center Ethernet. Students can reproduce and apply the spanning tree\nprotocol.\nStudents can reproduce the technical characteristics of DSL. Students are familiar with the concept of label switching and can\ncompare existing approaches such as MPLS.",
+    "content": "•\n•\n•\n•\n•\n•\n•\n•\nIntroduction\nEnd-to-end data transport\nRouting protocols and architectures\nMedia allocation\nBridges\nData transmission\nFurther selected examples\nNetwork management",
+    "workload": "Lecture with 3 SWS plus follow-up/exam preparation, 6 CP.\n6 CP corresponds to approx. 180 working hours, of which\napprox. 60 hours lecture attendance\napprox. 60 hours preparation/follow-up work\napprox. 60 hours exam preparation",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-100546": {
+    "id": "M-ETIT-100546",
+    "title": "Test of Embedded Systems in Industrial Contexts",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Eric Sax"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "ARSE"
+    ],
+    "isLab": false,
+    "examType": "Success control takes place in form of an overall oral examination (approx. 25 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "After completing the module, students will be able to group and name the test methods taught. Furthermore, students will be\nable to select suitable test methodologies based on the theoretical principles for specific applications and test them in various\nscenarios. To this end, students can use the demonstrated state-of-the-art technologies and have an insight into current tools.\nThe practical content of the lecture can be successfully applied by the students in other contexts, e.g. in standard software\ndevelopment.",
+    "content": "The lecture provides knowledge of methods, technologies and procedures used in the testing of software for embedded\nsystems. In the associated practical exercise, exercises are worked on and current test tools are used.",
+    "workload": "1. attendance time in lectures + exercise: 60h\n2. preparation/post-processing of exercise and lecture = 35h\n3. exam preparation and attendance = 20h",
+    "recommendations": "helpful.\nKnowledge of the basics of applied computer science, for example attending the practical course in information technology, is",
+    "literature": ""
+  },
+  "M-ETIT-105618": {
+    "id": "M-ETIT-105618",
+    "title": "The Energy Transition of the Electrical Transmission Grid",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Thomas Leibfried"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in form of an oral examination of approx. 20 minutes on selected topics from the course.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students know the targets for the implementation of the energy transition and the role of the transmission system operators.\nStudents will understand the legal and economic framework within which the electricity transmission system operators work. The\nrelevance in practice of what students have learned in theory so far should be made clear. The dynamic development that is\ncurrently taking place in the transmission grids should be presented as a promising field of activity for the future. The\nresponsibilities of the transmission system operators and the regulator are known and can be differentiated. The business model\nand the value chain of the grid operators are known and the influences on the business model can be understood. The\norganization and tasks of a transmission system operator are known.",
+    "content": "•\n•\n•\n•\n•\n•\nIntroduction:\nStructure of the electrical energy system\nPolitical and social goals of the energy transition\nDerived goals of the European Union and Germany\nConsequences for the generation portfolio\nGerman and European planning processes and their\nscenarios\nCore processes and organization of a\ntransmission system operator\nEffects of the energy transition on grid operators\nExpansion of renewable generation and feed-in priority\nMerit order principle, generation adequacy\nGrid adequacy, demand-oriented grid\nGrid congestion, peak capping and redispatch\nEffects on grid stability\nCooperation between distribution grid operators and\ntransmission grid operators\nPlanning processes and their topics,\nDifferentiation between target grid planning and system analyses\nInterconnected operation and energy industry\nSystem management and grid control in Germany and in the\nEuropean interconnected grid\nTrading and regulation\nRole and responsibility of transmission system operators\nSystem management, grid control technology, grid control, dispatch\nGrid operation, maintenance, fault clearance, technology\nRegulation and grid management\nGrid expansion and grid development\nTechnology used and innovations\nLine construction\nProtection technology, control technology, communication, IT\nNew equipment, STATCOM, HVDC, UPFC, LQR\nOutlook on development topics, reactive and automated\nOperations management, grid booster\nTrends and future challenges\nGrid adequacy with changing dimensioning\nUse cases\nEnsuring grid stability without large power plants\nEnsuring the power balance with fluctuating generation\nCurative grid operation management and new operating resources\nStorage and changing customer behaviour",
+    "workload": "The course consists of seven block lectures of 3 hours each and an excursion. The dates will be announced on notice boards.\nEach credit point corresponds to 30 hours of work by the student. The workload includes\n1. attendance time in lecture and excursion (30 h = 1 CP)\n2. self-study time for preparation and follow-up of the lecture including exam preparation (60 h = 2 CP)\nThis results in a total of 90 hours = 3 CP.",
+    "recommendations": "Knowledge of the lectures \"Elektrische Energienetze\" and \"Energieübertragung und Netzregelung\" is helpful.",
+    "literature": ""
+  },
+  "M-INFO-105584": {
+    "id": "M-INFO-105584",
+    "title": "Theoretical Foundations of Cryptography",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Jörn Müller-Quade"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See Partial Achievements (Teilleistung).",
+    "prerequisites": "See Partial Achievements (Teilleistung).",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The student\n- can motivate and explain the basic concepts of cryptography, point out their differences and relate them to each other.\n- is able to compare and evaluate security models and goals.\n- knows and understands definitions and constructions, and their relationships and dependencies. For example, properties such\nas \"one-way\", \"collision-resistant\", \"pseudo-random\", \"IND-CPA\", \"IND-CCA\", \"EUF-CMA\", etc., and candidates, constructions,\nand schemes with such properties.\n- understands elementary proof techniques (such as reductions and hybrid arguments) and can apply them\n- can reproduce, check and explain security proofs.\n- can construct and evaluate simple new procedures and find possible attacks.\n- can prove (simple) secure schemes to be secure using the techniques learned.",
+    "content": "The lecture deals with the theoretical foundations of cryptography, with a focus on non-interactive foundations. The lecture\nconsists of three main parts.\n1. Aspects of complexity theory\n2. Secret-key cryptography\n3. Public-Key Cryptography\nThe usual contents include:\n- Asymptotic security, one-way functions, pseudorandomness and indistinguishability\n- Secret-key cryptography (encryption, security notions such as IND-CPA, IND-CCA, authenticity, and authenticated encryption)\n- Public-key encryption (security notions in this situation, in particular CCA security)\n- Signatures (definition and basic constructions)\n- Outlooks on more advanced topics (e.g. as part of the exercises)\nThe lecture is supplemented by an exercise that recapitulates, deepens and applies the material in a new context.\nThe specific content of the lecture and exercise varies depending on the focus chosen. It serves as a basis for further lectures\nand seminars, for example on cryptographic protocols (interactive cryptography) and advanced non-interactive cryptography.",
+    "workload": "Attendance time in the lecture: 48 h\nPreparation and follow-up of the same: 52 h\nExam preparation and attendance in the same: 80 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-MACH-102388": {
+    "id": "M-MACH-102388",
+    "title": "Thermal Solar Energy",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "apl. Prof. Dr. Ron Dagan\nKIT Department of Mechanical Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "A performance assessment is obligatory; oral exam about 30 minutes",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "the student will be able to\nBased on the elaboration of the basic physics knowledge of the solar irradiation, heat radiation, optics and thermal-hydraulics,\n•\n•\n•\n•\n•\n•\nselect solar thermal components such as mirrors, glasses, selective absorbers and insulation materials and their\nmanufacturing processes and to calculate and assess their performance,\nidentify different collector types and to indicate their potential field of application,\ncharacterize the entire solar thermal collector system with respect to its performance and derive from the collector\ncharacteristics its suitability for different types of use,\nembed collectors into a technical overall system for heat (household, process heat, heat storage networks) or electricity\ngeneration (power plant), to calculate the system efficiency and independently develop the basics of its optimization.\nidentify adequate thermal storage types for the temporal separation of generation and consumption, to dimension them\nappropriately and to integrate them into a system concept,\nevaluate solar thermal systems in their entirety (capacity, estimation of system dynamics, response behavior, efficiency)\nand know options for integration into networks (heat, cold, electricity).",
+    "content": "Fundamentals of thermal solar energy from solar irradiation (influence of time and place, modifications in the atmosphere) and\ntheir implementation in a collector to integration into a technical overall system. In detail:\n1. introduction to the energy demand and evaluation of the application potential of solar thermal energy.\n2. primary energy source SUN: Sun, solar constant, solar radiation (scattering, absorption in the atmosphere, direct-diffuse\nradiation, angular influences, radiation balance).\n3. solar collectors: basic design of a collector, basics of determining the efficiency, significance of concentration and its\nlimitations, solar thermal collector types (designs, efficiency, system technology).\n4. passive mechanisms of solar thermal energy: heat conduction in solids and gases, radiation heat transport in transparent and\nopaque bodies Design requirements and physical principles of solar thermal glasses, mirrors and selective absorbers. Goal\noriented selection of materials and manufacturing processes.\n5. momentum and heat transport: basic equations of single- and multi-phase transport, basic ideas of local and system\nengineering calculation methods, stability limits.\nOptional\n6. solar thermal low-temperature systems: collector variants, methods for system simulation, planning and dimensioning of\nsystems, system-related system design and stagnation scenarios and their handling.\n7. solar thermal high-temperature systems: solar thermal power plants (classification of system components, loss mechanisms,\nupwind power plants), coupling of collector with energy generation process.\nAt the end:\n8. Thermal energy storage: Explanation of terms (energy contents, storage forms and materials, potentials ...), storage concepts\n(system structure, design ratio), system integration.\n9. Solar air conditioning: Determination of cooling capacity, indoor climate, solar cooling methods and evaluation of air\nconditioning.",
+    "workload": "regular lecture attendance: 30 h\nself-study: 60 h (incl. supplementary searches)\nexam preparation 30 h",
+    "recommendations": "desirable are reliable knowledge in physics in optics and thermodynamics\nBasics in heat and mass transfer, material science, energy technology and fluid mechanics",
+    "literature": "supply of lecture material in printed and electronic form\nStieglitz & Heinzel; Thermische Solarenergie -Grundlagen-Technologie- Anwendungen. Springer Vieweg Verlag. 711 Seiten.\nISBN 978-3-642-29474-7"
+  },
+  "M-ETIT-100560": {
+    "id": "M-ETIT-100560",
+    "title": "Ultrasound Imaging",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr. Nicole Ruiter"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in form of an overall oral examination (approx. 20 minutes).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will master the methods of ultrasound imaging commonly used in medicine today, understand their functional principles\nand physical principles and be able to comprehend their technical implementation.",
+    "content": "Ultrasound applications in medicine: 3D/4D ultrasound, Doppler, Tissue Harmonic Imaging, Compounding, Elastography,\nUltrafast US-Imaging, Ultrasound Contrast Agents, Ultrasound Tomography, Ultrasound Therapy. In each case with functional\nprinciple, physical principles, technical implementation and medical applications.\n- Areas of application of ultrasound in medicine\n- Fundamentals and basic illustration\n- 2D/3D/4D ultrasound\n- Elastography\n- (Tissue) Doppler\n- Tissue Harmonic Imaging\n- Image errors, limitations as an opportunity,\n- Compounding\n- Ultrasound safety and therapy\n- Ultrafast US imaging, SAFT and tomography\n- Ultrasound contrast agents",
+    "workload": "1. attendance times in lectures: 30 h\n2. preparation/follow-up of the same: 30 h\n3. oral examination and attendance at the same: 30 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-CIWVT-104478": {
+    "id": "M-CIWVT-104478",
+    "title": "Vacuum Technology",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Dr.-Ing. Thomas Giegerich"
+    ],
+    "organisation": "KIT Department of Chemical and Process Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The examination is an oral examination with a duration of 20 about minutes (section 4 subsection 2 number 2 SPO).\nThe grade of the oral examination is the module grade.",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students will be able to explain basic physical relationships in vacuum science. Building on this, they can design a complex\nvacuum system correctly and in accordance with specifications.",
+    "content": "Basics; vacuum pumps; practical vacuum limits; outgassing and its minimization; cleanliness requirements; vacuum\ninstrumentation; total pressure measurement; residual gas analysis; leak detection; rarefied gas flow; design of vacuum\nsystems; technical specifications; quality in vacuum; examples for large vacuum systems; industrial applications in the process\nindustry.",
+    "workload": "•\n•\n•\nAttendance time (Lecture): 60 h\nHomework: 80 h\nExam Preparation: 40 h",
+    "recommendations": "",
+    "literature": "K. Jousten (Ed.) - Wutz Handbuch Vakuumtechnik, 11. Auflage, Springer, 2013."
+  },
+  "M-ETIT-104493": {
+    "id": "M-ETIT-104493",
+    "title": "Verified Numerical Methods",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Each winter term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Sören Hohmann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in form of an oral examination (approx. 20 minutes) on the selected course.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "•\n•\n•\nStudents know the basics of verified numerical methods for the inclusion of solutions of (finite-dimensional) systems of\nequations and differential equations.\nStudents are familiar with all aspects from modeling and the development of verified numerical methods to algorithmic\nimplementation and concrete programming, e.g. in MATLAB/INTLAB.\nStudents are proficient in the application of verified numerical methods to practical tasks.",
+    "content": "•\n•\n•\n•\n•\n•\nInterval arithmetic\nBasic concepts of functional analysis\n- Sobolev spaces\n- Embedding and embedding theorems\n- Fixed point formulation\n- Fixed point theorem\nVerified numerical methods for linear systems of equations\nVerified numerical methods for (finite-dimensional) nonlinear equations\nComputer-aided proof methods for differential equations\nInclusion of eigenvalues",
+    "workload": "The workload includes:\n1.\n2.\n3.\nAttendance time in lecture/exercise (2+1 SWS: 45h1.75 LP)\nPreparation/follow-up of lecture/exercise (60h2 CP)\nPreparation/attendance time for oral examination (7.5h0.25 CP)",
+    "recommendations": "Knowledge of the following modules is recommended:\n•\n•\n•\nMathematik I-III in Bachelor\nM-MATH-100536 - Numerische Methoden\nM-ETIT-104595 - Numerische Methoden für partielle Differentialgleichungen\n•",
+    "literature": ""
+  },
+  "M-ETIT-100497": {
+    "id": "M-ETIT-100497",
+    "title": "Visual Perception in the Automobile",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "German",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Cornelius Neumann"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "Success control takes place in the form of an overall oral examination of approx. 20 minutes.",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students learn about the physiological effects of automotive lighting technology on drivers and other road users. They also gain\nan insight into the planning and design of test subject studies.\nThey are able to assess the physiological influences of different technologies on driving safety and to develop and evaluate\nsimple plans for experimental studies.\nStudents are sensitized to the consequences of faulty developments in the field of automotive lighting and are able to assess\nand shape these in their later professional life.",
+    "content": "•\n•\n•\n•\n•\n•\n•\nRecapitulation: The human eye\nMesopic vision\nPerception of signal functions\nHuman-machine interaction in display technology\nVehicle interior\nPerception and glare from headlights\nAdvertising\nThe lecturer reserves the right to deviate from the content given here in the context of the current lecture without special notice.",
+    "workload": "The workload includes:\n1. attendance time in lectures, exercises: 30 h\n2. preparation/follow-up of the same: 30 h\n3. exam preparation: 30 h",
+    "recommendations": "Previous attendance of the lecture on Lichttechnik.\nResearch Proposal Preparation [M-CIWVT-106680]",
+    "literature": ""
+  },
+  "M-CIWVT-106680": {
+    "id": "M-CIWVT-106680",
+    "title": "Water – Energy – Environment Nexus in a Circular Economy: Research Proposal Preparation",
+    "credits": 5,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [],
+    "organisation": "Prof. Dr. Andrea Iris Schäfer\nKIT Department of Chemical and Process Engineering",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "The Learning control is an examination of another type:\nResearch proposal of 10 pages and an oral presentation of 10 minutes (individual work). The grade will be a composite of the\nproposal (submission in week 13 before class) and oral & poster presentation (all day workshop with researcher participation).",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The goal of this course is to get an overview of current challenges in the circular economy focused on the water – energy –\nenvironment nexus. Based on individual student interest a topic will be identified and a research plan developed encompassing\na thorough background research to establish the state-of-the-art, identification of a specific research problem and research\nquestions suitable to solve this problem. Concepts of novelty and excellence will be explored in an international context.\nFollowing the individual topic choice, the research proposal will be developed individually in a tutor group (divided into water,\nenergy, environment) while lectures on required skills will accompany this process. As an outlook beyond this course, criteria to\nconsider when looking for research careers such as applying for funding/scholarships, considering choices in research\nenvironment and supervision, performance indicators in research and university rankings will be introduced to enable informed\ndecisions. The proposal will be communicated in writing, as a brief presentation and as a poster, which equips students\nbrilliantly not only for a masters thesis but also a future research publication or a PhD.",
+    "content": "In a time of limiting resources, climate change and ever increasing demand for resources the concept of a circular economy is\ninevitable to create a more sustainable utilization of our key resources, water, energy and ‘environment’. Concepts of zero liquid\ndischarge, water reuse, carbon net zero, resource recovery and environmental pollution reduction are all part of this concept\nwhere where waste is returned to use. The water – energy – environment nexus is the particular focus of ths course. Global\nwater issues, water and wastewater treatment, desalination, water reuse, micropollutants, decentralized systems, water &\nsanitation in international development, renewable energies, environmental pollution, climate change, resource recovery – and\nmany more topics will inspire future research.",
+    "workload": "•\n•\n•\nContact time: lectures and tutorials 60 hrs (4 SWS)\nGroup and self study: 50 hrs\nPreparation of assessments and participation at the group presentations (one full day): 30 hrs",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-107113": {
+    "id": "M-INFO-107113",
+    "title": "Wearable Robotic Technologies",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr.-Ing. Tamim Asfour",
+      "Prof. Dr.-Ing. Michael Beigl"
+    ],
+    "organisation": "KIT Department of Informatics",
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "examType": "See partial achievements (Teilleistung)",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students can explain the fundamentals, motivation, and applications of wearable robotic technologies including exoskeletons,\northoses, and prostheses. They have comprehensive knowledge of human anatomy, biomechanics, and the neuromuscular\nsystem relevant to wearable robot design.\nStudents understand the core components and challenges associated with the design of wearable robotic technologies,\nincluding mechanisms, actuation technologies, sensing approaches, and wearable computing concepts. They can analyze\ndesign requirements and challenges including kinematic compatibility and human-robot interfaces for wearable robots.\nStudents can explain control strategies for prosthetic and exoskeleton systems, understand both physical and cognitive aspects\nof human-robot interaction, and comprehend concepts such as body schema and symbiotic human-machine interaction in\nwearable systems.",
+    "content": "The lecture provides a comprehensive introduction to wearable robotic technologies. It covers human anatomy and\nbiomechanics as foundations for wearable robot design. Joint biomechanics, locomotion and gait analysis, the neuromuscular\nsystem, and models of the human body are discussed to understand how wearable robots can be designed and controlled.\nDesign principles and mechanisms of wearable robots are addressed. Actuation technologies are covered in depth:\nrequirements analysis based on human motion and user needs, compliant actuation approaches (serial elastic, parallel elastic,\nvariable stiffness actuation), and strategies for increasing efficiency such as energy harvesting, multi-articulation, and\nunderactuation.\nThe lecture covers wearable computing principles such as body signals and phenomena, design principles for body-worn\nsystems, attachment considerations based on body maps for heat tolerance, weight distribution, and flexibility, and fabric design\nwith textile-embedded electronics.\nExoskeleton systems are presented, covering application areas, design challenges such as redundancy, kinematic compatibility,\nand misalignments, various types of exoskeletons, and the general design process. Prosthetic systems cover types of hand and\nlower limb prostheses, hand synergies for control, and mechanical interfaces through socket design.\nHuman-robot interaction addresses both physical and cognitive interfaces. Control strategies are presented for prosthetic\nsystems (semi-autonomous grasping) and exoskeleton systems (hierarchical control, assistance evaluation). The concept of\nbody schema from both neuroscience and robotics perspectives is discussed, emphasizing symbiotic human-machine\ninteraction in tightly coupled wearable systems. State-of-the-art examples across various application domains illustrate current\nresearch and developments.",
+    "workload": "Lecture with 2 SWS, 4 ECTS.\n4 ECTS corresponds to ca. 120 hours, thereof\nca. 15 * 2h = 30h attendance in the lecture\nca. 15 * 3h = 45h preparation and follow-up of the lecture\nca. 45h preparation for the exam and exam itself",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-107147": {
+    "id": "M-ETIT-107147",
+    "title": "Workshop Finite Element Method in Electromagnetics",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Each summer term",
+    "duration": "1 term",
+    "language": "English",
+    "grading": "graded",
+    "coordinators": [
+      "Prof. Dr. Martin Doppelbauer"
+    ],
+    "organisation": "KIT Department of Electrical Engineering and Information Technology",
+    "categories": [
+      "Electives",
+      "Focus Area"
+    ],
+    "applicableSpecializations": [
+      "EPSE"
+    ],
+    "isLab": true,
+    "examType": "Success control takes place in the form of different types of examination consisting of a written assignment in the form of an\nwritten report (20-50 pages).",
+    "prerequisites": "none",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "In this course, students acquire basic knowledge about the application of the finite element method in electromagnetic analysis:\nmathematical principles, levels of abstraction, model creation and result analysis.\nAfter successfull attendance, students can set up and run simulations using ANSYS Maxwell and interpret the software interface\nand workflow. They can create a FEM models of rotating electric machines and validate their correctness. They can implement\noptimization strategies for machine design, considering various parameters such as efficiency, torque, and losses. Finally,\nstudents can analyze simulation and optimization results, identify inconsistencies, and critically evaluate the outcomes.",
+    "content": "•\n•\n•\n•\n•\nIntroduction to the mathematical basics of the finite element method (FEM) of electromagnetics\nPresentation of the industry-standard software ANSYS Maxwell\nConstruction of a model of a permanently excited synchronous machine\nPresentation and implementation of optimization strategies for the design of machines with regard to various parameters\nIntroduction to results analysis\nThe module teaches students\n•\n•\n•\n•\nHow to use industry-standard software from the field of electromagnetic FEM\nSolve basic practical tasks in the field of electromagnetic FEM\nApproaches to optimizing various parameters using the example of electrical machines\nQuestion and evaluate the results of a simulation or optimization",
+    "workload": "1.\n2.\n3.\nAttendance time: 20h\nPreparation and follow-up time: 10h\nProject work: approx. 60h\nTotal approx. 90 h, corresponds to 3 CP",
+    "recommendations": "Knowledge from the modules \"Elektrische Maschinen und Stromrichter\" and \"Entwurf elektrischer Maschinen\" is desired.",
+    "literature": ""
+  }
+};
+
+rootScope.ALL_SPECIALIZATIONS_DATA = [
+  {
+    "id": "ARSE",
+    "name": "Automation, Robotics, and Systems Engineering",
+    "germanName": "Automatisierungs-, Roboter- und Systemtechnik",
+    "fundamentalsNeeded": 24,
+    "fundamentalsList": [
+      "M-ETIT-106953",
+      "M-ETIT-106974",
+      "M-ETIT-107497",
+      "M-MACH-107558",
+      "M-ETIT-106899",
+      "M-ETIT-100537"
+    ],
+    "focusModules": [
+      "M-ETIT-100539",
+      "M-ETIT-106953",
+      "M-ETIT-106040",
+      "M-ETIT-100361",
+      "M-ETIT-100449",
+      "M-ETIT-106963",
+      "M-ETIT-107444",
+      "M-ETIT-103264",
+      "M-ETIT-100367",
+      "M-ETIT-106789",
+      "M-ETIT-100434",
+      "M-ETIT-107515",
+      "M-ETIT-105881",
+      "M-ETIT-107644",
+      "M-ETIT-106974",
+      "M-ETIT-107497",
+      "M-ETIT-106673",
+      "M-ETIT-106780",
+      "M-ETIT-105594",
+      "M-ETIT-104475",
+      "M-ETIT-105889",
+      "M-ETIT-100420",
+      "M-MACH-107558",
+      "M-ETIT-100455",
+      "M-ETIT-106970",
+      "M-ETIT-100378",
+      "M-ETIT-106899",
+      "M-ETIT-106675",
+      "M-ETIT-100450",
+      "M-ETIT-103042",
+      "M-ETIT-100537",
+      "M-ETIT-100462",
+      "M-ETIT-100546"
+    ],
+    "labCourses": [
+      "M-ETIT-102264",
+      "M-ETIT-100460",
+      "M-ETIT-107294",
+      "M-ETIT-106673",
+      "M-ETIT-107524",
+      "M-MACH-105725",
+      "M-ETIT-106633",
+      "M-ETIT-105073",
+      "M-ETIT-100451"
+    ],
+    "focusProfiles": [
+      "Automation, Control & Robotics",
+      "Measurement, Sensing & Signal Processing",
+      "Systems Engineering"
+    ]
+  },
+  {
+    "id": "EPSE",
+    "name": "Electrical Power Systems and Electromobility",
+    "germanName": "Elektrische Energiesysteme und Elektromobilität",
+    "fundamentalsNeeded": 24,
+    "fundamentalsList": [
+      "M-ETIT-107005",
+      "M-ETIT-105394",
+      "M-MATH-106972",
+      "M-ETIT-107497",
+      "M-ETIT-104567",
+      "M-ETIT-105611"
+    ],
+    "focusModules": [
+      "M-MACH-100501",
+      "M-ETIT-100400",
+      "M-ETIT-107005",
+      "M-ETIT-107551",
+      "M-ETIT-100539",
+      "M-ETIT-106689",
+      "M-ETIT-105915",
+      "M-ETIT-100515",
+      "M-ETIT-106690",
+      "M-ETIT-106971",
+      "M-ETIT-105394",
+      "M-ETIT-105883",
+      "M-ETIT-107648",
+      "M-ETIT-100410",
+      "M-ETIT-101969",
+      "M-ETIT-107444",
+      "M-ETIT-105060",
+      "M-ETIT-100417",
+      "M-ETIT-100399",
+      "M-WIWI-100498",
+      "M-WIWI-105403",
+      "M-ETIT-105604",
+      "M-MATH-106972",
+      "M-ETIT-107497",
+      "M-ETIT-100513",
+      "M-ETIT-107533",
+      "M-ETIT-104567",
+      "M-ETIT-106506",
+      "M-ETIT-100413",
+      "M-ETIT-100394",
+      "M-ETIT-105595",
+      "M-ETIT-105606",
+      "M-ETIT-106955",
+      "M-ETIT-105916",
+      "M-WIWI-100500",
+      "M-ETIT-105629",
+      "M-ETIT-107588",
+      "M-ETIT-105615",
+      "M-ETIT-100524",
+      "M-MACH-101924",
+      "M-ETIT-106684",
+      "M-ETIT-105521",
+      "M-ETIT-106683",
+      "M-ETIT-105611",
+      "M-ETIT-100537",
+      "M-ETIT-107147"
+    ],
+    "labCourses": [
+      "M-ETIT-100381",
+      "M-ETIT-107138",
+      "M-ETIT-107159",
+      "M-ETIT-100419",
+      "M-ETIT-100468",
+      "M-ETIT-105614",
+      "M-ETIT-105605",
+      "M-ETIT-102350",
+      "M-ETIT-106263",
+      "M-INFO-105955",
+      "M-ETIT-107135"
+    ],
+    "focusProfiles": [
+      "Electromobility",
+      "Electric Drives",
+      "Power Electronic Systems",
+      "Renewables",
+      "Electrochemical Systems",
+      "Power Systems Engineering & Economics",
+      "Superconductor Engineering"
+    ]
+  },
+  {
+    "id": "ICT",
+    "name": "Information and Communication Technology",
+    "germanName": "Informations- und Kommunikationstechnik",
+    "fundamentalsNeeded": 24,
+    "fundamentalsList": [
+      "M-ETIT-106815",
+      "M-ETIT-107444",
+      "M-ETIT-100427",
+      "M-MATH-106972",
+      "M-ETIT-103270",
+      "M-ETIT-106899"
+    ],
+    "focusModules": [
+      "M-ETIT-106815",
+      "M-ETIT-106956",
+      "M-ETIT-107333",
+      "M-ETIT-105616",
+      "M-ETIT-105617",
+      "M-ETIT-107440",
+      "M-ETIT-100539",
+      "M-ETIT-106953",
+      "M-ETIT-103450",
+      "M-ETIT-106040",
+      "M-ETIT-100361",
+      "M-ETIT-100566",
+      "M-ETIT-100449",
+      "M-ETIT-106963",
+      "M-ETIT-100453",
+      "M-ETIT-107444",
+      "M-ETIT-103264",
+      "M-ETIT-100457",
+      "M-ETIT-106789",
+      "M-ETIT-104988",
+      "M-ETIT-100454",
+      "M-ETIT-107007",
+      "M-ETIT-105971",
+      "M-ETIT-106244",
+      "M-ETIT-100427",
+      "M-ETIT-100430",
+      "M-MATH-106972",
+      "M-ETIT-106974",
+      "M-ETIT-103270",
+      "M-ETIT-100436",
+      "M-ETIT-100509",
+      "M-ETIT-105914",
+      "M-ETIT-106673",
+      "M-ETIT-105889",
+      "M-ETIT-100420",
+      "M-ETIT-105123",
+      "M-ETIT-103241",
+      "M-ETIT-106955",
+      "M-ETIT-105272",
+      "M-ETIT-100455",
+      "M-ETIT-106970",
+      "M-ETIT-100441",
+      "M-ETIT-100443",
+      "M-ETIT-106899",
+      "M-ETIT-106675",
+      "M-ETIT-103042"
+    ],
+    "labCourses": [
+      "M-ETIT-107136",
+      "M-ETIT-102266",
+      "M-ETIT-107294",
+      "M-ETIT-106973",
+      "M-ETIT-105464",
+      "M-ETIT-104485",
+      "M-ETIT-106673",
+      "M-ETIT-106633",
+      "M-ETIT-100451"
+    ],
+    "focusProfiles": [
+      "Communication Systems",
+      "Communication Algorithms and Theory",
+      "Signal and Information Processing",
+      "Microwave Systems",
+      "Photonic Systems",
+      "Embedded System Integration"
+    ]
+  },
+  {
+    "id": "MPQT",
+    "name": "Microelectronics, Photonics, and Quantum Technologies",
+    "germanName": "Mikroelektronik, Photonik und Quantentechnologien",
+    "fundamentalsNeeded": 24,
+    "fundamentalsList": [
+      "M-ETIT-106963",
+      "M-MATH-106972",
+      "M-ETIT-106954",
+      "M-ETIT-106955",
+      "M-ETIT-107344"
+    ],
+    "focusModules": [
+      "M-ETIT-107364",
+      "M-ETIT-106956",
+      "M-ETIT-107365",
+      "M-ETIT-100449",
+      "M-ETIT-106963",
+      "M-ETIT-107363",
+      "M-ETIT-107007",
+      "M-ETIT-101968",
+      "M-ETIT-105893",
+      "M-ETIT-100427",
+      "M-ETIT-106921",
+      "M-ETIT-105604",
+      "M-ETIT-100430",
+      "M-MATH-106972",
+      "M-ETIT-100436",
+      "M-ETIT-100484",
+      "M-ETIT-105608",
+      "M-ETIT-107156",
+      "M-ETIT-105606",
+      "M-ETIT-106954",
+      "M-ETIT-105889",
+      "M-ETIT-105123",
+      "M-ETIT-106955",
+      "M-ETIT-105611"
+    ],
+    "labCourses": [
+      "M-ETIT-100468",
+      "M-ETIT-105605",
+      "M-ETIT-100470",
+      "M-ETIT-100478",
+      "M-ETIT-106973",
+      "M-ETIT-105464",
+      "M-ETIT-106263",
+      "M-ETIT-104485",
+      "M-ETIT-100451"
+    ],
+    "focusProfiles": [
+      "Microelectronics",
+      "Radio Frequency Electronics",
+      "Quantum Technologies",
+      "Optics and Photonics"
+    ]
+  }
+];
+
+rootScope.ALL_RULES_DATA = {
+  "degree": "M.Sc. Electrical Engineering and Information Technology",
+  "spo": 2025,
+  "totalCreditsTarget": 120,
+  "specializationCreditsTarget": 60,
+  "fundamentalsCredits": 24,
+  "fundamentalsCount": 4,
+  "specializationLabCount": 1,
+  "focusAreaMinCredits": 24,
+  "electivesCreditsTarget": 24,
+  "electivesMaxLabs": 1,
+  "interdisciplinaryCreditsTarget": 6,
+  "thesisCredits": 30,
+  "thesisPrerequisiteCredits": 75,
+  "knownExclusions": [
+    {
+      "pair": [
+        "M-ETIT-100524",
+        "M-ETIT-100513"
+      ],
+      "reason": "Solar Energy and Photovoltaics are mutually exclusive."
+    },
+    {
+      "pair": [
+        "M-ETIT-102264",
+        "M-ETIT-102266"
+      ],
+      "reason": "Digital Hardware Design Lab (German) and (English) are mutually exclusive."
+    },
+    {
+      "pair": [
+        "M-ETIT-107444",
+        "M-ETIT-100453"
+      ],
+      "reason": "Hardware/Software Co-Design (6 CP) replaces (4 CP)."
+    },
+    {
+      "pair": [
+        "M-MACH-100501",
+        "M-MACH-102686"
+      ],
+      "reason": "Automotive Engineering I modules are mutually exclusive."
+    },
+    {
+      "pair": [
+        "M-MACH-102388",
+        "M-MACH-101924"
+      ],
+      "reason": "Thermal Solar Energy modules are mutually exclusive."
+    },
+    {
+      "pair": [
+        "M-ETIT-100552",
+        "M-ETIT-103252"
+      ],
+      "reason": "Optical Systems in Medicine modules are mutually exclusive."
+    }
+  ]
+};
