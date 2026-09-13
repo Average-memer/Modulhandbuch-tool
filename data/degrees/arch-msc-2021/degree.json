@@ -1,0 +1,73 @@
+{
+  "id": "arch-msc-2021",
+  "title": "Architektur Master 2021 (M.Sc.)",
+  "spo": 2021,
+  "term": "Sommersemester 2025",
+  "faculty": "Kit-Fakultät Für Architektur",
+  "totalCredits": 120,
+  "semestersCount": 4,
+  "thesisCredits": 30,
+  "thesisPrerequisiteCredits": 75,
+  "specializations": [],
+  "categories": [
+    {
+      "id": "core",
+      "name": "Core Subjects",
+      "targetCredits": 54,
+      "color": "var(--cat-fundamentals)"
+    },
+    {
+      "id": "electives",
+      "name": "Electives",
+      "targetCredits": 30,
+      "color": "var(--cat-electives)"
+    },
+    {
+      "id": "uq",
+      "name": "Interdisciplinary (ÜQ)",
+      "targetCredits": 6,
+      "color": "var(--cat-uq)"
+    },
+    {
+      "id": "thesis",
+      "name": "Master's Thesis",
+      "targetCredits": 30,
+      "color": "var(--cat-thesis)"
+    }
+  ],
+  "moduleCount": 73,
+  "rules": {
+    "degree": "Architektur Master 2021 (M.Sc.)",
+    "spo": 2021,
+    "totalCreditsTarget": 120,
+    "thesisCredits": 30,
+    "thesisPrerequisiteCredits": 75,
+    "semestersTarget": 4,
+    "categories": [
+      {
+        "id": "core",
+        "name": "Core Subjects",
+        "targetCredits": 54,
+        "color": "var(--cat-fundamentals)"
+      },
+      {
+        "id": "electives",
+        "name": "Electives",
+        "targetCredits": 30,
+        "color": "var(--cat-electives)"
+      },
+      {
+        "id": "uq",
+        "name": "Interdisciplinary (ÜQ)",
+        "targetCredits": 6,
+        "color": "var(--cat-uq)"
+      },
+      {
+        "id": "thesis",
+        "name": "Master's Thesis",
+        "targetCredits": 30,
+        "color": "var(--cat-thesis)"
+      }
+    ]
+  }
+}

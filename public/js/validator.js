@@ -1,69 +1,82 @@
-// validator.js - Degree Rules & Conflict Inference Engine for KIT M.Sc. ETIT SPO 2025
+// validator.js - Universal Degree Rules & Conflict Inference Engine for KIT Master's Degrees
+// Supports dynamic semesters (4, 5, 6+), arbitrary categories, mutual exclusions, and §14(1) thesis gate
 
 class DegreeValidator {
-  constructor(modulesData, specializationsData, rulesData) {
-    this.modules = modulesData; // Map or Object of id -> module
-    this.specializations = specializationsData;
-    this.rules = rulesData || {};
+  constructor(modulesMap, degreeData) {
+    this.modulesMap = modulesMap || new Map();
+    this.degree = degreeData || {};
   }
 
   getModule(id) {
-    if (this.modules instanceof Map) return this.modules.get(id);
-    return this.modules[id];
-  }
-
-  getSpecialization(specId) {
-    if (!this.specializations) return null;
-    return this.specializations.find(s => s.id === specId) || null;
+    if (this.modulesMap instanceof Map) return this.modulesMap.get(id);
+    return this.modulesMap[id] || null;
   }
 
   /**
-   * Validates the complete study plan.
-   * @param {Object} plan - { specialization: 'ARSE', startTerm: 'WS', semesters: { 1: [ {id, category} ], ... } }
+   * Validates the complete study plan across N semesters.
+   * @param {Object} plan - { degree, specialization, startTerm, semestersCount, semesters: { 1: [ {id, category} ], ... } }
    * @returns {Object} validation result
    */
-  validate(plan) {
-    const spec = this.getSpecialization(plan.specialization);
+  validate(plan, overrideSpec = null) {
+    const activeSpec = overrideSpec || plan.specialization || null;
+    const semCount = plan.semestersCount || 4;
     const startTerm = plan.startTerm || 'WS';
     const errors = [];
     const warnings = [];
     const passed = [];
 
-    // Flatten all scheduled modules with semester information
+    // Calculate term (WS / SS) for each semester 1..N
+    const semesterTerms = {};
+    for (let sem = 1; sem <= semCount; sem++) {
+      if (startTerm === 'WS') {
+        semesterTerms[sem] = (sem % 2 === 1) ? 'WS' : 'SS';
+      } else {
+        semesterTerms[sem] = (sem % 2 === 1) ? 'SS' : 'WS';
+      }
+    }
+
     const scheduled = [];
     const moduleCounts = {};
-    const semesterCP = { 1: 0, 2: 0, 3: 0, 4: 0 };
-    const semesterTermType = {};
+    const semesterCP = {};
+    for (let sem = 1; sem <= semCount; sem++) {
+      semesterCP[sem] = 0;
+    }
 
-    for (let sem = 1; sem <= 4; sem++) {
-      // Determine term for semester (WS or SS)
-      if (startTerm === 'WS') {
-        semesterTermType[sem] = (sem % 2 === 1) ? 'WS' : 'SS';
-      } else {
-        semesterTermType[sem] = (sem % 2 === 1) ? 'SS' : 'WS';
-      }
+    let thesisSemester = null;
 
-      const items = plan.semesters[sem] || [];
+    for (let sem = 1; sem <= semCount; sem++) {
+      const items = plan.semesters?.[sem] || [];
       for (const item of items) {
-        const mod = this.getModule(item.id);
+        const modId = typeof item === 'string' ? item : item.id;
+        const mod = this.getModule(modId);
         if (!mod) continue;
+
+        const isThesis = mod.isThesis || mod.credits >= 24 && (mod.title.toLowerCase().includes('thesis') || mod.title.toLowerCase().includes('masterarbeit'));
+        if (isThesis) {
+          thesisSemester = sem;
+        }
 
         scheduled.push({
           ...mod,
           semester: sem,
-          scheduledCategory: item.category || this.inferCategory(mod, spec)
+          isThesis: isThesis,
+          isPinned: !!item.isPinned,
+          scheduledCategory: item.category || this.inferCategory(mod, activeSpec)
         });
 
         moduleCounts[mod.id] = (moduleCounts[mod.id] || 0) + 1;
-        semesterCP[sem] += mod.credits;
+        semesterCP[sem] += mod.credits || 0;
       }
     }
 
     const totalCredits = Object.values(semesterCP).reduce((a, b) => a + b, 0);
+    const targetCredits = this.degree.totalCredits || 120;
 
     // 1. DUPLICATE CHECK
+    let hasDuplicate = false;
     for (const [modId, count] of Object.entries(moduleCounts)) {
       if (count > 1) {
+        hasDuplicate = true;
         const mod = this.getModule(modId);
         errors.push({
           type: 'duplicate',
@@ -72,318 +85,243 @@ class DegreeValidator {
         });
       }
     }
-
-    // 2. MUTUAL EXCLUSIONS & CONFLICTS
-    const knownExclusions = [
-      {
-        pair: ["M-ETIT-100524", "M-ETIT-100513"],
-        desc: "Solar Energy [M-ETIT-100524] and Photovoltaics [M-ETIT-100513] are mutually exclusive."
-      },
-      {
-        pair: ["M-ETIT-102264", "M-ETIT-102266"],
-        desc: "Digital Hardware Design Lab (German) and (English) are mutually exclusive."
-      },
-      {
-        pair: ["M-ETIT-107444", "M-ETIT-100453"],
-        desc: "Hardware/Software Co-Design (6 CP) replaces (4 CP); both cannot be taken."
-      },
-      {
-        pair: ["M-MACH-100501", "M-MACH-102686"],
-        desc: "Automotive Engineering I modules are mutually exclusive."
-      },
-      {
-        pair: ["M-MACH-102388", "M-MACH-101924"],
-        desc: "Thermal Solar Energy modules are mutually exclusive."
-      },
-      {
-        pair: ["M-ETIT-100552", "M-ETIT-103252"],
-        desc: "Optical Systems in Medicine modules are mutually exclusive."
-      }
-    ];
-
-    for (const excl of knownExclusions) {
-      const [idA, idB] = excl.pair;
-      if (moduleCounts[idA] && moduleCounts[idB]) {
-        errors.push({
-          type: 'mutual_exclusion',
-          modules: [idA, idB],
-          message: `Conflict: ${excl.desc}`
-        });
-      }
+    if (!hasDuplicate && scheduled.length > 0) {
+      passed.push('No duplicate courses enrolled across all semesters.');
     }
 
-    // Dynamic exclusions from module metadata
+    // 2. MUTUAL EXCLUSIONS & PREREQUISITE CONFLICTS
+    let hasExclusionConflict = false;
     for (const item of scheduled) {
       if (item.exclusions && Array.isArray(item.exclusions)) {
         for (const exclId of item.exclusions) {
           if (moduleCounts[exclId]) {
+            hasExclusionConflict = true;
             const exclMod = this.getModule(exclId);
             errors.push({
               type: 'mutual_exclusion',
               modules: [item.id, exclId],
-              message: `Conflict: "${item.title}" cannot be taken together with "${exclMod?.title || exclId}".`
+              message: `Mutual Exclusion: "${item.title}" [${item.id}] and "${exclMod?.title || exclId}" are mutually exclusive.`
             });
           }
         }
       }
     }
+    if (!hasExclusionConflict && scheduled.length > 0) {
+      passed.push('All course exclusion rules and antirequisite constraints satisfied.');
+    }
 
-    // 3. TERM AVAILABILITY CHECK
+    // 3. TERM AVAILABILITY (WS vs SS)
+    let termMismatches = 0;
     for (const item of scheduled) {
-      const semTerm = semesterTermType[item.semester];
-      const modTerm = item.term; // "WS", "SS", "WS+SS", "Each term"
+      const sem = item.semester;
+      const semTerm = semesterTerms[sem];
+      const modTerm = item.term;
 
       if (modTerm === 'WS' && semTerm !== 'WS') {
+        termMismatches++;
         warnings.push({
           type: 'term_mismatch',
           moduleId: item.id,
-          semester: item.semester,
-          message: `"${item.title}" is only offered in Winter semester, but placed in Semester ${item.semester} (${semTerm}).`
+          semester: sem,
+          message: `"${item.title}" is usually offered only in Winter Semester (WS), but scheduled in Semester ${sem} (${semTerm}).`
         });
       } else if (modTerm === 'SS' && semTerm !== 'SS') {
+        termMismatches++;
         warnings.push({
           type: 'term_mismatch',
           moduleId: item.id,
-          semester: item.semester,
-          message: `"${item.title}" is only offered in Summer semester, but placed in Semester ${item.semester} (${semTerm}).`
+          semester: sem,
+          message: `"${item.title}" is usually offered only in Summer Semester (SS), but scheduled in Semester ${sem} (${semTerm}).`
         });
       }
     }
+    if (termMismatches === 0 && scheduled.length > 0) {
+      passed.push('All scheduled modules match their offered term frequency (WS / SS).');
+    }
 
-    // 4. CATEGORY CREDIT TALLYING & RULES
-    let fundamentalsCP = 0;
-    let focusAreaCP = 0;
-    let specLabCount = 0;
-    let specLabCP = 0;
-    let electiveCP = 0;
-    let electiveLabCount = 0;
-    let uqCP = 0;
-    let thesisCP = 0;
-    let thesisSem = null;
+    // 4. CATEGORY CREDIT AUDITING
+    const categoriesResult = {};
+    const degreeCats = this.degree.categories || [
+      { id: 'fundamentals', name: 'Fundamentals', targetCredits: 24 },
+      { id: 'focus', name: 'Focus Area', targetCredits: 24 },
+      { id: 'lab', name: 'Lab Course', targetCredits: 6 },
+      { id: 'electives', name: 'Electives', targetCredits: 24 },
+      { id: 'uq', name: 'Interdisciplinary (ÜQ)', targetCredits: 6 },
+      { id: 'thesis', name: 'Master\'s Thesis', targetCredits: 30 }
+    ];
 
-    const fundamentalsSelected = [];
-    const focusAreaSelected = [];
-    const specLabSelected = [];
-    const electivesSelected = [];
-    const uqSelected = [];
+    degreeCats.forEach(cat => {
+      categoriesResult[cat.id] = {
+        name: cat.name,
+        target: cat.targetCredits,
+        current: 0,
+        ok: false
+      };
+    });
+
+    const specObj = this.degree?.specializations?.find(s => s.id === activeSpec);
 
     for (const item of scheduled) {
-      const cat = item.scheduledCategory;
-      if (cat === 'Fundamentals') {
-        fundamentalsCP += item.credits;
-        fundamentalsSelected.push(item);
-      } else if (cat === 'Lab Course' && !item.isElectiveLab) {
-        specLabCount++;
-        specLabCP += item.credits;
-        specLabSelected.push(item);
-      } else if (cat === 'Focus Area') {
-        focusAreaCP += item.credits;
-        focusAreaSelected.push(item);
-      } else if (cat === 'Electives') {
-        electiveCP += item.credits;
-        electivesSelected.push(item);
-        if (item.isLab) {
-          electiveLabCount++;
+      let catId = this.normalizeCategoryId(item.scheduledCategory);
+      
+      // If degree has specializations, enforce active specialization track boundaries
+      if (specObj) {
+        if (catId === 'fundamentals' && !specObj.fundamentals?.includes(item.id)) {
+          catId = specObj.focus?.includes(item.id) ? 'focus' : 'electives';
+        } else if (catId === 'focus' && !specObj.focus?.includes(item.id)) {
+          catId = specObj.fundamentals?.includes(item.id) ? 'fundamentals' : 'electives';
+        } else if (catId === 'lab' && !specObj.labs?.includes(item.id) && !item.isLab) {
+          catId = 'electives';
+        } else if (catId === 'specialization' && !specObj.modules?.includes(item.id)) {
+          catId = 'electives';
         }
-      } else if (cat === 'Interdisciplinary Qualifications' || cat === 'UQ') {
-        uqCP += item.credits;
-        uqSelected.push(item);
-      } else if (cat === "Master's Thesis" || item.id === 'M-ETIT-107191') {
-        thesisCP += item.credits;
-        thesisSem = item.semester;
-      }
-    }
-
-    // Field of Specialization rules check
-    if (!spec) {
-      errors.push({
-        type: 'missing_spec',
-        message: 'No Field of Specialization selected.'
-      });
-    } else {
-      // Check Fundamentals
-      // Each specialization requires 24 CP (4 modules of 6 CP from the approved list)
-      const validFundIds = new Set(spec.fundamentalsList || []);
-      const invalidFunds = fundamentalsSelected.filter(m => !validFundIds.has(m.id));
-      if (invalidFunds.length > 0) {
-        errors.push({
-          type: 'invalid_fundamentals',
-          message: `Some selected Fundamentals are not approved for ${spec.name}: ${invalidFunds.map(m => m.title).join(', ')}.`
-        });
-      }
-
-      if (fundamentalsCP < 24) {
-        errors.push({
-          type: 'fundamentals_insufficient',
-          message: `Fundamentals requirement not met: ${fundamentalsCP}/24 CP selected. Choose 4 modules (6 CP each) from the specialization fundamentals.`
-        });
-      } else if (fundamentalsCP > 24) {
-        warnings.push({
-          type: 'fundamentals_excess',
-          message: `More than 24 CP (${fundamentalsCP} CP) assigned to Fundamentals. Standard is exactly 4 modules (24 CP). Excess modules can be credited under Focus Area or Electives.`
-        });
-      } else {
-        passed.push(`Fundamentals satisfied: 24/24 CP (4 modules).`);
-      }
-
-      // Check Specialization Lab (exactly 1)
-      if (specLabCount === 0) {
-        errors.push({
-          type: 'speclab_missing',
-          message: `Field of Specialization requires exactly 1 Lab Course (currently 0 selected).`
-        });
-      } else if (specLabCount > 1) {
-        errors.push({
-          type: 'speclab_excess',
-          message: `Field of Specialization allows exactly 1 Lab Course (currently ${specLabCount} selected). Move additional labs to Electives (maximum 1 allowed in Electives).`
-        });
-      } else {
-        passed.push(`Specialization Lab satisfied: 1 Lab course (${specLabCP} CP).`);
-      }
-
-      // Check Elective Lab (at most 1)
-      if (electiveLabCount > 1) {
-        errors.push({
-          type: 'electivelab_excess',
-          message: `At most 1 additional Lab/Practical course is allowed in Electives (currently ${electiveLabCount} selected).`
-        });
-      } else if (electiveLabCount === 1) {
-        passed.push(`Elective Lab: 1 allowed practical course included.`);
-      }
-
-      // Check Focus Area credits:
-      // Fundamentals (24) + Lab (typically 6) + Focus Area = 60 CP total for Specialization
-      const specTotalCP = fundamentalsCP + focusAreaCP + specLabCP;
-      const targetFocusCP = 60 - 24 - specLabCP; // e.g. 60 - 24 - 6 = 30 CP
-
-      if (focusAreaCP < 24) {
-        errors.push({
-          type: 'focus_insufficient',
-          message: `Focus Area requires at least 24 CP (currently ${focusAreaCP} CP selected).`
-        });
-      } else if (specTotalCP < 60) {
-        errors.push({
-          type: 'spec_total_insufficient',
-          message: `Field of Specialization total is ${specTotalCP}/60 CP. Add more Focus Area modules to reach 60 CP.`
-        });
-      } else {
-        passed.push(`Field of Specialization total satisfied: ${specTotalCP}/60 CP (Focus: ${focusAreaCP} CP).`);
-      }
-    }
-
-    // Check Electives (at most 24 CP, target 24 CP)
-    if (electiveCP < 24) {
-      warnings.push({
-        type: 'electives_pending',
-        message: `Electives: ${electiveCP}/24 CP selected. Add ${24 - electiveCP} more CP to complete Electives.`
-      });
-    } else {
-      passed.push(`Electives satisfied: ${electiveCP}/24 CP.`);
-    }
-
-    // Check Interdisciplinary Qualifications (at least 6 CP)
-    if (uqCP < 6) {
-      errors.push({
-        type: 'uq_insufficient',
-        message: `Interdisciplinary Qualifications (ÜQ) requires at least 6 CP (currently ${uqCP}/6 CP).`
-      });
-    } else {
-      passed.push(`Interdisciplinary Qualifications satisfied: ${uqCP}/6 CP.`);
-    }
-
-    // Check Master's Thesis (30 CP)
-    if (thesisCP < 30) {
-      errors.push({
-        type: 'thesis_missing',
-        message: `Master's Thesis (30 CP) is not scheduled.`
-      });
-    } else {
-      passed.push(`Master's Thesis scheduled: 30 CP.`);
-
-      // Check Master's Thesis admission rule (SPO §14(1): requires >= 75 CP completed before admission)
-      if (thesisSem) {
-        let cpPriorToThesis = 0;
-        for (let s = 1; s < thesisSem; s++) {
-          cpPriorToThesis += semesterCP[s];
+      } else if (activeSpec && ['fundamentals', 'focus', 'lab', 'specialization'].includes(catId)) {
+        const inSpec = item.applicableSpecializations && item.applicableSpecializations.includes(activeSpec);
+        if (!inSpec && !item.isLab) {
+          catId = 'electives';
         }
-        if (cpPriorToThesis < 75) {
-          errors.push({
-            type: 'thesis_prerequisite_unmet',
-            message: `Master's Thesis prerequisite violation: SPO §14(1) requires at least 75 CP completed prior to the thesis semester. Currently only ${cpPriorToThesis} CP planned before Semester ${thesisSem}.`
-          });
+      }
+
+      // If degree has 'specialization' category but not granular fundamentals/focus
+      if (['fundamentals', 'focus', 'lab'].includes(catId) && !categoriesResult[catId] && categoriesResult['specialization']) {
+        categoriesResult['specialization'].current += item.credits || 0;
+      } else if (categoriesResult[catId]) {
+        // Handle potential overflow into electives for capped categories
+        const cap = categoriesResult[catId].target;
+        const current = categoriesResult[catId].current;
+        const credits = item.credits || 0;
+        
+        if (catId !== 'electives' && catId !== 'specialization' && categoriesResult['electives'] && (current >= cap)) {
+          // Already full, overflow to electives
+          categoriesResult['electives'].current += credits;
+        } else if (catId !== 'electives' && catId !== 'specialization' && categoriesResult['electives'] && (current + credits > cap)) {
+          const needed = cap - current;
+          categoriesResult[catId].current += needed;
+          categoriesResult['electives'].current += (credits - needed);
         } else {
-          passed.push(`Thesis admission requirement met (${cpPriorToThesis} CP completed prior to thesis semester, minimum required: 75 CP).`);
+          categoriesResult[catId].current += credits;
+        }
+      } else if (item.isThesis && categoriesResult['thesis']) {
+        categoriesResult['thesis'].current += item.credits || 0;
+      } else if (categoriesResult['electives']) {
+        categoriesResult['electives'].current += item.credits || 0;
+      }
+    }
+
+    // Update 'ok' flags
+    for (const [catKey, catData] of Object.entries(categoriesResult)) {
+      catData.ok = catData.current >= catData.target;
+      if (catData.ok) {
+        passed.push(`${catData.name}: target of ${catData.target} CP reached (${catData.current} CP).`);
+      }
+    }
+
+    // 5. MASTER'S THESIS & §14(1) PREREQUISITE GATE
+    const thesisPrereqRequired = this.degree.thesisPrerequisiteCredits || 75;
+    if (thesisSemester) {
+      let priorCredits = 0;
+      for (let s = 1; s < thesisSemester; s++) {
+        priorCredits += semesterCP[s] || 0;
+      }
+
+      if (priorCredits < thesisPrereqRequired) {
+        errors.push({
+          type: 'thesis_prereq_shortfall',
+          message: `Master's Thesis (§14(1) Gate): Only ${priorCredits} CP planned before thesis semester (Semester ${thesisSemester}). KIT examination regulations mandate at least ${thesisPrereqRequired} CP prior to registration.`
+        });
+      } else {
+        passed.push(`Master's Thesis admission gate satisfied (${priorCredits} CP prior to Semester ${thesisSemester} >= ${thesisPrereqRequired} CP).`);
+      }
+    } else {
+      warnings.push({
+        type: 'missing_thesis',
+        message: 'Master\'s Thesis (30 CP) is not yet scheduled in any semester.'
+      });
+    }
+
+    // 6. WORKLOAD BALANCE ADVISORIES
+    for (let sem = 1; sem <= semCount; sem++) {
+      const cp = semesterCP[sem] || 0;
+      if (sem === thesisSemester) {
+        if (cp > 34) {
+          warnings.push({
+            type: 'thesis_overload',
+            semester: sem,
+            message: `Semester ${sem} includes the 30 CP Master's Thesis plus extra coursework (${cp} CP total). This may result in severe study overload.`
+          });
+        }
+      } else {
+        if (cp > 35) {
+          warnings.push({
+            type: 'semester_overload',
+            semester: sem,
+            message: `Semester ${sem} is overloaded with ${cp} CP (recommended standard: 25-32 CP).`
+          });
         }
       }
     }
 
-    // Workload Balance per Semester
-    for (let sem = 1; sem <= 4; sem++) {
-      const cp = semesterCP[sem];
-      if (sem < 4 && cp > 35) {
-        warnings.push({
-          type: 'semester_overload',
-          semester: sem,
-          message: `Semester ${sem} has ${cp} CP (heavy workload, standard is ~30 CP).`
-        });
-      } else if (sem < 4 && cp < 20 && cp > 0) {
-        warnings.push({
-          type: 'semester_underload',
-          semester: sem,
-          message: `Semester ${sem} has only ${cp} CP (low workload, standard is ~30 CP).`
-        });
-      }
-    }
-
-    // Total degree credits
-    const isTotalComplete = totalCredits >= 120;
-    if (totalCredits < 120) {
-      warnings.push({
-        type: 'total_credits_pending',
-        message: `Total degree progress: ${totalCredits}/120 CP. ${120 - totalCredits} CP remaining.`
-      });
-    } else if (totalCredits === 120) {
-      passed.push(`Total Degree Credits: exactly 120/120 CP!`);
-    } else {
-      passed.push(`Total Degree Credits: ${totalCredits}/120 CP.`);
-    }
-
-    const isPermissible = errors.length === 0;
+    // 7. OVERALL DEGREE COMPLETION
+    const permissible = errors.length === 0;
+    const allMandatoryCatsMet = Object.values(categoriesResult).every(c => c.ok || c.current >= c.target);
+    const isComplete = permissible && totalCredits >= targetCredits && allMandatoryCatsMet;
 
     return {
-      permissible: isPermissible,
-      isComplete: isPermissible && isTotalComplete,
+      permissible,
+      isComplete,
       totalCredits,
+      targetCredits,
       semesterCP,
-      semesterTermType,
-      categories: {
-        fundamentals: { current: fundamentalsCP, target: 24, ok: fundamentalsCP >= 24 },
-        focusArea: { current: focusAreaCP, target: 30, ok: focusAreaCP >= 24 },
-        specLab: { current: specLabCount, target: 1, ok: specLabCount === 1 },
-        electives: { current: electiveCP, target: 24, ok: electiveCP >= 24 },
-        electiveLab: { current: electiveLabCount, max: 1, ok: electiveLabCount <= 1 },
-        uq: { current: uqCP, target: 6, ok: uqCP >= 6 },
-        thesis: { current: thesisCP, target: 30, ok: thesisCP === 30 }
-      },
+      semesterTerms,
+      categories: categoriesResult,
+      scheduledModules: scheduled,
+      moduleCounts,
       errors,
       warnings,
       passed
     };
   }
 
-  inferCategory(mod, spec) {
-    if (mod.id === 'M-ETIT-107191') return "Master's Thesis";
-    if (mod.id === 'M-ETIT-105803') return "Interdisciplinary Qualifications";
-    if (spec && spec.fundamentalsList && spec.fundamentalsList.includes(mod.id)) {
-      return "Fundamentals";
+  normalizeCategoryId(catName) {
+    if (!catName) return 'electives';
+    const c = catName.toLowerCase();
+    if (c.includes('thesis') || c.includes('masterarbeit') || c.includes('abschlussarbeit')) return 'thesis';
+    if (c.includes('uq') || c.includes('interdisciplinary') || c.includes('überfachliche')) return 'uq';
+    if (c.includes('fundamental') || c.includes('stamm') || c.includes('pflicht')) return 'fundamentals';
+    if (c.includes('focus') || c.includes('schwerpunkt')) return 'focus';
+    if (c.includes('lab') || c.includes('praktikum')) return 'lab';
+    if (c.includes('specialization') || c.includes('vertiefung') || c.includes('major')) return 'specialization';
+    return 'electives';
+  }
+
+  inferCategory(mod, activeSpecId = null) {
+    if (!mod) return 'Electives';
+    if (mod.isThesis) return "Master's Thesis";
+    const cats = mod.categories || [];
+    if (cats.includes("Master's Thesis")) return "Master's Thesis";
+    if (cats.includes("Interdisciplinary Qualifications") || mod.id === 'M-ETIT-105803' || mod.title?.toLowerCase().includes("interdisciplinary")) {
+      return "Interdisciplinary (ÜQ)";
     }
-    if (mod.isLab) return "Lab Course";
-    if (mod.categories && mod.categories.includes("Focus Area")) return "Focus Area";
+
+    const specObj = this.degree?.specializations?.find(s => s.id === activeSpecId);
+    if (specObj) {
+      if (specObj.fundamentals && specObj.fundamentals.includes(mod.id)) return "Fundamentals";
+      if (specObj.labs && specObj.labs.includes(mod.id)) return "Lab Course";
+      if (specObj.focus && specObj.focus.includes(mod.id)) return "Focus Area";
+      return "Electives";
+    }
+
+    if (cats.includes("Fundamentals") || cats.includes("Core Subjects")) return "Fundamentals";
+    if (cats.includes("Focus Area")) return "Focus Area";
+    if (mod.isLab || cats.includes("Lab Course")) return "Lab Course";
     return "Electives";
   }
 }
 
-// Export for node or browser
+// Global browser registration
+if (typeof window !== 'undefined') {
+  window.DegreeValidator = DegreeValidator;
+}
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = DegreeValidator;
+  module.exports = { DegreeValidator };
 }

@@ -1,0 +1,73 @@
+{
+  "id": "geod-sie-und-geoinformatik-master-2015",
+  "title": "Geodäsie und Geoinformatik Master 2015 (Master of Science (M.Sc.))",
+  "spo": 2015,
+  "term": "Sommersemester 2026",
+  "faculty": "Kit-Fakultät Für Bauingenieur-, Geo- Und Umweltwissenschaften",
+  "totalCredits": 120,
+  "semestersCount": 4,
+  "thesisCredits": 30,
+  "thesisPrerequisiteCredits": 75,
+  "specializations": [],
+  "categories": [
+    {
+      "id": "core",
+      "name": "Core Subjects",
+      "targetCredits": 54,
+      "color": "var(--cat-fundamentals)"
+    },
+    {
+      "id": "electives",
+      "name": "Electives",
+      "targetCredits": 30,
+      "color": "var(--cat-electives)"
+    },
+    {
+      "id": "uq",
+      "name": "Interdisciplinary (ÜQ)",
+      "targetCredits": 6,
+      "color": "var(--cat-uq)"
+    },
+    {
+      "id": "thesis",
+      "name": "Master's Thesis",
+      "targetCredits": 30,
+      "color": "var(--cat-thesis)"
+    }
+  ],
+  "moduleCount": 82,
+  "rules": {
+    "degree": "Geodäsie und Geoinformatik Master 2015 (Master of Science (M.Sc.))",
+    "spo": 2015,
+    "totalCreditsTarget": 120,
+    "thesisCredits": 30,
+    "thesisPrerequisiteCredits": 75,
+    "semestersTarget": 4,
+    "categories": [
+      {
+        "id": "core",
+        "name": "Core Subjects",
+        "targetCredits": 54,
+        "color": "var(--cat-fundamentals)"
+      },
+      {
+        "id": "electives",
+        "name": "Electives",
+        "targetCredits": 30,
+        "color": "var(--cat-electives)"
+      },
+      {
+        "id": "uq",
+        "name": "Interdisciplinary (ÜQ)",
+        "targetCredits": 6,
+        "color": "var(--cat-uq)"
+      },
+      {
+        "id": "thesis",
+        "name": "Master's Thesis",
+        "targetCredits": 30,
+        "color": "var(--cat-thesis)"
+      }
+    ]
+  }
+}

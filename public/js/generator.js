@@ -1,10 +1,11 @@
-// generator.js - Automated Study Plan Generator & Constraint Solver for KIT M.Sc. ETIT SPO 2025
+// generator.js - Universal Study Plan Generator & Constraint Solver for KIT Master's Degrees
+// Supports dynamic semesters (4, 5, 6+), arbitrary categories, and term-aware bin-packing
 
 class PlanGenerator {
-  constructor(modulesData, specializationsData) {
-    this.modules = Array.isArray(modulesData) ? modulesData : Object.values(modulesData);
+  constructor(modulesList, degreeData) {
+    this.modules = Array.isArray(modulesList) ? modulesList : Object.values(modulesList || {});
     this.modulesMap = new Map(this.modules.map(m => [m.id, m]));
-    this.specializations = specializationsData;
+    this.degree = degreeData || {};
   }
 
   getModule(id) {
@@ -12,36 +13,22 @@ class PlanGenerator {
   }
 
   /**
-   * Generates a 100% permissible, conflict-free 4-semester study plan.
-   * Total = 120 CP:
-   *  - 4 Fundamentals = 24 CP
-   *  - 1 Spec Lab = 6 CP
-   *  - Focus Area = 30 CP
-   *  - Electives = 24 CP
-   *  - Interdisciplinary Qualifications = 6 CP
-   *  - Master's Thesis = 30 CP (Sem 4)
-   * @param {Object} options - { specializationId, startTerm, englishOnly, focusProfile }
-   */
-  /**
-   * Generates a study plan respecting pinned modules, staged pool, and degree constraints.
-   * @param {Object} options - { specializationId, startTerm, englishOnly, stagedModuleIds, pinnedModules, fillMissingWithCatalog }
+   * Generates a conflict-free study plan respecting pinned modules, staged pool, and N semesters.
+   * @param {Object} options - { specializationId, startTerm, englishOnly, stagedModuleIds, pinnedModules, fillMissingWithCatalog, semestersCount }
+   * @returns {Object} { plan, report }
    */
   generatePlan(options = {}) {
-    const specId = options.specializationId || "ARSE";
+    const semCount = options.semestersCount || 4;
     const startTerm = options.startTerm || "WS";
+    const specId = options.specializationId || options.specialization || null;
     const englishOnly = !!options.englishOnly;
-    const focusProfile = options.focusProfile || null;
     const stagedModuleIds = options.stagedModuleIds || [];
     const pinnedModules = options.pinnedModules || {};
-    const fillMissingWithCatalog = options.fillMissingWithCatalog === true; // defaults to false!
+    const fillMissingWithCatalog = options.fillMissingWithCatalog === true;
 
-    const spec = this.specializations.find(s => s.id === specId);
-    if (!spec) {
-      throw new Error(`Specialization ${specId} not found`);
-    }
-
+    // Calculate semester terms
     const semesterTerms = {};
-    for (let sem = 1; sem <= 4; sem++) {
+    for (let sem = 1; sem <= semCount; sem++) {
       if (startTerm === 'WS') {
         semesterTerms[sem] = (sem % 2 === 1) ? 'WS' : 'SS';
       } else {
@@ -50,25 +37,38 @@ class PlanGenerator {
     }
 
     const plan = {
+      degree: this.degree.id || "etit-msc-2025",
       specialization: specId,
       startTerm: startTerm,
-      name: `Study Plan: ${spec.name} (${startTerm} Start)`,
-      semesters: { 1: [], 2: [], 3: [], 4: [] }
+      semestersCount: semCount,
+      name: `Study Plan: ${this.degree.title || 'Master'} (${startTerm} Start, ${semCount} Semesters)`,
+      semesters: {}
     };
 
+    for (let sem = 1; sem <= semCount; sem++) {
+      plan.semesters[sem] = [];
+    }
+
     const usedModuleIds = new Set();
-    const semesterCP = { 1: 0, 2: 0, 3: 0, 4: 0 };
+    const semesterCP = {};
+    for (let sem = 1; sem <= semCount; sem++) {
+      semesterCP[sem] = 0;
+    }
 
-    let fundsCount = 0;
-    let fundsCP = 0;
-    let specLabCount = 0;
-    let electiveLabCount = 0;
-    let focusCP = 0;
-    let electiveCP = 0;
-    let uqCP = 0;
-    let thesisPlaced = false;
+    const report = {
+      pinnedPreserved: 0,
+      stagedPlaced: 0,
+      stagedRejected: [],
+      catalogAdded: 0,
+      notes: []
+    };
 
-    const canPlaceInSemester = (mod, sem, maxCP = 34) => {
+    // Calculate average non-thesis semester target
+    const nonThesisSemCount = Math.max(1, semCount - 1);
+    const targetCPPerSem = Math.min(32, Math.round(90 / nonThesisSemCount));
+    const maxCPPerSem = Math.min(35, targetCPPerSem + 4);
+
+    const canPlaceInSemester = (mod, sem, maxLimit = maxCPPerSem) => {
       if (!mod) return false;
       if (usedModuleIds.has(mod.id)) return false;
       if (englishOnly && mod.language !== 'English' && mod.language !== 'German/English') return false;
@@ -78,7 +78,7 @@ class PlanGenerator {
       if (mod.term !== 'WS+SS' && mod.term !== 'Each term' && mod.term !== term) {
         return false;
       }
-      if (semesterCP[sem] + mod.credits > maxCP) {
+      if ((semesterCP[sem] + mod.credits) > maxLimit) {
         return false;
       }
       return true;
@@ -87,350 +87,210 @@ class PlanGenerator {
     const addModuleToSemester = (mod, sem, category, isPinned = false) => {
       plan.semesters[sem].push({
         id: mod.id,
-        category: category,
+        category: category || mod.categories?.[0] || 'Electives',
         isPinned: !!isPinned
       });
       usedModuleIds.add(mod.id);
       semesterCP[sem] += mod.credits;
     };
 
-    // --- STEP 1: PRESERVE ALL PINNED MODULES ---
-    let pinnedCount = 0;
-    for (let sem = 1; sem <= 4; sem++) {
+    // --- STEP 1: PRESERVE PINNED MODULES ---
+    for (let sem = 1; sem <= semCount; sem++) {
       const pinnedList = pinnedModules[sem] || [];
       for (const item of pinnedList) {
-        const mod = this.getModule(item.id);
-        if (!mod || usedModuleIds.has(mod.id)) continue;
-
-        addModuleToSemester(mod, sem, item.category || 'Electives', true);
-        pinnedCount++;
-
-        // Track category fulfillment for pinned items
-        const cat = item.category;
-        if (cat === 'Fundamentals') {
-          fundsCount++;
-          fundsCP += mod.credits;
-        } else if (cat === 'Lab Course') {
-          if (specLabCount === 0 && (spec.labCourses || []).includes(mod.id)) {
-            specLabCount++;
-          } else {
-            electiveLabCount++;
-          }
-        } else if (cat === 'Focus Area') {
-          focusCP += mod.credits;
-        } else if (cat === 'Electives') {
-          electiveCP += mod.credits;
-          if (mod.isLab) electiveLabCount++;
-        } else if (cat === 'Interdisciplinary Qualifications' || cat === 'UQ') {
-          uqCP += mod.credits;
-        } else if (cat === "Master's Thesis" || mod.id === 'M-ETIT-107191') {
-          thesisPlaced = true;
+        const modId = typeof item === 'string' ? item : item.id;
+        const mod = this.getModule(modId);
+        if (mod && !usedModuleIds.has(mod.id)) {
+          addModuleToSemester(mod, sem, item.category || mod.categories?.[0], true);
+          report.pinnedPreserved++;
         }
       }
     }
 
-    // --- STEP 2: MASTER'S THESIS IN SEMESTER 4 ---
-    // If no thesis is pinned/placed yet, place Master's Thesis in Semester 4
-    const stagedThesis = stagedModuleIds.find(id => id === 'M-ETIT-107191' || this.getModule(id)?.categories?.includes("Master's Thesis"));
-    if (!thesisPlaced) {
-      const thesisId = stagedThesis || 'M-ETIT-107191';
-      const thesisMod = this.getModule(thesisId);
-      if (thesisMod && !usedModuleIds.has(thesisMod.id) && semesterCP[4] + thesisMod.credits <= 35) {
-        addModuleToSemester(thesisMod, 4, "Master's Thesis");
-        thesisPlaced = true;
+    // --- STEP 2: MASTER'S THESIS PLACEMENT (Semester N) ---
+    const thesisSem = semCount;
+    let thesisMod = this.modules.find(m => m.isThesis || m.credits >= 24 && (m.title.toLowerCase().includes('thesis') || m.title.toLowerCase().includes('masterarbeit')));
+    
+    // Check if thesis was already pinned somewhere
+    let thesisAlreadyPlaced = false;
+    for (let sem = 1; sem <= semCount; sem++) {
+      if (plan.semesters[sem].some(it => {
+        const m = this.getModule(it.id);
+        return m && (m.isThesis || m.credits >= 24 && m.title.toLowerCase().includes('thesis'));
+      })) {
+        thesisAlreadyPlaced = true;
+        break;
       }
     }
 
-    // --- STEP 3: PARTITION STAGED MODULES ---
-    const availableStaged = stagedModuleIds
+    if (!thesisAlreadyPlaced && thesisMod) {
+      addModuleToSemester(thesisMod, thesisSem, "Master's Thesis", true);
+      report.notes.push(`Master's Thesis (30 CP) scheduled in final semester (${thesisSem}).`);
+    }
+
+    // --- STEP 3: SCHEDULE STAGED MODULES ---
+    const stagedMods = stagedModuleIds
       .map(id => this.getModule(id))
       .filter(m => m && !usedModuleIds.has(m.id));
 
-    const specFundIds = new Set(spec.fundamentalsList || []);
-    const specLabIds = new Set(spec.labCourses || []);
-    const specFocusIds = new Set(spec.focusModules || []);
+    // Sort staged modules by credits descending
+    stagedMods.sort((a, b) => b.credits - a.credits);
 
-    const stagedFunds = [];
-    const stagedLabs = [];
-    const stagedUQs = [];
-    const stagedFocus = [];
-    const stagedOthers = [];
-
-    for (const mod of availableStaged) {
-      if (mod.id === 'M-ETIT-107191') continue;
-      if (specFundIds.has(mod.id)) {
-        stagedFunds.push(mod);
-      } else if (mod.isLab || specLabIds.has(mod.id)) {
-        stagedLabs.push(mod);
-      } else if (mod.categories?.includes('Interdisciplinary Qualifications') || mod.id === 'M-ETIT-105803') {
-        stagedUQs.push(mod);
-      } else if (specFocusIds.has(mod.id) || mod.categories?.includes('Focus Area')) {
-        stagedFocus.push(mod);
-      } else {
-        stagedOthers.push(mod);
+    for (const mod of stagedMods) {
+      let placed = false;
+      // Search non-thesis semesters first
+      for (let sem = 1; sem < thesisSem; sem++) {
+        if (canPlaceInSemester(mod, sem, maxCPPerSem)) {
+          addModuleToSemester(mod, sem, mod.categories?.[0] || 'Specialization');
+          placed = true;
+          report.stagedPlaced++;
+          break;
+        }
       }
-    }
-
-    let stagedPlacedCount = 0;
-    const stagedUnplaced = [];
-
-    const getBestSemester = (mod, targetSemesters = [1, 2, 3], maxCP = 34) => {
-      let bestSem = null;
-      let lowestCP = 999;
-      for (const sem of targetSemesters) {
-        if (canPlaceInSemester(mod, sem, maxCP)) {
-          if (semesterCP[sem] < lowestCP) {
-            lowestCP = semesterCP[sem];
-            bestSem = sem;
+      // If still not placed, check if semester capacity can stretch slightly
+      if (!placed) {
+        for (let sem = 1; sem < thesisSem; sem++) {
+          if (canPlaceInSemester(mod, sem, 36)) {
+            addModuleToSemester(mod, sem, mod.categories?.[0] || 'Specialization');
+            placed = true;
+            report.stagedPlaced++;
+            break;
           }
         }
       }
-      return bestSem;
-    };
-
-    // Place Staged Fundamentals (up to 4 modules / 24 CP)
-    // If a focus profile is chosen, prioritize fundamentals recommended for that profile
-    if (focusProfile && spec.profileFundamentals && spec.profileFundamentals[focusProfile]) {
-      const pSet = new Set(spec.profileFundamentals[focusProfile]);
-      stagedFunds.sort((a, b) => (pSet.has(b.id) ? 1 : 0) - (pSet.has(a.id) ? 1 : 0));
-    }
-
-    const excessStagedFunds = [];
-    for (const mod of stagedFunds) {
-      if (fundsCount < 4) {
-        const sem = getBestSemester(mod, [1, 2, 3]);
-        if (sem) {
-          addModuleToSemester(mod, sem, 'Fundamentals');
-          fundsCount++;
-          fundsCP += mod.credits;
-          stagedPlacedCount++;
-        } else {
-          stagedUnplaced.push({ mod, reason: 'No term slot with capacity <= 34 CP' });
-        }
-      } else {
-        excessStagedFunds.push(mod);
+      if (!placed) {
+        report.stagedRejected.push({
+          id: mod.id,
+          title: mod.title,
+          reason: `No matching term slot or capacity in Semesters 1-${thesisSem - 1}.`
+        });
       }
     }
 
-    // Place Staged Labs (1 for Spec Lab, up to 1 for Electives)
-    for (const mod of stagedLabs) {
-      if (specLabCount === 0 && specLabIds.has(mod.id)) {
-        const sem = getBestSemester(mod, [2, 1, 3]); // prefer Sem 2
-        if (sem) {
-          addModuleToSemester(mod, sem, 'Lab Course');
-          specLabCount++;
-          stagedPlacedCount++;
-          continue;
-        }
-      }
-      if (electiveLabCount < 1) {
-        const sem = getBestSemester(mod, [2, 1, 3]);
-        if (sem) {
-          addModuleToSemester(mod, sem, 'Electives');
-          electiveLabCount++;
-          electiveCP += mod.credits;
-          stagedPlacedCount++;
-          continue;
-        }
-      }
-      stagedUnplaced.push({ mod, reason: 'Specialization lab and elective lab slots already filled or no term slot' });
-    }
-
-    // Place Staged ÜQ Modules
-    for (const mod of stagedUQs) {
-      const sem = getBestSemester(mod, [3, 2, 1]);
-      if (sem) {
-        addModuleToSemester(mod, sem, 'Interdisciplinary Qualifications');
-        uqCP += mod.credits;
-        stagedPlacedCount++;
-      } else {
-        stagedUnplaced.push({ mod, reason: 'No term slot with capacity <= 34 CP' });
-      }
-    }
-
-    // Place Staged Focus Modules (+ excess fundamentals)
-    const focusCandidates = [...stagedFocus, ...excessStagedFunds];
-    const excessFocus = [];
-    for (const mod of focusCandidates) {
-      if (focusCP < 30) {
-        const sem = getBestSemester(mod, [1, 2, 3]);
-        if (sem) {
-          addModuleToSemester(mod, sem, 'Focus Area');
-          focusCP += mod.credits;
-          stagedPlacedCount++;
-        } else {
-          excessFocus.push(mod);
-        }
-      } else {
-        excessFocus.push(mod);
-      }
-    }
-
-    // Place Staged Electives & Remaining Candidates
-    const remainingStaged = [...excessFocus, ...stagedOthers];
-    for (const mod of remainingStaged) {
-      if (mod.isLab && electiveLabCount >= 1) {
-        stagedUnplaced.push({ mod, reason: 'Max 1 elective lab permitted' });
-        continue;
-      }
-      const sem = getBestSemester(mod, [1, 2, 3]);
-      if (sem) {
-        const cat = (mod.categories?.includes('Focus Area') && focusCP < 30) ? 'Focus Area' : 'Electives';
-        addModuleToSemester(mod, sem, cat);
-        if (cat === 'Focus Area') focusCP += mod.credits;
-        else electiveCP += mod.credits;
-        if (mod.isLab) electiveLabCount++;
-        stagedPlacedCount++;
-      } else {
-        stagedUnplaced.push({ mod, reason: 'No compatible term slot with available capacity' });
-      }
-    }
-
-    // --- STEP 4: OPTIONAL FILL WITH CATALOG MODULES ---
-    let catalogFilledCount = 0;
+    // --- STEP 4: CATALOG FILL (If Requested) ---
     if (fillMissingWithCatalog) {
-      // 4a. Fill missing Fundamentals (up to 4 modules)
-      if (fundsCount < 4) {
-        let fundPool = (spec.fundamentalsList || [])
-          .map(id => this.getModule(id))
-          .filter(m => m && !usedModuleIds.has(m.id) && (!englishOnly || m.language === 'English' || m.language === 'German/English'));
+      const getAvailableCatalog = () => this.modules.filter(m => !usedModuleIds.has(m.id) && !m.isThesis);
 
-        if (focusProfile && spec.profileFundamentals && spec.profileFundamentals[focusProfile]) {
-          const pSet = new Set(spec.profileFundamentals[focusProfile]);
-          fundPool.sort((a, b) => (pSet.has(b.id) ? 1 : 0) - (pSet.has(a.id) ? 1 : 0));
+      let fundsCP = 0;
+      let focusCP = 0;
+      let labCP = 0;
+      let uqCP = 0;
+
+      // Count already placed credits
+      for (let s = 1; s <= semCount; s++) {
+        for (const it of plan.semesters[s]) {
+          const m = this.getModule(it.id);
+          if (!m || m.isThesis) continue;
+          if (it.category === 'Fundamentals' || (specId && m.applicableSpecializations?.includes(specId) && m.categories?.includes('Fundamentals'))) fundsCP += m.credits;
+          else if (it.category === 'Lab Course' || m.isLab || m.categories?.includes('Lab Course')) labCP += m.credits;
+          else if (it.category === 'Focus Area' || (specId && m.applicableSpecializations?.includes(specId) && m.categories?.includes('Focus Area'))) focusCP += m.credits;
+          else if (m.categories?.includes('Interdisciplinary Qualifications') || m.title.toLowerCase().includes('interdisciplinary')) uqCP += m.credits;
         }
+      }
 
-        for (const mod of fundPool) {
-          if (fundsCount >= 4) break;
-          const sem = getBestSemester(mod, [1, 2, 3], 32);
-          if (sem) {
-            addModuleToSemester(mod, sem, 'Fundamentals');
-            fundsCount++;
-            fundsCP += mod.credits;
-            catalogFilledCount++;
+      const placeCandidate = (mod, catLabel) => {
+        for (let sem = 1; sem < thesisSem; sem++) {
+          if (canPlaceInSemester(mod, sem, maxCPPerSem)) {
+            addModuleToSemester(mod, sem, catLabel);
+            report.catalogAdded++;
+            return true;
+          }
+        }
+        for (let sem = 1; sem < thesisSem; sem++) {
+          if (canPlaceInSemester(mod, sem, 35)) {
+            addModuleToSemester(mod, sem, catLabel);
+            report.catalogAdded++;
+            return true;
+          }
+        }
+        return false;
+      };
+
+      const specObj = this.degree?.specializations?.find(s => s.id === specId);
+
+      // 1. Fundamentals (Target: 24 CP)
+      const fundsTarget = this.degree.categories?.find(c => c.id === 'fundamentals')?.targetCredits || 24;
+      const fundsCandidates = getAvailableCatalog().filter(m => {
+        if (specObj) return specObj.fundamentals?.includes(m.id);
+        return m.categories?.includes('Fundamentals') || m.categories?.includes('Core Subjects');
+      });
+      for (const m of fundsCandidates) {
+        if (fundsCP >= fundsTarget) break;
+        if (placeCandidate(m, 'Fundamentals')) {
+          fundsCP += m.credits;
+        }
+      }
+
+      // 2. Lab Course (Target: 6 CP)
+      const labTarget = this.degree.categories?.find(c => c.id === 'lab')?.targetCredits || 6;
+      if (labCP < labTarget) {
+        const labCandidates = getAvailableCatalog().filter(m => {
+          if (specObj) return specObj.labs?.includes(m.id) || (m.isLab && specObj.modules?.includes(m.id));
+          return m.isLab || m.categories?.includes('Lab Course');
+        });
+        for (const m of labCandidates) {
+          if (labCP >= labTarget) break;
+          if (placeCandidate(m, 'Lab Course')) {
+            labCP += m.credits;
           }
         }
       }
 
-      // 4b. Fill missing Spec Lab (1 module)
-      if (specLabCount === 0) {
-        const labPool = this.modules.filter(m =>
-          m.isLab &&
-          specLabIds.has(m.id) &&
-          !usedModuleIds.has(m.id) &&
-          (!englishOnly || m.language === 'English' || m.language === 'German/English')
-        );
-        for (const sem of [2, 1, 3]) {
-          const cand = labPool.find(m => canPlaceInSemester(m, sem, 32));
-          if (cand) {
-            addModuleToSemester(cand, sem, 'Lab Course');
-            specLabCount++;
-            catalogFilledCount++;
-            break;
+      // 3. Focus Area (Target: 24 CP)
+      const focusTarget = this.degree.categories?.find(c => c.id === 'focus')?.targetCredits || 24;
+      const focusCandidates = getAvailableCatalog().filter(m => {
+        if (specObj) return specObj.focus?.includes(m.id);
+        return m.categories?.includes('Focus Area');
+      });
+      for (const m of focusCandidates) {
+        if (focusCP >= focusTarget) break;
+        if (placeCandidate(m, 'Focus Area')) {
+          focusCP += m.credits;
+        }
+      }
+
+      // 4. Interdisciplinary Qualifications (ÜQ) (Target: 6 CP)
+      const uqTarget = this.degree.categories?.find(c => c.id === 'uq')?.targetCredits || 6;
+      if (uqCP < uqTarget) {
+        const uqCandidates = getAvailableCatalog().filter(m => m.categories?.includes('Interdisciplinary Qualifications') || m.title.toLowerCase().includes('interdisciplinary'));
+        for (const m of uqCandidates) {
+          if (uqCP >= uqTarget) break;
+          if (placeCandidate(m, 'Interdisciplinary (ÜQ)')) {
+            uqCP += m.credits;
           }
         }
       }
 
-      // 4c. Fill missing ÜQ (at least 6 CP)
-      if (uqCP < 6) {
-        const uqMod = this.getModule('M-ETIT-105803');
-        if (uqMod && !usedModuleIds.has(uqMod.id)) {
-          const sem = getBestSemester(uqMod, [3, 2, 1], 34);
-          if (sem) {
-            addModuleToSemester(uqMod, sem, 'Interdisciplinary Qualifications');
-            uqCP += uqMod.credits;
-            catalogFilledCount++;
-          }
-        }
-      }
+      // 5. Electives / Remaining pool to balance semesters to ~30 CP
+      const remainingCandidates = getAvailableCatalog();
+      remainingCandidates.sort((a, b) => b.credits - a.credits);
 
-      // 4d. Fill missing Focus Area (target ~30 CP)
-      const targetFocusCP = 30;
-      if (focusCP < targetFocusCP) {
-        const focusPool = this.modules.filter(m =>
-          !m.isLab &&
-          specFocusIds.has(m.id) &&
-          !usedModuleIds.has(m.id) &&
-          (!englishOnly || m.language === 'English' || m.language === 'German/English')
-        );
-
-        for (let sem = 1; sem <= 3; sem++) {
-          while (focusCP < targetFocusCP && semesterCP[sem] < 28) {
-            const cand = focusPool.find(m =>
-              canPlaceInSemester(m, sem, 34) &&
-              (focusCP + m.credits <= targetFocusCP + 2) &&
-              !this.hasExclusionConflict(m, usedModuleIds)
-            );
-            if (cand) {
-              addModuleToSemester(cand, sem, 'Focus Area');
-              focusCP += cand.credits;
-              catalogFilledCount++;
-            } else {
-              break;
-            }
-          }
-        }
-      }
-
-      // 4e. Fill missing Electives (target ~24 CP / ~30 CP per semester)
-      const electivePool = this.modules.filter(m =>
-        !m.isLab &&
-        m.categories && m.categories.includes('Electives') &&
-        !usedModuleIds.has(m.id) &&
-        (!englishOnly || m.language === 'English' || m.language === 'German/English')
-      );
-
-      for (let sem = 1; sem <= 3; sem++) {
-        while (semesterCP[sem] < 30) {
-          const remainingInSem = 30 - semesterCP[sem];
-          const cand = electivePool.find(m =>
-            canPlaceInSemester(m, sem, 34) &&
-            m.credits <= (remainingInSem + 2) &&
-            !this.hasExclusionConflict(m, usedModuleIds)
-          );
-          if (cand) {
-            addModuleToSemester(cand, sem, 'Electives');
-            electiveCP += cand.credits;
-            catalogFilledCount++;
-          } else {
-            break;
-          }
+      for (let sem = 1; sem < thesisSem; sem++) {
+        while (semesterCP[sem] < targetCPPerSem) {
+          const candidate = remainingCandidates.find(m => canPlaceInSemester(m, sem, maxCPPerSem));
+          if (!candidate) break;
+          addModuleToSemester(candidate, sem, 'Electives');
+          report.catalogAdded++;
         }
       }
     }
 
-    plan.report = {
-      pinnedCount,
-      stagedPlacedCount,
-      stagedUnplacedCount: stagedUnplaced.length,
-      stagedUnplaced,
-      catalogFilledCount,
-      fillMissingWithCatalog
-    };
-
-    return plan;
+    return { plan, report };
   }
 
   hasExclusionConflict(mod, usedModuleIds) {
-    if (mod.exclusions) {
-      for (const exclId of mod.exclusions) {
-        if (usedModuleIds.has(exclId)) return true;
-      }
-    }
-    const pairs = [
-      ["M-ETIT-100524", "M-ETIT-100513"],
-      ["M-ETIT-102264", "M-ETIT-102266"],
-      ["M-ETIT-107444", "M-ETIT-100453"]
-    ];
-    for (const [a, b] of pairs) {
-      if (mod.id === a && usedModuleIds.has(b)) return true;
-      if (mod.id === b && usedModuleIds.has(a)) return true;
+    if (!mod.exclusions || !Array.isArray(mod.exclusions)) return false;
+    for (const excl of mod.exclusions) {
+      if (usedModuleIds.has(excl)) return true;
     }
     return false;
   }
 }
 
-// Export for node or browser
+// Global browser registration
+if (typeof window !== 'undefined') {
+  window.PlanGenerator = PlanGenerator;
+}
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = PlanGenerator;
+  module.exports = { PlanGenerator };
 }

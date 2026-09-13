@@ -1,0 +1,73 @@
+{
+  "id": "math-msc-2016",
+  "title": "Mathematik M.Sc.",
+  "spo": 2016,
+  "term": "Sommersemester 2026",
+  "faculty": "Kit-Fakultät Für Mathematik",
+  "totalCredits": 120,
+  "semestersCount": 4,
+  "thesisCredits": 30,
+  "thesisPrerequisiteCredits": 75,
+  "specializations": [],
+  "categories": [
+    {
+      "id": "core",
+      "name": "Core Subjects",
+      "targetCredits": 54,
+      "color": "var(--cat-fundamentals)"
+    },
+    {
+      "id": "electives",
+      "name": "Electives",
+      "targetCredits": 30,
+      "color": "var(--cat-electives)"
+    },
+    {
+      "id": "uq",
+      "name": "Interdisciplinary (ÜQ)",
+      "targetCredits": 6,
+      "color": "var(--cat-uq)"
+    },
+    {
+      "id": "thesis",
+      "name": "Master's Thesis",
+      "targetCredits": 30,
+      "color": "var(--cat-thesis)"
+    }
+  ],
+  "moduleCount": 208,
+  "rules": {
+    "degree": "Mathematik M.Sc.",
+    "spo": 2016,
+    "totalCreditsTarget": 120,
+    "thesisCredits": 30,
+    "thesisPrerequisiteCredits": 75,
+    "semestersTarget": 4,
+    "categories": [
+      {
+        "id": "core",
+        "name": "Core Subjects",
+        "targetCredits": 54,
+        "color": "var(--cat-fundamentals)"
+      },
+      {
+        "id": "electives",
+        "name": "Electives",
+        "targetCredits": 30,
+        "color": "var(--cat-electives)"
+      },
+      {
+        "id": "uq",
+        "name": "Interdisciplinary (ÜQ)",
+        "targetCredits": 6,
+        "color": "var(--cat-uq)"
+      },
+      {
+        "id": "thesis",
+        "name": "Master's Thesis",
+        "targetCredits": 30,
+        "color": "var(--cat-thesis)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,664 @@
+7 STUDY PROGRAM STRUCTURE
+7 Study Program Structure
+Mandatory
+Master's Thesis 30 CP
+Field of Specialization 60 CP
+Electives 24 CP
+Interdisciplinary Qualifications 6 CP
+7.1 Master's Thesis Credits
+30
+Mandatory
+M-ETIT-107191 Master's Thesis EN WS+SS 30 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 28
+--- PAGE 29 ---
+7 STUDY PROGRAM STRUCTURE Field of Specialization
+7.2 Field of Specialization Credits
+60
+Elective Area - Field of Specialization (Election: 1 item)
+Electrical Power Systems and Electromobility Information and Communication Technology Automation, Robotics, and Systems Engineering Microelectronics, Photonics, and Quantum Technologies 60 CP
+60 CP
+60 CP
+60 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 29
+--- PAGE 30 ---
+7 STUDY PROGRAM STRUCTURE Field of Specialization
+7.2.1 Electrical Power Systems and Electromobility
+Part of: Field of Specialization
+Columns: module code, title, language, semester, credits
+Credits
+60
+Election notes
+All modules are listed with English titles, regardless of the course language.
+To see English modules with English titles and German modules with German titles (and descriptions) visit
+the German website.
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 30
+--- PAGE 31 ---
+7 STUDY PROGRAM STRUCTURE Field of Specialization
+Fundamentals (Election: at least 24 credits)
+M-ETIT-107005 Batteries, Fuel Cells, and Electrolysis EN WS 6 CP
+M-ETIT-105394 Electric Power Transmission & Grid Control EN SS 6 CP
+M-MATH-106972 Numerical Methods with Programming Practice EN SS 6 CP
+M-ETIT-107497 Optimal Control EN WS 6 CP
+M-ETIT-104567 Power Electronics EN SS 6 CP
+M-ETIT-105611 Superconductivity for Engineers EN WS 6 CP
+Focus Area (Election: at least 24 credits)
+M-MACH-100501 Automotive Engineering I DE/EN WS 8 CP
+M-ETIT-100400 Basics of Converter Control DE SS 3 CP
+M-ETIT-107005 Batteries, Fuel Cells, and Electrolysis EN WS 6 CP
+M-ETIT-107551 Battery and Fuel Cell Systems neu
+EN SS 3 CP
+M-ETIT-100539 Communication Systems and Protocols EN SS 5 CP
+M-ETIT-106689 Components of Power Systems EN SS 3 CP
+M-ETIT-105915 Control of Power-Electronic Systems DE SS 6 CP
+M-ETIT-100515 Design of Electrical Machines DE WS 5 CP
+M-ETIT-106690 Digital Real Time Simulations for Energy Technologies EN SS 3 CP
+M-ETIT-106971 Electric Drives for E-Mobility EN SS 4 CP
+M-ETIT-105394 Electric Power Transmission & Grid Control EN SS 6 CP
+M-ETIT-105883 Electrocatalysis EN SS 5 CP
+M-ETIT-107648 Electrolyzers and their Electrodes neu
+EN WS+SS 3 CP
+M-ETIT-100410 Electronics and EMC DE SS 3 CP
+M-ETIT-101969 Energy Storage and Network Integration EN WS 4 CP
+M-ETIT-107444 Hardware/Software Co-Design EN WS 6 CP
+M-ETIT-105060 High-Voltage Technology DE WS 6 CP
+M-ETIT-100417 High-Voltage Test Technique DE WS 4 CP
+M-ETIT-100399 Industrial Circuitry DE WS 3 CP
+M-WIWI-100498 Introduction into Energy Economics DE SS 5 CP
+M-WIWI-105403 Liberalised Power Markets EN WS 6 CP
+M-ETIT-105604 Nano- and Quantum Electronics EN SS 6 CP
+M-MATH-106972 Numerical Methods with Programming Practice EN SS 6 CP
+M-ETIT-107497 Optimal Control EN WS 6 CP
+M-ETIT-100513 Photovoltaics DE SS 6 CP
+M-ETIT-107533 Power Electronic Systems EN WS 6 CP
+M-ETIT-104567 Power Electronics EN SS 6 CP
+M-ETIT-106506 Power System Protection and Automation DE WS 3 CP
+M-ETIT-100413 Power Systems and Economy DE WS 3 CP
+M-ETIT-100394 Practical Aspects of Electrical Drives DE WS 4 CP
+M-ETIT-105595 Pulsed Power Technology and Applications (Lecture) EN WS 3 CP
+M-ETIT-105606 Quantum Detectors and Sensors EN WS 6 CP
+M-ETIT-106955 Radio-Frequency Electronics EN WS 6 CP
+M-ETIT-105916 Real Time Control of Electrical Drives DE WS 6 CP
+M-WIWI-100500 Renewable Energy-Resources, Technologies and Economics EN WS 3 CP
+M-ETIT-105629 Seminar Electrocatalysis DE WS+SS 3 CP
+M-ETIT-107588 Seminar New Power Electronic Systems and Technologies DE/EN WS+SS 4 CP
+M-ETIT-105615 Seminar on Applied Superconductivity EN SS 3 CP
+M-ETIT-100524 Solar Energy EN WS 6 CP
+M-MACH-101924 Solar Thermal Energy Systems EN WS 4 CP
+M-ETIT-106684 Superconducting Magnet Technology EN SS 4 CP
+M-ETIT-105521 Superconducting Materials EN WS 6 CP
+M-ETIT-106683 Superconducting Power Systems EN WS 4 CP
+M-ETIT-105611 Superconductivity for Engineers EN WS 6 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 31
+--- PAGE 32 ---
+7 STUDY PROGRAM STRUCTURE Field of Specialization
+M-ETIT-100537 Systems and Software Engineering EN WS 6 CP
+M-ETIT-107147 Workshop Finite Element Method in Electromagnetics EN SS 3 CP
+Lab Course (Election: 1 item)
+M-ETIT-100381 Batteries and Fuel Cells Laboratory DE/EN WS 6 CP
+M-ETIT-107138 Electric Drives and Power Electronics Lab DE/EN SS 6 CP
+M-ETIT-107159 Information Systems in Power Engineering Lab DE/EN SS 6 CP
+M-ETIT-100419 Lab Course Electrical Power Engineering DE WS 6 CP
+M-ETIT-100468 Lab Course on Nanoelectronics DE/EN WS+SS 6 CP
+M-ETIT-105614 Lab course on superconducting materials DE/EN WS+SS 6 CP
+M-ETIT-105605 Lab Course on Superconducting Quantum Electronics DE/EN WS+SS 6 CP
+M-ETIT-102350 Laboratory Solar Energy DE/EN WS+SS 6 CP
+M-ETIT-106263 Noise Thermometry Lab DE/EN WS+SS 6 CP
+M-INFO-105955 Practical Course: Smart Energy System EN WS+SS 6 CP
+M-ETIT-107135 Robotic Winding Technology for Superconducting Wires Lab DE/EN WS 6 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 32
+--- PAGE 33 ---
+7 STUDY PROGRAM STRUCTURE Field of Specialization
+7.2.2 Information and Communication Technology
+Part of: Field of Specialization
+Columns: module code, title, language, semester, credits
+Credits
+60
+Election notes
+All modules are listed with English titles, regardless of the course language.
+To see English modules with English titles and German modules with German titles (and descriptions) visit
+the German website.
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 33
+--- PAGE 34 ---
+7 STUDY PROGRAM STRUCTURE Field of Specialization
+Fundamentals (Election: at least 24 credits)
+M-ETIT-106815 Advanced Communications Engineering EN WS 6 CP
+M-ETIT-107444 Hardware/Software Co-Design EN WS 6 CP
+M-ETIT-100427 Modern Radio Systems Engineering EN WS+SS 6 CP
+M-MATH-106972 Numerical Methods with Programming Practice EN SS 6 CP
+M-ETIT-103270 Optical Networks and Systems EN WS 6 CP
+M-ETIT-106899 Signal Processing Methods EN WS 6 CP
+Focus Area (Election: at least 24 credits)
+M-ETIT-106815 Advanced Communications Engineering EN WS 6 CP
+M-ETIT-106956 Antennas and Beamforming EN WS 4 CP
+M-ETIT-107333 Applied Information Theory EN WS 6 CP
+M-ETIT-105616 Channel Coding: Algebraic Methods for Communications and
+EN SS 3 CP
+Storage
+M-ETIT-105617 Channel Coding: Graph-Based Codes EN WS 6 CP
+M-ETIT-107440 Coding of Audiovisual Signals EN SS 3 CP
+M-ETIT-100539 Communication Systems and Protocols EN SS 5 CP
+M-ETIT-106953 Cyber-Physical Modeling EN SS 6 CP
+M-ETIT-103450 Digital Signal Processing in Optical Communications – with Practical
+EN SS 6 CP
+Exercises
+M-ETIT-106040 Digital Twin Engineering EN WS 4 CP
+M-ETIT-100361 Distributed Discrete Event Systems DE SS 4 CP
+M-ETIT-100566 Field Propagation and Coherence EN WS 4 CP
+M-ETIT-100449 Hardware Modeling and Simulation EN WS 4 CP
+neu
+M-ETIT-106963 Hardware Synthesis and Optimization EN SS 6 CP
+M-ETIT-100453 Hardware/Software Co-Design DE WS 4 CP
+M-ETIT-107444 Hardware/Software Co-Design EN WS 6 CP
+M-ETIT-103264 Information Fusion DE WS 4 CP
+M-ETIT-100457 Integrated Intelligent Sensors DE SS 3 CP
+M-ETIT-106789 IT/OT-Security Seminar EN WS 4 CP
+M-ETIT-104988 Machine Learning and Optimization in Communications EN SS 4 CP
+M-ETIT-100454 Microsystem Technology DE WS 3 CP
+M-ETIT-107007 Microwaves Measurement Techniques EN SS 4 CP
+M-ETIT-105971 Mobile Communications EN WS 4 CP
+M-ETIT-106244 Mobile Communications II EN SS 3 CP
+M-ETIT-100427 Modern Radio Systems Engineering EN WS+SS 6 CP
+M-ETIT-100430 Nonlinear Optics EN SS 6 CP
+M-MATH-106972 Numerical Methods with Programming Practice EN SS 6 CP
+M-ETIT-106974 Optical Engineering and Machine Vision EN WS 6 CP
+M-ETIT-103270 Optical Networks and Systems EN WS 6 CP
+M-ETIT-100436 Optical Transmitters and Receivers EN WS 6 CP
+M-ETIT-100509 Optoelectronic Components EN SS 4 CP
+M-ETIT-105914 Photonic Integrated Circuit Design and Applications EN SS 6 CP
+M-ETIT-106673 Practical Machine Learning DE SS 6 CP
+M-ETIT-105889 Quantum Machine Learning DE WS 3 CP
+M-ETIT-100420 Radar Systems Engineering EN WS 6 CP
+M-ETIT-105123 Radio Frequency Integrated Circuits and Systems EN SS 6 CP
+M-ETIT-103241 Radio Receivers DE WS 3 CP
+M-ETIT-106955 Radio-Frequency Electronics EN WS 6 CP
+M-ETIT-105272 Satellite Communications EN SS 3 CP
+M-ETIT-100455 Seminar Embedded Systems DE WS+SS 4 CP
+M-ETIT-106970 Seminar Industrial Process and Plant Engineering EN SS 4 CP
+M-ETIT-100441 Seminar Selected Topics in Communication DE WS+SS 4 CP
+M-ETIT-100443 Signal Processing in Communications DE SS 6 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 34
+--- PAGE 35 ---
+7 STUDY PROGRAM STRUCTURE Field of Specialization
+M-ETIT-106899 Signal Processing Methods M-ETIT-106675 Signal Processing with Nonlinear Fourier Transforms and Koopman
+EN WS 6 CP
+EN SS 6 CP
+Operators
+M-ETIT-103042 Spaceborne Radar Remote Sensing EN SS 6 CP
+Lab Course (Election: 1 item)
+M-ETIT-107136 Communications Engineering Lab DE/EN WS+SS 6 CP
+M-ETIT-102266 Digital Hardware Design Laboratory EN SS 6 CP
+M-ETIT-107294 Mechatronic Measurement Systems Lab DE/EN WS 6 CP
+M-ETIT-106973 Microwave Engineering Lab EN WS+SS 6 CP
+M-ETIT-105464 MMIC Design Laboratory EN WS+SS 6 CP
+M-ETIT-104485 Photonics and Communications Lab EN SS 6 CP
+M-ETIT-106673 Practical Machine Learning DE SS 6 CP
+M-ETIT-106633 Signal Processing Lab EN SS 6 CP
+M-ETIT-100451 System-on-Chip Laboratory DE WS 6 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 35
+--- PAGE 36 ---
+7 STUDY PROGRAM STRUCTURE Field of Specialization
+7.2.3 Automation, Robotics, and Systems Engineering
+Part of: Field of Specialization
+Columns: module code, title, language, semester, credits
+Credits
+60
+Election notes
+All modules are listed with English titles, regardless of the course language.
+To see English modules with English titles and German modules with German titles (and descriptions) visit
+the German website.
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 36
+--- PAGE 37 ---
+7 STUDY PROGRAM STRUCTURE Field of Specialization
+Fundamentals (Election: at least 24 credits)
+M-ETIT-106953 Cyber-Physical Modeling EN SS 6 CP
+M-ETIT-106974 Optical Engineering and Machine Vision EN WS 6 CP
+M-ETIT-107497 Optimal Control EN WS 6 CP
+neu
+M-MACH-107558 Robotic Intelligence: Perception and Scene Understanding EN WS 6 CP
+M-ETIT-106899 Signal Processing Methods EN WS 6 CP
+M-ETIT-100537 Systems and Software Engineering EN WS 6 CP
+Focus Area (Election: at least 24 credits)
+M-ETIT-100539 Communication Systems and Protocols EN SS 5 CP
+M-ETIT-106953 Cyber-Physical Modeling EN SS 6 CP
+M-ETIT-106040 Digital Twin Engineering EN WS 4 CP
+M-ETIT-100361 Distributed Discrete Event Systems DE SS 4 CP
+M-ETIT-100449 Hardware Modeling and Simulation EN WS 4 CP
+M-ETIT-106963 Hardware Synthesis and Optimization EN SS 6 CP
+M-ETIT-107444 Hardware/Software Co-Design EN WS 6 CP
+M-ETIT-103264 Information Fusion DE WS 4 CP
+M-ETIT-100367 Information Technology in Industrial Automation Systems DE SS 3 CP
+M-ETIT-106789 IT/OT-Security Seminar EN WS 4 CP
+M-ETIT-100434 Laser Metrology EN SS 3 CP
+M-ETIT-107515 Multivariable Control Systems EN WS 6 CP
+M-ETIT-105881 Navigation and Localization Techniques EN SS 3 CP
+M-ETIT-107644 Nonlinear Control Systems neu
+EN SS 6 CP
+M-ETIT-106974 Optical Engineering and Machine Vision EN WS 6 CP
+M-ETIT-107497 Optimal Control EN WS 6 CP
+M-ETIT-106673 Practical Machine Learning DE SS 6 CP
+M-ETIT-106780 Practical Tools for Control Engineers neu
+EN WS 4 CP
+M-ETIT-105594 Process Analysis: Modeling, Data Mining, Machine Learning DE SS 3 CP
+M-ETIT-104475 Project Management in the Development of Products for Safety-
+DE WS 4 CP
+Critical Applications
+M-ETIT-105889 Quantum Machine Learning DE WS 3 CP
+M-ETIT-100420 Radar Systems Engineering EN WS 6 CP
+neu
+M-MACH-107558 Robotic Intelligence: Perception and Scene Understanding EN WS 6 CP
+M-ETIT-100455 Seminar Embedded Systems DE WS+SS 4 CP
+M-ETIT-106970 Seminar Industrial Process and Plant Engineering EN SS 4 CP
+M-ETIT-100378 Sensors DE SS 3 CP
+M-ETIT-106899 Signal Processing Methods EN WS 6 CP
+M-ETIT-106675 Signal Processing with Nonlinear Fourier Transforms and Koopman
+EN SS 6 CP
+Operators
+M-ETIT-100450 Software Engineering DE SS 3 CP
+M-ETIT-103042 Spaceborne Radar Remote Sensing EN SS 6 CP
+M-ETIT-100537 Systems and Software Engineering EN WS 6 CP
+M-ETIT-100462 Systems Engineering for Automotive Electronics EN SS 4 CP
+M-ETIT-100546 Test of Embedded Systems in Industrial Contexts DE WS 4 CP
+Lab Course (Election: 1 item)
+M-ETIT-102264 Digital Hardware Design Laboratory DE SS 6 CP
+M-ETIT-100460 Laboratory in Software Engineering DE SS 6 CP
+M-ETIT-107294 Mechatronic Measurement Systems Lab DE/EN WS 6 CP
+M-ETIT-106673 Practical Machine Learning DE SS 6 CP
+M-ETIT-107524 Robotics, Automation, and Systems Control Lab EN SS 6 CP
+M-MACH-105725 Seamless Engineering EN WS 9 CP
+M-ETIT-106633 Signal Processing Lab EN SS 6 CP
+M-ETIT-105073 Student Innovation Lab EN WS+SS 15 CP
+M-ETIT-100451 System-on-Chip Laboratory DE WS 6 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 37
+--- PAGE 38 ---
+7 STUDY PROGRAM STRUCTURE Field of Specialization
+7.2.4 Microelectronics, Photonics, and Quantum Technologies
+Part of: Field of Specialization
+Credits
+60
+Columns: module code, title, language, semester, credits
+Election notes
+All modules are listed with English titles, regardless of the course language.
+To see English modules with English titles and German modules with German titles (and descriptions) visit the
+German website.
+Fundamentals (Election: at least 24 credits)
+M-ETIT-106963 Hardware Synthesis and Optimization EN SS 6 CP
+M-MATH-106972 Numerical Methods with Programming Practice EN SS 6 CP
+M-ETIT-106954 Quantum Engineering EN SS 6 CP
+M-ETIT-106955 Radio-Frequency Electronics EN WS 6 CP
+M-ETIT-107344 Integrated Photonics EN WS 6 CP
+Focus Area (Election: at least 24 credits)
+M-ETIT-107364 Analog Circuit Design EN WS 4 CP
+M-ETIT-106956 Antennas and Beamforming EN WS 4 CP
+M-ETIT-107365 Digital Circuit Design EN SS 4 CP
+M-ETIT-100449 Hardware Modeling and Simulation EN WS 4 CP
+M-ETIT-106963 Hardware Synthesis and Optimization EN SS 6 CP
+M-ETIT-107363 High-Power Microwave Technology EN WS 3 CP
+M-ETIT-107007 Microwaves Measurement Techniques EN SS 4 CP
+M-ETIT-101968 Miniaturized Passive Microwave Circuits DE WS 4 CP
+M-ETIT-105893 Mixed-Signal IC Design EN SS 3 CP
+M-ETIT-100427 Modern Radio Systems Engineering EN WS+SS 6 CP
+M-ETIT-106921 Modern VLSI Technologies EN SS 6 CP
+M-ETIT-105604 Nano- and Quantum Electronics EN SS 6 CP
+M-ETIT-100430 Nonlinear Optics EN SS 6 CP
+M-MATH-106972 Numerical Methods with Programming Practice EN SS 6 CP
+M-ETIT-100436 Optical Transmitters and Receivers EN WS 6 CP
+M-ETIT-100484 Optoelectronic Measurement Engineering DE SS 3 CP
+M-ETIT-105608 Physics, Technology and Applications of Thin Films EN WS 4 CP
+M-ETIT-107156 Practical Amplifier Design EN SS 3 CP
+M-ETIT-105606 Quantum Detectors and Sensors EN WS 6 CP
+M-ETIT-106954 Quantum Engineering EN SS 6 CP
+M-ETIT-105889 Quantum Machine Learning DE WS 3 CP
+M-ETIT-105123 Radio Frequency Integrated Circuits and Systems EN SS 6 CP
+M-ETIT-106955 Radio-Frequency Electronics EN WS 6 CP
+M-ETIT-105611 Superconductivity for Engineers EN WS 6 CP
+Lab Course (Election: 1 item)
+M-ETIT-100468 Lab Course on Nanoelectronics DE/EN WS+SS 6 CP
+M-ETIT-105605 Lab Course on Superconducting Quantum Electronics DE/EN WS+SS 6 CP
+M-ETIT-100470 Laboratory FPGA Based Circuit Design DE WS+SS 6 CP
+M-ETIT-100478 Laboratory Nanotechnology DE/EN WS+SS 6 CP
+M-ETIT-106973 Microwave Engineering Lab EN WS+SS 6 CP
+M-ETIT-105464 MMIC Design Laboratory EN WS+SS 6 CP
+M-ETIT-106263 Noise Thermometry Lab DE/EN WS+SS 6 CP
+M-ETIT-104485 Photonics and Communications Lab EN SS 6 CP
+M-ETIT-100451 System-on-Chip Laboratory DE WS 6 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 38
+--- PAGE 39 ---
+7 STUDY PROGRAM STRUCTURE Electives
+7.3 Electives Credits
+24
+Columns: module code, title, language, semester, credits
+Election notes
+All modules are listed with English titles, regardless of the course language.
+To see English modules with English titles and German modules with German titles (and descriptions) visit the German
+website.
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 39
+--- PAGE 40 ---
+7 STUDY PROGRAM STRUCTURE Electives
+Elective Modules (Election: at most 24 credits)
+M-ETIT-103802 Adaptive Optics EN WS 3 CP
+M-ETIT-106815 Advanced Communications Engineering EN WS 6 CP
+M-ETIT-107364 Analog Circuit Design EN WS 4 CP
+M-ETIT-106956 Antennas and Beamforming EN WS 4 CP
+M-ETIT-107333 Applied Information Theory EN WS 6 CP
+M-INFO-105338 Authentication and Encryption DE SS 4 CP
+M-MACH-100501 Automotive Engineering I DE/EN WS 8 CP
+M-MACH-100502 Automotive Engineering II DE SS 4 CP
+M-MACH-107148 Automotive Vision neu
+EN SS 6 CP
+M-ETIT-100400 Basics of Converter Control DE SS 3 CP
+M-ETIT-107005 Batteries, Fuel Cells, and Electrolysis EN WS 6 CP
+M-ETIT-107551 Battery and Fuel Cell Systems neu
+EN SS 3 CP
+M-MACH-106903 Biologically Inspired Robots EN SS 3 CP
+M-CIWVT-104288 Biomass Based Energy Carriers DE WS 6 CP
+M-MACH-100489 BioMEMS - Microsystems Technologies for Life Sciences and Medicine I DE WS 4 CP
+M-MACH-100490 BioMEMS - Microsystems Technologies for Life Sciences and Medicine
+DE SS 4 CP
+II
+M-MACH-100491 BioMEMS - Microsystems Technologies for Life Sciences and Medicine
+DE SS 4 CP
+III
+M-ETIT-101834 Business Innovation in Optics and Photonics EN WS 4 CP
+M-ETIT-105616 Channel Coding: Algebraic Methods for Communications and Storage EN SS 3 CP
+M-ETIT-105617 Channel Coding: Graph-Based Codes EN WS 6 CP
+M-MACH-107636 Circular Factory neu
+EN SS 8 CP
+M-ETIT-107440 Coding of Audiovisual Signals EN SS 3 CP
+M-ETIT-100539 Communication Systems and Protocols EN SS 5 CP
+M-ETIT-106689 Components of Power Systems EN SS 3 CP
+M-ETIT-107375 Compressed Sensing and Approximate Message Passing: Theory and
+EN WS 3 CP
+Applications
+M-INFO-106190 Computational Imaging EN WS 5 CP
+M-MACH-105296 Computational Intelligence DE WS 4 CP
+M-ETIT-105915 Control of Power-Electronic Systems DE SS 6 CP
+M-MACH-105348 Control Technology DE SS 4 CP
+M-CIWVT-104356 Cryogenic Engineering EN WS 6 CP
+M-INFO-105631 Cryptographic Protocols DE SS 5 CP
+M-INFO-107435 Cryptographic Protocols II: Universal Composability EN WS 3 CP
+M-ETIT-100507 Current Topics of Solar Energy DE WS 3 CP
+M-ETIT-106953 Cyber-Physical Modeling EN SS 6 CP
+M-INFO-107197 Deep Learning and Neural Networks EN SS 6 CP
+neu
+M-INFO-107695 Deep Learning for Computer Vision: Advanced Topics DE/EN WS 3 CP
+M-INFO-107230 Design and Architectures of Embedded Systems (ESII) EN WS 3 CP
+M-ETIT-100515 Design of Electrical Machines DE WS 5 CP
+M-ETIT-100541 Detectores for Applications in Space and Astronomy DE WS 3 CP
+M-ETIT-107365 Digital Circuit Design EN SS 4 CP
+M-ETIT-106690 Digital Real Time Simulations for Energy Technologies EN SS 3 CP
+M-ETIT-103450 Digital Signal Processing in Optical Communications – with Practical
+EN SS 6 CP
+Exercises
+M-ETIT-106040 Digital Twin Engineering EN WS 4 CP
+M-ETIT-100361 Distributed Discrete Event Systems DE SS 4 CP
+M-ETIT-101847 Dosimetry of Ionising Radiation DE WS 3 CP
+M-ETIT-101917 Electric Power Generation and Power Grid EN SS 3 CP
+M-ETIT-105394 Electric Power Transmission & Grid Control EN SS 6 CP
+M-ETIT-105883 Electrocatalysis EN SS 5 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 40
+--- PAGE 41 ---
+7 STUDY PROGRAM STRUCTURE Electives
+M-ETIT-107648 Electrolyzers and their Electrodes neu
+EN WS+SS 3 CP
+M-ETIT-100386 Electromagnetics and Numerical Calculation of Fields EN WS 4 CP
+M-ETIT-100511 Electronic Circuits for Light Sources and Laser DE SS 3 CP
+M-ETIT-100410 Electronics and EMC DE SS 3 CP
+M-ETIT-101969 Energy Storage and Network Integration EN WS 4 CP
+M-ETIT-101919 Fabrication and Characterisation of Optoelectronic Devices EN SS 3 CP
+M-ETIT-100566 Field Propagation and Coherence EN WS 4 CP
+M-ETIT-100483 Fundamentals on Plasma Technology DE SS 3 CP
+M-BGU-106347 Geodetic Space Techniques for Engineers DE WS 4 CP
+M-MACH-105288 Handling Characteristics of Motor Vehicles I DE WS 4 CP
+M-ETIT-100449 Hardware Modeling and Simulation EN WS 4 CP
+M-ETIT-106963 Hardware Synthesis and Optimization EN SS 6 CP
+M-ETIT-107444 Hardware/Software Co-Design EN WS 6 CP
+M-ETIT-107363 High-Power Microwave Technology EN WS 3 CP
+M-ETIT-105060 High-Voltage Technology DE WS 6 CP
+M-ETIT-100417 High-Voltage Test Technique DE WS 4 CP
+M-INFO-100725 Human Brain and Central Nervous System: Anatomy, Information
+DE WS+SS 3 CP
+Transfer, Signal Processing, Neurophysiology and Therapy
+M-ETIT-100399 Industrial Circuitry DE WS 3 CP
+M-ETIT-103264 Information Fusion DE WS 4 CP
+M-ETIT-100367 Information Technology in Industrial Automation Systems DE SS 3 CP
+M-ETIT-100457 Integrated Intelligent Sensors DE SS 3 CP
+M-ETIT-107344 Integrated Photonics EN WS 6 CP
+M-ETIT-100474 Integrated Systems and Circuits
+DE SS 4 CP
+First usage possible until Sep 30, 2026.
+M-WIWI-100498 Introduction into Energy Economics DE SS 5 CP
+M-ETIT-105461 Introduction to Automotive and Industrial Lidar Technology EN WS 3 CP
+M-MACH-107657 Introduction to Microsystem Technology I neu
+EN WS 4 CP
+M-INFO-100736 Introduction to Video Analysis DE SS 3 CP
+M-ETIT-106789 IT/OT-Security Seminar EN WS 4 CP
+M-ETIT-100434 Laser Metrology EN SS 3 CP
+M-ETIT-100435 Laser Physics EN WS 4 CP
+M-WIWI-105403 Liberalised Power Markets EN WS 6 CP
+M-ETIT-100512 Light and Display Engineering EN WS 4 CP
+M-ETIT-100577 Lighting Design - Theory and Applications EN WS 3 CP
+M-ETIT-100485 Lighting Engineering DE WS 4 CP
+M-INFO-107663 Localization of Mobile Agents neu
+EN SS 6 CP
+M-INFO-100807 Low Power Design EN SS 3 CP
+M-WIWI-105003 Machine Learning 1 DE WS 5 CP
+M-WIWI-105006 Machine Learning 2 DE SS 5 CP
+M-ETIT-104988 Machine Learning and Optimization in Communications EN SS 4 CP
+M-WIWI-106604 Machine Learning and Optimization in Energy Systems EN WS 4 CP
+M-MACH-101286 Machine Tools and Industrial Handling DE WS 9 CP
+M-MACH-101923 Machine Vision EN WS 8 CP
+M-ETIT-105982 Measurement Technology
+EN WS 5 CP
+First usage possible until Mar 31, 2027.
+M-ETIT-106672 Medical Image Processing for Guidance and Navigation EN WS 9 CP
+M-MACH-100487 Microactuators DE SS 4 CP
+M-MACH-102714 Microenergy Technologies EN SS 4 CP
+M-ETIT-100454 Microsystem Technology DE WS 3 CP
+M-ETIT-105701 Microwave Module Design DE WS 3 CP
+M-ETIT-107007 Microwaves Measurement Techniques EN SS 4 CP
+M-ETIT-101968 Miniaturized Passive Microwave Circuits DE WS 4 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 41
+--- PAGE 42 ---
+7 STUDY PROGRAM STRUCTURE Electives
+M-ETIT-105893 Mixed-Signal IC Design EN SS 3 CP
+M-ETIT-105971 Mobile Communications EN WS 4 CP
+M-ETIT-106244 Mobile Communications II EN SS 3 CP
+M-ETIT-106456 Mobile Communications Workshop DE/EN WS+SS 4 CP
+M-ETIT-106782 Modeling Physiological Systems EN SS 6 CP
+M-ETIT-100508 Modelling and Simulation of Electrochemical Systems DE SS 3 CP
+M-ETIT-100427 Modern Radio Systems Engineering EN WS+SS 6 CP
+M-ETIT-106921 Modern VLSI Technologies EN SS 6 CP
+M-INFO-107676 Multimodal Artificial Intelligence neu
+EN SS 6 CP
+M-ETIT-107515 Multivariable Control Systems EN WS 6 CP
+M-ETIT-105604 Nano- and Quantum Electronics EN SS 6 CP
+M-ETIT-105881 Navigation and Localization Techniques EN SS 3 CP
+M-CIWVT-105890 NMR Methods for Product and Process Analysis DE/EN WS 4 CP
+M-ETIT-107644 Nonlinear Control Systems neu
+EN SS 6 CP
+M-ETIT-100430 Nonlinear Optics EN SS 6 CP
+M-ETIT-102311 Numerical Methods for Partial Differential Equations DE SS 4 CP
+M-MATH-106972 Numerical Methods with Programming Practice EN SS 6 CP
+M-ETIT-106974 Optical Engineering and Machine Vision EN WS 6 CP
+M-ETIT-103270 Optical Networks and Systems EN WS 6 CP
+M-ETIT-103252 Optical Systems in Medicine and Life Science EN SS 3 CP
+M-ETIT-100486 Optical Technologies for Automotive Applications DE SS 3 CP
+M-ETIT-100436 Optical Transmitters and Receivers EN WS 6 CP
+M-ETIT-107497 Optimal Control EN WS 6 CP
+M-INFO-107229 Optimization and Synthesis of Embedded Systems (ESI) EN WS 3 CP
+M-ETIT-100509 Optoelectronic Components EN SS 4 CP
+M-ETIT-100484 Optoelectronic Measurement Engineering DE SS 3 CP
+M-ETIT-107455 Organic and Flexible Electronics EN WS 3 CP
+M-INFO-100825 Pattern Recognition DE SS 6 CP
+M-ETIT-100519 Photometry and Radiometry DE WS 3 CP
+M-ETIT-105914 Photonic Integrated Circuit Design and Applications EN SS 6 CP
+M-ETIT-100513 Photovoltaics DE SS 6 CP
+M-CIWVT-103068 Physical Foundations of Cryogenics EN SS 6 CP
+M-ETIT-105608 Physics, Technology and Applications of Thin Films EN WS 4 CP
+M-ETIT-100481 Plasma Sources DE WS 4 CP
+M-ETIT-107533 Power Electronic Systems EN WS 6 CP
+M-ETIT-104567 Power Electronics EN SS 6 CP
+M-ETIT-106506 Power System Protection and Automation DE WS 3 CP
+M-ETIT-100413 Power Systems and Economy DE WS 3 CP
+M-ETIT-107156 Practical Amplifier Design EN SS 3 CP
+M-ETIT-100394 Practical Aspects of Electrical Drives DE WS 4 CP
+M-ETIT-106673 Practical Machine Learning DE SS 6 CP
+M-ETIT-106780 Practical Tools for Control Engineers EN WS 4 CP
+M-MACH-107574 Principles of Whole Vehicle Engineering EN WS+SS 4 CP
+M-ETIT-107343 Printed and Thin-Film Electronics EN WS 3 CP
+M-ETIT-105594 Process Analysis: Modeling, Data Mining, Machine Learning DE SS 3 CP
+M-ETIT-104475 Project Management in the Development of Products for Safety-Critical
+DE WS 4 CP
+Applications
+M-ETIT-105596 Pulsed Power Technology and Applications (Tutorial) EN SS 5 CP
+M-ETIT-105595 Pulsed Power Technology and Applications (Lecture) EN WS 3 CP
+M-ETIT-105606 Quantum Detectors and Sensors EN WS 6 CP
+M-ETIT-106954 Quantum Engineering EN SS 6 CP
+M-ETIT-105889 Quantum Machine Learning DE WS 3 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 42
+--- PAGE 43 ---
+7 STUDY PROGRAM STRUCTURE Electives
+M-ETIT-100420 Radar Systems Engineering EN WS 6 CP
+M-ETIT-105123 Radio Frequency Integrated Circuits and Systems EN SS 6 CP
+M-ETIT-103241 Radio Receivers DE WS 3 CP
+M-ETIT-106955 Radio-Frequency Electronics EN WS 6 CP
+M-ETIT-105916 Real Time Control of Electrical Drives DE WS 6 CP
+M-CIWVT-104354 Refrigeration B - Foundations of Industrial Gas Processing DE SS 6 CP
+M-WIWI-100500 Renewable Energy-Resources, Technologies and Economics EN WS 3 CP
+M-ETIT-107596 Research Seminar Cooperative and Haptic Human-Machine
+EN SS 6 CP
+Interactions
+neu
+neu
+M-MACH-107558 Robotic Intelligence: Perception and Scene Understanding EN WS 6 CP
+M-INFO-107123 Robotics II - Humanoid Robotics EN SS 3 CP
+M-INFO-107130 Robotics III - Sensors and Perception in Robotics EN SS 3 CP
+M-INFO-104877 Safe Human-Robot-Collaboration DE WS 3 CP
+M-ETIT-105272 Satellite Communications EN SS 3 CP
+neu
+M-ETIT-107661 Scanning Probe Lithography for Biomedical Applications EN SS 3 CP
+M-MACH-105369 Scientific Computing for Engineers DE WS 4 CP
+M-ETIT-106674 Seminar Advanced Concepts for Flexible and Soft Optoelectronic
+EN SS 3 CP
+Devices and Sensors
+M-ETIT-105321 Seminar Battery II DE/EN WS+SS 3 CP
+M-ETIT-105629 Seminar Electrocatalysis DE WS+SS 3 CP
+M-ETIT-100455 Seminar Embedded Systems DE WS+SS 4 CP
+M-ETIT-105322 Seminar Fuel Cell II DE/EN WS+SS 3 CP
+M-ETIT-107588 Seminar New Power Electronic Systems and Technologies DE/EN WS+SS 4 CP
+M-ETIT-103447 Seminar Novel Concepts for Solar Energy Harvesting EN SS 3 CP
+M-ETIT-105615 Seminar on Applied Superconductivity EN SS 3 CP
+M-ETIT-100441 Seminar Selected Topics in Communication DE WS+SS 4 CP
+M-ETIT-100380 Seminar Sensors
+DE WS+SS 3 CP
+First usage possible until Jun 30, 2026.
+M-INFO-105884 Seminar: Digital Accessibility and Assistive Technologies DE/EN WS 3 CP
+M-ETIT-100378 Sensors DE SS 3 CP
+M-ETIT-100443 Signal Processing in Communications DE SS 6 CP
+M-ETIT-106899 Signal Processing Methods EN WS 6 CP
+M-ETIT-106675 Signal Processing with Nonlinear Fourier Transforms and Koopman
+EN SS 6 CP
+Operators
+M-ETIT-106597 Single-Crystal Growth – Crystal Growth Methods and Applications of
+DE WS 3 CP
+Crystals for Electronic and Optical Components
+M-ETIT-101971 Single-Photon Detectors M-ETIT-100450 Software Engineering M-ETIT-100524 Solar Energy M-ETIT-100545 Space-Born Microwave Radiometry - Advanced Methods and
+EN WS 4 CP
+DE SS 3 CP
+EN WS 6 CP
+EN SS 3 CP
+Applications
+M-ETIT-103042 Spaceborne Radar Remote Sensing EN SS 6 CP
+M-INFO-100829 Stochastic Information Processing DE WS 6 CP
+M-ETIT-106684 Superconducting Magnet Technology EN SS 4 CP
+M-ETIT-105521 Superconducting Materials EN WS 6 CP
+M-ETIT-105609 Superconducting Nanowire Detectors EN SS 4 CP
+M-ETIT-106683 Superconducting Power Systems EN WS 4 CP
+M-ETIT-105611 Superconductivity for Engineers EN WS 6 CP
+M-ETIT-106026 System Integration and Communication Structures in Industry 4.0 and
+DE WS 3 CP
+IoT
+M-ETIT-100537 Systems and Software Engineering EN WS 6 CP
+M-ETIT-100462 Systems Engineering for Automotive Electronics EN SS 4 CP
+M-ETIT-105465 Team Project: Sensors and Electronics DE WS+SS 3 CP
+M-ETIT-101835 Technical Acoustic DE WS 3 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 43
+--- PAGE 44 ---
+7 STUDY PROGRAM STRUCTURE Electives
+M-ETIT-100538 Technical Optics DE WS 5 CP
+M-INFO-107243 Telematics EN WS 6 CP
+M-ETIT-100546 Test of Embedded Systems in Industrial Contexts DE WS 4 CP
+M-ETIT-105618 The Energy Transition of the Electrical Transmission Grid DE SS 3 CP
+M-INFO-105584 Theoretical Foundations of Cryptography DE WS 6 CP
+M-MACH-102388 Thermal Solar Energy EN WS 4 CP
+M-ETIT-100560 Ultrasound Imaging DE SS 3 CP
+M-CIWVT-104478 Vacuum Technology DE WS 6 CP
+M-ETIT-104493 Verified Numerical Methods DE WS 4 CP
+M-ETIT-100497 Visual Perception in the Automobile DE SS 3 CP
+M-CIWVT-106680 Water – Energy – Environment Nexus in a Circular Economy: Research
+EN SS 5 CP
+Proposal Preparation
+M-INFO-107113 Wearable Robotic Technologies EN SS 4 CP
+M-ETIT-107147 Workshop Finite Element Method in Electromagnetics EN SS 3 CP
+Lab Course (Election: between 0 and 1 items)
+M-ETIT-100381 Batteries and Fuel Cells Laboratory DE/EN WS 6 CP
+M-ETIT-107136 Communications Engineering Lab DE/EN WS+SS 6 CP
+M-ETIT-102266 Digital Hardware Design Laboratory EN SS 6 CP
+M-ETIT-102264 Digital Hardware Design Laboratory DE SS 6 CP
+M-ETIT-107138 Electric Drives and Power Electronics Lab DE/EN SS 6 CP
+M-ETIT-107159 Information Systems in Power Engineering Lab DE/EN SS 6 CP
+M-ETIT-100419 Lab Course Electrical Power Engineering neu
+DE WS 6 CP
+M-ETIT-100468 Lab Course on Nanoelectronics DE/EN WS+SS 6 CP
+M-ETIT-105614 Lab course on superconducting materials DE/EN WS+SS 6 CP
+M-ETIT-105605 Lab Course on Superconducting Quantum Electronics DE/EN WS+SS 6 CP
+M-ETIT-100470 Laboratory FPGA Based Circuit Design DE WS+SS 6 CP
+M-ETIT-100460 Laboratory in Software Engineering DE SS 6 CP
+M-ETIT-102356 Laboratory Lighting Technology DE/EN WS+SS 6 CP
+M-MACH-102699 Laboratory Mechatronics DE WS 4 CP
+M-ETIT-100478 Laboratory Nanotechnology DE/EN WS+SS 6 CP
+M-ETIT-100477 Laboratory Optoelectronics DE/EN WS+SS 6 CP
+M-ETIT-102350 Laboratory Solar Energy DE/EN WS+SS 6 CP
+M-ETIT-107294 Mechatronic Measurement Systems Lab DE/EN WS 6 CP
+M-ETIT-106973 Microwave Engineering Lab EN WS+SS 6 CP
+M-ETIT-105464 MMIC Design Laboratory EN WS+SS 6 CP
+M-ETIT-106263 Noise Thermometry Lab DE/EN WS+SS 6 CP
+M-ETIT-100464 Optical Design Lab EN SS 6 CP
+M-ETIT-104485 Photonics and Communications Lab EN SS 6 CP
+M-MACH-107052 Practical Course: Autonomous Driving DE WS 6 CP
+M-INFO-105955 Practical Course: Smart Energy System EN WS+SS 6 CP
+M-ETIT-106673 Practical Machine Learning DE SS 6 CP
+M-ETIT-106464 Printed Flexible Electronics Lab EN WS+SS 6 CP
+M-ETIT-107135 Robotic Winding Technology for Superconducting Wires Lab DE/EN WS 6 CP
+M-ETIT-107524 Robotics, Automation, and Systems Control Lab EN SS 6 CP
+M-MACH-105725 Seamless Engineering EN WS 9 CP
+M-ETIT-106633 Signal Processing Lab EN SS 6 CP
+M-ETIT-105073 Student Innovation Lab EN WS+SS 15 CP
+M-ETIT-100451 System-on-Chip Laboratory DE WS 6 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 44
+--- PAGE 45 ---
+7 STUDY PROGRAM STRUCTURE Interdisciplinary Qualifications
+7.4 Interdisciplinary Qualifications Credits
+6
+Mandatory
+M-ETIT-105803 Interdisciplinary Qualifications DE/EN WS+SS 6 CP
+M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)
+Module Handbook as of 06/03/2026 45
+--- PAGE 46 ---
