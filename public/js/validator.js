@@ -163,17 +163,14 @@ class DegreeValidator {
 
     for (const item of scheduled) {
       let catId = this.normalizeCategoryId(item.scheduledCategory);
+      const mod = this.getModule(item.id) || item;
       
       // If degree has specializations, enforce active specialization track boundaries
       if (specObj) {
-        if (catId === 'fundamentals' && !specObj.fundamentals?.includes(item.id)) {
-          catId = specObj.focus?.includes(item.id) ? 'focus' : 'electives';
-        } else if (catId === 'focus' && !specObj.focus?.includes(item.id)) {
-          catId = specObj.fundamentals?.includes(item.id) ? 'fundamentals' : 'electives';
-        } else if (catId === 'lab' && !specObj.labs?.includes(item.id) && !item.isLab) {
-          catId = 'electives';
-        } else if (catId === 'specialization' && !specObj.modules?.includes(item.id)) {
-          catId = 'electives';
+        const allowed = this.getAvailableCategoryIds(mod, specObj);
+        if (!allowed.includes(catId)) {
+          // If assigned category is not permitted for this module, fallback to first valid option
+          catId = allowed[0] || 'electives';
         }
       } else if (activeSpec && ['fundamentals', 'focus', 'lab', 'specialization'].includes(catId)) {
         const inSpec = item.applicableSpecializations && item.applicableSpecializations.includes(activeSpec);
@@ -182,25 +179,13 @@ class DegreeValidator {
         }
       }
 
-      // If degree has 'specialization' category but not granular fundamentals/focus
+      // Attribute full credits directly to the designated category (no fractional overflow splitting)
       if (['fundamentals', 'focus', 'lab'].includes(catId) && !categoriesResult[catId] && categoriesResult['specialization']) {
         categoriesResult['specialization'].current += item.credits || 0;
+      } else if (catId === 'fundamentals' && !categoriesResult['fundamentals'] && categoriesResult['core']) {
+        categoriesResult['core'].current += item.credits || 0;
       } else if (categoriesResult[catId]) {
-        // Handle potential overflow into electives for capped categories
-        const cap = categoriesResult[catId].target;
-        const current = categoriesResult[catId].current;
-        const credits = item.credits || 0;
-        
-        if (catId !== 'electives' && catId !== 'specialization' && categoriesResult['electives'] && (current >= cap)) {
-          // Already full, overflow to electives
-          categoriesResult['electives'].current += credits;
-        } else if (catId !== 'electives' && catId !== 'specialization' && categoriesResult['electives'] && (current + credits > cap)) {
-          const needed = cap - current;
-          categoriesResult[catId].current += needed;
-          categoriesResult['electives'].current += (credits - needed);
-        } else {
-          categoriesResult[catId].current += credits;
-        }
+        categoriesResult[catId].current += item.credits || 0;
       } else if (item.isThesis && categoriesResult['thesis']) {
         categoriesResult['thesis'].current += item.credits || 0;
       } else if (categoriesResult['electives']) {
@@ -287,7 +272,7 @@ class DegreeValidator {
     const c = catName.toLowerCase();
     if (c.includes('thesis') || c.includes('masterarbeit') || c.includes('abschlussarbeit')) return 'thesis';
     if (c.includes('uq') || c.includes('interdisciplinary') || c.includes('überfachliche')) return 'uq';
-    if (c.includes('fundamental') || c.includes('stamm') || c.includes('pflicht')) return 'fundamentals';
+    if (c.includes('fundamental') || c.includes('stamm') || c.includes('pflicht') || c.includes('core') || c.includes('kern')) return 'fundamentals';
     if (c.includes('focus') || c.includes('schwerpunkt')) return 'focus';
     if (c.includes('lab') || c.includes('praktikum')) return 'lab';
     if (c.includes('specialization') || c.includes('vertiefung') || c.includes('major')) return 'specialization';
@@ -302,6 +287,9 @@ class DegreeValidator {
     if (cats.includes("Interdisciplinary Qualifications") || mod.id === 'M-ETIT-105803' || mod.title?.toLowerCase().includes("interdisciplinary")) {
       return "Interdisciplinary (ÜQ)";
     }
+    if (mod.isCustom && cats.length > 0) {
+      return cats[0];
+    }
 
     const specObj = this.degree?.specializations?.find(s => s.id === activeSpecId);
     if (specObj) {
@@ -315,6 +303,62 @@ class DegreeValidator {
     if (cats.includes("Focus Area")) return "Focus Area";
     if (mod.isLab || cats.includes("Lab Course")) return "Lab Course";
     return "Electives";
+  }
+
+  getAvailableCategoryIds(mod, activeSpecId = null) {
+    if (!mod) return ['electives'];
+    if (mod.isThesis || (mod.credits >= 24 && (mod.title?.toLowerCase().includes('thesis') || mod.title?.toLowerCase().includes('masterarbeit')))) {
+      return ['thesis'];
+    }
+    if (mod.id === 'M-ETIT-105803' || mod.categories?.includes("Interdisciplinary Qualifications") || mod.title?.toLowerCase().includes("interdisciplinary")) {
+      return ['uq'];
+    }
+    if (mod.isCustom) {
+      const customCats = ['electives'];
+      (mod.categories || []).forEach(c => {
+        customCats.push(this.normalizeCategoryId(c));
+      });
+      return [...new Set(customCats)];
+    }
+
+    const available = [];
+    const specObj = typeof activeSpecId === 'object' && activeSpecId !== null
+      ? activeSpecId
+      : this.degree?.specializations?.find(s => s.id === activeSpecId);
+
+    if (specObj) {
+      if (specObj.fundamentals && specObj.fundamentals.includes(mod.id)) {
+        available.push('fundamentals');
+      }
+      if (specObj.focus && specObj.focus.includes(mod.id)) {
+        available.push('focus');
+      }
+      if ((specObj.labs && specObj.labs.includes(mod.id)) || mod.isLab) {
+        available.push('lab');
+      }
+      // Any technical or catalog module can count as Electives
+      available.push('electives');
+    } else {
+      const degreeCats = this.degree?.categories || [];
+      const hasCore = degreeCats.some(c => c.id === 'core' || c.id === 'fundamentals');
+      const hasFocus = degreeCats.some(c => c.id === 'focus');
+      const hasLab = degreeCats.some(c => c.id === 'lab');
+
+      const cats = mod.categories || [];
+      if ((cats.includes("Fundamentals") || cats.includes("Core Subjects")) && hasCore) {
+        const coreCat = degreeCats.find(c => c.id === 'core' || c.id === 'fundamentals');
+        available.push(coreCat.id);
+      }
+      if (cats.includes("Focus Area") && hasFocus) {
+        available.push('focus');
+      }
+      if ((mod.isLab || cats.includes("Lab Course")) && hasLab) {
+        available.push('lab');
+      }
+      available.push('electives');
+    }
+
+    return [...new Set(available)];
   }
 }
 

@@ -13,6 +13,37 @@ class PlanGenerator {
   }
 
   /**
+   * Infers the canonical category label for a module within the given specialization track.
+   * @param {Object} mod 
+   * @param {string|null} specId 
+   * @returns {string}
+   */
+  inferCategory(mod, specId = null) {
+    if (!mod) return 'Electives';
+    if (mod.isThesis || mod.credits >= 24 && (mod.title?.toLowerCase().includes('thesis') || mod.title?.toLowerCase().includes('masterarbeit'))) {
+      return "Master's Thesis";
+    }
+    const cats = mod.categories || [];
+    if (cats.includes("Master's Thesis")) return "Master's Thesis";
+    if (cats.includes("Interdisciplinary Qualifications") || mod.id === 'M-ETIT-105803' || mod.title?.toLowerCase().includes("interdisciplinary")) {
+      return "Interdisciplinary (ÜQ)";
+    }
+
+    const specObj = this.degree?.specializations?.find(s => s.id === specId);
+    if (specObj) {
+      if (specObj.fundamentals && specObj.fundamentals.includes(mod.id)) return "Fundamentals";
+      if (specObj.labs && specObj.labs.includes(mod.id)) return "Lab Course";
+      if (specObj.focus && specObj.focus.includes(mod.id)) return "Focus Area";
+      return "Electives";
+    }
+
+    if (cats.includes("Fundamentals") || cats.includes("Core Subjects")) return "Fundamentals";
+    if (cats.includes("Focus Area")) return "Focus Area";
+    if (mod.isLab || cats.includes("Lab Course")) return "Lab Course";
+    return "Electives";
+  }
+
+  /**
    * Generates a conflict-free study plan respecting pinned modules, staged pool, and N semesters.
    * @param {Object} options - { specializationId, startTerm, englishOnly, stagedModuleIds, pinnedModules, fillMissingWithCatalog, semestersCount }
    * @returns {Object} { plan, report }
@@ -87,7 +118,7 @@ class PlanGenerator {
     const addModuleToSemester = (mod, sem, category, isPinned = false) => {
       plan.semesters[sem].push({
         id: mod.id,
-        category: category || mod.categories?.[0] || 'Electives',
+        category: category || this.inferCategory(mod, specId),
         isPinned: !!isPinned
       });
       usedModuleIds.add(mod.id);
@@ -101,7 +132,7 @@ class PlanGenerator {
         const modId = typeof item === 'string' ? item : item.id;
         const mod = this.getModule(modId);
         if (mod && !usedModuleIds.has(mod.id)) {
-          addModuleToSemester(mod, sem, item.category || mod.categories?.[0], true);
+          addModuleToSemester(mod, sem, item.category || this.inferCategory(mod, specId), true);
           report.pinnedPreserved++;
         }
       }
@@ -138,10 +169,11 @@ class PlanGenerator {
 
     for (const mod of stagedMods) {
       let placed = false;
+      const modCategory = this.inferCategory(mod, specId);
       // Search non-thesis semesters first
       for (let sem = 1; sem < thesisSem; sem++) {
         if (canPlaceInSemester(mod, sem, maxCPPerSem)) {
-          addModuleToSemester(mod, sem, mod.categories?.[0] || 'Specialization');
+          addModuleToSemester(mod, sem, modCategory);
           placed = true;
           report.stagedPlaced++;
           break;
@@ -151,7 +183,7 @@ class PlanGenerator {
       if (!placed) {
         for (let sem = 1; sem < thesisSem; sem++) {
           if (canPlaceInSemester(mod, sem, 36)) {
-            addModuleToSemester(mod, sem, mod.categories?.[0] || 'Specialization');
+            addModuleToSemester(mod, sem, modCategory);
             placed = true;
             report.stagedPlaced++;
             break;
@@ -181,10 +213,11 @@ class PlanGenerator {
         for (const it of plan.semesters[s]) {
           const m = this.getModule(it.id);
           if (!m || m.isThesis) continue;
-          if (it.category === 'Fundamentals' || (specId && m.applicableSpecializations?.includes(specId) && m.categories?.includes('Fundamentals'))) fundsCP += m.credits;
-          else if (it.category === 'Lab Course' || m.isLab || m.categories?.includes('Lab Course')) labCP += m.credits;
-          else if (it.category === 'Focus Area' || (specId && m.applicableSpecializations?.includes(specId) && m.categories?.includes('Focus Area'))) focusCP += m.credits;
-          else if (m.categories?.includes('Interdisciplinary Qualifications') || m.title.toLowerCase().includes('interdisciplinary')) uqCP += m.credits;
+          const cat = it.category || this.inferCategory(m, specId);
+          if (cat === 'Fundamentals' || (specId && m.applicableSpecializations?.includes(specId) && m.categories?.includes('Fundamentals'))) fundsCP += m.credits;
+          else if (cat === 'Lab Course' || m.isLab || m.categories?.includes('Lab Course')) labCP += m.credits;
+          else if (cat === 'Focus Area' || (specId && m.applicableSpecializations?.includes(specId) && m.categories?.includes('Focus Area'))) focusCP += m.credits;
+          else if (cat === 'Interdisciplinary (ÜQ)' || m.categories?.includes('Interdisciplinary Qualifications') || m.title.toLowerCase().includes('interdisciplinary')) uqCP += m.credits;
         }
       }
 

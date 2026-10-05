@@ -176,6 +176,7 @@ class UniversalStudyPlannerApp {
       const rawCustom = localStorage.getItem(`kit_custom_${degId}`);
       this.customModules = rawCustom ? JSON.parse(rawCustom) : [];
       this.customModules.forEach(m => {
+        m.isCustom = true;
         this.modulesMap.set(m.id, m);
         if (!this.modulesList.some(x => x.id === m.id)) {
           this.modulesList.push(m);
@@ -315,6 +316,16 @@ class UniversalStudyPlannerApp {
     stagedBtn.textContent = `📦 Staged (${this.stagedModules.length})`;
     stagedBtn.dataset.cat = 'staged';
     container.appendChild(stagedBtn);
+
+    // 'Custom' pill
+    if (this.customModules && this.customModules.length > 0) {
+      const customBtn = document.createElement('button');
+      customBtn.className = `filter-pill ${this.activeCategoryFilter === 'custom' ? 'active' : ''}`;
+      customBtn.id = 'pillCustom';
+      customBtn.textContent = `✏️ Custom (${this.customModules.length})`;
+      customBtn.dataset.cat = 'custom';
+      container.appendChild(customBtn);
+    }
   }
 
   renderCategoryChips() {
@@ -453,18 +464,44 @@ class UniversalStudyPlannerApp {
         else if (cardWarn) stateClass = 'conflict-warning';
         if (isPinned) stateClass += ' is-pinned';
 
+        const availableCats = this.getAvailableCategoriesForModule(mod);
+
+        // If item has no category set or current category is not permitted, pick default
+        if (!item.category || !availableCats.some(c => c.label === item.category)) {
+          const defaultCat = this.getModuleCategoryInfo(mod);
+          item.category = availableCats.some(c => c.label === defaultCat.label) ? defaultCat.label : availableCats[0].label;
+        }
+
+        const catInfo = this.getModuleCategoryInfo(mod, item.category);
+        const catClassSuffix = catInfo.label.replace(/[^a-zA-Z0-9]/g, '-');
+
+        const hasMultiple = availableCats.length > 1;
         const card = document.createElement('div');
-        card.className = `scheduled-card ${stateClass}`;
+        card.className = `scheduled-card ${stateClass} cat-${catClassSuffix}${hasMultiple ? ' has-multiple-categories' : ''}`;
         card.draggable = true;
         card.dataset.id = mod.id;
         card.dataset.semester = sem;
 
-        const catInfo = this.getModuleCategoryInfo(mod);
+        let categoryBadgeHtml = '';
+        if (hasMultiple) {
+          categoryBadgeHtml = `
+            <div class="cat-pill-wrapper has-multiple-categories ${catInfo.cssClass}" title="Eligible for ${availableCats.length} categories (${availableCats.map(c => c.label).join(', ')}). Click to switch!">
+              <span class="multi-cat-dot"></span>
+              <select class="badge-cat-select" data-module-id="${mod.id}" data-semester="${sem}">
+                ${availableCats.map(c => `<option value="${c.label}" ${c.label === catInfo.label ? 'selected' : ''}>${c.label}</option>`).join('')}
+              </select>
+              <span class="cat-pill-arrow">▾</span>
+            </div>
+          `;
+        } else {
+          categoryBadgeHtml = `<span class="badge badge-cat ${catInfo.cssClass}" title="Category: ${catInfo.label}">${catInfo.label}</span>`;
+        }
 
         card.innerHTML = `
           <div class="card-top">
             <span class="module-code">${mod.id}</span>
-            <span class="badge badge-cat ${catInfo.cssClass}">${catInfo.label}</span>
+            ${mod.isCustom ? '<span class="badge badge-custom" style="font-size: 0.65rem; padding: 1px 6px;">Custom</span>' : ''}
+            ${categoryBadgeHtml}
             ${isPinned ? '<span class="pin-badge">📌 Pinned</span>' : ''}
             <span class="badge badge-cp" style="margin-left:auto;">${mod.credits} CP</span>
           </div>
@@ -474,6 +511,7 @@ class UniversalStudyPlannerApp {
             <span class="badge badge-lang">${mod.language}</span>
           </div>
           <div class="card-actions">
+            ${mod.isCustom ? `<button class="action-icon-btn btn-edit-plan" title="Edit custom course">✏️</button>` : ''}
             <button class="action-icon-btn btn-pin" title="${isPinned ? 'Unpin from semester' : 'Pin to semester'}">${isPinned ? '🔓' : '📌'}</button>
             <button class="action-icon-btn btn-stage" title="Move to Staging Area">📦</button>
             <button class="action-icon-btn btn-remove" title="Remove from plan">✕</button>
@@ -482,9 +520,38 @@ class UniversalStudyPlannerApp {
 
         // Card clicks
         card.addEventListener('click', (e) => {
-          if (e.target.closest('.card-actions')) return;
+          if (e.target.closest('.card-actions') || e.target.closest('.cat-pill-wrapper')) return;
           this.showModuleModal(mod);
         });
+
+        if (mod.isCustom) {
+          card.querySelector('.btn-edit-plan')?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.openEditCustomModal(mod.id);
+          });
+        }
+
+        // Category dropdown wrapper click & change
+        const pillWrapper = card.querySelector('.cat-pill-wrapper');
+        const catSelect = card.querySelector('.badge-cat-select');
+
+        if (pillWrapper && catSelect) {
+          pillWrapper.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (e.target !== catSelect && typeof catSelect.showPicker === 'function') {
+              try { catSelect.showPicker(); } catch (_) { catSelect.focus(); }
+            }
+          });
+          catSelect.addEventListener('click', (e) => e.stopPropagation());
+          catSelect.addEventListener('mousedown', (e) => e.stopPropagation());
+          catSelect.addEventListener('change', (e) => {
+            e.stopPropagation();
+            item.category = e.target.value;
+            this.saveDegreeState();
+            this.renderPlanner();
+            this.runValidation();
+          });
+        }
 
         card.querySelector('.btn-pin').addEventListener('click', (e) => {
           e.stopPropagation();
@@ -554,17 +621,26 @@ class UniversalStudyPlannerApp {
         <div style="font-size: 0.72rem; font-weight: 700; color: var(--kit-muted);">${mod.id}</div>
         <div style="font-weight: 600; font-size: 0.82rem; margin: 2px 0 4px 0;">${mod.title}</div>
         <div style="display: flex; gap: 4px; align-items: center; flex-wrap: wrap;">
+          ${mod.isCustom ? '<span class="badge badge-custom" style="font-size: 0.65rem; padding: 1px 6px;">Custom</span>' : ''}
           <span class="badge badge-cat ${catInfo.cssClass}">${catInfo.label}</span>
           <span class="badge badge-cp">${mod.credits} CP</span>
           <span class="badge ${this.getTermBadgeClass(mod.term)}">${mod.term}</span>
-          <button class="action-icon-btn btn-unstage" style="margin-left:auto;" title="Remove from staging">✕</button>
+          ${mod.isCustom ? '<button class="action-icon-btn btn-edit-staged" title="Edit custom course" style="margin-left:auto;">✏️</button>' : ''}
+          <button class="action-icon-btn btn-unstage" style="${mod.isCustom ? '' : 'margin-left:auto;'}" title="Remove from staging">✕</button>
         </div>
       `;
 
       card.addEventListener('click', (e) => {
-        if (e.target.closest('.btn-unstage')) return;
+        if (e.target.closest('.btn-unstage') || e.target.closest('.btn-edit-staged')) return;
         this.showModuleModal(mod);
       });
+
+      if (mod.isCustom) {
+        card.querySelector('.btn-edit-staged')?.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.openEditCustomModal(mod.id);
+        });
+      }
 
       card.querySelector('.btn-unstage').addEventListener('click', (e) => {
         e.stopPropagation();
@@ -578,6 +654,15 @@ class UniversalStudyPlannerApp {
     if (pill) pill.textContent = `📦 Staged (${this.stagedModules.length})`;
   }
 
+  pulseStagingBadge() {
+    const badge = document.getElementById('stagedStatsBadge');
+    if (badge) {
+      badge.classList.remove('badge-pulse');
+      void badge.offsetWidth;
+      badge.classList.add('badge-pulse');
+    }
+  }
+
   unstageModule(moduleId) {
     const idx = this.stagedModules.indexOf(moduleId);
     if (idx !== -1) {
@@ -585,6 +670,7 @@ class UniversalStudyPlannerApp {
       this.saveDegreeState();
       this.renderStagingArea();
       this.renderCatalog();
+      this.pulseStagingBadge();
     }
   }
 
@@ -594,14 +680,36 @@ class UniversalStudyPlannerApp {
       this.saveDegreeState();
       this.renderStagingArea();
       this.renderCatalog();
+      this.pulseStagingBadge();
     }
   }
 
   // --- CATALOG LIST ---
 
-  getModuleCategoryInfo(mod) {
+  getCategoryCssClass(catIdOrName) {
+    if (!catIdOrName) return 'cat-electives';
+    const c = String(catIdOrName).toLowerCase();
+    if (c.includes('thesis') || c.includes('masterarbeit') || c.includes('abschlussarbeit')) return 'cat-thesis';
+    if (c.includes('uq') || c.includes('interdisciplinary') || c.includes('überfachliche')) return 'cat-uq';
+    if (c.includes('fundamental') || c.includes('stamm') || c.includes('pflicht') || c.includes('core') || c.includes('kern')) return 'cat-fundamentals';
+    if (c.includes('focus') || c.includes('schwerpunkt') || c.includes('specialization')) return 'cat-focus';
+    if (c.includes('lab') || c.includes('praktikum')) return 'cat-lab';
+    return 'cat-electives';
+  }
+
+  getModuleCategoryInfo(mod, selectedCategoryLabel = null) {
+    if (selectedCategoryLabel) {
+      return {
+        label: selectedCategoryLabel,
+        cssClass: this.getCategoryCssClass(selectedCategoryLabel)
+      };
+    }
     if (!mod) return { label: 'Electives', cssClass: 'cat-electives' };
     if (mod.isThesis) return { label: "Master's Thesis", cssClass: 'cat-thesis' };
+    if (mod.isCustom && mod.categories && mod.categories.length > 0) {
+      const cat = mod.categories[0];
+      return { label: cat, cssClass: this.getCategoryCssClass(cat) };
+    }
     const cats = mod.categories || [];
     if (cats.includes("Master's Thesis")) return { label: "Master's Thesis", cssClass: 'cat-thesis' };
     if (cats.includes("Interdisciplinary Qualifications") || mod.title?.toLowerCase().includes("interdisciplinary") || mod.id === 'M-ETIT-105803') {
@@ -633,6 +741,71 @@ class UniversalStudyPlannerApp {
     return { label: "Electives", cssClass: 'cat-electives' };
   }
 
+  getAvailableCategoriesForModule(mod) {
+    if (!mod) return [{ id: 'electives', label: 'Electives', cssClass: 'cat-electives' }];
+    if (mod.isThesis || (mod.credits >= 24 && (mod.title?.toLowerCase().includes('thesis') || mod.title?.toLowerCase().includes('masterarbeit')))) {
+      return [{ id: 'thesis', label: "Master's Thesis", cssClass: 'cat-thesis' }];
+    }
+    if (mod.id === 'M-ETIT-105803' || mod.categories?.includes("Interdisciplinary Qualifications") || mod.title?.toLowerCase().includes("interdisciplinary")) {
+      return [{ id: 'uq', label: "Interdisciplinary (ÜQ)", cssClass: 'cat-uq' }];
+    }
+    if (mod.isCustom) {
+      const available = (mod.categories || []).map(c => ({
+        id: this.getCategoryCssClass(c),
+        label: c,
+        cssClass: this.getCategoryCssClass(c)
+      }));
+      if (!available.some(c => c.label.toLowerCase() === 'electives')) {
+        available.push({ id: 'electives', label: 'Electives', cssClass: 'cat-electives' });
+      }
+      return available;
+    }
+
+    const available = [];
+    const activeSpecId = this.currentSpecialization;
+    const specObj = this.activeDegree?.specializations?.find(s => s.id === activeSpecId);
+
+    if (specObj) {
+      if (specObj.fundamentals && specObj.fundamentals.includes(mod.id)) {
+        available.push({ id: 'fundamentals', label: "Fundamentals", cssClass: 'cat-fundamentals' });
+      }
+      if (specObj.focus && specObj.focus.includes(mod.id)) {
+        available.push({ id: 'focus', label: "Focus Area", cssClass: 'cat-focus' });
+      }
+      if ((specObj.labs && specObj.labs.includes(mod.id)) || mod.isLab) {
+        available.push({ id: 'lab', label: "Lab Course", cssClass: 'cat-lab' });
+      }
+      // Any technical / specialization module can count as Electives
+      available.push({ id: 'electives', label: "Electives", cssClass: 'cat-electives' });
+    } else {
+      const degreeCats = this.activeDegree?.categories || [];
+      const hasCore = degreeCats.some(c => c.id === 'core' || c.id === 'fundamentals');
+      const hasFocus = degreeCats.some(c => c.id === 'focus');
+      const hasLab = degreeCats.some(c => c.id === 'lab');
+
+      const cats = mod.categories || [];
+      if ((cats.includes("Fundamentals") || cats.includes("Core Subjects")) && hasCore) {
+        const coreCat = degreeCats.find(c => c.id === 'core' || c.id === 'fundamentals');
+        available.push({ id: coreCat.id, label: coreCat.name || "Fundamentals", cssClass: 'cat-fundamentals' });
+      }
+      if (cats.includes("Focus Area") && hasFocus) {
+        available.push({ id: 'focus', label: "Focus Area", cssClass: 'cat-focus' });
+      }
+      if ((mod.isLab || cats.includes("Lab Course")) && hasLab) {
+        available.push({ id: 'lab', label: "Lab Course", cssClass: 'cat-lab' });
+      }
+      available.push({ id: 'electives', label: "Electives", cssClass: 'cat-electives' });
+    }
+
+    // Deduplicate by label
+    const seen = new Set();
+    return available.filter(c => {
+      if (seen.has(c.label)) return false;
+      seen.add(c.label);
+      return true;
+    });
+  }
+
   renderCatalog() {
     const list = document.getElementById('catalogList');
     if (!list) return;
@@ -653,6 +826,8 @@ class UniversalStudyPlannerApp {
       // 2. Category pill filter
       if (this.activeCategoryFilter === 'staged') {
         if (!this.stagedModules.includes(mod.id)) return false;
+      } else if (this.activeCategoryFilter === 'custom') {
+        if (!mod.isCustom) return false;
       } else if (this.activeCategoryFilter !== 'all') {
         const catFilter = this.activeCategoryFilter.toLowerCase();
         const catInfo = this.getModuleCategoryInfo(mod);
@@ -709,6 +884,7 @@ class UniversalStudyPlannerApp {
       card.innerHTML = `
         <div class="card-top">
           <span class="module-code">${mod.id}</span>
+          ${mod.isCustom ? '<span class="badge badge-custom">Custom</span>' : ''}
           <span class="badge badge-cat ${catInfo.cssClass}">${catInfo.label}</span>
           <span class="badge badge-cp" style="margin-left: auto;">${mod.credits} CP</span>
         </div>
@@ -727,6 +903,14 @@ class UniversalStudyPlannerApp {
           <button class="btn btn-sm btn-outline btn-card-add" title="Add to first available semester slot">
             ➕ Add
           </button>
+          ${mod.isCustom ? `
+            <button class="btn btn-sm btn-outline btn-card-edit" title="Edit custom course">
+              ✏️ Edit
+            </button>
+            <button class="btn btn-sm btn-outline btn-card-delete" title="Delete custom course">
+              🗑️
+            </button>
+          ` : ''}
         </div>
       `;
 
@@ -748,6 +932,17 @@ class UniversalStudyPlannerApp {
         e.stopPropagation();
         this.addModuleToFirstSlot(mod);
       });
+
+      if (mod.isCustom) {
+        card.querySelector('.btn-card-edit')?.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.openEditCustomModal(mod.id);
+        });
+        card.querySelector('.btn-card-delete')?.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.deleteCustomModule(mod.id);
+        });
+      }
 
       list.appendChild(card);
     });
@@ -927,7 +1122,7 @@ class UniversalStudyPlannerApp {
     });
 
     document.addEventListener('dragover', (e) => {
-      const dropzone = e.target.closest('.semester-dropzone, #stagingDropzone');
+      const dropzone = e.target.closest('.semester-dropzone, #stagingDropzone, #stagingArea');
       if (dropzone) {
         e.preventDefault();
         dropzone.classList.add('drag-over');
@@ -935,14 +1130,14 @@ class UniversalStudyPlannerApp {
     });
 
     document.addEventListener('dragleave', (e) => {
-      const dropzone = e.target.closest('.semester-dropzone, #stagingDropzone');
+      const dropzone = e.target.closest('.semester-dropzone, #stagingDropzone, #stagingArea');
       if (dropzone) {
         dropzone.classList.remove('drag-over');
       }
     });
 
     document.addEventListener('drop', (e) => {
-      const dropzone = e.target.closest('.semester-dropzone, #stagingDropzone');
+      const dropzone = e.target.closest('.semester-dropzone, #stagingDropzone, #stagingArea');
       if (!dropzone) return;
       e.preventDefault();
       dropzone.classList.remove('drag-over');
@@ -955,7 +1150,7 @@ class UniversalStudyPlannerApp {
         if (!mod) return;
 
         // Dropped into Staging Area
-        if (dropzone.id === 'stagingDropzone') {
+        if (dropzone.id === 'stagingDropzone' || dropzone.id === 'stagingArea' || dropzone.closest('#stagingArea')) {
           if (fromSem) {
             this.removeModuleFromPlan(modId);
           }
@@ -964,8 +1159,10 @@ class UniversalStudyPlannerApp {
           }
           this.saveDegreeState();
           this.renderPlanner();
+          this.renderStagingArea();
           this.renderCatalog();
           this.runValidation();
+          this.pulseStagingBadge();
           return;
         }
 
@@ -1115,6 +1312,7 @@ class UniversalStudyPlannerApp {
       this.currentSpecialization = e.target.value;
       this.plan.specialization = this.currentSpecialization;
       this.saveDegreeState();
+      this.renderPlanner();
       this.renderCatalog();
       this.runValidation();
     });
@@ -1163,10 +1361,16 @@ class UniversalStudyPlannerApp {
     // Auto-Plan button
     document.getElementById('btnAutoPlan')?.addEventListener('click', () => {
       if (!this.generator) return;
+      const pinnedModules = {};
+      for (let sem = 1; sem <= this.semestersCount; sem++) {
+        const pinnedInSem = (this.plan?.semesters?.[sem] || []).filter(it => it.isPinned);
+        if (pinnedInSem.length > 0) pinnedModules[sem] = pinnedInSem;
+      }
       const res = this.generator.generatePlan({
         specializationId: this.currentSpecialization,
         startTerm: this.startTerm,
         semestersCount: this.semestersCount,
+        pinnedModules: pinnedModules,
         fillMissingWithCatalog: true
       });
       this.plan = res.plan;
@@ -1180,10 +1384,16 @@ class UniversalStudyPlannerApp {
     document.getElementById('btnAutoPlanStaged')?.addEventListener('click', () => {
       if (!this.generator) return;
       const fillMissing = document.getElementById('chkFillMissing')?.checked;
+      const pinnedModules = {};
+      for (let sem = 1; sem <= this.semestersCount; sem++) {
+        const pinnedInSem = (this.plan?.semesters?.[sem] || []).filter(it => it.isPinned);
+        if (pinnedInSem.length > 0) pinnedModules[sem] = pinnedInSem;
+      }
       const res = this.generator.generatePlan({
         specializationId: this.currentSpecialization,
         startTerm: this.startTerm,
         semestersCount: this.semestersCount,
+        pinnedModules: pinnedModules,
         stagedModuleIds: this.stagedModules,
         fillMissingWithCatalog: fillMissing
       });
@@ -1213,6 +1423,7 @@ class UniversalStudyPlannerApp {
       this.saveDegreeState();
       this.renderStagingArea();
       this.renderCatalog();
+      this.pulseStagingBadge();
     });
 
     // Stage Current Plan button
@@ -1226,7 +1437,56 @@ class UniversalStudyPlannerApp {
       this.saveDegreeState();
       this.renderStagingArea();
       this.renderCatalog();
+      this.pulseStagingBadge();
     });
+
+    // Staging Area collapse/expand toggle
+    const stagingArea = document.getElementById('stagingArea');
+    const btnToggleStaging = document.getElementById('btnToggleStaging');
+    const stagingTitleGroup = document.getElementById('stagingTitleGroup');
+
+    const setStagingCollapsed = (collapsed) => {
+      if (!stagingArea) return;
+      if (collapsed) {
+        stagingArea.classList.add('collapsed');
+        btnToggleStaging?.setAttribute('title', 'Expand Staging Area [Alt+S]');
+        btnToggleStaging?.setAttribute('aria-expanded', 'false');
+      } else {
+        stagingArea.classList.remove('collapsed');
+        btnToggleStaging?.setAttribute('title', 'Collapse Staging Area [Alt+S]');
+        btnToggleStaging?.setAttribute('aria-expanded', 'true');
+      }
+      localStorage.setItem('kit_staging_collapsed', collapsed ? 'true' : 'false');
+    };
+
+    const toggleStaging = () => {
+      if (!stagingArea) return;
+      const isCollapsed = stagingArea.classList.contains('collapsed');
+      setStagingCollapsed(!isCollapsed);
+    };
+
+    btnToggleStaging?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleStaging();
+    });
+
+    stagingTitleGroup?.addEventListener('click', () => {
+      toggleStaging();
+    });
+
+    // Keyboard shortcut Alt+S to toggle Staging Area
+    document.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+      if (e.altKey && (e.key === 's' || e.key === 'S')) {
+        e.preventDefault();
+        toggleStaging();
+      }
+    });
+
+    // Restore saved staging collapsed state
+    if (localStorage.getItem('kit_staging_collapsed') === 'true') {
+      setStagingCollapsed(true);
+    }
 
     // View toggle (Schedule vs Analytics)
     document.getElementById('tabScheduleView')?.addEventListener('click', () => {
@@ -1254,7 +1514,70 @@ class UniversalStudyPlannerApp {
       document.getElementById('auditModal').classList.remove('open');
     });
 
-    // Module modal close
+    // Ribbon collapse/expand toggle
+    const header = document.querySelector('.app-header');
+    const btnToggleRibbon = document.getElementById('btnToggleRibbon');
+    const btnCollapseRibbon = document.getElementById('btnCollapseRibbon');
+    const ribbonToggleIcon = document.getElementById('ribbonToggleIcon');
+    const ribbonToggleText = document.getElementById('ribbonToggleText');
+
+    const setRibbonCollapsed = (collapsed) => {
+      if (!header) return;
+      if (collapsed) {
+        header.classList.add('collapsed');
+        if (ribbonToggleIcon) ribbonToggleIcon.textContent = '▼';
+        if (ribbonToggleText) ribbonToggleText.textContent = 'Show Ribbon';
+        btnToggleRibbon?.setAttribute('title', 'Show top ribbon (Degree, Focus Area, Actions) [Alt+H]');
+      } else {
+        header.classList.remove('collapsed');
+        if (ribbonToggleIcon) ribbonToggleIcon.textContent = '▲';
+        if (ribbonToggleText) ribbonToggleText.textContent = 'Hide Ribbon';
+        btnToggleRibbon?.setAttribute('title', 'Hide top ribbon to maximize workspace [Alt+H]');
+      }
+      localStorage.setItem('kit_ribbon_collapsed', collapsed ? 'true' : 'false');
+    };
+
+    const toggleRibbon = () => {
+      if (!header) return;
+      const isCollapsed = header.classList.contains('collapsed');
+      setRibbonCollapsed(!isCollapsed);
+    };
+
+    btnToggleRibbon?.addEventListener('click', toggleRibbon);
+    btnCollapseRibbon?.addEventListener('click', toggleRibbon);
+
+    // Keyboard shortcut Alt+H to toggle ribbon
+    document.addEventListener('keydown', (e) => {
+      if (e.altKey && (e.key === 'h' || e.key === 'H')) {
+        e.preventDefault();
+        toggleRibbon();
+      }
+    });
+
+    // Restore saved ribbon state
+    if (localStorage.getItem('kit_ribbon_collapsed') === 'true') {
+      setRibbonCollapsed(true);
+    }
+
+    // Backdrop click-to-close for all modal overlays (including moduleModal)
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove('open');
+        }
+      });
+    });
+
+    // Keyboard shortcut Escape to close open modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.open').forEach(modal => {
+          modal.classList.remove('open');
+        });
+      }
+    });
+
+    // Module modal close buttons
     document.getElementById('modalCloseBtn')?.addEventListener('click', () => {
       document.getElementById('moduleModal').classList.remove('open');
     });
@@ -1264,42 +1587,83 @@ class UniversalStudyPlannerApp {
 
     // Custom course modal
     document.getElementById('btnOpenCustomModal')?.addEventListener('click', () => {
-      document.getElementById('customModal').classList.add('open');
+      this.openAddCustomModal();
     });
     document.getElementById('customCloseBtn')?.addEventListener('click', () => {
       document.getElementById('customModal').classList.remove('open');
     });
+    document.getElementById('customCancelBtn')?.addEventListener('click', () => {
+      document.getElementById('customModal').classList.remove('open');
+    });
     document.getElementById('customCourseForm')?.addEventListener('submit', (e) => {
       e.preventDefault();
+      const editId = document.getElementById('customEditId')?.value?.trim();
       const title = document.getElementById('customTitle').value.trim();
-      const credits = parseInt(document.getElementById('customCredits').value) || 3;
+      const credits = parseInt(document.getElementById('customCredits').value, 10) || 3;
       const category = document.getElementById('customCategory').value;
       const term = document.getElementById('customTerm').value;
       const lang = document.getElementById('customLang').value;
 
-      const customId = `CUSTOM-${Date.now().toString().slice(-6)}`;
-      const customMod = {
-        id: customId,
-        title: title,
-        credits: credits,
-        term: term,
-        termString: term,
-        language: lang,
-        categories: [category],
-        applicableSpecializations: [],
-        isCustom: true,
-        coordinators: ['Self-Enrolled / HoC / SPZ'],
-        prerequisites: 'None'
-      };
+      if (editId) {
+        // Edit existing custom module
+        const mod = this.modulesMap.get(editId) || this.customModules.find(m => m.id === editId);
+        if (mod) {
+          mod.title = title;
+          mod.credits = credits;
+          mod.term = term;
+          mod.termString = term;
+          mod.language = lang;
+          mod.categories = [category];
 
-      this.customModules.push(customMod);
-      this.modulesList.push(customMod);
-      this.modulesMap.set(customId, customMod);
-      this.saveDegreeState();
+          // Also update category on scheduled instance in plan if present
+          for (let sem = 1; sem <= this.semestersCount; sem++) {
+            const scheduled = (this.plan?.semesters?.[sem] || []).find(it => it.id === editId);
+            if (scheduled) {
+              scheduled.category = category;
+            }
+          }
 
-      document.getElementById('customModal').classList.remove('open');
-      document.getElementById('customCourseForm').reset();
-      this.renderCatalog();
+          this.saveDegreeState();
+          document.getElementById('customModal').classList.remove('open');
+
+          if (this.inspectedModule?.id === editId) {
+            this.showModuleModal(mod);
+          }
+
+          this.renderCategoryPills();
+          this.renderCatalog();
+          this.renderStagingArea();
+          this.renderPlanner();
+          this.runValidation();
+        }
+      } else {
+        // Create new custom module
+        const customId = `CUSTOM-${Date.now().toString().slice(-6)}`;
+        const customMod = {
+          id: customId,
+          title: title,
+          credits: credits,
+          term: term,
+          termString: term,
+          language: lang,
+          categories: [category],
+          applicableSpecializations: [],
+          isCustom: true,
+          coordinators: ['Self-Enrolled / HoC / SPZ'],
+          prerequisites: 'None'
+        };
+
+        this.customModules.push(customMod);
+        this.modulesList.push(customMod);
+        this.modulesMap.set(customId, customMod);
+        this.saveDegreeState();
+
+        document.getElementById('customModal').classList.remove('open');
+        document.getElementById('customCourseForm').reset();
+        this.renderCategoryPills();
+        this.renderCatalog();
+        this.runValidation();
+      }
     });
 
     // Export button
@@ -1314,26 +1678,311 @@ class UniversalStudyPlannerApp {
     });
   }
 
+  formatHandbookText(rawText) {
+    if (!rawText || typeof rawText !== 'string') return '';
+
+    let text = rawText.trim();
+    if (!text) return '';
+
+    // 1. Clean PDF running headers/footers and page break artifacts
+    text = text.replace(/---\s*PAGE\s*\d+\s*---/gi, '');
+    text = text.replace(/\b(?:Module\s+Handbook|Modulhandbuch)\s+(?:as\s+of|mit\s+Stand\s+vom|Stand)\s+[\d\.\/]+(?:\s*\d+)?/gi, '');
+    text = text.replace(/M\.Sc\.\s+.*?(?:\(Master of Science\)|Masterarbeit|Master's Thesis)/gi, '');
+    text = text.replace(/\b\d+\s+MODULES\s+Module:\s+.*?(?=\n|$)/gi, '');
+    text = text.replace(/\bM\s+\d+\.\d+\s+Module:.*?(?=\n|$)/gi, '');
+    text = text.replace(/\b(?:Module Grade Calculation|Zusammensetzung der Modulnote)[\s\S]*$/gi, '');
+
+    const rawLines = text.split(/\r?\n/).map(l => l.trim()).filter(l => l.length > 0);
+    if (rawLines.length === 0) return '';
+
+    // PASS 1: Merge soft-wrapped continuation lines within sentences/items
+    const normalizedLines = [];
+    for (const line of rawLines) {
+      const isBulletMarker = /^([•◦▪·*–—\-]|(\d+[\.\)]))\s*$/.test(line);
+      const startsWithBullet = /^([•◦▪·*–—\-]\s+|\d+[\.\)]\s+|[◦▪]\s*)/.test(line);
+      const isHeading = line.endsWith(':') || /^(Professional qualification goals|Interdisciplinary qualification goals|Learning objectives|Qualification goal|Fachliche Qualifikationsziele|Überfachliche Qualifikationsziele)\b/i.test(line);
+
+      if (normalizedLines.length > 0) {
+        const prev = normalizedLines[normalizedLines.length - 1];
+        const prevIsMarker = /^([•◦▪·*–—\-]|(\d+[\.\)]))\s*$/.test(prev);
+        const prevIsLeadin = prev.endsWith(':');
+        const prevEndsClause = /[\.,;:!\?]$/.test(prev);
+
+        let shouldMerge = false;
+        if (!isBulletMarker && !startsWithBullet && !isHeading && !prevIsMarker && !prevIsLeadin) {
+          if (prev.endsWith('-')) {
+            normalizedLines[normalizedLines.length - 1] = prev.slice(0, -1) + line;
+            continue;
+          }
+          if (!prevEndsClause) {
+            if (/^[a-z0-9]/.test(line)) {
+              const isNewAction = /^(get|understand|learn|analyze|apply|know|be able|can|design|describe|explain|reproduce|select|derive|demonstrate|können|haben|sind|verstehen|lernen|beschreiben|erkennen|wiedergeben|lösen)\b/i.test(line);
+              if (!isNewAction) {
+                shouldMerge = true;
+              }
+            } else if (!/^(The students|Students|Die Studierenden|Absolventen|In summary|After|By the end|[A-Z][a-z]+ [A-Z])\b/.test(line)) {
+              shouldMerge = true;
+            }
+          }
+        }
+
+        if (shouldMerge) {
+          normalizedLines[normalizedLines.length - 1] = prev + ' ' + line;
+          continue;
+        }
+      }
+
+      normalizedLines.push(line);
+    }
+
+    // PASS 2: Match stacked/isolated bullets with following items
+    const lines = [];
+    let i = 0;
+    while (i < normalizedLines.length) {
+      const line = normalizedLines[i];
+
+      if (/^([•◦▪·*–—\-]|(\d+[\.\)]))\s*$/.test(line)) {
+        const bulletCluster = [];
+        while (i < normalizedLines.length && /^([•◦▪·*–—\-]|(\d+[\.\)]))\s*$/.test(normalizedLines[i])) {
+          bulletCluster.push(normalizedLines[i]);
+          i++;
+        }
+
+        // Check if line before bullets had a continuation right after bullets
+        if (i < normalizedLines.length && lines.length > 0 && !/^([•◦▪·*–—\-]\s*|\d+[\.\)])/.test(normalizedLines[i])) {
+          const candidate = normalizedLines[i];
+          if (/^[a-z0-9,\.\)]/.test(candidate) && !/^(can|are|is|have|has|get|know|understand|learn|distinguish|können|haben|sind|verstehen|lernen)\b/i.test(candidate)) {
+            lines[lines.length - 1] = lines[lines.length - 1] + ' ' + candidate;
+            i++;
+          }
+        }
+
+        for (const b of bulletCluster) {
+          if (i < normalizedLines.length) {
+            const item = normalizedLines[i];
+            if (/^([•◦▪·*–—\-]\s+|\d+[\.\)]\s+|[◦▪]\s*)/.test(item)) {
+              lines.push(item);
+            } else {
+              let marker = b.endsWith('.') || b.endsWith(')') ? b : `${b} `;
+              if (!marker.endsWith(' ')) marker += ' ';
+              lines.push(`${marker}${item}`);
+            }
+            i++;
+          }
+        }
+        continue;
+      }
+
+      lines.push(line);
+      i++;
+    }
+
+    // Helper escape
+    const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+    // Format item content (e.g. bolding "Topic Name: details")
+    const formatItemContent = (raw) => {
+      const escaped = esc(raw);
+      return escaped.replace(/^([^:\n]{3,45}):\s+/, '<strong>$1:</strong> ');
+    };
+
+    // PASS 3: Generate semantic HTML
+    const htmlParts = [];
+    let currentListType = null; // 'ul' | 'ol' | 'sub-ul'
+
+    const closeList = () => {
+      if (currentListType === 'ul' || currentListType === 'sub-ul') {
+        htmlParts.push('</ul>');
+      } else if (currentListType === 'ol') {
+        htmlParts.push('</ol>');
+      }
+      currentListType = null;
+    };
+
+    for (const line of lines) {
+      const subMatch = line.match(/^[◦▪o]\s*(.*)/);
+      const bulletMatch = line.match(/^[•·*–—\-]\s*(.*)/);
+      const numberedMatch = line.match(/^(\d+)[\.\)]\s*(.*)/);
+
+      if (subMatch) {
+        if (currentListType !== 'sub-ul' && currentListType !== 'ul') {
+          closeList();
+          htmlParts.push('<ul class="handbook-list handbook-sublist">');
+          currentListType = 'sub-ul';
+        }
+        htmlParts.push(`  <li class="handbook-subitem">${formatItemContent(subMatch[1])}</li>`);
+      } else if (bulletMatch) {
+        if (currentListType !== 'ul') {
+          closeList();
+          htmlParts.push('<ul class="handbook-list handbook-bullet-list">');
+          currentListType = 'ul';
+        }
+        htmlParts.push(`  <li>${formatItemContent(bulletMatch[1])}</li>`);
+      } else if (numberedMatch) {
+        if (currentListType !== 'ol') {
+          closeList();
+          htmlParts.push('<ol class="handbook-list handbook-ordered-list">');
+          currentListType = 'ol';
+        }
+        htmlParts.push(`  <li value="${numberedMatch[1]}">${formatItemContent(numberedMatch[2])}</li>`);
+      } else {
+        closeList();
+        const isHeader = line.endsWith(':') || /^(Professional qualification goals|Interdisciplinary qualification goals|Learning objectives|Qualification goal|Fachliche Qualifikationsziele|Überfachliche Qualifikationsziele)\b/i.test(line);
+        if (isHeader) {
+          htmlParts.push(`<p class="handbook-lead-in">${esc(line)}</p>`);
+        } else {
+          htmlParts.push(`<p class="handbook-paragraph">${esc(line)}</p>`);
+        }
+      }
+    }
+
+    closeList();
+    return htmlParts.join('\n');
+  }
+
   showModuleModal(mod) {
     this.inspectedModule = mod;
     document.getElementById('modalModCode').textContent = mod.id;
     document.getElementById('modalModTitle').textContent = mod.title;
 
+    // Check if module is currently scheduled in the study plan
+    let scheduledItem = null;
+    let scheduledSem = null;
+    for (let s = 1; s <= this.semestersCount; s++) {
+      const match = (this.plan.semesters[s] || []).find(it => it.id === mod.id);
+      if (match) {
+        scheduledItem = match;
+        scheduledSem = s;
+        break;
+      }
+    }
+
+    const availableCats = this.getAvailableCategoriesForModule(mod);
+    const activeCatLabel = scheduledItem?.category || this.getModuleCategoryInfo(mod).label;
+    const catInfo = this.getModuleCategoryInfo(mod, activeCatLabel);
+
     const body = document.getElementById('modalModBody');
     body.innerHTML = `
-      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; align-items: center;">
+        ${mod.isCustom ? '<span class="badge badge-custom">Custom Module</span>' : ''}
         <span class="badge badge-cp">${mod.credits} CP</span>
         <span class="badge ${this.getTermBadgeClass(mod.term)}">${mod.termString || mod.term}</span>
         <span class="badge badge-lang">${mod.language}</span>
-        <span class="badge" style="background:#e0e7ff;color:#3730a3;">${mod.categories?.join(', ') || 'Electives'}</span>
+        <span class="badge" style="background:#e0e7ff;color:#3730a3;">Catalog: ${mod.categories?.join(', ') || 'Electives'}</span>
       </div>
-      <p style="font-size: 0.85rem; color: var(--kit-muted); margin-bottom: 10px;"><strong>Organisation / Institute:</strong> ${mod.organisation || 'KIT'}</p>
-      <p style="font-size: 0.85rem; color: var(--kit-muted); margin-bottom: 10px;"><strong>Coordinators:</strong> ${(mod.coordinators || []).join(', ') || 'Department Faculty'}</p>
-      ${mod.examType ? `<p style="font-size: 0.85rem; margin-bottom: 10px;"><strong>Assessment / Examination:</strong> ${mod.examType}</p>` : ''}
-      ${mod.prerequisites && mod.prerequisites !== 'None' ? `<p style="font-size: 0.85rem; margin-bottom: 10px;"><strong>Prerequisites:</strong> ${mod.prerequisites}</p>` : ''}
-      ${mod.competenceGoal ? `<div style="margin-top: 12px;"><strong>Competence Goals:</strong><p style="font-size: 0.82rem; line-height: 1.4; color: #334155; margin-top: 4px;">${mod.competenceGoal}</p></div>` : ''}
-      ${mod.content ? `<div style="margin-top: 12px;"><strong>Course Content:</strong><p style="font-size: 0.82rem; line-height: 1.4; color: #334155; margin-top: 4px;">${mod.content}</p></div>` : ''}
+
+      ${mod.isCustom ? `
+        <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 0.83rem; color: #86198f; display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+          <span>💡 <strong>Custom Module / External Credit:</strong> You can edit this course's title, ECTS credits, category, term, or delete it anytime.</span>
+        </div>
+      ` : ''}
+
+      ${scheduledItem ? `
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <div style="font-size: 0.72rem; font-weight: 700; color: var(--kit-muted); text-transform: uppercase; letter-spacing: 0.05em;">Plan Assignment (Semester ${scheduledSem})</div>
+            <div style="font-size: 0.82rem; font-weight: 600; color: var(--kit-dark); margin-top: 2px;">Attributed Category for CP Tally:</div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            ${availableCats.length > 1 ? `
+              <div class="cat-pill-wrapper has-multiple-categories ${catInfo.cssClass}" style="padding: 2.5px 10px 2.5px 8px;">
+                <span class="multi-cat-dot"></span>
+                <select id="modalCatSelect" class="badge-cat-select" style="font-size: 0.75rem;">
+                  ${availableCats.map(c => `<option value="${c.label}" ${c.label === activeCatLabel ? 'selected' : ''}>${c.label}</option>`).join('')}
+                </select>
+                <span class="cat-pill-arrow">▾</span>
+              </div>
+            ` : `
+              <span class="badge badge-cat ${catInfo.cssClass}">${catInfo.label}</span>
+            `}
+          </div>
+        </div>
+      ` : ''}
+
+      <div class="meta-grid" style="margin-bottom: 14px;">
+        <div class="meta-item">
+          <span class="meta-label">Organisation / Institute</span>
+          <span class="meta-value">${mod.organisation || 'KIT'}</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Coordinators</span>
+          <span class="meta-value">${(mod.coordinators || []).join(', ') || 'Department Faculty'}</span>
+        </div>
+      </div>
+
+      ${mod.prerequisites && mod.prerequisites !== 'None' ? `
+        <div class="modal-detail-section">
+          <h3 class="modal-section-title"><span>⚠️</span> Prerequisites (Voraussetzungen)</h3>
+          <div class="handbook-formatted-text">${this.formatHandbookText(mod.prerequisites)}</div>
+        </div>
+      ` : ''}
+
+      ${mod.competenceGoal ? `
+        <div class="modal-detail-section">
+          <h3 class="modal-section-title"><span>🎯</span> Competence Goals (Qualifikationsziele)</h3>
+          <div class="handbook-formatted-text">${this.formatHandbookText(mod.competenceGoal)}</div>
+        </div>
+      ` : ''}
+
+      ${mod.content ? `
+        <div class="modal-detail-section">
+          <h3 class="modal-section-title"><span>📚</span> Course Content (Inhalt)</h3>
+          <div class="handbook-formatted-text">${this.formatHandbookText(mod.content)}</div>
+        </div>
+      ` : ''}
+
+      ${mod.examType ? `
+        <div class="modal-detail-section">
+          <h3 class="modal-section-title"><span>📝</span> Assessment & Examination</h3>
+          <div class="handbook-formatted-text">${this.formatHandbookText(mod.examType)}</div>
+        </div>
+      ` : ''}
+
+      ${mod.workload ? `
+        <div class="modal-detail-section">
+          <h3 class="modal-section-title"><span>⏱️</span> Workload</h3>
+          <div class="handbook-formatted-text">${this.formatHandbookText(mod.workload)}</div>
+        </div>
+      ` : ''}
+
+      ${mod.recommendations ? `
+        <div class="modal-detail-section">
+          <h3 class="modal-section-title"><span>💡</span> Recommendations</h3>
+          <div class="handbook-formatted-text">${this.formatHandbookText(mod.recommendations)}</div>
+        </div>
+      ` : ''}
     `;
+
+    const modalCatSelect = document.getElementById('modalCatSelect');
+    if (modalCatSelect && scheduledItem) {
+      modalCatSelect.addEventListener('change', (e) => {
+        scheduledItem.category = e.target.value;
+        const newCatInfo = this.getModuleCategoryInfo(mod, scheduledItem.category);
+        modalCatSelect.className = `badge badge-cat badge-cat-select ${newCatInfo.cssClass}`;
+        this.saveDegreeState();
+        this.renderPlanner();
+        this.runValidation();
+      });
+    }
+
+    // Custom course actions in modal footer
+    const editBtn = document.getElementById('modalEditCustomBtn');
+    const deleteBtn = document.getElementById('modalDeleteCustomBtn');
+    if (editBtn && deleteBtn) {
+      if (mod.isCustom) {
+        editBtn.style.display = 'inline-flex';
+        deleteBtn.style.display = 'inline-flex';
+        editBtn.onclick = () => {
+          this.openEditCustomModal(mod.id);
+        };
+        deleteBtn.onclick = () => {
+          this.deleteCustomModule(mod.id);
+        };
+      } else {
+        editBtn.style.display = 'none';
+        deleteBtn.style.display = 'none';
+      }
+    }
 
     const stageBtn = document.getElementById('modalStageBtn');
     const isStaged = this.stagedModules.includes(mod.id);
@@ -1351,6 +2000,155 @@ class UniversalStudyPlannerApp {
     document.getElementById('moduleModal').classList.add('open');
   }
 
+  // --- CUSTOM MODULES MANAGEMENT (ADD / EDIT / DELETE) ---
+
+  populateCustomCategories(selectedCategory = null) {
+    const select = document.getElementById('customCategory');
+    if (!select) return;
+    select.innerHTML = '';
+
+    const cats = this.activeDegree?.categories || [];
+    const options = [];
+
+    // Always include Interdisciplinary (ÜQ)
+    options.push({ value: 'Interdisciplinary (ÜQ)', label: 'Interdisciplinary (ÜQ / Soft Skills)' });
+
+    // Include degree categories except thesis
+    cats.forEach(c => {
+      if (c.id === 'thesis' || c.id === 'uq') return;
+      options.push({ value: c.name, label: c.name });
+    });
+
+    // Ensure Electives is present
+    if (!options.some(o => o.value.toLowerCase().includes('elective'))) {
+      options.push({ value: 'Electives', label: 'Electives' });
+    }
+
+    const seen = new Set();
+    options.forEach(opt => {
+      if (!seen.has(opt.value)) {
+        seen.add(opt.value);
+        const optEl = document.createElement('option');
+        optEl.value = opt.value;
+        optEl.textContent = opt.label;
+        if (selectedCategory && (opt.value === selectedCategory || opt.label.toLowerCase().includes(selectedCategory.toLowerCase()))) {
+          optEl.selected = true;
+        }
+        select.appendChild(optEl);
+      }
+    });
+
+    if (selectedCategory && !seen.has(selectedCategory)) {
+      const optEl = document.createElement('option');
+      optEl.value = selectedCategory;
+      optEl.textContent = selectedCategory;
+      optEl.selected = true;
+      select.appendChild(optEl);
+    }
+  }
+
+  openAddCustomModal() {
+    const modal = document.getElementById('customModal');
+    if (!modal) return;
+    const form = document.getElementById('customCourseForm');
+    if (form) form.reset();
+
+    const titleEl = document.getElementById('customModalTitle');
+    if (titleEl) titleEl.textContent = 'Add Custom Course or External Credit';
+
+    const submitBtn = document.getElementById('customSubmitBtn');
+    if (submitBtn) submitBtn.textContent = 'Save & Add Course';
+
+    const editIdInput = document.getElementById('customEditId');
+    if (editIdInput) editIdInput.value = '';
+
+    this.populateCustomCategories('Interdisciplinary (ÜQ)');
+    modal.classList.add('open');
+    setTimeout(() => document.getElementById('customTitle')?.focus(), 50);
+  }
+
+  openEditCustomModal(moduleId) {
+    const mod = this.modulesMap?.get(moduleId) || this.customModules.find(m => m.id === moduleId);
+    if (!mod) return;
+
+    const modal = document.getElementById('customModal');
+    if (!modal) return;
+
+    const titleEl = document.getElementById('customModalTitle');
+    if (titleEl) titleEl.textContent = `Edit Custom Course: ${mod.title}`;
+
+    const submitBtn = document.getElementById('customSubmitBtn');
+    if (submitBtn) submitBtn.textContent = 'Save Changes';
+
+    const editIdInput = document.getElementById('customEditId');
+    if (editIdInput) editIdInput.value = mod.id;
+
+    const titleInput = document.getElementById('customTitle');
+    if (titleInput) titleInput.value = mod.title || '';
+
+    const creditsInput = document.getElementById('customCredits');
+    if (creditsInput) creditsInput.value = mod.credits || 3;
+
+    const catValue = mod.categories?.[0] || 'Interdisciplinary (ÜQ)';
+    this.populateCustomCategories(catValue);
+
+    const termSelect = document.getElementById('customTerm');
+    if (termSelect) termSelect.value = mod.term || 'WS+SS';
+
+    const langSelect = document.getElementById('customLang');
+    if (langSelect) langSelect.value = mod.language || 'German';
+
+    modal.classList.add('open');
+    setTimeout(() => document.getElementById('customTitle')?.focus(), 50);
+  }
+
+  deleteCustomModule(moduleId) {
+    const mod = this.modulesMap?.get(moduleId) || this.customModules.find(m => m.id === moduleId);
+    if (!mod || !mod.isCustom) return;
+
+    const confirmed = window.confirm(
+      `Are you sure you want to delete custom module "${mod.title}" (${mod.id})?\n\nThis will remove it from your course catalog, staging area, and semester plan.`
+    );
+    if (!confirmed) return;
+
+    // 1. Remove from customModules
+    this.customModules = this.customModules.filter(m => m.id !== moduleId);
+
+    // 2. Remove from modulesList & modulesMap
+    this.modulesList = this.modulesList.filter(m => m.id !== moduleId);
+    this.modulesMap.delete(moduleId);
+
+    // 3. Remove from staging area
+    this.stagedModules = this.stagedModules.filter(id => id !== moduleId);
+
+    // 4. Remove from semester plan
+    this.removeModuleFromPlan(moduleId);
+
+    // 5. Persist state
+    this.saveDegreeState();
+
+    // 6. Close details modal if open for this module
+    if (this.inspectedModule?.id === moduleId) {
+      document.getElementById('moduleModal')?.classList.remove('open');
+      this.inspectedModule = null;
+    }
+
+    // 7. Close custom modal if open
+    document.getElementById('customModal')?.classList.remove('open');
+
+    // 8. If custom filter was active and no custom modules remain, switch back to 'all'
+    if (this.activeCategoryFilter === 'custom' && this.customModules.length === 0) {
+      this.activeCategoryFilter = 'all';
+    }
+
+    // 9. Re-render UI
+    this.renderCategoryPills();
+    this.renderCatalog();
+    this.renderStagingArea();
+    this.renderPlanner();
+    this.runValidation();
+  }
+
   getModule(id) {
     return this.modulesMap.get(id);
   }
@@ -1362,8 +2160,21 @@ class UniversalStudyPlannerApp {
   }
 }
 
+// Global browser & runtime registration
+if (typeof window !== 'undefined') {
+  window.UniversalStudyPlannerApp = UniversalStudyPlannerApp;
+}
+if (typeof globalThis !== 'undefined') {
+  globalThis.UniversalStudyPlannerApp = UniversalStudyPlannerApp;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { UniversalStudyPlannerApp };
+}
+
 // Bootstrap application on DOM ready
-document.addEventListener('DOMContentLoaded', () => {
-  window.app = new UniversalStudyPlannerApp();
-  window.app.init();
-});
+if (typeof document !== 'undefined' && document.addEventListener) {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.app = new UniversalStudyPlannerApp();
+    window.app.init();
+  });
+}

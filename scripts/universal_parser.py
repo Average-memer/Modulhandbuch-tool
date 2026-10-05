@@ -22,6 +22,9 @@ def strip_page_artifacts(text):
     text = re.sub(r'---\s*PAGE\s*\d+\s*---', ' ', text)
     # Remove generic running header text
     text = re.sub(r'\b(?:Module\s+Handbook|Modulhandbuch)\s+(?:as\s+of|mit\s+Stand\s+vom|Stand)\s+[\d\.\/]+(?:\s*\d+)?', ' ', text, flags=re.IGNORECASE)
+    text = re.sub(r'M\.Sc\.\s+.*?(?:\(Master of Science\)|Masterarbeit|Master\'s Thesis)', ' ', text, flags=re.IGNORECASE)
+    text = re.sub(r'\b\d+\s+MODULES\s+Module:\s+.*?(?=\n|$)', ' ', text, flags=re.IGNORECASE)
+    text = re.sub(r'\bM\s+\d+\.\d+\s+Module:.*?(?=\n|$)', ' ', text, flags=re.IGNORECASE)
     # Strip excessive blank lines and leading/trailing whitespace
     lines = [l.strip() for l in text.split('\n') if l.strip()]
     return '\n'.join(lines).strip()

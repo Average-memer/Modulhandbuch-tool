@@ -61,6 +61,10 @@
       <button id="btnReset" class="btn btn-danger" title="Clear all scheduled modules">
         <span>🗑️</span> Reset
       </button>
+
+      <button id="btnCollapseRibbon" class="ribbon-collapse-btn" title="Hide top ribbon to maximize screen space [Alt+H]">
+        <span class="ribbon-chevron">▲</span> Hide Ribbon
+      </button>
     </div>
   </header>
 
@@ -85,6 +89,11 @@
       <span id="statusIcon">⚠️</span>
       <span id="statusText">Plan Incomplete (0/120 CP)</span>
     </div>
+
+    <button id="btnToggleRibbon" class="ribbon-toggle-btn" title="Toggle top ribbon (Degree, Focus Area, Start Term, Actions) [Alt+H]">
+      <span id="ribbonToggleIcon" class="ribbon-chevron">▲</span>
+      <span id="ribbonToggleText">Hide Ribbon</span>
+    </button>
   </div>
 
   <!-- Main Workspace -->
@@ -146,8 +155,8 @@
         <!-- Staging Area Drawer -->
         <div class="staging-container" id="stagingArea">
           <div class="staging-header">
-            <div class="staging-title-group">
-              <button class="staging-toggle-btn" id="btnToggleStaging" title="Collapse / Expand Staging Area">
+            <div class="staging-title-group" id="stagingTitleGroup">
+              <button class="staging-toggle-btn" id="btnToggleStaging" title="Collapse Staging Area [Alt+S]" aria-expanded="true" aria-controls="stagingBody">
                 <span id="stagingToggleIcon">▼</span>
               </button>
               <span class="staging-title">
@@ -241,22 +250,27 @@
       <div class="modal-body" id="modalModBody">
         <!-- Module details injected -->
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" id="modalModFooter">
+        <div style="display: flex; gap: 8px; margin-right: auto;" id="modalCustomActions">
+          <button class="btn btn-outline" id="modalEditCustomBtn" style="display: none;">✏️ Edit Course</button>
+          <button class="btn btn-danger" id="modalDeleteCustomBtn" style="display: none;">🗑️ Delete Course</button>
+        </div>
         <button class="btn btn-outline" id="modalStageBtn">📦 Stage Course</button>
         <button class="btn btn-primary" id="modalCloseFooterBtn">Done</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL: Custom Course Creator -->
+  <!-- MODAL: Custom Course Creator / Editor -->
   <div class="modal-overlay" id="customModal">
     <div class="modal-card">
       <div class="modal-header">
-        <h2>Add Custom Course or External Credit</h2>
+        <h2 id="customModalTitle">Add Custom Course or External Credit</h2>
         <button class="modal-close-btn" id="customCloseBtn">&times;</button>
       </div>
       <div class="modal-body">
         <form id="customCourseForm" style="display: flex; flex-direction: column; gap: 12px;">
+          <input type="hidden" id="customEditId" value="">
           <div>
             <label style="font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 4px;">Course Title:</label>
             <input type="text" id="customTitle" required placeholder="e.g. Spanish A1 (Sprachenzentrum)" style="width: 100%; padding: 8px; border: 1px solid var(--kit-border); border-radius: var(--radius-sm);">
@@ -289,10 +303,14 @@
               <select id="customLang" style="width: 100%; padding: 8px; border: 1px solid var(--kit-border); border-radius: var(--radius-sm);">
                 <option value="German">German</option>
                 <option value="English">English</option>
+                <option value="German/English">German/English</option>
               </select>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary" style="margin-top: 8px; justify-content: center;">Save & Add Course</button>
+          <div style="display: flex; gap: 8px; margin-top: 8px;">
+            <button type="button" class="btn btn-outline" id="customCancelBtn" style="flex: 1; justify-content: center;">Cancel</button>
+            <button type="submit" id="customSubmitBtn" class="btn btn-primary" style="flex: 2; justify-content: center;">Save & Add Course</button>
+          </div>
         </form>
       </div>
     </div>
