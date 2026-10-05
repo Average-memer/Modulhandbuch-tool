@@ -13,6 +13,8 @@ class UniversalStudyPlannerApp {
     this.activeCategoryFilter = 'all';
     this.activeTermFilter = 'all';
     this.activeLangFilter = 'all';
+    this.activeSort = (typeof localStorage !== 'undefined' && localStorage.getItem('kit_catalog_sort')) || 'default';
+    this.catalogDisplayLimit = 100;
     this.searchQuery = '';
 
     this.plan = {
@@ -164,6 +166,12 @@ class UniversalStudyPlannerApp {
     this.renderSpecializationSelector();
     this.renderCategoryPills();
     this.renderCategoryChips();
+    // Sync sort dropdown if present
+    const sortSelect = document.getElementById('filterSort');
+    if (sortSelect && this.activeSort) {
+      sortSelect.value = this.activeSort;
+    }
+
     this.renderPlanner();
     this.renderCatalog();
     this.runValidation();
@@ -869,7 +877,67 @@ class UniversalStudyPlannerApp {
       return true;
     });
 
-    filtered.slice(0, 100).forEach(mod => {
+    // 5. Sort modules based on activeSort selection
+    if (this.activeSort === 'cp-desc' || this.activeSort === 'credits-desc') {
+      filtered.sort((a, b) => {
+        const diff = (Number(b.credits) || 0) - (Number(a.credits) || 0);
+        if (diff !== 0) return diff;
+        return (a.title || '').localeCompare(b.title || '');
+      });
+    } else if (this.activeSort === 'cp-asc' || this.activeSort === 'credits-asc') {
+      filtered.sort((a, b) => {
+        const diff = (Number(a.credits) || 0) - (Number(b.credits) || 0);
+        if (diff !== 0) return diff;
+        return (a.title || '').localeCompare(b.title || '');
+      });
+    } else if (this.activeSort === 'title-asc') {
+      filtered.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+    } else if (this.activeSort === 'code-asc') {
+      filtered.sort((a, b) => (a.id || '').localeCompare(b.id || ''));
+    }
+
+    // Update catalog status bar
+    const countEl = document.getElementById('catalogCountText');
+    const sortIndicatorEl = document.getElementById('catalogSortIndicator');
+    if (countEl) {
+      const total = this.modulesList.length;
+      if (filtered.length === 0) {
+        countEl.textContent = '0 modules match';
+      } else if (filtered.length === total && !this.searchQuery && this.activeCategoryFilter === 'all' && this.activeTermFilter === 'all' && this.activeLangFilter === 'all') {
+        countEl.textContent = `${total} modules available`;
+      } else if (filtered.length > (this.catalogDisplayLimit || 100)) {
+        countEl.textContent = `Showing ${this.catalogDisplayLimit || 100} of ${filtered.length} modules`;
+      } else {
+        countEl.textContent = `${filtered.length} module${filtered.length === 1 ? '' : 's'}`;
+      }
+    }
+    if (sortIndicatorEl) {
+      if (this.activeSort === 'cp-desc' || this.activeSort === 'credits-desc') {
+        sortIndicatorEl.textContent = '⚡ CP (High → Low)';
+      } else if (this.activeSort === 'cp-asc' || this.activeSort === 'credits-asc') {
+        sortIndicatorEl.textContent = '⚡ CP (Low → High)';
+      } else if (this.activeSort === 'title-asc') {
+        sortIndicatorEl.textContent = 'Title (A → Z)';
+      } else if (this.activeSort === 'code-asc') {
+        sortIndicatorEl.textContent = 'Code (A → Z)';
+      } else {
+        sortIndicatorEl.textContent = '';
+      }
+    }
+
+    if (filtered.length === 0) {
+      list.innerHTML = `
+        <div style="padding: 32px 16px; text-align: center; color: var(--kit-muted); font-size: 0.85rem;">
+          <div style="font-size: 1.8rem; margin-bottom: 8px;">🔍</div>
+          <div style="font-weight: 600;">No matching modules found</div>
+          <div style="font-size: 0.75rem; margin-top: 4px;">Try adjusting your search query, filters, or sorting.</div>
+        </div>
+      `;
+      return;
+    }
+
+    const displayLimit = this.catalogDisplayLimit || 100;
+    filtered.slice(0, displayLimit).forEach(mod => {
       const isScheduled = scheduledIds.has(mod.id);
       const isStaged = this.stagedModules.includes(mod.id);
       const catInfo = this.getModuleCategoryInfo(mod);
@@ -946,6 +1014,21 @@ class UniversalStudyPlannerApp {
 
       list.appendChild(card);
     });
+
+    if (filtered.length > displayLimit) {
+      const showMoreContainer = document.createElement('div');
+      showMoreContainer.style.cssText = 'padding: 8px 0; text-align: center;';
+      const showMoreBtn = document.createElement('button');
+      showMoreBtn.className = 'btn btn-outline';
+      showMoreBtn.style.cssText = 'width: 100%; font-size: 0.78rem; justify-content: center;';
+      showMoreBtn.textContent = `Show more (+50 of ${filtered.length - displayLimit} remaining)`;
+      showMoreBtn.addEventListener('click', () => {
+        this.catalogDisplayLimit = displayLimit + 50;
+        this.renderCatalog();
+      });
+      showMoreContainer.appendChild(showMoreBtn);
+      list.appendChild(showMoreContainer);
+    }
   }
 
   addModuleToFirstSlot(mod) {
@@ -1333,6 +1416,7 @@ class UniversalStudyPlannerApp {
     // Search catalog
     document.getElementById('catalogSearch')?.addEventListener('input', (e) => {
       this.searchQuery = e.target.value;
+      this.catalogDisplayLimit = 100;
       this.renderCatalog();
     });
 
@@ -1343,20 +1427,35 @@ class UniversalStudyPlannerApp {
       document.querySelectorAll('#categoryPills .filter-pill').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       this.activeCategoryFilter = btn.dataset.cat;
+      this.catalogDisplayLimit = 100;
       this.renderCatalog();
     });
 
     // Term filter
     document.getElementById('filterTerm')?.addEventListener('change', (e) => {
       this.activeTermFilter = e.target.value;
+      this.catalogDisplayLimit = 100;
       this.renderCatalog();
     });
 
     // Language filter
     document.getElementById('filterLang')?.addEventListener('change', (e) => {
       this.activeLangFilter = e.target.value;
+      this.catalogDisplayLimit = 100;
       this.renderCatalog();
     });
+
+    // Sort filter
+    const sortSelect = document.getElementById('filterSort');
+    if (sortSelect) {
+      sortSelect.value = this.activeSort || 'default';
+      sortSelect.addEventListener('change', (e) => {
+        this.activeSort = e.target.value;
+        this.catalogDisplayLimit = 100;
+        localStorage.setItem('kit_catalog_sort', this.activeSort);
+        this.renderCatalog();
+      });
+    }
 
     // Auto-Plan button
     document.getElementById('btnAutoPlan')?.addEventListener('click', () => {

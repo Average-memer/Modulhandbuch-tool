@@ -112,22 +112,35 @@
         </div>
 
         <div class="filter-dropdowns">
-          <select id="filterTerm">
-            <option value="all">Any Term (WS / SS)</option>
-            <option value="WS">Winter Term (WS)</option>
-            <option value="SS">Summer Term (SS)</option>
+          <select id="filterTerm" title="Filter by term (Winter / Summer)">
+            <option value="all">Any Term</option>
+            <option value="WS">Winter (WS)</option>
+            <option value="SS">Summer (SS)</option>
           </select>
 
-          <select id="filterLang">
+          <select id="filterLang" title="Filter by language">
             <option value="all">Any Language</option>
             <option value="English">English only</option>
             <option value="German">German</option>
+          </select>
+
+          <select id="filterSort" title="Sort modules by credit points, title, or code">
+            <option value="default">Sort: Default</option>
+            <option value="cp-desc">Credits (High → Low)</option>
+            <option value="cp-asc">Credits (Low → High)</option>
+            <option value="title-asc">Title (A → Z)</option>
+            <option value="code-asc">Code (A → Z)</option>
           </select>
         </div>
 
         <button id="btnOpenCustomModal" class="btn btn-outline" style="width: 100%; justify-content: center; font-size: 0.8rem; border-style: dashed; border-color: var(--kit-green); color: var(--kit-green); background: var(--kit-green-light); margin-top: 4px;">
           <span>➕</span> Add Custom Course / ÜQ
         </button>
+
+        <div class="catalog-status-bar" id="catalogStatusBar">
+          <span id="catalogCountText">Loading modules...</span>
+          <span id="catalogSortIndicator"></span>
+        </div>
       </div>
 
       <div class="catalog-list" id="catalogList">

@@ -309,6 +309,17 @@ For modules eligible for multiple curriculum areas (e.g. Focus Area vs. Elective
 - **`+ Add Semester`**: Expands the plan up to 8 semesters, alternating terms automatically (`WS` $\leftrightarrow$ `SS`) and updating pacing benchmarks.
 - **`- Remove Semester`**: Safely trims trailing empty semesters, warning users if courses need to be moved to staging.
 
+### 8.6 Module Catalog Sorting & Pagination
+- **Credit Points & Alphabetical Sorting**: The `#filterSort` dropdown allows students to sort the course catalog by:
+  - **`Credits (High → Low)`**: Sorts by ECTS credit weighting descending (with alphabetical secondary tie-break).
+  - **`Credits (Low → High)`**: Sorts by ECTS credit weighting ascending.
+  - **`Title (A → Z)`**: Alphabetical by course title.
+  - **`Code (A → Z)`**: Alphabetical by module ID.
+  - **`Sort: Default`**: Restores the natural handbook syllabus order.
+- **State Persistence**: Selected sort order is preserved in `localStorage` under `kit_catalog_sort`.
+- **Dynamic Catalog Status Bar**: Displays real-time matching counts (`#catalogCountText`) and active sort indicators (`#catalogSortIndicator`).
+- **Responsive Pagination**: Smoothly renders an initial batch with an on-demand `Show more (+50 remaining)` button for extensive curricula with hundreds of modules.
+
 ---
 
 ## 9. Developer Operations Guide

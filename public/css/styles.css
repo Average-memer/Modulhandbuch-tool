@@ -476,13 +476,46 @@ select:focus {
 
 .filter-dropdowns {
   display: flex;
-  gap: 8px;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .filter-dropdowns select {
   flex: 1;
-  font-size: 0.75rem;
-  padding: 4px 8px;
+  min-width: 100px;
+  font-size: 0.74rem;
+  padding: 5px 6px;
+  border: 1px solid var(--kit-border);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  color: var(--kit-slate);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.filter-dropdowns select:hover {
+  border-color: #94a3b8;
+}
+
+.filter-dropdowns select:focus {
+  border-color: var(--kit-green);
+  box-shadow: 0 0 0 2px rgba(0, 150, 130, 0.15);
+}
+
+.catalog-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: var(--kit-muted);
+  padding: 2px 2px 0 2px;
+}
+
+.catalog-status-bar #catalogSortIndicator {
+  font-weight: 600;
+  color: var(--kit-green);
+  font-size: 0.7rem;
 }
 
 .catalog-list {
