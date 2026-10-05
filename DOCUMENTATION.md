@@ -79,7 +79,9 @@ Modulhandbuch-tool/
 ├── scripts/
 │   ├── universal_parser.py          # Bilingual extraction engine for KIT Master handbooks
 │   ├── preindex_all.py              # CLI utility to pre-index all handbooks
-│   └── validate_plan.py             # Headless CLI plan verification tool
+│   ├── validate_plan.py             # Headless CLI plan verification tool
+│   ├── test_category_attribution.js # Automated verification for category attribution
+│   └── test_staged_autoplan.js      # Automated test suite for staged autoplan solver
 ├── DOCUMENTATION.md                 # Developer & architecture guide
 ├── README.md                        # Quickstart guide & repository overview
 └── public/                          # Client web assets
@@ -175,11 +177,37 @@ interface StudyPlan {
 }
 
 interface ScheduledItem {
-  id: string;                        // Module ID
-  category: string;                  // Assigned category
+  id: string;                        // Module ID (e.g. "M-ETIT-105123" or "CUSTOM-123456")
+  category: string;                  // Designated category label
   isPinned?: boolean;                // True if locked to this semester
 }
 ```
+
+### 4.4 Custom Module Schema (LocalStorage: `kit_custom_<degreeId>`)
+```typescript
+interface CustomModule extends Module {
+  id: string;                        // Format: "CUSTOM-XXXXXX"
+  title: string;                     // User-defined course or external credit name
+  credits: number;                   // 1 to 30 ECTS CP
+  term: "WS" | "SS" | "WS+SS";       // Offered semester recurrence
+  language: "German" | "English" | "German/English";
+  categories: string[];              // e.g. ["Interdisciplinary (ÜQ)"], ["Electives"], or ["Specialization"]
+  applicableSpecializations: string[];
+  isCustom: true;                    // Flag indicating user-managed module
+  coordinators: string[];            // Default: ["Self-Enrolled / HoC / SPZ"]
+  prerequisites: string;             // Default: "None"
+}
+```
+
+### 4.5 Client LocalStorage State Keys
+| Key | Type | Description |
+|---|---|---|
+| `kit_active_degree` | `string` | ID of the currently active degree program |
+| `kit_plan_<degreeId>` | `StudyPlan` | Saved semester distribution, track, and pinned states |
+| `kit_staged_<degreeId>` | `string[]` | Array of module IDs currently staged in the candidate backlog |
+| `kit_custom_<degreeId>` | `CustomModule[]` | Array of user-created custom courses and external credits |
+| `kit_staging_collapsed` | `"true" \| "false"` | Persisted UI collapse state for the Staging Area drawer |
+| `kit_ribbon_collapsed` | `"true" \| "false"` | Persisted UI collapse state for the top header ribbon |
 
 ---
 
@@ -211,16 +239,22 @@ The universal parser processes official KIT Module Handbook PDFs into standardiz
 
 ## 6. Universal Degree Rules & Validation Engine (`public/js/validator.js`)
 
-The validator audits any study plan across $1 \dots N$ semesters:
+The validator audits any study plan across $1 \dots N$ semesters in real time:
 
 | # | Rule Check | Type | Description |
 |---|---|---|---|
 | 1 | **Duplicate Enrollment** | Error | No course may be enrolled more than once across any semester. |
 | 2 | **Mutual Exclusions** | Error | Enforces antirequisite pairs mined from course prerequisites and degree rules. |
 | 3 | **Term Availability** | Warning | Compares course frequency (`WS` vs. `SS`) against the calculated term for Semester $k$. |
-| 4 | **Category Quotas** | Warning/OK | Audits planned credits against category targets (Specialization, Electives, ÜQ, Thesis). |
+| 4 | **Category Quotas & Attribution** | Warning/OK | Audits planned credits against category targets (Specialization, Electives, ÜQ, Thesis). Credits are assigned strictly without fractional overflow leaks. |
 | 5 | **Master's Thesis §14(1) Gate** | Error | Checks which semester holds the Master's Thesis ($S_{thesis}$) and verifies that $\ge 75\text{ CP}$ has been accumulated across all prior semesters $1 \dots (S_{thesis} - 1)$. |
 | 6 | **Workload Balance** | Warning | Advisories for semesters exceeding 35 CP or deviating significantly from target pace. |
+
+### 6.1 Multi-Category Attribution & Leak Prevention
+Certain courses qualify for multiple categories (e.g., both Focus Area and Electives). `validator.js` evaluates the explicit user selection stored in `ScheduledItem.category` via `normalizeCategoryId()`. Credits are attributed strictly to the designated category without splitting or leaking overflow points into general electives.
+
+### 6.2 Custom Module Category Integration
+When auditing user-created custom courses (`mod.isCustom === true`), `inferCategory()` returns the module's declared category (e.g. *Interdisciplinary (ÜQ)*, *Electives*, or *Specialization*). Similarly, `getAvailableCategoryIds()` permits the course to count towards its assigned category or general electives.
 
 ---
 
@@ -229,24 +263,51 @@ The validator audits any study plan across $1 \dots N$ semesters:
 The auto-planner uses heuristic constraint satisfaction:
 1. **Pinned Preservation**: Locks all user-pinned modules to their exact semesters.
 2. **Master's Thesis Placement**: Schedules the 30 CP thesis into the final semester ($N$).
-3. **Staged Pool Distribution**: Distributes courses curated in the Staging Area across Semesters $1 \dots (N - 1)$ matching term frequency and ~30 CP semester limits.
+3. **Staged Pool Distribution**: Distributes courses curated in the Staging Area across Semesters $1 \dots (N - 1)$, using `inferCategory()` to assign canonical category labels while respecting term frequency (`WS` vs. `SS`) and ~30 CP semester limits.
 4. **Optional Catalog Fill**: When enabled, draws from available specialization and elective modules to complete 120 CP.
 
 ---
 
-## 8. Frontend State Management & Dynamic Semesters (`public/js/app.js`)
+## 8. Frontend Architecture & State Management (`public/js/app.js`)
 
-The client application manages all multi-degree interactions:
-- **Degree Namespacing**: State is partitioned by degree ID in `localStorage`:
-  - `kit_active_degree`
-  - `kit_plan_<degreeId>`
-  - `kit_staged_<degreeId>`
-  - `kit_custom_<degreeId>`
-- **Dynamic Semester Controls**:
-  - `+ Add Semester`: Expands plan up to 8 semesters, alternating terms automatically (`WS` $\leftrightarrow$ `SS`) and updating the pacing hint.
-  - `- Remove Semester`: Safely removes trailing empty semesters (prompting to stage any active courses).
-- **Drag-and-Drop**: Supports smooth dragging between the catalog, staging pool, and semester columns.
-- **Upload Modal**: Manages drag-and-drop PDF upload to `/api/upload` with live progress and immediate degree activation.
+The client application manages all multi-degree interactions, persistent state, and interactive controls:
+
+### 8.1 Custom Modules Management (CRUD Lifecycle)
+Users can add, edit, and delete custom courses or external credits (e.g. *Sprachenzentrum* language courses, HoC/ZAK workshops, transfer credits):
+- **Creation (`openAddCustomModal`)**: Opens `#customModal` in creation mode with dynamic degree categories, pre-selecting *Interdisciplinary (ÜQ)*.
+- **In-Place Editing (`openEditCustomModal`)**:
+  - Populates `#customModal` with the module's active title, credits, term, language, and category.
+  - Automatically synchronizes edits across `this.customModules`, `this.modulesMap`, `this.modulesList`, and any active semester slots in `this.plan.semesters`.
+  - Re-triggers degree validation and refreshes catalog, staging, and planner views.
+- **Safe Deletion (`deleteCustomModule`)**:
+  - Prompts with a native confirmation dialog to prevent accidental data loss.
+  - Cascades removal across `customModules`, `modulesList`, `modulesMap`, `stagedModules`, and all semester plan slots.
+  - Closes the inspection modal if displaying the deleted module and automatically resets the active category filter if no custom courses remain.
+- **UI Quick-Action Triggers**:
+  - **Catalog Cards**: `✏️ Edit` and `🗑️` Delete buttons in the card footer.
+  - **Staged Cards**: `✏️` Edit icon button and `✕` Unstage button.
+  - **Semester Cards**: `✏️` Edit icon button in the action bar.
+  - **Module Details Modal**: `✏️ Edit Course` and `🗑️ Delete Course` buttons in the footer, plus an identifying custom course badge in the header.
+- **Dynamic Catalog Filter Pill**: When custom modules exist, a dynamic `✏️ Custom (<count>)` pill appears in `#categoryPills` to filter the catalog down to user-created courses.
+
+### 8.2 Collapsible Staging Area
+The staging tray provides an uncommitted backlog for prospective courses:
+- **Collapsible Toggle**: Toggleable via `#btnToggleStaging` or chevron controls. State is persisted in `localStorage` under `kit_staging_collapsed`.
+- **Live CP & Course Counter**: The badge `#stagedStatsBadge` displays real-time course and credit totals with a `.badge-pulse` animation on additions or removals.
+- **Drag-and-Drop Staging**: Modules can be dragged directly into the staging tray or added via the `📦 Stage` button.
+
+### 8.3 Multi-Category Attribution Switcher
+For modules eligible for multiple curriculum areas (e.g. Focus Area vs. Electives):
+- An interactive `.cat-pill-wrapper` dropdown pill is rendered on the semester card and in the inspection modal.
+- Selecting an alternative category updates `ScheduledItem.category`, persists to `localStorage`, and instantly updates progress tallies with zero fractional leaks.
+
+### 8.4 Collapsible Top Ribbon & Workspace Optimization
+- The top header ribbon (Degree Selector, Specialization, Actions) can be toggled using `#btnToggleRibbon` or the keyboard shortcut **`Alt+H`**.
+- State is preserved across reloads via `kit_ribbon_collapsed`.
+
+### 8.5 Dynamic Semester Controls
+- **`+ Add Semester`**: Expands the plan up to 8 semesters, alternating terms automatically (`WS` $\leftrightarrow$ `SS`) and updating pacing benchmarks.
+- **`- Remove Semester`**: Safely trims trailing empty semesters, warning users if courses need to be moved to staging.
 
 ---
 
@@ -276,4 +337,10 @@ This updates `data/degrees/` and regenerates `public/js/preloaded_degrees.js`.
 ```bash
 python3 scripts/validate_plan.py etit-msc-2025
 python3 scripts/validate_plan.py cs-msc-2025
+```
+
+### 9.5 Running Automated Verification Suites
+```bash
+node scripts/test_category_attribution.js # Category attribution & leak prevention audit
+node scripts/test_staged_autoplan.js      # Staged pool distribution & solver tests
 ```

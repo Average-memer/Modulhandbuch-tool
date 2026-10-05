@@ -16,14 +16,24 @@ An interactive, zero-dependency degree planning, conflict audit, and module hand
 - **One-Click PDF Handbook Upload**: Drop in any official KIT Master Module Handbook PDF (German or English). The built-in universal parser automatically extracts modules, credit points, recurrence terms, prerequisites, and degree structure.
 - **Dynamic Semester Extension**: Expand your degree plan beyond 4 semesters (`+ Add Semester` / `- Remove Semester`) for internships, working student positions, or study abroad. Term frequency (`WS` $\leftrightarrow$ `SS`) and target pacing benchmarks automatically adjust.
 - **Interactive Drag-and-Drop Planner Board**: Drag courses across semesters, pin mandatory modules, and stage courses before scheduling.
+- **Collapsible Staging Area**: Keep a curated backlog of candidate courses in a collapsible drawer featuring live course and CP counters, pulse animations, and instant one-click staging/unstaging.
+- **Full Custom Module Management (Create, Edit & Delete)**:
+  - Add language courses (*Sprachenzentrum*), HoC/ZAK workshops, transfer credits, or custom electives.
+  - In-place editing: update course title, ECTS credits, category, term, and language with automatic synchronization across the catalog, staging area, and scheduled semesters.
+  - Safe deletion: guarded by confirmation prompts, removing courses cleanly across all planner views and persistent storage.
+  - Dynamic `✏️ Custom (<count>)` catalog filter pill to quickly isolate all user-created modules.
+  - Dedicated quick-action buttons (✏️ Edit and 🗑️ Delete) on catalog cards, staged cards, semester cards, and inside the inspection modal.
+- **Flexible Multi-Category Attribution**:
+  - Interactive category selector directly on semester cards and modal for multi-category modules (e.g., Focus Area vs. Electives).
+  - Strict credit attribution preventing fractional CP leaks into general electives.
 - **Real-Time Degree Audit Engine**:
   - Live 120 CP degree progress tracking
   - Category credit auditing (Core/Specialization, Electives, Interdisciplinary ÜQ, Master's Thesis)
   - Dynamic Master's Thesis §14(1) gate: checks that $\ge 75\text{ CP}$ is accumulated prior to the thesis semester across extended plans
   - Antirequisite and mutual exclusion conflict detection
   - Term availability warnings (WS vs. SS)
-- **Selective Auto-Planner & Staging Area**: Curate courses into a staging pool and let the constraint solver schedule them without pulling unwanted subjects.
-- **Custom Course Creator**: Add language courses (*Sprachenzentrum*), HoC/ZAK workshops, transfer credits, or custom electives.
+- **Selective Auto-Planner**: Curate courses into the staging pool and let the constraint solver schedule them without pulling unwanted subjects.
+- **Collapsible Top Ribbon**: Maximize planning space with a collapsible header ribbon (`Alt+H` shortcut or toggle button).
 - **Visual Analytics Dashboard**: Semester credit distribution charts, workload pacing metrics, and language breakdowns.
 - **Zero External Dependencies**: Powered entirely by the Python 3 standard library (`server.py`) and standard browser web technologies (no `npm`, no `pip install`).
 
@@ -64,9 +74,11 @@ Modulhandbuch-tool/
 ├── scripts/
 │   ├── universal_parser.py          # Bilingual extraction engine for KIT Master handbooks
 │   ├── preindex_all.py              # CLI batch pre-indexer for local handbooks
-│   └── validate_plan.py             # CLI headless plan validator
+│   ├── validate_plan.py             # CLI headless plan validator
+│   ├── test_category_attribution.js # Automated verification for category attribution
+│   └── test_staged_autoplan.js      # Automated test suite for staged autoplan solver
 ├── public/                          # Frontend web assets
-│   ├── index.html                   # Responsive SPA layout
+│   ├── index.html                   # Responsive SPA layout with custom modals
 │   ├── css/styles.css               # KIT Design System and component styling
 │   └── js/
 │       ├── preloaded_degrees.js     # Precompiled degrees bundle for offline mode
