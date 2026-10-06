@@ -18,6 +18,7 @@ from urllib.parse import urlparse, parse_qs
 
 # Import universal parser from scripts
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(BASE_DIR, "lib"))
 sys.path.insert(0, os.path.join(BASE_DIR, "scripts"))
 try:
     from universal_parser import parse_pdf_file, save_degree_data

@@ -13,7 +13,19 @@ import os
 import re
 import sys
 import json
+import shutil
 import subprocess
+
+# Ensure local lib directory is on sys.path if present
+_ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_LIB_DIR = os.path.join(_ROOT_DIR, "lib")
+if os.path.isdir(_LIB_DIR) and _LIB_DIR not in sys.path:
+    sys.path.insert(0, _LIB_DIR)
+
+try:
+    import pypdf
+except ImportError:
+    pypdf = None
 
 def strip_page_artifacts(text):
     if not text:
@@ -132,6 +144,9 @@ def clean_specialization_name(raw):
     return name
 
 def parse_handbook_text(text, filename=""):
+    # Normalize soft-hyphens and non-standard hyphens from PDF text reassembly
+    text = text.replace('\ufffe', '-').replace('\u00ad', '-')
+
     # Split Cover (first 2 pages)
     pages = text.split('--- PAGE ')
     cover_text = ""
@@ -578,14 +593,68 @@ def parse_handbook_text(text, filename=""):
         "modules": modules
     }
 
-def parse_pdf_file(pdf_path, pdfextract_bin="./pdfextract"):
+def extract_text_from_pdf(pdf_path):
+    """
+    Extracts text from a PDF file page-by-page.
+    Uses pypdf as the primary cross-platform library (runs on Windows and Linux x86/64).
+    Falls back to pdftotext CLI if available.
+    """
     if not os.path.exists(pdf_path):
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
-    if not os.path.exists(pdfextract_bin):
-        raise FileNotFoundError(f"pdfextract binary not found: {pdfextract_bin}")
-        
-    print(f"Extracting text from {pdf_path} using {pdfextract_bin}...")
-    txt = subprocess.check_output([pdfextract_bin, pdf_path], text=True)
+
+    # Primary: pypdf (pure-Python, works identically on Windows and Linux x86/64)
+    if pypdf is not None:
+        try:
+            reader = pypdf.PdfReader(pdf_path)
+            pages = []
+            for i, page in enumerate(reader.pages):
+                page_text = page.extract_text() or ""
+                pages.append(f"--- PAGE {i+1} ---\n{page_text}")
+            return "\n".join(pages)
+        except Exception as e:
+            print(f"Warning: pypdf extraction failed for {pdf_path}: {e}")
+
+    # Secondary fallback: pdftotext (Poppler) CLI if available on the system
+    pdftotext_bin = shutil.which("pdftotext")
+    if pdftotext_bin:
+        try:
+            raw_out = subprocess.check_output([pdftotext_bin, "-raw", pdf_path, "-"], text=True)
+            pages = raw_out.split('\x0c')
+            formatted = []
+            for i, p in enumerate(pages):
+                if p.strip() or i < len(pages) - 1:
+                    formatted.append(f"--- PAGE {i+1} ---\n{p}")
+            return "\n".join(formatted)
+        except Exception:
+            try:
+                raw_out = subprocess.check_output([pdftotext_bin, pdf_path, "-"], text=True)
+                pages = raw_out.split('\x0c')
+                return "\n".join([f"--- PAGE {i+1} ---\n{p}" for i, p in enumerate(pages)])
+            except Exception:
+                pass
+
+    raise RuntimeError(
+        f"Could not extract text from '{pdf_path}'.\n"
+        "PDF text extraction requires 'pypdf'. Please install it using:\n"
+        "    pip install pypdf\n"
+        "or: pip install -r requirements.txt"
+    )
+
+def parse_pdf_file(pdf_path, pdfextract_bin=None):
+    if not os.path.exists(pdf_path):
+        raise FileNotFoundError(f"PDF not found: {pdf_path}")
+
+    # Optional custom extractor binary if explicitly provided and exists
+    if pdfextract_bin and os.path.exists(pdfextract_bin) and os.path.isfile(pdfextract_bin):
+        try:
+            print(f"Extracting text from {pdf_path} using custom binary {pdfextract_bin}...")
+            txt = subprocess.check_output([pdfextract_bin, pdf_path], text=True)
+            return parse_handbook_text(txt, filename=pdf_path)
+        except Exception as e:
+            print(f"Custom binary {pdfextract_bin} failed ({e}), falling back to standard extractor...")
+
+    print(f"Extracting text from {pdf_path}...")
+    txt = extract_text_from_pdf(pdf_path)
     return parse_handbook_text(txt, filename=pdf_path)
 
 def save_degree_data(parsed_data, output_dir):

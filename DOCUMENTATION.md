@@ -23,7 +23,7 @@ The platform is an interactive web-based study planning, conflict analysis, and 
 ```mermaid
 flowchart TD
     subgraph DataIngestion["1. Universal Bilingual Ingestion Layer"]
-        PDF["Official KIT Handbook PDF<br/>(German or English)"] -->|pdfextract| RawText["In-Memory Text Stream"]
+        PDF["Official KIT Handbook PDF<br/>(German or English)"] -->|pypdf / pdftotext| RawText["In-Memory Text Stream"]
         RawText -->|universal_parser.py| Parser["Bilingual Regex Parser & Entity Normalizer"]
         Parser --> DataJSON["data/degrees/<slug>/<br/>• degree.json<br/>• modules.json"]
         Parser --> Preindex["scripts/preindex_all.py"]
@@ -64,8 +64,8 @@ flowchart TD
 
 ```
 Modulhandbuch-tool/
-├── server.py                        # Zero-dependency Python HTTP & REST API server
-├── pdfextract                       # Native macOS PDFKit extraction binary
+├── server.py                        # Lightweight Python HTTP & REST API server
+├── requirements.txt                 # Python dependencies (pypdf)
 ├── modulhandbücher/                 # Canonical storage of official KIT handbook PDFs
 ├── data/
 │   └── degrees/                     # Extracted degree profiles
@@ -215,7 +215,7 @@ interface CustomModule extends Module {
 
 The universal parser processes official KIT Module Handbook PDFs into standardized JSON datasets:
 
-1. **Text Extraction**: Runs native `./pdfextract` to parse PDF layout into an in-memory text stream.
+1. **Text Extraction**: Runs `extract_text_from_pdf` (powered by `pypdf`, with fallback to `pdftotext` CLI) to parse PDF layout into an in-memory text stream across Windows and Linux x86/64.
 2. **Metadata Discovery**:
    - Cover text analysis identifies the degree title, SPO year, and faculty.
    - Determines standard 120 CP total and 4-semester duration.

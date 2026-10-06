@@ -35,7 +35,7 @@ An interactive, zero-dependency degree planning, conflict audit, and module hand
 - **Selective Auto-Planner**: Curate courses into the staging pool and let the constraint solver schedule them without pulling unwanted subjects.
 - **Collapsible Top Ribbon**: Maximize planning space with a collapsible header ribbon (`Alt+H` shortcut or toggle button).
 - **Visual Analytics Dashboard**: Semester credit distribution charts, workload pacing metrics, and language breakdowns.
-- **Zero External Dependencies**: Powered entirely by the Python 3 standard library (`server.py`) and standard browser web technologies (no `npm`, no `pip install`).
+- **Zero External Dependencies for Server & UI**: Powered by standard Python 3 and web technologies (no `npm`). PDF handbook parsing uses `pypdf` across Windows and Linux x86/64.
 
 ---
 
@@ -43,6 +43,7 @@ An interactive, zero-dependency degree planning, conflict audit, and module hand
 
 ### Option 1: Local Web Server (Recommended)
 ```bash
+pip install -r requirements.txt
 python3 server.py
 ```
 Open **[http://localhost:8080](http://localhost:8080)** in your browser.
@@ -59,8 +60,8 @@ open public/index.html
 
 ```
 Modulhandbuch-tool/
-├── server.py                        # Zero-dependency Python HTTP & REST API server
-├── pdfextract                       # Native macOS PDFKit extraction binary
+├── server.py                        # Lightweight Python HTTP & REST API server
+├── requirements.txt                 # Python dependencies (pypdf)
 ├── modulhandbücher/                 # Collection of official KIT handbook PDFs
 ├── data/
 │   └── degrees/                     # Parsed degree profiles (degree.json, modules.json)
