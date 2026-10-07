@@ -9,6 +9,7 @@ class UniversalStudyPlannerApp {
     this.modulesMap = new Map();
     this.currentSpecialization = null;
     this.startTerm = 'WS';
+    this.startYear = new Date().getFullYear();
     this.semestersCount = 4;
     this.activeCategoryFilter = 'all';
     this.activeTermFilter = 'all';
@@ -21,6 +22,7 @@ class UniversalStudyPlannerApp {
       degree: null,
       specialization: null,
       startTerm: 'WS',
+      startYear: this.startYear,
       semestersCount: 4,
       semesters: { 1: [], 2: [], 3: [], 4: [] }
     };
@@ -36,6 +38,7 @@ class UniversalStudyPlannerApp {
 
   async init() {
     await this.loadDegreesIndex();
+    this.populateStartYearSelector();
     this.setupEventListeners();
     this.setupDragAndDrop();
     this.setupUploadModal();
@@ -208,23 +211,27 @@ class UniversalStudyPlannerApp {
       if (rawPlan) {
         const parsed = JSON.parse(rawPlan);
         this.startTerm = parsed.startTerm || 'WS';
+        this.startYear = parsed.startYear || new Date().getFullYear();
         this.semestersCount = parsed.semestersCount || 4;
         this.currentSpecialization = parsed.specialization || (this.activeDegree.specializations?.[0]?.id || null);
         this.plan = {
           degree: degId,
           specialization: this.currentSpecialization,
           startTerm: this.startTerm,
+          startYear: this.startYear,
           semestersCount: this.semestersCount,
           semesters: parsed.semesters || {}
         };
       } else {
         this.semestersCount = this.activeDegree.semestersCount || 4;
         this.startTerm = 'WS';
+        this.startYear = new Date().getFullYear();
         this.currentSpecialization = this.activeDegree.specializations?.[0]?.id || null;
         this.plan = {
           degree: degId,
           specialization: this.currentSpecialization,
           startTerm: this.startTerm,
+          startYear: this.startYear,
           semestersCount: this.semestersCount,
           semesters: {}
         };
@@ -234,7 +241,8 @@ class UniversalStudyPlannerApp {
       }
     } catch (e) {
       this.semestersCount = 4;
-      this.plan = { degree: degId, semestersCount: 4, semesters: { 1: [], 2: [], 3: [], 4: [] } };
+      this.startYear = new Date().getFullYear();
+      this.plan = { degree: degId, startYear: this.startYear, startTerm: 'WS', semestersCount: 4, semesters: { 1: [], 2: [], 3: [], 4: [] } };
     }
 
     // Ensure all semester keys exist
@@ -244,15 +252,22 @@ class UniversalStudyPlannerApp {
       }
     }
 
-    // Sync start term dropdown
+    // Sync start term and year dropdowns
     const termSelect = document.getElementById('startTermSelect');
     if (termSelect) termSelect.value = this.startTerm;
+
+    const yearSelect = document.getElementById('startYearSelect');
+    if (yearSelect) yearSelect.value = this.startYear;
   }
 
   saveDegreeState() {
     if (!this.activeDegree) return;
     const degId = this.activeDegree.id;
     try {
+      this.plan.startTerm = this.startTerm;
+      this.plan.startYear = this.startYear;
+      this.plan.semestersCount = this.semestersCount;
+      this.plan.specialization = this.currentSpecialization;
       localStorage.setItem(`kit_plan_${degId}`, JSON.stringify(this.plan));
       localStorage.setItem(`kit_staged_${degId}`, JSON.stringify(this.stagedModules));
       localStorage.setItem(`kit_custom_${degId}`, JSON.stringify(this.customModules));
@@ -419,9 +434,7 @@ class UniversalStudyPlannerApp {
     const warnings = this.lastValidationResult?.warnings || [];
 
     for (let sem = 1; sem <= this.semestersCount; sem++) {
-      const term = (this.startTerm === 'WS')
-        ? (sem % 2 === 1 ? 'WS' : 'SS')
-        : (sem % 2 === 1 ? 'SS' : 'WS');
+      const termInfo = this.getSemesterTermInfo(sem);
 
       const col = document.createElement('div');
       col.className = 'semester-col';
@@ -431,7 +444,10 @@ class UniversalStudyPlannerApp {
         <div class="semester-header">
           <div class="semester-title-row">
             <span class="semester-title">Semester ${sem}</span>
-            <span class="badge ${term === 'WS' ? 'badge-term-ws' : 'badge-term-ss'}">${term}</span>
+            <span class="badge ${termInfo.term === 'WS' ? 'badge-term-ws' : 'badge-term-ss'}">${termInfo.label}</span>
+          </div>
+          <div class="semester-dates-row">
+            <span class="semester-date-badge" title="Official Semester Period at KIT">📅 ${termInfo.dateRange}</span>
           </div>
           <div class="semester-stats">
             <span class="semester-cp" id="sem${sem}CP">0 CP</span>
@@ -1409,6 +1425,15 @@ class UniversalStudyPlannerApp {
       this.runValidation();
     });
 
+    // Start Year switch
+    document.getElementById('startYearSelect')?.addEventListener('change', (e) => {
+      this.startYear = parseInt(e.target.value, 10);
+      this.plan.startYear = this.startYear;
+      this.saveDegreeState();
+      this.renderPlanner();
+      this.runValidation();
+    });
+
     // Add & Remove Semester
     document.getElementById('btnAddSemester')?.addEventListener('click', () => this.addSemester());
     document.getElementById('btnRemoveSemester')?.addEventListener('click', () => this.removeSemester());
@@ -1765,16 +1790,28 @@ class UniversalStudyPlannerApp {
       }
     });
 
-    // Export button
+    // Export button (opens modal for PDF, Graphic PNG, Print, and JSON)
     document.getElementById('btnExport')?.addEventListener('click', () => {
-      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.plan, null, 2));
-      const a = document.createElement('a');
-      a.setAttribute("href", dataStr);
-      a.setAttribute("download", `study_plan_${this.activeDegree.id}.json`);
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+      this.openExportModal();
     });
+
+    // Export Modal Buttons
+    document.getElementById('exportCloseBtn')?.addEventListener('click', () => this.closeExportModal());
+    document.getElementById('exportCloseFooterBtn')?.addEventListener('click', () => this.closeExportModal());
+    document.getElementById('exportModal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'exportModal') this.closeExportModal();
+    });
+
+    document.getElementById('btnExportPdf')?.addEventListener('click', () => this.exportToPdf());
+    document.getElementById('btnExportDownloadPrimary')?.addEventListener('click', () => this.exportToPdf());
+    document.getElementById('btnExportPng')?.addEventListener('click', () => this.exportToPng());
+    document.getElementById('btnExportJson')?.addEventListener('click', () => this.exportToJson());
+
+    // Option toggles inside export modal
+    document.getElementById('chkExportDates')?.addEventListener('change', () => this.renderExportGraphic());
+    document.getElementById('chkExportCategories')?.addEventListener('change', () => this.renderExportGraphic());
+    document.getElementById('chkExportLegend')?.addEventListener('change', () => this.renderExportGraphic());
+    document.getElementById('exportPageFormat')?.addEventListener('change', () => this.renderExportGraphic());
   }
 
   formatHandbookText(rawText) {
@@ -2256,6 +2293,506 @@ class UniversalStudyPlannerApp {
     if (term === 'WS') return 'badge-term-ws';
     if (term === 'SS') return 'badge-term-ss';
     return 'badge-term-both';
+  }
+
+  // --- ACADEMIC YEAR & SEMESTER DATES ---
+
+  populateStartYearSelector() {
+    const yearSelect = document.getElementById('startYearSelect');
+    if (!yearSelect) return;
+
+    yearSelect.innerHTML = '';
+    const currentYear = new Date().getFullYear();
+    const start = currentYear - 3;
+    const end = currentYear + 4;
+
+    for (let y = start; y <= end; y++) {
+      const opt = document.createElement('option');
+      opt.value = y;
+      opt.textContent = y;
+      if (y === this.startYear) opt.selected = true;
+      yearSelect.appendChild(opt);
+    }
+  }
+
+  getSemesterTermInfo(sem, startTerm = this.startTerm, startYear = this.startYear) {
+    const sYear = parseInt(startYear, 10) || new Date().getFullYear();
+    const offset = sem - 1;
+
+    let term = 'WS';
+    let year = sYear;
+    let nextYear = sYear + 1;
+    let label = '';
+    let fullLabel = '';
+    let startDate = '';
+    let endDate = '';
+
+    if (startTerm === 'WS') {
+      if (offset % 2 === 0) {
+        term = 'WS';
+        year = sYear + Math.floor(offset / 2);
+        nextYear = year + 1;
+        label = `WS ${year}/${String(nextYear).slice(-2)}`;
+        fullLabel = `Winter Semester ${year}/${nextYear}`;
+        startDate = `01.10.${year}`;
+        endDate = `31.03.${nextYear}`;
+      } else {
+        term = 'SS';
+        year = sYear + Math.floor(offset / 2) + 1;
+        label = `SS ${year}`;
+        fullLabel = `Summer Semester ${year}`;
+        startDate = `01.04.${year}`;
+        endDate = `30.09.${year}`;
+      }
+    } else {
+      // Start in Summer Semester
+      if (offset % 2 === 0) {
+        term = 'SS';
+        year = sYear + Math.floor(offset / 2);
+        label = `SS ${year}`;
+        fullLabel = `Summer Semester ${year}`;
+        startDate = `01.04.${year}`;
+        endDate = `30.09.${year}`;
+      } else {
+        term = 'WS';
+        year = sYear + Math.floor(offset / 2);
+        nextYear = year + 1;
+        label = `WS ${year}/${String(nextYear).slice(-2)}`;
+        fullLabel = `Winter Semester ${year}/${nextYear}`;
+        startDate = `01.10.${year}`;
+        endDate = `31.03.${nextYear}`;
+      }
+    }
+
+    return {
+      semNumber: sem,
+      term,
+      year,
+      nextYear,
+      label,
+      fullLabel,
+      startDate,
+      endDate,
+      dateRange: `${startDate} – ${endDate}`
+    };
+  }
+
+  // --- EXPORT & GRAPHIC RENDER ENGINE ---
+
+  openExportModal() {
+    this.renderExportGraphic();
+    const modal = document.getElementById('exportModal');
+    if (modal) {
+      modal.classList.add('open');
+    }
+  }
+
+  closeExportModal() {
+    const modal = document.getElementById('exportModal');
+    if (modal) {
+      modal.classList.remove('open');
+    }
+  }
+
+  renderExportGraphic() {
+    const container = document.getElementById('exportGraphicContainer');
+    if (!container || !this.activeDegree) return;
+
+    const showDates = document.getElementById('chkExportDates')?.checked ?? true;
+    const showCategories = document.getElementById('chkExportCategories')?.checked ?? true;
+    const showLegend = document.getElementById('chkExportLegend')?.checked ?? true;
+
+    const specObj = this.activeDegree.specializations?.find(s => s.id === this.currentSpecialization);
+    const specName = specObj ? specObj.name : null;
+
+    // Calculate total credits & category breakdown across entire plan
+    let totalCredits = 0;
+    const categoryTotals = {};
+
+    for (let sem = 1; sem <= this.semestersCount; sem++) {
+      const items = this.plan.semesters[sem] || [];
+      items.forEach(item => {
+        const mod = this.getModule(item.id);
+        if (!mod) return;
+        totalCredits += (mod.credits || 0);
+
+        const catInfo = this.getModuleCategoryInfo(mod, item.category);
+        const catLabel = catInfo.label;
+        categoryTotals[catLabel] = (categoryTotals[catLabel] || 0) + (mod.credits || 0);
+      });
+    }
+
+    const pacing = Math.round(120 / this.semestersCount);
+    const firstSemInfo = this.getSemesterTermInfo(1);
+    const lastSemInfo = this.getSemesterTermInfo(this.semestersCount);
+    const isPlanComplete = totalCredits >= 120;
+    const todayStr = new Date().toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+    // Category chips HTML
+    let categoriesHtml = '';
+    if (showCategories) {
+      const catEntries = Object.entries(categoryTotals);
+      if (catEntries.length > 0) {
+        categoriesHtml = `
+          <div class="export-categories-bar">
+            ${catEntries.map(([catName, cp]) => {
+              const cssClass = this.getCategoryCssClass(catName);
+              return `
+                <div class="export-cat-chip">
+                  <span class="badge ${cssClass}" style="margin-right: 4px;">●</span>
+                  <span>${catName}:&nbsp;<strong>${cp}&nbsp;CP</strong></span>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `;
+      }
+    }
+
+    // Header banner HTML
+    const headerHtml = `
+      <div class="export-header-banner">
+        <div class="export-brand-row">
+          <div class="export-brand-left">
+            <div class="export-kit-badge">KIT</div>
+            <div class="export-brand-text">
+              <h1>${this.activeDegree.title}</h1>
+              <p>Karlsruhe Institute of Technology • Official Master Study Plan</p>
+              ${specName ? `<p style="color: var(--kit-slate); font-weight: 700; margin-top: 2px;">Specialization:&nbsp;${specName}</p>` : ''}
+            </div>
+          </div>
+          <div class="export-meta-badge">
+            <div class="export-meta-cp">
+              <span class="highlight-cp">${totalCredits}</span>&nbsp;/&nbsp;120&nbsp;CP
+            </div>
+            <div class="export-meta-status ${isPlanComplete ? 'status-ok' : 'status-pending'}">
+              ${isPlanComplete ? '✓ Plan Complete' : `${120 - totalCredits} CP Remaining`}
+            </div>
+          </div>
+        </div>
+
+        <div class="export-info-strip">
+          <div class="export-info-item">
+            <span class="export-info-label">Start Term:&nbsp;</span>
+            <span class="export-info-value">${firstSemInfo.fullLabel}</span>
+          </div>
+          <div class="export-info-item">
+            <span class="export-info-label">Standard Duration:&nbsp;</span>
+            <span class="export-info-value">${this.semestersCount} Semesters</span>
+          </div>
+          ${showDates ? `
+            <div class="export-info-item">
+              <span class="export-info-label">Timeframe:&nbsp;</span>
+              <span class="export-info-value">${firstSemInfo.startDate}&nbsp;–&nbsp;${lastSemInfo.endDate}</span>
+            </div>
+          ` : ''}
+          <div class="export-info-item" style="margin-left: auto;">
+            <span class="export-info-label">Generated:&nbsp;</span>
+            <span class="export-info-value">${todayStr}</span>
+          </div>
+        </div>
+
+        ${categoriesHtml}
+      </div>
+    `;
+
+    // Semester columns HTML
+    let semestersColsHtml = '';
+    for (let sem = 1; sem <= this.semestersCount; sem++) {
+      const termInfo = this.getSemesterTermInfo(sem);
+      const items = this.plan.semesters[sem] || [];
+
+      let semCP = 0;
+      items.forEach(item => {
+        const mod = this.getModule(item.id);
+        if (mod) semCP += (mod.credits || 0);
+      });
+
+      let cpStatusClass = 'balanced';
+      if (semCP < pacing - 6) cpStatusClass = 'underload';
+      else if (semCP > pacing + 6) cpStatusClass = 'overload';
+
+      let cardsHtml = '';
+      if (items.length === 0) {
+        cardsHtml = `<div class="empty-export-placeholder">No courses scheduled</div>`;
+      } else {
+        cardsHtml = items.map(item => {
+          const mod = this.getModule(item.id);
+          if (!mod) return '';
+
+          const catInfo = this.getModuleCategoryInfo(mod, item.category);
+          const catClassSuffix = catInfo.label.replace(/[^a-zA-Z0-9]/g, '-');
+          const termBadgeClass = this.getTermBadgeClass(mod.term);
+
+          return `
+            <div class="scheduled-card cat-${catClassSuffix}" style="cursor: default;">
+              <div class="card-top">
+                <span class="module-code">${mod.id}</span>
+                ${mod.isCustom ? '<span class="badge badge-custom" style="font-size: 0.65rem; padding: 1px 6px;">Custom</span>' : ''}
+                <span class="badge badge-cat ${catInfo.cssClass}">${catInfo.label}</span>
+                <span class="badge badge-cp" style="margin-left:auto;">${mod.credits}&nbsp;CP</span>
+              </div>
+              <div class="module-title">${mod.title}</div>
+              <div class="badge-row">
+                <span class="badge ${termBadgeClass}">${mod.term}</span>
+                <span class="badge badge-lang">${mod.language}</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      semestersColsHtml += `
+        <div class="export-semester-col">
+          <div class="semester-header">
+            <div class="semester-title-row">
+              <span class="semester-title">Semester&nbsp;${sem}</span>
+              <span class="badge ${termInfo.term === 'WS' ? 'badge-term-ws' : 'badge-term-ss'}">${termInfo.label}</span>
+            </div>
+            ${showDates ? `
+              <div class="semester-dates-row">
+                <span class="semester-date-badge">📅&nbsp;${termInfo.dateRange}</span>
+              </div>
+            ` : ''}
+            <div class="semester-stats">
+              <span class="semester-cp ${cpStatusClass}">${semCP}&nbsp;CP</span>
+              <span style="font-size: 0.72rem; color: var(--kit-muted);">Target:&nbsp;~${pacing}&nbsp;CP</span>
+            </div>
+          </div>
+          <div class="export-cards-list">
+            ${cardsHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    // Legend HTML
+    let legendHtml = '';
+    if (showLegend) {
+      legendHtml = `
+        <div class="export-footer-bar">
+          <div class="export-legend-items">
+            <span style="font-weight: 700; color: var(--kit-slate);">Legend:</span>
+            <span class="export-legend-item"><span class="badge cat-fundamentals">●</span>&nbsp;Fundamentals</span>
+            <span class="export-legend-item"><span class="badge cat-focus">●</span>&nbsp;Focus Area</span>
+            <span class="export-legend-item"><span class="badge cat-lab">●</span>&nbsp;Lab Course</span>
+            <span class="export-legend-item"><span class="badge cat-electives">●</span>&nbsp;Electives</span>
+            <span class="export-legend-item"><span class="badge cat-uq">●</span>&nbsp;Interdisciplinary (ÜQ)</span>
+            <span class="export-legend-item"><span class="badge cat-thesis">●</span>&nbsp;Master's Thesis</span>
+          </div>
+          <span>KIT Modulhandbuch Platform</span>
+        </div>
+      `;
+    }
+
+    // Set attributes for print and responsive styling
+    container.dataset.semesters = this.semestersCount;
+    container.style.width = `${Math.max(960, this.semestersCount * 270 + 60)}px`;
+    container.innerHTML = `
+      ${headerHtml}
+      <div class="export-semesters-grid" data-semesters="${this.semestersCount}" style="grid-template-columns: repeat(${this.semestersCount}, 1fr);">
+        ${semestersColsHtml}
+      </div>
+      ${legendHtml}
+    `;
+
+    const statusEl = document.getElementById('exportRenderStatus');
+    if (statusEl) statusEl.textContent = `Rendered (${this.semestersCount} Semesters, ${totalCredits} CP)`;
+  }
+
+  async exportToPdf() {
+    const container = document.getElementById('exportGraphicContainer');
+    if (!container) return;
+
+    if (typeof window.html2canvas !== 'function' || !window.jspdf?.jsPDF) {
+      alert('PDF generation library is loading. Please try again or use "Print / System PDF".');
+      return;
+    }
+
+    const btnPrimary = document.getElementById('btnExportDownloadPrimary');
+    const statusMsg = document.getElementById('exportStatusMessage');
+    const originalBtnHtml = btnPrimary ? btnPrimary.innerHTML : '';
+
+    try {
+      if (btnPrimary) {
+        btnPrimary.disabled = true;
+        btnPrimary.innerHTML = `<span>⏳</span> Generating PDF...`;
+      }
+      if (statusMsg) {
+        statusMsg.style.display = 'block';
+        statusMsg.textContent = 'Rendering vector graphic to PDF canvas...';
+      }
+
+      // Render container onto high-DPI canvas with explicit font and kerning fixes
+      const canvas = await window.html2canvas(container, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#ffffff',
+        logging: false,
+        letterRendering: true,
+        windowWidth: container.scrollWidth,
+        windowHeight: container.scrollHeight,
+        onclone: (clonedDoc) => {
+          const sheet = clonedDoc.getElementById('exportGraphicContainer');
+          if (sheet) {
+            sheet.style.fontFamily = 'Arial, "Helvetica Neue", Helvetica, sans-serif';
+            sheet.style.letterSpacing = '0.02px';
+            const all = sheet.querySelectorAll('*');
+            all.forEach(el => {
+              el.style.fontFamily = 'Arial, "Helvetica Neue", Helvetica, sans-serif';
+              el.style.letterSpacing = '0.02px';
+            });
+          }
+        }
+      });
+
+      const { jsPDF } = window.jspdf;
+      const formatChoice = document.getElementById('exportPageFormat')?.value || 'a4-landscape';
+
+      let pdf;
+      if (formatChoice === 'poster') {
+        // Full resolution custom page size matching canvas aspect ratio exactly (in mm)
+        const widthMm = (canvas.width * 0.264583) / 2;
+        const heightMm = (canvas.height * 0.264583) / 2;
+        pdf = new jsPDF({
+          orientation: widthMm > heightMm ? 'landscape' : 'portrait',
+          unit: 'mm',
+          format: [widthMm + 20, heightMm + 20]
+        });
+        const imgData = canvas.toDataURL('image/png', 1.0);
+        pdf.addImage(imgData, 'PNG', 10, 10, widthMm, heightMm, '', 'FAST');
+      } else {
+        // Standard A4 Landscape
+        pdf = new jsPDF({
+          orientation: 'landscape',
+          unit: 'mm',
+          format: 'a4'
+        });
+        const pageWidth = pdf.internal.pageSize.getWidth(); // 297mm
+        const pageHeight = pdf.internal.pageSize.getHeight(); // 210mm
+        const margin = 8;
+        const availWidth = pageWidth - (margin * 2);
+        const availHeight = pageHeight - (margin * 2);
+
+        const imgWidth = canvas.width;
+        const imgHeight = canvas.height;
+        const imgAspect = imgWidth / imgHeight;
+
+        let renderWidth = availWidth;
+        let renderHeight = renderWidth / imgAspect;
+
+        if (renderHeight > availHeight) {
+          renderHeight = availHeight;
+          renderWidth = renderHeight * imgAspect;
+        }
+
+        const xOffset = margin + (availWidth - renderWidth) / 2;
+        const yOffset = margin + (availHeight - renderHeight) / 2;
+
+        const imgData = canvas.toDataURL('image/png', 1.0);
+        pdf.addImage(imgData, 'PNG', xOffset, yOffset, renderWidth, renderHeight, '', 'FAST');
+      }
+
+      const degId = this.activeDegree?.id || 'degree';
+      const filename = `study_plan_${degId}_${this.startTerm}_${this.startYear}.pdf`;
+      pdf.save(filename);
+
+      if (statusMsg) {
+        statusMsg.textContent = `✓ PDF downloaded: ${filename}`;
+        setTimeout(() => { statusMsg.style.display = 'none'; }, 4000);
+      }
+    } catch (err) {
+      console.error('PDF export error:', err);
+      alert('Error generating PDF: ' + err.message);
+    } finally {
+      if (btnPrimary) {
+        btnPrimary.disabled = false;
+        btnPrimary.innerHTML = originalBtnHtml;
+      }
+    }
+  }
+
+  async exportToPng() {
+    const container = document.getElementById('exportGraphicContainer');
+    if (!container) return;
+
+    if (typeof window.html2canvas !== 'function') {
+      alert('Graphic rendering library is loading. Please try again.');
+      return;
+    }
+
+    const statusMsg = document.getElementById('exportStatusMessage');
+
+    try {
+      if (statusMsg) {
+        statusMsg.style.display = 'block';
+        statusMsg.textContent = 'Rendering high-resolution PNG graphic...';
+      }
+
+      const canvas = await window.html2canvas(container, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#ffffff',
+        logging: false,
+        letterRendering: true,
+        windowWidth: container.scrollWidth,
+        windowHeight: container.scrollHeight,
+        onclone: (clonedDoc) => {
+          const sheet = clonedDoc.getElementById('exportGraphicContainer');
+          if (sheet) {
+            sheet.style.fontFamily = 'Arial, "Helvetica Neue", Helvetica, sans-serif';
+            sheet.style.letterSpacing = '0.02px';
+            const all = sheet.querySelectorAll('*');
+            all.forEach(el => {
+              el.style.fontFamily = 'Arial, "Helvetica Neue", Helvetica, sans-serif';
+              el.style.letterSpacing = '0.02px';
+            });
+          }
+        }
+      });
+
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          alert('Could not generate PNG graphic.');
+          return;
+        }
+        const degId = this.activeDegree?.id || 'degree';
+        const filename = `study_plan_${degId}_${this.startTerm}_${this.startYear}.png`;
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+
+        if (statusMsg) {
+          statusMsg.textContent = `✓ Graphic downloaded: ${filename}`;
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 4000);
+        }
+      }, 'image/png');
+    } catch (err) {
+      console.error('PNG export error:', err);
+      alert('Error exporting PNG graphic: ' + err.message);
+    }
+  }
+
+  exportToJson() {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.plan, null, 2));
+    const a = document.createElement('a');
+    a.setAttribute("href", dataStr);
+    a.setAttribute("download", `study_plan_${this.activeDegree?.id || 'degree'}_${this.startTerm}_${this.startYear}.json`);
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+
+    const statusMsg = document.getElementById('exportStatusMessage');
+    if (statusMsg) {
+      statusMsg.style.display = 'block';
+      statusMsg.textContent = '✓ JSON study plan downloaded.';
+      setTimeout(() => { statusMsg.style.display = 'none'; }, 3000);
+    }
   }
 }
 

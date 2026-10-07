@@ -49,6 +49,14 @@
         </select>
       </div>
 
+      <!-- Start Year Selector -->
+      <div class="select-group">
+        <label for="startYearSelect">Start Year:</label>
+        <select id="startYearSelect">
+          <!-- Populated dynamically -->
+        </select>
+      </div>
+
       <!-- Planner Actions -->
       <button id="btnAutoPlan" class="btn btn-primary" title="Automatically schedule conflict-free courses to reach 120 CP">
         <span>⚡</span> Auto-Generate
@@ -378,6 +386,100 @@
       </div>
     </div>
   </div>
+
+  <!-- MODAL: Export & Graphic Render -->
+  <div class="modal-overlay" id="exportModal">
+    <div class="modal-card modal-card-export">
+      <div class="modal-header">
+        <div>
+          <h2>Export & Render Study Plan</h2>
+          <p style="font-size: 0.82rem; color: var(--kit-muted); margin-top: 2px;">
+            Render your semester plan as a publication-ready PDF document, high-resolution graphic, or JSON backup.
+          </p>
+        </div>
+        <button class="modal-close-btn" id="exportCloseBtn">&times;</button>
+      </div>
+
+      <div class="modal-body export-modal-body">
+        <!-- Quick Action Export Cards -->
+        <div class="export-actions-grid">
+          <button class="export-action-card export-primary" id="btnExportPdf" title="Download high-resolution vector/graphic PDF">
+            <div class="export-card-icon">📄</div>
+            <div class="export-card-info">
+              <strong>Export as PDF</strong>
+              <span>Publication-ready PDF document</span>
+            </div>
+            <span class="export-card-badge">Preferred</span>
+          </button>
+
+          <button class="export-action-card" id="btnExportPng" title="Download full study plan as high-resolution PNG image">
+            <div class="export-card-icon">🖼️</div>
+            <div class="export-card-info">
+              <strong>Export as Graphic (PNG)</strong>
+              <span>High-resolution graphic image</span>
+            </div>
+          </button>
+
+          <button class="export-action-card" id="btnExportJson" title="Download raw study plan JSON backup">
+            <div class="export-card-icon">💾</div>
+            <div class="export-card-info">
+              <strong>Export as JSON</strong>
+              <span>Raw JSON data file</span>
+            </div>
+          </button>
+        </div>
+
+        <!-- Render Options Bar -->
+        <div class="export-options-bar">
+          <div class="export-options-title">Options:</div>
+          <label class="export-option-label" title="Show official semester period dates (01.10. – 31.03. / 01.04. – 30.09.)">
+            <input type="checkbox" id="chkExportDates" checked>
+            <span>Semester start & end dates</span>
+          </label>
+          <label class="export-option-label" title="Show category credit totals bar">
+            <input type="checkbox" id="chkExportCategories" checked>
+            <span>Category credit distribution</span>
+          </label>
+          <label class="export-option-label" title="Show category color legend at the bottom">
+            <input type="checkbox" id="chkExportLegend" checked>
+            <span>Category legend</span>
+          </label>
+          <div class="export-option-select-group">
+            <label for="exportPageFormat">PDF Format:</label>
+            <select id="exportPageFormat">
+              <option value="a4-landscape">A4 Landscape</option>
+              <option value="poster">Poster (Full Width)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Live Graphic Preview Area -->
+        <div class="export-preview-wrapper">
+          <div class="export-preview-header">
+            <span>Graphic Render Preview:</span>
+            <span id="exportRenderStatus" class="export-render-status">Ready</span>
+          </div>
+          <div class="export-preview-scroll" id="exportPreviewScroll">
+            <div id="exportGraphicContainer" class="export-graphic-sheet">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div id="exportStatusMessage" style="font-size: 0.85rem; font-weight: 600; color: var(--kit-green); margin-right: auto; display: none;"></div>
+        <button class="btn btn-outline" id="exportCloseFooterBtn">Close</button>
+        <button class="btn btn-primary" id="btnExportDownloadPrimary">
+          <span>📄</span> Download PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor Export Scripts -->
+  <script src="js/vendor/html2canvas.min.js"></script>
+  <script src="js/vendor/jspdf.umd.min.js"></script>
 
   <!-- Core Scripts -->
   <script src="js/preloaded_degrees.js"></script>
