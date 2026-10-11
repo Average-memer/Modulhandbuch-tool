@@ -340,6 +340,37 @@
     "recommendations": "",
     "literature": ""
   },
+  "M-INFO-107599": {
+    "id": "M-INFO-107599",
+    "title": "Beating the Worst-Case in Practice: Unexpectedly Efficient Algorithms",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Unregelmäßig",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "TT-Prof. Dr. Thomas Bläsius"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See partial achievements. (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students\n•    can practically apply the knowledge acquired in the basic modules on algorithm engineering,\n•    are able to independently produce efficient implementations of algorithmic methods,\n•    master the methodology for the practical evaluation of algorithms, including the processing, analysis, and\ninterpretation of measurement data,\n•    possess the ability to communicate the results they obtain.\nIn addition, participants are able to analyze how various typical properties of instances influence the efficiency of\nalgorithms.",
+    "content": "In this lab, students implement and evaluate a set of given algorithmic approaches on their own. The emphasis is on\nmethods that, on real-world instances, perform far better than worst-case theory would suggest. We investigate this gap\nin performance using empirical methods throughout the course.",
+    "workload": "180 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
   "M-MACH-106903": {
     "id": "M-MACH-106903",
     "title": "Biologically Inspired Robots",
@@ -427,9 +458,40 @@
     "modeledPrerequisites": "",
     "exclusions": [],
     "requires": [],
-    "competenceGoal": "The students are able to analyse and assess problems of algebraic channel coding. They can apply methods of\nalgebraic coding theory in the context of communication systems for data transmission and data storage and are able to\nassess their implementation.Additionally, they will get knowledge to current research topics and research results.",
+    "competenceGoal": "",
     "content": "Das Modul CAD Engineering Project for Intelligent Systems ist ein projektbasiertes Mastermodul, das Studierenden die\nMöglichkeit bietet, ingenieurwissenschaftliche Kompetenzen im Bereich der Entwicklung intelligenter mechatronischer\nSysteme praxisnah zu erlangen und zu vertiefen. In interdisziplinären Teams konzipieren, entwerfen und realisieren die\nStudierenden ein robotischen Prototypen entlang eines vollständigen Entwicklungszyklus.\nAusgehend von einer definierten Problemstellung entwickeln die Studierenden ein technisches Konzept und setzen\ndieses mittels CAD-Software (Autodesk Fusion 360) in ein detailliertes mechanisches Design um. Ein besonderer Fokus\nliegt dabei auf Grundlagen des Rapid-Prototyping, funktionsgerechten Auslegung von Bauteilen, korrekter\nParametrisierung, der Berücksichtigung von Fertigungsrestriktionen sowie der Integration mechanischer und\nelektronischer Komponenten, sowie deren softwaretechnische Anbindung.\nDie entworfenen Bauteile werden überwiegend mittels additiver Fertigungsverfahren (insbesondere 3D-Druck)\nhergestellt und durch grundlegende konventionelle Fertigungstechniken ergänzt. Parallel dazu integrieren die\nStudierenden geeignete Sensoren, Aktoren und weitere elektronische Komponenten in das System und entwickeln die\nnotwendige Software zur Steuerung und Regelung des robotischen Prototyp.\nIm Anschluss wird das entwickelte System aufgebaut, in Betrieb genommen und unter realistischen Bedingungen\ngetestet und evaluiert. Die Ergebnisse werden abschließend dokumentiert und präsentiert. Das Modul fördert neben\nfachlichen Kompetenzen insbesondere Projektmanagementfähigkeiten, Teamarbeit, interdisziplinäres Denken sowie\neine systematische und lösungsorientierte Arbeitsweise, wie sie für die Entwicklung intelligenter technischer Systeme in\nForschung und Industrie erforderlich sind.\nVoraussetzungen:\nGrundlegende Kenntnisse in gängigen CAD-Software Lösungen, bestenfalls Fusion 360.\nDie Studierenden müssen eine kurze Bewerbung einreichen, in der sie ihre Motivation und Erfahrungen darlegen. Die\nBewerbung erfolgt über Ilias: (ilias.studium.kit.edu) - Deadline: 16.04.2026 .",
-    "workload": "Präsenzstudienzeit Praktikum: 60 h (4 SWS*15 h)\nArbeit an dem Projekt, Selbststudienzeit inkl. Prüfungsvorbereitung: 120 h\nSumme: 180 h\nInhaltliche Aufteilung:\nInitialer Entwurf / Idee einer (biologisch inspirierten) mechatronische Komponente: 20h\nKonstruktion mittels CAD-System und Gesamtsystem-Design: 60h\n3D Druck, Montage, Integration Elektronik und Funktionstests: 80h\nDokumentation und Bericht: 10h\nMeetings: Kickoff, Zwischen- und Abschluss-Präsentation und Diskussionen sowie Treffen mit Betreuern: 10h\n4 MODULE Modul: Channel Coding: Algebraic Methods for Communications and Storage [M-ETIT-105616]\nComputer Science Master 2025 (Master of Science (M.Sc.))\n1.\n2.\n3.\n4.\nM 4.16 Modul: Channel Coding: Algebraic Methods for Communications and\nStorage [M-ETIT-105616]\nVerantwortung: Prof. Dr.-Ing. Laurent Schmalen\nEinrichtung: KIT-Fakultät für Elektrotechnik und Informationstechnik\nBestandteil von: Minor Studies: Electrical Engineering\nLeistungspunkte\n3 LP\nNotenskala\nZehntelnoten\nTurnus\nJedes Sommersemester\nDauer\n1 Semester\nSprache\nEnglisch\nLevel\n4\nVersion\n1\nPflichtbestandteile\nT-ETIT-111244 Channel Coding: Algebraic Methods for Communications and\nStorage\n3 LP Schmalen\nErfolgskontrolle(n)\nThe exam is held as an oral exam of approx. 20 min.\nQualifikationsziele\nThe students are able to analyse and assess problems of algebraic channel coding. They can apply methods of\nalgebraic coding theory in the context of communication systems for data transmission and data storage and are able to\nassess their implementation.Additionally, they will get knowledge to current research topics and research results.\nInhalt\nThis course focuses on the formal and mathematical basics for the design of coding schemes in digital communication\nsystems. These include schemes for data transmission, data storage and networking. The course starts by introducing\nhe necessary fundamentals of algebra which are then used to derive codes for different applications. Besides codes that\nare important for data transmission appliations, e.g., BCH and Reed-Solomon-Codes, we also investigate codes for the\nefficient storage and reconstruction of data in distributed systems (locally repairable codes) and codes that increase the\nthroughput in computer networks (network codes). Real applications are always given to discuss practical aspects and\nimplementations of these coding schemes. Many of these applications are illustrated by example code in software\n(python/MATLAB).\nZusammensetzung der Modulnote\nThe module grade of the module corresponds to the grade of the oral exam.\nArbeitsaufwand\nAttendance to the lecture: 15 * 2 h = 30 h\nPreparation and review: 15 * 4 h = 60 h\nPreparation for the exam: included in preparation and review\nIn total: 90 h = 3 LP",
+    "workload": "180 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-ETIT-105616": {
+    "id": "M-ETIT-105616",
+    "title": "Channel Coding: Algebraic Methods for Communications and Storage",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Jedes Sommersemester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr.-Ing. Laurent Schmalen"
+    ],
+    "organisation": "KIT-Fakultät für Elektrotechnik und Informationstechnik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "None",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students are able to analyse and assess problems of algebraic channel coding. They can apply methods of\nalgebraic coding theory in the context of communication systems for data transmission and data storage and are able to\nassess their implementation.Additionally, they will get knowledge to current research topics and research results.",
+    "content": "This course focuses on the formal and mathematical basics for the design of coding schemes in digital communication\nsystems. These include schemes for data transmission, data storage and networking. The course starts by introducing\nhe necessary fundamentals of algebra which are then used to derive codes for different applications. Besides codes that\nare important for data transmission appliations, e.g., BCH and Reed-Solomon-Codes, we also investigate codes for the\nefficient storage and reconstruction of data in distributed systems (locally repairable codes) and codes that increase the\nthroughput in computer networks (network codes). Real applications are always given to discuss practical aspects and\nimplementations of these coding schemes. Many of these applications are illustrated by example code in software\n(python/MATLAB).",
+    "workload": "Attendance to the lecture: 15 * 2 h = 30 h\nPreparation and review: 15 * 4 h = 60 h\nPreparation for the exam: included in preparation and review\nIn total: 90 h = 3 LP",
     "recommendations": "",
     "literature": ""
   },
@@ -679,6 +741,37 @@
     "content": "Das Modul umfasst unter anderem folgende Themen:\nMustererkennung in Preis- und Ertragsdaten in Aktien-, Zinssatz-, Futures- und Optionsmärkten\nQuantitative Portfolio-Strategien\nModellierung von Rücklaufdichten unter Verwendung von Instrumenten der Finanzökonometrie,\nDatenwissenschaft und des maschinellen Lernens\nBewertung von Aktien, festverzinslichen Wertpapieren, Futures und Optionen in einem kohärenten Rahmen, um\nmöglicherweise Arbitragemöglichkeiten auszunutzen\nNeuronale Netze und Verarbeitung natürlicher Sprache",
     "workload": "Der Gesamtarbeitsaufwand für dieses Modul beträgt ca. 270 Stunden (9 Leistungspunkte). Die Gesamtstundenzahl\nergibt sich aus dem Aufwand für das Studium von Onlinevideos, dem Bearbeiten von Quizfragen, dem Studium von\nIpython- Notebooks, der Teilnahme an interaktiven \"Python Data Sessions\" und der Lektüre empfohlener Literatur.",
     "recommendations": "Grundkenntnisse der Kapitalmarkttheorie.",
+    "literature": ""
+  },
+  "M-INFO-105334": {
+    "id": "M-INFO-105334",
+    "title": "Decentralized Systems: Fundamentals, Modeling, and Applications",
+    "credits": 6,
+    "term": "SS",
+    "termString": "Jedes Sommersemester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr. Hannes Hartenstein"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Fundamentals & Modeling\n1. The student is able to recognize and distinguish distributed, federated, and decentralized systems.\n2. The student understands the role of consensus, consistency, and coordination within the context of networked and\ndecentralized systems.\n3. The student understands the concept of Sybil attacks.\n4. The student is familiar with decentralized algorithms like leader election for execution contexts with various\nguarantees.\n5. The student understands the formally proven limits of fault tolerance and their underlying assumptions. This includes\nan understanding of synchronous and asynchronous network models which underpin the respective proofs. The student\nalso understands several models for fault tolerance within the context of decentralized and distributed systems.\n6. The student has a basic understanding of state machine replication.\n7. The student knows how conflict-free replicated data types employ mathematics to provide eventually consistent data\nto collaborative peer-to-peer applications.\nApplications\n1. The student understands how decentralized storage, replication, and coordination is employed in practice.\n2. The student has a fundamental understanding of blockchain-based systems and payment channels, as well as\ndecentralized systems for storage, communication, and machine learning.\n3. The student understands trust relations in distributed and decentralized systems applications.\n4. The student is able to understand how theoretical foundations relate to networked and decentralized systems in\npractice.\n4 MODULE Modul: Decentralized Systems: Fundamentals, Modeling, and Applications [M-INFO-105334]\nComputer Science Master 2025 (Master of Science (M.Sc.))\n◦\n◦",
+    "content": "Decentralized Systems (like blockchain-based systems) are distributed systems under the control of multiple,\nindependent parties that act on their own, autonomous decisions. In this course, we cover fundamental theoretical\naspects as well as up-to-date decentralized systems, and connect theory with current practice. We thereby address fault\ntolerance, security and trust, as well as performance aspects at the example of applications like Bitcoin, Ethereum, IPFS,\nMatrix, or the Fediverse. As a research-oriented lecture, we cover additional current topics like decentralizing artificial\nintelligence via decentralized, federated learning, or identity and access management in decentralized systems.\nThe lecture covers at least the following topics:\nFundamentals\n- Peer-to-Peer Overlay Networks, Sybil and Eclipse Attacks\n- Formalization of decentralized systems, including models for their computation, communication, faults, and\ntiming.\n- Leader election and broadcast in decentralized systems, based on different models for identities and timing.\n- Byzantine consensus in synchronous and asynchronous settings, including Bracha’s fundamental algorithm for\nreliable broadcast, practical Byzantine fault tolerant consensus, and fundamental limits.\n- Consistency models and protocols, including conflict-free replicated data types.\nApplications\n- Decentralized storage systems, at the example of IPFS\n- Decentralized communication systems, at the example of Matrix for instant messaging\n- Distributed ledgers and blockchains, at the examples of Bitcoin and Ethereum, in particular Proof-of-Work and\nProof-of-Stake consensus\n-  Scaling techniques for distributed ledgers, at the example of payment channel networks and rollups\n- Decentralized, federated machine learning systems",
+    "workload": "1. Attendance time (Course, exercise, etc.)\nLecture: 3 SWS: 3,0h x 15 = 45h\nExercise: 1 SWS: 1,0h x 15 = 15h\n2. Self-study (e.g. independent review of course material, work on homework assignments)\nWeekly preparation and follow-up of the lecture: 15 x 1h x 3 = 45h\nWeekly preparation and follow-up of the exercise: 15 x 2h = 30h\n3. Preparation for the exam: 45 h\nΣ = 180h = 6 ECTS",
+    "recommendations": "",
     "literature": ""
   },
   "M-INFO-107197": {
@@ -1051,6 +1144,38 @@
     "competenceGoal": "Students gain a theoretical and methodical approach to modern Deep Learning as well as knowledge and experience\nabout the application of Deep Learning methods on networks and graphs\nStudents are able to apply this knowledge for understanding existing state-of-the-art Deep Learning architectures and for\nderiving novel architectures from first principles",
     "content": "- This module provides students with both theoretical and practical insights into modern Deep Learning\n- In particular, we focus on a novel approach for understanding deep neural networks with mathematical tools from\ngeometry and group theory\n- This enables a methodical approach to Deep Learning: starting from first principles of symmetry and invariance, we\nderive different network architectures for analyzing unstructured sets, grids, graphs, and manifolds\n- Topics of the course include: group theory, graph neural networks, convolutional neural networks, applications of\ngeometric deep learning in diverse fields such as geometry processing, molecular dynamics, social networks, game\nplaying (computer Go), processing of text and speech, as well as applications in medicine",
     "workload": "Lecture with 2 SWS + 2 SWS Tutorial, 6 LP\n6 LP corresponds to 180 hours, including\n1)    Attendance of the course: 22.5h (15x90min slots)\n2)    Attendance of the exercise sessions: 22.5h (15x90min slots)\n3)    Self-study of course material and work on homework assignments: 60h (4h/week)\n4)    Preparation for the exam: 75h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-107211": {
+    "id": "M-INFO-107211",
+    "title": "Graph Partitioning and Graph Clustering in Theory and Practice",
+    "credits": 5,
+    "term": "SS",
+    "termString": "Jedes Sommersemester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr. Peter Sanders",
+      "Dr. rer. nat. Torsten Ueckerdt"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The aim of the lecture is to provide students with an initial insight into the problems of graph partitioning and graph\nclustering and to apply knowledge from graph theory and algorithmics.\nOn the one hand, the problems that arise are reduced to their algorithmic core and then solved efficiently. On the other\nhand, various modelling methods and their interpretations are discussed. After successfully completing the course,\nstudents will be able to apply the methods and techniques presented autonomously to related problems.",
+    "content": "Many applications in computer science involve the clustering and partitioning of graphs, e.g. the finite element method in\nscientific simulations, digital circuit design, route planning, web graph analysis or the analysis of social networks.\nA well-known example where good partitioning of unstructured graphs is needed is parallel processing, where graphs\nmust be partitioned to distribute computations evenly over a given number of processors and minimise communication\nbetween them. k processors, the graph must be divided into k blocks of approximately equal size so that the number of\nedges between the blocks is minimal.\nSince many partitioning and clustering problems occur in practice, the problems discussed are introduced and\nmotivated, and both the theoretical and practical aspects of graph partitioning and graph clustering are taught, including\nheuristics, meta-heuristics, evolutionary and genetic algorithms as well as approximation and streaming algorithms.",
+    "workload": "150 hours workload.",
     "recommendations": "",
     "literature": ""
   },
@@ -2396,6 +2521,37 @@
     "recommendations": "",
     "literature": ""
   },
+  "M-INFO-105870": {
+    "id": "M-INFO-105870",
+    "title": "Practical Course: Advanced Topics in High Performance Computing, Data Management and Analytics",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Jedes Semester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr. Achim Streit"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See partial achivements (Teilleitung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students know and can apply tools and techniques in the fields of high-performance computing, data management and\ndata analysis. They acquire the possibility to analyze complex scenarios and develop solutions for this. Besides working\non the content, students improve their competences in communication and presentation.",
+    "content": "Participants will have the chance to deepen their knowledge of high-performance computing, data management and\ndata analysis and to apply it in a practical way. The tasks to be worked on come from the subfields:\n• HPC simulations (e.g., parallelization, MPI, performance engineering)\n• HPC systems and operating environment (e.g., On Demand File Systems, Infiniband Networks, Job Scheduling)\n• Machine Learning and Data Mining (e.g., RapidMiner, scikit)\n• Data-Intensive Computing (e.g., Hadoop, Spark).\n• HPC and data analysis with Python (e.g., Numpy, Scipy, Pandas, Dask, Parsl)\n• Distributed & Parallel File Systems (e.g., glusterFS, BeeGFS)\n• Object Storage (e.g., S3, CEPH)\n• Data Management System (e.g., dCache, iRods)\n• Databases (e.g., SQL, NoSQL)\n• Workflow management systems for HPC and data analysis (e.g., FireWorks, AiiDA, SimStack)\n• Opportunistic resource integration and utilization (e.g., using COBalD/TARDIS)\n• Authentication and authorization infrastructure (e.g., OpenID, SAML)\nStudents are individually supervised by scientific staff of the Scientific Centre for Computing and can apply their skills in\na practical and research-oriented way by being involved in current research tasks (e.g., Helmholtz program, BMBF and\nEU projects).",
+    "workload": "3 SWS = 150 h per semester\n• 12 h in meetings during the semester (kick-off, regular meetings with the supervisor, final meeting including\npresentation)\n• 18 h preparation of meetings\n• 120 h working on the topic and preparation of the exam",
+    "recommendations": "",
+    "literature": ""
+  },
   "M-INFO-106800": {
     "id": "M-INFO-106800",
     "title": "Practical Course: AI for Climate and Weather Predictions",
@@ -2455,6 +2611,38 @@
     "competenceGoal": "Qualification objective:\nStudents are able to identify security-relevant weaknesses and errors in a program analysis and suggest corrections.\nLearning objectives:\nStudents know and understand the programming model of x86 processors and their assembly language and can\napply it.\nStudents know and understand common error types, attack techniques and countermeasures and can reproduce\nthese independently.\nStudents are able to read and analyze a compiled program and examine it for vulnerabilities.\nStudents are able to independently carry out attacks in simple scenarios to prove the relevance of the\nprogramming error.",
     "content": "This module is dedicated to techniques for exploiting programming errors and common countermeasures, such as:\nBuffer overflows\nShellcode Injection\nReturn Oriented Programming\nAddress Space Layout Randomization\nStack Canaries",
     "workload": "Attendance time: 15 h\nSolving the tasks: 75\nPreparation for exam: 30\n(1 SWS + 5 SWS) x 15 + 30 h exam preparation = 120 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-106867": {
+    "id": "M-INFO-106867",
+    "title": "Practical Course: Artificial Intelligence & Security Lab (AISEC-Lab)",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Jedes Sommersemester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr. Christian Wressnegger"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives",
+      "Lab Course"
+    ],
+    "applicableSpecializations": [],
+    "isLab": true,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students know how to apply basic concepts of artificial intelligence and machine learning, and are able to evaluate the\nperformance of such systems on real-world data from computer security research.\n-    Students know and understand concepts of machine learning for computer security.\n-    Students are able independently design, implement, and evaluate learning-based systems.\n-    Students understand limits of learning-based approaches.",
+    "content": "In this practical course, the students develop learning-based systems for different computer security tasks, thereby\nintensifying their knowledge gained in the corresponding lectures. The students have the unique opportunity to design,\nimplement, and evaluate systems based on real-world data used in computer security research.\nThe module is composed of multiple units with several individual tasks/challenges covering different topics from classical\ncomputer security research to security of artificial intelligence. In each unit, the students develop an approach, train and\nvalidate it on known data, and submit their solution to the course platform, where the approach is tested against\nunknown data.",
+    "workload": "- 30h attendance time\n- 70h Time to complete the exercises\n- 15h Preparation of final presentation\n- 5h attendance time (final event)",
     "recommendations": "",
     "literature": ""
   },
@@ -2640,7 +2828,69 @@
     "requires": [],
     "competenceGoal": "The students\n- can use the methods of algorithm engineering in order to\nimplement and evaluate given algorithmic problems and data structures in\nC++.\n- recognize factors that lead to inefficient code and can, if possible, replace them with more efficient constructions.\n- understand how to use the presented techniques for parallelization and to generate thread-safe codes with the given\nmeans.\n- know the features of the standard library and are able to use them selectively.\n- can test the codes generated by them for correctness and performance, furthermore they can represent and analyze\nthe obtained results.",
     "content": "In this practical course students solve multiple programming tasks in C++. The main focus is on the efficient\nimplementation and their evaluation through extensive experiments. The programming tasks are motivated by scientific\nwork in the field of algorithm engineering.\nThey cover complex algorithms as well as advanced data structures, furthermore advanced programming techniques\nand parallelization (thread management capabilities of the standard library).",
-    "workload": "~ 15h attendance time\n~ 25h presentation/discussion/assessment of the solutions (with preparation)\n~ 140h working on the tasks (implementation and evaluation)\n4 MODULE Modul: Practical Course: Engineering Approaches to Software Development [M-INFO-107678]\nComputer Science Master 2025 (Master of Science (M.Sc.))\nM 4.92 Modul: Practical Course: Engineering Approaches to Software\nDevelopment [M-INFO-107678]\nVerantwortung: Prof. Dr. Ralf Reussner\nEinrichtung: KIT-Fakultät für Informatik\nBestandteil von: Area of Specialization: Software Engineering and Compiler Construction\nElective Studies in Informatics\nLeistungspunkte\n6 LP\nNotenskala\nZehntelnoten\nTurnus\nJedes Semester\nDauer\n1 Semester\nSprache\nEnglisch\nLevel\n4\nVersion\n1\nPflichtbestandteile\nT-INFO-115044 Practical Course: Engineering Approaches to Software\nDevelopment\n6 LP Reussner\nErfolgskontrolle(n)\nSee Partial Achievements (Teilleistung)\n.\nVoraussetzungen\nSee Partial Achievements (Teilleistung).\nQualifikationsziele\nStudents are able to\n-        understand scientifically motivated problem statements and, in cooperation with supervisors, derive requirements\nfor the software to be developed or extended.\n-        develop medium-sized programs using current development environments, or familiarize themselves with medium-\nto large-scale software systems and further develop them.\n-        present project progress to supervisors in regular meetings and identify and communicate potential obstacles.\n-        evaluate third-party code in the context of code reviews, identify potential weaknesses, and discuss them.\n-        present a (further) developed software system in a short presentation.\nInhalt\nThe engineering-oriented development of software is an indispensable prerequisite for building large systems.\nAccordingly, software engineers must systematically analyze the system’s quality already during software design and,\nwhere possible, also predict it.\nIn this practical course, participants use and extend state-of-the-art tools from both practice and research to evaluate\nand predict the performance of software systems. These tools provide solutions for the following tasks:\n-    assessing the scalability of software depending on the execution environment\n-    maintaining consistency across different development artifacts\nThe development tasks are drawn from the following areas:\n-    MDSD (Model-Driven Software Development)\n-    plugin development\n-    benchmarking\n-    reverse engineering\nThe technologies used include:\n-    Java, Python, Java/TypeScript\n-    Spring Boot, React, Maven, EMF (Eclipse Modeling Framework)\n-    Development of VS Code extensions or language servers\n-    Vitruvius\n-    Palladio Simulator\nCourse assessment is graded individually; group work is intended. The lab is embedded in the chair’s ongoing research\nand offers plenty room for creativity. The assignments are practice-oriented and prepare students for realistic tasks in\nboth research and industry.\nThe lab can be completed entirely in English. If preferred, supervision and presentations in German are also possible.\n4 MODULE Modul: Practical Course: Engineering Approaches to Software Development [M-INFO-107678]\nComputer Science Master 2025 (Master of Science (M.Sc.))\nAnmerkungen\nIn earlier semesters, this course was named „Praktikum Ingenieursmäßige Software-Entwicklung“.\nArbeitsaufwand\nCourse workload:\n20 hours of work for onboarding,\n120 hours of work for development,\n20 hours of work for weekly meetings and follow-up,\n10 hours for preparing and conducting a code review,\n10 hours for preparing and delivering the final presentation.\nIn total, this amounts to 180 hours of work.",
+    "workload": "180 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-107678": {
+    "id": "M-INFO-107678",
+    "title": "Practical Course: Engineering Approaches to Software Development",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Jedes Semester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr. Ralf Reussner"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See Partial Achievements (Teilleistung).",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students are able to\n-        understand scientifically motivated problem statements and, in cooperation with supervisors, derive requirements\nfor the software to be developed or extended.\n-        develop medium-sized programs using current development environments, or familiarize themselves with medium-\nto large-scale software systems and further develop them.\n-        present project progress to supervisors in regular meetings and identify and communicate potential obstacles.\n-        evaluate third-party code in the context of code reviews, identify potential weaknesses, and discuss them.\n-        present a (further) developed software system in a short presentation.",
+    "content": "The engineering-oriented development of software is an indispensable prerequisite for building large systems.\nAccordingly, software engineers must systematically analyze the system’s quality already during software design and,\nwhere possible, also predict it.\nIn this practical course, participants use and extend state-of-the-art tools from both practice and research to evaluate\nand predict the performance of software systems. These tools provide solutions for the following tasks:\n-    assessing the scalability of software depending on the execution environment\n-    maintaining consistency across different development artifacts\nThe development tasks are drawn from the following areas:\n-    MDSD (Model-Driven Software Development)\n-    plugin development\n-    benchmarking\n-    reverse engineering\nThe technologies used include:\n-    Java, Python, Java/TypeScript\n-    Spring Boot, React, Maven, EMF (Eclipse Modeling Framework)\n-    Development of VS Code extensions or language servers\n-    Vitruvius\n-    Palladio Simulator\nCourse assessment is graded individually; group work is intended. The lab is embedded in the chair’s ongoing research\nand offers plenty room for creativity. The assignments are practice-oriented and prepare students for realistic tasks in\nboth research and industry.\nThe lab can be completed entirely in English. If preferred, supervision and presentations in German are also possible.\n4 MODULE Modul: Practical Course: Engineering Approaches to Software Development [M-INFO-107678]\nComputer Science Master 2025 (Master of Science (M.Sc.))\nAnmerkungen\nIn earlier semesters, this course was named „Praktikum Ingenieursmäßige Software-Entwicklung“.",
+    "workload": "Course workload:\n20 hours of work for onboarding,\n120 hours of work for development,\n20 hours of work for weekly meetings and follow-up,\n10 hours for preparing and conducting a code review,\n10 hours for preparing and delivering the final presentation.\nIn total, this amounts to 180 hours of work.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-106784": {
+    "id": "M-INFO-106784",
+    "title": "Practical Course: Fine-grained Algorithm Design and Engineering",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Unregelmäßig",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr.-Ing. Marvin Künnemann"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students should be able to apply knowledge in the specializations “Algorithmtechnik” and “Theoretische Grundlagen” to\nderive fast algorithms and their implementations for a given algorithmic problem.\nThis includes:\n– modeling a given problem of interest as a well-defined algorithmic problem as well as identifying reasonable\nrelaxations\n– performing a literature search to identify algorithmic ideas previously proposed for a given problem\n– researching a given algorithmic or conditional lower bound technique and investigating its applicability on a given\nproblem\n– implementing resulting algorithms efficiently\n– creating reasonable benchmark data sets (generated randomly, via reductions or from real-world data sources)\n– evaluating an implementation on benchmark data and gaining insights on possible improvements of the model,\nalgorithm or implementation.\nFurthermore, the students can constructively engage in a team setting and are able to clearly communicate their ideas\nand results.",
+    "content": "Each group of students will receive a topic among a list of possible algorithmic problems with relevance for fine-grained\nand parameterized complexity (usually from the fields of graph theory, computational geometry or string problems). In\nsome cases, the proposed topic is the subject of an ongoing algorithmic contest (e.g., the PACE challenge), providing an\nopportunity of participation as part of the practical course.\nUnder supervision, each group will:\n– research the theoretical state-of-the-art for their algorithmic problem and/or design a novel algorithm,\n– implement one or more algorithmic approaches\n– evaluate and improve them using appropriate benchmark data sets.\nThe course aims to investigate the connections between worst-case upper & conditional lower bounds and fast practical\nimplementations.",
+    "workload": "6 CP correspond to ~ 180 h, distributed roughly as follows:\n~ 40 h meetings, literature review, etc.\n~ 100 h implementation and evaluation\n~ 40 h preparation of presentation and report",
     "recommendations": "",
     "literature": ""
   },
@@ -2672,6 +2922,37 @@
     "competenceGoal": "Students will learn to design and to simulate digital circuits with FPGA.",
     "content": "This lab emphasizes on the practical aspects of Field Programmable Gate Arrays (FPGAs). In the beginning, a short\nbackground introduction on FPGAs is given, followed by a tutorial on the workflow of configuring and programming an\nFPGA. This lab includes FPGA design using schematic layouts as well as several example of VHDL/Verilog\nprogramming to implement some sample digital circuits. Students will learn to design and to simulate digital circuits with\nFPGA. The design will be compiled on run a FPGA. The lab is designed around the DE2-115 prototyping board, which\nprovides a programmer, program memory, and array of switches, buttons, LEDs, an LCD, and several I/O ports.",
     "workload": "4 SWS / 3 CP = 90 h/week",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-100724": {
+    "id": "M-INFO-100724",
+    "title": "Practical Course: General-Purpose Computation on Graphics Processing Units",
+    "credits": 3,
+    "term": "WS+SS",
+    "termString": "Jedes Semester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr.-Ing. Carsten Dachsbacher"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students should acquire the ability to use programmable graphics hardware using suitable interfaces (e.g. OpenCL,\nCUDA) to solve scientific and technical calculations. The students should thereby acquire the practical ability to\nsystematically develop a parallel, efficient programme on the basis of suitable algorithms. Students learn basic\nalgorithms for parallel architectures, are able to analyse and evaluate them, and practice their use in practical\napplications.",
+    "content": "The practical course covers basic concepts for the use of modern graphics hardware for technical and scientific\ncalculations and simulations. Starting with basic algorithms, e.g. parallel reduction or matrix multiplication, the practical\ncourse imparts knowledge about the properties and capabilities of modern graphics processors (GPUs). As part of the\npractical course, students work on smaller sub-projects in which they acquire knowledge about the algorithms used and\napply them to a specific problem; OpenCL or CUDA, for example, is used as a programming interface.",
+    "workload": "90 hours workload.",
     "recommendations": "",
     "literature": ""
   },
@@ -2768,6 +3049,37 @@
     "recommendations": "",
     "literature": ""
   },
+  "M-INFO-107609": {
+    "id": "M-INFO-107609",
+    "title": "Practical Course: Mathematical and Computational Methods in Robotics and AI",
+    "credits": 6,
+    "term": "WS+SS",
+    "termString": "Jedes Semester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr. Katja Mombaur"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Students learn to understand scientific topics. They will learn how to address specific project tasks and solve them in a\nstructured way. They will obtain deepened knowledge about fundamental mathematical and computational methods,\nincluding their potential, strengths and limitations and in which areas they are suited to be applied. Students learn to\npresent their results to a an audience, as well as suitably documenting their results in form or in addition to a scientific\npaper and being capable of assessing the advantages and disadvantages of the methods used.",
+    "content": "Efficient mathematical and computational methods are an irreplaceable cornerstone of modern research and industrial\napplications in forms such as numerical simulation, optimization or inference, ranging from the generation of task-\nspecific trajectories for robotic systems over stabilization of existing robots to data-driven prediction and inference as\nwell as AI-applications.\nIn this practical course, students learn, on the basis of an individual programming project, how to implement and apply\nfundamental mathematical and computational methods to solve an existing task in a robotics application or related fields\nand gain experience leveraging methods from this area in said real-world context.\nAnmerkungen\nLimited number of projects and participants. Specific project topics will be different each term and will be announced in a\npresentation during the first semester week or can be indivdually agreed upon with people supervising the practical.\nStudents can propose topics on their own as well.",
+    "workload": "Estimated effort for this module is 180 hours:\n20h – In person events (kickoff meeting, individual meetings with supervisor, presentations)\n130h – Individual project work\n30h -  Writing report and preparing presentation",
+    "recommendations": "",
+    "literature": ""
+  },
   "M-INFO-106932": {
     "id": "M-INFO-106932",
     "title": "Practical Course: Model-Driven Software Development",
@@ -2857,7 +3169,38 @@
     "requires": [],
     "competenceGoal": "The student\nis able to develop a dialogue system using state-of-the-art methods.\ndevelop a dialogue system.\ncan evaluate dialogue systems.\ncan present his/her findings in a scientific lecture.",
     "content": "Thanks to major advances in the field of deep learning and, in particular, large language models, it is now possible to\ndevelop dialogue systems and chatbots that can support people in many situations.\nAs part of this internship, students will develop a personal assistant for various application scenarios. To do this,\nstudents must first deal with data collection and data preparation. This data should then be used to develop a chatbot for\nthe addressed application using freely available pre-trained models. In addition, the students will investigate various\noptions for evaluating the systems.\nIn the final part of the internship, students can independently choose a focus to improve their initial system. The final\nsystems will be presented in a final presentation.",
-    "workload": "180 h\n4 MODULE Modul: Practical Course: Real-world Vulnerability Discovery and Exploits [M-INFO-106627]\nComputer Science Master 2025 (Master of Science (M.Sc.))\nM 4.103 Modul: Practical Course: Real-world Vulnerability Discovery and\nExploits [M-INFO-106627]\nVerantwortung: Prof. Dr. Christian Wressnegger\nEinrichtung: KIT-Fakultät für Informatik\nBestandteil von: Area of Specialization: Cryptography and Security\nElective Studies in Informatics\nLeistungspunkte\n4 LP\nNotenskala\nZehntelnoten\nTurnus\nJedes Semester\nDauer\n1 Semester\nSprache\nEnglisch\nLevel\n4\nVersion\n1\nPflichtbestandteile\nT-INFO-113350 Practical Course: Real-world Vulnerability Discovery and\nExploits\n4 LP Wressnegger\nErfolgskontrolle(n)\nSiehe Teilleistung.\nVoraussetzungen\nSiehe Teilleistung.\nQualifikationsziele\n← Students know and understand exploitation techniques.\n← Students are able to independently research software vulnerabilities.\n← Students are comfortable engaging with software vendors in vulnerability disclosure.\nInhalt\nStudents understand modern exploitation techniques and can apply them. Moreover, they get familiar with the\nvulnerability disclosure process of prominent software vendors, reporting their findings.\nArbeitsaufwand\n• 2h Präsenzzeit/ Woche (Vorträge)\n• 5h Projektarbeit/ Woche\n• 10h Vorbereitung Abschlusspräsentation\n• 5h Präsenzzeit (Abschlussveranstaltung)\nInsgesamt 120h",
+    "workload": "180 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-106627": {
+    "id": "M-INFO-106627",
+    "title": "Practical Course: Real-world Vulnerability Discovery and Exploits",
+    "credits": 4,
+    "term": "WS+SS",
+    "termString": "Jedes Semester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr. Christian Wressnegger"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "Siehe Teilleistung.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "← Students know and understand exploitation techniques.\n← Students are able to independently research software vulnerabilities.\n← Students are comfortable engaging with software vendors in vulnerability disclosure.",
+    "content": "Students understand modern exploitation techniques and can apply them. Moreover, they get familiar with the\nvulnerability disclosure process of prominent software vendors, reporting their findings.",
+    "workload": "• 2h Präsenzzeit/ Woche (Vorträge)\n• 5h Projektarbeit/ Woche\n• 10h Vorbereitung Abschlusspräsentation\n• 5h Präsenzzeit (Abschlussveranstaltung)\nInsgesamt 120h",
     "recommendations": "",
     "literature": ""
   },
@@ -2981,7 +3324,38 @@
     "requires": [],
     "competenceGoal": "The student understands the concepts behind the SDN approach and applies this knowledge to design solutions for new\nproblems. He/she is able to develop an application in group work that implements a specific functionality in an SDN\nnetwork. From the outset, the student plans his/her solution approaches from the point of view of interoperability with the\nsolutions of the other groups. The participants jointly decide on compromise solutions, if these are necessary, in order to\nbe able to operate the applications of the different groups together without disruption.",
     "content": "The internship deals with the realization of a software project in the field of Software-Defined Networking (SDN). With\nSDN, the control and monitoring of a network is outsourced to a controller. The actual forwarding hardware can then be\nprogrammed via the OpenFlow interface.\nAs part of the internship, we want to find out together to what extent this technology can also be used within our own four\nwalls. To this end, we will design and develop an SDN home router that enables users to monitor and control their\nnetwork using SDN applications. In small groups, we will build or recreate various functions from the home network\nsector, e.g. a firewall or parental control. A monitoring system that breaks down the Internet consumption of all\nconnected computers is also conceivable. Or a traffic engineering mechanism that ensures that you can still enjoy\nYouTube even when your younger brother is downloading a 100 GB game. Many other variants are conceivable. We\ndecide together in the internship what will be implemented in the end. Your own ideas are very welcome!",
-    "workload": "180h\n4 MODULE Modul: Practical Course: Software Development and Application of Mobile, Bio-Inspired Robots [M-MACH-106904]\nComputer Science Master 2025 (Master of Science (M.Sc.))\nM 4.108 Modul: Practical Course: Software Development and Application of\nMobile, Bio-Inspired Robots [M-MACH-106904]\nVerantwortung: Prof. Dr.-Ing. Arne Rönnau\nEinrichtung: KIT-Fakultät für Maschinenbau\nBestandteil von: Minor Studies: Biologically Inspired Robotics\nLeistungspunkte\n6 LP\nNotenskala\nZehntelnoten\nTurnus\nJedes Wintersemester\nDauer\n1 Semester\nSprache\nEnglisch\nLevel\n4\nVersion\n1\nPflichtbestandteile\nT-MACH-113854 Practical Course: Software Development and Application of\nMobile, Bio-Inspired Robots\n6 LP Rönnau\nErfolgskontrolle(n)\nSieheTeilleistung\nVoraussetzungen\nKeine\nQualifikationsziele\nStudierende sind in der Lage, biologisch inspirierte, mobile Roboter zu verstehen und deren Software zu erweitern.\nInhalt\nDieses Modul vermittelt Studierenden den Umgang mit und die Erweiterung biologisch inspirierter, mobiler Robotik.\nDabei werden die Themenbereiche Regelungstechnik, Computer-Vision, 3D Kartierung, Navigation und Mensch-\nMaschine-Interaktion behandelt.\nDie Studierenden arbeiten in Gruppen und erstellen einen gemeinsamen Abschlussbericht und eine gemeinsame\nPräsentation.\nArbeitsaufwand\n180h\n•   30h wöchentliches Regeltreffen\n•   120h Vor- und Nachbereitungszeiten\n•   30h Präsentations- und Berichtvorbereitung",
+    "workload": "180 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-MACH-106904": {
+    "id": "M-MACH-106904",
+    "title": "Practical Course: Software Development and Application of Mobile, Bio-Inspired Robots",
+    "credits": 6,
+    "term": "WS",
+    "termString": "Jedes Wintersemester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr.-Ing. Arne Rönnau"
+    ],
+    "organisation": "KIT-Fakultät für Maschinenbau",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "Keine",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Studierende sind in der Lage, biologisch inspirierte, mobile Roboter zu verstehen und deren Software zu erweitern.",
+    "content": "Dieses Modul vermittelt Studierenden den Umgang mit und die Erweiterung biologisch inspirierter, mobiler Robotik.\nDabei werden die Themenbereiche Regelungstechnik, Computer-Vision, 3D Kartierung, Navigation und Mensch-\nMaschine-Interaktion behandelt.\nDie Studierenden arbeiten in Gruppen und erstellen einen gemeinsamen Abschlussbericht und eine gemeinsame\nPräsentation.",
+    "workload": "180h\n•   30h wöchentliches Regeltreffen\n•   120h Vor- und Nachbereitungszeiten\n•   30h Präsentations- und Berichtvorbereitung",
     "recommendations": "",
     "literature": ""
   },
@@ -3702,6 +4076,37 @@
     "recommendations": "",
     "literature": ""
   },
+  "M-INFO-105780": {
+    "id": "M-INFO-105780",
+    "title": "Scientific Methods to Design and Analyze Secure Decentralized Systems",
+    "credits": 5,
+    "term": "WS",
+    "termString": "Jedes Wintersemester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Prof. Dr. Hannes Hartenstein"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "Siehe Teilleistung.",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "1. Philosophy of Science: The student understands epistemological principles like the scientific and mathematical\nprocess, within the context of networked and decentralized systems. The student knows about the current limits of\nscientific research, especially in regards to the security of a given decentralized system.\n2. Empirical Methods: Observation / Monitoring: The student is able to construct setups to monitor system properties\nrelated to performance or security. The student knows how to observe a decentralized system like an overlay network\nwithout interference, i.e., without impact on the behavior to measure as well as the overall system functionality.\n3. Combined Empirical / Formal Methods: The student has a fundamental understanding of Discrete Event Simulations,\nas well as stochastic modelling and random number generation. The student is able to conduct a simulation study\nconsisting of observation, modelling, simulation, validation, and result analysis.\n4. Formal Methods: The student knows how to apply formal methods like formal verification / model checking and model\ncomparison / simulation-based proofs to decentralized systems. The student understands tradeoffs between empirical\nand formal methods, and can choose suitable methods for given research tasks.\n5. Applications in Research: The student understands how the methods of this lecture are applied to practical examples,\nand knows how to apply the methods on problems of a researcher’s everyday life.",
+    "content": "Decentralized Systems (like peer-to-peer- or blockchain-based systems) are systems controlled by multiple parties who\nmake their own independent decisions to reach a common goal. However, not knowing which parties are trustworthy and\nwhich are betrayers requires a radically different way of thinking. Based on the lecture “Decentralized Systems:\nFundamentals, Modeling, and Applications”, in this lecture, we cover the necessary scientific methods to analyze\nexisting and to create new decentralized systems. We treat both, selected empirical and formal methods and their\ntradeoffs, as well as the overarching philosophy of science behind the research process. Together with its practical parts,\nthis lecture provides the foundational scientific toolbox to work on the decentralized systems of the future.",
+    "workload": "1. Attendance time (Course, exercise,): 3 SWS: 15 x 3h = 45h\n2. Self-study (e.g. independent review of course material,\nwork on homework assignments)\nWeekly preparation and follow-up of the lecture/exercise: 15 x 3 SWS x 1,5h = 67,5hh\n3. Preparation for the exam: 37,5h\nΣ = 150h = 5 ECTS",
+    "recommendations": "",
+    "literature": ""
+  },
   "M-INFO-102662": {
     "id": "M-INFO-102662",
     "title": "Seminar Dependable Computing",
@@ -4207,9 +4612,7 @@
     "duration": "1 Semester",
     "language": "English",
     "grading": "Zehntelnoten",
-    "coordinators": [
-      "TT-Prof. Dr. Barbara Bruno"
-    ],
+    "coordinators": [],
     "organisation": "KIT-Fakultät für Informatik",
     "partOf": [],
     "categories": [
@@ -4226,7 +4629,69 @@
     "competenceGoal": "Students are able to independently understand a complex research topic, present the content in a concise and\nunderstandable way and prepare a scientific report summarizing the topic.\nStudents are able to independently understand a complex research topic, present the content in a concise and\nunderstandable way and prepare a scientific report summarizing the topic. Students get a deeper understanding of state-\nof-the art learning algorithms and get to know current research challenges.\nStudents are familiar with the DFG Code of Conduct \"Guidelines for Safeguarding Good Scientific Practice\" and\nsuccessfully apply these guidelines in the preparation of their scientific work.",
     "content": "Each student will select several related papers in the field of Explainable Artificial Intelligence and study and analyze it in\nthe context of Robot Learning. The organizers will suggest several papers but the students will be encouraged to\nindentify and research additional relevant papers during the semester. The students will then prepare a presentation and\na basic scientific research paper.\nIt is highly recommended to take this seminar in combination with the “Explainable Robot Intelligence” Research Project\n(Forschungspraktikum), where the students get the chance to deepen their understanding, implement and evaluate their\npresented work.\nAnmerkungen\nIt is only possible to resign within two weeks after assignment of the topic.",
     "workload": "Workload = 90 h = 3 ECTS\n- Attendance time: 15h\n- Self-study: 45h\n- Writing a scientific report: 20h\n- Preparing a presentation: 10h",
-    "recommendations": "We recommend taking this research project after attending the “Explainable Artificial Intelligence” lecture in the summer\nsemester.\nWe highly recommend to take this seminar in combination with the “Explainable Artificial Intelligence” research project\n(Forschungspraktikum).\n• Experience in Machine Learning is recommended, e.g. through prior coursework.\n◦ The Computer Science Department offers several great lectures e.g., “Maschinelles Lernen - Grundlagen und\nAlgorithmen” and “Deep Learning ”\n• A good mathematical background will be beneficial\n• Python experience is recommended\n• We will use the PyTorch deep learning library. Some prior knowledge in this is helpful but not necessary.\n4 MODULE Modul: Seminar: Exploring Robotics - Insights from Science Fiction, Research and Society [M-INFO-106651]\nComputer Science Master 2025 (Master of Science (M.Sc.))\nM 4.150 Modul: Seminar: Exploring Robotics - Insights from Science Fiction,\nResearch and Society [M-INFO-106651]\nVerantwortung: TT-Prof. Dr. Barbara Bruno\nEinrichtung: KIT-Fakultät für Informatik\nBestandteil von: Area of Specialization: Robotics and Automation\nArea of Specialization: Human-centred Machine Intelligence\nElective Studies in Informatics\nLeistungspunkte\n3 LP\nNotenskala\nZehntelnoten\nTurnus\nJedes Sommersemester\nDauer\n1 Semester\nSprache\nEnglisch\nLevel\n4\nVersion\n1\nPflichtbestandteile\nT-INFO-113398 Seminar: Exploring Robotics - Insights from Science Fiction,\nResearch and Society\n3 LP Bruno\nErfolgskontrolle(n)\nSee partial achievements (Teilleistung)\nVoraussetzungen\nSee partial achievements (Teilleistung)\nQualifikationsziele\nThe students gain experience with literature research on a current research topic. They explore, understand and\ncompare different approaches to a selected scientific problem. The students are able to write a summary of their",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-106651": {
+    "id": "M-INFO-106651",
+    "title": "Seminar: Exploring Robotics - Insights from Science Fiction, Research and Society",
+    "credits": 3,
+    "term": "SS",
+    "termString": "Jedes Sommersemester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "TT-Prof. Dr. Barbara Bruno"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students gain experience with literature research on a current research topic. They explore, understand and\ncompare different approaches to a selected scientific problem. The students are able to write a summary of their\nliterature research in the form of a scientific publication in English and give a scientific talk on it.\nStudents are familiar with the DFG Code of Conduct \"Guidelines for Safeguarding Good Scientific Practice\" and\nsuccessfully apply these guidelines in the preparation of their scientific work.",
+    "content": "The students choose a topic from the field of robotics (e.g. remote control, behavior-based robotics, human-robot\ninteraction, the “uncanny valley,” natural language understanding, machine learning) and conduct a research on it that,\nbuilding on literature findings, also includes and addresses the perspectives of society and the general media (as given\nby science fiction books, movies and games, as well as media and news outlets) and technology assessment (including\nsocial/societal expectations and needs, ethical implications, and risks/benefits analyses).\nStudents work under the guidance of a scientific supervisor. At the end of the semester, they present the results and\nwrite an elaboration in English in the form of a scientific publication.",
+    "workload": "Seminar with 2 SWS, 3 LP.\n3 LP corresponds to approx. 90 hours, of which\napprox. 45 hours of literature research\napprox. 25 hrs. elaboration\napprox. 10 hrs. preparation of presentation\napprox. 10 hrs. compulsory attendance",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-107436": {
+    "id": "M-INFO-107436",
+    "title": "Seminar: Failing Forward: Robotics, Critical Reading and the Making of Good Research",
+    "credits": 3,
+    "term": "WS",
+    "termString": "Jedes Wintersemester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "TT-Prof. Dr. Barbara Bruno"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students refine their critical reading skills and gain experience with literature research on a current research topic.\nThey can identify and propose good research practices. The students are able to present their findings and reflections in\nthe form of a scientific publication in English and give a scientific talk on it.",
+    "content": "The students choose a topic from the field of human-robot interaction (e.g. about robots in public spaces, or robots and\ndiversity, or companion robots for older adults). They then conduct a literature research under the guidance of a scientific\nsupervisor, aimed at identifying what makes good research and good research reporting on the chosen topic. At the end\nof the semester, they present the results and write an elaboration in English in the form of a short scientific position\npaper.",
+    "workload": "Seminar with 2 SWS, 3 LP.\n3 LP corresponds to approx. 90 hours, of which\napprox. 45 hours of literature research\napprox. 25 hrs. elaboration\napprox. 10 hrs. preparation of presentation\napprox. 10 hrs. compulsory attendance",
+    "recommendations": "",
     "literature": ""
   },
   "M-INFO-106645": {
@@ -4504,7 +4969,38 @@
     "requires": [],
     "competenceGoal": "The student\ndeals with a defined problem in the field of law,\nanalyzes and discusses problems within the framework of the courses and in the final seminar papers,\ndiscusses, presents and defends subject-specific arguments within a given task,\norganizes the preparation of the final seminar papers largely independently.\nAccompanied by the relevant examiners, the student practises independent scientific work when writing the final seminar\npapers and presenting them.\nStudents are familiar with the DFG Code of Conduct \"Guidelines for Safeguarding Good Scientific Practice\" and\nsuccessfully apply these guidelines when writing their scientific work.",
     "content": "The module consists of a seminar that is thematically related to law. A list of approved courses will be published on the\nInternet.",
-    "workload": "The total workload for this module is approx. 90 hours (3 credits) for attendance time, preparation and follow-up work as\nwell as the course examination.\nThe actual workload varies depending on the specific seminar chosen and is described for the individual course.\n4 MODULE Modul: Seminar: Machine Learning in Climate and Environmental Sciences [M-INFO-106719]\nComputer Science Master 2025 (Master of Science (M.Sc.))\nM 4.161 Modul: Seminar: Machine Learning in Climate and Environmental\nSciences [M-INFO-106719]\nVerantwortung: TT-Prof. Dr. Peer Nowack\nEinrichtung: KIT-Fakultät für Informatik\nBestandteil von: Area of Specialization: Human-centred Machine Intelligence\nElective Studies in Informatics\nLeistungspunkte\n3 LP\nNotenskala\nZehntelnoten\nTurnus\nUnregelmäßig\nDauer\n1 Semester\nSprache\nEnglisch\nLevel\n4\nVersion\n1\nPflichtbestandteile\nT-INFO-113519 Seminar: Machine Learning in Climate and Environmental\nSciences\n3 LP Nowack\nErfolgskontrolle(n)\nSee partial achievements (Teilleistung)\nVoraussetzungen\nSee partial achievements (Teilleistung)\nQualifikationsziele\nThe students will learn to:\n•    independently discuss current research topics on machine learning in climate and environmental sciences.\n•    summarize published research in a structured way and explain it in their own words, in group discussions and in the\nform of a presentation.\n•    contrast modern problem-solving approaches and methods and propose suitable solutions for a variety of subject-\nrelevant issues.\n•    Optional: students are invited to develop their own research ideas on the basis of what they have learned and to\nrefine them in discussion with their supervisors. Such ideas could be pursued as a project internship, in the “Practical\nResearch course” or in the form of a master’s thesis.\nInhalt\nMachine learning (ML) methods are already ubiquitous in many areas of society and research. This is especially true for\nclimate and environmental sciences, where ML algorithms help e.g. to improve predictions of climate change and\nweather, or to optimize energy supply systems. In this session, we will discuss cutting-edge publications on ML\napplications in climate and environmental sciences, as well as the underlying theory behind the classes of algorithms.\nWhile organizers will suggest initial papers, students will be encouraged to seek out additional relevant literature\nthroughout the semester.\nThe seminar will cover both the in-depth study of the climate/environmental sciences topic as well as of the specific\nmachine learning method(s) employed in the literature. It will include two short and one longer final presentation from\neach student. The first presentation will focus solely on the chosen climate or environmental event or phenomenon,\nwhile the second presentation will cover the machine learning methods employed in studying it. Next to suggested\nreading by the module organizers, students will be encouraged to seek out additional relevant literature throughout the\nsemester.\nTowards the end, students will compile their findings into the final presentation accompanied by a scientific report,\npresenting the results in the form of a lecture.\nArbeitsaufwand\nTotal 90 h, consisting of:\nSeminar attendance and personal meetings with the supervisors: 10 h",
+    "workload": "90 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-INFO-106719": {
+    "id": "M-INFO-106719",
+    "title": "Seminar: Machine Learning in Climate and Environmental Sciences",
+    "credits": 3,
+    "term": "WS+SS",
+    "termString": "Unregelmäßig",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "TT-Prof. Dr. Peer Nowack"
+    ],
+    "organisation": "KIT-Fakultät für Informatik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "See partial achievements (Teilleistung)",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "The students will learn to:\n•    independently discuss current research topics on machine learning in climate and environmental sciences.\n•    summarize published research in a structured way and explain it in their own words, in group discussions and in the\nform of a presentation.\n•    contrast modern problem-solving approaches and methods and propose suitable solutions for a variety of subject-\nrelevant issues.\n•    Optional: students are invited to develop their own research ideas on the basis of what they have learned and to\nrefine them in discussion with their supervisors. Such ideas could be pursued as a project internship, in the “Practical\nResearch course” or in the form of a master’s thesis.",
+    "content": "Machine learning (ML) methods are already ubiquitous in many areas of society and research. This is especially true for\nclimate and environmental sciences, where ML algorithms help e.g. to improve predictions of climate change and\nweather, or to optimize energy supply systems. In this session, we will discuss cutting-edge publications on ML\napplications in climate and environmental sciences, as well as the underlying theory behind the classes of algorithms.\nWhile organizers will suggest initial papers, students will be encouraged to seek out additional relevant literature\nthroughout the semester.\nThe seminar will cover both the in-depth study of the climate/environmental sciences topic as well as of the specific\nmachine learning method(s) employed in the literature. It will include two short and one longer final presentation from\neach student. The first presentation will focus solely on the chosen climate or environmental event or phenomenon,\nwhile the second presentation will cover the machine learning methods employed in studying it. Next to suggested\nreading by the module organizers, students will be encouraged to seek out additional relevant literature throughout the\nsemester.\nTowards the end, students will compile their findings into the final presentation accompanied by a scientific report,\npresenting the results in the form of a lecture.",
+    "workload": "Total 90 h, consisting of:\nSeminar attendance and personal meetings with the supervisors: 10 h",
     "recommendations": "",
     "literature": ""
   },

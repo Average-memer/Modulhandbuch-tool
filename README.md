@@ -92,7 +92,61 @@ Modulhandbuch-tool/
 
 ---
 
+## Managing Default Degrees & Updating Module Handbooks
+
+Follow these steps to update an existing default degree or add a new official KIT handbook to the platform:
+
+### 1. Add the New Handbook PDF
+Place the official KIT Module Handbook PDF into the `modulhandbücher/` directory:
+```bash
+cp /path/to/handbook.pdf modulhandbücher/MHB_MSc25_ETIT_WS26-88-848-H-2025_v1_2026-09-08_en.pdf
+```
+
+### 2. Configure Default Degrees in `scripts/preindex_all.py`
+Open `scripts/preindex_all.py` and modify the `MASTER_PDFS` list:
+- **To update an existing degree** (e.g., updating ETIT Master from SS26 to WS26/27):
+  Replace the old handbook filename with the new one:
+  ```python
+  MASTER_PDFS = [
+      ("MHB_MSc25_ETIT_WS26-88-848-H-2025_v1_2026-09-08_en.pdf", "etit-msc-2025"),
+      ("88-979-H-2025_v1_2026-04-15_de.pdf", "cs-msc-2025"),
+      # ...
+  ]
+  ```
+- **To add a new default degree**: Append a tuple with the PDF filename and canonical degree slug ID:
+  ```python
+  ("MHB_NewDegree_SPO2025.pdf", "new-degree-slug-2025")
+  ```
+- **To remove an obsolete degree**: Remove its entry from `MASTER_PDFS` and delete its folder from `data/degrees/<old-slug>/`.
+
+### 3. Run the Batch Pre-Indexer
+Execute the pre-indexer script to parse the PDF, extract all modules, tracks, credit quotas, and antirequisites:
+```bash
+python3 scripts/preindex_all.py
+```
+This automatically:
+- Extracts catalog data via `scripts/universal_parser.py`
+- Saves structured `degree.json` and `modules.json` into `data/degrees/<id>/`
+- Rebuilds the master degree manifest `data/degrees/degrees_index.json`
+- Recompiles the standalone offline bundle `public/js/preloaded_degrees.js`
+
+### 4. Verify Plan Validation
+Test the parsed curriculum against the degree audit engine using the headless CLI validator:
+```bash
+python3 scripts/validate_plan.py etit-msc-2025
+```
+
+### 5. Launch and Verify in the Browser
+Start the server and test the planner:
+```bash
+python3 server.py
+```
+Open **[http://localhost:8080](http://localhost:8080)** (or reload with `Cmd+Shift+R` / `Ctrl+F5`). The degree dropdown and catalog will now reflect the updated handbook version, recurrence terms, and module counts.
+
+---
+
 ## Developer Guide
 
 For detailed architecture explanations, regex specifications, data schemas, and maintenance workflows, refer to:
 👉 **[DOCUMENTATION.md](DOCUMENTATION.md)**
+

@@ -22,7 +22,7 @@ os.makedirs(PUBLIC_JS_DIR, exist_ok=True)
 
 # Selection of master handbooks to pre-index
 MASTER_PDFS = [
-    ("MHB_MSc25_ETIT_SS26-88-848-H-2025_v1_2026-03-06_en.pdf", "etit-msc-2025"),
+    ("MHB_MSc25_ETIT_WS26-88-848-H-2025_v1_2026-09-08_en.pdf", "etit-msc-2025"),
     ("88-979-H-2025_v1_2026-04-15_de.pdf", "cs-msc-2025"),
     ("MHB-phys-msc-spo2023-en.pdf", "physics-msc-2023"),
     ("MHB_BIW_MSc_SPO2025_WS_2627_DE.pdf", "biw-msc-2025"),

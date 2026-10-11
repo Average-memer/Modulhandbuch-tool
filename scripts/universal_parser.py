@@ -403,13 +403,13 @@ def parse_handbook_text(text, filename=""):
             if not part:
                 continue
             s_txt = part.group(1)
-            funds_m = re.findall(r'Fundamentals \(Election: at least 24 credits\)(.*?)(?=Focus Area)', s_txt, re.DOTALL)
+            funds_m = re.findall(r'Fundamentals \((?:Election|Elective): at least 24 credits\)(.*?)(?=Focus Area)', s_txt, re.DOTALL)
             fund_mods = list(dict.fromkeys(re.findall(r'(M-[A-Z0-9\-]+)', funds_m[0]))) if funds_m else []
 
-            focus_m = re.findall(r'Focus Area \(Election: at least 24 credits\)(.*?)(?=Lab Course)', s_txt, re.DOTALL)
+            focus_m = re.findall(r'Focus Area \((?:Election|Elective): at least 24 credits\)(.*?)(?=Lab Course)', s_txt, re.DOTALL)
             focus_mods = list(dict.fromkeys(re.findall(r'(M-[A-Z0-9\-]+)', focus_m[0]))) if focus_m else []
 
-            labs_m = re.findall(r'Lab Course \(Election: 1 item\)(.*?)(?=M\.Sc\. Electrical|7\.2|\Z)', s_txt, re.DOTALL)
+            labs_m = re.findall(r'Lab Course \((?:Election|Elective): 1 item\)(.*?)(?=M\.Sc\. Electrical|7\.2|\Z)', s_txt, re.DOTALL)
             lab_mods = list(dict.fromkeys(re.findall(r'(M-[A-Z0-9\-]+)', labs_m[0]))) if labs_m else []
 
             for f in fund_mods:

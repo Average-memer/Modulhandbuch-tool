@@ -2,7 +2,7 @@
   "id": "etit-msc-2025",
   "title": "M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)",
   "spo": 2025,
-  "term": "Summer semester 2026",
+  "term": "Winter semester 2026/27",
   "faculty": "Kit Department Of Electrical Engineering And Information Technology",
   "totalCredits": 120,
   "semestersCount": 4,
@@ -16,7 +16,7 @@
         "M-ETIT-106953",
         "M-ETIT-106974",
         "M-ETIT-107497",
-        "M-MACH-107558",
+        "M-MACH-107621",
         "M-ETIT-106899",
         "M-ETIT-100537"
       ],
@@ -43,8 +43,10 @@
         "M-ETIT-104475",
         "M-ETIT-105889",
         "M-ETIT-100420",
+        "M-ETIT-107596",
+        "M-MACH-107621",
         "M-MACH-107558",
-        "M-ETIT-100455",
+        "M-ETIT-107764",
         "M-ETIT-106970",
         "M-ETIT-100378",
         "M-ETIT-106899",
@@ -58,19 +60,13 @@
       "labs": [
         "M-ETIT-102264",
         "M-ETIT-100460",
-        "M-ETIT-107294",
-        "M-ETIT-106673",
-        "M-ETIT-107524",
-        "M-MACH-105725",
-        "M-ETIT-106633",
-        "M-ETIT-105073",
-        "M-ETIT-100451"
+        "M-ETIT-107294"
       ],
       "modules": [
         "M-ETIT-106953",
         "M-ETIT-106974",
         "M-ETIT-107497",
-        "M-MACH-107558",
+        "M-MACH-107621",
         "M-ETIT-106899",
         "M-ETIT-100537",
         "M-ETIT-100539",
@@ -92,7 +88,9 @@
         "M-ETIT-104475",
         "M-ETIT-105889",
         "M-ETIT-100420",
-        "M-ETIT-100455",
+        "M-ETIT-107596",
+        "M-MACH-107558",
+        "M-ETIT-107764",
         "M-ETIT-106970",
         "M-ETIT-100378",
         "M-ETIT-106675",
@@ -102,12 +100,7 @@
         "M-ETIT-100546",
         "M-ETIT-102264",
         "M-ETIT-100460",
-        "M-ETIT-107294",
-        "M-ETIT-107524",
-        "M-MACH-105725",
-        "M-ETIT-106633",
-        "M-ETIT-105073",
-        "M-ETIT-100451"
+        "M-ETIT-107294"
       ]
     },
     {
@@ -134,6 +127,7 @@
         "M-ETIT-106971",
         "M-ETIT-105394",
         "M-ETIT-105883",
+        "M-ETIT-107914",
         "M-ETIT-107648",
         "M-ETIT-100410",
         "M-ETIT-101969",
@@ -178,7 +172,6 @@
         "M-ETIT-105614",
         "M-ETIT-105605",
         "M-ETIT-102350",
-        "M-ETIT-106263",
         "M-INFO-105955",
         "M-ETIT-107135"
       ],
@@ -199,6 +192,7 @@
         "M-ETIT-106690",
         "M-ETIT-106971",
         "M-ETIT-105883",
+        "M-ETIT-107914",
         "M-ETIT-107648",
         "M-ETIT-100410",
         "M-ETIT-101969",
@@ -237,7 +231,6 @@
         "M-ETIT-105614",
         "M-ETIT-105605",
         "M-ETIT-102350",
-        "M-ETIT-106263",
         "M-INFO-105955",
         "M-ETIT-107135"
       ]
@@ -293,9 +286,11 @@
         "M-ETIT-103241",
         "M-ETIT-106955",
         "M-ETIT-105272",
-        "M-ETIT-100455",
+        "M-ETIT-107886",
+        "M-ETIT-107764",
         "M-ETIT-106970",
         "M-ETIT-100441",
+        "M-ETIT-107871",
         "M-ETIT-100443",
         "M-ETIT-106899",
         "M-ETIT-106675",
@@ -310,7 +305,7 @@
         "M-ETIT-104485",
         "M-ETIT-106673",
         "M-ETIT-106633",
-        "M-ETIT-100451"
+        "M-ETIT-107763"
       ],
       "modules": [
         "M-ETIT-106815",
@@ -353,9 +348,11 @@
         "M-ETIT-103241",
         "M-ETIT-106955",
         "M-ETIT-105272",
-        "M-ETIT-100455",
+        "M-ETIT-107886",
+        "M-ETIT-107764",
         "M-ETIT-106970",
         "M-ETIT-100441",
+        "M-ETIT-107871",
         "M-ETIT-100443",
         "M-ETIT-106675",
         "M-ETIT-103042",
@@ -366,7 +363,7 @@
         "M-ETIT-105464",
         "M-ETIT-104485",
         "M-ETIT-106633",
-        "M-ETIT-100451"
+        "M-ETIT-107763"
       ]
     },
     {
@@ -387,7 +384,6 @@
         "M-ETIT-106963",
         "M-ETIT-107363",
         "M-ETIT-107007",
-        "M-ETIT-101968",
         "M-ETIT-105893",
         "M-ETIT-100427",
         "M-ETIT-106921",
@@ -403,6 +399,7 @@
         "M-ETIT-105889",
         "M-ETIT-105123",
         "M-ETIT-106955",
+        "M-ETIT-107886",
         "M-ETIT-105611"
       ],
       "labs": [
@@ -412,9 +409,8 @@
         "M-ETIT-100478",
         "M-ETIT-106973",
         "M-ETIT-105464",
-        "M-ETIT-106263",
         "M-ETIT-104485",
-        "M-ETIT-100451"
+        "M-ETIT-107763"
       ],
       "modules": [
         "M-ETIT-106963",
@@ -428,7 +424,6 @@
         "M-ETIT-100449",
         "M-ETIT-107363",
         "M-ETIT-107007",
-        "M-ETIT-101968",
         "M-ETIT-105893",
         "M-ETIT-100427",
         "M-ETIT-106921",
@@ -441,6 +436,7 @@
         "M-ETIT-105606",
         "M-ETIT-105889",
         "M-ETIT-105123",
+        "M-ETIT-107886",
         "M-ETIT-105611",
         "M-ETIT-100468",
         "M-ETIT-105605",
@@ -448,9 +444,8 @@
         "M-ETIT-100478",
         "M-ETIT-106973",
         "M-ETIT-105464",
-        "M-ETIT-106263",
         "M-ETIT-104485",
-        "M-ETIT-100451"
+        "M-ETIT-107763"
       ]
     }
   ],
@@ -492,7 +487,7 @@
       "color": "var(--cat-thesis)"
     }
   ],
-  "moduleCount": 232,
+  "moduleCount": 230,
   "rules": {
     "degree": "M.Sc. Electrical Engineering and Information Technology 2025 (Master of Science)",
     "spo": 2025,

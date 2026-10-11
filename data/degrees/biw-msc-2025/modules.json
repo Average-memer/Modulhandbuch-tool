@@ -1122,7 +1122,38 @@
     "content": "Grundlagen der Biomasseentstehung und der Umwandlungspfade hin zu chemischen Energieträgern wie Biodiesel,\nEthanol oder SNG.\nCharakterisierungsmethoden und Unterscheidungskriterien für Biomasse, nutzbare Potenziale global/national,\nNachhaltigkeitsaspekte, CO2-Vermeidungspotenziale.\nNutzung und Umwandlung von Pflanzenölen und -fetten.\nBiochemische Umwandlungsprozesse zu Ethanol und Biogas, Nutzung- und Aufbereitungsprozesse für Biogas.\nThermochemische Biomasseumwandlung durch Pyrolyse und Vergasung; ausgewählte Synthesen (FT-, CH4-, CH3OH-,\nDME-Synthese).",
     "workload": "Präsenzzeit: 45 h\nSelbststudium:75 h\nPrüfungsvorbereitung: 60 h",
     "recommendations": "",
-    "literature": "Kaltschmitt, M.; Hartmann (Ed.): Energie aus Biomasse, 2. Aufl., Springer Verlag 2009.\nGraf, F.; Bajohr, S. (Hrsg.): Biogas: Erzeugung – Aufbereitung – Einspeisung, 2. Aufl., Oldenbourg Industrieverlag 2013.\n5 MODULE Modul: Engineering High-Density Molecular Arrays: Tools, Techniques, and AI-\nDriven Solutions for Biomedical Diagnostics [M-MACH-107521]\nBioingenieurwesen Master 2025 (Master of Science (M.Sc.))\n•\n•\n•\n•\n•\n•\n•\n•\nM 5.37 Modul: Engineering High-Density Molecular Arrays: Tools, Techniques, and\nAI-Driven Solutions for Biomedical Diagnostics [M-MACH-107521]\nVerantwortung: apl. Prof. Dr. Alexander Nesterov-Müller\nEinrichtung: KIT-Fakultät für Maschinenbau\nKIT-Fakultät für Maschinenbau/Institut für Mikrostrukturtechnik\nBestandteil von: Vertiefung: Health Technology\nLeistungspunkte\n4 LP\nNotenskala\nZehntelnoten\nTurnus\nJedes Wintersemester\nDauer\n1 Semester\nSprache\nEnglisch\nLevel\n4\nVersion\n1\nKennung Name Turnus LP Dozierende\nPflichtbestandteile\nT-MACH-114731 Engineering High-Density Molecular Arrays: Tools,\nTechniques, and AI-Driven Solutions for Biomedical\nDiagnostics\nWS 4 LP Nesterov-Müller\nErfolgskontrolle(n)\nSiehe Teilleistung\nVoraussetzungen\nKeine\nQualifikationsziele\nGrundlagen von Peptidarrays verstehen\nPeptidarrays mit klassischen molekularbiologischen Screening-Methoden hinsichtlich Effizienz, Skalierbarkeit und\nSpezifität vergleichen.\nVorteile und Grenzen verschiedener Mikromusterungs- und Miniaturisierungsverfahren bewerten.\nAnwendung von Peptidarrays in der biomedizinischen Forschung\nZentrale Einsatzgebiete wie Antikörper-Profile, Epitop-Mapping und Krankheitsdiagnostik identifizieren.\nAnalysieren, wie Peptidarrays in klinischen und forschungsbezogenen Anwendungen eingesetzt werden.\nEinsatz von KI und maschinellem Lernen zur Datenanalyse\nErklären, wie maschinelle Lernverfahren zur Auswertung komplexer Interaktionsdaten genutzt werden.\nHochdurchsatz-Daten aus Peptidarrays mit computergestützten Methoden interpretieren.\nKritische Bewertung neuer Entwicklungen und zukünftiger Perspektiven\nDie Integration adaptiver KI in molekulare Arrays der nächsten Generation diskutieren.\nPotenziale zur Erweiterung über Peptide hinaus zu multifunktionalen Bioarrays in Diagnostik und Wirkstoffentwicklung\nerkunden.\nInhalt\nÜberblick:\nEinführung in Peptidarrays\nDie Entwicklung von Peptidarrays\nVorteile gegenüber herkömmlichen Screening-Methoden\nHerstellung von Peptidarrays mit hoher Dichte\nKombinatorische Synthesetechniken\nLaserbasierter Peptidtransfer und Mikromusterung\nAnwendungen in der biomedizinischen Forschung\nAntikörperprofilierung und serologische Analyse\nPeptidarrays für Epitopkartierung und Krankheitsdiagnostik\nKI-gestützte Datenanalyse\nMaschinelles Lernen zur Mustererkennung bei Peptidinteraktionen\nComputermethoden für Hochdurchsatz-Screening\nZukunftsperspektiven\nPeptidarrays der nächsten Generation mit adaptiver KI-Integration\nJenseits von Peptiden: Funktionalisierte Bioarrays für Diagnostik und Arzneimittelforschung\nZusammensetzung der Modulnote\nDie Modulnote entspricht der Note der Teilleistung\n5 MODULE Modul: Engineering High-Density Molecular Arrays: Tools, Techniques, and AI-\nDriven Solutions for Biomedical Diagnostics [M-MACH-107521]\nBioingenieurwesen Master 2025 (Master of Science (M.Sc.))\nArbeitsaufwand\nPräsenzzeit Vorlesung:                                    15 * 1,5 h = 22,5 h\nVor- und Nachbereitungszeit Vorlesung:    15 * 5,5 h = 82,5 h\nPrüfungsvorbereitung und Prüfung:             15 h\nInsgesamt: 120 h = 4 LP"
+    "literature": ""
+  },
+  "M-MACH-107521": {
+    "id": "M-MACH-107521",
+    "title": "Engineering High-Density Molecular Arrays: Tools, Techniques, and AI-Driven Solutions for Biomedical Diagnostics",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Jedes Wintersemester",
+    "duration": "1 Semester",
+    "language": "English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "apl. Prof. Dr. Alexander Nesterov-Müller"
+    ],
+    "organisation": "KIT-Fakultät für Maschinenbau KIT-Fakultät für Maschinenbau/Institut für Mikrostrukturtechnik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "Keine",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Grundlagen von Peptidarrays verstehen\nPeptidarrays mit klassischen molekularbiologischen Screening-Methoden hinsichtlich Effizienz, Skalierbarkeit und\nSpezifität vergleichen.\nVorteile und Grenzen verschiedener Mikromusterungs- und Miniaturisierungsverfahren bewerten.\nAnwendung von Peptidarrays in der biomedizinischen Forschung\nZentrale Einsatzgebiete wie Antikörper-Profile, Epitop-Mapping und Krankheitsdiagnostik identifizieren.\nAnalysieren, wie Peptidarrays in klinischen und forschungsbezogenen Anwendungen eingesetzt werden.\nEinsatz von KI und maschinellem Lernen zur Datenanalyse\nErklären, wie maschinelle Lernverfahren zur Auswertung komplexer Interaktionsdaten genutzt werden.\nHochdurchsatz-Daten aus Peptidarrays mit computergestützten Methoden interpretieren.\nKritische Bewertung neuer Entwicklungen und zukünftiger Perspektiven\nDie Integration adaptiver KI in molekulare Arrays der nächsten Generation diskutieren.\nPotenziale zur Erweiterung über Peptide hinaus zu multifunktionalen Bioarrays in Diagnostik und Wirkstoffentwicklung\nerkunden.",
+    "content": "Überblick:\nEinführung in Peptidarrays\nDie Entwicklung von Peptidarrays\nVorteile gegenüber herkömmlichen Screening-Methoden\nHerstellung von Peptidarrays mit hoher Dichte\nKombinatorische Synthesetechniken\nLaserbasierter Peptidtransfer und Mikromusterung\nAnwendungen in der biomedizinischen Forschung\nAntikörperprofilierung und serologische Analyse\nPeptidarrays für Epitopkartierung und Krankheitsdiagnostik\nKI-gestützte Datenanalyse\nMaschinelles Lernen zur Mustererkennung bei Peptidinteraktionen\nComputermethoden für Hochdurchsatz-Screening\nZukunftsperspektiven\nPeptidarrays der nächsten Generation mit adaptiver KI-Integration\nJenseits von Peptiden: Funktionalisierte Bioarrays für Diagnostik und Arzneimittelforschung",
+    "workload": "Präsenzzeit Vorlesung:                                    15 * 1,5 h = 22,5 h\nVor- und Nachbereitungszeit Vorlesung:    15 * 5,5 h = 82,5 h\nPrüfungsvorbereitung und Prüfung:             15 h\nInsgesamt: 120 h = 4 LP",
+    "recommendations": "",
+    "literature": ""
   },
   "M-CIWVT-104388": {
     "id": "M-CIWVT-104388",
@@ -1589,6 +1620,37 @@
     "competenceGoal": "Die Studierenden:\nerhalten Kenntnis in Theorie und Anwendung von Prozesse und Techniken zur Entwicklung industrieller, bio-basierter\nVerfahren.\nerhalten Einsicht in den Ablauf der Entwicklung eines large-scale (zweistellige kt/a) industriellen Bioprozesses.\nlernen theoretisches Verständnis und praktische Anwendung (am relevanten Beispiel) zu kombinieren.\nverstehen die relevant einer techno-ökonomischen Bewertung als Basis der Entwicklung wettbewerbsfähiger Prozesse.",
     "content": "Inhalt\nAblauf einer Prozessentwicklung (neuer / alternativer Prozess) hin zu einem bio-basierten Produktionsprozess:\nIdeation, Basiskonzept, kritische Analyse, Entwicklungsstationen\nValue Proposition des neuen Produktes / Prozesses:\nQualität, Leistungsmerkmale, Preis, Eco-efficiency, Regionale Aspekte\nKritische Aspekte im Entwicklungsprozess:\nRohstofffragen, “Design to Cost”, Spezifikation & Leistung, Regulatorik Eco-efficiency (Rohstoff- u. Energieeffizienz)\nVom Labor in die Produktion (Schwerpunkt der Vorlesung):\nPhasen der Prozessentwicklung: Suchforschung, Proof of Principle, Proof of Concept, Scale-up, Apparatedesign,\nAnlagendesign, Produktion\nCompetitor Intelligence:\nWettbewerber und deren Prozesse, alternative Produkte mit ähnlicher / gleicher Anwendung.\nBenchmarking als Entwicklungswerkzeug:\nCost Benchmarking (CoP) als Entwicklungswerkzeug zur Identifikation von Entwicklungspotenzialen.\nProduktionsszenarien:\nEigene Investition, Toller, Produktionspartner",
     "workload": "Präsenzzeit: 30 h\nSelbststudium: 60 h\nPrüfungsvorbereitung: 30 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-CIWVT-104397": {
+    "id": "M-CIWVT-104397",
+    "title": "Innovationsmanagement für Produkte und Prozesse der chemischen Industrie",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Jedes Wintersemester",
+    "duration": "1 Semester",
+    "language": "German/English",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Dr. Claudius Neumann"
+    ],
+    "organisation": "KIT-Fakultät für Chemieingenieurwesen und Verfahrenstechnik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "Keine",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Die Studierenden lernen die Strukturen der chemischen Industrie kennen.\nSie erhalten einen Einblick in die Interpretation von Geschäftszahlen und deren Zusammenhang mit Innovationen.\nSie wissen wie verschiedenen Faktoren Einfluss auf verfolgte Innovationsstrategien nehmen.\nSie lernen den Ablauf eines Innovationsprozesses kennen.\nDie Studierenden bekommen die Möglichkeit das Wissen an Hand industrienaher Beispiele anzuwenden.\nDes Weiteren erhalten die Studenten einen Einblick in die Arbeiten eines Innovationsmanagements in Form einer\nExkursion.",
+    "content": "Hintergrund\nIn den letzten Jahrzehnten musste sich die chemische Industrie bedingt durch die Globalisierung auf ökonomische\nVeränderungen einstellen. Die Anpassung an die globalen Märkte veränderte auch die früher wissenschaftlich-technologisch\norientierte Forschung und Entwicklung. Deshalb sind heutzutage in der industriellen Produkt- und Prozessentwicklung neben\nfundierten Kenntnissen aus dem Fachbereich Chemie und Verfahrenstechnik auch weitreichendere Fähigkeiten von Nöten: ein\ngutes ökonomisches Verständnis, verbunden mit der Kompetenz ein komplexes System basierend auf Geschäftszahlen zu\nverstehen und steuern zu können. Wissenschaftlich und technologisch ausgebildeten Personen können mit diesen Fähigkeiten\nKonzepte für die chemische Produkt- und Prozessentwicklung erstellen und im Rahmen der Innovationsstrategie mit\nstrategischen Geschäftsplänen abgleichen. Die Umsetzung der Innovationsstrategie erfolgt im Innovationsprozess, der durch\nbestimmte Kennzahlen überprüft und gesteuert wird. Auf diese Weise kann der ökonomische Nutzen von Innovationen für das\nwirtschaftliche Wachstum transparent gemacht und gelenkt werden.\nUmfang der Blockvorlesung\nDie Vorlesung möchte grundlegende Einblicke in den Bereich des Innovationsmanagements bieten und den Teilnehmern den\nBezug zur industriellen Praxis aufzeigen. Innerhalb der Vorlesung werden folgende Fragen beantwortet:\nWie sehen die Strukturen der chemischen Industrie aus?\nWas sind Geschäftszahlen? Wie werden diese interpretiert und mit Innovationen in Zusammenhang gebracht?\nWas ist ein Kunde und wie beeinflusst er Innovationen?\nWas ist eine Geschäftsstrategie und wie steht diese im Zusammenhang mit Innovationsstrategien?\nWie sieht ein Innovationsprozess aus und wie wird dieser gesteuert?\nWas ist ein Innovationsportfoliomanagement und warum wird es für eine erfolgreiche Innovation benötigt?\nWie sieht ein modernes Innovationsmanagement in der chemischen Industrie aus?\nExkursion\nDie Blockvorlesung beinhaltet eine Exkursion zu Evonik in Hanau.",
+    "workload": "Präsenzzeit: 30 h (Blockvorlesung 4 Tage)\nSelbststudium: 60 h\nPrüfungsvorbereitung: 30 h",
     "recommendations": "",
     "literature": ""
   },
@@ -2832,7 +2894,100 @@
     "requires": [],
     "competenceGoal": "Die Studierenden sind in der Lage,\nden technischen Hintergrund zu wichtigen Prozesschritten zur Nutzung nachwachsender Rohstoffe zu verstehen und zu\nbewerten,\nProzessketten zur Umwandlung verschiedener nachwachsender Rohstoffe aufzustellen,\ndas gelernte Wissen zur Entwicklung von Bioraffineriekonzepten zur  Herstellung von Produkten (z.B. Plattform-\nchemikalien, Materialien) aus nachwachsenden Rohstoffen anzuwenden.\nDie Studierenden sind in der Lage, die in der Vorlesung vermittelten Inhalte auf die beispielhafte Entwicklung einer\nBioraffinerie anzuwenden und die erzielten Ergebnisse strukturiert in Form eines Seminarvortrags zu präsentieren.",
     "content": "Die Lehrveranstaltung vermittelt folgende Inhalte:\nEinführung zur Herstellung einer gemeinsamen Wissensbasis, u.a. Vorstellung der heute wichtigsten Nutzungspfade für\nBiomasse, Biomassepotenziale, zukünftige Nutzungsszenarien,\nwesentliche technische Grundlagen der Prozesse zur Verarbeitung von Biomasse. Der Fokus liegt dabei auf der\nVerwendung von Lignozellulose-Biomasse. Verfahren zur  Vorbehandlung, zum Aufschluss, Abbau und zur Umwandlung\nder jeweiligen Fraktionen werden erlernt,\nSystematik und Analyse von Prozessketten mit nachwachsenden Rohstoffen am Beispiel bereits etablierter Prozesse\nwie in Papier- oder  Zuckermühlen.  Erweiterung der Konzepte auf mögliche, zukünftige Bioraffinerien,\nIn der Übung wird parallel zur Vorlesung das gelernte in die beispielhafte Entwicklung einer Bioraffinerie umgesetzt. Das\nErgebnis wird in Form eines Seminarvortrags präsentiert.",
-    "workload": "Präsenszeit: 45 h\nSelbststudium: 45 h\nVorbereitung der Übungen: 30\nVorbereitung der Übungspräsentation: 30\nPrüfungsvorbereitung: 30 h\n5 MODULE Modul: Verfahrenstechnik zur Herstellung von Lebensmitteln aus pflanzlichen Rohstoffen [M-CIWVT-106698]\nBioingenieurwesen Master 2025 (Master of Science (M.Sc.))\n•\n•\n•\n•\n•\n•\nM 5.94 Modul: Verfahrenstechnik zur Herstellung von Lebensmitteln aus\npflanzlichen Rohstoffen [M-CIWVT-106698]\nVerantwortung: Dr.-Ing. Ulrike van der Schaaf\nEinrichtung: KIT-Fakultät für Chemieingenieurwesen und Verfahrenstechnik\nBestandteil von: Vertiefung: Lebensmittelverfahrenstechnik\nVertiefung: Umwandlung nachwachsender Rohstoffe\nLeistungspunkte\n4 LP\nNotenskala\nZehntelnoten\nTurnus\nJedes Wintersemester\nDauer\n1 Semester\nSprache\nDeutsch\nLevel\n4\nVersion\n1\nKennung Name Turnus LP Dozierende\nPflichtbestandteile\nT-CIWVT-113476 Verfahrenstechnik zur Herstellung von Lebensmitteln aus\npflanzlichen Rohstoffen\nWS 4 LP van der Schaaf\nErfolgskontrolle(n)\nErfolgskontrolle ist eine mündliche Prüfung im Umfang von ca. 30 Minuten.\nModulnote ist die Note der mündlichen Prüfung.\nVoraussetzungen\nKeine\nQualifikationsziele\nDie Studierenden können konventionelle und ausgewählte innovative Verfahren zur Herstellung pflanzlicher\nLebensmittel auf wissenschaftlicher Grundlage erläutern und kritisch einordnen.\nSie sind in der Lage, Prozessschritte und Prozessketten prinzipiell auszulegen, Wechselwirkungen zwischen\nProzessparametern, Produktstruktur und qualitätsbestimmenden Eigenschaften systematisch zu analysieren und\nProzesswissen zwischen unterschiedlichen Produktgruppen zu übertragen.\nDie Studierenden können verfahrenstechnische Prozesse energetisch und ressourcenbezogen bewerten und geeignete\nAnsätze zur Steigerung der Energie- und Ressourceneffizienz ableiten.\nAuf Basis von Prinzipien der Produktgestaltung sind die Studierenden in der Lage, komplexe verfahrenstechnische\nProblemstellungen im Lebensmittelbereich mit wissenschaftlichen Methoden zu analysieren, zu lösen und Verfahren\nunter Berücksichtigung von Nachhaltigkeit, Lebensmittelsicherheit und Produktqualität fundiert zu beurteilen.\nInhalt\nDas Modul vermittelt grundlegende verfahrenstechnische Konzepte zur Herstellung von Lebensmitteln aus pflanzlichen\nRohstoffen. Anhand ausgewählter Produktgruppen (u. a. Getreideprodukte, Obst und Gemüse, Zucker, Fette und Öle,\nSchokolade sowie verschiedene Getränke) werden konventionelle industrielle Herstellverfahren, relevante Grundoperationen\nund deren Umsetzung behandelt. Ergänzend werden innovative Prozessansätze und aktuelle Trends der\nLebensmittelverfahrenstechnik diskutiert. Thematisiert werden zudem Zusammenhänge zwischen Prozessparametern,\nProduktstruktur und qualitätsbestimmenden Eigenschaften sowie grundlegende Aspekte der energetischen Bewertung, Energie-\nund Ressourceneffizienz, Nachhaltigkeit, Lebensmittelsicherheit und Produktqualität.\nArbeitsaufwand\nPräsenszeit: 30 h\nSelbststudium: 60 h\nPrüfungsvorbereitung: 30 h",
+    "workload": "180 hours workload.",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-CIWVT-106698": {
+    "id": "M-CIWVT-106698",
+    "title": "Verfahrenstechnik zur Herstellung von Lebensmitteln aus pflanzlichen Rohstoffen",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Jedes Wintersemester",
+    "duration": "1 Semester",
+    "language": "German",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Dr.-Ing. Ulrike van der Schaaf"
+    ],
+    "organisation": "KIT-Fakultät für Chemieingenieurwesen und Verfahrenstechnik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "Keine",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Die Studierenden können konventionelle und ausgewählte innovative Verfahren zur Herstellung pflanzlicher\nLebensmittel auf wissenschaftlicher Grundlage erläutern und kritisch einordnen.\nSie sind in der Lage, Prozessschritte und Prozessketten prinzipiell auszulegen, Wechselwirkungen zwischen\nProzessparametern, Produktstruktur und qualitätsbestimmenden Eigenschaften systematisch zu analysieren und\nProzesswissen zwischen unterschiedlichen Produktgruppen zu übertragen.\nDie Studierenden können verfahrenstechnische Prozesse energetisch und ressourcenbezogen bewerten und geeignete\nAnsätze zur Steigerung der Energie- und Ressourceneffizienz ableiten.\nAuf Basis von Prinzipien der Produktgestaltung sind die Studierenden in der Lage, komplexe verfahrenstechnische\nProblemstellungen im Lebensmittelbereich mit wissenschaftlichen Methoden zu analysieren, zu lösen und Verfahren\nunter Berücksichtigung von Nachhaltigkeit, Lebensmittelsicherheit und Produktqualität fundiert zu beurteilen.",
+    "content": "Das Modul vermittelt grundlegende verfahrenstechnische Konzepte zur Herstellung von Lebensmitteln aus pflanzlichen\nRohstoffen. Anhand ausgewählter Produktgruppen (u. a. Getreideprodukte, Obst und Gemüse, Zucker, Fette und Öle,\nSchokolade sowie verschiedene Getränke) werden konventionelle industrielle Herstellverfahren, relevante Grundoperationen\nund deren Umsetzung behandelt. Ergänzend werden innovative Prozessansätze und aktuelle Trends der\nLebensmittelverfahrenstechnik diskutiert. Thematisiert werden zudem Zusammenhänge zwischen Prozessparametern,\nProduktstruktur und qualitätsbestimmenden Eigenschaften sowie grundlegende Aspekte der energetischen Bewertung, Energie-\nund Ressourceneffizienz, Nachhaltigkeit, Lebensmittelsicherheit und Produktqualität.",
+    "workload": "Präsenszeit: 30 h\nSelbststudium: 60 h\nPrüfungsvorbereitung: 30 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-CIWVT-106699": {
+    "id": "M-CIWVT-106699",
+    "title": "Verfahrenstechnik zur Herstellung von Lebensmitteln aus tierischen Rohstoffen",
+    "credits": 4,
+    "term": "SS",
+    "termString": "Jedes Sommersemester",
+    "duration": "1 Semester",
+    "language": "German",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "PD Dr. Volker Gaukel"
+    ],
+    "organisation": "KIT-Fakultät für Chemieingenieurwesen und Verfahrenstechnik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "Keine",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Die Studierenden können konventionelle Verfahren zur Herstellung unterschiedlicher, auch komplex aufgebauter Lebensmittel\naus tierischen Rohstoffen erläutern. Sie kennen die relevanten Grundoperationen und deren konventionellen\nUmsetzungskonzepte sowie innovative Ansätze. Die Prozessschritte können die Studierenden prinzipiell auslegen. Sie\nidentifizieren Zusammenhänge zwischen Prozessparametern und qualitätsbestimmenden Eigenschaften von Lebensmitteln. Sie\nkönnen Prozesswissen zwischen einzelnen Produktgruppen übertragen. Sie kennen wesentliche Aspekte, die zur\nenergetischen Beurteilung der einzelnen Prozessschritte und –ketten herangezogen werden müssen, und Ansätze zur\nSteigerung der Energie- und Ressourceneffizienz.\nDie Studierenden können Prinzipien der Produktgestaltung für die Herstellung von Lebensmitteln anwenden. Das beinhaltet das\nIdentifizieren der Zusammenhänge zwischen Prozessparametern und der Struktur eines Lebensmittels (Prozessfunktion) sowie\nzwischen der Struktur und den konsumentenrelevanten Eigenschaften (Eigenschaftsfunktion). Darauf aufbauend sind sie in der\nLage, Problemstellungen aus dem Bereich der Lebensmittelverfahrenstechnik mit wissenschaftlichen Methoden zu analysieren\nund zu lösen.\nDie Studierenden können damit ein Verfahren im Hinblick auf die Eignung für Verarbeitungsschritte im Lebensmittelbereich\nbeurteilen und dabei Aspekte wie Nachhaltigkeit,  Energieeffizienz, Lebensmittelsicherheit und zu erwartende Produktqualität in\ndie Betrachtungen mit einbeziehen.",
+    "content": "Grundlagen zur Auslegung, energetische Aspekte und rohstoffbezogene Spezifika von Grundoperationen, sowie innovative\nVerfahrensansätze für die Herstellung ausgewählter Lebensmittel tierischer Herkunft.",
+    "workload": "Präsenzzeit: 30 h\nSelbststudium: 60 h\nPrüfungsvorbereitung 30 h",
+    "recommendations": "",
+    "literature": ""
+  },
+  "M-CIWVT-104351": {
+    "id": "M-CIWVT-104351",
+    "title": "Verfahrenstechnische Apparate und Maschinen und ihre Prozessintegration",
+    "credits": 4,
+    "term": "WS",
+    "termString": "Jedes Wintersemester",
+    "duration": "1 Semester",
+    "language": "German",
+    "grading": "Zehntelnoten",
+    "coordinators": [
+      "Dr.-Ing. Manfred Nagel"
+    ],
+    "organisation": "KIT-Fakultät für Chemieingenieurwesen und Verfahrenstechnik",
+    "partOf": [],
+    "categories": [
+      "Electives"
+    ],
+    "applicableSpecializations": [],
+    "isLab": false,
+    "isThesis": false,
+    "examType": "Examination",
+    "prerequisites": "Keine",
+    "modeledPrerequisites": "",
+    "exclusions": [],
+    "requires": [],
+    "competenceGoal": "Fähigkeit zur Entwicklung ganzheitlicher Verfahren zur Produktgestaltung. Kenntnis der Aufgaben von Ingenieuren in\nUnternehmen der Prozessindustrie.",
+    "content": "Vermittlung von Methoden und die Sensibilisierung für Randbedingungen zur Systematik der ingenieurwissenschaftlichen\nVerfahrensentwicklung. Vor dem Vordiplom und in den verfahrenstechnischen Grundlagenfächern wurde die Beschreibung/\nAnalyse separater physikalischer Vorgänge behandelt. Ihre Verknüpfung bei der Auswahl, Dimensionierung, Verschaltung und\nOptimierung geeigneter Apparate und Maschinen und deren Integration bei der verfahrenstechnischen Prozessentwicklung soll\ndargelegt und anhand verschiedenster Beispiele aus der Praxis untermauert werden.",
+    "workload": "120 hours workload.",
     "recommendations": "",
     "literature": ""
   },
