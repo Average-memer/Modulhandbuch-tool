@@ -62,6 +62,10 @@
         <span>⚡</span> Auto-Generate
       </button>
 
+      <button id="btnCampusSync" class="btn btn-outline" title="Sync lecture times and room schedules with KIT Campus Management">
+        <span>🔄</span> KIT Sync
+      </button>
+
       <button id="btnExport" class="btn btn-outline" title="Export study plan or download backup JSON">
         <span>📋</span> Export
       </button>
@@ -164,6 +168,9 @@
           <button id="tabScheduleView" class="btn btn-primary" style="padding: 5px 14px; font-size: 0.8rem;">
             <span>📅</span> Semester Board
           </button>
+          <button id="tabTimetableView" class="btn btn-outline" style="padding: 5px 14px; font-size: 0.8rem;">
+            <span>🕒</span> Weekly Timetable (Stundenplan)
+          </button>
           <button id="tabAnalyticsView" class="btn btn-outline" style="padding: 5px 14px; font-size: 0.8rem;">
             <span>📊</span> Visual Analytics & Breakdown
           </button>
@@ -235,6 +242,37 @@
         </div>
       </div>
 
+      <!-- Timetable (Stundenplan) View (Hidden by default) -->
+      <div id="timetableViewContainer" style="display: none; padding: 10px;">
+        <div class="timetable-control-bar">
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <label for="timetableSemSelect" style="font-size: 0.82rem; font-weight: 600;">Active Semester:</label>
+            <select id="timetableSemSelect" class="timetable-sem-select">
+              <!-- Populated dynamically -->
+            </select>
+            <span id="timetableSemStats" class="badge badge-cp">0 courses • 0 CP</span>
+            <span id="timetableConflictIndicator" class="badge badge-danger" style="display: none;">⚡ Overlap Detected</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button id="btnSyncTimetableCurrentSem" class="btn btn-sm btn-outline" title="Fetch live lecture times for this semester">
+              <span>🔄</span> Sync Semester Times
+            </button>
+            <button id="btnOpenSyncModalFromTimetable" class="btn btn-sm btn-outline" title="Configure KIT Campus settings">
+              <span>⚙️</span> Campus Settings
+            </button>
+          </div>
+        </div>
+
+        <div id="timetableTermNotice" style="display: none; margin-bottom: 8px;"></div>
+        <div id="timetableConflictBanner" class="timetable-conflict-banner" style="display: none;"></div>
+
+        <div class="timetable-wrapper">
+          <div class="timetable-grid" id="timetableGrid">
+            <!-- Weekly grid generated dynamically -->
+          </div>
+        </div>
+      </div>
+
       <!-- Analytics View (Hidden by default) -->
       <div id="analyticsViewContainer" style="display: none; padding: 12px;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
@@ -294,7 +332,14 @@
           <input type="hidden" id="customEditId" value="">
           <div>
             <label style="font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 4px;">Course Title:</label>
-            <input type="text" id="customTitle" required placeholder="e.g. Spanish A1 (Sprachenzentrum)" style="width: 100%; padding: 8px; border: 1px solid var(--kit-border); border-radius: var(--radius-sm);">
+            <input type="text" id="customTitle" required placeholder="e.g. Spanish A1 (Sprachenzentrum) or Machine Learning" style="width: 100%; padding: 8px; border: 1px solid var(--kit-border); border-radius: var(--radius-sm);">
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 4px;">KIT Module Code (optional, for Timetable sync):</label>
+            <input type="text" id="customCode" placeholder="e.g. M-INFO-106812 or M-ETIT-106815" style="width: 100%; padding: 8px; border: 1px solid var(--kit-border); border-radius: var(--radius-sm); font-family: monospace; font-size: 0.85rem;">
+            <div style="font-size: 0.72rem; color: var(--kit-muted); margin-top: 3px;">
+              Enter a valid KIT module code to automatically retrieve live lecture times, rooms, and weekly slots in your timetable.
+            </div>
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
             <div>
@@ -473,6 +518,102 @@
         <button class="btn btn-primary" id="btnExportDownloadPrimary">
           <span>📄</span> Download PDF
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: KIT Campus Timetable Synchronization & Credentials -->
+  <div class="modal-overlay" id="campusSyncModal">
+    <div class="modal-card modal-card-sync">
+      <div class="modal-header">
+        <div>
+          <h2>KIT Campus Timetable Synchronization</h2>
+          <p style="font-size: 0.82rem; color: var(--kit-muted); margin-top: 2px;">
+            Fetch lecture and exercise schedules directly from KIT Campus Management (cascampus.studium.kit.edu).
+          </p>
+        </div>
+        <button class="modal-close-btn" id="campusSyncCloseBtn">&times;</button>
+      </div>
+
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 16px;">
+        <!-- Status & Mode Card -->
+        <div class="sync-status-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span id="syncModeIndicator" class="sync-mode-dot dot-active"></span>
+              <strong id="syncModeText" style="font-size: 0.9rem;">Public Vorlesungsverzeichnis (Active)</strong>
+            </div>
+            <span id="syncCachedCountBadge" class="badge badge-cp">0 Modules Cached</span>
+          </div>
+          <p style="font-size: 0.78rem; color: var(--kit-muted); line-height: 1.4; margin: 0;">
+            Extracts course schedules, room locations, and weekly recurring timeslots without requiring student credentials.
+          </p>
+        </div>
+
+        <!-- Sync Actions -->
+        <div style="background: var(--kit-gray-50); border: 1px solid var(--kit-border); border-radius: var(--radius-sm); padding: 12px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label style="font-size: 0.8rem; font-weight: 600;">Target Semester for Timeslots:</label>
+            <select id="syncTermSelect" style="padding: 4px 8px; border: 1px solid var(--kit-border); border-radius: var(--radius-sm); font-size: 0.8rem; font-weight: 600;">
+              <option value="WS" selected>Winter Semester 2026/27 (WS 26/27)</option>
+              <option value="SS" disabled>Sommersemester 2027 (Not yet published by KIT)</option>
+            </select>
+          </div>
+          <div style="font-size: 0.74rem; color: var(--kit-muted); line-height: 1.35;">
+            ℹ️ Schedules are only valid for the upcoming semester (WS 26/27). Times are not stable across semesters and cross-semester fallback is disabled.
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button id="btnFetchCurrentPlanSchedules" class="btn btn-primary" style="flex: 2; justify-content: center; font-size: 0.82rem;">
+              <span>⚡</span> Sync Scheduled Courses
+            </button>
+            <button id="btnClearScheduleCache" class="btn btn-outline" style="flex: 1; justify-content: center; font-size: 0.82rem;">
+              <span>🗑️</span> Clear Cache
+            </button>
+          </div>
+          <div id="syncProgressText" style="font-size: 0.76rem; color: var(--kit-muted); font-weight: 500; display: none;"></div>
+        </div>
+
+        <!-- Optional Shibboleth SSO Section -->
+        <div class="sync-auth-box">
+          <div class="sync-auth-header" id="syncAuthHeader" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-size: 0.9rem;">🔐</span>
+              <strong style="font-size: 0.84rem;">KIT Account Authentication (Shibboleth SSO)</strong>
+            </div>
+            <span id="syncAuthChevron" style="font-size: 0.75rem; color: var(--kit-muted);">▼</span>
+          </div>
+
+          <div id="syncAuthBody" style="display: none; margin-top: 10px; flex-direction: column; gap: 10px;">
+            <p style="font-size: 0.76rem; color: var(--kit-muted); margin: 0;">
+              Only required for restricted seminars, practical courses, or personal schedule synchronization.
+            </p>
+            <form id="campusLoginForm" style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <div>
+                  <label style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 2px;">KIT Account (uxxxx):</label>
+                  <input type="text" id="kitUsername" placeholder="e.g. uxxxx" autocomplete="username" style="width: 100%; padding: 6px 8px; border: 1px solid var(--kit-border); border-radius: var(--radius-sm); font-size: 0.8rem;">
+                </div>
+                <div>
+                  <label style="font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 2px;">Password:</label>
+                  <input type="password" id="kitPassword" placeholder="••••••••" autocomplete="current-password" style="width: 100%; padding: 6px 8px; border: 1px solid var(--kit-border); border-radius: var(--radius-sm); font-size: 0.8rem;">
+                </div>
+              </div>
+              <div style="font-size: 0.72rem; color: var(--kit-muted); background: #fdfefe; border: 1px dashed var(--kit-border); padding: 6px 8px; border-radius: var(--radius-sm);">
+                🔒 <em>Privacy Note:</em> Credentials are used strictly in-memory by the local server to establish a temporary Shibboleth session and are never saved to disk.
+              </div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <button type="submit" id="btnSubmitKitLogin" class="btn btn-sm btn-primary" style="font-size: 0.8rem;">
+                  <span>🔑</span> Log In with Shibboleth
+                </button>
+                <span id="kitAuthStatusMsg" style="font-size: 0.76rem; font-weight: 600;"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="campusSyncCloseFooterBtn">Done</button>
       </div>
     </div>
   </div>

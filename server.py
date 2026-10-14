@@ -11,10 +11,20 @@ import os
 import sys
 import json
 import time
+import signal
+import socket
 import mimetypes
+import selectors
 import subprocess
-from http.server import HTTPServer, BaseHTTPRequestHandler
+import socketserver
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
+
+# Fix macOS PollSelector bug in socketserver (prevents 100% CPU busy-polling on Darwin)
+if hasattr(selectors, 'KqueueSelector'):
+    socketserver._ServerSelector = selectors.KqueueSelector
+elif hasattr(selectors, 'SelectSelector'):
+    socketserver._ServerSelector = selectors.SelectSelector
 
 # Import universal parser from scripts
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -26,6 +36,12 @@ except ImportError:
     parse_pdf_file = None
     save_degree_data = None
 
+try:
+    from campus_scraper import KITCampusScraper
+    campus_scraper = KITCampusScraper()
+except ImportError:
+    campus_scraper = None
+
 PORT = int(os.environ.get("PORT", 8080))
 PUBLIC_DIR = os.path.join(BASE_DIR, "public")
 DATA_DIR = os.path.join(BASE_DIR, "data")
@@ -35,11 +51,19 @@ HANDBOOKS_DIR = os.path.join(BASE_DIR, "modulhandbücher")
 os.makedirs(DEGREES_DIR, exist_ok=True)
 os.makedirs(HANDBOOKS_DIR, exist_ok=True)
 
+class ReusableThreadingHTTPServer(ThreadingHTTPServer):
+    allow_reuse_address = True
+    daemon_threads = True
+
 class UniversalPlannerHandler(BaseHTTPRequestHandler):
+    protocol_version = "HTTP/1.1"
+    timeout = 15
+
     def end_headers(self):
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
         self.send_header('Access-Control-Allow-Headers', 'Content-Type, X-Filename')
+        self.send_header('Connection', 'close')
         super().end_headers()
 
     def do_OPTIONS(self):
@@ -108,7 +132,37 @@ class UniversalPlannerHandler(BaseHTTPRequestHandler):
                 self.send_json_response({})
             return
 
-        # 4. Static file serving from public/
+        # 4. API: Module Lecture Times & Schedule
+        if path == "/api/schedule":
+            if not campus_scraper:
+                self.send_json_response({"success": False, "error": "Campus scraper unavailable"}, status=500)
+                return
+            mod_id = query.get("id", [""])[0]
+            term_type = query.get("term", ["WS"])[0]
+            year_str = query.get("year", [""])[0]
+            year = int(year_str) if year_str.isdigit() else None
+            refresh = query.get("refresh", ["false"])[0].lower() in ["true", "1"]
+
+            if not mod_id:
+                self.send_json_response({"success": False, "error": "Missing module id"}, status=400)
+                return
+
+            try:
+                sched = campus_scraper.fetch_module_schedule(mod_id, term_type, year, force_refresh=refresh)
+                self.send_json_response({"success": True, "schedule": sched})
+            except Exception as e:
+                self.send_json_response({"success": False, "error": str(e)}, status=500)
+            return
+
+        if path == "/api/terms":
+            if not campus_scraper:
+                self.send_json_response({"success": False, "error": "Campus scraper unavailable"}, status=500)
+                return
+            terms = campus_scraper.get_terms()
+            self.send_json_response({"success": True, "terms": terms})
+            return
+
+        # 5. Static file serving from public/
         if path == "/" or path == "":
             file_path = os.path.join(PUBLIC_DIR, "index.html")
         else:
@@ -201,6 +255,53 @@ class UniversalPlannerHandler(BaseHTTPRequestHandler):
                 self.send_json_response({"success": False, "error": str(e)}, status=500)
             return
 
+        if path == "/api/schedule/batch":
+            if not campus_scraper:
+                self.send_json_response({"success": False, "error": "Campus scraper unavailable"}, status=500)
+                return
+            content_len = int(self.headers.get("Content-Length", 0))
+            body = self.rfile.read(content_len)
+            try:
+                payload = json.loads(body.decode("utf-8"))
+            except Exception:
+                self.send_json_response({"success": False, "error": "Invalid JSON body"}, status=400)
+                return
+
+            modules = payload.get("modules", [])
+            term_type = payload.get("term", "WS")
+            year = payload.get("year")
+            try:
+                schedules = campus_scraper.fetch_batch_schedules(modules, term_type, year)
+                self.send_json_response({"success": True, "schedules": schedules})
+            except Exception as e:
+                self.send_json_response({"success": False, "error": str(e)}, status=500)
+            return
+
+        if path == "/api/auth/kit-campus":
+            if not campus_scraper:
+                self.send_json_response({"success": False, "error": "Campus scraper unavailable"}, status=500)
+                return
+            content_len = int(self.headers.get("Content-Length", 0))
+            body = self.rfile.read(content_len)
+            try:
+                payload = json.loads(body.decode("utf-8"))
+            except Exception:
+                self.send_json_response({"success": False, "error": "Invalid JSON body"}, status=400)
+                return
+
+            username = payload.get("username", "")
+            password = payload.get("password", "")
+            if not username or not password:
+                self.send_json_response({"success": False, "error": "Username and password required"}, status=400)
+                return
+
+            ok = campus_scraper.login_shibboleth(username, password)
+            if ok:
+                self.send_json_response({"success": True, "authenticated": True, "message": "Successfully authenticated via KIT Shibboleth SSO"})
+            else:
+                self.send_json_response({"success": False, "authenticated": False, "message": "Authentication failed. Check your KIT credentials."}, status=401)
+            return
+
         self.send_error(404, "Endpoint Not Found")
 
     def rebuild_degrees_index(self):
@@ -252,14 +353,59 @@ class UniversalPlannerHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+def free_port_if_occupied(port):
+    """Detects if port is occupied by an existing process and terminates it cleanly if needed."""
+    try:
+        out = subprocess.check_output(["lsof", "-ti", f":{port}"]).decode().strip()
+        if out:
+            pids = [int(p) for p in out.split() if int(p) != os.getpid()]
+            if pids:
+                print(f"[Server] Port {port} is occupied by PID(s): {pids}. Reclaiming port...", flush=True)
+                for pid in pids:
+                    try:
+                        os.kill(pid, signal.SIGTERM)
+                    except ProcessLookupError:
+                        pass
+                time.sleep(0.5)
+                # Ensure freed
+                try:
+                    remaining = subprocess.check_output(["lsof", "-ti", f":{port}"]).decode().strip()
+                    if remaining:
+                        for pid in [int(p) for p in remaining.split() if int(p) != os.getpid()]:
+                            try:
+                                os.kill(pid, signal.SIGKILL)
+                            except ProcessLookupError:
+                                pass
+                        time.sleep(0.3)
+                except Exception:
+                    pass
+    except Exception:
+        pass
+
 def run(port=PORT):
     server_address = ("", port)
-    httpd = HTTPServer(server_address, UniversalPlannerHandler)
+    try:
+        httpd = ReusableThreadingHTTPServer(server_address, UniversalPlannerHandler)
+    except OSError as e:
+        if e.errno == 48:  # Address already in use
+            free_port_if_occupied(port)
+            try:
+                httpd = ReusableThreadingHTTPServer(server_address, UniversalPlannerHandler)
+                print(f"[Server] Successfully reclaimed port {port}.", flush=True)
+            except Exception as e2:
+                fallback_port = port + 1
+                print(f"[Server] Port {port} still unavailable ({e2}). Falling back to port {fallback_port}...", file=sys.stderr)
+                server_address = ("", fallback_port)
+                httpd = ReusableThreadingHTTPServer(server_address, UniversalPlannerHandler)
+                port = fallback_port
+        else:
+            raise
+
     print(f"Universal KIT Study Planner server running at http://localhost:{port}/", flush=True)
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
-        print("\nServer shutting down.")
+        print("\nServer shutting down cleanly.", flush=True)
         httpd.server_close()
 
 if __name__ == "__main__":

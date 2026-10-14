@@ -34,14 +34,25 @@ class UniversalStudyPlannerApp {
     this.inspectedModule = null;
     this.lastValidationResult = null;
     this.pendingUploadedDegreeId = null;
+
+    // KIT Campus Lecture Times & Timetable
+    this.schedulesMap = {};
+    this.activeTimetableSemester = 1;
+    this.currentViewTab = 'schedule';
+    this.isKitAuthenticated = false;
+    this.activeSyncTerm = 'WS';
   }
 
   async init() {
+    this.loadSchedulesCache();
     await this.loadDegreesIndex();
     this.populateStartYearSelector();
     this.setupEventListeners();
     this.setupDragAndDrop();
     this.setupUploadModal();
+    this.setupCampusSyncModal();
+    this.setupTimetableView();
+    this.autoSyncPlanSchedules();
   }
 
   // --- DEGREE LOADING & SWITCHING ---
@@ -159,7 +170,7 @@ class UniversalStudyPlannerApp {
     if (subEl) subEl.textContent = `${this.activeDegree.faculty} • SPO ${this.activeDegree.spo}`;
 
     // Initialize engines
-    this.validator = new DegreeValidator(this.modulesMap, this.activeDegree);
+    this.validator = new DegreeValidator(this.modulesMap, this.activeDegree, this.schedulesMap);
     this.generator = new PlanGenerator(this.modulesList, this.activeDegree);
 
     // Load degree-namespaced state
@@ -482,10 +493,16 @@ class UniversalStudyPlannerApp {
         const isPinned = !!item.isPinned;
         const cardError = conflicts.find(e => e.moduleId === mod.id || (e.modules && e.modules.includes(mod.id)));
         const cardWarn = warnings.find(w => w.moduleId === mod.id && w.semester === sem);
+        const timeConflict = this.lastValidationResult?.timeConflicts?.find(
+          c => c.semester === sem && (c.moduleId === mod.id || c.conflictModuleId === mod.id)
+        );
 
         let stateClass = '';
         if (cardError) stateClass = 'conflict-error';
         else if (cardWarn) stateClass = 'conflict-warning';
+        if (timeConflict) {
+          stateClass += (timeConflict.severity === 'error') ? ' conflict-time-error' : ' conflict-time-warning';
+        }
         if (isPinned) stateClass += ' is-pinned';
 
         const availableCats = this.getAvailableCategoriesForModule(mod);
@@ -498,6 +515,9 @@ class UniversalStudyPlannerApp {
 
         const catInfo = this.getModuleCategoryInfo(mod, item.category);
         const catClassSuffix = catInfo.label.replace(/[^a-zA-Z0-9]/g, '-');
+
+        const sched = this.schedulesMap[mod.id];
+        const schedSummary = this.formatScheduleSummary(sched);
 
         const hasMultiple = availableCats.length > 1;
         const card = document.createElement('div');
@@ -523,7 +543,7 @@ class UniversalStudyPlannerApp {
 
         card.innerHTML = `
           <div class="card-top">
-            <span class="module-code">${mod.id}</span>
+            <span class="module-code" title="${mod.id}">${(mod.isCustom && mod.moduleCode) ? mod.moduleCode : mod.id}</span>
             ${mod.isCustom ? '<span class="badge badge-custom" style="font-size: 0.65rem; padding: 1px 6px;">Custom</span>' : ''}
             ${categoryBadgeHtml}
             ${isPinned ? '<span class="pin-badge">📌 Pinned</span>' : ''}
@@ -533,6 +553,8 @@ class UniversalStudyPlannerApp {
           <div class="badge-row">
             <span class="badge ${this.getTermBadgeClass(mod.term)}">${mod.term}</span>
             <span class="badge badge-lang">${mod.language}</span>
+            ${timeConflict ? `<span class="badge badge-conflict-time" title="${timeConflict.message}">⚡ Collision</span>` : ''}
+            ${schedSummary ? `<span class="schedule-chip ${schedSummary.notOffered ? 'chip-not-offered' : 'has-events'}" title="${schedSummary.tooltip}">${schedSummary.notOffered ? '🚫 ' : '🕒 '}${schedSummary.shortText}</span>` : ''}
           </div>
           <div class="card-actions">
             ${mod.isCustom ? `<button class="action-icon-btn btn-edit-plan" title="Edit custom course">✏️</button>` : ''}
@@ -642,7 +664,7 @@ class UniversalStudyPlannerApp {
       const catInfo = this.getModuleCategoryInfo(mod);
 
       card.innerHTML = `
-        <div style="font-size: 0.72rem; font-weight: 700; color: var(--kit-muted);">${mod.id}</div>
+        <div style="font-size: 0.72rem; font-weight: 700; color: var(--kit-muted);" title="${mod.id}">${(mod.isCustom && mod.moduleCode) ? mod.moduleCode : mod.id}</div>
         <div style="font-weight: 600; font-size: 0.82rem; margin: 2px 0 4px 0;">${mod.title}</div>
         <div style="display: flex; gap: 4px; align-items: center; flex-wrap: wrap;">
           ${mod.isCustom ? '<span class="badge badge-custom" style="font-size: 0.65rem; padding: 1px 6px;">Custom</span>' : ''}
@@ -960,6 +982,9 @@ class UniversalStudyPlannerApp {
       const activeSpec = this.currentSpecialization;
       const inActiveSpec = activeSpec && mod.applicableSpecializations && mod.applicableSpecializations.includes(activeSpec);
 
+      const sched = this.schedulesMap[mod.id];
+      const schedSummary = this.formatScheduleSummary(sched);
+
       const card = document.createElement('div');
       card.className = `catalog-card ${isScheduled ? 'already-scheduled' : ''}`;
       card.draggable = true;
@@ -967,7 +992,7 @@ class UniversalStudyPlannerApp {
 
       card.innerHTML = `
         <div class="card-top">
-          <span class="module-code">${mod.id}</span>
+          <span class="module-code" title="${mod.id}">${(mod.isCustom && mod.moduleCode) ? mod.moduleCode : mod.id}</span>
           ${mod.isCustom ? '<span class="badge badge-custom">Custom</span>' : ''}
           <span class="badge badge-cat ${catInfo.cssClass}">${catInfo.label}</span>
           <span class="badge badge-cp" style="margin-left: auto;">${mod.credits} CP</span>
@@ -976,6 +1001,7 @@ class UniversalStudyPlannerApp {
         <div class="badge-row">
           <span class="badge ${this.getTermBadgeClass(mod.term)}">${mod.term}</span>
           <span class="badge badge-lang">${mod.language}</span>
+          ${schedSummary ? `<span class="schedule-chip ${schedSummary.notOffered ? 'chip-not-offered' : 'has-events'}" title="${schedSummary.tooltip}">${schedSummary.notOffered ? '🚫 ' : '🕒 '}${schedSummary.shortText}</span>` : ''}
           ${inActiveSpec ? `<span class="badge" style="background:#e0f2fe;color:#0369a1;font-weight:700;">★ ${activeSpec}</span>` : ''}
           ${isScheduled ? '<span class="badge" style="background:#dcfce7;color:#166534;">Enrolled</span>' : ''}
           ${isStaged ? '<span class="badge" style="background:#fef3c7;color:#92400e;">Staged</span>' : ''}
@@ -1612,19 +1638,17 @@ class UniversalStudyPlannerApp {
       setStagingCollapsed(true);
     }
 
-    // View toggle (Schedule vs Analytics)
+    // View toggle (Schedule vs Timetable vs Analytics)
     document.getElementById('tabScheduleView')?.addEventListener('click', () => {
-      document.getElementById('scheduleViewContainer').style.display = 'block';
-      document.getElementById('analyticsViewContainer').style.display = 'none';
-      document.getElementById('tabScheduleView').className = 'btn btn-primary';
-      document.getElementById('tabAnalyticsView').className = 'btn btn-outline';
+      this.switchViewTab('schedule');
+    });
+
+    document.getElementById('tabTimetableView')?.addEventListener('click', () => {
+      this.switchViewTab('timetable');
     });
 
     document.getElementById('tabAnalyticsView')?.addEventListener('click', () => {
-      document.getElementById('scheduleViewContainer').style.display = 'none';
-      document.getElementById('analyticsViewContainer').style.display = 'block';
-      document.getElementById('tabScheduleView').className = 'btn btn-outline';
-      document.getElementById('tabAnalyticsView').className = 'btn btn-primary';
+      this.switchViewTab('analytics');
     });
 
     // Audit modal toggle
@@ -1722,6 +1746,7 @@ class UniversalStudyPlannerApp {
     document.getElementById('customCourseForm')?.addEventListener('submit', (e) => {
       e.preventDefault();
       const editId = document.getElementById('customEditId')?.value?.trim();
+      const code = document.getElementById('customCode')?.value?.trim() || '';
       const title = document.getElementById('customTitle').value.trim();
       const credits = parseInt(document.getElementById('customCredits').value, 10) || 3;
       const category = document.getElementById('customCategory').value;
@@ -1732,6 +1757,8 @@ class UniversalStudyPlannerApp {
         // Edit existing custom module
         const mod = this.modulesMap.get(editId) || this.customModules.find(m => m.id === editId);
         if (mod) {
+          const oldCode = mod.moduleCode;
+          mod.moduleCode = code || null;
           mod.title = title;
           mod.credits = credits;
           mod.term = term;
@@ -1744,6 +1771,14 @@ class UniversalStudyPlannerApp {
             const scheduled = (this.plan?.semesters?.[sem] || []).find(it => it.id === editId);
             if (scheduled) {
               scheduled.category = category;
+            }
+          }
+
+          // If moduleCode changed or was added, re-fetch schedule for timetable
+          if (code !== oldCode) {
+            delete this.schedulesMap[editId];
+            if (code) {
+              this.fetchModuleSchedule(editId, true);
             }
           }
 
@@ -1765,6 +1800,7 @@ class UniversalStudyPlannerApp {
         const customId = `CUSTOM-${Date.now().toString().slice(-6)}`;
         const customMod = {
           id: customId,
+          moduleCode: code || null,
           title: title,
           credits: credits,
           term: term,
@@ -1781,6 +1817,11 @@ class UniversalStudyPlannerApp {
         this.modulesList.push(customMod);
         this.modulesMap.set(customId, customMod);
         this.saveDegreeState();
+
+        // Auto-fetch timeslots from KIT Campus if module code is provided
+        if (customMod.moduleCode) {
+          this.fetchModuleSchedule(customId, true);
+        }
 
         document.getElementById('customModal').classList.remove('open');
         document.getElementById('customCourseForm').reset();
@@ -1978,7 +2019,7 @@ class UniversalStudyPlannerApp {
 
   showModuleModal(mod) {
     this.inspectedModule = mod;
-    document.getElementById('modalModCode').textContent = mod.id;
+    document.getElementById('modalModCode').textContent = (mod.isCustom && mod.moduleCode) ? `${mod.moduleCode}` : mod.id;
     document.getElementById('modalModTitle').textContent = mod.title;
 
     // Check if module is currently scheduled in the study plan
@@ -2009,7 +2050,8 @@ class UniversalStudyPlannerApp {
 
       ${mod.isCustom ? `
         <div style="background: #fdf4ff; border: 1px solid #f0abfc; border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; font-size: 0.83rem; color: #86198f; display: flex; align-items: center; justify-content: space-between; gap: 8px;">
-          <span>💡 <strong>Custom Module / External Credit:</strong> You can edit this course's title, ECTS credits, category, term, or delete it anytime.</span>
+          <span>💡 <strong>Custom Module / External Credit:</strong> ${mod.moduleCode ? `Linked to KIT module code <strong>${mod.moduleCode}</strong> for timetable timeslots.` : 'No KIT module code linked yet.'}</span>
+          <button id="btnModalEditCustomInline" class="btn btn-sm btn-outline" style="font-size: 0.72rem; padding: 2px 8px; border-color: #d946ef; color: #86198f;">✏️ Edit</button>
         </div>
       ` : ''}
 
@@ -2044,6 +2086,15 @@ class UniversalStudyPlannerApp {
           <span class="meta-label">Coordinators</span>
           <span class="meta-value">${(mod.coordinators || []).join(', ') || 'Department Faculty'}</span>
         </div>
+      </div>
+
+      <!-- KIT Campus Lecture & Exercise Schedule Section -->
+      <div class="modal-detail-section" id="modalScheduleSection">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <h3 class="modal-section-title" style="margin-bottom: 0;"><span>🕒</span> Lecture & Exercise Schedule (KIT Campus)</h3>
+          <button id="btnModalRefreshSchedule" class="btn btn-sm btn-outline" style="font-size: 0.72rem; padding: 2px 8px;">🔄 Refresh Times</button>
+        </div>
+        <div id="modalScheduleContent"></div>
       </div>
 
       ${mod.prerequisites && mod.prerequisites !== 'None' ? `
@@ -2120,6 +2171,10 @@ class UniversalStudyPlannerApp {
       }
     }
 
+    document.getElementById('btnModalEditCustomInline')?.addEventListener('click', () => {
+      this.openEditCustomModal(mod.id);
+    });
+
     const stageBtn = document.getElementById('modalStageBtn');
     const isStaged = this.stagedModules.includes(mod.id);
     stageBtn.textContent = isStaged ? '✓ Staged' : '📦 Stage Course';
@@ -2132,6 +2187,17 @@ class UniversalStudyPlannerApp {
         stageBtn.textContent = '✓ Staged';
       }
     };
+
+    // Render live schedule content
+    this.renderModalScheduleContent(mod);
+
+    document.getElementById('btnModalRefreshSchedule')?.addEventListener('click', async () => {
+      const btn = document.getElementById('btnModalRefreshSchedule');
+      if (btn) btn.textContent = '⏳ Refreshing...';
+      await this.fetchModuleSchedule(mod.id, true);
+      this.renderModalScheduleContent(mod);
+      if (btn) btn.textContent = '🔄 Refresh Times';
+    });
 
     document.getElementById('moduleModal').classList.add('open');
   }
@@ -2198,6 +2264,9 @@ class UniversalStudyPlannerApp {
     const editIdInput = document.getElementById('customEditId');
     if (editIdInput) editIdInput.value = '';
 
+    const codeInput = document.getElementById('customCode');
+    if (codeInput) codeInput.value = '';
+
     this.populateCustomCategories('Interdisciplinary (ÜQ)');
     modal.classList.add('open');
     setTimeout(() => document.getElementById('customTitle')?.focus(), 50);
@@ -2221,6 +2290,9 @@ class UniversalStudyPlannerApp {
 
     const titleInput = document.getElementById('customTitle');
     if (titleInput) titleInput.value = mod.title || '';
+
+    const codeInput = document.getElementById('customCode');
+    if (codeInput) codeInput.value = mod.moduleCode || '';
 
     const creditsInput = document.getElementById('customCredits');
     if (creditsInput) creditsInput.value = mod.credits || 3;
@@ -2792,6 +2864,700 @@ class UniversalStudyPlannerApp {
       statusMsg.style.display = 'block';
       statusMsg.textContent = '✓ JSON study plan downloaded.';
       setTimeout(() => { statusMsg.style.display = 'none'; }, 3000);
+    }
+  }
+
+  // --- KIT CAMPUS LECTURE TIMES & TIMETABLE (STUNDENPLAN) ENGINE ---
+
+  loadSchedulesCache() {
+    try {
+      const raw = localStorage.getItem('kit_schedules_cache');
+      if (raw) {
+        this.schedulesMap = JSON.parse(raw);
+        if (this.validator) {
+          this.validator.setSchedulesMap(this.schedulesMap);
+        }
+      }
+    } catch (e) {
+      console.warn('Could not load schedules cache:', e);
+      this.schedulesMap = {};
+    }
+  }
+
+  saveSchedulesCache() {
+    try {
+      localStorage.setItem('kit_schedules_cache', JSON.stringify(this.schedulesMap));
+      if (this.validator) {
+        this.validator.setSchedulesMap(this.schedulesMap);
+      }
+    } catch (e) {
+      console.warn('Could not save schedules cache:', e);
+    }
+  }
+
+  formatScheduleSummary(sched) {
+    if (!sched) return null;
+    if (sched.found && (!sched.events || sched.events.length === 0)) {
+      return {
+        shortText: 'Not in WS 26/27',
+        notOffered: true,
+        tooltip: 'Not offered in upcoming Winter Semester 2026/27.\nTimes from past semesters are not loaded to prevent inaccurate planning.'
+      };
+    }
+    const slots = [];
+    sched.events.forEach(ev => {
+      (ev.slots || []).forEach(s => {
+        slots.push({ ...s, typeCode: ev.typeCode || 'V' });
+      });
+    });
+    if (slots.length === 0) return null;
+
+    const uniqueDayTimes = [...new Set(slots.map(s => `${s.day} ${s.startTime}`))];
+    const shortText = uniqueDayTimes.slice(0, 2).join(', ') + (uniqueDayTimes.length > 2 ? '…' : '');
+    const tooltip = slots.map(s => `${s.dayName} ${s.startTime}-${s.endTime} (${s.room || 'TBA'}) [${s.frequency}]`).join('\n');
+    return { shortText, tooltip, notOffered: false };
+  }
+
+  getTermForSemester(semIndex) {
+    const s = parseInt(semIndex, 10) || 1;
+    if (this.startTerm === 'WS') {
+      return (s % 2 === 1) ? 'WS' : 'SS';
+    } else {
+      return (s % 2 === 1) ? 'SS' : 'WS';
+    }
+  }
+
+  getYearForSemester(semIndex) {
+    const s = parseInt(semIndex, 10) || 1;
+    const baseYear = parseInt(this.startYear, 10) || new Date().getFullYear();
+    const offset = Math.floor((s - 1) / 2);
+    return baseYear + offset;
+  }
+
+  async fetchModuleSchedule(moduleId, forceRefresh = false, preferredTerm = null) {
+    try {
+      // Module times, places, and schedules are strictly valid for the current/upcoming semester (WS 26/27).
+      // Cross-semester fallbacks are not permitted because times change across terms.
+      const targetTerm = preferredTerm || 'WS';
+      const targetYear = 2026;
+
+      const mod = this.modulesMap?.get(moduleId);
+      const queryId = (mod?.isCustom && mod?.moduleCode) ? mod.moduleCode : moduleId;
+
+      const res = await fetch(`/api/schedule?id=${encodeURIComponent(queryId)}&term=${encodeURIComponent(targetTerm)}&year=${targetYear}${forceRefresh ? '&refresh=true' : ''}`);
+      const data = await res.json();
+      if (data.success && data.schedule) {
+        this.schedulesMap[moduleId] = data.schedule;
+        if (queryId !== moduleId) {
+          this.schedulesMap[queryId] = data.schedule;
+        }
+        this.saveSchedulesCache();
+        if (this.validator) this.validator.setSchedulesMap(this.schedulesMap);
+        this.runValidation();
+        this.renderPlanner();
+        if (this.currentViewTab === 'timetable') this.renderTimetableView();
+        return data.schedule;
+      }
+    } catch (e) {
+      console.warn(`Error fetching schedule for ${moduleId}:`, e);
+    }
+    return null;
+  }
+
+  async fetchBatchSchedules(moduleIds, preferredTerm = 'WS', preferredYear = 2026) {
+    if (!moduleIds || moduleIds.length === 0) return;
+    try {
+      // Strictly scope schedule retrieval to Winter Semester 26/27
+      const term = preferredTerm || 'WS';
+      const year = preferredYear || 2026;
+
+      const queryToOrig = {};
+      const queryList = [];
+
+      moduleIds.forEach(id => {
+        const mod = this.modulesMap?.get(id);
+        if (mod?.isCustom && !mod.moduleCode) {
+          // Custom module without code cannot be queried in campus
+          return;
+        }
+        const code = (mod?.isCustom && mod?.moduleCode) ? mod.moduleCode : id;
+        if (!queryToOrig[code]) queryToOrig[code] = [];
+        queryToOrig[code].push(id);
+        queryList.push(code);
+      });
+
+      if (queryList.length === 0) return;
+
+      const res = await fetch('/api/schedule/batch', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          modules: [...new Set(queryList)],
+          term: term,
+          year: year
+        })
+      });
+      const data = await res.json();
+      if (data.success && data.schedules) {
+        Object.entries(data.schedules).forEach(([code, sched]) => {
+          this.schedulesMap[code] = sched;
+          const origList = queryToOrig[code] || [];
+          origList.forEach(origId => {
+            this.schedulesMap[origId] = sched;
+          });
+        });
+        this.saveSchedulesCache();
+        if (this.validator) this.validator.setSchedulesMap(this.schedulesMap);
+        this.runValidation();
+        this.renderPlanner();
+        if (this.currentViewTab === 'timetable') this.renderTimetableView();
+        return data.schedules;
+      }
+    } catch (e) {
+      console.warn('Error fetching batch schedules:', e);
+    }
+    return null;
+  }
+
+  autoSyncPlanSchedules() {
+    const scheduledIds = this.getScheduledModuleIds();
+    const missing = scheduledIds.filter(id => {
+      const mod = this.modulesMap?.get(id);
+      if (mod?.isCustom && !mod.moduleCode) return false;
+      return !this.schedulesMap[id];
+    });
+    if (missing.length > 0) {
+      this.fetchBatchSchedules(missing, 'WS', 2026);
+    }
+  }
+
+  renderModalScheduleContent(mod) {
+    const container = document.getElementById('modalScheduleContent');
+    if (!container) return;
+
+    if (mod.isCustom && !mod.moduleCode) {
+      container.innerHTML = `
+        <div style="background: #f8fafc; border: 1px dashed var(--kit-border); border-radius: var(--radius-sm); padding: 14px; text-align: center;">
+          <div style="font-weight: 600; font-size: 0.84rem; color: var(--kit-slate); margin-bottom: 4px;">No KIT Module Code Linked</div>
+          <p style="font-size: 0.78rem; color: var(--kit-muted); margin-bottom: 10px;">Link this custom course to an official KIT module code (e.g. <code>M-INFO-106812</code> or <code>M-ETIT-106815</code>) to automatically load lecture times and room assignments into your timetable.</p>
+          <button id="btnEditCustomForCode" class="btn btn-sm btn-outline">✏️ Add Module Code</button>
+        </div>
+      `;
+      document.getElementById('btnEditCustomForCode')?.addEventListener('click', () => {
+        this.openEditCustomModal(mod.id);
+      });
+      return;
+    }
+
+    const sched = this.schedulesMap[mod.id];
+    if (!sched) {
+      const targetLabel = (mod.isCustom && mod.moduleCode) ? `for ${mod.moduleCode}` : '';
+      container.innerHTML = `
+        <div style="background: #f8fafc; border: 1px dashed var(--kit-border); border-radius: var(--radius-sm); padding: 14px; text-align: center;">
+          <div style="font-weight: 600; font-size: 0.84rem; color: var(--kit-slate); margin-bottom: 4px;">Schedule timeslots not loaded yet ${targetLabel}</div>
+          <p style="font-size: 0.78rem; color: var(--kit-muted); margin-bottom: 10px;">Check official lecture times and rooms for the upcoming Winter Semester (WS 26/27).</p>
+          <button id="btnFetchModalSchedNow" class="btn btn-sm btn-outline">⚡ Check Availability in WS 26/27</button>
+        </div>
+      `;
+      document.getElementById('btnFetchModalSchedNow')?.addEventListener('click', async () => {
+        const btn = document.getElementById('btnFetchModalSchedNow');
+        if (btn) btn.textContent = '⏳ Querying KIT Campus...';
+        await this.fetchModuleSchedule(mod.id, true);
+        this.renderModalScheduleContent(mod);
+      });
+      return;
+    }
+
+    if (!sched.found || !sched.events || sched.events.length === 0) {
+      const isSSInHandbook = (mod.term === 'SS');
+      container.innerHTML = `
+        <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-sm); padding: 14px; font-size: 0.82rem; color: #92400e;">
+          <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px; color: #78350f;">
+            <span>ℹ️</span> Not Offered in Upcoming Semester (Winter Semester 26/27)
+          </div>
+          <div style="font-size: 0.78rem; line-height: 1.45; color: #78350f; margin-bottom: 8px;">
+            No lecture or exercise timeslots are scheduled for this module ${mod.isCustom && mod.moduleCode ? `(<strong>${mod.moduleCode}</strong>) ` : ''}in the official KIT Vorlesungsverzeichnis for <strong>WS 26/27</strong>.
+          </div>
+          <div style="background: #fef3c7; border-left: 3px solid #d97706; padding: 8px 10px; border-radius: 4px; font-size: 0.75rem; color: #92400e; margin-bottom: 10px; line-height: 1.45;">
+            <strong>Term Validity Notice:</strong> Lecture times, locations, and schedules are only valid for the current/upcoming term (WS 26/27) and are not stable across semesters. Times from past semesters are not loaded to avoid planning with outdated data.
+            ${isSSInHandbook ? `<br><br>🌱 <em>Designated for <strong>Sommersemester (SS)</strong> in the Modulhandbuch. Official dates for Sommersemester 2027 will be published by KIT closer to term start.</em>` : ''}
+          </div>
+          <div style="display: flex; justify-content: flex-end;">
+            <button id="btnForceRefetchModal" class="btn btn-sm btn-outline" style="font-size: 0.72rem; padding: 3px 10px;">🔄 Re-check KIT Campus</button>
+          </div>
+        </div>
+      `;
+      document.getElementById('btnForceRefetchModal')?.addEventListener('click', async () => {
+        const btn = document.getElementById('btnForceRefetchModal');
+        if (btn) btn.textContent = '⏳ Retrying...';
+        await this.fetchModuleSchedule(mod.id, true);
+        this.renderModalScheduleContent(mod);
+      });
+      return;
+    }
+
+    let html = `<div style="display: flex; flex-direction: column; gap: 10px;">`;
+    html += `
+      <div style="background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; font-size: 0.75rem; padding: 6px 10px; border-radius: 6px; font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+        <span>✓ Official Schedule: Winter Semester 2026/27 (WS 26/27)</span>
+        <span style="font-weight: 400; font-size: 0.7rem; color: #047857;">Live from KIT Campus</span>
+      </div>
+    `;
+    sched.events.forEach(ev => {
+      html += `
+        <div style="background: #f8fafc; border: 1px solid var(--kit-border); border-radius: var(--radius-sm); padding: 10px 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <div style="font-weight: 700; font-size: 0.84rem; color: var(--kit-slate);">
+              ${ev.title} <span class="badge" style="background: #e2e8f0; color: #334155; font-size: 0.68rem; margin-left: 4px;">${ev.type || 'Event'}</span>
+            </div>
+            ${ev.lecturer ? `<span style="font-size: 0.74rem; color: var(--kit-muted);">Docent: ${ev.lecturer}</span>` : ''}
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px;">
+            ${(ev.slots || []).map(s => `
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; background: #fff; padding: 4px 8px; border: 1px solid #e2e8f0; border-radius: 4px;">
+                <span style="font-weight: 600;">📅 ${s.dayName} ${s.startTime} – ${s.endTime} <span style="font-weight: 400; color: var(--kit-muted);">[${s.frequency}]</span></span>
+                <span>
+                  ${s.room ? `<span class="timetable-block-room" title="Room location">${s.room}</span>` : ''}
+                  ${s.campusUrl ? `<a href="${s.campusUrl}" target="_blank" style="margin-left: 6px; font-size: 0.72rem; color: var(--kit-blue); text-decoration: none;" title="Open KIT Campusplan">📍 Map</a>` : ''}
+                </span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+    container.innerHTML = html;
+  }
+
+  switchViewTab(tab) {
+    this.currentViewTab = tab;
+    const scheduleContainer = document.getElementById('scheduleViewContainer');
+    const timetableContainer = document.getElementById('timetableViewContainer');
+    const analyticsContainer = document.getElementById('analyticsViewContainer');
+
+    const btnSchedule = document.getElementById('tabScheduleView');
+    const btnTimetable = document.getElementById('tabTimetableView');
+    const btnAnalytics = document.getElementById('tabAnalyticsView');
+
+    if (scheduleContainer) scheduleContainer.style.display = (tab === 'schedule') ? 'block' : 'none';
+    if (timetableContainer) timetableContainer.style.display = (tab === 'timetable') ? 'block' : 'none';
+    if (analyticsContainer) analyticsContainer.style.display = (tab === 'analytics') ? 'block' : 'none';
+
+    if (btnSchedule) btnSchedule.className = (tab === 'schedule') ? 'btn btn-primary' : 'btn btn-outline';
+    if (btnTimetable) btnTimetable.className = (tab === 'timetable') ? 'btn btn-primary' : 'btn btn-outline';
+    if (btnAnalytics) btnAnalytics.className = (tab === 'analytics') ? 'btn btn-primary' : 'btn btn-outline';
+
+    if (tab === 'timetable') {
+      this.renderTimetableView();
+    } else if (tab === 'analytics' && this.lastValidationResult) {
+      this.updateAnalytics(this.lastValidationResult);
+    }
+  }
+
+  setupTimetableView() {
+    const semSelect = document.getElementById('timetableSemSelect');
+    semSelect?.addEventListener('change', (e) => {
+      this.activeTimetableSemester = parseInt(e.target.value, 10);
+      this.renderTimetableView();
+    });
+
+    document.getElementById('btnSyncTimetableCurrentSem')?.addEventListener('click', async () => {
+      const btn = document.getElementById('btnSyncTimetableCurrentSem');
+      const sem = this.activeTimetableSemester;
+      const items = this.plan.semesters[sem] || [];
+      const ids = items.map(it => typeof it === 'string' ? it : it.id);
+
+      if (ids.length === 0) {
+        if (btn) {
+          btn.innerHTML = '<span>ℹ️</span> No courses in this semester';
+          setTimeout(() => { if (btn) btn.innerHTML = '<span>🔄</span> Sync Semester Times'; }, 2500);
+        }
+        return;
+      }
+
+      if (btn) btn.textContent = `⏳ Syncing Sem ${sem} (WS 26/27)...`;
+      await this.fetchBatchSchedules(ids, 'WS', 2026);
+
+      const withSlots = ids.filter(id => this.schedulesMap[id]?.events?.length > 0).length;
+      if (btn) {
+        btn.innerHTML = `<span>✓</span> Synced (${withSlots}/${ids.length} active in WS 26/27)`;
+        setTimeout(() => {
+          if (btn) btn.innerHTML = '<span>🔄</span> Sync Semester Times';
+        }, 3000);
+      }
+      this.renderTimetableView();
+    });
+
+    document.getElementById('btnOpenSyncModalFromTimetable')?.addEventListener('click', () => {
+      document.getElementById('campusSyncModal')?.classList.add('open');
+      this.updateSyncModalStatus();
+    });
+  }
+
+  renderTimetableView() {
+    const semSelect = document.getElementById('timetableSemSelect');
+    if (!semSelect) return;
+
+    // Populate semester dropdown
+    semSelect.innerHTML = '';
+    for (let s = 1; s <= this.semestersCount; s++) {
+      const termType = (this.startTerm === 'WS') ? ((s % 2 === 1) ? 'WS' : 'SS') : ((s % 2 === 1) ? 'SS' : 'WS');
+      const opt = document.createElement('option');
+      opt.value = s;
+      opt.textContent = `Semester ${s} (${termType})`;
+      if (s === this.activeTimetableSemester) opt.selected = true;
+      semSelect.appendChild(opt);
+    }
+
+    // Active semester modules
+    const items = this.plan.semesters[this.activeTimetableSemester] || [];
+    const totalCP = items.reduce((acc, it) => acc + (this.getModule(it.id)?.credits || 0), 0);
+
+    // Calculate weekly hours
+    let totalWeeklySlots = 0;
+    items.forEach(it => {
+      const sched = this.schedulesMap[it.id];
+      if (sched?.events) {
+        sched.events.forEach(ev => {
+          totalWeeklySlots += (ev.slots || []).length;
+        });
+      }
+    });
+
+    const statsEl = document.getElementById('timetableSemStats');
+    if (statsEl) {
+      statsEl.textContent = `${items.length} Course${items.length === 1 ? '' : 's'} • ${totalCP} CP • ~${totalWeeklySlots * 1.5} SWS`;
+    }
+
+    // Term scope badge & notice banner
+    const termNoticeEl = document.getElementById('timetableTermNotice');
+    const termType = (this.startTerm === 'WS') ? ((this.activeTimetableSemester % 2 === 1) ? 'WS' : 'SS') : ((this.activeTimetableSemester % 2 === 1) ? 'SS' : 'WS');
+
+    if (termNoticeEl) {
+      const notOfferedInWS = items.filter(it => {
+        const s = this.schedulesMap[it.id];
+        return s && s.found && (!s.events || s.events.length === 0);
+      });
+
+      if (termType === 'SS') {
+        termNoticeEl.style.display = 'block';
+        termNoticeEl.innerHTML = `
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; border-radius: var(--radius-sm); padding: 8px 12px; font-size: 0.78rem; display: flex; align-items: flex-start; gap: 8px;">
+            <span style="font-size: 1.1rem; line-height: 1;">ℹ️</span>
+            <div>
+              <strong>Semester ${this.activeTimetableSemester} is a Sommersemester (SS).</strong> Official timetables are only published for the upcoming <strong>Winter Semester 2026/27 (WS 26/27)</strong>. Times for summer modules are not loaded to prevent inaccurate planning from past years.
+              ${notOfferedInWS.length > 0 ? `<div style="margin-top: 4px; color: #1d4ed8; font-size: 0.74rem;"><strong>Not active in WS 26/27:</strong> ${notOfferedInWS.map(it => this.getModule(it.id)?.title || it.id).join(', ')}</div>` : ''}
+            </div>
+          </div>
+        `;
+      } else {
+        if (notOfferedInWS.length > 0) {
+          termNoticeEl.style.display = 'block';
+          termNoticeEl.innerHTML = `
+            <div style="background: #fffbeb; border: 1px solid #fde68a; color: #92400e; border-radius: var(--radius-sm); padding: 8px 12px; font-size: 0.78rem; display: flex; align-items: flex-start; gap: 8px;">
+              <span style="font-size: 1.1rem; line-height: 1;">⚠️</span>
+              <div>
+                <strong>Courses without timeslots in WS 26/27:</strong>
+                ${notOfferedInWS.map(it => `<strong>${it.id}</strong> (${this.getModule(it.id)?.title || it.id})`).join(', ')}.
+                <span style="color: #78350f; font-size: 0.74rem;">These courses may be offered in alternating semesters, as block courses, or individually.</span>
+              </div>
+            </div>
+          `;
+        } else {
+          termNoticeEl.style.display = 'none';
+        }
+      }
+    }
+
+    // Check collisions for this semester
+    const semConflicts = (this.lastValidationResult?.timeConflicts || []).filter(
+      c => c.semester === this.activeTimetableSemester
+    );
+
+    const bannerEl = document.getElementById('timetableConflictBanner');
+    const indicatorEl = document.getElementById('timetableConflictIndicator');
+
+    if (semConflicts.length > 0) {
+      if (bannerEl) {
+        bannerEl.style.display = 'flex';
+        bannerEl.innerHTML = `
+          <div><strong>⚡ Timetable Overlaps Detected in Semester ${this.activeTimetableSemester}:</strong></div>
+          ${semConflicts.map(c => `<div>• <strong>${c.dayName} (${c.overlapTime}):</strong> "${c.eventA.title}" clashes with "${c.eventB.title}"</div>`).join('')}
+        `;
+      }
+      if (indicatorEl) indicatorEl.style.display = 'inline-flex';
+    } else {
+      if (bannerEl) bannerEl.style.display = 'none';
+      if (indicatorEl) indicatorEl.style.display = 'none';
+    }
+
+    // Render Weekly Grid
+    const gridEl = document.getElementById('timetableGrid');
+    if (!gridEl) return;
+    gridEl.innerHTML = '';
+
+    // Headers
+    const days = [
+      { code: 'time', name: 'Time' },
+      { code: 'Mo', name: 'Monday (Mo)', index: 1 },
+      { code: 'Di', name: 'Tuesday (Di)', index: 2 },
+      { code: 'Mi', name: 'Wednesday (Mi)', index: 3 },
+      { code: 'Do', name: 'Thursday (Do)', index: 4 },
+      { code: 'Fr', name: 'Friday (Fr)', index: 5 }
+    ];
+
+    days.forEach(d => {
+      const headerCell = document.createElement('div');
+      headerCell.className = 'timetable-header-cell';
+      headerCell.textContent = d.name;
+      gridEl.appendChild(headerCell);
+    });
+
+    // Time column (08:00 - 20:00)
+    const timeCol = document.createElement('div');
+    timeCol.className = 'timetable-time-col';
+    for (let h = 8; h < 20; h++) {
+      const hourLabel = document.createElement('div');
+      hourLabel.className = 'timetable-hour-label';
+      hourLabel.textContent = `${String(h).padStart(2, '0')}:00`;
+      timeCol.appendChild(hourLabel);
+    }
+    gridEl.appendChild(timeCol);
+
+    // Day columns (Mo .. Fr)
+    const dayCols = {};
+    for (let d = 1; d <= 5; d++) {
+      const dayCol = document.createElement('div');
+      dayCol.className = 'timetable-day-col';
+      dayCol.dataset.dayIndex = d;
+      gridEl.appendChild(dayCol);
+      dayCols[d] = dayCol;
+    }
+
+    // Place events
+    let hasAnyRenderedBlock = false;
+    items.forEach(item => {
+      const mod = this.getModule(item.id);
+      if (!mod) return;
+      const sched = this.schedulesMap[mod.id];
+      if (!sched || !sched.events) return;
+
+      const catInfo = this.getModuleCategoryInfo(mod, item.category);
+      const catClassSuffix = catInfo.label.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+
+      sched.events.forEach(ev => {
+        (ev.slots || []).forEach(slot => {
+          const dIdx = slot.dayIndex;
+          if (dIdx >= 1 && dIdx <= 5 && dayCols[dIdx]) {
+            // Minutes from 08:00 (480) out of 12 hours (720 min)
+            const startClamped = Math.max(480, Math.min(1200, slot.startMinutes));
+            const endClamped = Math.max(480, Math.min(1200, slot.endMinutes));
+            const topPct = ((startClamped - 480) / 720) * 100;
+            const heightPct = Math.max(4.5, ((endClamped - startClamped) / 720) * 100);
+
+            // Check collision
+            const isColliding = semConflicts.some(
+              c => (c.moduleId === mod.id || c.conflictModuleId === mod.id) && c.day === slot.day
+            );
+
+            const block = document.createElement('div');
+            block.className = `timetable-block cat-${catClassSuffix} ${slot.frequency === 'biweekly' ? 'is-biweekly' : ''} ${isColliding ? 'is-colliding' : ''}`;
+            block.style.top = `${topPct}%`;
+            block.style.height = `${heightPct}%`;
+            block.title = `${mod.title} (${ev.type})\n${slot.dayName} ${slot.startTime}-${slot.endTime} [${slot.frequency}]\nRoom: ${slot.room || 'TBA'}`;
+
+            block.innerHTML = `
+              <div class="timetable-block-title">${mod.id} • ${ev.title}</div>
+              <div class="timetable-block-meta">
+                <span>${ev.typeCode || 'V'} • ${slot.startTime}–${slot.endTime} ${slot.frequency === 'biweekly' ? '(14t)' : ''}</span>
+                ${slot.room ? `<span class="timetable-block-room">${slot.room.split(' ')[0]}</span>` : ''}
+              </div>
+            `;
+
+            block.addEventListener('click', () => {
+              this.showModuleModal(mod);
+            });
+
+            dayCols[dIdx].appendChild(block);
+            hasAnyRenderedBlock = true;
+          }
+        });
+      });
+    });
+
+    if (!hasAnyRenderedBlock && items.length > 0) {
+      const placeholder = document.createElement('div');
+      placeholder.style.cssText = 'position: absolute; top: 40%; left: 15%; right: 15%; text-align: center; background: #fff; padding: 16px; border: 1px dashed var(--kit-border); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); z-index: 20;';
+      if (termType === 'SS') {
+        placeholder.innerHTML = `
+          <div style="font-weight: 700; color: var(--kit-slate); margin-bottom: 4px;">Sommersemester Schedule Not Available</div>
+          <div style="font-size: 0.78rem; color: var(--kit-muted); margin-bottom: 6px;">Lecture times and rooms are only valid for the upcoming <strong>Winter Semester 2026/27</strong>.</div>
+          <div style="font-size: 0.74rem; color: var(--kit-muted);">Summer 2027 schedules are published closer to term start. Historical times are not used to avoid planning conflicts.</div>
+        `;
+      } else {
+        placeholder.innerHTML = `
+          <div style="font-weight: 700; color: var(--kit-slate); margin-bottom: 4px;">No Lecture Times Registered for Semester ${this.activeTimetableSemester} in WS 26/27</div>
+          <div style="font-size: 0.78rem; color: var(--kit-muted); margin-bottom: 10px;">Click 'Sync Semester Times' to check the official KIT Campus schedule for WS 26/27.</div>
+          <button id="btnPlaceholderSync" class="btn btn-sm btn-primary">⚡ Sync Semester Times Now</button>
+        `;
+        placeholder.querySelector('#btnPlaceholderSync')?.addEventListener('click', () => {
+          document.getElementById('btnSyncTimetableCurrentSem')?.click();
+        });
+      }
+      dayCols[3].appendChild(placeholder);
+    }
+  }
+
+  setupCampusSyncModal() {
+    const modal = document.getElementById('campusSyncModal');
+    const openBtn = document.getElementById('btnCampusSync');
+    const closeBtn = document.getElementById('campusSyncCloseBtn');
+    const closeFooterBtn = document.getElementById('campusSyncCloseFooterBtn');
+
+    openBtn?.addEventListener('click', () => {
+      modal?.classList.add('open');
+      this.updateSyncModalStatus();
+    });
+
+    closeBtn?.addEventListener('click', () => modal?.classList.remove('open'));
+    closeFooterBtn?.addEventListener('click', () => modal?.classList.remove('open'));
+
+    // Target Term Select
+    const termSelect = document.getElementById('syncTermSelect');
+    if (termSelect) {
+      termSelect.value = 'WS';
+      termSelect.addEventListener('change', (e) => {
+        this.activeSyncTerm = e.target.value;
+      });
+    }
+
+    // Sync current plan courses
+    document.getElementById('btnFetchCurrentPlanSchedules')?.addEventListener('click', async () => {
+      const progressText = document.getElementById('syncProgressText');
+      const btn = document.getElementById('btnFetchCurrentPlanSchedules');
+      if (progressText) {
+        progressText.style.display = 'block';
+        progressText.textContent = '⏳ Querying KIT Campus platform (cascampus.studium.kit.edu)...';
+      }
+      if (btn) btn.disabled = true;
+
+      const scheduledIds = this.getScheduledModuleIds();
+      const allTargetIds = [...new Set([...scheduledIds, ...this.stagedModules])];
+
+      if (allTargetIds.length === 0) {
+        if (progressText) progressText.textContent = 'ℹ️ No courses currently scheduled in the plan or staging.';
+        if (btn) btn.disabled = false;
+        return;
+      }
+
+      await this.fetchBatchSchedules(allTargetIds, 'WS', 2026);
+
+      const withSlots = allTargetIds.filter(id => this.schedulesMap[id]?.events?.length > 0).length;
+      if (progressText) {
+        progressText.textContent = `✓ Synchronized ${allTargetIds.length} course schedules for WS 26/27 (${withSlots} with active timeslots in timetable).`;
+      }
+      if (btn) btn.disabled = false;
+      this.updateSyncModalStatus();
+    });
+
+    // Clear schedule cache
+    document.getElementById('btnClearScheduleCache')?.addEventListener('click', () => {
+      if (confirm('Clear local schedule cache? New lookups will re-fetch live data from KIT Campus.')) {
+        this.schedulesMap = {};
+        localStorage.removeItem('kit_schedules_cache');
+        if (this.validator) this.validator.setSchedulesMap({});
+        this.runValidation();
+        this.renderPlanner();
+        if (this.currentViewTab === 'timetable') this.renderTimetableView();
+        this.updateSyncModalStatus();
+      }
+    });
+
+    // Shibboleth SSO Accordion toggle
+    const authHeader = document.getElementById('syncAuthHeader');
+    const authBody = document.getElementById('syncAuthBody');
+    const authChevron = document.getElementById('syncAuthChevron');
+    authHeader?.addEventListener('click', () => {
+      const isOpen = authBody.style.display !== 'none';
+      authBody.style.display = isOpen ? 'none' : 'flex';
+      if (authChevron) authChevron.textContent = isOpen ? '▼' : '▲';
+    });
+
+    // Shibboleth login form
+    const loginForm = document.getElementById('campusLoginForm');
+    loginForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const usernameInput = document.getElementById('kitUsername');
+      const passwordInput = document.getElementById('kitPassword');
+      const statusMsg = document.getElementById('kitAuthStatusMsg');
+      const submitBtn = document.getElementById('btnSubmitKitLogin');
+
+      const username = usernameInput?.value?.trim();
+      const password = passwordInput?.value;
+
+      if (!username || !password) {
+        if (statusMsg) {
+          statusMsg.style.color = '#dc2626';
+          statusMsg.textContent = 'Please enter username and password.';
+        }
+        return;
+      }
+
+      if (statusMsg) {
+        statusMsg.style.color = 'var(--kit-muted)';
+        statusMsg.textContent = 'Connecting to KIT Shibboleth SSO...';
+      }
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const res = await fetch('/api/auth/kit-campus', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (data.success && data.authenticated) {
+          this.isKitAuthenticated = true;
+          if (statusMsg) {
+            statusMsg.style.color = 'var(--kit-green)';
+            statusMsg.textContent = `✓ Authenticated as ${username}`;
+          }
+          this.updateSyncModalStatus();
+          // Clear password input immediately for safety
+          if (passwordInput) passwordInput.value = '';
+        } else {
+          if (statusMsg) {
+            statusMsg.style.color = '#dc2626';
+            statusMsg.textContent = `❌ ${data.message || 'Authentication failed'}`;
+          }
+        }
+      } catch (err) {
+        if (statusMsg) {
+          statusMsg.style.color = '#dc2626';
+          statusMsg.textContent = '❌ Network error connecting to local server.';
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+
+  updateSyncModalStatus() {
+    const badge = document.getElementById('syncCachedCountBadge');
+    if (badge) {
+      const count = Object.keys(this.schedulesMap || {}).length;
+      badge.textContent = `${count} Course${count === 1 ? '' : 's'} Cached`;
+    }
+
+    const indicator = document.getElementById('syncModeIndicator');
+    const modeText = document.getElementById('syncModeText');
+    if (this.isKitAuthenticated) {
+      if (indicator) indicator.className = 'sync-mode-dot dot-active';
+      if (modeText) modeText.textContent = 'KIT Shibboleth SSO (Authenticated)';
+    } else {
+      if (indicator) indicator.className = 'sync-mode-dot dot-active';
+      if (modeText) modeText.textContent = 'Public Vorlesungsverzeichnis (Active)';
     }
   }
 }

@@ -2,9 +2,14 @@
 // Supports dynamic semesters (4, 5, 6+), arbitrary categories, mutual exclusions, and §14(1) thesis gate
 
 class DegreeValidator {
-  constructor(modulesMap, degreeData) {
+  constructor(modulesMap, degreeData, schedulesMap = {}) {
     this.modulesMap = modulesMap || new Map();
     this.degree = degreeData || {};
+    this.schedulesMap = schedulesMap || {};
+  }
+
+  setSchedulesMap(schedulesMap) {
+    this.schedulesMap = schedulesMap || {};
   }
 
   getModule(id) {
@@ -17,8 +22,9 @@ class DegreeValidator {
    * @param {Object} plan - { degree, specialization, startTerm, semestersCount, semesters: { 1: [ {id, category} ], ... } }
    * @returns {Object} validation result
    */
-  validate(plan, overrideSpec = null) {
+  validate(plan, overrideSpec = null, overrideSchedules = null) {
     const activeSpec = overrideSpec || plan.specialization || null;
+    const schedules = overrideSchedules || this.schedulesMap || {};
     const semCount = plan.semestersCount || 4;
     const startTerm = plan.startTerm || 'WS';
     const errors = [];
@@ -137,6 +143,20 @@ class DegreeValidator {
     }
     if (termMismatches === 0 && scheduled.length > 0) {
       passed.push('All scheduled modules match their offered term frequency (WS / SS).');
+    }
+
+    // 3b. LECTURE & EXERCISE TIMETABLE CONFLICTS
+    const timeConflicts = this.checkTimetableConflicts(plan, schedules);
+    for (const c of timeConflicts) {
+      if (c.severity === 'error') {
+        errors.push(c);
+      } else {
+        warnings.push(c);
+      }
+    }
+    const hasSchedulesChecked = Object.keys(schedules).length > 0 && scheduled.some(m => schedules[m.id]?.events?.length > 0);
+    if (timeConflicts.length === 0 && hasSchedulesChecked) {
+      passed.push('No lecture or exercise timetable collisions detected in scheduled courses.');
     }
 
     // 4. CATEGORY CREDIT AUDITING
@@ -261,6 +281,7 @@ class DegreeValidator {
       categories: categoriesResult,
       scheduledModules: scheduled,
       moduleCounts,
+      timeConflicts,
       errors,
       warnings,
       passed
@@ -359,6 +380,102 @@ class DegreeValidator {
     }
 
     return [...new Set(available)];
+  }
+
+  /**
+   * Cross-evaluates timetable slots for all modules scheduled in each semester.
+   * Identifies weekly hard collisions and bi-weekly alternating overlaps.
+   * @param {Object} plan - study plan
+   * @param {Object} schedules - map of moduleId -> scheduleData
+   * @returns {Array} list of conflict descriptor objects
+   */
+  checkTimetableConflicts(plan, schedules = {}) {
+    if (!plan || !plan.semesters || !schedules) return [];
+    const conflicts = [];
+    const semCount = plan.semestersCount || 4;
+
+    for (let sem = 1; sem <= semCount; sem++) {
+      const items = plan.semesters[sem] || [];
+      const scheduledInSem = items.map(it => typeof it === 'string' ? it : it.id);
+
+      // Compare every unique pair (i < j)
+      for (let i = 0; i < scheduledInSem.length; i++) {
+        const idA = scheduledInSem[i];
+        const schedA = schedules[idA];
+        if (!schedA || !schedA.events || schedA.events.length === 0) continue;
+        const modA = this.getModule(idA) || { id: idA, title: schedA.moduleTitle || idA };
+
+        for (let j = i + 1; j < scheduledInSem.length; j++) {
+          const idB = scheduledInSem[j];
+          if (idA === idB) continue;
+          const schedB = schedules[idB];
+          if (!schedB || !schedB.events || schedB.events.length === 0) continue;
+          const modB = this.getModule(idB) || { id: idB, title: schedB.moduleTitle || idB };
+
+          // Cross-compare events between A and B
+          for (const evA of schedA.events) {
+            const slotsA = evA.slots || [];
+            for (const evB of schedB.events) {
+              const slotsB = evB.slots || [];
+
+              for (const slotA of slotsA) {
+                for (const slotB of slotsB) {
+                  // Must occur on the same day of the week
+                  if (slotA.day !== slotB.day) continue;
+
+                  // Interval overlap check: max(startA, startB) < min(endA, endB)
+                  const startOverlap = Math.max(slotA.startMinutes, slotB.startMinutes);
+                  const endOverlap = Math.min(slotA.endMinutes, slotB.endMinutes);
+                  if (startOverlap < endOverlap) {
+                    const isBothWeekly = (slotA.frequency === 'weekly' && slotB.frequency === 'weekly');
+                    const isLectureA = (evA.typeCode === 'V' || (evA.type && evA.type.toLowerCase().includes('vorlesung')));
+                    const isLectureB = (evB.typeCode === 'V' || (evB.type && evB.type.toLowerCase().includes('vorlesung')));
+
+                    const severity = (isBothWeekly && (isLectureA || isLectureB)) ? 'error' : 'warning';
+                    const conflictType = isBothWeekly ? 'hard_collision' : 'biweekly_overlap';
+
+                    const overlapStartStr = `${String(Math.floor(startOverlap / 60)).padStart(2, '0')}:${String(startOverlap % 60).padStart(2, '0')}`;
+                    const overlapEndStr = `${String(Math.floor(endOverlap / 60)).padStart(2, '0')}:${String(endOverlap % 60).padStart(2, '0')}`;
+
+                    conflicts.push({
+                      type: 'time_conflict',
+                      severity: severity,
+                      conflictType: conflictType,
+                      modules: [idA, idB],
+                      moduleId: idA,
+                      conflictModuleId: idB,
+                      semester: sem,
+                      day: slotA.day,
+                      dayName: slotA.dayName,
+                      eventA: {
+                        moduleId: idA,
+                        title: evA.title,
+                        type: evA.type,
+                        time: `${slotA.startTime} - ${slotA.endTime}`,
+                        frequency: slotA.frequency,
+                        room: slotA.room
+                      },
+                      eventB: {
+                        moduleId: idB,
+                        title: evB.title,
+                        type: evB.type,
+                        time: `${slotB.startTime} - ${slotB.endTime}`,
+                        frequency: slotB.frequency,
+                        room: slotB.room
+                      },
+                      overlapTime: `${overlapStartStr} - ${overlapEndStr}`,
+                      message: `Time Collision in Semester ${sem} on ${slotA.dayName} (${overlapStartStr} - ${overlapEndStr}): "${modA.title}" (${evA.type}) overlaps with "${modB.title}" (${evB.type}).`
+                    });
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    return conflicts;
   }
 }
 

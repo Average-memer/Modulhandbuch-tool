@@ -1,0 +1,1471 @@
+{
+  "M-ETIT-106815_WS_2026": {
+    "moduleId": "M-ETIT-106815",
+    "moduleTitle": "M-ETIT-106815 – Advanced Communications Engineering",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:05:24Z",
+    "events": [
+      {
+        "eventId": "2310540",
+        "eventGuid": "0x416FC614C3BD4B40813EDE1C25A91EED",
+        "title": "Advanced Communications Engineering",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Jäkel",
+        "slots": [
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "biweekly",
+            "startTime": "08:00",
+            "endTime": "09:30",
+            "startMinutes": 480,
+            "endMinutes": 570,
+            "room": "10.91 Mittlerer Hörsaal Maschinenbau",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=10%2E91&label=10%2E91+Mittlerer+H%C3%B6rsaal+Maschinenbau+%E2%80%93+Advanced+Communications+Engineering",
+            "notes": "Im Wechsel mit der Übung ACE"
+          },
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "11.10 Engelbert-Arnold-Hörsaal (EAS)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=11%2E10&label=11%2E10+Engelbert%2DArnold%2DH%C3%B6rsaal+%28EAS%29+%E2%80%93+Advanced+Communications+Engineering",
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "eventId": "2310541",
+        "eventGuid": "0x41FBF50784CB4BD9AD5B14204BB88B94",
+        "title": "Exercises for 2310540 Advanced Communications Engineering",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Jäkel",
+        "slots": [
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "biweekly",
+            "startTime": "08:00",
+            "endTime": "09:30",
+            "startMinutes": 480,
+            "endMinutes": 570,
+            "room": "10.91 Mittlerer Hörsaal Maschinenbau",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=10%2E91&label=10%2E91+Mittlerer+H%C3%B6rsaal+Maschinenbau+%E2%80%93+Exercises+for+2310540+Advanced+Communications+Engineering",
+            "notes": "im Wechsel  mit der Vorlesung ACE"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-103802_WS_2026": {
+    "moduleId": "M-ETIT-103802",
+    "moduleTitle": "M-ETIT-103802 – Adaptive Optics",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:05:46Z",
+    "events": [
+      {
+        "eventId": "2313724",
+        "eventGuid": "0xAD845E64995F427581A1A434FD4B1AAC",
+        "title": "Adaptive Optics",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Gladysz",
+        "slots": [
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "15:30",
+            "startMinutes": 840,
+            "endMinutes": 930,
+            "room": "30.41 Rudolf-Criegee-Hörsaal (HS4)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E41&label=30%2E41+Rudolf%2DCriegee%2DH%C3%B6rsaal+%28HS4%29+%E2%80%93+Adaptive+Optics",
+            "notes": "03.11.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-106815_WS_latest": {
+    "moduleId": "M-ETIT-106815",
+    "moduleTitle": "M-ETIT-106815 – Advanced Communications Engineering",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:20:56Z",
+    "events": [
+      {
+        "eventId": "2310540",
+        "eventGuid": "0x416FC614C3BD4B40813EDE1C25A91EED",
+        "title": "Advanced Communications Engineering",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Jäkel",
+        "slots": [
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "biweekly",
+            "startTime": "08:00",
+            "endTime": "09:30",
+            "startMinutes": 480,
+            "endMinutes": 570,
+            "room": "10.91 Mittlerer Hörsaal Maschinenbau",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=10%2E91&label=10%2E91+Mittlerer+H%C3%B6rsaal+Maschinenbau+%E2%80%93+Advanced+Communications+Engineering",
+            "notes": "Im Wechsel mit der Übung ACE"
+          },
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "11.10 Engelbert-Arnold-Hörsaal (EAS)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=11%2E10&label=11%2E10+Engelbert%2DArnold%2DH%C3%B6rsaal+%28EAS%29+%E2%80%93+Advanced+Communications+Engineering",
+            "notes": ""
+          }
+        ]
+      },
+      {
+        "eventId": "2310541",
+        "eventGuid": "0x41FBF50784CB4BD9AD5B14204BB88B94",
+        "title": "Exercises for 2310540 Advanced Communications Engineering",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Jäkel",
+        "slots": [
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "biweekly",
+            "startTime": "08:00",
+            "endTime": "09:30",
+            "startMinutes": 480,
+            "endMinutes": 570,
+            "room": "10.91 Mittlerer Hörsaal Maschinenbau",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=10%2E91&label=10%2E91+Mittlerer+H%C3%B6rsaal+Maschinenbau+%E2%80%93+Exercises+for+2310540+Advanced+Communications+Engineering",
+            "notes": "im Wechsel  mit der Vorlesung ACE"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-107136_WS_2026": {
+    "moduleId": "M-ETIT-107136",
+    "moduleTitle": "M-ETIT-107136 – Communications Engineering Lab",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:25:42Z",
+    "events": [
+      {
+        "eventId": "2310517",
+        "eventGuid": "0xA1E87A88A23646249BAEA3A8E5BDEBA4",
+        "title": "Communications Engineering Lab",
+        "type": "Praktikum",
+        "typeCode": "P",
+        "lecturer": "Schmalen, Jäkel",
+        "slots": [
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "18:00",
+            "startMinutes": 840,
+            "endMinutes": 1080,
+            "room": "Gebäude 30.10, Raum 216",
+            "campusUrl": "",
+            "notes": "27.10.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-100470_WS_2026": {
+    "moduleId": "M-ETIT-100470",
+    "moduleTitle": "M-ETIT-100470 – Praktikum Schaltungsdesign mit FPGA",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:25:48Z",
+    "events": [
+      {
+        "eventId": "2312674",
+        "eventGuid": "0xAF5535F834234A7BAC0C6F4525BCD405",
+        "title": "Praktikum Schaltungsdesign mit FPGA",
+        "type": "Praktikum",
+        "typeCode": "P",
+        "lecturer": "Kempf, weitere Mitarbeitende",
+        "slots": [
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "18:00",
+            "startMinutes": 840,
+            "endMinutes": 1080,
+            "room": "06.41 R 102",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=06%2E41&label=06%2E41+R+102+%E2%80%93+Praktikum+Schaltungsdesign+mit+FPGA",
+            "notes": "27.10.2026"
+          },
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "18:00",
+            "startMinutes": 840,
+            "endMinutes": 1080,
+            "room": "06.41 R 102",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=06%2E41&label=06%2E41+R+102+%E2%80%93+Praktikum+Schaltungsdesign+mit+FPGA",
+            "notes": "28.10.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-107364_WS_2026": {
+    "moduleId": "M-ETIT-107364",
+    "moduleTitle": "M-ETIT-107364 – Analog Circuit Design",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:25:56Z",
+    "events": [
+      {
+        "eventId": "2312664",
+        "eventGuid": "0x7CE0FF3E89584A739E9EC8BDC3119E4A",
+        "title": "Analog Circuit Design",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Peric",
+        "slots": [
+          {
+            "day": "Do",
+            "dayIndex": 4,
+            "dayName": "Thursday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "11.10 Kleiner Hörsaal Elektrotechnik",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=11%2E10&label=11%2E10+Kleiner+H%C3%B6rsaal+Elektrotechnik+%E2%80%93+Analog+Circuit+Design",
+            "notes": "29.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2312666",
+        "eventGuid": "0xC2BAB7A948EA4D45BC25FCA74B65049C",
+        "title": "Practical Exercise for 2312664 Analog Circuit Design",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Peric",
+        "slots": [
+          {
+            "day": "Do",
+            "dayIndex": 4,
+            "dayName": "Thursday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "18:00",
+            "startMinutes": 840,
+            "endMinutes": 1080,
+            "room": "06.41 R 102",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=06%2E41&label=06%2E41+R+102+%E2%80%93+Practical+Exercise+for+2312664+Analog+Circuit+Design",
+            "notes": "29.10.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-106955_WS_2026": {
+    "moduleId": "M-ETIT-106955",
+    "moduleTitle": "M-ETIT-106955 – Radio-Frequency Electronics",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:26:09Z",
+    "events": [
+      {
+        "eventId": "2308503",
+        "eventGuid": "0x8907B5BE0B8C4A0E93DD9249343E87A6",
+        "title": "Radio-Frequency Electronics",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Ulusoy, Pauli",
+        "slots": [
+          {
+            "day": "Mo",
+            "dayIndex": 1,
+            "dayName": "Monday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "15:30",
+            "startMinutes": 840,
+            "endMinutes": 930,
+            "room": "30.10 Nachrichtentechnik-Hörsaal (NTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E10&label=30%2E10+Nachrichtentechnik%2DH%C3%B6rsaal+%28NTI%29+%E2%80%93+Radio%2DFrequency+Electronics",
+            "notes": "26.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2308504",
+        "eventGuid": "0x2D5B059FE2F94E9CAA89517C82532DD5",
+        "title": "Exercise for 2308503 Radio-Frequency Electronics",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Kuo",
+        "slots": [
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "16:00",
+            "startMinutes": 840,
+            "endMinutes": 960,
+            "room": "30.10 Nachrichtentechnik-Hörsaal (NTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E10&label=30%2E10+Nachrichtentechnik%2DH%C3%B6rsaal+%28NTI%29+%E2%80%93+Exercise+for+2308503+Radio%2DFrequency+Electronics",
+            "notes": ""
+          },
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "16:00",
+            "startMinutes": 840,
+            "endMinutes": 960,
+            "room": "30.34 Lichttechnik-Hörsaal (LTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E34&label=30%2E34+Lichttechnik%2DH%C3%B6rsaal+%28LTI%29+%E2%80%93+Exercise+for+2308503+Radio%2DFrequency+Electronics",
+            "notes": "Ersatz für NTI HS (Geb. 30.10)"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-WIWI-105003_WS_2026": {
+    "moduleId": "M-WIWI-105003",
+    "moduleTitle": "M-WIWI-105003 – Maschinelles Lernen 1",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:26:24Z",
+    "events": [
+      {
+        "eventId": "2511500",
+        "eventGuid": "0x4197547832224CF29B4A24CDDC3C6B74",
+        "title": "Maschinelles Lernen 1 - Grundverfahren",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Zöllner",
+        "slots": [
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "weekly",
+            "startTime": "09:45",
+            "endTime": "11:15",
+            "startMinutes": 585,
+            "endMinutes": 675,
+            "room": "10.11 Hertz-Hörsaal",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=10%2E11&label=10%2E11+Hertz%2DH%C3%B6rsaal+%E2%80%93+Maschinelles+Lernen+1+%2D+Grundverfahren",
+            "notes": "30.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2511501",
+        "eventGuid": "0x1968C6A21D574A8C85470407712DC101",
+        "title": "Übungen zu Maschinelles Lernen 1 - Grundverfahren",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Zöllner, Polley, Fechner",
+        "slots": [
+          {
+            "day": "Mo",
+            "dayIndex": 1,
+            "dayName": "Monday",
+            "frequency": "weekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "11.40 Johann-Gottfried-Tulla-Hörsaal",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=11%2E40&label=11%2E40+Johann%2DGottfried%2DTulla%2DH%C3%B6rsaal+%E2%80%93+%C3%9Cbungen+zu+Maschinelles+Lernen+1+%2D+Grundverfahren",
+            "notes": "26.10.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-100449_WS_2026": {
+    "moduleId": "M-ETIT-100449",
+    "moduleTitle": "M-ETIT-100449 – Hardware Modeling and Simulation",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:27:52Z",
+    "events": [
+      {
+        "eventId": "2311608",
+        "eventGuid": "0x67749F54075C40B2B39F4AF8914C9BCC",
+        "title": "Hardware Modeling and Simulation",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Becker, Becker",
+        "slots": [
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "30.10 Nachrichtentechnik-Hörsaal (NTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E10&label=30%2E10+Nachrichtentechnik%2DH%C3%B6rsaal+%28NTI%29+%E2%80%93+Hardware+Modeling+and+Simulation",
+            "notes": "28.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2311610",
+        "eventGuid": "0xBE8402815B4448DDADC58A5E824FB713",
+        "title": "Tutorial for 2311608 Hardware Modeling and Simulation",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Sotiropoulos",
+        "slots": [
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "weekly",
+            "startTime": "09:45",
+            "endTime": "11:15",
+            "startMinutes": 585,
+            "endMinutes": 675,
+            "room": "20.30 Seminarraum 0.014",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E30&label=20%2E30+Seminarraum+0%2E014+%E2%80%93+Tutorial+for+2311608+Hardware+Modeling+and+Simulation",
+            "notes": "30.10.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-106956_WS_2026": {
+    "moduleId": "M-ETIT-106956",
+    "moduleTitle": "M-ETIT-106956 – Antennas and Beamforming",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:28:04Z",
+    "events": [
+      {
+        "eventId": "2308465",
+        "eventGuid": "0xDD08046DF94441C3BB39C818D2D7D386",
+        "title": "Antennas and Beamforming",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Younis, Zwick",
+        "slots": [
+          {
+            "day": "Do",
+            "dayIndex": 4,
+            "dayName": "Thursday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "15:30",
+            "startMinutes": 840,
+            "endMinutes": 930,
+            "room": "30.10 Nachrichtentechnik-Hörsaal (NTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E10&label=30%2E10+Nachrichtentechnik%2DH%C3%B6rsaal+%28NTI%29+%E2%80%93+Antennas+and+Beamforming",
+            "notes": "29.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2308466",
+        "eventGuid": "0x85C6A5B809E84578B94180854993F480",
+        "title": "Tutorial for 2308465 Antennas and Beamforming",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Younis, Zwick",
+        "slots": [
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "biweekly",
+            "startTime": "09:45",
+            "endTime": "11:15",
+            "startMinutes": 585,
+            "endMinutes": 675,
+            "room": "30.10 Nachrichtentechnik-Hörsaal (NTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E10&label=30%2E10+Nachrichtentechnik%2DH%C3%B6rsaal+%28NTI%29+%E2%80%93+Tutorial+for+2308465+Antennas+and+Beamforming",
+            "notes": "06.11.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-105701_WS_2026": {
+    "moduleId": "M-ETIT-105701",
+    "moduleTitle": "M-ETIT-105701 – Entwurf von Mikrowellenmodulen",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:28:17Z",
+    "events": [
+      {
+        "eventId": "2308426",
+        "eventGuid": "0x9FA8E745201B4A9C96F638CB6226F841",
+        "title": "Entwurf von Mikrowellenmodulen",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Geist",
+        "slots": [
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "Gebäude 30.10 Raum 3.40 (Seminarraum IHE)",
+            "campusUrl": "",
+            "notes": "28.10.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-106974_WS_2026": {
+    "moduleId": "M-ETIT-106974",
+    "moduleTitle": "M-ETIT-106974 – Optical Engineering and Machine Vision",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:40:06Z",
+    "events": [
+      {
+        "eventId": "2302150",
+        "eventGuid": "0x2CCB2CAB8CBC4C46B93143E89FA5F5DC",
+        "title": "Optical Engineering and Machine Vision",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Heizmann",
+        "slots": [
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "10.50 Bauingenieure, Großer Hörsaal",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=10%2E50&label=10%2E50+Bauingenieure%2C+Gro%C3%9Fer+H%C3%B6rsaal++%E2%80%93+Optical+Engineering+and+Machine+Vision",
+            "notes": "27.10.2026"
+          },
+          {
+            "day": "Do",
+            "dayIndex": 4,
+            "dayName": "Thursday",
+            "frequency": "biweekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "20.40 Egon-Eiermann-Hörsaal",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E40&label=20%2E40+Egon%2DEiermann%2DH%C3%B6rsaal+%E2%80%93+Optical+Engineering+and+Machine+Vision",
+            "notes": "29.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2302151",
+        "eventGuid": "0xC17FFCCD87544402A6D6510D62B8B61E",
+        "title": "Tutorial to 2302150 Optical Engineering and Machine Vision",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Heizmann, Leyer",
+        "slots": [
+          {
+            "day": "Do",
+            "dayIndex": 4,
+            "dayName": "Thursday",
+            "frequency": "biweekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "20.40 Egon-Eiermann-Hörsaal",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E40&label=20%2E40+Egon%2DEiermann%2DH%C3%B6rsaal+%E2%80%93+Tutorial+to+2302150+Optical+Engineering+and+Machine+Vision",
+            "notes": "05.11.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-107497_WS_2026": {
+    "moduleId": "M-ETIT-107497",
+    "moduleTitle": "M-ETIT-107497 – Optimal Control ",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:40:14Z",
+    "events": [
+      {
+        "eventId": "2303183",
+        "eventGuid": "0xF139A9D50453460EA1D49D91C5BD9EDE",
+        "title": "Optimal Control",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Hohmann",
+        "slots": [
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "15:30",
+            "startMinutes": 840,
+            "endMinutes": 930,
+            "room": "30.46 Neuer Hörsaal Chemie",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E46&label=30%2E46+Neuer+H%C3%B6rsaal+Chemie+%E2%80%93+Optimal+Control",
+            "notes": "30.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2303185",
+        "eventGuid": "0x410A4F48104C4E679F5FBDC3653E83D9",
+        "title": "Tutorial to 2303183 Optimal Control",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Riffel",
+        "slots": [
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "15:30",
+            "startMinutes": 840,
+            "endMinutes": 930,
+            "room": "30.46 Neuer Hörsaal Chemie",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E46&label=30%2E46+Neuer+H%C3%B6rsaal+Chemie+%E2%80%93+Tutorial+to+2303183+Optimal+Control",
+            "notes": "28.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2303851",
+        "eventGuid": "0x625E369A7B9049DDBA54657622F10FED",
+        "title": "Accompanying Group Tutorial to 2303183 Optimal Control",
+        "type": "Tutorium",
+        "typeCode": "Tu",
+        "lecturer": "Riffel",
+        "slots": [
+          {
+            "day": "Mo",
+            "dayIndex": 1,
+            "dayName": "Monday",
+            "frequency": "weekly",
+            "startTime": "09:45",
+            "endTime": "11:15",
+            "startMinutes": 585,
+            "endMinutes": 675,
+            "room": "30.28 Seminarraum 4 (R004)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E28&label=30%2E28+Seminarraum+4+%28R004%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": ""
+          },
+          {
+            "day": "Mo",
+            "dayIndex": 1,
+            "dayName": "Monday",
+            "frequency": "weekly",
+            "startTime": "17:30",
+            "endTime": "19:00",
+            "startMinutes": 1050,
+            "endMinutes": 1140,
+            "room": "30.28 Seminarraum 1 (R220)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E28&label=30%2E28+Seminarraum+1+%28R220%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": ""
+          },
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "08:00",
+            "endTime": "09:30",
+            "startMinutes": 480,
+            "endMinutes": 570,
+            "room": "30.28 Seminarraum 2 (R120)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E28&label=30%2E28+Seminarraum+2+%28R120%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": ""
+          },
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "17:30",
+            "endTime": "19:00",
+            "startMinutes": 1050,
+            "endMinutes": 1140,
+            "room": "30.28 Seminarraum 2 (R120)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E28&label=30%2E28+Seminarraum+2+%28R120%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": ""
+          },
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "08:00",
+            "endTime": "09:30",
+            "startMinutes": 480,
+            "endMinutes": 570,
+            "room": "20.30 Seminarraum -1.008 (UG)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E30&label=20%2E30+Seminarraum+%2D1%2E008+%28UG%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": ""
+          },
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "30.28 Seminarraum 1 (R220)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E28&label=30%2E28+Seminarraum+1+%28R220%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": ""
+          },
+          {
+            "day": "Do",
+            "dayIndex": 4,
+            "dayName": "Thursday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "30.28 Seminarraum 4 (R004)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E28&label=30%2E28+Seminarraum+4+%28R004%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": ""
+          },
+          {
+            "day": "Do",
+            "dayIndex": 4,
+            "dayName": "Thursday",
+            "frequency": "weekly",
+            "startTime": "17:30",
+            "endTime": "19:00",
+            "startMinutes": 1050,
+            "endMinutes": 1140,
+            "room": "30.28 Seminarraum 2 (R120)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E28&label=30%2E28+Seminarraum+2+%28R120%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": ""
+          },
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "weekly",
+            "startTime": "08:00",
+            "endTime": "09:30",
+            "startMinutes": 480,
+            "endMinutes": 570,
+            "room": "30.28 Seminarraum 2 (R120)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E28&label=30%2E28+Seminarraum+2+%28R120%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": ""
+          },
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "30.28 Seminarraum 2 (R120)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E28&label=30%2E28+Seminarraum+2+%28R120%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": ""
+          },
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "20.30 Seminarraum -1.015 (UG)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E30&label=20%2E30+Seminarraum+%2D1%2E015+%28UG%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": "Ersatz für den 20.11.2026 Geb. 30.28 R 120"
+          },
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "20.30 Seminarraum -1.009 (UG)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E30&label=20%2E30+Seminarraum+%2D1%2E009+%28UG%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": "Ersatz für den 09.12.2026 Geb. 30.28 R 220"
+          },
+          {
+            "day": "Do",
+            "dayIndex": 4,
+            "dayName": "Thursday",
+            "frequency": "weekly",
+            "startTime": "17:30",
+            "endTime": "19:00",
+            "startMinutes": 1050,
+            "endMinutes": 1140,
+            "room": "20.30 Seminarraum -1.008 (UG)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E30&label=20%2E30+Seminarraum+%2D1%2E008+%28UG%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": "Ersatz für den 28.01.2027 Geb. 30.28 R 120"
+          },
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "17:30",
+            "endTime": "19:00",
+            "startMinutes": 1050,
+            "endMinutes": 1140,
+            "room": "20.30 Seminarraum -1.009 (UG)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E30&label=20%2E30+Seminarraum+%2D1%2E009+%28UG%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": "Ersatz für den 02.02.2027 Geb. 30.28 R 120"
+          },
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "20.30 Seminarraum -1.008 (UG)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E30&label=20%2E30+Seminarraum+%2D1%2E008+%28UG%29+%E2%80%93+Accompanying+Group+Tutorial+to+2303183+Optimal+Control",
+            "notes": "Ersatz für den 03.02.2027 Geb. 30.28 R 220"
+          }
+        ]
+      }
+    ]
+  },
+  "M-MACH-107621_WS_2026": {
+    "moduleId": "M-MACH-107621",
+    "moduleTitle": "M-MACH-107621 – Robotic Intelligence: Navigation and Mobile Manipulation",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:40:30Z",
+    "events": [
+      {
+        "eventId": "2121333",
+        "eventGuid": "0xBD96AD69172B4B35AE7E48412F35C2C9",
+        "title": "Robotic Intelligence: Navigation and Mobile Manipulation",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Rönnau",
+        "slots": [
+          {
+            "day": "Do",
+            "dayIndex": 4,
+            "dayName": "Thursday",
+            "frequency": "weekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "20.40 Architektur-Hörsaal Nr. 9",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E40&label=20%2E40+Architektur%2DH%C3%B6rsaal+Nr%2E+9+%E2%80%93+Robotic+Intelligence%3A+Navigation+and+Mobile+Manipulation",
+            "notes": "29.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2121334",
+        "eventGuid": "0x2E659B67549D440A9DC0DAB169421EDA",
+        "title": "Robotic Intelligence: Navigation and Mobile Manipulation (Exercise)",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Rönnau",
+        "slots": [
+          {
+            "day": "Mo",
+            "dayIndex": 1,
+            "dayName": "Monday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "20.21 Pool C",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E21&label=20%2E21+Pool+C+%E2%80%93+Robotic+Intelligence%3A+Navigation+and+Mobile+Manipulation+%28Exercise%29",
+            "notes": ""
+          }
+        ]
+      }
+    ]
+  },
+  "M-ETIT-106899_WS_2026": {
+    "moduleId": "M-ETIT-106899",
+    "moduleTitle": "M-ETIT-106899 – Signal Processing Methods",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:40:39Z",
+    "events": [
+      {
+        "eventId": "2302113",
+        "eventGuid": "0x2930CE1BFA204EA0AE964908AA20B22F",
+        "title": "Signal Processing Methods",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Wahls",
+        "slots": [
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "11.10 Engelbert-Arnold-Hörsaal (EAS)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=11%2E10&label=11%2E10+Engelbert%2DArnold%2DH%C3%B6rsaal+%28EAS%29+%E2%80%93+Signal+Processing+Methods",
+            "notes": ""
+          },
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "11.10 Kleiner Hörsaal Elektrotechnik",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=11%2E10&label=11%2E10+Kleiner+H%C3%B6rsaal+Elektrotechnik+%E2%80%93+Signal+Processing+Methods",
+            "notes": "Ersatz für den 18.11. EAS Hörsaal"
+          }
+        ]
+      },
+      {
+        "eventId": "2302115",
+        "eventGuid": "0x4699EF497BF24E2B8E07275260771233",
+        "title": "Tutorial to 2302113 Signal Processing Methods",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Wahls, Al-Hammadi",
+        "slots": [
+          {
+            "day": "Do",
+            "dayIndex": 4,
+            "dayName": "Thursday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "30.41 Chemie-Hörsaal Nr. 2 (HS2)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E41&label=30%2E41+Chemie%2DH%C3%B6rsaal+Nr%2E+2+%28HS2%29+%E2%80%93+Tutorial+to+2302113+Signal+Processing+Methods",
+            "notes": "29.10.2026"
+          }
+        ]
+      }
+    ]
+  },
+  "M-ETIT-100537_WS_2026": {
+    "moduleId": "M-ETIT-100537",
+    "moduleTitle": "M-ETIT-100537 – Systems and Software Engineering",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:40:53Z",
+    "events": [
+      {
+        "eventId": "2311605",
+        "eventGuid": "0xC39CC2F4A157411BB5C5DDEB5D9D7D45",
+        "title": "Systems and Software Engineering",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Sax",
+        "slots": [
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "30.41 Chemie-Hörsaal Nr. 2 (HS2)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E41&label=30%2E41+Chemie%2DH%C3%B6rsaal+Nr%2E+2+%28HS2%29+%E2%80%93+Systems+and+Software+Engineering",
+            "notes": "27.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2311607",
+        "eventGuid": "0x0FD49E8F65614083BA442885961F1E7E",
+        "title": "Übungen zu 2311605 Systems and Software Engineering",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Stroop, Hagel, Gerdes",
+        "slots": [
+          {
+            "day": "Mo",
+            "dayIndex": 1,
+            "dayName": "Monday",
+            "frequency": "weekly",
+            "startTime": "09:45",
+            "endTime": "11:15",
+            "startMinutes": 585,
+            "endMinutes": 675,
+            "room": "30.10 Nachrichtentechnik-Hörsaal (NTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E10&label=30%2E10+Nachrichtentechnik%2DH%C3%B6rsaal+%28NTI%29+%E2%80%93+%C3%9Cbungen+zu+2311605+Systems+and+Software+Engineering",
+            "notes": "26.10.2026"
+          }
+        ]
+      }
+    ]
+  },
+  "M-INFO-106812_WS_latest": {
+    "moduleId": "M-INFO-106812",
+    "moduleTitle": "M-INFO-106812 – Advanced Bayesian Data Analysis",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:46:23Z",
+    "events": [
+      {
+        "eventId": "2400120",
+        "eventGuid": "0xA75D9335BF994221B0DAC43FF50A04EB",
+        "title": "Advanced Bayesian Data Analysis",
+        "type": "Vorlesung / Übung",
+        "typeCode": "VÜ",
+        "lecturer": "Klein",
+        "slots": [
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "weekly",
+            "startTime": "09:45",
+            "endTime": "11:15",
+            "startMinutes": 585,
+            "endMinutes": 675,
+            "room": "SCC-CS 20.20 R367",
+            "campusUrl": "",
+            "notes": "30.10.2026"
+          },
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "biweekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "SCC-CS 20.20 R367",
+            "campusUrl": "",
+            "notes": "06.11.2026"
+          }
+        ]
+      }
+    ]
+  },
+  "M-INFO-107201_WS_latest": {
+    "moduleId": "M-INFO-107201",
+    "moduleTitle": "M-INFO-107201 – Algorithms II",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "found": true,
+    "lastUpdated": "2026-10-11T15:46:34Z",
+    "events": [
+      {
+        "eventId": "2424079",
+        "eventGuid": "0x43473167369C4CB38854BCB2A597028D",
+        "title": "Algorithms II",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Sanders, Künnemann-Goos, Stieß, Gokaj",
+        "slots": [
+          {
+            "day": "Mo",
+            "dayIndex": 1,
+            "dayName": "Monday",
+            "frequency": "weekly",
+            "startTime": "09:45",
+            "endTime": "11:15",
+            "startMinutes": 585,
+            "endMinutes": 675,
+            "room": "30.46 Neuer Hörsaal Chemie",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E46&label=30%2E46+Neuer+H%C3%B6rsaal+Chemie+%E2%80%93+Algorithms+II",
+            "notes": "evt. Verlegung"
+          },
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "30.46 Neuer Hörsaal Chemie",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E46&label=30%2E46+Neuer+H%C3%B6rsaal+Chemie+%E2%80%93+Algorithms+II",
+            "notes": ""
+          }
+        ]
+      }
+    ]
+  },
+  "M-ETIT-106953_WS_2026": {
+    "moduleId": "M-ETIT-106953",
+    "moduleTitle": "M-ETIT-106953 – Cyber-Physical Modeling",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "termNote": "Not offered in Winter Semester 26/27",
+    "found": true,
+    "lastUpdated": "2026-10-11T17:07:51Z",
+    "events": [],
+    "offeredInTerm": false
+  },
+  "M-ETIT-106953_WS_latest": {
+    "moduleId": "M-ETIT-106953",
+    "moduleTitle": "M-ETIT-106953 – Cyber-Physical Modeling",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "termNote": "Not offered in Winter Semester 26/27",
+    "found": true,
+    "lastUpdated": "2026-10-11T17:12:35Z",
+    "events": [],
+    "offeredInTerm": false
+  },
+  "M-ETIT-106815_SS_2026": {
+    "moduleId": "M-ETIT-106815",
+    "moduleTitle": "M-ETIT-106815 – Advanced Communications Engineering",
+    "term": "SS",
+    "termGuid": null,
+    "termNote": "No times loaded: schedules are strictly published and collected for Winter Semester 26/27.",
+    "found": true,
+    "lastUpdated": "2026-10-11T18:45:58Z",
+    "events": [],
+    "offeredInTerm": false
+  },
+  "M-ETIT-100427_WS_2026": {
+    "moduleId": "M-ETIT-100427",
+    "moduleTitle": "M-ETIT-100427 – Modern Radio Systems Engineering",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "termNote": "Official schedule for Winter Semester 26/27",
+    "found": true,
+    "lastUpdated": "2026-10-11T19:28:08Z",
+    "events": [
+      {
+        "eventId": "2308430",
+        "eventGuid": "0x74A03C88172946E982077869D151D4D4",
+        "title": "Modern Radio Systems Engineering",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Zwick, Pauli",
+        "slots": [
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "14:00",
+            "endTime": "15:30",
+            "startMinutes": 840,
+            "endMinutes": 930,
+            "room": "30.10 Nachrichtentechnik-Hörsaal (NTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E10&label=30%2E10+Nachrichtentechnik%2DH%C3%B6rsaal+%28NTI%29+%E2%80%93+Modern+Radio+Systems+Engineering",
+            "notes": "27.10.2026"
+          },
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "biweekly",
+            "startTime": "09:45",
+            "endTime": "11:15",
+            "startMinutes": 585,
+            "endMinutes": 675,
+            "room": "30.10 Nachrichtentechnik-Hörsaal (NTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E10&label=30%2E10+Nachrichtentechnik%2DH%C3%B6rsaal+%28NTI%29+%E2%80%93+Modern+Radio+Systems+Engineering",
+            "notes": "30.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2308431",
+        "eventGuid": "0x7F719044EFB849B19DA87FCD4C211AB8",
+        "title": "Tutorial to 2308430 Modern Radio Systems Engineering",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Chen, Zwick",
+        "slots": [
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "weekly",
+            "startTime": "08:00",
+            "endTime": "09:30",
+            "startMinutes": 480,
+            "endMinutes": 570,
+            "room": "30.10 Nachrichtentechnik-Hörsaal (NTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E10&label=30%2E10+Nachrichtentechnik%2DH%C3%B6rsaal+%28NTI%29+%E2%80%93+Tutorial+to+2308430+Modern+Radio+Systems+Engineering",
+            "notes": "30.10.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-107344_WS_2026": {
+    "moduleId": "M-ETIT-107344",
+    "moduleTitle": "M-ETIT-107344 – Integrated Photonics",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "termNote": "Official schedule for Winter Semester 26/27",
+    "found": true,
+    "lastUpdated": "2026-10-11T19:28:58Z",
+    "events": [
+      {
+        "eventId": "2309440",
+        "eventGuid": "0xF30D9147DF1340C3A1094C489238AB00",
+        "title": "Integrated Photonics",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Koos",
+        "slots": [
+          {
+            "day": "Di",
+            "dayIndex": 2,
+            "dayName": "Tuesday",
+            "frequency": "weekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "11.10 Kleiner Hörsaal Elektrotechnik",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=11%2E10&label=11%2E10+Kleiner+H%C3%B6rsaal+Elektrotechnik+%E2%80%93+Integrated+Photonics",
+            "notes": "27.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2309441",
+        "eventGuid": "0xC95B2266C4824017B2D36B743245E69F",
+        "title": "Tutorial to Integrated Photonics",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Koos, N.N.",
+        "slots": [
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "20.30 Seminarraum -1.013 (UG)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=20%2E30&label=20%2E30+Seminarraum+%2D1%2E013+%28UG%29+%E2%80%93+Tutorial+to+Integrated+Photonics",
+            "notes": "28.10.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "CUSTOM-233219_WS_2026": {
+    "moduleId": "CUSTOM-233219",
+    "moduleTitle": "CUSTOM-233219",
+    "term": "WS",
+    "termGuid": null,
+    "termNote": null,
+    "found": false,
+    "lastUpdated": "2026-10-11T19:35:18Z",
+    "events": []
+  },
+  "M-INFO-106812_WS_2026": {
+    "moduleId": "M-INFO-106812",
+    "moduleTitle": "M-INFO-106812 – Advanced Bayesian Data Analysis",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "termNote": "Official schedule for Winter Semester 26/27",
+    "found": true,
+    "lastUpdated": "2026-10-11T19:59:39Z",
+    "events": [
+      {
+        "eventId": "2400120",
+        "eventGuid": "0xA75D9335BF994221B0DAC43FF50A04EB",
+        "title": "Advanced Bayesian Data Analysis",
+        "type": "Vorlesung / Übung",
+        "typeCode": "VÜ",
+        "lecturer": "Klein",
+        "slots": [
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "weekly",
+            "startTime": "09:45",
+            "endTime": "11:15",
+            "startMinutes": 585,
+            "endMinutes": 675,
+            "room": "SCC-CS 20.20 R367",
+            "campusUrl": "",
+            "notes": "30.10.2026"
+          },
+          {
+            "day": "Fr",
+            "dayIndex": 5,
+            "dayName": "Friday",
+            "frequency": "biweekly",
+            "startTime": "11:30",
+            "endTime": "13:00",
+            "startMinutes": 690,
+            "endMinutes": 780,
+            "room": "SCC-CS 20.20 R367",
+            "campusUrl": "",
+            "notes": "06.11.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  },
+  "M-ETIT-107444_WS_2026": {
+    "moduleId": "M-ETIT-107444",
+    "moduleTitle": "M-ETIT-107444 – Hardware/Software Co-Design",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "termNote": "Official schedule for Winter Semester 26/27",
+    "found": true,
+    "lastUpdated": "2026-10-14T11:19:44Z",
+    "events": [
+      {
+        "eventId": "2311620",
+        "eventGuid": "0x7CA24BB7EA4F4D32988C03480D3D16B0",
+        "title": "Hardware/Software Co-Design",
+        "type": "Vorlesung",
+        "typeCode": "V",
+        "lecturer": "Harbaum, Becker",
+        "slots": [
+          {
+            "day": "Mi",
+            "dayIndex": 3,
+            "dayName": "Wednesday",
+            "frequency": "weekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "30.10 Nachrichtentechnik-Hörsaal (NTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E10&label=30%2E10+Nachrichtentechnik%2DH%C3%B6rsaal+%28NTI%29+%E2%80%93+Hardware%2FSoftware+Co%2DDesign",
+            "notes": "28.10.2026"
+          }
+        ]
+      },
+      {
+        "eventId": "2311623",
+        "eventGuid": "0xDD2497F242244794AF6DBCB63593B966",
+        "title": "Tutorial for 2311620 Hardware/Software Co-Design",
+        "type": "Übung",
+        "typeCode": "Ü",
+        "lecturer": "Paraskevas",
+        "slots": [
+          {
+            "day": "Mo",
+            "dayIndex": 1,
+            "dayName": "Monday",
+            "frequency": "weekly",
+            "startTime": "15:45",
+            "endTime": "17:15",
+            "startMinutes": 945,
+            "endMinutes": 1035,
+            "room": "30.10 Nachrichtentechnik-Hörsaal (NTI)",
+            "campusUrl": "http://www.kit.edu/campusplan/?id=30%2E10&label=30%2E10+Nachrichtentechnik%2DH%C3%B6rsaal+%28NTI%29+%E2%80%93+Tutorial+for+2311620+Hardware%2FSoftware+Co%2DDesign",
+            "notes": "26.10.2026"
+          }
+        ]
+      }
+    ],
+    "offeredInTerm": true
+  }
+}
