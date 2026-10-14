@@ -2370,4 +2370,187 @@ select:focus {
   padding: 12px;
 }
 
+/* ==========================================================================
+   IMPORT STUDY PLAN MODAL & PREVIEW STYLES
+   ========================================================================== */
+
+.modal-card-import {
+  max-width: 680px;
+}
+
+.import-modal-body {
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  max-height: calc(90vh - 140px);
+}
+
+.export-import-shortcut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px dashed var(--kit-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-top: 4px;
+  font-size: 0.82rem;
+  color: var(--kit-slate);
+}
+
+.plan-import-preview {
+  background: #f8fafc;
+  border: 1px solid var(--kit-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.import-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--kit-border);
+}
+
+.import-plan-degree {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--kit-slate);
+}
+
+.import-plan-file {
+  font-size: 0.74rem;
+  color: var(--kit-muted);
+  margin-top: 2px;
+  font-family: monospace;
+}
+
+.import-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.import-meta-item {
+  background: #ffffff;
+  border: 1px solid var(--kit-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.import-meta-label {
+  font-size: 0.7rem;
+  color: var(--kit-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.import-meta-item strong {
+  font-size: 0.86rem;
+  color: var(--kit-slate);
+  word-break: break-word;
+}
+
+.import-notice-banner {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  line-height: 1.45;
+}
+
+.import-semesters-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.import-semester-pill {
+  background: #ffffff;
+  border: 1px solid var(--kit-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 0.76rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.import-semester-pill .sem-name {
+  font-weight: 700;
+  color: var(--kit-slate);
+}
+
+.import-semester-pill .sem-badge {
+  background: #f1f5f9;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--kit-slate);
+}
+
+/* ==========================================================================
+   TOAST NOTIFICATION SYSTEM
+   ========================================================================== */
+
+.kit-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.kit-toast {
+  pointer-events: auto;
+  background: #1e293b;
+  color: #ffffff;
+  padding: 11px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: toastSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-width: 420px;
+}
+
+.kit-toast.success {
+  border-left: 4px solid var(--kit-green);
+}
+
+.kit-toast.error {
+  border-left: 4px solid #ef4444;
+}
+
+.kit-toast.warning {
+  border-left: 4px solid #f59e0b;
+}
+
+@keyframes toastSlideIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
 

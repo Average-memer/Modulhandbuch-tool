@@ -1040,7 +1040,8 @@
           }
         ]
       }
-    ]
+    ],
+    "offeredInTerm": true
   },
   "M-ETIT-100537_WS_2026": {
     "moduleId": "M-ETIT-100537",
@@ -1467,5 +1468,16 @@
       }
     ],
     "offeredInTerm": true
+  },
+  "M-ETIT-105893_WS_2026": {
+    "moduleId": "M-ETIT-105893",
+    "moduleTitle": "M-ETIT-105893 – Mixed-Signal IC Design",
+    "term": "WS",
+    "termGuid": "0xD25DBD9C86874091993315DA11571AAF",
+    "termNote": "Not offered in Winter Semester 26/27",
+    "found": true,
+    "lastUpdated": "2026-10-14T11:53:25Z",
+    "events": [],
+    "offeredInTerm": false
   }
 }

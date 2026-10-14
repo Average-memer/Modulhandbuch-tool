@@ -34,6 +34,7 @@ class UniversalStudyPlannerApp {
     this.inspectedModule = null;
     this.lastValidationResult = null;
     this.pendingUploadedDegreeId = null;
+    this.pendingImportPlanData = null;
 
     // KIT Campus Lecture Times & Timetable
     this.schedulesMap = {};
@@ -50,6 +51,7 @@ class UniversalStudyPlannerApp {
     this.setupEventListeners();
     this.setupDragAndDrop();
     this.setupUploadModal();
+    this.setupImportModal();
     this.setupCampusSyncModal();
     this.setupTimetableView();
     this.autoSyncPlanSchedules();
@@ -1371,6 +1373,503 @@ class UniversalStudyPlannerApp {
         await this.switchDegree(this.pendingUploadedDegreeId);
       }
     });
+  }
+
+  // --- IMPORT STUDY PLAN WORKFLOW ---
+
+  setupImportModal() {
+    const btnOpen = document.getElementById('btnImportPlan');
+    const modal = document.getElementById('importModal');
+    const btnClose = document.getElementById('importCloseBtn');
+    const btnCloseFooter = document.getElementById('importCloseFooterBtn');
+    const dropzone = document.getElementById('importDropzone');
+    const fileInput = document.getElementById('importPlanFileInput');
+    const btnConfirm = document.getElementById('btnConfirmImportPlan');
+    const btnSwitchToImport = document.getElementById('btnSwitchToImport');
+
+    if (!modal) return;
+
+    btnOpen?.addEventListener('click', () => this.openImportModal());
+    btnClose?.addEventListener('click', () => this.closeImportModal());
+    btnCloseFooter?.addEventListener('click', () => this.closeImportModal());
+
+    btnSwitchToImport?.addEventListener('click', () => {
+      this.closeExportModal();
+      this.openImportModal();
+    });
+
+    dropzone?.addEventListener('click', () => fileInput?.click());
+
+    fileInput?.addEventListener('change', () => {
+      if (fileInput.files && fileInput.files.length > 0) {
+        this.handlePlanFileSelection(fileInput.files[0]);
+      }
+    });
+
+    dropzone?.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropzone.classList.add('drag-over');
+    });
+
+    dropzone?.addEventListener('dragleave', () => dropzone.classList.remove('drag-over'));
+
+    dropzone?.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('drag-over');
+      if (e.dataTransfer?.files && e.dataTransfer.files.length > 0) {
+        this.handlePlanFileSelection(e.dataTransfer.files[0]);
+      }
+    });
+
+    // Support dropping .json files directly onto window to import
+    window.addEventListener('drop', (e) => {
+      // Avoid interfering with course card drag-and-drop
+      if (e.target.closest('.semester-dropzone, #stagingDropzone, #stagingArea, #uploadDropzone, #importDropzone')) return;
+      if (e.dataTransfer?.files && e.dataTransfer.files.length > 0) {
+        const file = e.dataTransfer.files[0];
+        if (file.name.toLowerCase().endsWith('.json')) {
+          e.preventDefault();
+          this.openImportModal();
+          this.handlePlanFileSelection(file);
+        }
+      }
+    });
+
+    btnConfirm?.addEventListener('click', async () => {
+      if (!this.pendingImportPlanData) return;
+      btnConfirm.disabled = true;
+      btnConfirm.innerHTML = '<span>⏳</span> Importing Plan...';
+      try {
+        await this.executePlanImport(this.pendingImportPlanData);
+        this.closeImportModal();
+      } catch (err) {
+        console.error('Import error:', err);
+        const errorMsg = document.getElementById('importErrorMsg');
+        if (errorMsg) {
+          errorMsg.style.display = 'block';
+          errorMsg.textContent = `Import failed: ${err.message || 'Unknown error'}`;
+        }
+      } finally {
+        btnConfirm.disabled = false;
+        btnConfirm.innerHTML = '<span>✓</span> Import & Load Plan';
+      }
+    });
+  }
+
+  openImportModal() {
+    const modal = document.getElementById('importModal');
+    if (!modal) return;
+    this.resetImportModal();
+    modal.classList.add('open');
+  }
+
+  closeImportModal() {
+    const modal = document.getElementById('importModal');
+    if (!modal) return;
+    modal.classList.remove('open');
+    this.pendingImportPlanData = null;
+  }
+
+  resetImportModal() {
+    const preview = document.getElementById('importPlanPreview');
+    const errorMsg = document.getElementById('importErrorMsg');
+    const btnConfirm = document.getElementById('btnConfirmImportPlan');
+    const fileInput = document.getElementById('importPlanFileInput');
+    if (preview) preview.style.display = 'none';
+    if (errorMsg) {
+      errorMsg.style.display = 'none';
+      errorMsg.textContent = '';
+    }
+    if (btnConfirm) btnConfirm.disabled = true;
+    if (fileInput) fileInput.value = '';
+    this.pendingImportPlanData = null;
+  }
+
+  handlePlanFileSelection(file) {
+    const errorMsg = document.getElementById('importErrorMsg');
+    const preview = document.getElementById('importPlanPreview');
+    const btnConfirm = document.getElementById('btnConfirmImportPlan');
+
+    if (!file) return;
+
+    if (!file.name.toLowerCase().endsWith('.json') && file.type && file.type !== 'application/json') {
+      if (errorMsg) {
+        errorMsg.style.display = 'block';
+        errorMsg.textContent = 'Please select a valid JSON file (*.json).';
+      }
+      if (preview) preview.style.display = 'none';
+      if (btnConfirm) btnConfirm.disabled = true;
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const raw = e.target.result;
+        const parsed = JSON.parse(raw);
+        this.renderImportPlanPreview(parsed, file.name);
+      } catch (err) {
+        if (errorMsg) {
+          errorMsg.style.display = 'block';
+          errorMsg.textContent = `Invalid JSON file: ${err.message}`;
+        }
+        if (preview) preview.style.display = 'none';
+        if (btnConfirm) btnConfirm.disabled = true;
+      }
+    };
+    reader.onerror = () => {
+      if (errorMsg) {
+        errorMsg.style.display = 'block';
+        errorMsg.textContent = 'Error reading file.';
+      }
+      if (preview) preview.style.display = 'none';
+      if (btnConfirm) btnConfirm.disabled = true;
+    };
+    reader.readAsText(file);
+  }
+
+  renderImportPlanPreview(parsed, fileName) {
+    const errorMsg = document.getElementById('importErrorMsg');
+    const preview = document.getElementById('importPlanPreview');
+    const btnConfirm = document.getElementById('btnConfirmImportPlan');
+
+    // Extract plan data structure flexibly
+    let planData = parsed;
+    if (parsed.plan && typeof parsed.plan === 'object' && parsed.plan.semesters) {
+      planData = parsed.plan;
+    } else if (parsed.semesters && typeof parsed.semesters === 'object') {
+      planData = parsed;
+    } else if (parsed['1'] && Array.isArray(parsed['1'])) {
+      planData = { semesters: parsed };
+    }
+
+    if (!planData || !planData.semesters || typeof planData.semesters !== 'object') {
+      if (errorMsg) {
+        errorMsg.style.display = 'block';
+        errorMsg.textContent = 'This file does not appear to contain a study plan (no "semesters" found).';
+      }
+      if (preview) preview.style.display = 'none';
+      if (btnConfirm) btnConfirm.disabled = true;
+      return;
+    }
+
+    if (errorMsg) errorMsg.style.display = 'none';
+
+    // Store parsed plan data for confirmation
+    this.pendingImportPlanData = {
+      ...planData,
+      customModules: parsed.customModules || planData.customModules || [],
+      stagedModules: parsed.stagedModules || planData.stagedModules || []
+    };
+
+    const targetDegId = planData.degree || parsed.degree || null;
+    const targetDegreeInfo = this.degreesIndex.find(d => d.id === targetDegId);
+    const specId = planData.specialization || parsed.specialization || null;
+    const startTerm = planData.startTerm || parsed.startTerm || 'WS';
+    const startYear = parseInt(planData.startYear || parsed.startYear, 10) || new Date().getFullYear();
+    const semesters = planData.semesters || {};
+
+    const semKeys = Object.keys(semesters).filter(k => !isNaN(parseInt(k, 10))).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+    const semestersCount = parseInt(planData.semestersCount || parsed.semestersCount, 10) || (semKeys.length > 0 ? Math.max(...semKeys.map(k => parseInt(k, 10))) : 4);
+
+    let totalModules = 0;
+    let totalCredits = 0;
+    const semSummaries = [];
+
+    // Map of custom modules if stored in file
+    const fileCustomMap = new Map((this.pendingImportPlanData.customModules || []).map(m => [m.id, m]));
+
+    for (let s = 1; s <= semestersCount; s++) {
+      const items = semesters[s] || semesters[String(s)] || [];
+      let semCP = 0;
+      let semModCount = 0;
+      if (Array.isArray(items)) {
+        items.forEach(it => {
+          if (!it) return;
+          const modId = typeof it === 'string' ? it : it.id;
+          if (!modId) return;
+          semModCount++;
+          totalModules++;
+
+          const mod = this.modulesMap.get(modId) || fileCustomMap.get(modId) || (typeof it === 'object' && it.credits ? it : null);
+          const cp = mod?.credits || (typeof it === 'object' && it.credits) || 0;
+          semCP += cp;
+          totalCredits += cp;
+        });
+      }
+      semSummaries.push({ sem: s, count: semModCount, cp: semCP });
+    }
+
+    // Update Preview UI Elements
+    const degreeTitleEl = document.getElementById('importPlanDegreeTitle');
+    const fileNameEl = document.getElementById('importPlanFileName');
+    const badgeEl = document.getElementById('importDegreeMatchBadge');
+    const specEl = document.getElementById('importPlanSpec');
+    const termEl = document.getElementById('importPlanTerm');
+    const countsEl = document.getElementById('importPlanCounts');
+    const creditsEl = document.getElementById('importPlanCredits');
+    const switchNoticeEl = document.getElementById('importDegreeSwitchNotice');
+    const semsContainer = document.getElementById('importSemestersPreview');
+
+    if (fileNameEl) fileNameEl.textContent = fileName || 'study_plan.json';
+
+    const isCurrentDegree = !targetDegId || (this.activeDegree && targetDegId === this.activeDegree.id);
+    if (degreeTitleEl) {
+      if (targetDegreeInfo) {
+        degreeTitleEl.textContent = `${targetDegreeInfo.title} (SPO ${targetDegreeInfo.spo})`;
+      } else if (targetDegId) {
+        degreeTitleEl.textContent = `Degree: ${targetDegId}`;
+      } else {
+        degreeTitleEl.textContent = `Active Degree: ${this.activeDegree?.title || 'Current'}`;
+      }
+    }
+
+    if (badgeEl) {
+      if (isCurrentDegree) {
+        badgeEl.textContent = '✓ Matches Active Degree';
+        badgeEl.className = 'badge';
+        badgeEl.style.background = '#dcfce7';
+        badgeEl.style.color = '#15803d';
+        badgeEl.style.border = '1px solid #bbf7d0';
+      } else if (targetDegreeInfo) {
+        badgeEl.textContent = '🔄 Will Switch Degree';
+        badgeEl.className = 'badge';
+        badgeEl.style.background = '#fef3c7';
+        badgeEl.style.color = '#b45309';
+        badgeEl.style.border = '1px solid #fde68a';
+      } else {
+        badgeEl.textContent = '⚠️ Different Degree ID';
+        badgeEl.className = 'badge';
+        badgeEl.style.background = '#fee2e2';
+        badgeEl.style.color = '#b91c1c';
+        badgeEl.style.border = '1px solid #fecaca';
+      }
+    }
+
+    if (switchNoticeEl) {
+      if (!isCurrentDegree && targetDegreeInfo) {
+        switchNoticeEl.style.display = 'block';
+        switchNoticeEl.innerHTML = `<strong>Note:</strong> Loading this plan will automatically switch the active handbook to <strong>${targetDegreeInfo.title}</strong>.`;
+      } else if (!isCurrentDegree && targetDegId && !targetDegreeInfo) {
+        switchNoticeEl.style.display = 'block';
+        switchNoticeEl.innerHTML = `<strong>Note:</strong> Degree <em>"${targetDegId}"</em> is not found in installed handbooks. Courses will be imported into active degree <strong>${this.activeDegree?.title || 'current degree'}</strong>.`;
+      } else {
+        switchNoticeEl.style.display = 'none';
+      }
+    }
+
+    if (specEl) {
+      let specLabel = specId || 'General / None';
+      if (targetDegreeInfo?.specializations) {
+        const found = targetDegreeInfo.specializations.find(s => s.id === specId);
+        if (found) specLabel = found.name;
+      } else if (this.activeDegree?.specializations) {
+        const found = this.activeDegree.specializations.find(s => s.id === specId);
+        if (found) specLabel = found.name;
+      }
+      specEl.textContent = specLabel;
+    }
+
+    if (termEl) {
+      const termLabel = startTerm === 'WS' ? 'Winter Semester (WS)' : 'Summer Semester (SS)';
+      termEl.textContent = `${termLabel} ${startYear}`;
+    }
+
+    if (countsEl) {
+      countsEl.textContent = `${semestersCount} Semesters • ${totalModules} Courses`;
+    }
+
+    if (creditsEl) {
+      creditsEl.textContent = totalCredits > 0 ? `${totalCredits} CP` : 'Calculated on load';
+    }
+
+    if (semsContainer) {
+      semsContainer.innerHTML = '';
+      semSummaries.forEach(s => {
+        const pill = document.createElement('div');
+        pill.className = 'import-semester-pill';
+        pill.innerHTML = `
+          <span class="sem-name">Sem ${s.sem}</span>
+          <span class="sem-badge">${s.count} courses</span>
+          <span style="font-size: 0.72rem; color: var(--kit-muted); font-weight: 600;">${s.cp} CP</span>
+        `;
+        semsContainer.appendChild(pill);
+      });
+    }
+
+    if (preview) preview.style.display = 'flex';
+    if (btnConfirm) btnConfirm.disabled = false;
+  }
+
+  async executePlanImport(planData) {
+    if (!planData) return;
+
+    const targetDegId = planData.degree;
+    const canSwitch = targetDegId && this.degreesIndex.some(d => d.id === targetDegId);
+
+    // 1. Switch degree if necessary
+    if (canSwitch && this.activeDegree?.id !== targetDegId) {
+      await this.switchDegree(targetDegId);
+    }
+
+    // 2. Restore custom modules if included in the backup
+    if (Array.isArray(planData.customModules) && planData.customModules.length > 0) {
+      planData.customModules.forEach(cm => {
+        if (!cm || !cm.id) return;
+        cm.isCustom = true;
+        this.modulesMap.set(cm.id, cm);
+        if (!this.modulesList.some(m => m.id === cm.id)) {
+          this.modulesList.push(cm);
+        }
+        if (!this.customModules.some(m => m.id === cm.id)) {
+          this.customModules.push(cm);
+        }
+      });
+    }
+
+    // 3. Update active specialization if valid
+    const targetSpec = planData.specialization;
+    if (targetSpec) {
+      const specExists = this.activeDegree?.specializations?.some(s => s.id === targetSpec);
+      if (specExists) {
+        this.currentSpecialization = targetSpec;
+      }
+    }
+
+    // 4. Update start term & year
+    if (planData.startTerm === 'WS' || planData.startTerm === 'SS') {
+      this.startTerm = planData.startTerm;
+    }
+    if (planData.startYear) {
+      const yr = parseInt(planData.startYear, 10);
+      if (!isNaN(yr)) {
+        this.startYear = yr;
+      }
+    }
+
+    // 5. Update semestersCount
+    const rawSemesters = planData.semesters || {};
+    const semKeys = Object.keys(rawSemesters).map(k => parseInt(k, 10)).filter(k => !isNaN(k));
+    const maxSem = semKeys.length > 0 ? Math.max(...semKeys) : 4;
+    const sCount = parseInt(planData.semestersCount, 10) || maxSem || 4;
+    this.semestersCount = Math.max(2, Math.min(12, sCount));
+
+    // 6. Build and populate the new plan
+    this.plan = {
+      degree: this.activeDegree?.id || targetDegId,
+      specialization: this.currentSpecialization,
+      startTerm: this.startTerm,
+      startYear: this.startYear,
+      semestersCount: this.semestersCount,
+      semesters: {}
+    };
+
+    let importedCourseCount = 0;
+    for (let s = 1; s <= this.semestersCount; s++) {
+      this.plan.semesters[s] = [];
+      const list = rawSemesters[s] || rawSemesters[String(s)] || [];
+      if (Array.isArray(list)) {
+        list.forEach(item => {
+          if (!item) return;
+          const modId = typeof item === 'string' ? item : item.id;
+          if (!modId) return;
+
+          // If module not found in modulesMap, synthesize a custom course entry
+          if (!this.modulesMap.has(modId)) {
+            const fallbackMod = {
+              id: modId,
+              title: item.title || modId,
+              titleEn: item.titleEn || item.title || modId,
+              credits: parseInt(item.credits, 10) || 6,
+              category: item.category || 'Imported Module',
+              term: item.term || 'WS/SS',
+              level: 'Master',
+              isCustom: true
+            };
+            this.customModules.push(fallbackMod);
+            this.modulesMap.set(modId, fallbackMod);
+            this.modulesList.push(fallbackMod);
+          }
+
+          const existingMod = this.getModule(modId);
+          const catInfo = existingMod ? this.getModuleCategoryInfo(existingMod) : { label: 'Elective' };
+
+          this.plan.semesters[s].push({
+            id: modId,
+            category: (typeof item === 'object' && item.category) ? item.category : catInfo.label,
+            isPinned: (typeof item === 'object') ? !!item.isPinned : false
+          });
+          importedCourseCount++;
+        });
+      }
+    }
+
+    // 7. Restore staged modules if present in backup
+    if (Array.isArray(planData.stagedModules) && planData.stagedModules.length > 0) {
+      planData.stagedModules.forEach(id => {
+        if (!this.stagedModules.includes(id)) {
+          this.stagedModules.push(id);
+        }
+      });
+      this.renderStagingArea();
+    }
+
+    // 8. Update UI select controls
+    const specSelect = document.getElementById('specializationSelect');
+    if (specSelect && this.currentSpecialization) {
+      specSelect.value = this.currentSpecialization;
+    }
+
+    const termSelect = document.getElementById('startTermSelect');
+    if (termSelect) termSelect.value = this.startTerm;
+
+    const yearSelect = document.getElementById('startYearSelect');
+    if (yearSelect) {
+      if (!Array.from(yearSelect.options).some(o => parseInt(o.value, 10) === this.startYear)) {
+        const opt = document.createElement('option');
+        opt.value = this.startYear;
+        opt.textContent = this.startYear;
+        yearSelect.appendChild(opt);
+      }
+      yearSelect.value = this.startYear;
+    }
+
+    // 9. Save state to localStorage
+    this.saveDegreeState();
+
+    // 10. Re-render UI components
+    this.renderSpecializationSelector();
+    this.renderCategoryPills();
+    this.renderCategoryChips();
+    this.renderPlanner();
+    this.renderCatalog();
+    this.runValidation();
+    this.autoSyncPlanSchedules();
+
+    // 11. Show success feedback
+    this.showToast(`✓ Study plan imported: ${importedCourseCount} courses loaded across ${this.semestersCount} semesters.`, 'success');
+  }
+
+  showToast(message, type = 'success') {
+    let container = document.getElementById('kitToastContainer');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'kitToastContainer';
+      container.className = 'kit-toast-container';
+      document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = `kit-toast ${type}`;
+    const icon = type === 'success' ? '✓' : (type === 'error' ? '⚠️' : 'ℹ️');
+    toast.innerHTML = `<span>${icon}</span><span>${message}</span>`;
+    container.appendChild(toast);
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(12px) scale(0.96)';
+      setTimeout(() => toast.remove(), 320);
+    }, 4000);
   }
 
   async handleHandbookUpload(file) {
@@ -2851,7 +3350,14 @@ class UniversalStudyPlannerApp {
   }
 
   exportToJson() {
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.plan, null, 2));
+    const exportPayload = {
+      ...this.plan,
+      customModules: this.customModules || [],
+      stagedModules: this.stagedModules || [],
+      exportedAt: new Date().toISOString(),
+      generator: 'KIT Study Planner'
+    };
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportPayload, null, 2));
     const a = document.createElement('a');
     a.setAttribute("href", dataStr);
     a.setAttribute("download", `study_plan_${this.activeDegree?.id || 'degree'}_${this.startTerm}_${this.startYear}.json`);
@@ -2865,6 +3371,7 @@ class UniversalStudyPlannerApp {
       statusMsg.textContent = '✓ JSON study plan downloaded.';
       setTimeout(() => { statusMsg.style.display = 'none'; }, 3000);
     }
+    this.showToast('✓ JSON study plan downloaded.', 'success');
   }
 
   // --- KIT CAMPUS LECTURE TIMES & TIMETABLE (STUNDENPLAN) ENGINE ---

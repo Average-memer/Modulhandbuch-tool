@@ -66,6 +66,10 @@
         <span>🔄</span> KIT Sync
       </button>
 
+      <button id="btnImportPlan" class="btn btn-outline" title="Import previously exported study plan JSON to resume editing">
+        <span>📥</span> Import
+      </button>
+
       <button id="btnExport" class="btn btn-outline" title="Export study plan or download backup JSON">
         <span>📋</span> Export
       </button>
@@ -474,6 +478,14 @@
           </button>
         </div>
 
+        <!-- Quick Switch to Import Plan -->
+        <div class="export-import-shortcut">
+          <span>Need to restore or continue editing a saved plan?</span>
+          <button class="btn btn-outline btn-sm" id="btnSwitchToImport" type="button" title="Open the study plan import dialog">
+            <span>📥</span> Import Plan JSON
+          </button>
+        </div>
+
         <!-- Render Options Bar -->
         <div class="export-options-bar">
           <div class="export-options-title">Options:</div>
@@ -517,6 +529,77 @@
         <button class="btn btn-outline" id="exportCloseFooterBtn">Close</button>
         <button class="btn btn-primary" id="btnExportDownloadPrimary">
           <span>📄</span> Download PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Import Study Plan JSON -->
+  <div class="modal-overlay" id="importModal">
+    <div class="modal-card modal-card-import">
+      <div class="modal-header">
+        <div>
+          <h2>Import Study Plan (JSON)</h2>
+          <p style="font-size: 0.82rem; color: var(--kit-muted); margin-top: 2px;">
+            Load a previously exported study plan JSON backup to resume planning, edit semesters, and validate requirements.
+          </p>
+        </div>
+        <button class="modal-close-btn" id="importCloseBtn">&times;</button>
+      </div>
+
+      <div class="modal-body import-modal-body">
+        <div class="upload-dropzone" id="importDropzone" title="Click to browse or drop your JSON plan file">
+          <span class="upload-icon">📥</span>
+          <span style="font-weight: 600; color: var(--kit-black);">Click to select or drag study plan JSON file here</span>
+          <span style="font-size: 0.75rem; color: var(--kit-muted);">Supports study_plan_*.json exported from this planner</span>
+          <input type="file" id="importPlanFileInput" accept=".json,application/json" style="display: none;">
+        </div>
+
+        <div id="importErrorMsg" class="alert-box alert-error" style="display: none; margin-top: 14px;"></div>
+
+        <!-- Plan Preview Card -->
+        <div class="plan-import-preview" id="importPlanPreview" style="display: none;">
+          <div class="import-preview-header">
+            <div>
+              <div class="import-plan-degree" id="importPlanDegreeTitle">Study Plan</div>
+              <div class="import-plan-file" id="importPlanFileName">study_plan.json</div>
+            </div>
+            <span class="badge" id="importDegreeMatchBadge">Matches Active Degree</span>
+          </div>
+
+          <div class="import-meta-grid">
+            <div class="import-meta-item">
+              <span class="import-meta-label">Specialization / Major</span>
+              <strong id="importPlanSpec">-</strong>
+            </div>
+            <div class="import-meta-item">
+              <span class="import-meta-label">Starting Semester</span>
+              <strong id="importPlanTerm">-</strong>
+            </div>
+            <div class="import-meta-item">
+              <span class="import-meta-label">Semesters & Courses</span>
+              <strong id="importPlanCounts">-</strong>
+            </div>
+            <div class="import-meta-item">
+              <span class="import-meta-label">Total Planned Credits</span>
+              <strong id="importPlanCredits">-</strong>
+            </div>
+          </div>
+
+          <div id="importDegreeSwitchNotice" class="import-notice-banner" style="display: none;"></div>
+
+          <div class="import-semesters-container">
+            <div style="font-size: 0.78rem; font-weight: 700; color: var(--kit-slate); margin-bottom: 6px;">Semester Distribution:</div>
+            <div class="import-semesters-preview" id="importSemestersPreview"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div id="importStatusMessage" style="font-size: 0.85rem; font-weight: 600; color: var(--kit-green); margin-right: auto; display: none;"></div>
+        <button class="btn btn-outline" id="importCloseFooterBtn">Cancel</button>
+        <button class="btn btn-primary" id="btnConfirmImportPlan" disabled>
+          <span>✓</span> Import & Load Plan
         </button>
       </div>
     </div>
